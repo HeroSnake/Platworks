@@ -50,26 +50,35 @@ export async function resolveSteamId(input: string): Promise<string | null> {
 
 /** Fetches achievements from the public Steam community XML. Profile must be public. */
 export async function getPlayerAchievements(
-	appId: number,
-	steamId: string
+    appId: number,
+    steamId: string
 ): Promise<Map<string, SteamAchievementStatus>> {
-	if (!steamId) return new Map();
+    if (!steamId) return new Map();
 
-	// Try /profiles/{id} first, fall back to /id/{vanity} format
-	const url = `${COMMUNITY}/profiles/${steamId}/stats/${appId}/?xml=1`;
-	try {
-		const res = await fetch(url);
-		if (!res.ok) return new Map();
-		const xml = await res.text();
+    const url = `${COMMUNITY}/profiles/${steamId}/stats/${appId}/?xml=1`;
+    try {
+        const res = await fetch(url, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': 'text/xml,application/xml,application/xhtml+xml,text/html;q=0.9',
+                'Accept-Language': 'en-US,en;q=0.9',
+            },
+            // Disable caching if running on Next.js / Vercel to ensure fresh data
+            cache: 'no-store',
+        });
 
-		if (xml.includes('<error>') && !xml.includes('<achievements>')) {
-			return new Map();
-		}
+        if (!res.ok) return new Map();
+        const xml = await res.text();
 
-		return parseAchievementXml(xml);
-	} catch {
-		return new Map();
-	}
+        if (xml.includes('<error>') && !xml.includes('<achievements>')) {
+            return new Map();
+        }
+
+        return parseAchievementXml(xml);
+    } catch (error) {
+        console.error('Failed to fetch Steam XML:', error);
+        return new Map();
+    }
 }
 
 /** Strips quotes, punctuation, and collapses whitespace for fuzzy name matching. */
