@@ -1,0 +1,880 @@
+{
+	"$schema": "./schema.json",
+	"appId": 4126040,
+	"name": "Aniimo",
+	"totalAchievements": 64,
+	"achievements": [
+		{
+			"id": "FIRST_COMPANION",
+			"name": "First Companion",
+			"description": "Team up with Helion or Lunara.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"At the start of the game, choose either Helion or Lunara as your starter Aniimo.",
+					"This unlocks automatically during the tutorial."
+				]
+			}
+		},
+		{
+			"id": "STARBOUND_JOURNEY",
+			"name": "Starbound Journey",
+			"description": "Earn limited badge: Starbound Journey.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Complete the introductory quests to earn the Starbound Journey badge.",
+					"This is a limited-time launch badge — check if still available."
+				]
+			}
+		},
+		{
+			"id": "FIRST_STEP_INTO_A_NEW_WORLD",
+			"name": "First Step into a New World",
+			"description": "Step onto the lands of Idyll.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Complete the tutorial and arrive in the open world of Idyll.",
+					"Unlocks automatically during the intro sequence."
+				]
+			}
+		},
+		{
+			"id": "BADGE_BEGINNINGS",
+			"name": "Badge Beginnings",
+			"description": "Earn your first Collection Badge.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Capture enough Aniimo species in a single region to earn a Collection Badge.",
+					"Breezy Plains is the first region — collect several species there."
+				]
+			}
+		},
+		{
+			"id": "ECHO_OF_THE_VEINS",
+			"name": "Echo of the Veins",
+			"description": "Activate the Branch in Breezy Plains and receive the ancient blessing.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find the Branch (a glowing tree structure) in Breezy Plains.",
+					"Interact with it to activate and receive the ancient blessing."
+				]
+			}
+		},
+		{
+			"id": "ANIILOG_BEGINNER",
+			"name": "Aniilog Beginner",
+			"description": "10 Aniimo recorded in the Index, more friends to connect with.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Capture or encounter 10 unique Aniimo species to record them in your Index.",
+					"Explore Breezy Plains thoroughly — plenty of species there."
+				]
+			}
+		},
+		{
+			"id": "FIRST_SANCTUM_FORAY",
+			"name": "First Sanctum Foray",
+			"description": "Clear the first Sanctum and restore the Vein energy.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find and enter the first Sanctum dungeon in Breezy Plains.",
+					"Defeat all enemies and the boss to clear it and restore Vein energy."
+				]
+			}
+		},
+		{
+			"id": "BIGGER_ANIIPOD",
+			"name": "You're Gonna Need a Bigger Aniipod",
+			"description": "Obtain your first Alpha Aniimo.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Alpha Aniimo are larger, more powerful variants that spawn in the overworld.",
+					"Find and defeat an Alpha Aniimo, then capture it with an Aniipod.",
+					"Use higher-quality Aniipods for better capture rates on Alphas."
+				]
+			}
+		},
+		{
+			"id": "HEALING_HUGS",
+			"name": "Healing Hugs",
+			"description": "Hug your Aniimo for the first time.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Open the interaction menu with your active Aniimo.",
+					"Select the Hug option to embrace your companion."
+				]
+			}
+		},
+		{
+			"id": "ALPHA_ANNIHILATOR",
+			"name": "Alpha Annihilator",
+			"description": "Defeat 5 Alpha/Omega Aniimo.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Alpha and Omega Aniimo are boss-tier creatures found in the overworld.",
+					"Defeat 5 of them total — cumulative across all encounters."
+				]
+			}
+		},
+		{
+			"id": "HOME_ON_WHEELS",
+			"name": "Home on Wheels",
+			"description": "The Homeland is complete, and now you have a place to call your own.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Progress the main story until you unlock your RV/Homeland.",
+					"Complete the initial setup quests for your mobile home."
+				]
+			}
+		},
+		{
+			"id": "TWINKLE_TWINKLE",
+			"name": "Twinkle, Twinkle, Little Star",
+			"description": "Your first Sparkling Aniimo, faintly shimmering.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Sparkling Aniimo are rare shiny variants that appear randomly in the wild.",
+					"Explore and encounter wild Aniimo — eventually a Sparkling one will appear.",
+					"They have a subtle shimmer/particle effect when they spawn."
+				],
+				"communityNotes": [
+					"Reddit tip: Sparkling Aniimo have a low spawn rate. Just keep playing and you'll find one naturally."
+				]
+			}
+		},
+		{
+			"id": "GUIDED_BY_THE_LIGHT",
+			"name": "Guided by the Light",
+			"description": "Illuminate 10 Blooms and converge the beams.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Blooms are glowing flower-like structures scattered across the map.",
+					"Interact with 10 of them to illuminate them and converge their beams."
+				]
+			}
+		},
+		{
+			"id": "PERFECT",
+			"name": "Perfect",
+			"description": "5 Perfect Aniimo. The path ahead is bright.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Perfect Aniimo are those with top-tier stats/IVs.",
+					"Capture or breed 5 Aniimo that qualify as 'Perfect' in their stats."
+				]
+			}
+		},
+		{
+			"id": "IN_THE_SAME_FRAME",
+			"name": "In the Same Frame",
+			"description": "Capture a moment with your Aniimo by your side.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Open Photo Mode from the menu.",
+					"Take a photo with your active Aniimo visible in the frame."
+				]
+			}
+		},
+		{
+			"id": "PRISMANA_SPLENDOR",
+			"name": "Prismana Splendor",
+			"description": "Your first Prismana Aniimo, brilliantly hued.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Prismana Aniimo are ultra-rare color variants — even rarer than Sparkling.",
+					"They can appear randomly in the wild with a distinctive rainbow-like hue.",
+					"Keep exploring and encountering Aniimo to find one."
+				],
+				"communityNotes": [
+					"Reddit tip: Prismana rates are very low. Some players report finding them more often during Prismana Flow weather events."
+				]
+			}
+		},
+		{
+			"id": "JUNIOR_WAYFARER",
+			"name": "Junior Wayfarer",
+			"description": "Become a Junior Wayfarer.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Complete enough quests and activities to rank up to Junior Wayfarer.",
+					"This is an early progression milestone."
+				]
+			}
+		},
+		{
+			"id": "INDEX_ADEPT",
+			"name": "Index Adept",
+			"description": "40 Aniimo recorded in the Index, more companions to find.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Capture or encounter 40 unique Aniimo species.",
+					"Explore multiple areas and biomes for new species."
+				]
+			}
+		},
+		{
+			"id": "SPARKLING_BRIGHT",
+			"name": "Sparkling Bright",
+			"description": "A Sparkling Prismana Aniimo, dazzlingly radiant.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Find an Aniimo that is both Sparkling AND Prismana — the rarest combination.",
+					"This is extremely rare and requires luck or extensive play."
+				],
+				"communityNotes": [
+					"Reddit tip: This is the rarest variant type. Just play the game and it will happen eventually — don't specifically grind for it."
+				]
+			}
+		},
+		{
+			"id": "HATCHING_PLANS",
+			"name": "Hatching Plans",
+			"description": "Witness 10 Eggs hatching.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Collect eggs from breeding or exploration and place them in an incubator.",
+					"Hatch 10 eggs total."
+				]
+			}
+		},
+		{
+			"id": "CASHFLOW",
+			"name": "Cashflow",
+			"description": "500k Credits slip through your fingers.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Spend 500,000 Credits total (cumulative lifetime spending).",
+					"Buy items, upgrades, and equipment to work toward this."
+				]
+			}
+		},
+		{
+			"id": "RADIANT_AS_A_RAINBOW",
+			"name": "Radiant as a Rainbow",
+			"description": "Witness a Prismana Flow.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Prismana Flow is a special weather/world event that occurs periodically.",
+					"When it triggers, the sky displays rainbow-like effects and Prismana Aniimo spawn rates increase.",
+					"Just play regularly and you'll encounter one."
+				]
+			}
+		},
+		{
+			"id": "RISING_CHALLENGER",
+			"name": "Rising Challenger",
+			"description": "Complete 10 Pathfinder Challenges, steady and sure.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Pathfinder Challenges are combat/exploration tasks available throughout the world.",
+					"Complete 10 of them — check the challenge board for available ones."
+				]
+			}
+		},
+		{
+			"id": "CARRY_THAT_WEIGHT",
+			"name": "Carry That Weight",
+			"description": "Obtain a Level 10 Carried Item.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Carried Items are equipment that level up with use.",
+					"Upgrade any Carried Item to Level 10 through regular use and enhancement."
+				]
+			}
+		},
+		{
+			"id": "WINDCHASER_BRONZE",
+			"name": "Windchaser: Bronze",
+			"description": "Earn the Bronze Collection Badge for Breezy Plains.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Capture enough unique Aniimo species in Breezy Plains to earn the Bronze badge.",
+					"Check the Collection menu to see which species you're missing."
+				]
+			}
+		},
+		{
+			"id": "BLESSED_FLOW",
+			"name": "Blessed Flow",
+			"description": "Level up the Branch in Breezy Plains to Prismana Radiance.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"The Branch in Breezy Plains can be leveled up by feeding it energy.",
+					"Collect Vein energy from Sanctums and activities, then level the Branch to Prismana Radiance tier."
+				]
+			}
+		},
+		{
+			"id": "TRAILBLAZER_OF_THE_PLAINS",
+			"name": "Trailblazer of the Plains",
+			"description": "Cross every area of Breezy Plains.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Explore and visit every named sub-area within Breezy Plains.",
+					"Check the map for undiscovered areas — some may be hidden behind puzzles or traversal."
+				]
+			}
+		},
+		{
+			"id": "ALPHA_PREDATOR",
+			"name": "Alpha Predator",
+			"description": "Defeat 20 Alpha/Omega Aniimo.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Defeat 20 Alpha or Omega Aniimo total across all encounters.",
+					"These spawn in fixed locations and respawn on a timer."
+				]
+			}
+		},
+		{
+			"id": "WINDCHASER_SILVER",
+			"name": "Windchaser: Silver",
+			"description": "Earn the Silver Collection Badge for Breezy Plains.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Capture more unique Aniimo in Breezy Plains to earn the Silver badge.",
+					"Some species only appear at specific times of day or weather conditions."
+				]
+			}
+		},
+		{
+			"id": "CHEST_CHASER",
+			"name": "Chest Chaser",
+			"description": "Each of the 200 Chests across the world contains a surprise.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Find and open 200 chests scattered across the entire world of Idyll.",
+					"Chests are hidden in caves, on cliffs, behind puzzles, and in dungeons."
+				],
+				"communityNotes": [
+					"Reddit tip: Use the in-game tracker to see how many chests remain in each area. Some require Twining with specific Aniimo to reach."
+				]
+			}
+		},
+		{
+			"id": "EGG_SCAPE_UNSCATHED",
+			"name": "Egg-scape Unscathed",
+			"description": "Successfully evacuate in Operation: Egg Heist.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play the Egg Heist PVEVP mode (3-player team).",
+					"Complete the mission objectives and evacuate before the timer runs out."
+				]
+			}
+		},
+		{
+			"id": "BRILLIANT_HUES",
+			"name": "Brilliant Hues",
+			"description": "Finish the Breezy Plains lore.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete all lore-related quests and discoveries in Breezy Plains.",
+					"Talk to NPCs and explore hidden areas for lore fragments."
+				]
+			}
+		},
+		{
+			"id": "DRESSED_FOR_THE_PART",
+			"name": "Dressed for the Part",
+			"description": "Fill your wardrobe with 5 outfits. A fresh new look every day.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Acquire 5 different outfits through quests, shops, or events.",
+					"Check the wardrobe menu to see your collection."
+				]
+			}
+		},
+		{
+			"id": "WINDSWEPT_EPILOGUE",
+			"name": "Windswept Epilogue",
+			"description": "Reach the destination of every journey in Breezy Plains.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete all Journey quests in Breezy Plains.",
+					"Check the quest log for any remaining Journey objectives."
+				]
+			}
+		},
+		{
+			"id": "HOLO_TRAINEE",
+			"name": "Holo Trainee",
+			"description": "Clear any one of the Grass, Water or Fire Holo-Battle Sim.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Access the Holo-Battle Sim from the training facility.",
+					"Clear any one elemental simulation (Grass, Water, or Fire)."
+				]
+			}
+		},
+		{
+			"id": "RAINBOW_OF_THE_GROUND",
+			"name": "Rainbow of the Ground",
+			"description": "Team up with Irisalis.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Irisalis is a special Aniimo. Find and capture it to team up.",
+					"Check guides for Irisalis's spawn location and conditions."
+				]
+			}
+		},
+		{
+			"id": "BOX_OF_BADGES",
+			"name": "Box of Badges",
+			"description": "Collect 20 badges.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Earn 20 total badges from Collection Badges, event badges, and achievement badges.",
+					"Focus on completing regional collections for steady badge income."
+				]
+			}
+		},
+		{
+			"id": "TRAIL_OF_THE_WIND",
+			"name": "Trail of the Wind",
+			"description": "Complete the Journey quests: Binding Oath, Stars and the Knight, and Warrior.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete three specific Journey quest chains in Breezy Plains.",
+					"These are story-driven quests with combat and exploration components."
+				]
+			}
+		},
+		{
+			"id": "NOVICE_TRAILBLAZER",
+			"name": "Novice Trailblazer",
+			"description": "Become a Novice Trailblazer.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Rank up through the Pathfinder progression to reach Novice Trailblazer.",
+					"Complete quests, challenges, and exploration milestones to earn rank XP."
+				]
+			}
+		},
+		{
+			"id": "RISING_EGG_SCOUT",
+			"name": "Rising Egg Scout",
+			"description": "Reach the Rising Egg Scout rank in Operation: Egg Heist.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play Operation: Egg Heist regularly and complete objectives.",
+					"Earn enough rank points to reach Rising Egg Scout."
+				]
+			}
+		},
+		{
+			"id": "TREASURED_TRADE",
+			"name": "Treasured Trade",
+			"description": "Complete 1 Aniimo exchange. Both sides get what they wanted.",
+			"type": "multiplayer",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find another player and initiate a trade.",
+					"Exchange an Aniimo and complete the trade."
+				]
+			}
+		},
+		{
+			"id": "WELCOME_HOME",
+			"name": "Welcome Home",
+			"description": "Upgrade RV to Level 8. It's becoming more and more like a proper home.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Collect materials and currency to upgrade your RV.",
+					"Upgrade it incrementally until it reaches Level 8."
+				]
+			}
+		},
+		{
+			"id": "ANIILOG_EXPERT",
+			"name": "Aniilog Expert",
+			"description": "80 Aniimo recorded in the Index, every page full of memories.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Record 80 unique Aniimo species in your Index.",
+					"Explore all biomes, including time-locked and weather-specific spawns."
+				]
+			}
+		},
+		{
+			"id": "A_MATCH_MADE_THROUGH_MUSIC",
+			"name": "A Match Made Through Music",
+			"description": "Play the flute and meet with the first Pathfinder.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Obtain the flute item through the main quest.",
+					"Play it at the designated location to summon and meet the first Pathfinder NPC."
+				]
+			}
+		},
+		{
+			"id": "SANCTUM_SAVANT",
+			"name": "Sanctum Savant",
+			"description": "10 Sanctums, each full of challenges.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Clear 10 Sanctum dungeons across the world.",
+					"Sanctums are scattered across different regions — explore to find them."
+				]
+			}
+		},
+		{
+			"id": "SIX_STAR_SUPREMACY",
+			"name": "Six-Star Supremacy",
+			"description": "Ascend an Aniimo to 6 stars for the first time. What an achievement!",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Ascending requires duplicate Aniimo and special materials.",
+					"Level up and ascend one Aniimo through all star tiers until it reaches 6 stars."
+				],
+				"communityNotes": [
+					"Reddit tip: Focus on ascending a common Aniimo first — they're easier to get duplicates for."
+				]
+			}
+		},
+		{
+			"id": "OVER_THE_RAINBOW",
+			"name": "Over the Rainbow",
+			"description": "10 Prismana Aniimo. That's a whole squad of rare ones.",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Collect 10 Prismana (ultra-rare variant) Aniimo.",
+					"Prismana Flows increase their spawn rates — farm during these events.",
+					"This requires significant playtime and luck."
+				],
+				"communityNotes": [
+					"Reddit tip: Prismana rates are roughly 1/4000. Focus on high-traffic areas during Prismana Flow events."
+				]
+			}
+		},
+		{
+			"id": "ANIIMO_TREASURE_TEAM",
+			"name": "Aniimo Treasure Team",
+			"description": "Your Aniimo go on 5 trips and came back loaded with gifts.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Send your Aniimo on expeditions/treasure trips from your Homeland.",
+					"Complete 5 trips — they return automatically after a time."
+				]
+			}
+		},
+		{
+			"id": "WANDERERS_MIGHT",
+			"name": "Wanderer's Might",
+			"description": "Level up the Branch in Breezy Plains to Wanderer's Might.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Continue feeding energy to the Branch in Breezy Plains.",
+					"Reach the Wanderer's Might tier — the highest Branch level."
+				]
+			}
+		},
+		{
+			"id": "SAFE_AND_SOUND",
+			"name": "Safe and Sound",
+			"description": "Evacuate safely in Operation: Egg Heist Team Mode on Nightmare.",
+			"type": "standard",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Play Operation: Egg Heist on Nightmare difficulty in Team Mode.",
+					"Successfully complete the mission and evacuate.",
+					"Coordinate with your 3-player team — Nightmare is extremely punishing."
+				],
+				"communityNotes": [
+					"Reddit tip: Bring your strongest Aniimo and coordinate roles. One player scouts, one fights, one carries eggs."
+				],
+				"warnings": [
+					"Nightmare difficulty is very hard. Dying or failing to evacuate in time will void the achievement for that run."
+				]
+			}
+		},
+		{
+			"id": "CHALLENGE_ACE",
+			"name": "Challenge Ace",
+			"description": "Complete 50 Pathfinder Challenges, forged through perseverance.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete 50 Pathfinder Challenges total.",
+					"Challenges refresh and new ones unlock as you progress."
+				]
+			}
+		},
+		{
+			"id": "INSTITUTE_SENIOR",
+			"name": "Institute Senior",
+			"description": "Reach Level 60.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Earn XP through combat, quests, and activities until you reach Level 60.",
+					"This requires significant playtime."
+				]
+			}
+		},
+		{
+			"id": "EXPERT_EGG_RAIDER",
+			"name": "Expert Egg Raider",
+			"description": "Reach the Expert Egg Raider rank in Operation: Egg Heist.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Play Egg Heist extensively and earn enough rank XP.",
+					"Reach the Expert Egg Raider rank through consistent performance."
+				]
+			}
+		},
+		{
+			"id": "SUPREME_SUPPLIER",
+			"name": "Supreme Supplier",
+			"description": "Fulfill 80 Home orders.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"From your Homeland, accept and fulfill supply orders from visitors.",
+					"Complete 80 total orders — they refresh periodically."
+				]
+			}
+		},
+		{
+			"id": "ANIIMOLOGY_EXPERT",
+			"name": "Aniimology Expert",
+			"description": "Upgrade the Breezy Plains Aniilog to Level 9.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"The Aniilog levels up as you capture more species and complete activities in Breezy Plains.",
+					"Max it out to Level 9 — requires near-complete exploration of the region."
+				]
+			}
+		},
+		{
+			"id": "PRISMANA_HOARD",
+			"name": "Prismana Hoard",
+			"description": "Obtain 5 Prismatic collectibles in Operation: Egg Heist.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"During Egg Heist runs, find and collect Prismatic collectibles.",
+					"These are rare drops — collect 5 total across multiple runs."
+				]
+			}
+		},
+		{
+			"id": "INTERLINK_STAR",
+			"name": "Interlink Star",
+			"description": "Get 50 stars in the Holo-Battle Interlink.",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"The Holo-Battle Interlink is an advanced battle simulation system.",
+					"Earn 50 stars by clearing stages with high performance ratings.",
+					"Requires strong, well-built Aniimo teams."
+				]
+			}
+		},
+		{
+			"id": "A_BUDDY_FOR_MY_BUDDY",
+			"name": "A Buddy for My Buddy",
+			"description": "Gift 1 Aniimo to a friend in Companion Mode.",
+			"type": "multiplayer",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Enter Companion Mode with a friend.",
+					"Gift them an Aniimo through the gifting interface."
+				]
+			}
+		},
+		{
+			"id": "HOLO_TRAINING_ACE",
+			"name": "Holo Training Ace",
+			"description": "Clear any one of the Grass, Water or Fire Holo-Battle Sim on Hard.",
+			"type": "standard",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Select Hard difficulty for any elemental Holo-Battle Sim.",
+					"Build a team with strong type advantages and clear the simulation.",
+					"Requires well-leveled and well-built Aniimo."
+				]
+			}
+		},
+		{
+			"id": "VICTORY_BADGES",
+			"name": "Victory Badges",
+			"description": "Snatch 6 Victory Badges from Elite Pathfinders.",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Elite Pathfinders are powerful trainer NPCs found throughout the world.",
+					"Defeat 6 of them in battle to earn their Victory Badges.",
+					"These are tough fights requiring optimized Aniimo teams."
+				]
+			}
+		},
+		{
+			"id": "HEARTS_IN_TUNE",
+			"name": "Hearts in Tune",
+			"description": "Reach Level 5 Bond with a friend.",
+			"type": "multiplayer",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Play with a friend regularly — co-op activities increase your Bond level.",
+					"Reach Bond Level 5 with one friend. Requires sustained co-op play."
+				],
+				"communityNotes": [
+					"Reddit tip: Bond XP is earned from co-op activities like Egg Heist, exploring together, and trading. Play daily for steady progress."
+				]
+			}
+		},
+		{
+			"id": "WINDCHASER_GOLD",
+			"name": "Windchaser: Gold",
+			"description": "Earn the Gold Collection Badge for Breezy Plains.",
+			"type": "standard",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Capture nearly every Aniimo species available in Breezy Plains.",
+					"Some species only appear during specific weather, time of day, or events.",
+					"This requires thorough and patient completion of the regional dex."
+				],
+				"communityNotes": [
+					"Reddit tip: The Gold badge requires almost 100% of Breezy Plains species. Check the wiki for weather/time-specific spawns you might be missing."
+				]
+			}
+		},
+		{
+			"id": "FRIENDS_IN_FOCUS",
+			"name": "Friends in Focus",
+			"description": "Take 1 photo with a friend in the Photo Studio.",
+			"type": "multiplayer",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Visit the Photo Studio with a friend.",
+					"Take a photo together using the studio's tools."
+				]
+			}
+		},
+		{
+			"id": "TRUE_COLORS",
+			"name": "True Colors",
+			"description": "Dye your outfit in your own chosen colors, giving it a unique character.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Access the outfit customization/dye menu.",
+					"Apply any dye color to your current outfit."
+				]
+			}
+		}
+	]
+}

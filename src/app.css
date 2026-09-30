@@ -1,0 +1,60 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+	--color-steam-blue: #1b2838;
+	--color-steam-dark: #171a21;
+	--color-steam-light: #2a475e;
+	--color-steam-accent: #66c0f4;
+	--color-steam-green: #4c6b22;
+}
+
+/* GPU-accelerated expand/collapse */
+.expand-panel {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows 200ms ease-out;
+}
+.expand-panel[data-open="true"] {
+	grid-template-rows: 1fr;
+}
+.expand-panel > div {
+	overflow: hidden;
+}
+
+/* Check icon pulse */
+@keyframes check-pop {
+	0% { transform: scale(1); }
+	50% { transform: scale(1.3); }
+	100% { transform: scale(1); }
+}
+.check-pop {
+	animation: check-pop 200ms ease-out;
+}
+
+/* View Transition: slide pages */
+@keyframes slide-in {
+	from { opacity: 0; transform: translateX(8px); }
+	to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slide-out {
+	from { opacity: 1; transform: translateX(0); }
+	to { opacity: 0; transform: translateX(-8px); }
+}
+::view-transition-old(root) {
+	animation: slide-out 150ms ease-in;
+}
+::view-transition-new(root) {
+	animation: slide-in 150ms ease-out;
+}
+
+/* Prevent 300ms tap delay & highlight */
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+
+/* Layout containment for list items */
+.achievement-item {
+	contain: layout style;
+}

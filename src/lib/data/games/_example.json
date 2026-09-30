@@ -1,0 +1,44 @@
+{
+	"$schema": "./schema.json",
+	"appId": 105600,
+	"name": "Terraria",
+	"totalAchievements": 104,
+	"achievements": [
+		{
+			"id": "TIMBER",
+			"name": "Timber!!",
+			"description": "Chop down your first tree.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Equip your starting axe from the inventory.",
+					"Walk up to any tree and hold the attack button until it falls."
+				]
+			}
+		},
+		{
+			"id": "KILL_THE_GUIDE",
+			"name": "Homicidal Maniac",
+			"description": "Defeat every type of NPC.",
+			"type": "missable",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"You must kill every unique NPC type, including town NPCs.",
+					"Use lava traps or direct attacks during a Blood Moon for easier NPC kills.",
+					"Track which NPCs you've defeated — there is no in-game tracker for this."
+				],
+				"videoUrl": "https://www.youtube.com/watch?v=example",
+				"sourceUrl": "https://terraria.wiki.gg/wiki/Achievements",
+				"communityNotes": [
+					"Reddit tip: The Clothier counts — don't forget to summon and kill Skeletron first so the Clothier NPC spawns.",
+					"Reddit tip: Santa Claus only appears during the in-game Christmas season (Dec 15-31). Plan ahead."
+				],
+				"warnings": [
+					"Some NPCs only spawn under specific conditions — make sure all are available before starting."
+				]
+			}
+		}
+	]
+}

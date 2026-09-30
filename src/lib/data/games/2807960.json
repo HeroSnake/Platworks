@@ -1,0 +1,818 @@
+{
+	"$schema": "./schema.json",
+	"appId": 2807960,
+	"name": "Battlefield 6",
+	"totalAchievements": 53,
+	"achievements": [
+		{
+			"id": "STAND_ALONE",
+			"name": "Stand Alone",
+			"description": "Complete Always Faithful.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Play and complete the campaign mission 'Always Faithful'.",
+					"This is the first campaign mission — story progression only."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594435/stand-alone-achievement"
+			}
+		},
+		{
+			"id": "ROCK_OF_GIBRALTAR",
+			"name": "Rock of Gibraltar",
+			"description": "Complete The Rock and Operation Gladius.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Complete the campaign missions 'The Rock' and 'Operation Gladius'.",
+					"These are consecutive story missions — play through the campaign."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594436/rock-of-gibraltar-achievement"
+			}
+		},
+		{
+			"id": "DEVIL_IN_THE_DARK",
+			"name": "Devil in the Dark",
+			"description": "Complete Night Raid.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Complete the campaign mission 'Night Raid'.",
+					"This is a stealth-focused mission — story progression only."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594437/devil-in-the-dark-achievement"
+			}
+		},
+		{
+			"id": "SECRET_SERVICE",
+			"name": "Secret Service",
+			"description": "Complete No Sleep and Moving Mountains.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Complete the campaign missions 'No Sleep' and 'Moving Mountains'.",
+					"Continue the campaign to reach these missions."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594438/secret-service-achievement"
+			}
+		},
+		{
+			"id": "HIGH_ROLLER",
+			"name": "High Roller",
+			"description": "Complete Nile Guard.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Complete the campaign mission 'Nile Guard'.",
+					"Story progression only."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594439/high-roller-achievement"
+			}
+		},
+		{
+			"id": "DAMNED_IF_YOU_DO",
+			"name": "Damned If You Do",
+			"description": "Complete Operation Ember Strike.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Complete the campaign mission 'Operation Ember Strike'.",
+					"This is a late-game campaign mission."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594440/damned-if-you-do-achievement"
+			}
+		},
+		{
+			"id": "CLOAK_AND_DAGGER",
+			"name": "Cloak and Dagger",
+			"description": "Complete the Battlefield 6 Campaign.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete all campaign missions from start to finish.",
+					"Play through the entire story on any difficulty."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594441/cloak-and-dagger-achievement"
+			}
+		},
+		{
+			"id": "IN_MEMORIAM",
+			"name": "In Memoriam",
+			"description": "Pick up a Campaign collectible.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find and pick up any collectible item during a campaign mission.",
+					"Collectibles are dog tags scattered throughout levels."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594442/in-memoriam-achievement"
+			}
+		},
+		{
+			"id": "DOGS_OF_WAR",
+			"name": "Dogs of War",
+			"description": "Pick up 5 Campaign collectibles.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find and collect 5 dog tag collectibles across campaign missions.",
+					"Explore off the main path — collectibles are often in side areas."
+				]
+			}
+		},
+		{
+			"id": "HOUNDS_OF_WAR",
+			"name": "Hounds of War",
+			"description": "Pick up 10 Campaign collectibles.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Collect 10 dog tags across the campaign.",
+					"Some are well hidden — check rooms, rooftops, and behind cover."
+				]
+			}
+		},
+		{
+			"id": "WOLVES_OF_WAR",
+			"name": "Wolves of War",
+			"description": "Pick up 20 Campaign collectibles.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Collect 20 campaign dog tags. Check every mission for hidden collectibles.",
+					"Use mission replay to go back for missed ones."
+				]
+			}
+		},
+		{
+			"id": "PACK_LEADER",
+			"name": "Pack Leader",
+			"description": "Pick up all Campaign collectibles.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Find every collectible dog tag in the entire campaign.",
+					"Use a collectibles guide or video walkthrough to ensure you don't miss any.",
+					"You can replay missions to pick up missed ones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594446/pack-leader-achievement",
+				"communityNotes": [
+					"Reddit tip: There are collectibles in every mission. Some are very well hidden behind destructible walls or in hard-to-reach spots."
+				]
+			}
+		},
+		{
+			"id": "PEAK_PERFORMANCE",
+			"name": "Peak Performance",
+			"description": "Complete a Single Player mission on the hardest difficulty.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Set the difficulty to the highest setting (Realistic/Hardcore).",
+					"Complete any single campaign mission on this difficulty.",
+					"'Always Faithful' is the shortest mission — good candidate for this."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594447/peak-performance-achievement",
+				"communityNotes": [
+					"Reddit tip: You die very quickly on hardest difficulty. Take it slow, use cover constantly, and learn enemy positions."
+				]
+			}
+		},
+		{
+			"id": "LIQUIDATOR",
+			"name": "Liquidator",
+			"description": "Headshot kill 50 Enemies in the Campaign.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Get 50 headshot kills total across all campaign missions.",
+					"Use assault rifles or semi-auto weapons for easier headshots.",
+					"Cumulative across all missions and replays."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594448/liquidator-achievement"
+			}
+		},
+		{
+			"id": "ONE_STONE",
+			"name": "One Stone",
+			"description": "Eliminate 3 enemies with a single grenade in Single Player.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Wait for enemies to cluster together (common during scripted encounters).",
+					"Throw a frag grenade into the group to kill 3+ at once.",
+					"'Always Faithful' has good grouped enemy encounters early on."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594449/one-stone-achievement"
+			}
+		},
+		{
+			"id": "ARMOR_ANNIHILATION",
+			"name": "Armor Annihilation",
+			"description": "Destroy 10 enemy vehicles in Single Player.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Destroy 10 enemy vehicles total across the campaign.",
+					"Use rockets, C4, or mounted weapons to take out APCs, tanks, and helicopters.",
+					"Cumulative across all missions."
+				]
+			}
+		},
+		{
+			"id": "END_OF_AN_ERA",
+			"name": "End of an Era",
+			"description": "Find the dinosaur figurine in the NATO base in Always Faithful.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"During the 'Always Faithful' mission, explore the NATO base area.",
+					"Look for a small dinosaur figurine hidden on a shelf or desk.",
+					"This is a classic Battlefield easter egg."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594451/end-of-an-era-achievement",
+				"communityNotes": [
+					"Reddit tip: Classic DICE easter egg! The dinosaur is in a building to the left of the main path. Check all shelves."
+				]
+			}
+		},
+		{
+			"id": "EFFICIENCY",
+			"name": "Efficiency",
+			"description": "Destroy 10 mannequins in The Rock.",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"During 'The Rock' mission, look for destructible mannequins throughout the level.",
+					"Shoot or melee 10 of them. They're scattered in buildings and rooms."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594452/efficiency-achievement"
+			}
+		},
+		{
+			"id": "DEEP_SIX",
+			"name": "Deep-Six",
+			"description": "Destroy 3 floating mines in Operation Gladius.",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"During 'Operation Gladius', look for floating naval mines in the water.",
+					"Shoot 3 of them to detonate and destroy them."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594453/deepsix-achievement"
+			}
+		},
+		{
+			"id": "SIDEARM_SAVANT",
+			"name": "Sidearm Savant",
+			"description": "Complete Night Raid using only pistols, knives, or gadgets.",
+			"type": "standard",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Play the 'Night Raid' mission and only use pistols, knives, or gadgets for all kills.",
+					"Do NOT fire any primary weapons (rifles, SMGs, etc.).",
+					"This is a stealth mission so knife takedowns are your best friend."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594454/sidearm-savant-achievement",
+				"communityNotes": [
+					"Reddit tip: Play on the easiest difficulty. Use stealth takedowns with the knife for most of it, pistol only when spotted."
+				],
+				"warnings": [
+					"Firing any primary weapon voids the achievement. Only sidearms, melee, and gadgets are allowed."
+				]
+			}
+		},
+		{
+			"id": "LOOKS_LIKE_A_NAIL",
+			"name": "Looks Like A Nail",
+			"description": "Kill five enemies with a sledgehammer in No Sleep.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"During the 'No Sleep' mission, find and equip the sledgehammer.",
+					"Kill 5 enemies with it in melee combat.",
+					"Play on easy difficulty to survive getting close to enemies."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594455/looks-like-a-nail-achievement"
+			}
+		},
+		{
+			"id": "BULLSEYE_BLITZ",
+			"name": "Bullseye Blitz",
+			"description": "Land six consecutive headshots in Moving Mountains.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"During 'Moving Mountains', get 6 headshot kills in a row with no body/miss shots between them.",
+					"Use a scoped weapon and take your time. A semi-auto rifle works best.",
+					"Play on easy difficulty so enemies don't push you."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594456/bullseye-blitz-achievement",
+				"warnings": [
+					"Any non-headshot kill or missed shot breaks the streak. Must be 6 consecutive."
+				]
+			}
+		},
+		{
+			"id": "ROADSIDE_ASSISTANCE",
+			"name": "Roadside Assistance",
+			"description": "Collapse an overpass on a tank in Nile Guard.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"During 'Nile Guard', look for a destructible overpass/bridge support.",
+					"Destroy the support when an enemy tank is driving underneath.",
+					"The overpass will collapse onto the tank."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594457/roadside-assistance-achievement"
+			}
+		},
+		{
+			"id": "BEING_WATCHED",
+			"name": "Being Watched",
+			"description": "Spot a total of 20 enemies with your drone in Operation Ember Strike.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"During 'Operation Ember Strike', use your recon drone frequently.",
+					"Spot/tag 20 enemies total with the drone's marking system."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594458/being-watched-achievement"
+			}
+		},
+		{
+			"id": "NO_REINFORCEMENTS",
+			"name": "No Reinforcements",
+			"description": "Shoot down the reinforcement chopper with a tank during Always Forward.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"During 'Always Forward' (part of Always Faithful), you'll have access to a tank.",
+					"When an enemy helicopter arrives with reinforcements, shoot it down using the tank's main cannon.",
+					"Lead your shots — the helicopter is a moving target."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594459/no-reinforcements-achievement",
+				"communityNotes": [
+					"Reddit tip: The chopper appears at a scripted moment. Save before it arrives and retry until you land the shot."
+				]
+			}
+		},
+		{
+			"id": "PRIVATE_FIRST_CLASS_MONTES",
+			"name": "Private First Class Montes",
+			"description": "Reach Rank 9.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Play multiplayer matches and earn XP to reach Rank 9.",
+					"All game modes contribute to rank progression."
+				]
+			}
+		},
+		{
+			"id": "LANCE_CORPORAL_MATKOVIC",
+			"name": "Lance Corporal Matkovic",
+			"description": "Reach Rank 14.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Continue playing multiplayer to reach Rank 14.",
+					"Focus on objective play for bonus XP."
+				]
+			}
+		},
+		{
+			"id": "SERGEANT_REDFORD",
+			"name": "Sergeant Redford",
+			"description": "Reach Rank 25.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Reach Rank 25 in multiplayer. Requires significant playtime.",
+					"Play Conquest or Breakthrough for the highest XP yields."
+				]
+			}
+		},
+		{
+			"id": "PUNISHED",
+			"name": "Punished",
+			"description": "Get 129 kills in Multiplayer.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Accumulate 129 kills in any multiplayer mode.",
+					"Cumulative across all matches."
+				]
+			}
+		},
+		{
+			"id": "MEDAL_OF_HONOR",
+			"name": "Medal of Honor",
+			"description": "Commit 414 acts of valor in Multiplayer.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Acts of valor include kills, assists, revives, captures, and other objective actions.",
+					"Play regularly and focus on objective play to accumulate 414."
+				]
+			}
+		},
+		{
+			"id": "ROAD_RASH",
+			"name": "Road Rash",
+			"description": "Get a Roadkill with vehicles in Multiplayer.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Hop into any vehicle in a multiplayer match.",
+					"Run over an enemy player to get a roadkill."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594473/road-rash-achievement"
+			}
+		},
+		{
+			"id": "FRONT_LINE",
+			"name": "Front line",
+			"description": "Take or Defend 41 sectors in Breakthrough.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play Breakthrough mode and participate in sector captures/defenses.",
+					"Accumulate 41 total sector takes or defenses — cumulative."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594464/front-line-achievement"
+			}
+		},
+		{
+			"id": "WRENCH_MONKEY",
+			"name": "Wrench Monkey",
+			"description": "Repair vehicles for 2042 damage in Multiplayer.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Equip the repair tool and follow friendly vehicles into battle.",
+					"Repair damaged vehicles for a cumulative total of 2042 damage repaired."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594467/wrench-monkey-achievement",
+				"communityNotes": [
+					"Reddit tip: The 2042 number is a nod to Battlefield 2042. Follow tanks around and repair them during pushes."
+				]
+			}
+		},
+		{
+			"id": "HEAVY_WEAPONRY",
+			"name": "Heavy Weaponry",
+			"description": "Get 5 kills with LMGs without reloading in Multiplayer.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Equip an LMG as the Support class.",
+					"Get 5 kills in a single magazine without reloading.",
+					"Find a chokepoint or flank to catch multiple enemies."
+				],
+				"communityNotes": [
+					"Reddit tip: Use an LMG with a large magazine (100+ rounds). Breakthrough defense is great for this — enemies funnel through tight areas."
+				]
+			}
+		},
+		{
+			"id": "FIVE_BY_FIVE",
+			"name": "Five by Five",
+			"description": "Get 5 multi-kills as Assault in Multiplayer.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play as the Assault class and get multi-kills (2+ kills in quick succession).",
+					"Use explosives, vehicles, or rapid-fire weapons on groups.",
+					"Accumulate 5 multi-kills total — cumulative."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594466/five-by-five-achievement"
+			}
+		},
+		{
+			"id": "STOLZ_DER_NATION",
+			"name": "Stolz der Nation",
+			"description": "Get 250 sniper rifle kills as Recon in Multiplayer.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Play as the Recon class and get 250 kills with sniper rifles.",
+					"This is a significant grind — focus on modes with long sightlines like Conquest.",
+					"Cumulative across all matches."
+				],
+				"communityNotes": [
+					"Reddit tip: Play on large maps with open sightlines. Breakthrough defense is great for sniping attackers."
+				]
+			}
+		},
+		{
+			"id": "A_JOYFUL_NURSE",
+			"name": "A Joyful Nurse",
+			"description": "Revive 1996 players as Support in Multiplayer.",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Play as the Support class and revive downed teammates.",
+					"Accumulate 1996 revives total — this is a massive grind.",
+					"Focus on Breakthrough and Conquest where revive opportunities are frequent."
+				],
+				"communityNotes": [
+					"Reddit tip: The 1996 number references the year DICE was founded. This is one of the longest grinds in the game.",
+					"Reddit tip: Play Breakthrough on offense — lots of teammates go down pushing objectives."
+				],
+				"warnings": [
+					"This is the single biggest grind in the game. Expect hundreds of hours of dedicated Support play."
+				]
+			}
+		},
+		{
+			"id": "COMMAND_AND_CONQUEST_2",
+			"name": "Command and Conquest 2",
+			"description": "Capture 128 objectives in Conquest.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play Conquest mode and capture objectives by standing in the capture zone.",
+					"Accumulate 128 objective captures — cumulative."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594463/command-and-conquest-2-achievement"
+			}
+		},
+		{
+			"id": "SUPER_BOMB_MAN",
+			"name": "Super Bomb man",
+			"description": "Arm or disarm 5 M-COM explosives in a Multiplayer match.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Play a Rush mode match (M-COM based objective mode).",
+					"Arm or disarm M-COM stations — you need 5 interactions in a single match.",
+					"Use smoke grenades to cover your approach to M-COMs."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594465/super-bomb-man-achievement",
+				"communityNotes": [
+					"Reddit tip: Both arming (attack) and disarming (defense) count. Switch sides to maximize attempts."
+				]
+			}
+		},
+		{
+			"id": "TWELVE_HUNDRED",
+			"name": "1200",
+			"description": "Get 6 sidearm headshot kills in a Multiplayer match.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"In a single multiplayer match, get 6 headshot kills with a sidearm (pistol).",
+					"Use a high-damage pistol. Finish wounded enemies with headshots.",
+					"Play a long match mode like Conquest for more opportunity."
+				],
+				"communityNotes": [
+					"Reddit tip: Weaken enemies with your primary, then switch to pistol for the headshot finish. Very hard to do with pistol alone."
+				]
+			}
+		},
+		{
+			"id": "A_LITTLE_C4",
+			"name": "A Little C-4 Knocking on Your Door",
+			"description": "Deal 2000 damage to enemy vehicles with the Demolition Charge.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Equip Demolition Charges (C4) and stick them on enemy vehicles.",
+					"Deal 2000 cumulative vehicle damage with C4 across all matches.",
+					"Place C4 on roads where vehicles pass and detonate remotely."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594474/a-little-c4-knocking-on-your-door-achievement"
+			}
+		},
+		{
+			"id": "FIRST_BLOOD_2",
+			"name": "First Blood 2",
+			"description": "Perform 10 takedowns in a Multiplayer match.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Get 10 melee takedowns in a single multiplayer match.",
+					"Flank the enemy team and approach from behind for takedown prompts.",
+					"Play Breakthrough on close-quarters maps for best results."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594475/first-blood-2-achievement",
+				"communityNotes": [
+					"Reddit tip: Extremely hard in normal play. Look for AFK/camping players or flank during smoke pushes."
+				]
+			}
+		},
+		{
+			"id": "COLLECTOR",
+			"name": "Collector",
+			"description": "Loot 10 Superior or Unique items.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"In REDSEC (Battle Royale), loot 10 items of Superior or Unique rarity.",
+					"Search supply caches and high-value loot zones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594479/collector-achievement"
+			}
+		},
+		{
+			"id": "MAY_THE_ODDS",
+			"name": "May the Odds Forever Be in Your Favor",
+			"description": "Play 74 matches in any version of Battle Royale.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play 74 matches of REDSEC Battle Royale (any mode: Solo, Duos, Squads).",
+					"You don't need to win — just complete matches."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594477/may-the-odds-forever-be-in-your-favor-achievement"
+			}
+		},
+		{
+			"id": "HERES_YOUR_BIRTHDAY_PRESENT",
+			"name": "Here's Your Birthday Present",
+			"description": "Deploy 42 call-ins.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In REDSEC, use call-in items (airstrikes, supply drops, vehicles) 42 times total.",
+					"Cumulative across all Battle Royale matches."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594478/heres-your-birthday-present-achievement"
+			}
+		},
+		{
+			"id": "STONE_COLD",
+			"name": "Stone Cold",
+			"description": "Stun enemies 316 times in Battle Royale or Gauntlet.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Use stun grenades, flashbangs, or stun-based gadgets to stun enemies.",
+					"Accumulate 316 total stuns across all REDSEC matches."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594480/stone-cold-achievement",
+				"communityNotes": [
+					"Reddit tip: Equip stun grenades every match and throw them into fights. Gauntlet mode may be faster for this."
+				]
+			}
+		},
+		{
+			"id": "RISE_FROM_YOUR_GRAVE",
+			"name": "Rise from Your Grave",
+			"description": "Revive teammates 1988 times in Battle Royale or Gauntlet.",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Revive downed teammates 1988 times total in REDSEC modes.",
+					"Play Duos or Squads for revive opportunities. This is an extreme grind."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594481/rise-from-your-grave-achievement",
+				"warnings": [
+					"One of the hardest grinds — 1988 revives requires hundreds of matches. Queue with friends who are willing to go down."
+				]
+			}
+		},
+		{
+			"id": "ARMY_OF_TWO",
+			"name": "Army of Two",
+			"description": "Win 7 matches in Battle Royale: Duos.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Play REDSEC Battle Royale in Duos mode.",
+					"Win 7 matches — must be #1 placement."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594482/army-of-two-achievement",
+				"communityNotes": [
+					"Reddit tip: Play with a coordinated partner. Stick together and play for endgame positioning."
+				]
+			}
+		},
+		{
+			"id": "NEVER_ENDING_GAME",
+			"name": "Never-Ending Game",
+			"description": "Play 125 rounds of Gauntlet.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Play 125 total rounds of the Gauntlet mode in REDSEC.",
+					"You don't need to win — just play through rounds."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594483/neverending-game-achievement"
+			}
+		},
+		{
+			"id": "EVERYBODY_FIGHTS",
+			"name": "Everybody Fights, Nobody Quits",
+			"description": "Win a Battle Royale match as a full squad with total squad survival.",
+			"type": "standard",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Win a REDSEC Battle Royale Squads match where no squad member is eliminated at any point.",
+					"All teammates must survive from start to finish.",
+					"Play extremely cautiously — avoid early fights and position for endgame."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594484/everybody-fights-nobody-quits-achievement",
+				"communityNotes": [
+					"Reddit tip: Coordinate with a full squad of friends. Play passively, avoid hot drops, and only fight when necessary at the end."
+				],
+				"warnings": [
+					"If ANY squad member goes down at any point during the match, the achievement is voided."
+				]
+			}
+		},
+		{
+			"id": "MISSION_ACCEPTED",
+			"name": "Mission Accepted",
+			"description": "Complete 214 missions in any version of Battle Royale.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"In-match missions appear during REDSEC Battle Royale.",
+					"Complete 214 total missions across all matches — cumulative."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594485/mission-accepted-achievement"
+			}
+		},
+		{
+			"id": "DOG_OF_WAR",
+			"name": "Dog of War",
+			"description": "Collect 9 dog tags in Battle Royale or Gauntlet.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Collect dog tags from eliminated players in REDSEC modes.",
+					"Pick up 9 total across all matches."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594486/dog-of-war-achievement"
+			}
+		},
+		{
+			"id": "MOZAMBIQUE_HERE",
+			"name": "Mozambique Here!",
+			"description": "Ping a Shotgun in Battle Royale.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"In a REDSEC Battle Royale match, find a shotgun on the ground.",
+					"Use the ping/comm system to mark it for your team."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a594487/mozambique-here-achievement"
+			}
+		}
+	]
+}

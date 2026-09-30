@@ -1,0 +1,1003 @@
+{
+	"$schema": "./schema.json",
+	"appId": 1282100,
+	"name": "Remnant II",
+	"totalAchievements": 65,
+	"achievements": [
+		{
+			"id": "THE_KILLING_JAR",
+			"name": "The Killing Jar",
+			"description": "Defeat the Root Mantis.",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Progress through Ward 13 until you reach the tutorial boss area.",
+					"Defeat the Root Mantis — this is the first boss fight in the game."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398513/the-killing-jar-achievement"
+			}
+		},
+		{
+			"id": "FIRST_OF_MANY",
+			"name": "First of Many",
+			"description": "Choose Your First Archetype.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"At the start of the game, pick one of the starter Archetypes: Handler, Hunter, Medic, Challenger, or Gunslinger.",
+					"This unlocks automatically during character creation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398520/first-of-many-achievement"
+			}
+		},
+		{
+			"id": "NOT_YOUR_AVERAGE_TRAIT",
+			"name": "Not Your Average Trait",
+			"description": "Obtain a Non-Starter Trait.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Traits are unlocked by completing specific actions, finding items, or defeating bosses.",
+					"Many can be found naturally during the first world you visit."
+				]
+			}
+		},
+		{
+			"id": "EXPANDING_HORIZONS",
+			"name": "Expanding Horizons",
+			"description": "Craft a Non-Starter Weapon Mod.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Defeat a boss and collect its crafting material.",
+					"Speak to McCabe in Ward 13 and craft a Weapon Mod from boss materials."
+				]
+			}
+		},
+		{
+			"id": "QUEST_FOR_SURVIVAL",
+			"name": "Quest for Survival",
+			"description": "Defeat a World Boss.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Progress through any of the main worlds (Losomn, N'Erud, Yaesha).",
+					"Defeat the final boss of that world to earn this achievement."
+				]
+			}
+		},
+		{
+			"id": "GLEAMING_THE_CUBE",
+			"name": "Gleaming the Cube",
+			"description": "Defeat the Labyrinth Boss.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Progress the main story until you reach the Labyrinth.",
+					"Defeat the Labyrinth Sentinel boss.",
+					"Use cover to avoid its beam attacks and focus fire during vulnerable phases."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398506/gleaming-the-cube-achievement"
+			}
+		},
+		{
+			"id": "BOSS_N_UP",
+			"name": "Boss'n Up",
+			"description": "Craft a Boss Weapon.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Collect a Boss Material drop after defeating any boss.",
+					"Visit McCabe in Ward 13 to craft a weapon using the material plus Lumenite Crystals and Scrap."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398517/bossn-up-achievement"
+			}
+		},
+		{
+			"id": "TRAIT_CHASER",
+			"name": "Trait Chaser",
+			"description": "Upgrade Any Trait to 10.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Earn Trait Points by defeating bosses and leveling up your Archetype.",
+					"Spend 10 points in a single Trait at the Trait menu."
+				]
+			}
+		},
+		{
+			"id": "FAMILIAR_FACE",
+			"name": "Familiar Face",
+			"description": "Meet the Flautist.",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"The Flautist (Pan Flautist) can appear in Yaesha.",
+					"Explore until you encounter them — they play a flute and offer dialogue.",
+					"Due to procedural generation, you may need to reroll Yaesha to find them."
+				],
+				"communityNotes": [
+					"Reddit tip: The Flautist appears in the overworld areas of Yaesha. If you don't see them, reroll Adventure Mode."
+				]
+			}
+		},
+		{
+			"id": "DUALITY",
+			"name": "Duality",
+			"description": "Slot a Second Archetype.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Reach level 10 on your primary Archetype to unlock the second Archetype slot.",
+					"Acquire a second Archetype Engram and equip it in the second slot."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398521/duality-achievement"
+			}
+		},
+		{
+			"id": "NOT_A_JANITOR",
+			"name": "Not a Janitor",
+			"description": "Meet the Custodian.",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Progress through N'Erud until you encounter the Custodian NPC.",
+					"The Custodian appears as part of the N'Erud storyline."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398499/not-a-janitor-achievement"
+			}
+		},
+		{
+			"id": "BLUE_GODDESS",
+			"name": "Blue Goddess",
+			"description": "Meet Nimue.",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Nimue appears in Losomn. She is a large blue figure resting in a chamber.",
+					"Explore Losomn until you find Nimue's Retreat — interact with her."
+				]
+			}
+		},
+		{
+			"id": "MAKE_SOME_ROOM",
+			"name": "Make Some Room",
+			"description": "Upgrade Relic Capacity.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find a Relic Fragment Capacity item (dropped by certain bosses or found in dungeons).",
+					"Use it to increase your maximum relic charges."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398544/make-some-room-achievement"
+			}
+		},
+		{
+			"id": "NOT_SO_SPECIAL_NOW",
+			"name": "Not so special now",
+			"description": "Defeat 100 Special Enemies.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Special enemies are the elite glowing enemies that appear during exploration.",
+					"Defeat 100 of them across all your playthroughs — cumulative."
+				]
+			}
+		},
+		{
+			"id": "GOOD_BUT_COULD_BE_BETTER",
+			"name": "Good, but Could be Better!",
+			"description": "Upgrade a Standard Weapon to +10.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Collect Iron and other upgrade materials from exploring and enemies.",
+					"Visit the upgrade station in Ward 13 and upgrade any standard weapon to +10."
+				]
+			}
+		},
+		{
+			"id": "TOP_PERFORMER",
+			"name": "Top Performer",
+			"description": "Reach Level 10 on Any Archetype.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Play with any Archetype equipped and earn XP from defeating enemies.",
+					"Reaching level 10 unlocks the second Archetype slot and this achievement."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398523/top-performer-achievement"
+			}
+		},
+		{
+			"id": "EQUAL_MEASURES",
+			"name": "Equal Measures",
+			"description": "Receive an Alignment Reading from Meidra.",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find Meidra in Yaesha — she sits in a forest clearing.",
+					"Answer her moral questions to receive an alignment reading (Doe or Ravager)."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398498/equal-measures-achievement",
+				"communityNotes": [
+					"Reddit tip: Your answers determine your alignment (Doe = peaceful, Ravager = aggressive). Each gives a different reward."
+				]
+			}
+		},
+		{
+			"id": "ALMOST_THERE",
+			"name": "Almost There",
+			"description": "Upgrade a Boss Weapon to +5.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Boss weapons require Lumenite Crystals and special materials to upgrade.",
+					"Collect enough materials and upgrade any boss weapon to +5 at Ward 13."
+				]
+			}
+		},
+		{
+			"id": "SHHH_ITS_A_SECRET",
+			"name": "Shhh...It's a Secret",
+			"description": "Obtain a Secret Archetype.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Secret Archetypes include Explorer, Summoner, Archon, and Engineer.",
+					"Each requires finding a specific hidden item and bringing it to Wallace in Ward 13.",
+					"Explorer: complete all main biomes. Archon: requires a very specific gear build."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398522/shhhits-a-secret-achievement",
+				"communityNotes": [
+					"Reddit tip: The Summoner is the easiest secret archetype — buy the Old Whistle from the shop in Yaesha and bring it to Wallace.",
+					"Reddit tip: The Archon requires wearing very specific gear and trait combos simultaneously. Look up the exact setup."
+				]
+			}
+		},
+		{
+			"id": "DARK_DESIGNS",
+			"name": "Dark Designs",
+			"description": "Defeat the Nightweaver.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"The Nightweaver is a boss in Losomn's Tormented Asylum area.",
+					"This is a two-phase fight. Phase 1: fight the shadowy form. Phase 2: fight the physical form.",
+					"Bring fire or bleed damage for extra effectiveness."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398502/dark-designs-achievement"
+			}
+		},
+		{
+			"id": "TRAITOR",
+			"name": "Traitor",
+			"description": "Defeat the Fae Imposter.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"The Fae Imposter (Faelin/Faerin) is a boss in Losomn's Council Chamber.",
+					"You must choose which Fae to side with — the one you oppose becomes the boss.",
+					"Due to procedural generation, you may need to reroll to get this encounter."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398514/traitor-achievement",
+				"communityNotes": [
+					"Reddit tip: Siding with Faelin or Faerin gives different rewards. Reroll Adventure Mode to fight the other one."
+				]
+			}
+		},
+		{
+			"id": "WAS_THIS_SUPPOSED_TO_HAPPEN",
+			"name": "Was This Supposed To Happen?",
+			"description": "Acquire a World Boss's Alternate Reward.",
+			"type": "missable",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Many world bosses have alternate kill methods that yield different loot.",
+					"For example: destroy specific body parts before the boss dies, or complete special conditions.",
+					"Check wiki guides for each boss's alternate reward condition."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398532/was-this-supposed-to-happen-achievement",
+				"communityNotes": [
+					"Reddit tip: The easiest alternate kill is shooting off the Nightweaver's brace during phase 2 before killing her.",
+					"Reddit tip: Most bosses have an alternate — check the Remnant 2 wiki for all alternate kill methods."
+				],
+				"warnings": [
+					"Alternate kills are missable within a run. If you miss it, you must reroll the world/adventure to try again."
+				]
+			}
+		},
+		{
+			"id": "THE_GOD_GAMBIT",
+			"name": "The God Gambit",
+			"description": "Defeat Many Faces.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Many Faces is a boss in Yaesha.",
+					"The fight involves multiple mask phases with different attacks per phase.",
+					"Focus on learning each mask's pattern and adapt your positioning."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398512/the-god-gambit-achievement"
+			}
+		},
+		{
+			"id": "CHAOS",
+			"name": "Chaos",
+			"description": "Defeat the Ravager.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"The Ravager is a wolf-like boss in Yaesha's Forbidden Grove.",
+					"You can choose to fight it, play the lullaby to calm it, or feed it the Doe.",
+					"Each choice gives different rewards and affects the Doe/Ravager storyline."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398501/chaos-achievement",
+				"communityNotes": [
+					"Reddit tip: To get this achievement you MUST fight and kill the Ravager. Don't play the flute or feed it the Doe."
+				],
+				"warnings": [
+					"If you calm the Ravager with the lullaby, you won't get this achievement. You must choose to fight."
+				]
+			}
+		},
+		{
+			"id": "POWER_SURGE",
+			"name": "Power Surge",
+			"description": "Defeat Guardian of N'Erud.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"The Guardian is a major boss in N'Erud.",
+					"This is a large mechanical boss with devastating AoE attacks.",
+					"Stay mobile and target its weak points when exposed."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398509/power-surge-achievement"
+			}
+		},
+		{
+			"id": "THE_WEB",
+			"name": "The Web",
+			"description": "Obtain an Item From the Nightweaver's Web.",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"In Losomn's Tormented Asylum, find the Nightweaver's Web blocking items.",
+					"You need the Stone-Carved Doll to cut through the web.",
+					"Interact with the web while holding the doll to retrieve the item."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398531/the-web-achievement"
+			}
+		},
+		{
+			"id": "AM_I_SEEING_THIS",
+			"name": "Am I Seeing This?",
+			"description": "Defeat 10 Aberrations.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Aberrations are rare, powerful enemies that spawn randomly in dungeons.",
+					"They have a distinctive red/purple aura and are much tougher than normal enemies.",
+					"Defeat 10 total across all playthroughs — cumulative."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398504/am-i-seeing-this-achievement"
+			}
+		},
+		{
+			"id": "GHOST_IN_THE_MACHINE",
+			"name": "Ghost in the Machine",
+			"description": "Defeat 25 Aberrations.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Continue hunting Aberrations across multiple runs.",
+					"They appear more frequently at higher difficulties.",
+					"Defeat 25 total — this takes time as spawns are semi-random."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398505/ghost-in-the-machine-achievement",
+				"communityNotes": [
+					"Reddit tip: Run Apocalypse difficulty dungeons — Aberrations spawn more frequently there.",
+					"Reddit tip: Aberrations can drop rare loot including unique mutators."
+				]
+			}
+		},
+		{
+			"id": "FOREVER_IS_A_LONG_TIME_COMING",
+			"name": "Forever is a Long Time Coming",
+			"description": "Defeat the Final Boss.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete all three main worlds and progress to the final area.",
+					"Defeat Annihilation, the final boss of the base game.",
+					"This is a multi-phase fight — bring your best gear and be patient."
+				],
+				"communityNotes": [
+					"Reddit tip: Annihilation has a devastating teleport + melee combo. Learn the dodge timing or you'll get one-shot.",
+					"Reddit tip: The fight is easier with a team, but solo is very doable with the right build."
+				]
+			}
+		},
+		{
+			"id": "MADMANS_PARADISE",
+			"name": "Madman's Paradise",
+			"description": "Defeat Tal'Ratha.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Tal'Ratha is a boss in N'Erud.",
+					"You can choose to fight Tal'Ratha normally OR let him eat you for an alternate fight (Tal'Ratha Metaphysical).",
+					"Each version drops different rewards."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398507/madmans-paradise-achievement",
+				"communityNotes": [
+					"Reddit tip: Let him eat you for the alternate version — it's a trippy fight and gives a different weapon material."
+				]
+			}
+		},
+		{
+			"id": "SCRAP_COLLECTOR",
+			"name": "Scrap Collector",
+			"description": "Acquire 50,000 Scrap.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Scrap is the main currency — earned from killing enemies and selling items.",
+					"Accumulate 50,000 total (lifetime, not held at once)."
+				]
+			}
+		},
+		{
+			"id": "ALL_THESE_TRAITS",
+			"name": "All These Traits...",
+			"description": "Obtain 10 Traits.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Traits are unlocked by exploring, completing events, and defeating bosses.",
+					"Collect 10 unique traits across your playthroughs."
+				]
+			}
+		},
+		{
+			"id": "BAD_MOON_RISING",
+			"name": "Bad Moon Rising",
+			"description": "Craft an Item at the Blood Moon Altar.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In Losomn, wait for a Blood Moon event (the sky turns red).",
+					"Find the Blood Moon Altar in the Losomn overworld during this event.",
+					"Use Blood Moon Essence (found during Blood Moon) to craft an item."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398534/bad-moon-rising-achievement",
+				"communityNotes": [
+					"Reddit tip: Blood Moons are semi-random. Rest at a checkpoint and re-enter the area to try to trigger one.",
+					"Reddit tip: The Blood Moon Altar sells unique items not available elsewhere."
+				]
+			}
+		},
+		{
+			"id": "THE_AGENDA",
+			"name": "The Agenda",
+			"description": "Discover Leto's Stash.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In Ward 13, find the hidden area behind the shipping containers.",
+					"You need to crouch through a gap and navigate a hidden path to find Leto's Stash."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398516/the-agenda-achievement"
+			}
+		},
+		{
+			"id": "STRAPPED",
+			"name": "Strapped",
+			"description": "Acquire 15 Guns.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Collect 15 unique firearms. Guns are found as loot, crafted from boss materials, or purchased.",
+					"You'll naturally find many across a full playthrough."
+				]
+			}
+		},
+		{
+			"id": "TALL_TALES",
+			"name": "Tall Tales",
+			"description": "Listen to All of Mudtooth's Stories.",
+			"type": "missable",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Mudtooth is an NPC in Ward 13 near the campfire.",
+					"Talk to him repeatedly and exhaust all his stories. There are many — keep talking.",
+					"Each story also rewards a Trait unlock."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398500/tall-tales-achievement",
+				"communityNotes": [
+					"Reddit tip: He has a LOT of stories. Keep sitting down and talking to him until he repeats himself.",
+					"Reddit tip: Some stories only unlock after you've visited certain worlds."
+				]
+			}
+		},
+		{
+			"id": "EDGELORD",
+			"name": "Edgelord",
+			"description": "Acquire 10 Melee Weapons.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Collect 10 unique melee weapons from exploration, boss crafting, and purchases.",
+					"May require multiple playthroughs or Adventure Mode rerolls."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398518/edgelord-achievement"
+			}
+		},
+		{
+			"id": "TRANSMUTATE",
+			"name": "Transmutate",
+			"description": "Upgrade Any Weapon Mutator to +10.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Mutators are attachments that add effects to weapons.",
+					"Upgrade any Mutator to its maximum level (+10) using Lumenite and Scrap."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398545/transmutate-achievement"
+			}
+		},
+		{
+			"id": "THE_ULTIMATE_WEAPON",
+			"name": "The Ultimate Weapon",
+			"description": "Upgrade a Boss Weapon to +10.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Boss weapons require Lumenite Crystals and rare materials to upgrade.",
+					"Max out any boss weapon to +10. This requires significant material farming."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398540/the-ultimate-weapon-achievement"
+			}
+		},
+		{
+			"id": "NO_ONE_SHOULD_HAVE_ALL_THAT_POWER",
+			"name": "No One Should Have All That Power",
+			"description": "Upgrade a Standard Weapon to +20.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Standard weapons go up to +20 using Iron, Forged Iron, Galvanized Iron, and Hardened Iron.",
+					"Higher upgrade tiers require materials from harder difficulty levels.",
+					"You'll likely need to farm Veteran or Apocalypse difficulty for top-tier materials."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398543/no-one-should-have-all-that-power-achievement"
+			}
+		},
+		{
+			"id": "SCRAP_HOARDER",
+			"name": "Scrap Hoarder",
+			"description": "Acquire 100,000 Scrap.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Accumulate 100,000 total Scrap (lifetime earnings).",
+					"Selling duplicate materials and unused items helps speed this up."
+				]
+			}
+		},
+		{
+			"id": "CARNAGE_IN_C_MINOR",
+			"name": "Carnage in C-Minor",
+			"description": "Play a Secret Song on the Water Harp.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"The Water Harp is a puzzle in Losomn.",
+					"You need to find hidden symbols that correspond to the harp's pegs.",
+					"Set the pegs to the correct positions and pull the lever to play the song."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398535/carnage-in-cminor-achievement",
+				"communityNotes": [
+					"Reddit tip: The symbols are found on the walls nearby. The solution varies per playthrough due to procedural generation.",
+					"Reddit tip: Playing the secret song opens a hidden room with unique loot."
+				]
+			}
+		},
+		{
+			"id": "RED_ROOM",
+			"name": "Red Room",
+			"description": "Discover a Blood Moon Room.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"During a Blood Moon event in Losomn, certain doors glow red.",
+					"Enter a glowing red door to discover a Blood Moon Room with unique rewards."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398515/red-room-achievement"
+			}
+		},
+		{
+			"id": "MAXED_OUT",
+			"name": "Maxed Out!",
+			"description": "Acquire the Max Number of Trait Points.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"The max Trait Point cap is 65 (increased from 60 with updates).",
+					"Earn points from Tomes of Knowledge (found in worlds) and beating bosses.",
+					"Requires multiple playthroughs/rerolls to find enough Tomes."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398539/maxed-out-achievement",
+				"communityNotes": [
+					"Reddit tip: Adventure Mode rerolls are the fastest way to farm Tomes of Knowledge. Each world has several."
+				]
+			}
+		},
+		{
+			"id": "ONLY_HUMAN",
+			"name": "Only Human",
+			"description": "Defeat a Boss in Single-Player Without Taking Any Damage.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Must be done solo (no co-op partners).",
+					"Pick an easy boss like the Root Mantis or a mini-boss you're comfortable with.",
+					"Learn the attack patterns completely and defeat it without taking a single hit."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398510/only-human-achievement",
+				"communityNotes": [
+					"Reddit tip: The easiest boss for this is the Root Mantis tutorial fight. Roll a new character to attempt it fresh.",
+					"Reddit tip: Summoner builds can tank hits for you via summons — your character just can't take damage."
+				],
+				"warnings": [
+					"Any damage at all voids the achievement for that fight. Status effects (bleed, burn) also count as damage."
+				]
+			}
+		},
+		{
+			"id": "THE_COLLECTOR",
+			"name": "The Collector",
+			"description": "Acquire 10 Relics.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Relics are special healing items found from bosses, events, and hidden locations.",
+					"Collect 10 unique relics. Requires exploring multiple world variations."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398533/the-collector-achievement"
+			}
+		},
+		{
+			"id": "THE_TRIGGER",
+			"name": "The Trigger",
+			"description": "Acquire 30 Guns.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Collect 30 unique firearms. This requires multiple Campaign and Adventure Mode runs.",
+					"Craft boss weapons and find hidden guns in side dungeons."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398530/the-trigger-achievement"
+			}
+		},
+		{
+			"id": "CUTTING_EDGE",
+			"name": "Cutting Edge",
+			"description": "Acquire 20 Melee Weapons.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Collect 20 unique melee weapons across all runs.",
+					"Boss melee weapons, event rewards, and hidden drops all count.",
+					"Requires thorough exploration and multiple rerolls."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398519/cutting-edge-achievement"
+			}
+		},
+		{
+			"id": "CRAFTY",
+			"name": "Crafty",
+			"description": "Craft 15 Weapon Mods.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft 15 unique Weapon Mods at McCabe's workshop in Ward 13.",
+					"Each boss material can make either a weapon or a mod — choose mods for this achievement."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398537/crafty-achievement"
+			}
+		},
+		{
+			"id": "PROVING_GROUNDS",
+			"name": "Proving Grounds",
+			"description": "Acquire 20 Traits.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Collect 20 unique Traits from events, bosses, puzzles, and NPC interactions.",
+					"Requires thorough exploration and multiple world rerolls."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398526/proving-grounds-achievement"
+			}
+		},
+		{
+			"id": "REGICIDE",
+			"name": "Regicide",
+			"description": "Defeat the One True King.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"The One True King is the final boss of The Awakened King DLC.",
+					"Progress through the DLC storyline in Losomn to reach him.",
+					"This is a challenging multi-phase fight. Bring your best gear."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a413246/regicide-achievement"
+			}
+		},
+		{
+			"id": "A_FOUL_FEAST",
+			"name": "A Foul Feast",
+			"description": "Deliver Leftovers to a Reluctant Recipient.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In The Awakened King DLC, find the Leftovers item.",
+					"Deliver it to the specific NPC who doesn't want it.",
+					"This is an easy-to-miss side event in the DLC."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a413247/a-foul-feast-achievement"
+			}
+		},
+		{
+			"id": "SUCCESSION",
+			"name": "Succession",
+			"description": "Discover the One True Ending.",
+			"type": "missable",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"In The Awakened King DLC, there are multiple ending choices.",
+					"To get the 'One True Ending', you must make a specific choice regarding the King's crown.",
+					"Check guides for the exact dialogue/item choices needed."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a413248/succession-achievement",
+				"warnings": [
+					"Missable — if you make the wrong choice you must reroll to try again."
+				]
+			}
+		},
+		{
+			"id": "MASTER_OF_THE_DARK_ARTS",
+			"name": "Master of the Dark Arts",
+			"description": "Acquire the Ritualist Archetype.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"The Ritualist is unlocked in The Awakened King DLC.",
+					"Find the Ragged Poppet item in the DLC areas.",
+					"Bring it to Wallace in Ward 13 to unlock the Ritualist Archetype."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a413249/master-of-the-dark-arts-achievement"
+			}
+		},
+		{
+			"id": "YOU_SHALL_PASS",
+			"name": "You Shall Pass",
+			"description": "Acquire a Reward from the Bridge Warden.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In The Awakened King DLC, find the Bridge Warden NPC.",
+					"Complete their challenge or puzzle to receive a reward."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a413250/you-shall-pass-achievement"
+			}
+		},
+		{
+			"id": "REQUIEM_OF_THE_FORGOTTEN_KINGDOM",
+			"name": "Requiem of the Forgotten Kingdom",
+			"description": "Complete the Forgotten Kingdom Story.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play through The Forgotten Kingdom DLC from start to finish.",
+					"Complete the main storyline set in the new Yaesha area."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a431710/requiem-of-the-forgotten-kingdom-achievement"
+			}
+		},
+		{
+			"id": "THANK_YOU_FOR_BEING_A_FRIEND",
+			"name": "Thank You For Being a Friend",
+			"description": "Forge a Friendship.",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"In The Forgotten Kingdom DLC, interact with and befriend a specific NPC.",
+					"Follow the friendship questline to completion."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a431711/thank-you-for-being-a-friend-achievement"
+			}
+		},
+		{
+			"id": "THE_BURDEN_HARDEST_TO_BEAR",
+			"name": "The Burden Hardest to Bear",
+			"description": "Made a Difficult Choice.",
+			"type": "missable",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In The Forgotten Kingdom DLC, you're presented with a major moral choice.",
+					"Make the 'difficult' choice — this is the less obvious/harder path."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a431712/the-burden-hardest-to-bear-achievement",
+				"warnings": [
+					"Missable — if you choose the other option, you must reroll the DLC."
+				]
+			}
+		},
+		{
+			"id": "MASTER_OF_ELEMENTS",
+			"name": "Master of Elements",
+			"description": "Acquire the Invoker Archetype.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"The Invoker is unlocked in The Forgotten Kingdom DLC.",
+					"Find the Spirit Staff Old Growth item in the DLC.",
+					"Bring it to Wallace in Ward 13 to unlock the Invoker Archetype."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a431713/master-of-elements-achievement"
+			}
+		},
+		{
+			"id": "TRIPLE_TAKEOVER",
+			"name": "Triple Takeover",
+			"description": "Acquire the Trinity Crossbow.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"In The Forgotten Kingdom DLC, find three hidden crossbow parts scattered across the area.",
+					"Combine them to create the Trinity Crossbow.",
+					"Each part is in a separate hidden location — explore thoroughly."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a431714/triple-takeover-achievement",
+				"communityNotes": [
+					"Reddit tip: The crossbow parts are well hidden. Use the interactive map or a video guide to find all three."
+				]
+			}
+		},
+		{
+			"id": "THE_ULTIMATE_DOOM",
+			"name": "The Ultimate Doom",
+			"description": "Complete The Dark Horizon Story.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play through The Dark Horizon DLC storyline from start to finish.",
+					"Complete the main quest in the new N'Erud area."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a449113/the-ultimate-doom-achievement"
+			}
+		},
+		{
+			"id": "THE_MASTER_BUILDER",
+			"name": "The Master Builder",
+			"description": "Fulfill Spark's Mission.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In The Dark Horizon DLC, find the NPC named Spark.",
+					"Complete their questline to fulfill their mission."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a449114/the-master-builder-achievement"
+			}
+		},
+		{
+			"id": "BOT",
+			"name": "B.O.T.",
+			"description": "Find the Good in the Prototype.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In The Dark Horizon DLC, locate the Prototype NPC.",
+					"Complete the interactions needed to 'find the good' in it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a449115/bot-achievement"
+			}
+		},
+		{
+			"id": "MASTER_OF_TECHNOLOGY",
+			"name": "Master of Technology",
+			"description": "Acquire the Warden Archetype.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"The Warden is unlocked in The Dark Horizon DLC.",
+					"Find the required Engram item in the DLC area.",
+					"Bring it to Wallace in Ward 13 to unlock the Warden Archetype."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a449116/master-of-technology-achievement"
+			}
+		},
+		{
+			"id": "STILL_NOT_A_JANITOR",
+			"name": "Still Not a Janitor",
+			"description": "Hear the Custodian's Confession.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In The Dark Horizon DLC, find and interact with the Custodian again.",
+					"Exhaust all dialogue to hear their confession."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a449117/still-not-a-janitor-achievement",
+				"communityNotes": [
+					"Reddit tip: You must have met the Custodian in the base game N'Erud first. Then revisit them in The Dark Horizon."
+				]
+			}
+		}
+	]
+}

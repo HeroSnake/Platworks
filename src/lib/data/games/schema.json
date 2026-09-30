@@ -1,0 +1,51 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"required": ["appId", "name", "totalAchievements", "achievements"],
+	"properties": {
+		"appId": { "type": "integer" },
+		"name": { "type": "string" },
+		"totalAchievements": { "type": "integer" },
+		"achievements": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"required": ["id", "name", "description", "type", "difficulty", "guide"],
+				"properties": {
+					"id": { "type": "string" },
+					"name": { "type": "string" },
+					"description": { "type": "string" },
+					"type": {
+						"type": "string",
+						"enum": ["standard", "missable", "multiplayer", "cumulative", "secret"]
+					},
+					"difficulty": {
+						"type": "string",
+						"enum": ["easy", "medium", "hard", "very-hard"]
+					},
+					"guide": {
+						"type": "object",
+						"required": ["steps"],
+						"properties": {
+							"steps": {
+								"type": "array",
+								"items": { "type": "string" },
+								"minItems": 1
+							},
+							"videoUrl": { "type": "string", "format": "uri" },
+							"sourceUrl": { "type": "string", "format": "uri" },
+							"communityNotes": {
+								"type": "array",
+								"items": { "type": "string" }
+							},
+							"warnings": {
+								"type": "array",
+								"items": { "type": "string" }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

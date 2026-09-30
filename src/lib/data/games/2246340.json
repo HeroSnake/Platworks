@@ -1,0 +1,851 @@
+{
+	"$schema": "./schema.json",
+	"appId": 2246340,
+	"name": "Monster Hunter Wilds",
+	"totalAchievements": 50,
+	"achievements": [
+		{
+			"id": "WINDWARD_LANDS",
+			"name": "Windward Lands",
+			"description": "Completed mission: The Desert Trotters.",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Progress through the main story until you reach the Windward Plains.",
+					"Complete the assigned mission 'The Desert Trotters' to unlock this achievement."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468853/windward-lands-achievement"
+			}
+		},
+		{
+			"id": "GIANT_CROWN",
+			"name": "Giant Crown",
+			"description": "Obtained your first silver crown or higher in the Hunting Log.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Hunt large monsters repeatedly — crown sizes are randomized per encounter.",
+					"Check the Hunting Log after each hunt. A silver or gold crown icon next to a monster means it was an unusually large specimen.",
+					"This will happen naturally as you play; no special setup needed."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468845/giant-crown-achievement"
+			}
+		},
+		{
+			"id": "THE_BIGGER_THEY_ARE",
+			"name": "The Bigger They Are...",
+			"description": "Successfully mounted a monster for the first time.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Attack a monster while jumping off a ledge or slope to trigger a mount.",
+					"Alternatively, use aerial attacks or the Insect Glaive vault to land on a monster.",
+					"Once mounted, follow the on-screen prompts to hold on and attack."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468841/the-bigger-they-are-achievement"
+			}
+		},
+		{
+			"id": "SHADOW_IN_THE_DOWNPOUR",
+			"name": "Shadow in the Downpour",
+			"description": "Completed mission: Beyond the Deluge.",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Progress the main story until you reach the Scarlet Forest region.",
+					"Complete the story mission 'Beyond the Deluge'."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468844/shadow-in-the-downpour-achievement"
+			}
+		},
+		{
+			"id": "THE_HUNT_IS_ON",
+			"name": "The Hunt Is On!",
+			"description": "Completed your first Field Survey.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Field Surveys become available early in the game from the Quest Board.",
+					"Accept and complete any Field Survey quest to unlock this achievement."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468851/the-hunt-is-on-achievement"
+			}
+		},
+		{
+			"id": "WAS_IT_A_MEAL_TO_REMEMBER",
+			"name": "Was It a Meal to Remember?",
+			"description": "Cooked over the BBQ Grill for the first time.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Open your item pouch and select Raw Meat.",
+					"Use the BBQ Spit from your item bar in any map.",
+					"Wait for the cooking animation — you don't need a well-done steak, any result counts."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468848/was-it-a-meal-to-remember-achievement"
+			}
+		},
+		{
+			"id": "HUNTERS_UNITED",
+			"name": "Hunters United",
+			"description": "Completed a quest via multiplayer.",
+			"type": "multiplayer",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Join or create a multiplayer session from the Quest Board.",
+					"Complete any quest with at least one other player in your party."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468849/hunters-united-achievement",
+				"communityNotes": [
+					"Reddit tip: You can fire an SOS Flare during a quest to let random players join, or join others' SOS quests from the board."
+				]
+			}
+		},
+		{
+			"id": "GUARDIANS_OF_THE_FORGE",
+			"name": "Guardians of the Forge",
+			"description": "Completed mission: Long-forgotten Flame.",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Continue the main story past the Scarlet Forest.",
+					"Complete the story mission 'Long-forgotten Flame'."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468842/guardians-of-the-forge-achievement"
+			}
+		},
+		{
+			"id": "A_STEP_TOWARD_MUTUAL_UNDERSTANDING",
+			"name": "A Step Toward Mutual Understanding",
+			"description": "Completed your first side mission.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Side missions appear as speech bubble icons on the map and in camp.",
+					"Talk to the NPC offering the mission and complete its objective."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468843/a-step-toward-mutual-understanding-achievement"
+			}
+		},
+		{
+			"id": "BRINGER_OF_HARMONY",
+			"name": "Bringer of Harmony",
+			"description": "Completed mission: Monster Hunter.",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Progress through the main story campaign.",
+					"Complete the mission 'Monster Hunter' — this is a major story milestone."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468840/bringer-of-harmony-achievement"
+			}
+		},
+		{
+			"id": "HIT_EM_WHERE_IT_HURTS",
+			"name": "Hit 'Em Where It Hurts!",
+			"description": "Landed 50 successful attacks on weak points or wounds in Focus Mode.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Enter Focus Mode by pressing the designated button during combat.",
+					"Aim for glowing weak points or wound marks on the monster.",
+					"Land 50 total Focus Mode hits on weak points across all hunts — this is cumulative."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468846/hit-em-where-it-hurts-achievement",
+				"communityNotes": [
+					"Reddit tip: Wound a monster part first with wound-capable attacks, then Focus Mode attacks on wounds count. You'll get this naturally within a few hunts."
+				]
+			}
+		},
+		{
+			"id": "NEW_ECOSYSTEMS",
+			"name": "New Ecosystems",
+			"description": "Completed mission: New Ecosystems.",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Continue the main story after reaching the Oilwell Basin.",
+					"Complete the story mission 'New Ecosystems'."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468839/new-ecosystems-achievement"
+			}
+		},
+		{
+			"id": "HUNTER_ASSASSIN",
+			"name": "Hunter-Assassin",
+			"description": "Performed your first successful Sneak Attack.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Crouch and approach a monster from behind or while it is sleeping.",
+					"When the Sneak Attack prompt appears, press the attack button to perform it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468862/hunterassassin-achievement",
+				"communityNotes": [
+					"Reddit tip: Easiest on sleeping monsters. Crouch with your weapon sheathed and approach from behind."
+				]
+			}
+		},
+		{
+			"id": "ANGLING_FOR_A_BITE",
+			"name": "Angling for a Bite",
+			"description": "Successfully fished for the first time.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find a fishing spot (rippling water with fish visible) in any map.",
+					"Interact with the spot to cast your line and catch any fish."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468850/angling-for-a-bite-achievement"
+			}
+		},
+		{
+			"id": "RIDE_OR_DIE_COMPANION",
+			"name": "Ride-or-die Companion",
+			"description": "Customized your Seikret or changed its decorations for the first time.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Go to the Seikret customization station in the main hub.",
+					"Change any cosmetic option — color, equipment, or decorations — and confirm."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468852/rideordie-companion-achievement"
+			}
+		},
+		{
+			"id": "A_BITTER_ENVIRONMENT",
+			"name": "A Bitter Environment",
+			"description": "Completed mission: Wyvern Sparks and Rose Thorns.",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Progress the main story into the Iceshard Peaks area.",
+					"Complete the story mission 'Wyvern Sparks and Rose Thorns'."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468855/a-bitter-environment-achievement"
+			}
+		},
+		{
+			"id": "A_TRUE_HUNTER_IS_NEVER_SATISFIED",
+			"name": "A True Hunter Is Never Satisfied",
+			"description": "Completed 50 quests.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Complete any 50 quests — story missions, side missions, investigations, and field surveys all count.",
+					"Track your total in the Guild Card or quest log."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468858/a-true-hunter-is-never-satisfied-achievement"
+			}
+		},
+		{
+			"id": "BEYOND_THE_BLACK_WINGS",
+			"name": "Beyond the Black Wings",
+			"description": "Completed mission: A World Turned Upside Down.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Continue the main story to its climactic chapter.",
+					"Complete the story mission 'A World Turned Upside Down'.",
+					"This is a challenging late-game fight — ensure your gear is upgraded."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468856/beyond-the-black-wings-achievement"
+			}
+		},
+		{
+			"id": "LET_THE_INVESTIGATIONS_BEGIN",
+			"name": "Let the Investigations Begin!",
+			"description": "Completed your first investigation.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Investigations unlock by collecting monster tracks and traces in the field.",
+					"Check the Quest Board for available investigations and complete any one."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468859/let-the-investigations-begin-achievement"
+			}
+		},
+		{
+			"id": "ONE_CORNER_OF_THE_WORLD",
+			"name": "One Corner of the World",
+			"description": "Completed mission: What Lies Ahead.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"This is the final main story mission.",
+					"Complete 'What Lies Ahead' to finish the main campaign and unlock this achievement."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468857/one-corner-of-the-world-achievement",
+				"communityNotes": [
+					"Reddit tip: This unlocks the endgame and HR uncap. Make sure to watch the credits for the achievement to pop."
+				]
+			}
+		},
+		{
+			"id": "CAMPMASTER",
+			"name": "Campmaster",
+			"description": "Established Pop-up Camps in 10 places.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"While exploring maps, look for Pop-up Camp sites (marked with a tent icon when discovered).",
+					"Interact with the site and place a camp.",
+					"Establish 10 camps total across all maps."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468867/campmaster-achievement",
+				"communityNotes": [
+					"Reddit tip: Camp locations are scattered across all maps. Explore thoroughly during Fallow and Plenty periods — some sites only appear in specific weather."
+				]
+			}
+		},
+		{
+			"id": "IMPREGNABLE_DEFENSE",
+			"name": "Impregnable Defense",
+			"description": "Forged five different pieces of armor with Rarity 7 or higher.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Hunt high-rank or endgame monsters to gather materials for Rarity 7+ armor.",
+					"Visit the Smithy and forge five distinct armor pieces of Rarity 7 or above.",
+					"They don't need to be from the same set — mix and match freely."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468869/impregnable-defense-achievement"
+			}
+		},
+		{
+			"id": "MONSTER_SLAYER",
+			"name": "Monster Slayer",
+			"description": "Hunted 100 large monsters.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Hunt any large monsters — both kills and captures count toward this total.",
+					"Track your progress in the Hunting Log under total hunts.",
+					"You'll likely reach this naturally while working toward crown achievements."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468883/monster-slayer-achievement"
+			}
+		},
+		{
+			"id": "MONSTER_PHD",
+			"name": "Monster Ph.D.",
+			"description": "Hunted many different large monsters.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Hunt at least one of every available large monster species in the game.",
+					"Check the Hunting Log to see which monsters you haven't hunted yet.",
+					"Some monsters only appear in specific quests or conditions."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468875/monster-phd-achievement",
+				"communityNotes": [
+					"Reddit tip: The exact requirement is typically all large monsters in the base game. Check your Hunting Log for any with 0 hunts."
+				]
+			}
+		},
+		{
+			"id": "A_LEGACY_RESTORED",
+			"name": "A Legacy Restored",
+			"description": "Obtained an Artian Weapon of Rarity 8.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Artian weapons are endgame craftables requiring rare materials from tempered monsters and special drops.",
+					"Farm tempered monsters and endgame investigations for Artian materials.",
+					"Visit the Smithy and forge any Artian weapon to Rarity 8."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468872/a-legacy-restored-achievement",
+				"communityNotes": [
+					"Reddit tip: Artian weapons require 'Ancient Texts' found from endgame investigation rewards. Focus on high-rank tempered investigations.",
+					"Reddit tip: The Artian tree is hidden until you collect your first Ancient Text material — it won't appear at the Smithy before that."
+				],
+				"warnings": [
+					"Artian materials are rare drops — expect some grind. Use Lucky Cat food skill to improve drop rates."
+				]
+			}
+		},
+		{
+			"id": "GLAMPER",
+			"name": "Glamper",
+			"description": "Customized a Pop-up Camp for the first time.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Establish at least one Pop-up Camp in any map first.",
+					"Access the camp customization menu and change any decoration or layout."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468847/glamper-achievement"
+			}
+		},
+		{
+			"id": "MINIATURE_CROWN",
+			"name": "Miniature Crown",
+			"description": "Obtained your first miniature crown in the Hunting Log.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Hunt large monsters — each has a randomized size per encounter.",
+					"An unusually small specimen will award a miniature crown in the Hunting Log.",
+					"This happens naturally over time. Investigations with gold/silver reward boxes have better crown chances."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468877/miniature-crown-achievement"
+			}
+		},
+		{
+			"id": "POWER_IS_EVERYTHING",
+			"name": "Power Is Everything",
+			"description": "Forged five different weapons with Rarity 7 or higher.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Collect materials from high-rank and endgame monsters.",
+					"Forge five different weapons of Rarity 7 or higher at the Smithy.",
+					"Weapons from different trees all count — doesn't need to be same weapon type."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468870/power-is-everything-achievement"
+			}
+		},
+		{
+			"id": "ESTABLISHED_HUNTER",
+			"name": "Established Hunter",
+			"description": "Reached Hunter Rank 100.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Hunter Rank is uncapped after completing the main story.",
+					"Continue completing quests — each gives HR experience points.",
+					"Focus on high-rank investigations and tempered monster hunts for the most HR XP."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468868/established-hunter-achievement",
+				"communityNotes": [
+					"Reddit tip: Tempered investigations give significantly more HR XP than regular quests. Spam tempered Elder Dragon investigations for the fastest grind.",
+					"Reddit tip: You can also gain HR passively from multiplayer — joining SOS quests is efficient."
+				]
+			}
+		},
+		{
+			"id": "SEASONED_HUNTER",
+			"name": "Seasoned Hunter",
+			"description": "Hunted 50 tempered monsters.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Tempered monsters become available in the endgame through special investigations.",
+					"Collect tempered monster tracks in high-rank expeditions to unlock tempered investigations.",
+					"Hunt 50 tempered monsters total — any species counts."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468876/seasoned-hunter-achievement",
+				"communityNotes": [
+					"Reddit tip: Tempered monsters have purple aura and hit harder but give better rewards. They start appearing after you complete the main story."
+				]
+			}
+		},
+		{
+			"id": "BOURGEOIS_HUNTER",
+			"name": "Bourgeois Hunter",
+			"description": "Possessed 1,000,000 zenny.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Accumulate 1,000,000 zenny in your wallet at one time (not lifetime earnings).",
+					"Sell excess monster materials and trade-in items to build up funds.",
+					"Avoid spending on unnecessary upgrades while saving toward this goal."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468873/bourgeois-hunter-achievement",
+				"communityNotes": [
+					"Reddit tip: Bandit Mantle and selling materials from endgame hunts makes this trivial. You can also sell excess decorations."
+				]
+			}
+		},
+		{
+			"id": "SOMEONE_WORTH_FOLLOWING",
+			"name": "Someone Worth Following",
+			"description": "Completed 100 quests with your Palico deployed.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Ensure your Palico is set to deploy before each quest (it should be by default).",
+					"Complete 100 quests of any type with your Palico in the party.",
+					"This stacks naturally — just don't dismiss your Palico."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468871/someone-worth-following-achievement",
+				"warnings": [
+					"If you frequently play 4-player multiplayer, your Palico may not deploy. Solo and 2-player hunts always include Palicos."
+				]
+			}
+		},
+		{
+			"id": "MMM_SO_TASTY",
+			"name": "Mmm, So Tasty!",
+			"description": "Successfully cooked a well-done steak for the first time.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Use Raw Meat on the BBQ Spit from your item bar.",
+					"Watch the meat and listen for the jingle — press the button right when the music hits its peak and the meat turns golden brown.",
+					"The timing is when the handle turns and the hunter does the signature arm pump."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468861/mmm-so-tasty-achievement",
+				"communityNotes": [
+					"Reddit tip: Classic MH timing — listen for the jingle, not the visuals. Press the button right when the 4th note plays."
+				]
+			}
+		},
+		{
+			"id": "EAST_TO_WEST",
+			"name": "East to West, A Hunter Never Rests",
+			"description": "Completed 30 different side missions.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Side missions are given by NPCs in camps and hub areas (speech bubble icons).",
+					"Complete 30 unique side missions — replaying the same one doesn't count.",
+					"Check all regions regularly as new side missions unlock with story progress and HR."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468860/east-to-west-a-hunter-never-rests-achievement"
+			}
+		},
+		{
+			"id": "HUNTERS_UNITED_FOREVER",
+			"name": "Hunters United Forever",
+			"description": "Completed 100 quests via multiplayer.",
+			"type": "multiplayer",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete any 100 quests in multiplayer mode — join SOS flares or play with friends.",
+					"All quest types count: story, investigations, field surveys, and events."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468885/hunters-united-forever-achievement",
+				"communityNotes": [
+					"Reddit tip: This stacks with other cumulative achievements. Joining SOS quests is the fastest way to grind this."
+				]
+			}
+		},
+		{
+			"id": "NEWLY_FORGED_BONDS",
+			"name": "Newly Forged Bonds",
+			"description": "Followed someone for the first time.",
+			"type": "multiplayer",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"After completing a multiplayer quest, view another player's Hunter Profile.",
+					"Select the 'Follow' option on their profile."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468887/newly-forged-bonds-achievement"
+			}
+		},
+		{
+			"id": "CAPTURE_PRO",
+			"name": "Capture Pro",
+			"description": "Captured 50 monsters.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Weaken a monster until it starts limping (skull icon on minimap when using research).",
+					"Place a Shock Trap or Pitfall Trap under the monster.",
+					"Throw 2 Tranq Bombs at the trapped monster to capture it.",
+					"Repeat for 50 total captures across all hunts."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468882/capture-pro-achievement",
+				"communityNotes": [
+					"Reddit tip: Capturing gives more materials than carving in most cases, so this pairs well with farming. Always bring traps and tranqs."
+				]
+			}
+		},
+		{
+			"id": "A_PRIZE_HELD_HIGH",
+			"name": "A Prize Held High",
+			"description": "Caught a creature that bears an ancient wyvern coin.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Look for rare endemic life creatures that carry ancient wyvern coins — these are special golden creatures.",
+					"They spawn rarely in specific locations. Use the binoculars to scout from elevated positions.",
+					"Approach carefully and capture with your net."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468863/a-prize-held-high-achievement",
+				"communityNotes": [
+					"Reddit tip: These golden creatures tend to spawn during Plenty weather phases. Check elevated areas and near water sources.",
+					"Reddit tip: The creature can despawn if you get too close too fast — crouch and approach slowly."
+				],
+				"warnings": [
+					"Very rare spawn — may take multiple expeditions. Don't rush the approach or it will flee."
+				]
+			}
+		},
+		{
+			"id": "I_CAUGHT_A_SHOOTING_STAR",
+			"name": "I Caught a Shooting Star!",
+			"description": "Caught a creature in the desert that shines like a shooting star.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Go to the Windward Plains at night during clear weather.",
+					"Look for a small glowing creature that streaks across the sand like a shooting star.",
+					"Approach carefully while crouching and capture it with your net."
+				],
+				"communityNotes": [
+					"Reddit tip: This creature only spawns at night in the Windward Plains. Look in the open desert areas — it moves fast and glows brightly.",
+					"Reddit tip: Some players report it spawns more frequently during specific weather transitions. Keep checking across multiple expeditions."
+				],
+				"warnings": [
+					"Extremely rare spawn. Night-only in the Windward Plains. The creature moves quickly so be ready with your net."
+				]
+			}
+		},
+		{
+			"id": "A_KEEN_EYED_OBSERVATION",
+			"name": "A Keen-eyed Observation",
+			"description": "Used the binoculars to spot a gold-crown large monster.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Equip your binoculars from the item bar.",
+					"Look at a large monster through the binoculars — if it's gold-crown sized, the achievement unlocks.",
+					"Best combined with investigations that have gold reward boxes for higher crown chances."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468838/a-keeneyed-observation-achievement",
+				"communityNotes": [
+					"Reddit tip: You can tell a monster is gold crown before engaging — use binoculars from far away. If you've already hunted gold crowns, you know what size to look for."
+				]
+			}
+		},
+		{
+			"id": "TOP_OF_THE_FOOD_CHAIN",
+			"name": "Top of the Food Chain",
+			"description": "Hunted 50 apex predators.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Apex predators are the top-tier monsters in each ecosystem (Elder Dragons and equivalents).",
+					"Hunt 50 of them total through investigations, events, and optional quests.",
+					"These are endgame monsters — come prepared with maxed gear and appropriate elemental resistances."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468884/top-of-the-food-chain-achievement",
+				"communityNotes": [
+					"Reddit tip: Tempered Elder Dragons count and are the most efficient way to grind this since they also give HR XP and rare drops."
+				]
+			}
+		},
+		{
+			"id": "GIANT_CROWN_COLLECTOR",
+			"name": "Giant Crown Collector",
+			"description": "Obtained a gold crown for 10 or more monsters in the Hunting Log.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Hunt monsters repeatedly — each encounter has a random size that may produce a gold crown (largest).",
+					"Investigations with gold and silver reward boxes have significantly higher crown chances.",
+					"Obtain gold (large) crowns for 10 different monster species."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468880/giant-crown-collector-achievement",
+				"communityNotes": [
+					"Reddit tip: Event quests often guarantee or greatly boost crown chances. Check the event schedule for crown-hunting quests.",
+					"Reddit tip: Measure the monster with binoculars before engaging — learn to eyeball crown sizes to save time."
+				]
+			}
+		},
+		{
+			"id": "MONSTER_SQUID_HUNTER",
+			"name": "Monster (Squid) Hunter",
+			"description": "Caught a giant squid while fishing.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Fish at designated fishing spots — the giant squid appears rarely at specific locations.",
+					"When hooked, the giant squid puts up a significant fight. Follow the reel-in prompts carefully.",
+					"Be patient and don't force the line or it will snap."
+				],
+				"communityNotes": [
+					"Reddit tip: The giant squid spawns at deep water fishing spots. Look for an unusually large shadow in the water.",
+					"Reddit tip: Use the strongest bait available. The fight takes a while — watch your line tension carefully."
+				],
+				"warnings": [
+					"The squid can break your line if you reel too aggressively. Match the directional inputs and only reel when the tension indicator is safe."
+				]
+			}
+		},
+		{
+			"id": "MINIATURE_CROWN_COLLECTOR",
+			"name": "Miniature Crown Collector",
+			"description": "Obtained a miniature crown for 10 or more monsters in the Hunting Log.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Hunt monsters repeatedly — miniature crowns are awarded for unusually small specimens.",
+					"Investigations with gold/silver reward boxes have better crown odds.",
+					"Collect miniature crowns for 10 different monster species."
+				],
+				"communityNotes": [
+					"Reddit tip: Miniature crowns can be harder to spot than gold crowns. Use binoculars to gauge size before committing to a hunt.",
+					"Reddit tip: Event quests with guaranteed crowns are the best shortcut for both mini and gold crowns."
+				]
+			}
+		},
+		{
+			"id": "EXPLORER_OF_THE_EASTLANDS",
+			"name": "Explorer of the Eastlands",
+			"description": "Obtained 10 different special items of Rarity 6.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Rarity 6 special items are rare collectibles found across all regions of the Forbidden Lands.",
+					"Explore thoroughly during expeditions — check gather points, hidden areas, and rare endemic life.",
+					"Some Rarity 6 items come from completing specific side missions or investigations."
+				],
+				"communityNotes": [
+					"Reddit tip: Many of these items are tied to rare gathering points that only appear during specific weather conditions. Explore during Plenty and Inclemency phases.",
+					"Reddit tip: The Geologist skill can help you gather more items per node, increasing your chances at rare drops."
+				]
+			}
+		},
+		{
+			"id": "GOSSIP_HUNTER",
+			"name": "Gossip Hunter",
+			"description": "Viewed 30 different Hunter Profiles.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"After multiplayer quests, view other hunters' profiles from the results screen or player list.",
+					"View 30 unique Hunter Profiles — repeats don't count.",
+					"You can also view profiles from the hub social area."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a468886/gossip-hunter-achievement",
+				"communityNotes": [
+					"Reddit tip: Join SOS quests frequently and view every player's profile after each hunt. This takes care of itself if you do multiplayer regularly."
+				]
+			}
+		},
+		{
+			"id": "A_FISH_IONADO",
+			"name": "A-fish-ionado",
+			"description": "Reeled in 30 whoppers while fishing.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Fish at various spots across all maps — whoppers are the largest fish at each location.",
+					"Look for the biggest shadows or splashes when choosing which fish to target.",
+					"Reel in 30 whoppers total across all fishing sessions."
+				],
+				"communityNotes": [
+					"Reddit tip: Whoppers are the large fish that put up more of a fight when reeling in. Each fishing spot has different whopper species.",
+					"Reddit tip: Craft or buy the best bait to attract larger fish. Patience at each spot pays off."
+				]
+			}
+		},
+		{
+			"id": "GIANT_CROWN_MASTER",
+			"name": "Giant Crown Master",
+			"description": "Obtained a gold crown for many monsters in the Hunting Log.",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Obtain gold (large) crowns for all or nearly all large monsters in the game.",
+					"Focus on investigations with gold/silver reward boxes for the best crown chances.",
+					"Event quests that feature multiple monsters often have boosted crown rates.",
+					"Track your progress in the Hunting Log — check which species still need a gold crown."
+				],
+				"videoUrl": "https://www.youtube.com/results?search_query=monster+hunter+wilds+gold+crown+guide",
+				"communityNotes": [
+					"Reddit tip: This is the hardest grind in the game. Crown RNG can be brutal. Event quests are your best friend.",
+					"Reddit tip: Learn to eyeball crown sizes with binoculars. If a monster looks noticeably bigger than usual, commit to the hunt.",
+					"Reddit tip: Some players report 200+ hours just for crown achievements. Don't burn yourself out — mix in other activities."
+				],
+				"warnings": [
+					"This is heavily RNG-dependent. No guaranteed way to force gold crowns outside of event quests. Expect a very long grind."
+				]
+			}
+		},
+		{
+			"id": "MINIATURE_CROWN_MASTER",
+			"name": "Miniature Crown Master",
+			"description": "Obtained a miniature crown for many monsters in the Hunting Log.",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Obtain miniature crowns for all or nearly all large monsters in the game.",
+					"Investigations with gold/silver reward boxes offer the best crown chances.",
+					"Combine this grind with the Giant Crown Master — hunt the same investigations for both.",
+					"Track missing crowns in the Hunting Log."
+				],
+				"communityNotes": [
+					"Reddit tip: Mini crowns can feel even rarer than gold crowns for some monsters. Don't neglect event quests — they're the most reliable source.",
+					"Reddit tip: If a monster looks comically small compared to your character, that's your mini crown. Use binoculars to confirm before committing."
+				],
+				"warnings": [
+					"Same heavy RNG grind as Giant Crown Master. Work on both crown types simultaneously to save time."
+				]
+			}
+		},
+		{
+			"id": "EASTWARD_WINGS",
+			"name": "Eastward Wings",
+			"description": "Obtained all other achievements.",
+			"type": "standard",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete all 49 other achievements in the game.",
+					"The crown achievements (Giant Crown Master, Miniature Crown Master) will be the final bottleneck for most players.",
+					"This achievement unlocks automatically once all others are earned."
+				],
+				"communityNotes": [
+					"Reddit tip: Estimated 80-100 hours for full completion. The crown grind is the majority of that time.",
+					"Reddit tip: Plan your route: finish the story, then do multiplayer/cumulative achievements while farming crowns."
+				],
+				"warnings": [
+					"Requires Hunters United Forever (100 multiplayer quests) — make sure to play online regularly throughout your playthrough."
+				]
+			}
+		}
+	]
+}

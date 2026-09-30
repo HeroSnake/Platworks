@@ -1,0 +1,1171 @@
+{
+	"$schema": "./schema.json",
+	"appId": 1623730,
+	"name": "Palworld",
+	"totalAchievements": 75,
+	"achievements": [
+		{
+			"id": "BEGINNING_OF_THE_LEGEND",
+			"name": "Beginning of the Legend",
+			"description": "Caught your first Pal.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Pick up a Pal Sphere from the starting area or craft one with Paldium Fragments and Wood.",
+					"Throw the sphere at any wild Pal to capture it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a422657/beginning-of-the-legend-achievement"
+			}
+		},
+		{
+			"id": "NEWBIE_PAL_TAMER",
+			"name": "Newbie Pal Tamer",
+			"description": "Caught 10 kinds of Pals.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Capture 10 unique Pal species — duplicates don't count.",
+					"Explore the starting areas around the Plateau of Beginnings for variety."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a422663/newbie-pal-tamer-achievement"
+			}
+		},
+		{
+			"id": "INTERMEDIATE_PAL_TAMER",
+			"name": "Intermediate Pal Tamer",
+			"description": "Caught 20 kinds of Pals.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Continue exploring and capturing unique Pal species.",
+					"Venture into forests and coastlines for new types."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a422664/intermediate-pal-tamer-achievement"
+			}
+		},
+		{
+			"id": "SKILLED_PAL_TAMER",
+			"name": "Skilled Pal Tamer",
+			"description": "Caught 50 kinds of Pals.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Explore multiple biomes — forest, desert, volcano, snow — to find unique species.",
+					"Use the Paldeck to track which species you're missing.",
+					"Craft better spheres (Mega, Giga) to capture higher-level Pals."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a422665/skilled-pal-tamer-achievement"
+			}
+		},
+		{
+			"id": "SEASONED_PAL_TAMER",
+			"name": "Seasoned Pal Tamer",
+			"description": "Caught 90 kinds of Pals.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"You'll need to visit every biome and explore dungeons for rare species.",
+					"Night-only and weather-specific Pals exist — check different times of day.",
+					"Some Pals are only obtainable through breeding."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a422666/seasoned-pal-tamer-achievement",
+				"communityNotes": [
+					"Reddit tip: Use the interactive map at palworld.gg to locate specific species you're missing."
+				]
+			}
+		},
+		{
+			"id": "EXCEPTIONAL_PAL_TAMER",
+			"name": "Exceptional Pal Tamer",
+			"description": "Caught 140 kinds of Pals.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"This requires capturing the vast majority of Pal species in the game.",
+					"You'll need access to endgame areas including Sakurajima and Feybreak regions.",
+					"Breed fusion Pals and capture legendaries to fill out your Paldeck."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a437723/exceptional-pal-tamer-achievement",
+				"communityNotes": [
+					"Reddit tip: Many rare Pals only spawn in specific dungeons or at specific times. Cross-reference the Paldeck with the wiki for exact locations."
+				]
+			}
+		},
+		{
+			"id": "OVERHUNTING",
+			"name": "Overhunting",
+			"description": "Caught 1000 Pals.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Capture 1000 total Pals (any species, duplicates count).",
+					"Focus on low-level Pals in high-density areas for speed.",
+					"Set up a Pal Sphere factory at your base for a steady supply."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a437724/overhunting-achievement",
+				"communityNotes": [
+					"Reddit tip: The area around the starting plateau is great for mass captures. Lamballs and Cattivas spawn in huge numbers.",
+					"Reddit tip: Capturing gives bonus XP for the first 10 of each species, so try new species first."
+				]
+			}
+		},
+		{
+			"id": "INHUMAN_ACT",
+			"name": "Inhuman Act",
+			"description": "Caught a Human.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Weaken any human NPC (merchant, guard, wanderer) in combat.",
+					"Throw a Pal Sphere at the weakened human to capture them."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a437725/inhuman-act-achievement",
+				"communityNotes": [
+					"Reddit tip: Capturing humans gives a wanted level. Do this at a remote location to avoid trouble.",
+					"Reddit tip: Merchants are easy targets — lure them away from settlements first."
+				],
+				"warnings": [
+					"Capturing humans raises your wanted level. Be prepared to evade or fight PIDF guards."
+				]
+			}
+		},
+		{
+			"id": "HILLSIDE_SOVEREIGN",
+			"name": "Hillside Sovereign",
+			"description": "Defeat Zoe & Grizzbolt.",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Travel to the Rayne Syndicate Tower on the plateau (Tower of the Rayne Syndicate).",
+					"Defeat the boss duo Zoe & Grizzbolt. Recommended level: 15+.",
+					"Bring Ice-type Pals for an elemental advantage against Grizzbolt (Electric)."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a422658/hillside-sovereign-achievement"
+			}
+		},
+		{
+			"id": "FOREST_SOVEREIGN",
+			"name": "Forest Sovereign",
+			"description": "Defeat Lily & Lyleen.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Travel to the Tower of the Free Pal Alliance in the forest biome.",
+					"Defeat Lily & Lyleen. Recommended level: 25+.",
+					"Bring Fire-type Pals for advantage against Lyleen (Grass)."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a422659/forest-sovereign-achievement"
+			}
+		},
+		{
+			"id": "DESERT_SOVEREIGN",
+			"name": "Desert Sovereign",
+			"description": "Defeat Marcus & Faleris.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Travel to the Tower of the Brothers of the Eternal Pyre in the desert.",
+					"Defeat Marcus & Faleris. Recommended level: 35+.",
+					"Bring Water-type Pals for advantage against Faleris (Fire)."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a422660/desert-sovereign-achievement"
+			}
+		},
+		{
+			"id": "VOLCANO_SOVEREIGN",
+			"name": "Volcano Sovereign",
+			"description": "Defeat Axel & Orserk.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Travel to the Tower of the PIDF in the volcanic region.",
+					"Defeat Axel & Orserk. Recommended level: 40+.",
+					"Bring Ground-type Pals to counter Orserk (Electric/Dragon)."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a422661/volcano-sovereign-achievement"
+			}
+		},
+		{
+			"id": "ASTRAL_SOVEREIGN",
+			"name": "Astral Sovereign",
+			"description": "Defeat Victor & Shadowbeak.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Travel to the PAL Genetic Research Unit Tower in the snowy mountains.",
+					"Defeat Victor & Shadowbeak. Recommended level: 48+.",
+					"Bring Dragon-type Pals for the fight. Stock up on healing items."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a422662/astral-sovereign-achievement",
+				"communityNotes": [
+					"Reddit tip: This is the hardest base-game tower boss. Max out your best Pals and bring a full team of 5."
+				]
+			}
+		},
+		{
+			"id": "BLOSSOM_SOVEREIGN",
+			"name": "Blossom Sovereign",
+			"description": "Defeat Saya & Selyne.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Travel to the tower in the Sakurajima region.",
+					"Defeat Saya & Selyne. Recommended level: 45+."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a437721/blossom-sovereign-achievement"
+			}
+		},
+		{
+			"id": "FEYBREAK_SOVEREIGN",
+			"name": "Feybreak Sovereign",
+			"description": "Defeat Bjorn & Bastigor.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Travel to the tower in the Feybreak region.",
+					"Defeat Bjorn & Bastigor. Recommended level: 50+.",
+					"This is one of the hardest tower bosses — bring your strongest team."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a461834/feybreak-sovereign-achievement"
+			}
+		},
+		{
+			"id": "SUNREACH_SOVEREIGN",
+			"name": "Sunreach Sovereign",
+			"description": "Defeat Auri & Shaolong.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Travel to the tower in the Sunreach region (1.0 content).",
+					"Defeat Auri & Shaolong. Recommended level: 50+."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a649165/sunreach-sovereign-achievement"
+			}
+		},
+		{
+			"id": "LEGENDARY_CELESTIAL_DRAGON",
+			"name": "Legendary Celestial Dragon",
+			"description": "Capture a Jetragon.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Jetragon spawns at the volcanic area on the western edge of the map (coordinates ~-790, -320).",
+					"It is a level 50 legendary — bring your strongest team and Legendary Spheres.",
+					"Weaken it significantly before attempting capture. Ice-type moves are effective."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a437726/legendary-celestial-dragon-achievement",
+				"communityNotes": [
+					"Reddit tip: Jetragon is the fastest flying mount in the game. Absolutely worth the effort to capture.",
+					"Reddit tip: Save before the fight. Legendary Spheres have low capture rates even on weakened legendaries."
+				]
+			}
+		},
+		{
+			"id": "HOLY_KNIGHT_OF_LEGEND",
+			"name": "Holy Knight of Legend",
+			"description": "Capture a Paladius.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Paladius roams in the snowy mountain region near the northern part of the map.",
+					"It is a level 50 legendary. Bring Dark-type Pals for advantage.",
+					"Use Legendary Spheres for the best capture rate."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a437727/holy-knight-of-legend-achievement"
+			}
+		},
+		{
+			"id": "DARK_KNIGHT_OF_LEGEND",
+			"name": "Dark Knight of Legend",
+			"description": "Capture a Necromus.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Necromus roams in the desert region near the southeastern part of the map.",
+					"It is a level 50 legendary. Bring Dragon-type Pals.",
+					"Use Legendary Spheres. Save before attempting capture."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a437728/dark-knight-of-legend-achievement"
+			}
+		},
+		{
+			"id": "LEGENDARY_STEED_OF_ICE",
+			"name": "Legendary Steed of Ice",
+			"description": "Capture a Frostallion.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Frostallion spawns in the far northwest snowy region of the map.",
+					"It is a level 50 legendary. Bring Fire-type Pals for advantage.",
+					"Use Legendary Spheres and save before the fight."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a437729/legendary-steed-of-ice-achievement",
+				"communityNotes": [
+					"Reddit tip: Frostallion is one of the best flying mounts. Capturing it is a priority for endgame mobility."
+				]
+			}
+		},
+		{
+			"id": "LEGENDARY_OCEAN_KING",
+			"name": "Legendary Ocean King",
+			"description": "Catch a Panthalus.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Panthalus is a legendary ocean Pal added in the 1.0 update.",
+					"It spawns in deep ocean areas. You'll need a water mount to reach it.",
+					"Use Legendary Spheres and bring Electric-type Pals."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a649166/legendary-ocean-king-achievement"
+			}
+		},
+		{
+			"id": "TWILIGHT_SIREN",
+			"name": "Twilight Siren",
+			"description": "Capture a summoned Bellanoir.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Build a Summoning Altar at your base.",
+					"Use Bellanoir Slabs (4 required) to summon Bellanoir.",
+					"Defeat Bellanoir in the raid, then capture it with spheres."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a430346/twilight-siren-achievement",
+				"communityNotes": [
+					"Reddit tip: Bellanoir Slabs drop from dungeon bosses. Farm dungeons to stock up before attempting the raid."
+				]
+			}
+		},
+		{
+			"id": "ECLIPSED_SIREN",
+			"name": "Eclipsed Siren",
+			"description": "Defeat a summoned Bellanoir Libero.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Build a Summoning Altar and use Bellanoir Libero Slabs (4 required).",
+					"Bellanoir Libero is significantly harder than regular Bellanoir — bring a full squad of max-level Pals.",
+					"Defeat it to unlock the achievement (capture optional)."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a430347/eclipsed-siren-achievement",
+				"communityNotes": [
+					"Reddit tip: Do this in co-op if possible. Solo is very difficult without optimized Pals."
+				]
+			}
+		},
+		{
+			"id": "INCARNATION_OF_THE_ETERNAL_FLAME",
+			"name": "Incarnation of the Eternal Flame",
+			"description": "Defeat a summoned Blazamut Ryu.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Use the Summoning Altar with Blazamut Ryu Slabs to summon this raid boss.",
+					"Bring Water-type Pals and a full team of high-level combatants.",
+					"This is an endgame raid boss — co-op recommended."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a437722/incarnation-of-the-eternal-flame-achievement"
+			}
+		},
+		{
+			"id": "INVADER_FROM_SPACE",
+			"name": "Invader from Space",
+			"description": "Defeat a summoned Xenolord.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Summon Xenolord using the Summoning Altar with appropriate slabs.",
+					"This is an extremely tough raid boss from the Feybreak update.",
+					"Bring your absolute best team. Co-op strongly recommended."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a461835/invader-from-space-achievement"
+			}
+		},
+		{
+			"id": "KING_OF_SALVATION",
+			"name": "King of Salvation",
+			"description": "Defeat a summoned Hartalis.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Summon Hartalis using the Summoning Altar with Hartalis Slabs.",
+					"This is a tough raid boss added in the Home Sweet Home update.",
+					"Bring a diverse team to handle its moveset."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a611309/king-of-salvation-achievement"
+			}
+		},
+		{
+			"id": "PREDATOR_HUNTER",
+			"name": "Predator Hunter",
+			"description": "Defeat a Predator Pal.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Predator Pals are special aggressive variants that appear in the wild with a red aura.",
+					"They are tougher than normal Pals. Engage with a strong team and defeat one."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a471143/predator-hunter-achievement"
+			}
+		},
+		{
+			"id": "NO_FLY_ZONE",
+			"name": "No-Fly Zone",
+			"description": "Defeat Attack Chopper.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"The Attack Chopper is a rare enemy encounter that can appear during PIDF raids on your base.",
+					"Alternatively, it can spawn during endgame content.",
+					"Use ranged weapons and Flying-type Pals to bring it down."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a471145/nofly-zone-achievement",
+				"communityNotes": [
+					"Reddit tip: The chopper is very tanky. Rocket launchers and high-level Pals with ranged attacks are essential."
+				]
+			}
+		},
+		{
+			"id": "SAVIOR_OF_PALPAGOS",
+			"name": "Savior of Palpagos",
+			"description": "Defeat Astralym.",
+			"type": "secret",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Astralym is the final boss of the 1.0 story, found inside the World Tree.",
+					"You must progress the full story and reach the World Tree first.",
+					"Bring your absolute best team — this is the hardest fight in the game."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a649168/savior-of-palpagos-achievement",
+				"communityNotes": [
+					"Reddit tip: Max out your Pals' ranks and bring a variety of types. The boss has multiple phases."
+				],
+				"warnings": [
+					"This is the final story boss. Make sure you're fully prepared before entering the World Tree."
+				]
+			}
+		},
+		{
+			"id": "TO_THE_WORLD_TREE",
+			"name": "To the World Tree",
+			"description": "Set foot within the World Tree.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Progress through the main story until the World Tree becomes accessible.",
+					"Travel to and enter the World Tree area."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a649167/to-the-world-tree-achievement"
+			}
+		},
+		{
+			"id": "CHAMPION_OF_THE_PALPAGOS_ISLANDS",
+			"name": "Champion of the Palpagos Islands",
+			"description": "Defeat 6 tower bosses in Hard Mode.",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"After clearing all tower bosses on Normal, Hard Mode becomes available.",
+					"Defeat all 6 tower bosses again on Hard Mode difficulty.",
+					"Hard Mode bosses have significantly more HP and hit harder — bring max-rank Pals."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a437739/champion-of-the-palpagos-islands-achievement",
+				"communityNotes": [
+					"Reddit tip: Hard Mode tower bosses are no joke. Focus on elemental advantages and bring full teams of condensed Pals."
+				]
+			}
+		},
+		{
+			"id": "FRESHMAN_SURVEYOR",
+			"name": "Freshman Surveyor",
+			"description": "Found 10 new areas.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Explore the map and discover named locations.",
+					"Fast Travel points and landmarks count as discoveries."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a471140/freshman-surveyor-achievement"
+			}
+		},
+		{
+			"id": "JUNIOR_SURVEYOR",
+			"name": "Junior Surveyor",
+			"description": "Found 30 new areas.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Continue exploring — visit new biomes, dungeons, and landmarks.",
+					"Check the map for undiscovered fast travel points."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a471141/junior-surveyor-achievement"
+			}
+		},
+		{
+			"id": "SENIOR_SURVEYOR",
+			"name": "Senior Surveyor",
+			"description": "Found 70 new areas.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Discover 70 unique named locations across the entire map.",
+					"Use flying mounts to reach remote islands and mountain peaks.",
+					"Some areas only become accessible as you level up and progress the story."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a471142/senior-surveyor-achievement"
+			}
+		},
+		{
+			"id": "SUCCESSFUL_INFILTRATION",
+			"name": "Successful Infiltration",
+			"description": "Cleared 1 enemy faction base.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find an enemy faction base on the map (marked with red icons).",
+					"Defeat all enemies inside to clear the base."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a575035/successful-infiltration-achievement"
+			}
+		},
+		{
+			"id": "UNSTOPPABLE_STREAK",
+			"name": "Unstoppable Streak",
+			"description": "Cleared 10 enemy faction bases.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Clear 10 different enemy faction bases across the map.",
+					"Bases respawn after a while, but you need unique base clears."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a575036/unstoppable-streak-achievement"
+			}
+		},
+		{
+			"id": "CONQUEROR_OF_THE_SEA",
+			"name": "Conqueror of the Sea",
+			"description": "Seized the Oil Rig.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Travel to the Oil Rig located in the ocean (northeast of the map).",
+					"You'll need a flying or swimming mount to reach it.",
+					"Clear all enemies inside the Oil Rig to seize it. Recommended level: 40+."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a437737/conqueror-of-the-sea-achievement",
+				"communityNotes": [
+					"Reddit tip: The Oil Rig has tough PIDF soldiers and turrets. Bring strong combat Pals and good weapons."
+				]
+			}
+		},
+		{
+			"id": "SENIOR_ADVENTURER",
+			"name": "Senior Adventurer",
+			"description": "Cleared 20 dungeons.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Dungeons are marked as cave entrances on the map.",
+					"Enter and defeat the boss at the end to count as cleared.",
+					"Clear 20 total dungeons — the same dungeon entrance can respawn with a new layout."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a437736/senior-adventurer-achievement"
+			}
+		},
+		{
+			"id": "IRON_HEART",
+			"name": "Iron Heart",
+			"description": "Crafted 10,000 ingots.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Build multiple Furnaces or Improved Furnaces at your base.",
+					"Assign Pals with Kindling work suitability to automate smelting.",
+					"Mine ore and feed it into furnaces — this total is cumulative across your entire playthrough."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a437742/iron-heart-achievement",
+				"communityNotes": [
+					"Reddit tip: Set up an automated mining + smelting pipeline. Pals with Mining and Kindling skills keep it running AFK."
+				]
+			}
+		},
+		{
+			"id": "SPHERE_CRAFTSMAN",
+			"name": "Sphere Craftsman",
+			"description": "Crafted 2,000 spheres.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft any type of Pal Sphere — basic spheres count and are cheapest.",
+					"Use a Sphere Assembly Line with Pals assigned for automation.",
+					"This is cumulative — you'll naturally reach it while playing."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a437740/sphere-craftsman-achievement"
+			}
+		},
+		{
+			"id": "BLOOD_AND_IRON",
+			"name": "Blood and Iron",
+			"description": "Crafted 20,000 ammo.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Craft ammunition at a Weapons Assembly Line.",
+					"Assign Pals with Handiwork to automate production.",
+					"Basic ammo is cheapest to mass produce. This is cumulative across your playthrough."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a437743/blood-and-iron-achievement",
+				"communityNotes": [
+					"Reddit tip: Coarse Ammo is the cheapest. Set up an assembly line and let it run while you do other things."
+				]
+			}
+		},
+		{
+			"id": "ALL_FOR_ONE",
+			"name": "All for One",
+			"description": "Maximized the rank of a Pal.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Condense (rank up) a Pal by feeding it 4 copies of itself at the Condenser.",
+					"Each condensation requires one duplicate. Max rank needs 4 total condensations.",
+					"Farm or breed duplicates of a common Pal for the easiest path."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a437734/all-for-one-achievement",
+				"communityNotes": [
+					"Reddit tip: Lamballs are the easiest to max rank — they're everywhere and breed fast."
+				]
+			}
+		},
+		{
+			"id": "VOICE_OF_RESENTMENT",
+			"name": "Voice of Resentment",
+			"description": "Maximized the rank of 5 Pals.",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Max the rank of 5 different Pal species via the Condenser.",
+					"Each Pal needs 4 duplicates condensed, so you need 20 duplicates total (5 species × 4 each).",
+					"Focus on common Pals and set up breeding farms."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a437735/voice-of-resentment-achievement",
+				"communityNotes": [
+					"Reddit tip: Breed a ton of common Pals like Lamball, Cattiva, Chikipi. Use a large breeding farm setup for efficiency."
+				]
+			}
+		},
+		{
+			"id": "BEST_FRIENDS_FOREVER",
+			"name": "Best Friends Forever",
+			"description": "Reached Trust level 10 with a Pal.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Keep a Pal in your active party and use it frequently in combat.",
+					"Feed and pet your Pals to increase trust.",
+					"Trust increases over time as you adventure with a Pal — be patient."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a575034/best-friends-forever-achievement"
+			}
+		},
+		{
+			"id": "MEDDLING_WITH_MUTATION",
+			"name": "Meddling With Mutation",
+			"description": "Mutated a Pal for the first time.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Mutations are a 1.0 feature. Build the Mutation Station at your base.",
+					"Use the required materials and a Pal to perform a mutation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a649162/meddling-with-mutation-achievement"
+			}
+		},
+		{
+			"id": "HIDDEN_POTENTIAL",
+			"name": "Hidden Potential",
+			"description": "Awakened a Pal for the first time.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Awakening is a 1.0 feature. Build the Awakening Station.",
+					"Use the required materials and a Pal to perform an awakening."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a649163/hidden-potential-achievement"
+			}
+		},
+		{
+			"id": "PAL_LABOR_STUDENT",
+			"name": "Pal Labor Student",
+			"description": "Completed 10 Pal Labor Research projects.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Access the Pal Labor Research menu from your base.",
+					"Complete 10 research projects by assigning Pals to tasks."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a471135/pal-labor-student-achievement"
+			}
+		},
+		{
+			"id": "PAL_LABOR_RESEARCHER",
+			"name": "Pal Labor Researcher",
+			"description": "Completed 30 Pal Labor Research projects.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Continue completing Pal Labor Research projects.",
+					"Some projects require specific Pal types or higher-level facilities."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a471136/pal-labor-researcher-achievement"
+			}
+		},
+		{
+			"id": "PAL_LABOR_PROFESSOR",
+			"name": "Pal Labor Professor",
+			"description": "Completed 70 Pal Labor Research projects.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete 70 Pal Labor Research projects — this requires significant base development.",
+					"Upgrade facilities and unlock new research tiers as you progress."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a471137/pal-labor-professor-achievement"
+			}
+		},
+		{
+			"id": "NOVICE_PAL_DISPATCHER",
+			"name": "Novice Pal Dispatcher",
+			"description": "Undertook 10 Pal Expeditions.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Build the Expedition Board at your base.",
+					"Send Pals on 10 expeditions. They'll return with materials and loot."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a471138/novice-pal-dispatcher-achievement"
+			}
+		},
+		{
+			"id": "ELITE_PAL_DISPATCHER",
+			"name": "Elite Pal Dispatcher",
+			"description": "Undertook 20 Pal Expeditions.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Continue sending Pals on expeditions until you reach 20 total.",
+					"Use the Expedition Board regularly — expeditions complete over time."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a471139/elite-pal-dispatcher-achievement"
+			}
+		},
+		{
+			"id": "NOVICE_ANGLER",
+			"name": "Novice Angler",
+			"description": "Reeled in 10 Pals.",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Build a Fishing Rod and fish at any body of water.",
+					"Reel in 10 Pals through fishing."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a575028/novice-angler-achievement"
+			}
+		},
+		{
+			"id": "SEASONED_ANGLER",
+			"name": "Seasoned Angler",
+			"description": "Reeled in 30 Pals.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Continue fishing to reel in 30 total Pals.",
+					"Different fishing spots yield different Pal species."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a575029/seasoned-angler-achievement"
+			}
+		},
+		{
+			"id": "VETERAN_ANGLER",
+			"name": "Veteran Angler",
+			"description": "Reeled in 50 Pals.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Fish at various locations until you've reeled in 50 Pals total.",
+					"Upgrade your fishing rod for better results at higher-level spots."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a575030/veteran-angler-achievement"
+			}
+		},
+		{
+			"id": "LUNKER_HUNTER",
+			"name": "Lunker Hunter",
+			"description": "Reeled in 1 Lunker.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Lunkers are rare, large catches when fishing.",
+					"Use high-quality fishing rods and fish at premium spots for better chances.",
+					"When you hook a Lunker, the fishing minigame is harder — pay close attention."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a575031/lunker-hunter-achievement"
+			}
+		},
+		{
+			"id": "SILVER_CHAMP",
+			"name": "Silver Champ",
+			"description": "Reached Silver Rank in the Arena.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Access the Arena through the Arena NPC.",
+					"Win Arena battles to increase your rank to Silver."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a575032/silver-champ-achievement"
+			}
+		},
+		{
+			"id": "ARENA_CHAMPION",
+			"name": "Arena Champion",
+			"description": "Reached Master Rank in the Arena.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Continue winning Arena battles past Silver and Gold ranks.",
+					"Reaching Master requires a strong, well-composed team of Pals."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a575033/arena-champion-achievement"
+			}
+		},
+		{
+			"id": "ARENA_LEGEND",
+			"name": "Arena Legend",
+			"description": "Reached Legend rank in the Arena.",
+			"type": "standard",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Push past Master rank to reach the highest Arena rank: Legend.",
+					"You'll need optimized Pals with max condensation and perfect skills.",
+					"Study opponent team compositions and counter them."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a649164/arena-legend-achievement",
+				"communityNotes": [
+					"Reddit tip: Arena Legend is the rarest achievement in the game (0.4%). You need perfectly built Pals with ideal passive skills."
+				],
+				"warnings": [
+					"This is the hardest achievement in the game. Requires deep knowledge of Pal team building and combat mechanics."
+				]
+			}
+		},
+		{
+			"id": "ROOKIE_PAL_SLAYER",
+			"name": "Rookie Pal Slayer",
+			"description": "Obtain 5 Pal Bounty Tokens.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Pal Bounty Tokens are earned by defeating bounty target Pals.",
+					"Check bounty boards at settlements for available targets.",
+					"Collect 5 tokens total."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a575038/rookie-pal-slayer-achievement"
+			}
+		},
+		{
+			"id": "ALPHA_PAL_SLAYER",
+			"name": "Alpha Pal Slayer",
+			"description": "Obtain 20 Pal Bounty Tokens.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Continue completing bounties until you've collected 20 Pal Bounty Tokens.",
+					"Higher-difficulty bounties may give more tokens."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a575039/alpha-pal-slayer-achievement"
+			}
+		},
+		{
+			"id": "A_NOSE_FOR_TREASURE",
+			"name": "A Nose for Treasure",
+			"description": "Found 5 treasures with Treasure Maps.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Treasure Maps drop from enemies and chests.",
+					"Open a Treasure Map from your inventory to reveal a dig location.",
+					"Travel to the marked spot and dig up the treasure. Do this 5 times."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a575037/a-nose-for-treasure-achievement"
+			}
+		},
+		{
+			"id": "TRAIL_OF_THE_CASTAWAY",
+			"name": "Trail of the Castaway",
+			"description": "Obtained 40 Notes.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Notes are collectible lore items scattered across the map.",
+					"They glow and are found near landmarks, ruins, and camps.",
+					"Collect 40 total — use an interactive map to locate them all."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a437731/trail-of-the-castaway-achievement",
+				"communityNotes": [
+					"Reddit tip: Many notes are well-hidden. Use palworld.gg interactive map to find all note locations."
+				]
+			}
+		},
+		{
+			"id": "PALPAGOS_GURU",
+			"name": "Palpagos Guru",
+			"description": "Obtained 50 Lifmunk Effigies.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Lifmunk Effigies are green glowing statues scattered across the world.",
+					"Collect 50 of them — they're often on rooftops, cliffs, and treetops.",
+					"Turn them in at a Statue of Power to increase your capture rate."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a437733/palpagos-guru-achievement"
+			}
+		},
+		{
+			"id": "PALPAGOS_GUARDIAN",
+			"name": "Palpagos Guardian",
+			"description": "Obtained 100 Lifmunk Effigies.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Collect 100 Lifmunk Effigies across the entire map.",
+					"Use a flying mount to systematically sweep each region.",
+					"An interactive map is almost essential for finding them all."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a471133/palpagos-guardian-achievement",
+				"communityNotes": [
+					"Reddit tip: There are over 100 effigies in the world. Fly low and slow over each area — they glow green at night."
+				]
+			}
+		},
+		{
+			"id": "FOREST_GURU",
+			"name": "Forest Guru",
+			"description": "Obtained 20 Lamball Effigies.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Lamball Effigies are collectibles found in the Forest region (1.0 content).",
+					"Collect 20 of them throughout the area.",
+					"Use an interactive map for locations."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a649149/forest-guru-achievement"
+			}
+		},
+		{
+			"id": "VOLCANO_GURU",
+			"name": "Volcano Guru",
+			"description": "Obtained 20 Pengullet Effigies.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Pengullet Effigies are collectibles in the Volcano region.",
+					"Collect 20. Bring heat-resistant armor for the volcanic area."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a649150/volcano-guru-achievement"
+			}
+		},
+		{
+			"id": "DESERT_GURU",
+			"name": "Desert Guru",
+			"description": "Obtained 20 Munchill Effigies.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Munchill Effigies are collectibles in the Desert region.",
+					"Collect 20. Bring heat-resistant gear."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a649151/desert-guru-achievement"
+			}
+		},
+		{
+			"id": "SNOWY_MOUNTAIN_GURU",
+			"name": "Snowy Mountain Guru",
+			"description": "Obtained 20 Rooby Effigies.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Rooby Effigies are collectibles in the Snowy Mountain region.",
+					"Collect 20. Bring cold-resistant armor."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a649153/snowy-mountain-guru-achievement"
+			}
+		},
+		{
+			"id": "SAKURAJIMA_GURU",
+			"name": "Sakurajima Guru",
+			"description": "Obtained 20 Herbil Effigies.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Herbil Effigies are collectibles in the Sakurajima region.",
+					"Collect 20 throughout the island."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a649154/sakurajima-guru-achievement"
+			}
+		},
+		{
+			"id": "FEYBREAK_GURU",
+			"name": "Feybreak Guru",
+			"description": "Obtained 20 Tanzee Effigies.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Tanzee Effigies are collectibles in the Feybreak region.",
+					"Collect 20 throughout the area."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a649155/feybreak-guru-achievement"
+			}
+		},
+		{
+			"id": "SUNREACH_GURU",
+			"name": "Sunreach Guru",
+			"description": "Obtained 20 Depresso Effigies.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Depresso Effigies are collectibles in the Sunreach region.",
+					"Collect 20 throughout the area."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a649156/sunreach-guru-achievement"
+			}
+		},
+		{
+			"id": "WORLD_TREE_GURU",
+			"name": "World Tree Guru",
+			"description": "Obtained 20 Cattiva Effigies.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Cattiva Effigies are collectibles in the World Tree region.",
+					"Collect 20 throughout the area."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a649157/world-tree-guru-achievement"
+			}
+		},
+		{
+			"id": "FOREST_TRAVELER",
+			"name": "Forest Traveler",
+			"description": "Obtained 4 Lunaris Effigies.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Lunaris Effigies are rare collectibles in the Forest region.",
+					"Find and collect 4 of them."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a649158/forest-traveler-achievement"
+			}
+		},
+		{
+			"id": "ISLAND_TRAVELER",
+			"name": "Island Traveler",
+			"description": "Obtained 4 Relaxaurus Effigies.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Relaxaurus Effigies are rare collectibles found on islands.",
+					"You'll need a flying mount to reach some of the island locations.",
+					"Find and collect 4 of them."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a649160/island-traveler-achievement"
+			}
+		},
+		{
+			"id": "WORLD_TRAVELER",
+			"name": "World Traveler",
+			"description": "Obtained 4 Yakumo Effigies.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Yakumo Effigies are rare collectibles scattered across the world.",
+					"Find and collect 4 of them."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a649161/world-traveler-achievement"
+			}
+		}
+	]
+}
