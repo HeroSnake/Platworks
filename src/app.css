@@ -23,6 +23,11 @@
 	overflow: hidden;
 }
 
+/* Never animate a closed panel's row track */
+.expand-panel:not([data-open="true"]) {
+	transition: none;
+}
+
 /* Check icon pulse */
 @keyframes check-pop {
 	0% { transform: scale(1); }
@@ -54,7 +59,18 @@
 	-webkit-tap-highlight-color: transparent;
 }
 
-/* Layout containment for list items */
+/* Skip layout + paint for off-screen rows.
+   `auto <size>` makes the browser remember each row's real height after the
+   first time it is rendered, so the scrollbar does not jump while estimating. */
 .achievement-item {
-	contain: layout style;
+	content-visibility: auto;
+	contain-intrinsic-size: auto 76px;
+}
+
+/* Promote the sticky nav and mobile bar to their own layers so scrolling the
+   long achievement list never repaints them. */
+.sticky-nav,
+.fixed-bottom-bar {
+	will-change: transform;
+	backface-visibility: hidden;
 }

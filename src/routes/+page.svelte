@@ -210,7 +210,7 @@
 </div>
 
 <!-- Mobile bottom bar -->
-<div class="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-steam-dark/95 backdrop-blur-md sm:hidden">
+<div class="fixed-bottom-bar fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-steam-dark/95 backdrop-blur-md sm:hidden">
 	{#if showSearch}
 		<div class="border-b border-white/5 px-4 py-2.5">
 			<div class="flex items-center gap-2 rounded-lg bg-steam-blue px-3 py-2">

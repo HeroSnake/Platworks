@@ -40,9 +40,12 @@
 		localStorage.setItem(`platworks:lastChecked:${data.game.appId}`, String(Date.now()));
 	}
 
-	function getSteamId(): string {
-		if (!browser) return '';
-		return localStorage.getItem('platworks:steamId') ?? '';
+	// Read once into reactive state — the template previously called
+	// getSteamId() inline, which hit localStorage on every re-render.
+	let steamId = $state(loadSteamId());
+
+	function loadSteamId(): string {
+		return browser ? (localStorage.getItem('platworks:steamId') ?? '') : '';
 	}
 
 	let achievedMap = $derived.by(() => {
@@ -59,7 +62,7 @@
 	}
 
 	async function syncWithSteam() {
-		const sid = getSteamId();
+		const sid = steamId;
 		if (!sid) {
 			syncError = 'Set your Steam ID in the account menu (top right)';
 			return;
@@ -148,10 +151,20 @@
 	<title>{data.steam?.name ?? data.game.name} — PlatWorks</title>
 </svelte:head>
 
-<div class="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed"
-	style:background-image={data.steam?.background ? `url(${data.steam.background})` : 'none'}
->
-	<div class="min-h-screen bg-steam-dark/90 backdrop-blur-sm bg-fixed">
+<div class="relative min-h-screen">
+	<!-- Fixed background layer. Using `position: fixed` (instead of bg-fixed on a
+	     full-page element) plus a plain overlay keeps the visual result while
+	     avoiding a full-viewport repaint on every scroll frame. -->
+	<div class="pointer-events-none fixed inset-0 z-0" aria-hidden="true">
+		{#if data.steam?.background}
+			<div class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+				style:background-image="url({data.steam.background})"
+			></div>
+		{/if}
+		<div class="absolute inset-0 bg-steam-dark/90"></div>
+	</div>
+
+	<div class="relative z-10">
 		<div class="mx-auto max-w-4xl px-4 pb-16 pt-4 sm:pt-8">
 			<!-- Back link (desktop only — mobile uses navbar back arrow + bottom bar home) -->
 			<a href="/" class="mb-6 hidden items-center gap-1.5 text-sm text-gray-400 hover:text-steam-accent sm:inline-flex">
@@ -183,7 +196,7 @@
 						</span>
 					{/if}
 
-					{#if !getSteamId()}
+					{#if !steamId}
 						<span class="flex items-center gap-1.5 rounded bg-yellow-900/50 px-2 py-1 text-xs text-yellow-300">
 							<WifiOff class="h-3.5 w-3.5" />
 							<span class="hidden sm:inline">Set your Steam ID to sync (top right)</span>
@@ -203,8 +216,8 @@
 					</div>
 					<div class="h-3 overflow-hidden rounded-full bg-steam-light">
 						<div
-							class="h-full rounded-full bg-gradient-to-r from-steam-accent to-blue-400 transition-all duration-500"
-							style:width="{progressPercent}%"
+							class="h-full w-full origin-left rounded-full bg-gradient-to-r from-steam-accent to-blue-400 transition-transform duration-500 ease-out"
+							style:transform="scaleX({progressPercent / 100})"
 						></div>
 					</div>
 				</div>
@@ -294,7 +307,7 @@
 </div>
 
 <!-- Mobile bottom bar -->
-<div class="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-steam-dark/95 backdrop-blur-md sm:hidden">
+<div class="fixed-bottom-bar fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-steam-dark/95 backdrop-blur-md sm:hidden">
 	{#if showFilters}
 		<div class="border-b border-white/5 px-4 py-2.5">
 			<div class="flex items-center gap-2">
@@ -350,7 +363,7 @@
 						cx="18" cy="18" r="15.5" fill="none" stroke-width="3"
 						stroke-dasharray={`${progressPercent * 0.974} 100`}
 						stroke-linecap="round"
-						class="stroke-steam-accent transition-all duration-500"
+						class="stroke-steam-accent transition-[stroke-dasharray] duration-500 ease-out"
 					/>
 				</svg>
 				<span class="absolute inset-0 flex items-center justify-center text-[10px] font-bold tabular-nums">

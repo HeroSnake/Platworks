@@ -48,7 +48,7 @@
 </svelte:head>
 
 <div class="min-h-screen bg-steam-dark text-gray-100">
-	<nav class="sticky top-0 z-50 border-b border-white/5 bg-steam-dark/80 backdrop-blur-md">
+	<nav class="sticky-nav sticky top-0 z-50 border-b border-white/5 bg-steam-dark/80 backdrop-blur-md">
 		<div class="mx-auto flex h-14 max-w-5xl items-center gap-3 px-4">
 			{#if !isHome}
 				<a href="/" class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-gray-400 active:text-white sm:hidden">

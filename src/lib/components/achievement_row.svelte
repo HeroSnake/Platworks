@@ -23,6 +23,16 @@
 
 	let expanded = $state(false);
 	let justToggled = $state(false);
+	// Guide markup is only built the first time a row is opened. A 100-achievement
+	// game otherwise creates every step/warning/note node up front, which is what
+	// made selection and interaction sluggish. Stays mounted after first open so
+	// the collapse animation still has content to reveal.
+	let rendered = $state(false);
+
+	function toggleExpand() {
+		expanded = !expanded;
+		if (expanded) rendered = true;
+	}
 
 	function handleToggle(e: MouseEvent) {
 		e.stopPropagation();
@@ -64,7 +74,7 @@
 
 		<button
 			class="flex min-w-0 flex-1 items-start gap-3 text-left sm:items-center"
-			onclick={() => expanded = !expanded}
+			onclick={toggleExpand}
 		>
 			<div class="min-w-0 flex-1">
 				<div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
@@ -94,9 +104,10 @@
 		</button>
 	</div>
 
-	<!-- CSS-animated expand/collapse — no DOM add/remove -->
+	<!-- CSS-animated expand/collapse — no DOM add/remove while animating -->
 	<div class="expand-panel" data-open={expanded}>
 		<div>
+			{#if rendered}
 			<div class="border-t border-white/5 px-3 pb-3 pt-3 sm:px-4 sm:pb-4">
 				<ol class="mb-3 space-y-2 text-sm">
 					{#each achievement.guide.steps as step, i}
@@ -164,6 +175,7 @@
 					</p>
 				{/if}
 			</div>
+			{/if}
 		</div>
 	</div>
 </div>
