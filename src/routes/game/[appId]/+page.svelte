@@ -10,6 +10,7 @@
 		Loader2,
 		ArrowUp,
 		Home,
+		Filter,
 	} from '@lucide/svelte';
 	import AchievementRow from '$lib/components/achievement_row.svelte';
 	import { browser } from '$app/environment';
@@ -22,6 +23,7 @@
 	let syncing = $state(false);
 	let syncError = $state<string | null>(null);
 	let syncSuccess = $state<string | null>(null);
+	let showFilters = $state(false);
 
 	function loadLocal(): Record<string, boolean> {
 		if (!browser) return {};
@@ -231,8 +233,8 @@
 				</div>
 			</div>
 
-			<!-- Sticky filters -->
-			<div class="sticky top-14 z-40 -mx-4 mb-4 border-b border-white/5 bg-steam-dark/80 px-4 py-3 backdrop-blur-md sm:static sm:mx-0 sm:mb-6 sm:border-none sm:bg-transparent sm:p-0 sm:backdrop-blur-none">
+			<!-- Filters (desktop only — mobile uses bottom bar) -->
+			<div class="mb-6 hidden sm:block">
 				<div class="flex items-center gap-2 sm:gap-3">
 					<div class="flex rounded-lg bg-steam-blue p-0.5 text-sm sm:p-1">
 						{#each filterOptions as opt}
@@ -293,6 +295,40 @@
 
 <!-- Mobile bottom bar -->
 <div class="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-steam-dark/95 backdrop-blur-md sm:hidden">
+	{#if showFilters}
+		<div class="border-b border-white/5 px-4 py-2.5">
+			<div class="flex items-center gap-2">
+				<div class="flex rounded-lg bg-steam-blue p-0.5 text-sm">
+					{#each filterOptions as opt}
+						<button
+							class="flex items-center gap-1 rounded-md px-2.5 py-1.5 text-xs {filter === opt.value ? 'bg-steam-accent text-steam-dark font-semibold' : 'text-gray-400'}"
+							onclick={() => filter = opt.value}
+						>
+							{opt.label}
+						</button>
+					{/each}
+				</div>
+				<select
+					class="min-w-0 flex-1 rounded-lg border-none bg-steam-blue px-2 py-1.5 text-xs text-gray-300 outline-none"
+					bind:value={typeFilter}
+				>
+					<option value="all">All types</option>
+					{#each achievementTypes as t}
+						<option value={t}>{t[0].toUpperCase() + t.slice(1)}</option>
+					{/each}
+				</select>
+				<select
+					class="shrink-0 rounded-lg border-none bg-steam-blue px-2 py-1.5 text-xs text-gray-300 outline-none"
+					bind:value={gameSort}
+				>
+					<option value="default">Default</option>
+					<option value="name">A–Z</option>
+					<option value="difficulty">Difficulty</option>
+				</select>
+			</div>
+		</div>
+	{/if}
+
 	{#if syncSuccess}
 		<div class="border-b border-white/5 px-4 py-1.5 text-center text-xs text-green-400">
 			{syncSuccess}
@@ -330,6 +366,13 @@
 		<a href="/" class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-steam-blue text-gray-400 active:text-white">
 			<Home class="h-4 w-4" />
 		</a>
+
+		<button
+			class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-steam-blue text-gray-400 active:text-white"
+			onclick={() => showFilters = !showFilters}
+		>
+			<Filter class="h-4 w-4" />
+		</button>
 
 		<button
 			class="flex h-9 shrink-0 items-center gap-1.5 rounded-lg bg-steam-accent px-3 text-xs font-semibold text-steam-dark active:bg-steam-accent/80 disabled:opacity-50"

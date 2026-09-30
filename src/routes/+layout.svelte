@@ -36,6 +36,7 @@
 	<title>PlatWorks — Steam Achievement Companion</title>
 	<meta name="description" content="Your completionist companion for Steam achievements. Step-by-step guides, missable alerts, progress tracking, and Steam sync." />
 	<link rel="icon" href={favicon} />
+	<link rel="manifest" href="/manifest.json" />
 	<meta name="theme-color" content="#171a21" />
 	<meta property="og:title" content="PlatWorks" />
 	<meta property="og:description" content="Break down Steam achievements into step-by-step guides, missable alerts, and progress tracking." />
@@ -43,7 +44,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 	<meta name="apple-mobile-web-app-title" content="PlatWorks" />
-	<link rel="apple-touch-icon" href={favicon} />
+	<link rel="apple-touch-icon" href="/icon.svg" />
 </svelte:head>
 
 <div class="min-h-screen bg-steam-dark text-gray-100">
