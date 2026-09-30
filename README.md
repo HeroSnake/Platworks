@@ -85,6 +85,7 @@ To add one manually, copy `_example.json` and follow the schema.
 
 | Game | App ID | Achievements |
 |------|--------|-------------|
+| No Man's Sky | 275850 | 27 |
 | Monster Hunter Wilds | 2246340 | 50 |
 | Monster Hunter: World | 582010 | 100 |
 | Palworld | 1623730 | 75 |

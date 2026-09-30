@@ -1,0 +1,415 @@
+{
+  "$schema": "./schema.json",
+  "appId": 275850,
+  "name": "No Man's Sky",
+  "totalAchievements": 27,
+  "achievements": [
+    {
+      "id": "ACH_BASE",
+      "name": "Cradle",
+      "description": "Claim a Base or Buy a Freighter",
+      "type": "standard",
+      "difficulty": "easy",
+      "guide": {
+        "steps": [
+          "Follow the opening tutorial missions until you learn how to place a Base Computer.",
+          "Claim a site to build your first base, or purchase a Freighter after a space battle."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements"
+      }
+    },
+    {
+      "id": "MONEY_1",
+      "name": "Foundation",
+      "description": "Attain 'Entrepreneur' status in Most Units Accrued",
+      "type": "standard",
+      "difficulty": "easy",
+      "guide": {
+        "steps": [
+          "Mine valuable minerals like Copper or Gold and sell them at space station trade terminals.",
+          "Accumulate a total balance of 150,000 Units."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements"
+      }
+    },
+    {
+      "id": "WORDS_1",
+      "name": "Babel-17",
+      "description": "Attain 'Confused' status in Words Collected",
+      "type": "standard",
+      "difficulty": "easy",
+      "guide": {
+        "steps": [
+          "Interact with Knowledge Stones on planet surfaces or talk to alien NPCs in space stations.",
+          "Learn a total of 10 words from any alien dialect (Gek, Korvax, Vy'keen)."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements"
+      }
+    },
+    {
+      "id": "ALIEN_1",
+      "name": "Contact",
+      "description": "Attain 'Known' status in Alien Colonist Encounters",
+      "type": "standard",
+      "difficulty": "easy",
+      "guide": {
+        "steps": [
+          "Visit a space station or planetary trade post.",
+          "Talk to 2 individual alien NPCs."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements"
+      }
+    },
+    {
+      "id": "KILL_1",
+      "name": "Use of Weapons",
+      "description": "Attain 'Novice' status in Ships Destroyed",
+      "type": "standard",
+      "difficulty": "easy",
+      "guide": {
+        "steps": [
+          "Encounter pirate starships during space travel or respond to distress calls.",
+          "Destroy 1 hostile starship in space combat."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements"
+      }
+    },
+    {
+      "id": "MONEY_2",
+      "name": "The Space Merchants",
+      "description": "Attain 'Trader' status in Most Units Accrued",
+      "type": "cumulative",
+      "difficulty": "medium",
+      "guide": {
+        "steps": [
+          "Install S-class Scanner upgrades on your Multi-Tool to earn large Unit payouts per fauna scan.",
+          "Accumulate a total balance of 1,000,000 Units."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements"
+      }
+    },
+    {
+      "id": "WALK_1",
+      "name": "Symphony For A Lost Traveler",
+      "description": "Attain 'Nomad' status in On-foot Exploration",
+      "type": "standard",
+      "difficulty": "easy",
+      "guide": {
+        "steps": [
+          "Explore planet surfaces on foot without entering ships or exocraft.",
+          "Traverse a distance of 50,000 u on foot."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements"
+      }
+    },
+    {
+      "id": "MONEY_3",
+      "name": "The Diamond Age",
+      "description": "Attain 'Magnate' status in Most Units Accrued",
+      "type": "cumulative",
+      "difficulty": "hard",
+      "guide": {
+        "steps": [
+          "Set up mineral extractors or harvest Storm Crystals during hazardous weather.",
+          "Accumulate a peak balance of 2,000,000 Units."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements",
+        "communityNotes": [
+          "Reddit tip: Buying 3 S-class Scanner Upgrades makes this achievable in under 30 minutes by scanning animals."
+        ]
+      }
+    },
+    {
+      "id": "WARP_1",
+      "name": "The Stars, Like Dust",
+      "description": "Attain 'Trailblazer' status in Space Exploration",
+      "type": "standard",
+      "difficulty": "easy",
+      "guide": {
+        "steps": [
+          "Craft hyperdrive warp cells using Antimatter and Antimatter Housing.",
+          "Warp to your second unique star system."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements"
+      }
+    },
+    {
+      "id": "WORDS_2",
+      "name": "The Languages of Pao",
+      "description": "Attain 'Interpreter' status in Words Collected",
+      "type": "cumulative",
+      "difficulty": "medium",
+      "guide": {
+        "steps": [
+          "Explore alien monoliths, ruins, and Knowledge Stones across multiple planets.",
+          "Learn a total of 50 words from alien dialects."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements"
+      }
+    },
+    {
+      "id": "WALK_2",
+      "name": "Have Spacesuit - Will Travel",
+      "description": "Attain 'Adventurer' status in On-foot Exploration",
+      "type": "cumulative",
+      "difficulty": "medium",
+      "guide": {
+        "steps": [
+          "Traverse planet surfaces using sprint and Melee-Jetpack jump boosts.",
+          "Accumulate a total on-foot distance of 75,000 u."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements"
+      }
+    },
+    {
+      "id": "ACH_EXOCRAFT",
+      "name": "Navigators",
+      "description": "Build an Exocraft",
+      "type": "standard",
+      "difficulty": "medium",
+      "guide": {
+        "steps": [
+          "Construct an Exocraft Geobay (e.g. Roamer, Nomad, or Minotaur) at your base using the build menu."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements"
+      }
+    },
+    {
+      "id": "ALIEN_2",
+      "name": "Who Goes There?",
+      "description": "Attain 'Diplomat' status in Alien Colonist Encounters",
+      "type": "standard",
+      "difficulty": "medium",
+      "guide": {
+        "steps": [
+          "Visit planetary outposts and space stations.",
+          "Interact directly with 20 distinct alien NPCs."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements"
+      }
+    },
+    {
+      "id": "KILL_2",
+      "name": "Pattern for Conquest",
+      "description": "Attain 'Notorious' status in Ships Destroyed",
+      "type": "standard",
+      "difficulty": "medium",
+      "guide": {
+        "steps": [
+          "Upgrade your starship shields and weapons (e.g., Infra-Knife Accelerator).",
+          "Destroy 5 hostile pirate starships."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements"
+      }
+    },
+    {
+      "id": "ALIEN_3",
+      "name": "What Mad Universe",
+      "description": "Attain 'Ambassador' status in Alien Colonist Encounters",
+      "type": "cumulative",
+      "difficulty": "medium",
+      "guide": {
+        "steps": [
+          "Systematically speak to all NPCs at space stations and trade platforms.",
+          "Reach a total of 40 individual alien encounters."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements"
+      }
+    },
+    {
+      "id": "KILL_3",
+      "name": "The Forever War",
+      "description": "Attain 'Legend' status in Ships Destroyed",
+      "type": "cumulative",
+      "difficulty": "hard",
+      "guide": {
+        "steps": [
+          "Accept bounty hunting contracts at space station Mission Boards or fight Sentinel waves.",
+          "Destroy a cumulative total of 80 enemy starships."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements",
+        "communityNotes": [
+          "Reddit tip: High-conflict systems trigger frequent pirate raids on freighters for rapid targets."
+        ]
+      }
+    },
+    {
+      "id": "WARP_2",
+      "name": "The Longest Voyage",
+      "description": "Attain 'Pioneer' status in Space Exploration",
+      "type": "cumulative",
+      "difficulty": "medium",
+      "guide": {
+        "steps": [
+          "Maintain a steady supply of hyperdrive fuel.",
+          "Perform hyperdrive warps to visit a total of 20 unique star systems."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements"
+      }
+    },
+    {
+      "id": "ACH_BASE_VISIT",
+      "name": "Reunion",
+      "description": "Visit another Player's Base",
+      "type": "standard",
+      "difficulty": "medium",
+      "guide": {
+        "steps": [
+          "Summon the Space Anomaly in any star system.",
+          "Head to the Giant Teleporter inside the Space Anomaly and select any featured player base to warp directly to it."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements"
+      }
+    },
+    {
+      "id": "WORDS_3",
+      "name": "Citizen of the Galaxy",
+      "description": "Attain 'Babelfish' status in Words Collected",
+      "type": "cumulative",
+      "difficulty": "hard",
+      "guide": {
+        "steps": [
+          "Talk to NPCs in space stations and request language assistance repeatedly.",
+          "Learn a cumulative total of 150 words across alien dialects."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements"
+      }
+    },
+    {
+      "id": "SURVIVAL_1",
+      "name": "A Scanner Darkly",
+      "description": "Attain 'Naturalist' status in Planet Zoology Scanned",
+      "type": "standard",
+      "difficulty": "medium",
+      "guide": {
+        "steps": [
+          "Land on a planet with a small fauna count (e.g., 1 to 5 animal species listed in the Discovery tab).",
+          "Scan every species on the planet, then press 'Complete Collection' to upload."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements",
+        "communityNotes": [
+          "Reddit tip: Exotic / Anomaly worlds (Glitch planets) only have 1 animal species, making completion instant."
+        ]
+      }
+    },
+    {
+      "id": "WALK_3",
+      "name": "A Space Odyssey",
+      "description": "Attain 'Discoverer' status in Space Exploration",
+      "type": "cumulative",
+      "difficulty": "hard",
+      "guide": {
+        "steps": [
+          "Traverse planet surfaces across your playthrough.",
+          "Walk a cumulative total distance of 100,000 u on foot."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements"
+      }
+    },
+    {
+      "id": "SURVIVAL_2",
+      "name": "The Star Beast",
+      "description": "Attain 'Archivist' status in Planet Zoology Scanned",
+      "type": "cumulative",
+      "difficulty": "hard",
+      "guide": {
+        "steps": [
+          "Locate 5 distinct planets and discover 100% of the fauna on each.",
+          "Remember to claim the complete collection reward from the Discovery menu for each planet."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements"
+      }
+    },
+    {
+      "id": "SURVIVAL_3",
+      "name": "Galapagos",
+      "description": "Attain 'Encyclopedia' status in Planet Zoology Scanned",
+      "type": "cumulative",
+      "difficulty": "hard",
+      "guide": {
+        "steps": [
+          "Search for Synthetic / Mechanical worlds in uninhabited systems (they usually have only 2 robot species).",
+          "Achieve 100% fauna discovery on 10 unique planets."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements"
+      }
+    },
+    {
+      "id": "HAZARD_1",
+      "name": "Stranger in a Strange Land",
+      "description": "Attain 'Robust' status in Extreme Survival",
+      "type": "standard",
+      "difficulty": "medium",
+      "guide": {
+        "steps": [
+          "Land on an Extreme hazard world or Aggressive Sentinel planet.",
+          "Survive on the planet surface for 14 SOLS (approx. 5.5 hours real time)."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements",
+        "warnings": [
+          "Dying on an extreme planet resets your continuous SOL timer to zero."
+        ]
+      }
+    },
+    {
+      "id": "HAZARD_3",
+      "name": "The Sentinel",
+      "description": "Attain 'Everlasting' status in Extreme Survival",
+      "type": "cumulative",
+      "difficulty": "very-hard",
+      "guide": {
+        "steps": [
+          "Find an Extreme weather world or Aggressive Sentinel planet.",
+          "Remain alive on the planet surface for a cumulative total of 32 SOLS (approx. 12.8 hours real time)."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements",
+        "communityNotes": [
+          "Reddit tip: You can build a small enclosed metal room on an extreme world and safely stand inside while AFK — the timer will continue ticking."
+        ],
+        "warnings": [
+          "Do not sit inside your starship or deep cave systems, as safety zones stop the timer."
+        ]
+      }
+    },
+    {
+      "id": "CENTER_2",
+      "name": "Take a Deep Breath",
+      "description": "Reach the Centre of the Galaxy in Survival Mode",
+      "type": "secret",
+      "difficulty": "very-hard",
+      "guide": {
+        "steps": [
+          "Start a new save game on Survival Mode difficulty.",
+          "Locate a planetary Portal and dial the first glyph ('Sunset') 12 times to teleport ~3,000 ly from the core.",
+          "Fully charge your hyperdrive and make the final jump into the Galactic Centre."
+        ],
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements",
+        "warnings": [
+          "Survival mode features smaller inventory stack sizes and higher environmental damage."
+        ]
+      }
+    },
+    {
+      "id": "PERMADEATH",
+      "name": "To Live Forever",
+      "description": "Reach the Centre of the Galaxy in Permadeath Mode",
+      "type": "secret",
+      "difficulty": "very-hard",
+      "guide": {
+        "steps": [
+          "Start a new save file in Permadeath mode.",
+          "Play cautiously through early hazards until you unlock basic warp capability and Portal glyphs.",
+          "Use a Portal with the '12x Sunset Glyph' code to warp near the core (~3,000 ly away) and execute the final jump."
+        ],
+        "videoUrl": "https://www.youtube.com/watch?v=example_nms_permadeath",
+        "sourceUrl": "https://steamcommunity.com/stats/275850/achievements",
+        "communityNotes": [
+          "Reddit tip: Unlocking 'To Live Forever' automatically triggers 'Take a Deep Breath' at the same time!"
+        ],
+        "warnings": [
+          "Dying in Permadeath mode permanently erases your save file. Always keep hazard recharges handy."
+        ]
+      }
+    }
+  ]
+}
