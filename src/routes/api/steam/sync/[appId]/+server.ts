@@ -1,6 +1,6 @@
 import { json, error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import { getPlayerAchievements, resolveSteamId } from '$lib/server/steam/api';
+import { getPlayerAchievements, resolveSteamId } from '#lib/server/steam/api';
 
 export const GET: RequestHandler = async ({ params, url }) => {
 	const appId = Number(params.appId);

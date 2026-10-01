@@ -1,4 +1,4 @@
-import type { SteamGameDetails, SteamAchievementStatus } from '$lib/types/steam';
+import type { SteamGameDetails, SteamAchievementStatus, SteamProfile } from '#lib/types/steam';
 
 const STORE_API = 'https://store.steampowered.com/api';
 const COMMUNITY = 'https://steamcommunity.com';
@@ -46,6 +46,55 @@ export async function resolveSteamId(input: string): Promise<string | null> {
 	} catch { /* unreachable profile */ }
 
 	return null;
+}
+
+/** Fetches the public profile card (persona name + avatar) for a Steam64 ID. */
+export async function getPlayerProfile(steamId: string): Promise<SteamProfile | null> {
+	if (!/^\d{17}$/.test(steamId)) return null;
+
+	try {
+		const res = await fetch(`${COMMUNITY}/profiles/${steamId}/?xml=1`, {
+			headers: {
+				'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+				'Accept': 'text/xml,application/xml,application/xhtml+xml,text/html;q=0.9',
+				'Accept-Language': 'en-US,en;q=0.9',
+			},
+			cache: 'no-store'
+		});
+	
+		if (!res.ok) return null;
+		const xml = await res.text();
+		if (xml.includes('<error>')) return null;
+
+		// Steam's profile XML carries the display name in <steamID> — there is no
+		// <personaname> tag (that one only exists on the stats XML). A private profile
+		// still returns 200, but without these fields, which is how we detect it.
+		const name = extractTag(xml, 'personaname') ?? extractTag(xml, 'steamID');
+		if (!name) return null;
+
+		// Steam always emits an avatar tag, using an all-zero hash for accounts with no
+		// custom avatar, so callers get null and can fall back to an icon instead.
+		const clean = (url: string | null) => {
+			if (!url) return null;
+			if (url.includes('default_avatar')) return null;
+			// e.g. .../0000000000000000000000000000000000000000_full.jpg
+			const hash = /steamstatic\.com\/([a-f0-9]+)_/.exec(url)?.[1];
+			if (hash && /^0+$/.test(hash)) return null;
+			return url;
+		};
+
+		return {
+			steamId,
+			name,
+			avatar: clean(extractTag(xml, 'avatarFull') ?? extractTag(xml, 'avatarMedium') ?? extractTag(xml, 'avatarIcon')),
+			avatarMedium: clean(extractTag(xml, 'avatarMedium') ?? extractTag(xml, 'avatarIcon')),
+			profileUrl: `${COMMUNITY}/profiles/${steamId}`,
+			visibility: extractTag(xml, 'visibilityState')
+		};
+	} catch (error) {
+		console.error('Failed to fetch Steam profile:', error);
+		return null;
+	}
 }
 
 /** Fetches achievements from the public Steam community XML. Profile must be public. */

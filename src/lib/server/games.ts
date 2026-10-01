@@ -1,6 +1,6 @@
-import type { GameData } from '$lib/types/game';
+import type { GameData } from '#lib/types/game';
 
-const dataFiles = import.meta.glob<GameData>('$lib/data/games/[0-9]*.json', {
+const dataFiles = import.meta.glob<GameData>('#lib/data/games/[0-9]*.json', {
 	eager: true,
 	import: 'default'
 });

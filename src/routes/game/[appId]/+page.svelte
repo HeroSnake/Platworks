@@ -6,14 +6,14 @@
 		Star,
 		Lock,
 		Unlock,
+		Search,
 		RefreshCw,
 		Loader2,
-		ArrowUp,
-		Home,
-		Filter,
 	} from '@lucide/svelte';
-	import AchievementRow from '$lib/components/achievement_row.svelte';
-	import { browser } from '$app/environment';
+	import AchievementRow from '#lib/components/achievement_row.svelte';
+	import MobileBar from '#lib/components/mobile_bar.svelte';
+	import { browser } from '$app/env';
+	import { refreshProfile } from '#lib/client/profile';
 
 	let { data } = $props();
 
@@ -23,7 +23,6 @@
 	let syncing = $state(false);
 	let syncError = $state<string | null>(null);
 	let syncSuccess = $state<string | null>(null);
-	let showFilters = $state(false);
 
 	function loadLocal(): Record<string, boolean> {
 		if (!browser) return {};
@@ -91,6 +90,10 @@
 			}
 			saveLocal();
 			syncSuccess = count > 0 ? `Synced ${count} achievement${count > 1 ? 's' : ''}` : 'Already up to date';
+			// Take the opportunity to refresh the cached profile card (avatar/name).
+			// The navbar reads it from localStorage, so this is the only time we
+			// re-parse Steam for profile data — page loads stay network-free.
+			refreshProfile(sid);
 			setTimeout(() => syncSuccess = null, 3000);
 		} catch {
 			syncError = 'Failed to connect to Steam';
@@ -99,20 +102,61 @@
 		}
 	}
 
-	// Sort persisted to localStorage, filter only in component state (resets on new visit)
-	let filter = $state<'all' | 'locked' | 'unlocked'>('all');
-	let typeFilter = $state<string>('all');
-	let gameSort = $state<'default' | 'difficulty' | 'name'>(loadGameSort());
+	type FilterValue = 'all' | 'locked' | 'unlocked';
+	type SortValue = 'default' | 'difficulty' | 'name';
 
-	function loadGameSort(): 'default' | 'difficulty' | 'name' {
-		if (!browser) return 'default';
-		const v = localStorage.getItem('platworks:gameSort');
-		if (v === 'difficulty' || v === 'name') return v;
-		return 'default';
+	// Completion filter + sort are global preferences, while the type filter is scoped
+	// per game because every game exposes its own set of achievement types.
+	let filter = $state<FilterValue>('all');
+	let typeFilter = $state<string>('all');
+	let gameSort = $state<SortValue>('default');
+	// Session-only: a trophy search is transient, unlike the filters below.
+	let trophyQuery = $state('');
+
+	function loadPrefs(appId: number): { filter: FilterValue; typeFilter: string; gameSort: SortValue } {
+		const fallback = { filter: 'all' as FilterValue, typeFilter: 'all', gameSort: 'default' as SortValue };
+		if (!browser) return fallback;
+		try {
+			const f = localStorage.getItem(`platworks:filter:${appId}`);
+			const t = localStorage.getItem(`platworks:typeFilter:${appId}`);
+			const s = localStorage.getItem('platworks:gameSort');
+			// Drop a stored type the game no longer defines (data files get regenerated).
+			const types = new Set<string>(data.game.achievements.map((a) => a.type));
+			return {
+				filter: f === 'locked' || f === 'unlocked' ? f : 'all',
+				typeFilter: t && t !== 'all' && types.has(t) ? t : 'all',
+				gameSort: s === 'difficulty' || s === 'name' ? s : 'default'
+			};
+		} catch {
+			return fallback;
+		}
 	}
 
+	// Same hydration hazard as the library grid: the server always renders "default"
+	// order, so letting a persisted sort drive the first client render would hydrate the
+	// keyed list out of order and pair rows with the wrong data. `hydrated` keeps the
+	// list off the server markup until we're safely past that point.
+	let hydrated = $state(false);
+	// Sentinel meaning "nothing loaded yet"; the effect below fills it in. Reading
+	// `data.game.appId` here directly would only capture the initial value.
+	let loadedAppId = $state(0);
+
 	$effect(() => {
-		if (browser) localStorage.setItem('platworks:gameSort', gameSort);
+		const appId = data.game.appId;
+		if (hydrated && appId === loadedAppId) return;
+		loadedAppId = appId;
+		const prefs = loadPrefs(appId);
+		filter = prefs.filter;
+		typeFilter = prefs.typeFilter;
+		gameSort = prefs.gameSort;
+		hydrated = true;
+	});
+
+	$effect(() => {
+		if (!browser || !hydrated) return;
+		localStorage.setItem(`platworks:filter:${loadedAppId}`, filter);
+		localStorage.setItem(`platworks:typeFilter:${loadedAppId}`, typeFilter);
+		localStorage.setItem('platworks:gameSort', gameSort);
 	});
 
 	let completedCount = $derived(
@@ -126,7 +170,15 @@
 	const difficultyOrder: Record<string, number> = { easy: 0, medium: 1, hard: 2, 'very-hard': 3 };
 
 	let filteredAchievements = $derived.by(() => {
+		const q = trophyQuery.trim().toLowerCase();
 		const list = data.game.achievements.filter((a) => {
+			// Free-text search runs alongside the persisted filters, so "Leyndell" still
+			// narrows a Locked-only list. `description` is optional in practice — some
+			// generated data files omit it.
+			if (q) {
+				const haystack = `${a.name} ${a.description ?? ''}`.toLowerCase();
+				if (!haystack.includes(q)) return false;
+			}
 			const achieved = achievedMap[a.id];
 			if (filter === 'locked' && achieved) return false;
 			if (filter === 'unlocked' && !achieved) return false;
@@ -248,7 +300,17 @@
 
 			<!-- Filters (desktop only — mobile uses bottom bar) -->
 			<div class="mb-6 hidden sm:block">
-				<div class="flex items-center gap-2 sm:gap-3">
+				<div class="flex flex-wrap items-center gap-2 sm:gap-3">
+					<div class="flex min-w-0 flex-1 items-center gap-2 rounded-lg bg-steam-blue px-3 py-2">
+						<Search class="h-4 w-4 shrink-0 text-gray-500" />
+						<input
+							type="text"
+							placeholder="Search trophies..."
+							class="min-w-0 flex-1 bg-transparent text-sm text-gray-200 outline-none placeholder:text-gray-500"
+							bind:value={trophyQuery}
+						/>
+					</div>
+
 					<div class="flex rounded-lg bg-steam-blue p-0.5 text-sm sm:p-1">
 						{#each filterOptions as opt}
 							<button
@@ -288,18 +350,24 @@
 
 			<!-- Achievement list -->
 			<div class="flex flex-col gap-2 pb-20 sm:pb-0">
-				{#each filteredAchievements as achievement (achievement.id)}
-					<AchievementRow
-						{achievement}
-						achieved={achievedMap[achievement.id]}
-						steamLocked={false}
-						unlockTime={null}
-						ontoggle={() => toggleCheck(achievement.id)}
-					/>
-				{/each}
+				{#if !hydrated}
+					{#each Array(Math.min(data.game.achievements.length, 12)) as _, i (i)}
+						<div class="h-16 animate-pulse rounded-lg bg-steam-blue"></div>
+					{/each}
+				{:else}
+					{#each filteredAchievements as achievement (achievement.id)}
+						<AchievementRow
+							{achievement}
+							achieved={achievedMap[achievement.id]}
+							steamLocked={false}
+							unlockTime={null}
+							ontoggle={() => toggleCheck(achievement.id)}
+						/>
+					{/each}
 
-				{#if filteredAchievements.length === 0}
-					<p class="py-16 text-center text-gray-500">No achievements match filters.</p>
+					{#if filteredAchievements.length === 0}
+						<p class="py-16 text-center text-gray-500">No achievements match filters.</p>
+					{/if}
 				{/if}
 			</div>
 		</div>
@@ -307,104 +375,46 @@
 </div>
 
 <!-- Mobile bottom bar -->
-<div class="fixed-bottom-bar fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-steam-dark/95 backdrop-blur-md sm:hidden">
-	{#if showFilters}
-		<div class="border-b border-white/5 px-4 py-2.5">
-			<div class="flex items-center gap-2">
-				<div class="flex rounded-lg bg-steam-blue p-0.5 text-sm">
-					{#each filterOptions as opt}
-						<button
-							class="flex items-center gap-1 rounded-md px-2.5 py-1.5 text-xs {filter === opt.value ? 'bg-steam-accent text-steam-dark font-semibold' : 'text-gray-400'}"
-							onclick={() => filter = opt.value}
-						>
-							{opt.label}
-						</button>
-					{/each}
-				</div>
-				<select
-					class="min-w-0 flex-1 rounded-lg border-none bg-steam-blue px-2 py-1.5 text-xs text-gray-300 outline-none"
-					bind:value={typeFilter}
-				>
-					<option value="all">All types</option>
-					{#each achievementTypes as t}
-						<option value={t}>{t[0].toUpperCase() + t.slice(1)}</option>
-					{/each}
-				</select>
-				<select
-					class="shrink-0 rounded-lg border-none bg-steam-blue px-2 py-1.5 text-xs text-gray-300 outline-none"
-					bind:value={gameSort}
-				>
-					<option value="default">Default</option>
-					<option value="name">A–Z</option>
-					<option value="difficulty">Difficulty</option>
-				</select>
+<MobileBar
+	percent={progressPercent}
+	primary="{completedCount}/{data.game.totalAchievements}"
+	secondary="{filteredAchievements.length} shown"
+	status={syncError ?? syncSuccess}
+	statusTone={syncError ? 'error' : 'ok'}
+	syncing={syncing}
+	onsync={syncWithSteam}
+	searchPlaceholder="Search trophies..."
+	bind:query={trophyQuery}
+>
+	{#snippet panel()}
+		<div class="flex items-center gap-2">
+			<div class="flex rounded-lg bg-steam-blue p-0.5 text-sm">
+				{#each filterOptions as opt}
+					<button
+						class="flex items-center gap-1 rounded-md px-2.5 py-1.5 text-xs {filter === opt.value ? 'bg-steam-accent text-steam-dark font-semibold' : 'text-gray-400'}"
+						onclick={() => filter = opt.value}
+					>
+						{opt.label}
+					</button>
+				{/each}
 			</div>
+			<select
+				class="min-w-0 flex-1 rounded-lg border-none bg-steam-blue px-2 py-1.5 text-xs text-gray-300 outline-none"
+				bind:value={typeFilter}
+			>
+				<option value="all">All types</option>
+				{#each achievementTypes as t}
+					<option value={t}>{t[0].toUpperCase() + t.slice(1)}</option>
+				{/each}
+			</select>
+			<select
+				class="shrink-0 rounded-lg border-none bg-steam-blue px-2 py-1.5 text-xs text-gray-300 outline-none"
+				bind:value={gameSort}
+			>
+				<option value="default">Default</option>
+				<option value="name">A–Z</option>
+				<option value="difficulty">Difficulty</option>
+			</select>
 		</div>
-	{/if}
-
-	{#if syncSuccess}
-		<div class="border-b border-white/5 px-4 py-1.5 text-center text-xs text-green-400">
-			{syncSuccess}
-		</div>
-	{/if}
-
-	{#if syncError}
-		<div class="border-b border-white/5 px-4 py-1.5 text-center text-xs text-red-400">
-			{syncError}
-		</div>
-	{/if}
-
-	<div class="flex items-center gap-2 px-4 py-2.5">
-		<div class="flex min-w-0 flex-1 items-center gap-2.5 overflow-hidden">
-			<div class="relative h-9 w-9 shrink-0">
-				<svg class="h-9 w-9 -rotate-90" viewBox="0 0 36 36">
-					<circle cx="18" cy="18" r="15.5" fill="none" stroke-width="3" class="stroke-steam-light" />
-					<circle
-						cx="18" cy="18" r="15.5" fill="none" stroke-width="3"
-						stroke-dasharray={`${progressPercent * 0.974} 100`}
-						stroke-linecap="round"
-						class="stroke-steam-accent transition-[stroke-dasharray] duration-500 ease-out"
-					/>
-				</svg>
-				<span class="absolute inset-0 flex items-center justify-center text-[10px] font-bold tabular-nums">
-					{progressPercent}%
-				</span>
-			</div>
-			<div class="min-w-0 overflow-hidden text-xs leading-tight">
-				<span class="font-semibold text-gray-200">{completedCount}/{data.game.totalAchievements}</span>
-				<span class="block text-gray-500">{filteredAchievements.length} shown</span>
-			</div>
-		</div>
-
-		<a href="/" class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-steam-blue text-gray-400 active:text-white">
-			<Home class="h-4 w-4" />
-		</a>
-
-		<button
-			class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-steam-blue text-gray-400 active:text-white"
-			onclick={() => showFilters = !showFilters}
-		>
-			<Filter class="h-4 w-4" />
-		</button>
-
-		<button
-			class="flex h-9 shrink-0 items-center gap-1.5 rounded-lg bg-steam-accent px-3 text-xs font-semibold text-steam-dark active:bg-steam-accent/80 disabled:opacity-50"
-			onclick={syncWithSteam}
-			disabled={syncing}
-		>
-			{#if syncing}
-				<Loader2 class="h-4 w-4 animate-spin" />
-			{:else}
-				<RefreshCw class="h-4 w-4" />
-			{/if}
-			Sync
-		</button>
-
-		<button
-			class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-steam-blue text-gray-400 active:text-white"
-			onclick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-		>
-			<ArrowUp class="h-4 w-4" />
-		</button>
-	</div>
-</div>
+	{/snippet}
+</MobileBar>

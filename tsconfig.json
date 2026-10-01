@@ -1,6 +1,17 @@
 {
-	"extends": "./.svelte-kit/tsconfig.json",
+	// SvelteKit 3 generates its base config to `node_modules/$app/tsconfig.json`
+	// (via `svelte-kit sync`) rather than `.svelte-kit/tsconfig.json`.
+	"extends": "$app/tsconfig",
+	"include": ["src", "*"],
+	"exclude": ["src/service-worker"],
 	"compilerOptions": {
+		// Vite resolves these through the "imports" field in package.json, but
+		// TypeScript needs them mirrored here. SvelteKit 3 no longer generates any
+		// lib paths into its base config (it only maps `config.alias` entries).
+		"paths": {
+			"#lib": ["./src/lib"],
+			"#lib/*": ["./src/lib/*"]
+		},
 		"rewriteRelativeImportExtensions": true,
 		"allowJs": true,
 		"checkJs": true,
@@ -12,9 +23,6 @@
 		"strict": true,
 		"moduleResolution": "bundler"
 	}
-	// Path aliases are handled by https://svelte.dev/docs/kit/configuration#alias
-	// except $lib which is handled by https://svelte.dev/docs/kit/configuration#files
-	//
-	// To make changes to top-level options such as include and exclude, we recommend extending
-	// the generated config; see https://svelte.dev/docs/kit/configuration#typescript
+	// `$lib` was removed in SvelteKit 3 — `#lib` is used instead, wired up through the
+	// "imports" field in package.json. See https://svelte.dev/docs/kit/$lib
 }

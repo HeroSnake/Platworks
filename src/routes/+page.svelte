@@ -1,11 +1,13 @@
 <script lang="ts">
 	import {
-		Trophy, Gamepad2, CheckCircle, Search, RefreshCw, Loader2, ArrowUp, Filter
+		Trophy, Gamepad2, Search, RefreshCw, Loader2
 	} from '@lucide/svelte';
-	import GameCard from '$lib/components/game_card.svelte';
-	import { browser } from '$app/environment';
+	import GameCard from '#lib/components/game_card.svelte';
+	import MobileBar from '#lib/components/mobile_bar.svelte';
+	import { browser } from '$app/env';
 	import { page } from '$app/state';
-	import { goto } from '$app/navigation';
+	import { replaceState } from '$app/navigation';
+	import { refreshProfile } from '#lib/client/profile';
 
 	let { data } = $props();
 
@@ -42,8 +44,6 @@
 	$effect(() => { refreshCompletions(); });
 
 	let searchQuery = $state(page.url.searchParams.get('q') ?? '');
-	let showSearch = $state(false);
-	let showFilters = $state(false);
 	let syncing = $state(false);
 	let syncStatus = $state<string | null>(null);
 
@@ -53,10 +53,18 @@
 	}
 
 	function updateSearchUrl(q: string) {
-		const url = new URL(page.url);
+		const url = new URL(page.url.href);
 		if (q.trim()) url.searchParams.set('q', q.trim());
 		else url.searchParams.delete('q');
-		goto(url.toString(), { replaceState: true, keepFocus: true, noScroll: true });
+		// replaceState() rather than goto(..., { shallow: true }).
+		//
+		// In SvelteKit 3 the shallow goto path still calls _before_navigate(), which
+		// fires onNavigate — and +layout.svelte runs a page-slide View Transition there.
+		// So "shallow" still animated once per keystroke. update_state() deliberately
+		// skips the navigation hooks for the legacy push/replaceState callers only, so
+		// this is the one API that updates the URL without touching the page lifecycle.
+		// It logs a one-time dev deprecation warning; that is the price of not animating.
+		replaceState(url, page.state);
 	}
 
 	let sortBy = $state<'name' | 'completion' | 'recent'>(loadSort());
@@ -71,6 +79,15 @@
 	$effect(() => {
 		if (browser) localStorage.setItem('platworks:sort', sortBy);
 	});
+
+	// The server can't read localStorage, so it always renders A–Z. Hydrating straight
+	// into a persisted sort hands Svelte a keyed each-block whose order differs from the
+	// server markup: hydration claims the existing nodes positionally and never rewrites
+	// attributes like <img src>, so every card ends up wearing the previous game's image.
+	// The grid therefore stays off the DOM until we know we're on the client.
+	let hydrated = $state(false);
+
+	$effect(() => { hydrated = true; });
 
 	let totalGames = $derived(data.games.length);
 	let totalAchievements = $derived(data.games.reduce((s, g) => s + g.totalAchievements, 0));
@@ -108,12 +125,14 @@
 		const incomplete = data.games.filter((g) => (completions[g.appId] ?? 0) < g.totalAchievements);
 		let totalSynced = 0;
 		let errors = 0;
+		let anyConnected = false;
 
 		for (const game of incomplete) {
 			try {
 				const res = await fetch(`/api/steam/sync/${game.appId}?steamId=${encodeURIComponent(sid)}`);
 				const json = await res.json();
 				if (!json.connected) { errors++; continue; }
+				anyConnected = true;
 
 				const stored: Record<string, boolean> = JSON.parse(localStorage.getItem(`platworks:checked:${game.appId}`) ?? '{}');
 				const steamMap = json.achievements as Record<string, { achieved: boolean }>;
@@ -133,6 +152,9 @@
 				totalSynced++;
 			} catch { errors++; }
 		}
+
+		// Once per sync run (not once per game) — refresh the cached profile card.
+		if (anyConnected) refreshProfile(sid);
 
 		refreshCompletions();
 		syncing = false;
@@ -198,6 +220,13 @@
 			<p class="text-lg text-gray-500">No games added yet</p>
 			<p class="text-sm text-gray-600">Use <code class="rounded bg-steam-blue px-2 py-0.5">/generate-game-data</code> to add a game.</p>
 		</div>
+	{:else if !hydrated}
+		<!-- Placeholder so the server markup and the first client render agree on layout. -->
+		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+			{#each Array(data.games.length) as _, i (i)}
+				<div class="h-28 animate-pulse rounded-xl bg-steam-blue sm:h-64"></div>
+			{/each}
+		</div>
 	{:else if filteredAndSorted.length === 0}
 		<p class="py-12 text-center text-gray-500">No games match "{searchQuery}"</p>
 	{:else}
@@ -210,82 +239,23 @@
 </div>
 
 <!-- Mobile bottom bar -->
-<div class="fixed-bottom-bar fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-steam-dark/95 backdrop-blur-md sm:hidden">
-	{#if showSearch}
-		<div class="border-b border-white/5 px-4 py-2.5">
-			<div class="flex items-center gap-2 rounded-lg bg-steam-blue px-3 py-2">
-				<Search class="h-4 w-4 shrink-0 text-gray-500" />
-				<input
-					type="text"
-					placeholder="Search games..."
-					class="min-w-0 flex-1 bg-transparent text-sm text-gray-200 outline-none placeholder:text-gray-500"
-					bind:value={searchQuery}
-					oninput={() => updateSearchUrl(searchQuery)}
-				/>
-			</div>
-		</div>
-	{/if}
-
-	{#if showFilters}
-		<div class="border-b border-white/5 px-4 py-2.5">
-			<select class="w-full rounded-lg border-none bg-steam-blue px-3 py-2 text-sm text-gray-300 outline-none" bind:value={sortBy}>
-				<option value="name">A–Z</option>
-				<option value="completion">Completion</option>
-				<option value="recent">Recent</option>
-			</select>
-		</div>
-	{/if}
-
-	{#if syncStatus}
-		<div class="border-b border-white/5 px-4 py-1.5 text-center text-xs {syncStatus.includes('failed') ? 'text-red-400' : 'text-green-400'}">
-			{syncStatus}
-		</div>
-	{/if}
-
-	<div class="flex items-center gap-2 px-4 py-2.5">
-		<div class="flex min-w-0 flex-1 items-center gap-2.5 overflow-hidden">
-			<div class="relative h-9 w-9 shrink-0">
-				<svg class="h-9 w-9 -rotate-90" viewBox="0 0 36 36">
-					<circle cx="18" cy="18" r="15.5" fill="none" stroke-width="3" class="stroke-steam-light" />
-					<circle cx="18" cy="18" r="15.5" fill="none" stroke-width="3"
-						stroke-dasharray={`${totalPercent * 0.974} 100`}
-						stroke-linecap="round" class="stroke-steam-accent transition-all duration-500" />
-				</svg>
-				<span class="absolute inset-0 flex items-center justify-center text-[10px] font-bold tabular-nums">{totalPercent}%</span>
-			</div>
-			<div class="min-w-0 overflow-hidden text-xs leading-tight">
-				<span class="font-semibold text-gray-200">{totalCompleted}/{totalAchievements}</span>
-				<span class="block truncate text-gray-500">{filteredAndSorted.length} games</span>
-			</div>
-		</div>
-
-		<button
-			class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-steam-blue text-gray-400 active:text-white"
-			onclick={() => { showSearch = !showSearch; showFilters = false; }}
-		>
-			<Search class="h-4 w-4" />
-		</button>
-
-		<button
-			class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-steam-blue text-gray-400 active:text-white"
-			onclick={() => { showFilters = !showFilters; showSearch = false; }}
-		>
-			<Filter class="h-4 w-4" />
-		</button>
-
-		<button
-			class="flex h-9 shrink-0 items-center gap-1.5 rounded-lg bg-steam-accent px-3 text-xs font-semibold text-steam-dark active:bg-steam-accent/80 disabled:opacity-50"
-			onclick={syncAllGames}
-			disabled={syncing}
-		>
-			{#if syncing}<Loader2 class="h-4 w-4 animate-spin" />{:else}<RefreshCw class="h-4 w-4" />{/if}
-			Sync
-		</button>
-
-		<button
-			class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-steam-blue text-gray-400 active:text-white"
-			onclick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-		>
-			<ArrowUp class="h-4 w-4" />
-		</button>
-	</div></div>
+<MobileBar
+	percent={totalPercent}
+	primary="{totalCompleted}/{totalAchievements}"
+	secondary="{filteredAndSorted.length} games"
+	status={syncStatus}
+	statusTone={syncStatus?.includes('failed') || syncStatus?.includes('fail') ? 'error' : 'ok'}
+	syncing={syncing}
+	onsync={syncAllGames}
+	searchPlaceholder="Search games..."
+	bind:query={searchQuery}
+	onsearch={updateSearchUrl}
+>
+	{#snippet panel()}
+		<select class="w-full rounded-lg border-none bg-steam-blue px-3 py-2 text-sm text-gray-300 outline-none" bind:value={sortBy}>
+			<option value="name">A–Z</option>
+			<option value="completion">Completion</option>
+			<option value="recent">Recent</option>
+		</select>
+	{/snippet}
+</MobileBar>

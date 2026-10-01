@@ -11,7 +11,7 @@
 		Repeat,
 		EyeOff
 	} from '@lucide/svelte';
-	import type { Achievement } from '$lib/types/game';
+	import type { Achievement } from '#lib/types/game';
 
 	let { achievement, achieved, steamLocked, unlockTime, ontoggle } = $props<{
 		achievement: Achievement;

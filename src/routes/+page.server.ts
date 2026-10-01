@@ -1,7 +1,7 @@
 import type { PageServerLoad } from './$types';
-import { getAllGames } from '$lib/server/games';
-import { getGameDetails, normalizeName } from '$lib/server/steam/api';
-import type { SteamGameDetails } from '$lib/types/steam';
+import { getAllGames } from '#lib/server/games';
+import { getGameDetails, normalizeName } from '#lib/server/steam/api';
+import type { SteamGameDetails } from '#lib/types/steam';
 
 export interface GameListItem {
 	appId: number;
