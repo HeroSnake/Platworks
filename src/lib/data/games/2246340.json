@@ -8,6 +8,7 @@
 			"id": "WINDWARD_LANDS",
 			"name": "Windward Lands",
 			"description": "Completed mission: The Desert Trotters.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/1143bb0eff64a59f597611251a8466a9973c1ff3.jpg",
 			"type": "secret",
 			"difficulty": "easy",
 			"guide": {
@@ -22,6 +23,7 @@
 			"id": "GIANT_CROWN",
 			"name": "Giant Crown",
 			"description": "Obtained your first silver crown or higher in the Hunting Log.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/cd3a75cab38d48ee232360990e8c2a1c32c11275.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -37,6 +39,7 @@
 			"id": "THE_BIGGER_THEY_ARE",
 			"name": "The Bigger They Are...",
 			"description": "Successfully mounted a monster for the first time.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/d0ed6c488ce791813434de04cc78d9208d8591a0.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -52,6 +55,7 @@
 			"id": "SHADOW_IN_THE_DOWNPOUR",
 			"name": "Shadow in the Downpour",
 			"description": "Completed mission: Beyond the Deluge.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/5f4fd625717abc79cbb4c4881a73aa7ae2242575.jpg",
 			"type": "secret",
 			"difficulty": "easy",
 			"guide": {
@@ -66,6 +70,7 @@
 			"id": "THE_HUNT_IS_ON",
 			"name": "The Hunt Is On!",
 			"description": "Completed your first Field Survey.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/b40b6d0665b2b21a10485e8d72c547d6731a1b96.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -80,6 +85,7 @@
 			"id": "WAS_IT_A_MEAL_TO_REMEMBER",
 			"name": "Was It a Meal to Remember?",
 			"description": "Cooked over the BBQ Grill for the first time.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/64044e8ecae44b23baf4880f7577f2f3d2f74ab2.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -95,6 +101,7 @@
 			"id": "HUNTERS_UNITED",
 			"name": "Hunters United",
 			"description": "Completed a quest via multiplayer.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/361bd943dab1c4352c1229937bacf867149d784f.jpg",
 			"type": "multiplayer",
 			"difficulty": "easy",
 			"guide": {
@@ -112,6 +119,7 @@
 			"id": "GUARDIANS_OF_THE_FORGE",
 			"name": "Guardians of the Forge",
 			"description": "Completed mission: Long-forgotten Flame.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/d89dc1a4cfc30c3cdc1f948859e6110cb197f716.jpg",
 			"type": "secret",
 			"difficulty": "easy",
 			"guide": {
@@ -126,6 +134,7 @@
 			"id": "A_STEP_TOWARD_MUTUAL_UNDERSTANDING",
 			"name": "A Step Toward Mutual Understanding",
 			"description": "Completed your first side mission.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/7c6e179ca0ac1cbbe7c9c3294811ae26d0672eb2.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -140,6 +149,7 @@
 			"id": "BRINGER_OF_HARMONY",
 			"name": "Bringer of Harmony",
 			"description": "Completed mission: Monster Hunter.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/434c1f03130cd56e4180d3e8bd488dac12f8d6ac.jpg",
 			"type": "secret",
 			"difficulty": "easy",
 			"guide": {
@@ -154,6 +164,7 @@
 			"id": "HIT_EM_WHERE_IT_HURTS",
 			"name": "Hit 'Em Where It Hurts!",
 			"description": "Landed 50 successful attacks on weak points or wounds in Focus Mode.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/a7ac49d56e962be7c239a88b6d73cfe547801266.jpg",
 			"type": "cumulative",
 			"difficulty": "easy",
 			"guide": {
@@ -172,6 +183,7 @@
 			"id": "NEW_ECOSYSTEMS",
 			"name": "New Ecosystems",
 			"description": "Completed mission: New Ecosystems.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/c6313a9e6881d9f445655d960e7c8c049d5fbe66.jpg",
 			"type": "secret",
 			"difficulty": "easy",
 			"guide": {
@@ -186,6 +198,7 @@
 			"id": "HUNTER_ASSASSIN",
 			"name": "Hunter-Assassin",
 			"description": "Performed your first successful Sneak Attack.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/f6b863746a002fe0bafb31337dacfbbcc1be2c70.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -203,6 +216,7 @@
 			"id": "ANGLING_FOR_A_BITE",
 			"name": "Angling for a Bite",
 			"description": "Successfully fished for the first time.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/ecd73d7a40f73ebfe801d8cb4a6fc225be60b1d1.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -217,6 +231,7 @@
 			"id": "RIDE_OR_DIE_COMPANION",
 			"name": "Ride-or-die Companion",
 			"description": "Customized your Seikret or changed its decorations for the first time.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/8ca66f104a4704aa30ce2b8bd40735d3b3def149.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -231,6 +246,7 @@
 			"id": "A_BITTER_ENVIRONMENT",
 			"name": "A Bitter Environment",
 			"description": "Completed mission: Wyvern Sparks and Rose Thorns.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/36464277f3954348a99d166c3df5b2cb1e5678ca.jpg",
 			"type": "secret",
 			"difficulty": "easy",
 			"guide": {
@@ -245,6 +261,7 @@
 			"id": "A_TRUE_HUNTER_IS_NEVER_SATISFIED",
 			"name": "A True Hunter Is Never Satisfied",
 			"description": "Completed 50 quests.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/ee560f5141c63b678c2a817e950bc9d453228d90.jpg",
 			"type": "cumulative",
 			"difficulty": "easy",
 			"guide": {
@@ -259,6 +276,7 @@
 			"id": "BEYOND_THE_BLACK_WINGS",
 			"name": "Beyond the Black Wings",
 			"description": "Completed mission: A World Turned Upside Down.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/e8b7b10ba56a9463ec659c7f1f980f3613662962.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -274,6 +292,7 @@
 			"id": "LET_THE_INVESTIGATIONS_BEGIN",
 			"name": "Let the Investigations Begin!",
 			"description": "Completed your first investigation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/02c84ed35965e5dc1ed3653d8ac7e32747036986.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -288,6 +307,7 @@
 			"id": "ONE_CORNER_OF_THE_WORLD",
 			"name": "One Corner of the World",
 			"description": "Completed mission: What Lies Ahead.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/4a43b779d1953fd87e920d44a497d97fbbfc2572.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -305,6 +325,7 @@
 			"id": "CAMPMASTER",
 			"name": "Campmaster",
 			"description": "Established Pop-up Camps in 10 places.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/fedb517d9fc971e72138b220de9df59e049e63b6.jpg",
 			"type": "cumulative",
 			"difficulty": "easy",
 			"guide": {
@@ -323,6 +344,7 @@
 			"id": "IMPREGNABLE_DEFENSE",
 			"name": "Impregnable Defense",
 			"description": "Forged five different pieces of armor with Rarity 7 or higher.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/86dac2d987165a8815edaaefecd00edb053bf973.jpg",
 			"type": "standard",
 			"difficulty": "medium",
 			"guide": {
@@ -338,6 +360,7 @@
 			"id": "MONSTER_SLAYER",
 			"name": "Monster Slayer",
 			"description": "Hunted 100 large monsters.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/10fdc7f671bae8b203d76d728d2ce2d0506fd4cf.jpg",
 			"type": "cumulative",
 			"difficulty": "medium",
 			"guide": {
@@ -353,6 +376,7 @@
 			"id": "MONSTER_PHD",
 			"name": "Monster Ph.D.",
 			"description": "Hunted many different large monsters.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/19a29baf3cc204ecbba1b03bbd417fc095a8121e.jpg",
 			"type": "cumulative",
 			"difficulty": "medium",
 			"guide": {
@@ -371,6 +395,7 @@
 			"id": "A_LEGACY_RESTORED",
 			"name": "A Legacy Restored",
 			"description": "Obtained an Artian Weapon of Rarity 8.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/90d14a8c4b293735187c7b30d0ad1ca7b17e7194.jpg",
 			"type": "secret",
 			"difficulty": "hard",
 			"guide": {
@@ -393,6 +418,7 @@
 			"id": "GLAMPER",
 			"name": "Glamper",
 			"description": "Customized a Pop-up Camp for the first time.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/593ecddb3b6cc55038c5cc1a0ba336467da1fe07.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -407,6 +433,7 @@
 			"id": "MINIATURE_CROWN",
 			"name": "Miniature Crown",
 			"description": "Obtained your first miniature crown in the Hunting Log.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/8156c82ea21096992aad8e736c9d7c086d6a3893.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -422,6 +449,7 @@
 			"id": "POWER_IS_EVERYTHING",
 			"name": "Power Is Everything",
 			"description": "Forged five different weapons with Rarity 7 or higher.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/e2a8d70bfd30df982e7766eb39f3e3d2032a9679.jpg",
 			"type": "standard",
 			"difficulty": "medium",
 			"guide": {
@@ -437,6 +465,7 @@
 			"id": "ESTABLISHED_HUNTER",
 			"name": "Established Hunter",
 			"description": "Reached Hunter Rank 100.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/b602528855b0e0537f2960b4a653f68a83df6fac.jpg",
 			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
@@ -456,6 +485,7 @@
 			"id": "SEASONED_HUNTER",
 			"name": "Seasoned Hunter",
 			"description": "Hunted 50 tempered monsters.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/bbf15074c8d8d6e21cab3ccbebb62fc43f33b50f.jpg",
 			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
@@ -474,6 +504,7 @@
 			"id": "BOURGEOIS_HUNTER",
 			"name": "Bourgeois Hunter",
 			"description": "Possessed 1,000,000 zenny.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/b7056102c53d59596a8797081cc7c31a39304d51.jpg",
 			"type": "cumulative",
 			"difficulty": "medium",
 			"guide": {
@@ -492,6 +523,7 @@
 			"id": "SOMEONE_WORTH_FOLLOWING",
 			"name": "Someone Worth Following",
 			"description": "Completed 100 quests with your Palico deployed.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/c3823eeb0df771379c01db04da7bec6fb01af7a7.jpg",
 			"type": "cumulative",
 			"difficulty": "medium",
 			"guide": {
@@ -510,6 +542,7 @@
 			"id": "MMM_SO_TASTY",
 			"name": "Mmm, So Tasty!",
 			"description": "Successfully cooked a well-done steak for the first time.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/ae10e960258f84b0be85fee351b08daa5d4b0731.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -528,6 +561,7 @@
 			"id": "EAST_TO_WEST",
 			"name": "East to West, A Hunter Never Rests",
 			"description": "Completed 30 different side missions.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/2cdfdb7492d15bcc0918d1cee247e95e7a9273b0.jpg",
 			"type": "cumulative",
 			"difficulty": "medium",
 			"guide": {
@@ -543,6 +577,7 @@
 			"id": "HUNTERS_UNITED_FOREVER",
 			"name": "Hunters United Forever",
 			"description": "Completed 100 quests via multiplayer.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/c22a0cec096d9a007161db3b3ecd5bc06600b1c6.jpg",
 			"type": "multiplayer",
 			"difficulty": "medium",
 			"guide": {
@@ -560,6 +595,7 @@
 			"id": "NEWLY_FORGED_BONDS",
 			"name": "Newly Forged Bonds",
 			"description": "Followed someone for the first time.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/aca058cc5ccf2a092c39aa441f8ecd409b638a70.jpg",
 			"type": "multiplayer",
 			"difficulty": "easy",
 			"guide": {
@@ -574,6 +610,7 @@
 			"id": "CAPTURE_PRO",
 			"name": "Capture Pro",
 			"description": "Captured 50 monsters.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/cd4e28ed9ae42fe93d2e30c7fac88f6fd85c61f6.jpg",
 			"type": "cumulative",
 			"difficulty": "medium",
 			"guide": {
@@ -593,6 +630,7 @@
 			"id": "A_PRIZE_HELD_HIGH",
 			"name": "A Prize Held High",
 			"description": "Caught a creature that bears an ancient wyvern coin.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/59a53ddd54433edd83001583a7d2a3aa8fe885eb.jpg",
 			"type": "secret",
 			"difficulty": "hard",
 			"guide": {
@@ -615,6 +653,7 @@
 			"id": "I_CAUGHT_A_SHOOTING_STAR",
 			"name": "I Caught a Shooting Star!",
 			"description": "Caught a creature in the desert that shines like a shooting star.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/83697031a88e3787f45d3a217be4bea461370d02.jpg",
 			"type": "secret",
 			"difficulty": "hard",
 			"guide": {
@@ -636,6 +675,7 @@
 			"id": "A_KEEN_EYED_OBSERVATION",
 			"name": "A Keen-eyed Observation",
 			"description": "Used the binoculars to spot a gold-crown large monster.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/71d0b604bcfc2f08c13d5a2c5395e810f29a4cef.jpg",
 			"type": "standard",
 			"difficulty": "medium",
 			"guide": {
@@ -654,6 +694,7 @@
 			"id": "TOP_OF_THE_FOOD_CHAIN",
 			"name": "Top of the Food Chain",
 			"description": "Hunted 50 apex predators.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/ba000c3c6d49e99493bc49a64478bd53c043743c.jpg",
 			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
@@ -672,6 +713,7 @@
 			"id": "GIANT_CROWN_COLLECTOR",
 			"name": "Giant Crown Collector",
 			"description": "Obtained a gold crown for 10 or more monsters in the Hunting Log.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/4892108fcf89dec2e32ab155629ab1621c7ecc0d.jpg",
 			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
@@ -691,6 +733,7 @@
 			"id": "MONSTER_SQUID_HUNTER",
 			"name": "Monster (Squid) Hunter",
 			"description": "Caught a giant squid while fishing.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/bf275cf3f6ee6ba966c0842f3591e6cd67eb4496.jpg",
 			"type": "standard",
 			"difficulty": "hard",
 			"guide": {
@@ -712,6 +755,7 @@
 			"id": "MINIATURE_CROWN_COLLECTOR",
 			"name": "Miniature Crown Collector",
 			"description": "Obtained a miniature crown for 10 or more monsters in the Hunting Log.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/c3b6b63d98ed79d376c8533a090477e763674c56.jpg",
 			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
@@ -730,6 +774,7 @@
 			"id": "EXPLORER_OF_THE_EASTLANDS",
 			"name": "Explorer of the Eastlands",
 			"description": "Obtained 10 different special items of Rarity 6.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/0f18f43711c4e9da3613d86de9db805bf9441f58.jpg",
 			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
@@ -748,6 +793,7 @@
 			"id": "GOSSIP_HUNTER",
 			"name": "Gossip Hunter",
 			"description": "Viewed 30 different Hunter Profiles.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/6ea636fdce68821645862756f6917bd3099a7233.jpg",
 			"type": "cumulative",
 			"difficulty": "medium",
 			"guide": {
@@ -766,6 +812,7 @@
 			"id": "A_FISH_IONADO",
 			"name": "A-fish-ionado",
 			"description": "Reeled in 30 whoppers while fishing.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/bce9d2d9ec6ab11405634a04ecd0d2a0f6147466.jpg",
 			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
@@ -784,6 +831,7 @@
 			"id": "GIANT_CROWN_MASTER",
 			"name": "Giant Crown Master",
 			"description": "Obtained a gold crown for many monsters in the Hunting Log.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/1e9e0612ec6b1e5d5bc155a30c99cb6a578cef5e.jpg",
 			"type": "cumulative",
 			"difficulty": "very-hard",
 			"guide": {
@@ -808,6 +856,7 @@
 			"id": "MINIATURE_CROWN_MASTER",
 			"name": "Miniature Crown Master",
 			"description": "Obtained a miniature crown for many monsters in the Hunting Log.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/e7da4f45efb6e089c2c4da9219d2029c16fa9fd2.jpg",
 			"type": "cumulative",
 			"difficulty": "very-hard",
 			"guide": {
@@ -830,6 +879,7 @@
 			"id": "EASTWARD_WINGS",
 			"name": "Eastward Wings",
 			"description": "Obtained all other achievements.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2246340/57afb97b918edcbbc6827d844e5da32c6c94b95b.jpg",
 			"type": "standard",
 			"difficulty": "very-hard",
 			"guide": {

@@ -8,6 +8,7 @@
 			"id": "Arrived",
 			"name": "I Have Arrived!",
 			"description": "Enter the tenth world.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/63534b06771e32d358b7f7aa40cadbfcce7e6a6d.jpg",
 			"type": "secret",
 			"difficulty": "easy",
 			"guide": {
@@ -29,6 +30,7 @@
 			"id": "FirstDeath",
 			"name": "The First of Many",
 			"description": "Meet your end, then prepare to do it all again...",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/35b3d161c17d9b09ed002c5d0c5ab243ecc9b8d1.jpg",
 			"type": "secret",
 			"difficulty": "easy",
 			"guide": {
@@ -46,6 +48,7 @@
 			"id": "BuildHouse",
 			"name": "The Homesteader",
 			"description": "Build a house.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/8123144c57291c8528150704740f38932abd4afb.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -61,6 +64,7 @@
 			"id": "Boss1Eikthyr",
 			"name": "Eikthyr",
 			"description": "Defeat the Lightning Stag.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/7e1cf56c4043d2b2aad0274942709f29acba6f62.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -81,6 +85,7 @@
 			"id": "MultiplayerBoss",
 			"name": "Stronger Together",
 			"description": "Kill a boss together with a friend.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/adcfc8d86d8b4acaf53a83047ffb776cdff1ad44.jpg",
 			"type": "multiplayer",
 			"difficulty": "medium",
 			"guide": {
@@ -103,6 +108,7 @@
 			"id": "BuildVillage",
 			"name": "The Architect",
 			"description": "Build a village.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/671fedd891f5f64dbf4e1da9a8a0bf18131249de.jpg",
 			"type": "standard",
 			"difficulty": "hard",
 			"guide": {
@@ -124,6 +130,7 @@
 			"id": "Boss2Elder",
 			"name": "The Elder",
 			"description": "Defeat the Living Forest.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/4310afd3ed9fffa67496b56bbe994ac8743ca51c.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -140,6 +147,7 @@
 			"id": "GrindBuild",
 			"name": "The Builder",
 			"description": "Build 500 pieces.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/282cdb73be83710285b2614ec42f74eb78ab9e7b.jpg",
 			"type": "cumulative",
 			"difficulty": "medium",
 			"guide": {
@@ -158,6 +166,7 @@
 			"id": "SoloBoss",
 			"name": "Lone Wolf",
 			"description": "Kill a boss all by yourself.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/abbca6d6f472cc3e47af7769d077b69ef6a74eea.jpg",
 			"type": "standard",
 			"difficulty": "hard",
 			"guide": {
@@ -181,6 +190,7 @@
 			"id": "Boss3Bonemass",
 			"name": "Bonemass",
 			"description": "Defeat the Writhing Dead.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/31b3b3e61e213de6416b931544da4f14f3293323.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -201,6 +211,7 @@
 			"id": "DeathByTree",
 			"name": "Accidents Happen",
 			"description": "Get killed by a tree.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/b1e4855f64c66a40975becd8a7fe20aeca102cc8.jpg",
 			"type": "secret",
 			"difficulty": "easy",
 			"guide": {
@@ -218,6 +229,7 @@
 			"id": "GrindCook",
 			"name": "The Cook",
 			"description": "Cook 100 dishes.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/9cbb176d3a0e5fbf1f6d411f5245ba848a921e73.jpg",
 			"type": "cumulative",
 			"difficulty": "medium",
 			"guide": {
@@ -233,6 +245,7 @@
 			"id": "Boss4Moder",
 			"name": "Moder",
 			"description": "Defeat the Dragon Mother.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/b9e103c6f8a09b2fdb8ab53f706d94bc7ca7e5e3.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -253,6 +266,7 @@
 			"id": "GrindLeviathan",
 			"name": "No Time For Snoozing",
 			"description": "Awaken a sea creature.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/00eda85c2ba32ffb3cf455b8c107144d4ee8c591.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -272,6 +286,7 @@
 			"id": "GrindEat",
 			"name": "No Adventuring On an Empty Stomach",
 			"description": "Eat 500 items of food.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/61f88c7ebfade8edb46d99ea16a94ac59d59d240.jpg",
 			"type": "cumulative",
 			"difficulty": "medium",
 			"guide": {
@@ -287,6 +302,7 @@
 			"id": "GrindHarvest",
 			"name": "The Farmer",
 			"description": "Harvest 500 crops.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/90fa8302a69223ba7361c0872ba2a2f80e1c2e1c.jpg",
 			"type": "cumulative",
 			"difficulty": "medium",
 			"guide": {
@@ -302,6 +318,7 @@
 			"id": "Boss5Yagluth",
 			"name": "Yagluth",
 			"description": "Defeat the Twisted Soul.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/d201109e8ef7c602d5dc936450ea4d44f86f8c07.jpg",
 			"type": "secret",
 			"difficulty": "hard",
 			"guide": {
@@ -326,6 +343,7 @@
 			"id": "GrindDays",
 			"name": "The Survivor",
 			"description": "Survive for 30 consecutive days.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/060f01d8ae180d61f10cd224caaae003487fd5ad.jpg",
 			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
@@ -349,6 +367,7 @@
 			"id": "GrindComfort",
 			"name": "Comfort is King",
 			"description": "Reach a comfort level of 20.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/d770fee523b33a7c52a6a1a5c8d8f26c016ae1ae.jpg",
 			"type": "standard",
 			"difficulty": "medium",
 			"guide": {
@@ -368,6 +387,7 @@
 			"id": "GrindForager",
 			"name": "The Forager",
 			"description": "Pick 250 berries and 250 mushrooms.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/26fb83790d3a2a95bffc0d300f604cd48a2720a3.jpg",
 			"type": "cumulative",
 			"difficulty": "medium",
 			"guide": {
@@ -387,6 +407,7 @@
 			"id": "Boss6Queen",
 			"name": "The Seeker Queen",
 			"description": "Defeat the Crawling Matriarch.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/0b336642eccde21d742ead58b6eb247d2d68e62e.jpg",
 			"type": "secret",
 			"difficulty": "hard",
 			"guide": {
@@ -407,6 +428,7 @@
 			"id": "Boss7Fader",
 			"name": "Fader",
 			"description": "Defeat the Emerald Flame.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/b8181d590f8b3d1da0272970a19d665119ee3973.jpg",
 			"type": "secret",
 			"difficulty": "hard",
 			"guide": {
@@ -430,6 +452,7 @@
 			"id": "GrindHoney",
 			"name": "The Beekeeper",
 			"description": "Harvest 500 honey.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/2bf7a0bee78059a2a12e7fc542414f5eae3b1d5f.jpg",
 			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
@@ -452,6 +475,7 @@
 			"id": "GrindSailHelm",
 			"name": "The Captain",
 			"description": "Sail far enough to circle the world, while manning the helm.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/1456505d3f097ed5b7c7f863d5f683133af51304.jpg",
 			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
@@ -474,6 +498,7 @@
 			"id": "Boss8FrozenKing",
 			"name": "Kall Fimbulbringer",
 			"description": "Defeat the Shackled One.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/859c585b71eee0129b048b7353af58bb52860332.jpg",
 			"type": "secret",
 			"difficulty": "very-hard",
 			"guide": {
@@ -499,6 +524,7 @@
 			"id": "GrindSail",
 			"name": "The Sailor",
 			"description": "Sail far enough to circle the world twice.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/ba7b54f167619f1a646b8f298955ad8e7716a7dd.jpg",
 			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
@@ -521,6 +547,7 @@
 			"id": "BuildDyrnwyn",
 			"name": "The Chosen One",
 			"description": "Assemble Dyrnwyn.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/2a1286c658aa8bb8f34c0c2f1f4e30a4688ad496.jpg",
 			"type": "secret",
 			"difficulty": "hard",
 			"guide": {
@@ -544,6 +571,7 @@
 			"id": "AllBosses",
 			"name": "The Viking",
 			"description": "Defeat all bosses on any difficulty.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/190dea63a8f7f82a7688f764416e7843b36062c2.jpg",
 			"type": "standard",
 			"difficulty": "medium",
 			"guide": {
@@ -559,6 +587,7 @@
 			"id": "BigFish",
 			"name": "A Catch Worthy of Njord",
 			"description": "Catch a four star fish.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/eb00cd5fef98c095ea33f3a3e03daa621d4dd122.jpg",
 			"type": "standard",
 			"difficulty": "medium",
 			"guide": {
@@ -579,6 +608,7 @@
 			"id": "DeathByAllTypes",
 			"name": "Are You Alright?",
 			"description": "Die in every way possible.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/df80631637ec0de3c4d7017f3d25a7a0f9c2a4e4.jpg",
 			"type": "standard",
 			"difficulty": "hard",
 			"guide": {
@@ -602,6 +632,7 @@
 			"id": "ChildOfOdin",
 			"name": "Child of Odin",
 			"description": "Embody the spirits of the Toughest Viking, Master Hunter, Survivor and Pathfinder.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/017a82e2f986d540466119aeacb50be1eae7e532.jpg",
 			"type": "cumulative",
 			"difficulty": "very-hard",
 			"guide": {
@@ -625,6 +656,7 @@
 			"id": "KingsQueens",
 			"name": "Kings and Queens of Valheim",
 			"description": "Embody the spirits of the Viking, Hunter, Artisan, Master Chef, Carpenter and the Explorer.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/0fb3d6b23603a4a3baf8fd672e476243f0b207fe.jpg",
 			"type": "cumulative",
 			"difficulty": "very-hard",
 			"guide": {
@@ -647,6 +679,7 @@
 			"id": "BuildHigh",
 			"name": "Mighty Halls",
 			"description": "Raise a very tall structure.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/c67946326d7a3cfa190e23c092abcb6203d4b48d.jpg",
 			"type": "standard",
 			"difficulty": "medium",
 			"guide": {
@@ -666,6 +699,7 @@
 			"id": "DeathByObliterator",
 			"name": "Obliterated",
 			"description": "You stood a bit too close.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/4a94d21386836a552646d1335263fb328549f8a6.jpg",
 			"type": "secret",
 			"difficulty": "easy",
 			"guide": {
@@ -685,6 +719,7 @@
 			"id": "AllMiniBosses",
 			"name": "Odin is Pleased",
 			"description": "Defeat all minibosses.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/7f3f3cd06e079bc2a00507f97429a81c4bda6ddf.jpg",
 			"type": "standard",
 			"difficulty": "hard",
 			"guide": {
@@ -704,6 +739,7 @@
 			"id": "DeathByTreeAll",
 			"name": "That Can't Be an Accident",
 			"description": "Get killed by every kind of tree.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/3f2e42c825489bb7f13226e5f3a30a692ac6b511.jpg",
 			"type": "secret",
 			"difficulty": "hard",
 			"guide": {
@@ -726,6 +762,7 @@
 			"id": "AllItemCraft",
 			"name": "The Artisan",
 			"description": "Craft every kind of item.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/9a4736aed8b7e955ca22b9014a65d1a5c9dcd749.jpg",
 			"type": "cumulative",
 			"difficulty": "very-hard",
 			"guide": {
@@ -748,6 +785,7 @@
 			"id": "AllWeaponCraft",
 			"name": "The Blacksmith",
 			"description": "Craft every kind of weapon.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/48e2c3ede71a32749e880d944ed916ce90ef2744.jpg",
 			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
@@ -767,6 +805,7 @@
 			"id": "AllBuildPieces",
 			"name": "The Carpenter",
 			"description": "Build everything.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/250ad8718bd2107f4d6292e9ec5e6bc2dbae3a1a.jpg",
 			"type": "cumulative",
 			"difficulty": "very-hard",
 			"guide": {
@@ -789,6 +828,7 @@
 			"id": "ExploreNSEW",
 			"name": "The Explorer",
 			"description": "Travel far in all four directions.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/971bd1594d4ebf2a8a73dec786b104c78476056e.jpg",
 			"type": "standard",
 			"difficulty": "hard",
 			"guide": {
@@ -811,6 +851,7 @@
 			"id": "GrindFish",
 			"name": "The Fisherman",
 			"description": "Catch every kind of fish.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/6ed85097507ec73156e66eacf38d3870aa8fcf13.jpg",
 			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
@@ -831,6 +872,7 @@
 			"id": "AllFoodEaten",
 			"name": "The Gourmet",
 			"description": "Eat every kind of edible item.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/76b473c09437e425550a915a403b14d8695d21a6.jpg",
 			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
@@ -850,6 +892,7 @@
 			"id": "KillAllCreatures",
 			"name": "The Hunter",
 			"description": "Kill every kind of creature.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/bb5543406cc8bbf45db64a7a344aed2bc18fc3d3.jpg",
 			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
@@ -869,6 +912,7 @@
 			"id": "SailEdge",
 			"name": "The Legends Are True",
 			"description": "Sail over the edge of the world.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/f451691aca010fff0ca5f60d01438793f2e0e085.jpg",
 			"type": "secret",
 			"difficulty": "hard",
 			"guide": {
@@ -892,6 +936,7 @@
 			"id": "GrindTrees",
 			"name": "The Lumberjack",
 			"description": "Cut down 500 trees.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/5cc78c6f05026bafc88fff71f7f4c9590f79db8a.jpg",
 			"type": "cumulative",
 			"difficulty": "medium",
 			"guide": {
@@ -907,6 +952,7 @@
 			"id": "AllFoodCooked",
 			"name": "The Master Chef",
 			"description": "Cook every kind of dish.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/329a4ed1067563736e4a36abf52b05940ba11f8a.jpg",
 			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
@@ -929,6 +975,7 @@
 			"id": "KillAllCreaturesHard",
 			"name": "The Master Hunter",
 			"description": "Kill every kind of creature on hard difficulty.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/9bbc7144542cefabac6b05d2bb7b8f0f341ede11.jpg",
 			"type": "cumulative",
 			"difficulty": "very-hard",
 			"guide": {
@@ -952,6 +999,7 @@
 			"id": "ExploreNSEWNoMap",
 			"name": "The Pathfinder",
 			"description": "Travel far in all four directions, without using a map.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/d27519014d7ca453a948bc81e267b4508e85d0f0.jpg",
 			"type": "standard",
 			"difficulty": "very-hard",
 			"guide": {
@@ -975,6 +1023,7 @@
 			"id": "AllBossesNormal",
 			"name": "The Tough Viking",
 			"description": "Defeat all bosses on normal difficulty or higher.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/049dc17e46e24bb217573fb155dc5e2cdce41d10.jpg",
 			"type": "standard",
 			"difficulty": "hard",
 			"guide": {
@@ -994,6 +1043,7 @@
 			"id": "AllBossesHard",
 			"name": "The Toughest Viking",
 			"description": "Defeat all bosses on hard difficulty.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/626c08c4cb9a67c6a79c52df666225325acc02a5.jpg",
 			"type": "standard",
 			"difficulty": "very-hard",
 			"guide": {
@@ -1017,6 +1067,7 @@
 			"id": "GrindTreasure",
 			"name": "The Treasure Hunter",
 			"description": "Discover 10 buried treasure chests.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/ba35ab17366761e2a2a5e3d79474b6ca2d3ee53b.jpg",
 			"type": "secret",
 			"difficulty": "easy",
 			"guide": {
@@ -1036,6 +1087,7 @@
 			"id": "FindAllTrophies",
 			"name": "The Trophy Collector",
 			"description": "Collect all trophies.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/d2b64655d5dd898ef38841cee094a9885ac65a87.jpg",
 			"type": "cumulative",
 			"difficulty": "very-hard",
 			"guide": {
@@ -1058,6 +1110,7 @@
 			"id": "BuildHighWorld",
 			"name": "Top of the World",
 			"description": "Build something very high up.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/80dcbeb36d0a38c48b59366c65a510607b2f3976.jpg",
 			"type": "standard",
 			"difficulty": "very-hard",
 			"guide": {

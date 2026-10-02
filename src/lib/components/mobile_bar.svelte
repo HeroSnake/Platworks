@@ -97,11 +97,16 @@
 			<div class="relative h-9 w-9 shrink-0">
 				<svg class="h-9 w-9 -rotate-90" viewBox="0 0 36 36">
 					<circle cx="18" cy="18" r="15.5" fill="none" stroke-width="3" class="stroke-steam-light" />
+					<!-- `stroke` is deliberately left out of the transition: this flips with
+					     every check, and animating the colour would repaint the whole bar.
+					     Green at 100% matches game_card.svelte's "Complete" state. -->
 					<circle
 						cx="18" cy="18" r="15.5" fill="none" stroke-width="3"
 						stroke-dasharray={`${percent * 0.974} 100`}
 						stroke-linecap="round"
-						class="stroke-steam-accent transition-[stroke-dasharray] duration-500 ease-out"
+						class="transition-[stroke-dasharray] duration-500 ease-out {percent === 100
+							? 'stroke-green-400'
+							: 'stroke-steam-accent'}"
 					/>
 				</svg>
 				<span class="absolute inset-0 flex items-center justify-center text-[10px] font-bold tabular-nums">{percent}%</span>

@@ -8,6 +8,7 @@
 			"id": "TIMBER",
 			"name": "Timber!!",
 			"description": "Chop down your first tree.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/105600/example.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -21,6 +22,7 @@
 			"id": "KILL_THE_GUIDE",
 			"name": "Homicidal Maniac",
 			"description": "Defeat every type of NPC.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/105600/example2.jpg",
 			"type": "missable",
 			"difficulty": "hard",
 			"guide": {

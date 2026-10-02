@@ -4,47 +4,640 @@
 	"name": "Elden Ring",
 	"totalAchievements": 42,
 	"achievements": [
-		{ "id": "ROUNDTABLE_HOLD", "name": "Roundtable Hold", "description": "Arrive at the Roundtable Hold.", "type": "secret", "difficulty": "easy", "guide": { "steps": ["Defeat Margit or rest at enough Sites of Grace to trigger the invitation.", "Accept Melina's offer and be teleported to the Roundtable Hold."] } },
-		{ "id": "MARGIT_THE_FELL_OMEN", "name": "Margit, the Fell Omen", "description": "Defeat Margit, the Fell Omen.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Travel to the entrance of Stormveil Castle.", "Defeat Margit — he's weak to bleed and jump attacks."], "communityNotes": ["Reddit tip: Use Margit's Shackle (bought from Patches) to pin him down twice during phase 1."] } },
-		{ "id": "SHARDBEARER_GODRICK", "name": "Shardbearer Godrick", "description": "Defeat Godrick the Grafted.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Progress through Stormveil Castle to the boss arena.", "Defeat Godrick — in phase 2 he grafts a dragon head. Roll toward his axe swings."], "communityNotes": ["Reddit tip: Nepheli Loux can be summoned to help. She's very effective."] } },
-		{ "id": "GREAT_RUNE", "name": "Great Rune", "description": "Restore the power of a Great Rune at a Divine Tower.", "type": "secret", "difficulty": "easy", "guide": { "steps": ["After defeating a Shardbearer, travel to the corresponding Divine Tower.", "Activate the Great Rune at the tower's summit."] } },
-		{ "id": "RED_WOLF_OF_RADAGON", "name": "Red Wolf of Radagon", "description": "Defeat the Red Wolf of Radagon.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Progress through the Academy of Raya Lucaria.", "Defeat the Red Wolf — he's fast but staggers easily with heavy attacks."] } },
-		{ "id": "RENNALA_QUEEN", "name": "Rennala, Queen of the Full Moon", "description": "Defeat Rennala, Queen of the Full Moon.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["After the Red Wolf, proceed to Rennala's chamber in the Academy.", "Phase 1: attack the singing students with golden auras. Phase 2: she fights directly — use melee aggression."] } },
-		{ "id": "LEONINE_MISBEGOTTEN", "name": "Leonine Misbegotten", "description": "Defeat the Leonine Misbegotten.", "type": "secret", "difficulty": "easy", "guide": { "steps": ["Travel to Castle Morne in the Weeping Peninsula.", "Defeat the Leonine Misbegotten at the back of the castle."] } },
-		{ "id": "ROYAL_KNIGHT_LORETTA", "name": "Royal Knight Loretta", "description": "Defeat Royal Knight Loretta.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Progress through Caria Manor in northwest Liurnia.", "Defeat Loretta at the end of the manor."] } },
-		{ "id": "SHARDBEARER_RADAHN", "name": "Shardbearer Radahn", "description": "Defeat Starscourge Radahn.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Travel to Redmane Castle in Caelid and start the Radahn Festival.", "Summon all available NPCs during the fight. Use Torrent to close distance."], "communityNotes": ["Reddit tip: You can re-summon NPCs after they die. Keep summoning and use ranged attacks while they tank."] } },
-		{ "id": "MIMIC_TEAR", "name": "Mimic Tear", "description": "Defeat the Mimic Tear.", "type": "secret", "difficulty": "easy", "guide": { "steps": ["Enter Nokron, Eternal City (accessible after defeating Radahn).", "Fight the Mimic Tear — it copies your build. Unequip gear before the fog wall, then re-equip."] } },
-		{ "id": "GODFREY_FIRST_ELDEN_LORD", "name": "Godfrey, First Elden Lord", "description": "Defeat the golden shade of Godfrey.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Progress through Leyndell, Royal Capital.", "Defeat the golden shade of Godfrey near the Erdtree Sanctuary."] } },
-		{ "id": "SHARDBEARER_MORGOTT", "name": "Shardbearer Morgott", "description": "Defeat Morgott, the Omen King.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Fight Morgott at the base of the Erdtree in Leyndell.", "He's an upgraded Margit — similar patterns but with holy attacks. Margit's Shackle works here too."] } },
-		{ "id": "MAGMA_WYRM_MAKAR", "name": "Magma Wyrm Makar", "description": "Defeat Magma Wyrm Makar.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Travel through the Ruin-Strewn Precipice dungeon north of Liurnia.", "Defeat Makar — stay to his sides and avoid the magma trails."] } },
-		{ "id": "GOD_SLAYING_ARMAMENT", "name": "God-Slaying Armament", "description": "Upgraded any armament to its highest stage.", "type": "standard", "difficulty": "hard", "guide": { "steps": ["Collect Smithing Stones up to [8] and an Ancient Dragon Smithing Stone for regular weapons, or Somber Stones up to [10] for unique weapons.", "Upgrade any weapon to +25 (regular) or +10 (somber) at the smithing table."], "communityNotes": ["Reddit tip: Ancient Dragon Smithing Stones are very limited per playthrough. The easiest one is in the Haligtree area."] } },
-		{ "id": "FIRE_GIANT", "name": "Fire Giant", "description": "Defeat the Fire Giant.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Travel to the Mountaintops of the Giants and cross the chain bridge.", "Attack his weak ankle in phase 1. In phase 2, stay under him and attack his hands."], "communityNotes": ["Reddit tip: Torrent makes closing distance much easier. Target the bandaged leg in phase 1."] } },
-		{ "id": "ERDTREE_AFLAME", "name": "Erdtree Aflame", "description": "Set the Erdtree aflame.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["After defeating the Fire Giant, interact with the Forge of the Giants.", "Trigger the cutscene to set the Erdtree aflame."] } },
-		{ "id": "COMMANDER_NIALL", "name": "Commander Niall", "description": "Defeat Commander Niall.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Travel to Castle Sol in the Mountaintops of the Giants.", "Defeat Niall — kill his two knight summons first, then focus him."] } },
-		{ "id": "SHARDBEARER_RYKARD", "name": "Shardbearer Rykard", "description": "Defeat Rykard, Lord of Blasphemy.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Enter Volcano Manor and reach the boss arena.", "Use the Serpent-Hunter great spear (found at the arena entrance) — it has massive range against Rykard."], "communityNotes": ["Reddit tip: You MUST use the Serpent-Hunter spear. Regular weapons barely scratch him."] } },
-		{ "id": "ASTEL", "name": "Astel, Naturalborn of the Void", "description": "Defeat Astel, Naturalborn of the Void.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Complete Ranni's questline and reach the Lake of Rot, then the Grand Cloister.", "Defeat Astel — stay close to avoid his grab attack and teleport punishes."] } },
-		{ "id": "GODSKIN_DUO", "name": "Godskin Duo", "description": "Defeat the Godskin Duo.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Progress through Crumbling Farum Azula to the Dragon Temple Transept.", "Use Sleep Pots to disable one while you fight the other."], "communityNotes": ["Reddit tip: Sleep Pots trivialize this fight. Craft them with Trina's Lily."] } },
-		{ "id": "GODSKIN_NOBLE", "name": "Godskin Noble", "description": "Defeat the Godskin Noble.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Find the Godskin Noble in Volcano Manor's Temple of Eiglay.", "Dodge his rolling attack by running perpendicular. Punish his recovery windows."] } },
-		{ "id": "ANCESTOR_SPIRIT", "name": "Ancestor Spirit", "description": "Defeat the Ancestor Spirit.", "type": "secret", "difficulty": "easy", "guide": { "steps": ["Light all flames in Siofra River to activate the deer carcass.", "Interact with the carcass to start the fight. The Ancestor Spirit is slow and easy to dodge."] } },
-		{ "id": "MALIKETH", "name": "Maliketh the Black Blade", "description": "Defeat Maliketh the Black Blade.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Progress through Crumbling Farum Azula to the final boss arena.", "Phase 1 (Beast Clergyman) is melee-focused. Phase 2 (Maliketh) uses fast Destined Death attacks — use the Blasphemous Claw to parry his black blade."] } },
-		{ "id": "SHARDBEARER_MOHG", "name": "Shardbearer Mohg", "description": "Defeat Mohg, Lord of Blood.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Reach Mohgwyn Palace via the Pureblood Knight's Medal (Varre's quest) or the teleporter in Consecrated Snowfield.", "Use Mohg's Shackle for phase 1. Use Purifying Crystal Tear in your Flask to survive his phase 2 transition."], "communityNotes": ["Reddit tip: The Purifying Crystal Tear (from the NPC invader at Second Church of Marika) completely negates his phase transition bleed."] } },
-		{ "id": "HOARAH_LOUX", "name": "Hoarah Loux, Warrior", "description": "Defeat Hoarah Loux, Warrior.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Progress through Leyndell, Ashen Capital to the Erdtree.", "Fight Godfrey's true form — phase 2 he becomes a wrestler with devastating grabs. Jump over his AoE stomps."] } },
-		{ "id": "VALIANT_GARGOYLES", "name": "Valiant Gargoyles", "description": "Defeat the Valiant Gargoyles.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Navigate through Siofra Aqueduct in Nokron.", "Fight both gargoyles — try to kill the first before the second fully activates. Watch for poison mist."] } },
-		{ "id": "LORETTA_HALIGTREE", "name": "Loretta, Knight of the Haligtree", "description": "Defeat Loretta, Knight of the Haligtree.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Navigate through Miquella's Haligtree to the boss arena.", "She's a tougher version of the Caria Manor fight with new magic attacks. Close the gap quickly."] } },
-		{ "id": "ELEMER_OF_THE_BRIAR", "name": "Elemer of the Briar", "description": "Defeat Elemer of the Briar.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Travel to The Shaded Castle in the Altus Plateau.", "Defeat Elemer — his telekinetic sword has long range. Use a shield or dodge toward him."] } },
-		{ "id": "DRAGONKIN_SOLDIER", "name": "Dragonkin Soldier of Nokstella", "description": "Defeat the Dragonkin Soldier of Nokstella.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Find the Dragonkin Soldier in Ainsel River.", "Stay close and attack between his slow combos."] } },
-		{ "id": "REGAL_ANCESTOR_SPIRIT", "name": "Regal Ancestor Spirit", "description": "Defeat the Regal Ancestor Spirit.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Light all flames in Nokron/Siofra to activate the second deer carcass.", "The Regal version heals — burn it down quickly when it stops to heal."] } },
-		{ "id": "SHARDBEARER_MALENIA", "name": "Shardbearer Malenia", "description": "Defeat Malenia, Blade of Miquella.", "type": "secret", "difficulty": "very-hard", "guide": { "steps": ["Reach the bottom of Elphael, Brace of the Haligtree.", "Phase 1: learn Waterfowl Dance dodge timing. Phase 2: she becomes the Goddess of Rot with AoE scarlet rot."], "communityNotes": ["Reddit tip: Widely considered the hardest boss in the game. Bleed builds and Mimic Tear are the most popular strategies.", "Reddit tip: For Waterfowl Dance: run away from the first flurry, dodge into the second, dodge away from the third."], "warnings": ["She heals on every hit, even if you block. Avoid trading blows."] } },
-		{ "id": "MOHG_THE_OMEN", "name": "Mohg, the Omen", "description": "Defeat Mohg, the Omen.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Find the hidden area beneath Leyndell in the Subterranean Shunning Grounds.", "Defeat this weaker version of Mohg. Same moveset but no phase 2 blood ritual."] } },
-		{ "id": "DRAGONLORD_PLACIDUSAX", "name": "Dragonlord Placidusax", "description": "Defeat Dragonlord Placidusax.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["In Crumbling Farum Azula, find the hidden lie-down prompt at the floating platforms.", "Defeat the Dragonlord — he teleports and uses lightning. Stay under his body."], "communityNotes": ["Reddit tip: The arena entrance is easily missable. Look for a spot where you can lie down near the floating ruins."] } },
-		{ "id": "LICHDRAGON_FORTISSAX", "name": "Lichdragon Fortissax", "description": "Defeat Lichdragon Fortissax.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Complete Fia's questline in the Deeproot Depths.", "Interact with Fia and enter the Deathbed Dream to fight Fortissax. Lightning resist helps."] } },
-		{ "id": "AGE_OF_THE_STARS", "name": "Age of the Stars", "description": "Reach the Age of the Stars ending.", "type": "missable", "difficulty": "hard", "guide": { "steps": ["Complete Ranni's entire questline across Liurnia, Siofra, Nokron, and the Lake of Rot.", "After the final boss, choose the blue summon sign to trigger Ranni's ending."], "warnings": ["Missable — requires completing Ranni's questline before the final boss."] } },
-		{ "id": "ELDEN_LORD", "name": "Elden Lord", "description": "Reach the Elden Lord ending.", "type": "standard", "difficulty": "hard", "guide": { "steps": ["Defeat the Elden Beast (final boss).", "Choose to mend the Elden Ring for the default Elden Lord ending."] } },
-		{ "id": "LEGENDARY_ARMAMENTS", "name": "Legendary Armaments", "description": "Acquired all legendary armaments.", "type": "cumulative", "difficulty": "hard", "guide": { "steps": ["Collect all 9 legendary weapons: Grafted Blade Greatsword, Sword of Night and Flame, Ruins Greatsword, Marais Executioner's Sword, Dark Moon Greatsword, Bolt of Gransax, Eclipse Shotel, Devourer's Scepter, Golden Order Greatsword.", "Some require specific questlines or hidden locations."], "warnings": ["Bolt of Gransax becomes permanently missable after a certain story event in Leyndell."] } },
-		{ "id": "LEGENDARY_ASHEN_REMAINS", "name": "Legendary Ashen Remains", "description": "Acquired all legendary ashen remains.", "type": "cumulative", "difficulty": "hard", "guide": { "steps": ["Collect all 6 legendary spirit ashes: Lhutel the Headless, Black Knife Tiche, Mimic Tear, Redmane Knight Ogha, Ancient Dragon Knight Kristoff, Cleanrot Knight Finlay.", "Found in evergaols, dungeons, and as quest rewards."] } },
-		{ "id": "LEGENDARY_TALISMANS", "name": "Legendary Talismans", "description": "Acquired all legendary talismans.", "type": "cumulative", "difficulty": "hard", "guide": { "steps": ["Collect all 8 legendary talismans scattered across the world.", "Several are in late-game areas like Haligtree and Crumbling Farum Azula."] } },
-		{ "id": "LEGENDARY_SORCERIES", "name": "Legendary Sorceries and Incantations", "description": "Acquired all legendary sorceries and incantations.", "type": "cumulative", "difficulty": "hard", "guide": { "steps": ["Collect all 7 legendary spells: Comet Azur, Stars of Ruin, Founding Rain of Stars, Ranni's Dark Moon, Flame of the Fell God, Greyoll's Roar, Elden Stars.", "Requires reaching endgame areas and completing NPC quests."] } },
-		{ "id": "LORD_OF_FRENZIED_FLAME", "name": "Lord of Frenzied Flame", "description": "Reach the Lord of Frenzied Flame ending.", "type": "missable", "difficulty": "hard", "guide": { "steps": ["Navigate the Subterranean Shunning Grounds beneath Leyndell to the very bottom.", "Remove all armor and open the door to the Three Fingers to inherit the Frenzied Flame.", "After the final boss, the Frenzied Flame ending triggers automatically."], "warnings": ["This ending locks out all other endings unless you complete Millicent's questline and use Miquella's Needle in Dragonlord Placidusax's arena."] } },
-		{ "id": "ELDEN_RING_PLATINUM", "name": "Elden Ring", "description": "Obtained all achievements.", "type": "standard", "difficulty": "very-hard", "guide": { "steps": ["Complete all 41 other achievements.", "Requires multiple playthroughs for all 3 endings, or save-scumming before the final boss."], "communityNotes": ["Reddit tip: Save before the final boss to get all 3 endings on one character. Back up your save file."] } }
+		{
+			"id": "ROUNDTABLE_HOLD",
+			"name": "Roundtable Hold",
+			"description": "Arrive at the Roundtable Hold.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/f4e5fd19d3410470709632cd02b3136b5baca33d.jpg",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Defeat Margit or rest at enough Sites of Grace to trigger the invitation.",
+					"Accept Melina's offer and be teleported to the Roundtable Hold."
+				]
+			}
+		},
+		{
+			"id": "MARGIT_THE_FELL_OMEN",
+			"name": "Margit, the Fell Omen",
+			"description": "Defeat Margit, the Fell Omen.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/9844ceb487fa8702ef9fddf8cf09b3767d985a14.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Travel to the entrance of Stormveil Castle.",
+					"Defeat Margit — he's weak to bleed and jump attacks."
+				],
+				"communityNotes": [
+					"Reddit tip: Use Margit's Shackle (bought from Patches) to pin him down twice during phase 1."
+				]
+			}
+		},
+		{
+			"id": "SHARDBEARER_GODRICK",
+			"name": "Shardbearer Godrick",
+			"description": "Defeat Godrick the Grafted.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/1e230f1a87d7139e854c47e52337f9d50856ac64.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Progress through Stormveil Castle to the boss arena.",
+					"Defeat Godrick — in phase 2 he grafts a dragon head. Roll toward his axe swings."
+				],
+				"communityNotes": [
+					"Reddit tip: Nepheli Loux can be summoned to help. She's very effective."
+				]
+			}
+		},
+		{
+			"id": "GREAT_RUNE",
+			"name": "Great Rune",
+			"description": "Restore the power of a Great Rune at a Divine Tower.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/3881b1c355ffcc122655c134f988d6c1265cd8c9.jpg",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"After defeating a Shardbearer, travel to the corresponding Divine Tower.",
+					"Activate the Great Rune at the tower's summit."
+				]
+			}
+		},
+		{
+			"id": "RED_WOLF_OF_RADAGON",
+			"name": "Red Wolf of Radagon",
+			"description": "Defeat the Red Wolf of Radagon.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/06bce66d7738ddd537a1c1d77a438df1e8c17b17.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Progress through the Academy of Raya Lucaria.",
+					"Defeat the Red Wolf — he's fast but staggers easily with heavy attacks."
+				]
+			}
+		},
+		{
+			"id": "RENNALA_QUEEN",
+			"name": "Rennala, Queen of the Full Moon",
+			"description": "Defeat Rennala, Queen of the Full Moon.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/95a6c1398d842a3fdea1b43a14b33bef92dca09e.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"After the Red Wolf, proceed to Rennala's chamber in the Academy.",
+					"Phase 1: attack the singing students with golden auras. Phase 2: she fights directly — use melee aggression."
+				]
+			}
+		},
+		{
+			"id": "LEONINE_MISBEGOTTEN",
+			"name": "Leonine Misbegotten",
+			"description": "Defeat the Leonine Misbegotten.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/41d6608783265cf28e2fa112bb51adbe90ad2086.jpg",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Travel to Castle Morne in the Weeping Peninsula.",
+					"Defeat the Leonine Misbegotten at the back of the castle."
+				]
+			}
+		},
+		{
+			"id": "ROYAL_KNIGHT_LORETTA",
+			"name": "Royal Knight Loretta",
+			"description": "Defeat Royal Knight Loretta.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/82008e9c90e7dce12eaf5b50571dc9511055d5f8.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Progress through Caria Manor in northwest Liurnia.",
+					"Defeat Loretta at the end of the manor."
+				]
+			}
+		},
+		{
+			"id": "SHARDBEARER_RADAHN",
+			"name": "Shardbearer Radahn",
+			"description": "Defeat Starscourge Radahn.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/f5f1f41ef749459d9ac45750cd1f069d05fe1dd8.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Travel to Redmane Castle in Caelid and start the Radahn Festival.",
+					"Summon all available NPCs during the fight. Use Torrent to close distance."
+				],
+				"communityNotes": [
+					"Reddit tip: You can re-summon NPCs after they die. Keep summoning and use ranged attacks while they tank."
+				]
+			}
+		},
+		{
+			"id": "MIMIC_TEAR",
+			"name": "Mimic Tear",
+			"description": "Defeat the Mimic Tear.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/a991cf641f22feecca00c96ae773e31740535b2b.jpg",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Enter Nokron, Eternal City (accessible after defeating Radahn).",
+					"Fight the Mimic Tear — it copies your build. Unequip gear before the fog wall, then re-equip."
+				]
+			}
+		},
+		{
+			"id": "GODFREY_FIRST_ELDEN_LORD",
+			"name": "Godfrey, First Elden Lord",
+			"description": "Defeat the golden shade of Godfrey.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/a6d7519e52b8d5d76afa7fa0b6224a2d4e8dc678.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Progress through Leyndell, Royal Capital.",
+					"Defeat the golden shade of Godfrey near the Erdtree Sanctuary."
+				]
+			}
+		},
+		{
+			"id": "SHARDBEARER_MORGOTT",
+			"name": "Shardbearer Morgott",
+			"description": "Defeat Morgott, the Omen King.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/1ffc295a2cd48b88487d410025d081549d932b27.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Fight Morgott at the base of the Erdtree in Leyndell.",
+					"He's an upgraded Margit — similar patterns but with holy attacks. Margit's Shackle works here too."
+				]
+			}
+		},
+		{
+			"id": "MAGMA_WYRM_MAKAR",
+			"name": "Magma Wyrm Makar",
+			"description": "Defeat Magma Wyrm Makar.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/4e39a0ef22f4d9a5a926708eeeecb7ec3c304591.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Travel through the Ruin-Strewn Precipice dungeon north of Liurnia.",
+					"Defeat Makar — stay to his sides and avoid the magma trails."
+				]
+			}
+		},
+		{
+			"id": "GOD_SLAYING_ARMAMENT",
+			"name": "God-Slaying Armament",
+			"description": "Upgraded any armament to its highest stage.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/5525911000c82f6b8c540c9e65e89382449c1b0f.jpg",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Collect Smithing Stones up to [8] and an Ancient Dragon Smithing Stone for regular weapons, or Somber Stones up to [10] for unique weapons.",
+					"Upgrade any weapon to +25 (regular) or +10 (somber) at the smithing table."
+				],
+				"communityNotes": [
+					"Reddit tip: Ancient Dragon Smithing Stones are very limited per playthrough. The easiest one is in the Haligtree area."
+				]
+			}
+		},
+		{
+			"id": "FIRE_GIANT",
+			"name": "Fire Giant",
+			"description": "Defeat the Fire Giant.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/943a8178f6fdd3f336caa1138d63bcf4985ab639.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Travel to the Mountaintops of the Giants and cross the chain bridge.",
+					"Attack his weak ankle in phase 1. In phase 2, stay under him and attack his hands."
+				],
+				"communityNotes": [
+					"Reddit tip: Torrent makes closing distance much easier. Target the bandaged leg in phase 1."
+				]
+			}
+		},
+		{
+			"id": "ERDTREE_AFLAME",
+			"name": "Erdtree Aflame",
+			"description": "Set the Erdtree aflame.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/ee980470a382cd7e1ac70fca82d5e46e2c328c21.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"After defeating the Fire Giant, interact with the Forge of the Giants.",
+					"Trigger the cutscene to set the Erdtree aflame."
+				]
+			}
+		},
+		{
+			"id": "COMMANDER_NIALL",
+			"name": "Commander Niall",
+			"description": "Defeat Commander Niall.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/3c7586bd5b56c262aa837c4307eba8fc2ea2ad7f.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Travel to Castle Sol in the Mountaintops of the Giants.",
+					"Defeat Niall — kill his two knight summons first, then focus him."
+				]
+			}
+		},
+		{
+			"id": "SHARDBEARER_RYKARD",
+			"name": "Shardbearer Rykard",
+			"description": "Defeat Rykard, Lord of Blasphemy.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/cb0aec39fcc664c4e586750177178b6814a52e0d.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Enter Volcano Manor and reach the boss arena.",
+					"Use the Serpent-Hunter great spear (found at the arena entrance) — it has massive range against Rykard."
+				],
+				"communityNotes": [
+					"Reddit tip: You MUST use the Serpent-Hunter spear. Regular weapons barely scratch him."
+				]
+			}
+		},
+		{
+			"id": "ASTEL",
+			"name": "Astel, Naturalborn of the Void",
+			"description": "Defeat Astel, Naturalborn of the Void.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/0433665a5dcab392aa2cf08a4e8c8eeb1d4d871a.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete Ranni's questline and reach the Lake of Rot, then the Grand Cloister.",
+					"Defeat Astel — stay close to avoid his grab attack and teleport punishes."
+				]
+			}
+		},
+		{
+			"id": "GODSKIN_DUO",
+			"name": "Godskin Duo",
+			"description": "Defeat the Godskin Duo.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/17c6959cb3785bc29bf45cba5281485c1b1a6b94.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Progress through Crumbling Farum Azula to the Dragon Temple Transept.",
+					"Use Sleep Pots to disable one while you fight the other."
+				],
+				"communityNotes": [
+					"Reddit tip: Sleep Pots trivialize this fight. Craft them with Trina's Lily."
+				]
+			}
+		},
+		{
+			"id": "GODSKIN_NOBLE",
+			"name": "Godskin Noble",
+			"description": "Defeat the Godskin Noble.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/c9624c5c976674a86d6e55a65f18203407acb4b4.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find the Godskin Noble in Volcano Manor's Temple of Eiglay.",
+					"Dodge his rolling attack by running perpendicular. Punish his recovery windows."
+				]
+			}
+		},
+		{
+			"id": "ANCESTOR_SPIRIT",
+			"name": "Ancestor Spirit",
+			"description": "Defeat the Ancestor Spirit.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/8aa5c2120ca0ec1abd63fc4ab5afea919acadfc5.jpg",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Light all flames in Siofra River to activate the deer carcass.",
+					"Interact with the carcass to start the fight. The Ancestor Spirit is slow and easy to dodge."
+				]
+			}
+		},
+		{
+			"id": "MALIKETH",
+			"name": "Maliketh the Black Blade",
+			"description": "Defeat Maliketh the Black Blade.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/5148ee8ae04ed50667bcb39484ff2b716b07f4ff.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Progress through Crumbling Farum Azula to the final boss arena.",
+					"Phase 1 (Beast Clergyman) is melee-focused. Phase 2 (Maliketh) uses fast Destined Death attacks — use the Blasphemous Claw to parry his black blade."
+				]
+			}
+		},
+		{
+			"id": "SHARDBEARER_MOHG",
+			"name": "Shardbearer Mohg",
+			"description": "Defeat Mohg, Lord of Blood.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/a00f99e4944d09603d64996c5ade85264bcba22d.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Reach Mohgwyn Palace via the Pureblood Knight's Medal (Varre's quest) or the teleporter in Consecrated Snowfield.",
+					"Use Mohg's Shackle for phase 1. Use Purifying Crystal Tear in your Flask to survive his phase 2 transition."
+				],
+				"communityNotes": [
+					"Reddit tip: The Purifying Crystal Tear (from the NPC invader at Second Church of Marika) completely negates his phase transition bleed."
+				]
+			}
+		},
+		{
+			"id": "HOARAH_LOUX",
+			"name": "Hoarah Loux, Warrior",
+			"description": "Defeat Hoarah Loux, Warrior.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/f263ff23c384043efcb2932cc82e6fc395f57014.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Progress through Leyndell, Ashen Capital to the Erdtree.",
+					"Fight Godfrey's true form — phase 2 he becomes a wrestler with devastating grabs. Jump over his AoE stomps."
+				]
+			}
+		},
+		{
+			"id": "VALIANT_GARGOYLES",
+			"name": "Valiant Gargoyles",
+			"description": "Defeat the Valiant Gargoyles.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/b9255b2325bff7b02b289fb8899d305cc04a18bc.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Navigate through Siofra Aqueduct in Nokron.",
+					"Fight both gargoyles — try to kill the first before the second fully activates. Watch for poison mist."
+				]
+			}
+		},
+		{
+			"id": "LORETTA_HALIGTREE",
+			"name": "Loretta, Knight of the Haligtree",
+			"description": "Defeat Loretta, Knight of the Haligtree.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/3204ffe67225f7e88207563ae204505c5eb1ca54.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Navigate through Miquella's Haligtree to the boss arena.",
+					"She's a tougher version of the Caria Manor fight with new magic attacks. Close the gap quickly."
+				]
+			}
+		},
+		{
+			"id": "ELEMER_OF_THE_BRIAR",
+			"name": "Elemer of the Briar",
+			"description": "Defeat Elemer of the Briar.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/d34621523f32eee14947c698bb43ef92b09f0f59.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Travel to The Shaded Castle in the Altus Plateau.",
+					"Defeat Elemer — his telekinetic sword has long range. Use a shield or dodge toward him."
+				]
+			}
+		},
+		{
+			"id": "DRAGONKIN_SOLDIER",
+			"name": "Dragonkin Soldier of Nokstella",
+			"description": "Defeat the Dragonkin Soldier of Nokstella.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/8e6a8ac9aa06923f2139f3308170f384989d5a82.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find the Dragonkin Soldier in Ainsel River.",
+					"Stay close and attack between his slow combos."
+				]
+			}
+		},
+		{
+			"id": "REGAL_ANCESTOR_SPIRIT",
+			"name": "Regal Ancestor Spirit",
+			"description": "Defeat the Regal Ancestor Spirit.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/49f02aee6962bf67151cb1b04d402ce33535db0b.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Light all flames in Nokron/Siofra to activate the second deer carcass.",
+					"The Regal version heals — burn it down quickly when it stops to heal."
+				]
+			}
+		},
+		{
+			"id": "SHARDBEARER_MALENIA",
+			"name": "Shardbearer Malenia",
+			"description": "Defeat Malenia, Blade of Miquella.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/f704fcd82daf933dd3ce81c4d8ffea3ec65f26f4.jpg",
+			"type": "secret",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Reach the bottom of Elphael, Brace of the Haligtree.",
+					"Phase 1: learn Waterfowl Dance dodge timing. Phase 2: she becomes the Goddess of Rot with AoE scarlet rot."
+				],
+				"communityNotes": [
+					"Reddit tip: Widely considered the hardest boss in the game. Bleed builds and Mimic Tear are the most popular strategies.",
+					"Reddit tip: For Waterfowl Dance: run away from the first flurry, dodge into the second, dodge away from the third."
+				],
+				"warnings": [
+					"She heals on every hit, even if you block. Avoid trading blows."
+				]
+			}
+		},
+		{
+			"id": "MOHG_THE_OMEN",
+			"name": "Mohg, the Omen",
+			"description": "Defeat Mohg, the Omen.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/1e69cda29e26389f87aef965ee21619aa92d859b.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find the hidden area beneath Leyndell in the Subterranean Shunning Grounds.",
+					"Defeat this weaker version of Mohg. Same moveset but no phase 2 blood ritual."
+				]
+			}
+		},
+		{
+			"id": "DRAGONLORD_PLACIDUSAX",
+			"name": "Dragonlord Placidusax",
+			"description": "Defeat Dragonlord Placidusax.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/8f4f24760a906b21cf2ed65fa5fbcd2039c2f1ff.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"In Crumbling Farum Azula, find the hidden lie-down prompt at the floating platforms.",
+					"Defeat the Dragonlord — he teleports and uses lightning. Stay under his body."
+				],
+				"communityNotes": [
+					"Reddit tip: The arena entrance is easily missable. Look for a spot where you can lie down near the floating ruins."
+				]
+			}
+		},
+		{
+			"id": "LICHDRAGON_FORTISSAX",
+			"name": "Lichdragon Fortissax",
+			"description": "Defeat Lichdragon Fortissax.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/b0a0e29fb88941a9e81c937a22ce77f4e020b83e.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete Fia's questline in the Deeproot Depths.",
+					"Interact with Fia and enter the Deathbed Dream to fight Fortissax. Lightning resist helps."
+				]
+			}
+		},
+		{
+			"id": "AGE_OF_THE_STARS",
+			"name": "Age of the Stars",
+			"description": "Reach the Age of the Stars ending.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/7e7369bceba13739025766a72560fe9ce7ac56c9.jpg",
+			"type": "missable",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete Ranni's entire questline across Liurnia, Siofra, Nokron, and the Lake of Rot.",
+					"After the final boss, choose the blue summon sign to trigger Ranni's ending."
+				],
+				"warnings": [
+					"Missable — requires completing Ranni's questline before the final boss."
+				]
+			}
+		},
+		{
+			"id": "ELDEN_LORD",
+			"name": "Elden Lord",
+			"description": "Reach the Elden Lord ending.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/e50726be4aca4d2b1f5f14d36859fc8e6f710097.jpg",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Defeat the Elden Beast (final boss).",
+					"Choose to mend the Elden Ring for the default Elden Lord ending."
+				]
+			}
+		},
+		{
+			"id": "LEGENDARY_ARMAMENTS",
+			"name": "Legendary Armaments",
+			"description": "Acquired all legendary armaments.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/212ba99b5c0bf79aca54dfc0a9767a108adc8f40.jpg",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Collect all 9 legendary weapons: Grafted Blade Greatsword, Sword of Night and Flame, Ruins Greatsword, Marais Executioner's Sword, Dark Moon Greatsword, Bolt of Gransax, Eclipse Shotel, Devourer's Scepter, Golden Order Greatsword.",
+					"Some require specific questlines or hidden locations."
+				],
+				"warnings": [
+					"Bolt of Gransax becomes permanently missable after a certain story event in Leyndell."
+				]
+			}
+		},
+		{
+			"id": "LEGENDARY_ASHEN_REMAINS",
+			"name": "Legendary Ashen Remains",
+			"description": "Acquired all legendary ashen remains.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/5cba78ad7605d07fd096859b1f35715a9ac6218b.jpg",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Collect all 6 legendary spirit ashes: Lhutel the Headless, Black Knife Tiche, Mimic Tear, Redmane Knight Ogha, Ancient Dragon Knight Kristoff, Cleanrot Knight Finlay.",
+					"Found in evergaols, dungeons, and as quest rewards."
+				]
+			}
+		},
+		{
+			"id": "LEGENDARY_TALISMANS",
+			"name": "Legendary Talismans",
+			"description": "Acquired all legendary talismans.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/717b3e0b44ad16b2e31a958edcaa3b4cd61de82b.jpg",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Collect all 8 legendary talismans scattered across the world.",
+					"Several are in late-game areas like Haligtree and Crumbling Farum Azula."
+				]
+			}
+		},
+		{
+			"id": "LEGENDARY_SORCERIES",
+			"name": "Legendary Sorceries and Incantations",
+			"description": "Acquired all legendary sorceries and incantations.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/4cef1927bcb6fadbc7aeb703d40fa195cf78375a.jpg",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Collect all 7 legendary spells: Comet Azur, Stars of Ruin, Founding Rain of Stars, Ranni's Dark Moon, Flame of the Fell God, Greyoll's Roar, Elden Stars.",
+					"Requires reaching endgame areas and completing NPC quests."
+				]
+			}
+		},
+		{
+			"id": "LORD_OF_FRENZIED_FLAME",
+			"name": "Lord of Frenzied Flame",
+			"description": "Reach the Lord of Frenzied Flame ending.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/230fc53f4bc2d9bf39be031cc198be81508a9c47.jpg",
+			"type": "missable",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Navigate the Subterranean Shunning Grounds beneath Leyndell to the very bottom.",
+					"Remove all armor and open the door to the Three Fingers to inherit the Frenzied Flame.",
+					"After the final boss, the Frenzied Flame ending triggers automatically."
+				],
+				"warnings": [
+					"This ending locks out all other endings unless you complete Millicent's questline and use Miquella's Needle in Dragonlord Placidusax's arena."
+				]
+			}
+		},
+		{
+			"id": "ELDEN_RING_PLATINUM",
+			"name": "Elden Ring",
+			"description": "Obtained all achievements.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1245620/1cb1fe89084e822bd7d9ad4df66bc7f917995b38.jpg",
+			"type": "standard",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete all 41 other achievements.",
+					"Requires multiple playthroughs for all 3 endings, or save-scumming before the final boss."
+				],
+				"communityNotes": [
+					"Reddit tip: Save before the final boss to get all 3 endings on one character. Back up your save file."
+				]
+			}
+		}
 	]
 }

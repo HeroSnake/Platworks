@@ -8,6 +8,7 @@
 			"id": "THE_KILLING_JAR",
 			"name": "The Killing Jar",
 			"description": "Defeat the Root Mantis.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/a93d360d5938529e6696ed881b20c930bafc1883.jpg",
 			"type": "secret",
 			"difficulty": "easy",
 			"guide": {
@@ -22,6 +23,7 @@
 			"id": "FIRST_OF_MANY",
 			"name": "First of Many",
 			"description": "Choose Your First Archetype.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/98d536e66e10f8bece048185c08f6152fa97d0ba.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -36,6 +38,7 @@
 			"id": "NOT_YOUR_AVERAGE_TRAIT",
 			"name": "Not Your Average Trait",
 			"description": "Obtain a Non-Starter Trait.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/ea355f146cb076fdf1bb983da804c3f638fb4ab5.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -49,6 +52,7 @@
 			"id": "EXPANDING_HORIZONS",
 			"name": "Expanding Horizons",
 			"description": "Craft a Non-Starter Weapon Mod.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/f7b02e9a90cff3a2a919655e2148b6550720ea54.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -62,6 +66,7 @@
 			"id": "QUEST_FOR_SURVIVAL",
 			"name": "Quest for Survival",
 			"description": "Defeat a World Boss.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/580cc8b70c9a97cf7d43691e339de95060d5e49f.jpg",
 			"type": "standard",
 			"difficulty": "medium",
 			"guide": {
@@ -75,6 +80,7 @@
 			"id": "GLEAMING_THE_CUBE",
 			"name": "Gleaming the Cube",
 			"description": "Defeat the Labyrinth Boss.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/4f34d4fd53d9dcde1726f9c753426ea335ae1890.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -90,6 +96,7 @@
 			"id": "BOSS_N_UP",
 			"name": "Boss'n Up",
 			"description": "Craft a Boss Weapon.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/3ad122fd656281eb8ebbffe206924b042d4a865d.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -104,6 +111,7 @@
 			"id": "TRAIT_CHASER",
 			"name": "Trait Chaser",
 			"description": "Upgrade Any Trait to 10.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/875a3cd205db05e167e00c5869a4617b9bfb261f.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -117,6 +125,7 @@
 			"id": "FAMILIAR_FACE",
 			"name": "Familiar Face",
 			"description": "Meet the Flautist.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/072f27f9f86758e11850011eadd20c8460f10c52.jpg",
 			"type": "secret",
 			"difficulty": "easy",
 			"guide": {
@@ -134,6 +143,7 @@
 			"id": "DUALITY",
 			"name": "Duality",
 			"description": "Slot a Second Archetype.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/bdd753ad6d2a612f32b92eff0d34973722481e4f.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -148,6 +158,7 @@
 			"id": "NOT_A_JANITOR",
 			"name": "Not a Janitor",
 			"description": "Meet the Custodian.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/79bb5f6885794c774e5a60149092187a597065a1.jpg",
 			"type": "secret",
 			"difficulty": "easy",
 			"guide": {
@@ -162,6 +173,7 @@
 			"id": "BLUE_GODDESS",
 			"name": "Blue Goddess",
 			"description": "Meet Nimue.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/9b2690565b42df570057cdb65165d1a9827c1d4e.jpg",
 			"type": "secret",
 			"difficulty": "easy",
 			"guide": {
@@ -175,6 +187,7 @@
 			"id": "MAKE_SOME_ROOM",
 			"name": "Make Some Room",
 			"description": "Upgrade Relic Capacity.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/37d499ad0150178d9fb523a2faf4b89af0144a74.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -189,6 +202,7 @@
 			"id": "NOT_SO_SPECIAL_NOW",
 			"name": "Not so special now",
 			"description": "Defeat 100 Special Enemies.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/458536322448821d4e020b460ec76e3f8d8f3a3e.jpg",
 			"type": "cumulative",
 			"difficulty": "medium",
 			"guide": {
@@ -202,6 +216,7 @@
 			"id": "GOOD_BUT_COULD_BE_BETTER",
 			"name": "Good, but Could be Better!",
 			"description": "Upgrade a Standard Weapon to +10.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/d5bb8b61fb9b426fd2a4048f6bca517452870e33.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -215,6 +230,7 @@
 			"id": "TOP_PERFORMER",
 			"name": "Top Performer",
 			"description": "Reach Level 10 on Any Archetype.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/fdaa0ed7a26beb9f7272862caae723d460663f5f.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -229,6 +245,7 @@
 			"id": "EQUAL_MEASURES",
 			"name": "Equal Measures",
 			"description": "Receive an Alignment Reading from Meidra.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/829db512c461c3f6f0790112b1eaebe69ca0bef5.jpg",
 			"type": "secret",
 			"difficulty": "easy",
 			"guide": {
@@ -246,6 +263,7 @@
 			"id": "ALMOST_THERE",
 			"name": "Almost There",
 			"description": "Upgrade a Boss Weapon to +5.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/e981cfe9e87ff881b60ade613fdd07a421a8482c.jpg",
 			"type": "standard",
 			"difficulty": "easy",
 			"guide": {
@@ -259,6 +277,7 @@
 			"id": "SHHH_ITS_A_SECRET",
 			"name": "Shhh...It's a Secret",
 			"description": "Obtain a Secret Archetype.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/6060a3adb800e4e9ae0478b93043da90ea265018.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -278,6 +297,7 @@
 			"id": "DARK_DESIGNS",
 			"name": "Dark Designs",
 			"description": "Defeat the Nightweaver.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/04e0d5f208a1fae06d5189328830682f6dd1b480.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -293,6 +313,7 @@
 			"id": "TRAITOR",
 			"name": "Traitor",
 			"description": "Defeat the Fae Imposter.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/018bdffbe7a348a2b8721abd8dd07ca91d4132f4.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -311,6 +332,7 @@
 			"id": "WAS_THIS_SUPPOSED_TO_HAPPEN",
 			"name": "Was This Supposed To Happen?",
 			"description": "Acquire a World Boss's Alternate Reward.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/dddd68062440ee7e333362e7092f50ac4940fff5.jpg",
 			"type": "missable",
 			"difficulty": "medium",
 			"guide": {
@@ -333,6 +355,7 @@
 			"id": "THE_GOD_GAMBIT",
 			"name": "The God Gambit",
 			"description": "Defeat Many Faces.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/25745324ecbddbe9bc3ed979f83fa1bcbae83147.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -348,6 +371,7 @@
 			"id": "CHAOS",
 			"name": "Chaos",
 			"description": "Defeat the Ravager.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/59d0e404961a12bca198810b21c5a531101497ca.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -369,6 +393,7 @@
 			"id": "POWER_SURGE",
 			"name": "Power Surge",
 			"description": "Defeat Guardian of N'Erud.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/6b15b9ccb5f2b5a26a5aec4c24faacf2e098ecf9.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -384,6 +409,7 @@
 			"id": "THE_WEB",
 			"name": "The Web",
 			"description": "Obtain an Item From the Nightweaver's Web.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/6a59df7c19b075ba1c9365b76e174cc5633b4e2e.jpg",
 			"type": "secret",
 			"difficulty": "easy",
 			"guide": {
@@ -399,6 +425,7 @@
 			"id": "AM_I_SEEING_THIS",
 			"name": "Am I Seeing This?",
 			"description": "Defeat 10 Aberrations.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/c2e7eaba84a9f84edea252f08550119a39ba2eec.jpg",
 			"type": "cumulative",
 			"difficulty": "medium",
 			"guide": {
@@ -414,6 +441,7 @@
 			"id": "GHOST_IN_THE_MACHINE",
 			"name": "Ghost in the Machine",
 			"description": "Defeat 25 Aberrations.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/f77fba51aa7f3a94d8eb048ef2e7b70b04a78bdf.jpg",
 			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
@@ -433,6 +461,7 @@
 			"id": "FOREVER_IS_A_LONG_TIME_COMING",
 			"name": "Forever is a Long Time Coming",
 			"description": "Defeat the Final Boss.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/b3c161be7dba7be6465df1ba14593cc8b6af2fce.jpg",
 			"type": "secret",
 			"difficulty": "hard",
 			"guide": {
@@ -451,6 +480,7 @@
 			"id": "MADMANS_PARADISE",
 			"name": "Madman's Paradise",
 			"description": "Defeat Tal'Ratha.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/1d7923cf61e15336a235518c15f8259c55c53fd7.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -469,6 +499,7 @@
 			"id": "SCRAP_COLLECTOR",
 			"name": "Scrap Collector",
 			"description": "Acquire 50,000 Scrap.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/e65f31ccccdfe5a5851b6fd5c8481118b3f7505f.jpg",
 			"type": "cumulative",
 			"difficulty": "easy",
 			"guide": {
@@ -482,6 +513,7 @@
 			"id": "ALL_THESE_TRAITS",
 			"name": "All These Traits...",
 			"description": "Obtain 10 Traits.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/96a0dc536bd975e3da4cd1ef9a1a8dfbb1e01e7d.jpg",
 			"type": "cumulative",
 			"difficulty": "easy",
 			"guide": {
@@ -495,6 +527,7 @@
 			"id": "BAD_MOON_RISING",
 			"name": "Bad Moon Rising",
 			"description": "Craft an Item at the Blood Moon Altar.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/ffe240a8f91d43ceb9bd919aaecbe20bba9fde1f.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -514,6 +547,7 @@
 			"id": "THE_AGENDA",
 			"name": "The Agenda",
 			"description": "Discover Leto's Stash.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/9230b54f4765eb6b3c72192216a2283b76413b13.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -528,6 +562,7 @@
 			"id": "STRAPPED",
 			"name": "Strapped",
 			"description": "Acquire 15 Guns.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/aa0e61c9df9355389c072d028b7744086a10f625.jpg",
 			"type": "cumulative",
 			"difficulty": "easy",
 			"guide": {
@@ -541,6 +576,7 @@
 			"id": "TALL_TALES",
 			"name": "Tall Tales",
 			"description": "Listen to All of Mudtooth's Stories.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/4e64d617fe5f42e91d4c769b0d66824b1951b41b.jpg",
 			"type": "missable",
 			"difficulty": "medium",
 			"guide": {
@@ -560,6 +596,7 @@
 			"id": "EDGELORD",
 			"name": "Edgelord",
 			"description": "Acquire 10 Melee Weapons.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/dd3bb04891a7760dd0e7b65017573c4ee377bfce.jpg",
 			"type": "cumulative",
 			"difficulty": "medium",
 			"guide": {
@@ -574,6 +611,7 @@
 			"id": "TRANSMUTATE",
 			"name": "Transmutate",
 			"description": "Upgrade Any Weapon Mutator to +10.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/413c25decfbb995a10e0b0eea1d224b657846779.jpg",
 			"type": "standard",
 			"difficulty": "medium",
 			"guide": {
@@ -588,6 +626,7 @@
 			"id": "THE_ULTIMATE_WEAPON",
 			"name": "The Ultimate Weapon",
 			"description": "Upgrade a Boss Weapon to +10.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/305b7f7534e6beed1e6a31803e6684b644782c2d.jpg",
 			"type": "standard",
 			"difficulty": "hard",
 			"guide": {
@@ -602,6 +641,7 @@
 			"id": "NO_ONE_SHOULD_HAVE_ALL_THAT_POWER",
 			"name": "No One Should Have All That Power",
 			"description": "Upgrade a Standard Weapon to +20.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/3e77257f4c735b70e97eecfce93daf3a3250f199.jpg",
 			"type": "standard",
 			"difficulty": "hard",
 			"guide": {
@@ -617,6 +657,7 @@
 			"id": "SCRAP_HOARDER",
 			"name": "Scrap Hoarder",
 			"description": "Acquire 100,000 Scrap.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/1c9aa55e7ed16f43a444072c86d4e4d5bfeebbea.jpg",
 			"type": "cumulative",
 			"difficulty": "medium",
 			"guide": {
@@ -630,6 +671,7 @@
 			"id": "CARNAGE_IN_C_MINOR",
 			"name": "Carnage in C-Minor",
 			"description": "Play a Secret Song on the Water Harp.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/b4ef3459fcbca1b043277768862c776c13b2a24b.jpg",
 			"type": "secret",
 			"difficulty": "hard",
 			"guide": {
@@ -649,6 +691,7 @@
 			"id": "RED_ROOM",
 			"name": "Red Room",
 			"description": "Discover a Blood Moon Room.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/a8a3cbed240acd6affcfeb75fda9eae12ddbc29e.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -663,6 +706,7 @@
 			"id": "MAXED_OUT",
 			"name": "Maxed Out!",
 			"description": "Acquire the Max Number of Trait Points.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/e1a73bd3edd455a40663c8d512b4e870a318e7be.jpg",
 			"type": "standard",
 			"difficulty": "hard",
 			"guide": {
@@ -681,6 +725,7 @@
 			"id": "ONLY_HUMAN",
 			"name": "Only Human",
 			"description": "Defeat a Boss in Single-Player Without Taking Any Damage.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/954da31bf70723ee5a0cc03cf9b3bead77500049.jpg",
 			"type": "standard",
 			"difficulty": "hard",
 			"guide": {
@@ -703,6 +748,7 @@
 			"id": "THE_COLLECTOR",
 			"name": "The Collector",
 			"description": "Acquire 10 Relics.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/357168989717fc374238b8c0ff9c8c1d3bca8ca8.jpg",
 			"type": "cumulative",
 			"difficulty": "medium",
 			"guide": {
@@ -717,6 +763,7 @@
 			"id": "THE_TRIGGER",
 			"name": "The Trigger",
 			"description": "Acquire 30 Guns.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/f3ed2cddbccf702337d3ced11235db1d753925f7.jpg",
 			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
@@ -731,6 +778,7 @@
 			"id": "CUTTING_EDGE",
 			"name": "Cutting Edge",
 			"description": "Acquire 20 Melee Weapons.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/fcb971d391918b19d951d9bdb755dde93b96d6d4.jpg",
 			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
@@ -746,6 +794,7 @@
 			"id": "CRAFTY",
 			"name": "Crafty",
 			"description": "Craft 15 Weapon Mods.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/f6e78aaaa239a9905f9eb605e77bd75c86b0c7ff.jpg",
 			"type": "cumulative",
 			"difficulty": "medium",
 			"guide": {
@@ -760,6 +809,7 @@
 			"id": "PROVING_GROUNDS",
 			"name": "Proving Grounds",
 			"description": "Acquire 20 Traits.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/0ee98f9bfbbefb6240004aff3a06a0500c1e4912.jpg",
 			"type": "cumulative",
 			"difficulty": "medium",
 			"guide": {
@@ -774,6 +824,7 @@
 			"id": "REGICIDE",
 			"name": "Regicide",
 			"description": "Defeat the One True King.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/da58d02bb1ce990c7e1e4eaed7468d9c7c9df055.jpg",
 			"type": "secret",
 			"difficulty": "hard",
 			"guide": {
@@ -789,6 +840,7 @@
 			"id": "A_FOUL_FEAST",
 			"name": "A Foul Feast",
 			"description": "Deliver Leftovers to a Reluctant Recipient.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/1e4a871832a7abcc65426ff2dba6a3ec6787c4dc.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -804,6 +856,7 @@
 			"id": "SUCCESSION",
 			"name": "Succession",
 			"description": "Discover the One True Ending.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/be3eb85e50b8465680215c753c6fc8c8c0f83176.jpg",
 			"type": "missable",
 			"difficulty": "hard",
 			"guide": {
@@ -822,6 +875,7 @@
 			"id": "MASTER_OF_THE_DARK_ARTS",
 			"name": "Master of the Dark Arts",
 			"description": "Acquire the Ritualist Archetype.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/e2b52e79c7ecec15299e717a27ac2069492028e7.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -837,6 +891,7 @@
 			"id": "YOU_SHALL_PASS",
 			"name": "You Shall Pass",
 			"description": "Acquire a Reward from the Bridge Warden.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/e3e74781342ef582392e62a84fd46a9d8e8e6c99.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -851,6 +906,7 @@
 			"id": "REQUIEM_OF_THE_FORGOTTEN_KINGDOM",
 			"name": "Requiem of the Forgotten Kingdom",
 			"description": "Complete the Forgotten Kingdom Story.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/60d122b322c63f7471ca389a4c22b28ac66fc50d.jpg",
 			"type": "standard",
 			"difficulty": "medium",
 			"guide": {
@@ -865,6 +921,7 @@
 			"id": "THANK_YOU_FOR_BEING_A_FRIEND",
 			"name": "Thank You For Being a Friend",
 			"description": "Forge a Friendship.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/dd7d386a1828bf599fea8aae239b13abdc2e613f.jpg",
 			"type": "secret",
 			"difficulty": "easy",
 			"guide": {
@@ -879,6 +936,7 @@
 			"id": "THE_BURDEN_HARDEST_TO_BEAR",
 			"name": "The Burden Hardest to Bear",
 			"description": "Made a Difficult Choice.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/5d6154eb0e214341da52e96d9407d0713085e6e8.jpg",
 			"type": "missable",
 			"difficulty": "medium",
 			"guide": {
@@ -896,6 +954,7 @@
 			"id": "MASTER_OF_ELEMENTS",
 			"name": "Master of Elements",
 			"description": "Acquire the Invoker Archetype.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/4d5a08161b7787b88d302208b301b57f1f9343ca.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -911,6 +970,7 @@
 			"id": "TRIPLE_TAKEOVER",
 			"name": "Triple Takeover",
 			"description": "Acquire the Trinity Crossbow.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/668b06b007fc54244689371131a29eb026a98a95.jpg",
 			"type": "secret",
 			"difficulty": "hard",
 			"guide": {
@@ -929,6 +989,7 @@
 			"id": "THE_ULTIMATE_DOOM",
 			"name": "The Ultimate Doom",
 			"description": "Complete The Dark Horizon Story.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/aa5af4ea18f5b8325a13776ef494484f88c354eb.jpg",
 			"type": "standard",
 			"difficulty": "medium",
 			"guide": {
@@ -943,6 +1004,7 @@
 			"id": "THE_MASTER_BUILDER",
 			"name": "The Master Builder",
 			"description": "Fulfill Spark's Mission.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/036570cf0196eb9eaa56fd9b89ec775f24e01aac.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -957,6 +1019,7 @@
 			"id": "BOT",
 			"name": "B.O.T.",
 			"description": "Find the Good in the Prototype.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/f9170676370fb32e8187f5c8bb0d6ec6a7e807b4.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -971,6 +1034,7 @@
 			"id": "MASTER_OF_TECHNOLOGY",
 			"name": "Master of Technology",
 			"description": "Acquire the Warden Archetype.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/0c739537c6fab128fa81611aa8a5c85a9d5789b9.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {
@@ -986,6 +1050,7 @@
 			"id": "STILL_NOT_A_JANITOR",
 			"name": "Still Not a Janitor",
 			"description": "Hear the Custodian's Confession.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1282100/0e609f729f9256bb8152a4a097c4b5a21ba53498.jpg",
 			"type": "secret",
 			"difficulty": "medium",
 			"guide": {

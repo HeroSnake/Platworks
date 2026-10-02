@@ -83,8 +83,9 @@ When you fix something a future agent could plausibly hit, also leave a one-line
 | Types | `#lib/types/` | `game.ts` → `GameData`, `Achievement`, `AchievementGuide`; `steam.ts` → `SteamGameDetails`, `SteamAchievementStatus`, `SteamProfile` |
 | Steam API | `#lib/server/steam/api.ts` | server-only: `getGameDetails()`, `resolveSteamId()`, `getPlayerProfile()`, `getPlayerAchievements()`, `normalizeName()` |
 | Game loader | `#lib/server/games.ts` | `getAllGames()`, `getGameByAppId()` via `import.meta.glob('#lib/data/games/[0-9]*.json')` |
+| Icon tooling | `scripts/` | `fetch-achievement-icons.mjs` (write `iconUrl`), `verify-achievement-icons.mjs` (audit). Run with `node`, not npm |
 | Client profile cache | `#lib/client/profile.ts` | `loadProfile()`, `saveProfile()`, `clearProfile()`, `refreshProfile()` |
-| Components | `#lib/components/` | `achievement_row.svelte`, `game_card.svelte`, `mobile_bar.svelte` |
+| Components | `#lib/components/` | `achievement_row.svelte`, `game_card.svelte`, `github_icon.svelte`, `mobile_bar.svelte` |
 | Game data | `#lib/data/games/{appId}.json` | per-game achievement guides |
 | Layout | `src/routes/+layout.svelte` | navbar + account popover; owns `platworks:steamId` |
 | Routes | `src/routes/` | `/` library · `/game/[appId]` detail · `/api/steam/sync/[appId]` · `/api/steam/profile` |
@@ -104,6 +105,39 @@ The mobile bottom bar is **one component used by both pages**. Do not fork a sec
 |---|---|---|
 | `/api/steam/sync/[appId]` | GET | `{ connected, steamId, achievements }` — one game |
 | `/api/steam/profile` | GET | `{ connected, steamId, profile }` — name + avatar |
+
+### The trophy card: the icon *is* the checkbox
+
+`achievement_row.svelte` has two sibling buttons, and the left one wraps the
+trophy image with the check indicator overlaid on its bottom-right corner.
+
+```
+[ trophy 64px ] [ name · badges · description          ⌄ ]
+      └ check badge
+```
+
+Two reasons, do not "simplify" either:
+
+- **The art is rendered at its native 64px.** Steam's achievement JPEGs are
+  exactly 64×64 (verified from the SOF marker). Going past `h-16` upscales and
+  softens on a 2x/3x screen, so 64px is the ceiling, not a round number.
+- **Folding the check onto the art removes a ~40px checkbox column.** On a 320px
+  viewport that reclaimed width is what keeps achievement names on one line; the
+  separate-column layout leaves ~120px for text and truncates everything.
+
+The check tap target is therefore 64×64, comfortably over the 40px floor in §9.
+
+### Lucide ships no brand logos
+
+`@lucide/svelte` has ~7,900 icons and **none** of them is GitHub — brand marks
+were dropped from the set. The one exception is `github_icon.svelte`, an inline
+path for the GitHub mark, kept local rather than pulling in an icon library for a
+single glyph. If you need another brand mark, follow that file's pattern instead
+of reaching for a generic lookalike (`FolderGit2`, `GitBranch`) that users do not
+read as the brand.
+
+The repo URL lives in one constant, `REPO_URL` in `+layout.svelte`. Change it
+there and in the README badge together.
 
 ---
 
@@ -147,6 +181,27 @@ Steam serves two different XML shapes. Getting a tag name wrong returns `null`, 
 ### `extractTag()` limitations
 
 In `#lib/server/steam/api.ts`. Case-insensitive, and will **not** match a tag that carries attributes (`<avatar position="0">`). If Steam adds attributes to a tag you need, extend the regex rather than working around it.
+
+### Achievement icons — the global stats page
+
+`https://steamcommunity.com/stats/{appId}/achievements` is the **only** no-API-key source for trophy artwork and is the same list the IDs and names came from. It is plain HTML, not XML:
+
+```
+<div class="achieveRow ">
+  <div class="achieveImgHolder"><img src="https://shared.akamai.steamstatic.com/community_assets/images/apps/{appId}/{40-hex}.jpg" width="64" height="64" /></div>
+  <div class="achieveTxtHolder">…
+      <div class="achieveTxt"><h3>Display Name</h3><h5>Description</h5></div>
+```
+
+Traps, all of which have already cost time here:
+
+- **Only the unlocked (coloured) icon is published.** There is no second URL — the locked look is a CSS `grayscale` of the same file. Do not go looking for `icon_closed`; it does not appear in the HTML. One URL per achievement is correct and complete.
+- **The files are natively 64×64.** Confirmed by reading the JPEG SOF marker. There is no larger variant on this CDN, so 64px is the render ceiling — see §4.
+- **No API-name field.** The page has only `<h3>` display names, so rows must be joined to `Achievement.name`. Steam's apostrophes are curly (`Dead Man’s Chest`) while hand-written data usually has straight ones (`Dead Man's Chest`) — the normaliser must strip the whole `["'‘’“”]` class rather than turning quotes into spaces, or the two forms hash differently.
+- **Reused art is real.** Several games publish one hash for multiple rows (Aniimo has 7, one shared by 4 achievements). A duplicated `iconUrl` is therefore not evidence of a matching bug — confirm against the raw page before "fixing" it.
+- **A silent no-op is the dangerous case.** If a display name drifts, an unmatched entry must surface in the script's report. Never let a fuzzy fallback quietly assign a neighbouring trophy's art.
+
+`iconUrl` is **optional** in the schema so a hand-added game still validates; `achievement_row.svelte` simply omits the `<img>` when it is absent.
 
 ### Caching rule
 
@@ -202,6 +257,27 @@ Related trap: `let x = $state(data.something)` only captures the **initial** val
 
 `syncWithSteam` / `syncAllGames` call `refreshProfile(sid)` after a **successful** connection. Guard it with an `anyConnected` flag so a failed sync does not trigger a profile request, and so sync-all refreshes once rather than once per game.
 
+### Progress bars: one green for "complete"
+
+There are three progress indicators, and they all turn the **same** green at
+100% so a finished game looks finished wherever you see it:
+
+| Where | Incomplete | Complete |
+|---|---|---|
+| `game_card.svelte` (library) | `bg-steam-accent` | `bg-green-400` |
+| `game/[appId]/+page.svelte` (header bar) | `from-steam-accent to-blue-400` | `from-green-400 to-green-300` |
+| `mobile_bar.svelte` (bottom ring) | `stroke-steam-accent` | `stroke-green-400` |
+
+`green-400` is the reference: it was already the "Complete" colour on the
+library card. Do not introduce a second shade of green, and do not swap
+`green-400` for the darker `--color-steam-green` theme token — that is the
+Metacritic badge, not the completion colour.
+
+The header bar and the `%` beside it key off `progressPercent === 100`, **not**
+`completedCount === total`. `Math.round` means 999/1000 already displays "100%",
+and a bar that reads 100% must not still be blue. `game_card.svelte` keeps the
+stricter count check because it also drives the "Complete" label.
+
 ### Pre-compute maps
 
 Use `$derived.by` to build lookup maps (e.g. `achievedMap`) once per change instead of calling a function per row.
@@ -216,7 +292,9 @@ Use `$derived.by` to build lookup maps (e.g. `achievedMap`) once per change inst
 - View Transitions for page navigation **only** — never for in-page state
 - Remove `transition-colors` / `transition-all` from frequently toggled elements
 - `will-change: transform` + `backface-visibility: hidden` on `sticky-nav` and `fixed-bottom-bar`
-- Mobile tap targets: **h-10 (40px)**, not h-9
+- Mobile tap targets: **h-11 (44px)** in the navbar, **h-10 (40px)** elsewhere. Never h-9 — that is a desktop size and it is why the navbar used to feel cramped. Desktop keeps h-9 via `sm:` overrides
+- The navbar bar is `h-16 sm:h-14`. Bump both the bar and its children together, or the 44px controls will not fit inside it
+- Never put `stroke` in an SVG's transition list. The mobile bar's ring re-renders on every checkbox tap, so animating its colour repaints the whole bar; transition `stroke-dasharray` only
 
 ---
 

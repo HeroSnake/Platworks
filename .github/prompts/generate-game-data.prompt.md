@@ -40,7 +40,16 @@ Examples:
 
 5. **Output a JSON file** at `src/lib/data/games/{appId}.json` following the schema in `src/lib/data/games/schema.json`.
 
-6. **After all games are processed**, run `npm run check` to verify no type errors, then summarize what was generated.
+6. **Fill in the trophy icons** by running the scraper, which pulls the official artwork from the same global list and matches rows by display name:
+
+   ```bash
+   node scripts/fetch-achievement-icons.mjs {appId}
+   node scripts/verify-achievement-icons.mjs
+   ```
+
+   Do not hand-write `iconUrl` values. If the script reports achievements it could not match, fix the `name` to match Steam's `<h3>` exactly — do not paste a nearby row's URL.
+
+7. **After all games are processed**, run `npm run check` to verify no type errors, then summarize what was generated.
 
 ## Schema Reference
 
@@ -56,8 +65,9 @@ interface GameData {
 
 interface Achievement {
   id: string;           // Steam internal achievement ID
-  name: string;
+  name: string;         // Steam display name, EXACTLY as listed
   description: string;
+  iconUrl?: string;     // filled in by scripts/fetch-achievement-icons.mjs — do not hand-write
   type: 'standard' | 'missable' | 'multiplayer' | 'cumulative' | 'secret';
   difficulty: 'easy' | 'medium' | 'hard' | 'very-hard';
   guide: {
@@ -75,6 +85,7 @@ interface Achievement {
 - Include `"$schema": "./schema.json"` at the top of the JSON file.
 - `totalAchievements` MUST match the length of the `achievements` array.
 - Every achievement MUST have at least 2 steps in the guide.
+- **`name` MUST be the display name exactly as it appears on the Steam global achievement list.** This is the join key that `scripts/fetch-achievement-icons.mjs` uses to attach icons, and it is what sync matches against. Never invent an achievement that Steam does not list, and never rename one — an invented entry leaves the file permanently one achievement short with no icon. Watch the apostrophes: Steam uses curly quotes (`Dead Man’s Chest`).
 - Mark achievements as `missable` if they can be permanently missed in a single playthrough.
 - Mark achievements as `secret` only if the Steam store hides their description.
 - Prefix Reddit-sourced notes with `"Reddit tip: "`.

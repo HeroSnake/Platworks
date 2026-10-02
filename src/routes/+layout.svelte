@@ -2,10 +2,14 @@
 	import '../app.css';
 	import favicon from '#lib/assets/favicon.svg';
 	import { Trophy, ArrowLeft, User, RefreshCw, Loader2, ExternalLink } from '@lucide/svelte';
+	import GithubIcon from '#lib/components/github_icon.svelte';
 	import { page } from '$app/state';
 	import { onNavigate } from '$app/navigation';
 	import { browser } from '$app/env';
 	import { loadProfile, refreshProfile, clearProfile, type StoredProfile } from '#lib/client/profile';
+
+	/** Keep in step with the `origin` remote — change this and the README link together. */
+	const REPO_URL = 'https://github.com/HeroSnake/Platworks';
 
 	let { children } = $props();
 
@@ -112,49 +116,65 @@
 
 <div class="min-h-screen bg-steam-dark text-gray-100">
 	<nav class="sticky-nav sticky top-0 z-50 border-b border-white/5 bg-steam-dark/80 backdrop-blur-md">
-		<div class="mx-auto flex h-14 max-w-5xl items-center gap-1.5 px-3 sm:gap-2.5 sm:px-4">
+		<!-- Taller on mobile (64px vs 56px) so the controls get real thumb-sized hit
+		     areas; every interactive element in here is 44px wide below `sm`. -->
+		<div class="mx-auto flex h-16 max-w-5xl items-center gap-2 px-3 sm:h-14 sm:gap-2.5 sm:px-4">
 			{#if !isHome}
 				<a
 					href="/"
-					class="-ml-2 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-gray-400 active:bg-steam-blue sm:-ml-1 sm:h-9 sm:w-9"
+					class="-ml-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-gray-400 active:bg-steam-blue sm:-ml-1 sm:h-9 sm:w-9"
 					aria-label="Back to games"
 				>
-					<ArrowLeft class="h-5 w-5" />
+					<ArrowLeft class="h-6 w-6 sm:h-5 sm:w-5" />
 				</a>
 			{/if}
 
 			<a href="/" class="flex min-w-0 items-center gap-2 rounded-lg px-1 py-2 font-semibold tracking-tight">
-				<Trophy class="h-5 w-5 shrink-0 text-steam-accent" />
-				<span class="truncate text-base {isGamePage ? 'hidden sm:inline' : ''}">PlatWorks</span>
+				<Trophy class="h-6 w-6 shrink-0 text-steam-accent sm:h-5 sm:w-5" />
+				<span class="truncate text-lg sm:text-base {isGamePage ? 'hidden sm:inline' : ''}">PlatWorks</span>
 			</a>
 
 			{#if isGamePage && gameName}
-				<span class="min-w-0 truncate text-sm text-gray-300 sm:hidden">{gameName}</span>
+				<span class="min-w-0 truncate text-base text-gray-300 sm:hidden">{gameName}</span>
 			{/if}
 
-			<div class="relative ml-auto shrink-0" bind:this={menuWrap}>
-				<button
-					class="flex items-center gap-2 rounded-full py-1 pl-1 pr-1 sm:pr-3 {showSteamId ? 'bg-steam-blue' : 'active:bg-steam-blue'} {steamId && !profile ? 'text-steam-accent' : ''}"
-					onclick={toggleSteamPanel}
-					aria-label="Steam account"
-					aria-expanded={showSteamId}
-					aria-haspopup="true"
+			<!-- Right-hand controls share one flex row so the account popover can stay
+			     absolutely positioned relative to its own button. -->
+			<div class="ml-auto flex shrink-0 items-center gap-1 sm:gap-1.5">
+				<a
+					href={REPO_URL}
+					target="_blank"
+					rel="noreferrer noopener"
+					class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-gray-400 active:bg-steam-blue sm:h-9 sm:w-9"
+					aria-label="PlatWorks on GitHub"
+					title="PlatWorks on GitHub"
 				>
-					{#if profile?.avatar}
-						<img
-							src={profile.avatar}
-							alt={profile.name}
-							class="h-9 w-9 shrink-0 rounded-full object-cover ring-1 ring-white/10 sm:h-7 sm:w-7"
-						/>
-					{:else}
-						<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-steam-blue sm:h-7 sm:w-7">
-							<User class="h-5 w-5 text-gray-400" />
-						</span>
-					{/if}
-					{#if profile?.name}
-						<span class="hidden max-w-[9rem] truncate text-sm text-gray-200 md:block">{profile.name}</span>
-					{/if}
-				</button>
+					<GithubIcon class="h-6 w-6 sm:h-5 sm:w-5" />
+				</a>
+
+				<div class="relative shrink-0" bind:this={menuWrap}>
+					<button
+						class="flex items-center gap-2 rounded-full pl-1 pr-1 sm:py-1 sm:pr-3 {showSteamId ? 'bg-steam-blue' : 'active:bg-steam-blue'} {steamId && !profile ? 'text-steam-accent' : ''}"
+						onclick={toggleSteamPanel}
+						aria-label="Steam account"
+						aria-expanded={showSteamId}
+						aria-haspopup="true"
+					>
+						{#if profile?.avatar}
+							<img
+								src={profile.avatar}
+								alt={profile.name}
+								class="h-11 w-11 shrink-0 rounded-full object-cover ring-1 ring-white/10 sm:h-7 sm:w-7"
+							/>
+						{:else}
+							<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-steam-blue sm:h-7 sm:w-7">
+								<User class="h-6 w-6 text-gray-400 sm:h-5 sm:w-5" />
+							</span>
+						{/if}
+						{#if profile?.name}
+							<span class="hidden max-w-[9rem] truncate text-sm text-gray-200 md:block">{profile.name}</span>
+						{/if}
+					</button>
 
 				{#if showSteamId}
 					<!-- Floats over the page instead of expanding the nav, so nothing below
@@ -238,6 +258,7 @@
 						</div>
 					</div>
 				{/if}
+				</div>
 			</div>
 		</div>
 	</nav>

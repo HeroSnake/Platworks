@@ -9,7 +9,8 @@
 		ChevronDown,
 		Users,
 		Repeat,
-		EyeOff
+		EyeOff,
+		Trophy
 	} from '@lucide/svelte';
 	import type { Achievement } from '#lib/types/game';
 
@@ -57,50 +58,86 @@
 </script>
 
 <div class="achievement-item rounded-xl border {achieved ? 'border-steam-green/30 bg-steam-green/20' : 'border-transparent bg-steam-blue'}">
-	<div class="flex w-full items-start gap-3 p-3 sm:items-center sm:gap-4 sm:p-4">
+	<div class="flex w-full items-center gap-2 p-2 sm:gap-3 sm:p-3">
+		<!-- The trophy doubles as the check toggle. Steam's icons are natively 64x64,
+		     so this renders 1:1 with no upscaling, and folding the check onto the art
+		     buys back the ~40px of rail a separate checkbox column would cost — which
+		     is what keeps the name readable down to a 320px viewport. -->
 		<button
-			class="mt-0.5 shrink-0 sm:mt-0 {steamLocked ? 'cursor-default' : 'cursor-pointer'}"
+			class="relative shrink-0 {steamLocked ? 'cursor-default' : 'cursor-pointer'}"
 			onclick={handleToggle}
+			aria-label={steamLocked
+				? `${achievement.name} — unlocked on Steam`
+				: achieved
+					? `Mark ${achievement.name} as not done`
+					: `Mark ${achievement.name} as done`}
+			aria-pressed={achieved}
 			title={steamLocked ? 'Unlocked on Steam' : achieved ? 'Mark as not done' : 'Mark as done'}
 		>
-			<span class={justToggled ? 'check-pop inline-block' : 'inline-block'}>
+			{#if achievement.iconUrl}
+				<!-- Steam publishes only the unlocked (coloured) icon; the locked look is a
+				     CSS grayscale of this same file, so there is no second URL to fetch.
+				     alt is empty on purpose — the name is rendered next to it. -->
+				<img
+					src={achievement.iconUrl}
+					alt=""
+					width="64"
+					height="64"
+					loading="lazy"
+					decoding="async"
+					class="h-16 w-16 rounded-lg object-cover transition-[filter,opacity] duration-200 {achieved
+						? 'opacity-100 ring-2 ring-steam-green/50'
+						: 'opacity-55 grayscale ring-1 ring-white/10'}"
+				/>
+			{:else}
+				<span class="flex h-16 w-16 items-center justify-center rounded-lg bg-steam-light ring-1 ring-white/10">
+					<Trophy class="h-7 w-7 text-gray-500" />
+				</span>
+			{/if}
+
+			<span
+				class="absolute -bottom-1.5 -right-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-steam-dark ring-2 ring-steam-dark {justToggled
+					? 'check-pop'
+					: ''}"
+			>
 				{#if achieved}
-					<CheckCircle class="h-5 w-5 text-green-400 sm:h-6 sm:w-6" />
+					<CheckCircle class="h-5 w-5 text-green-400" />
 				{:else}
-					<Circle class="h-5 w-5 text-gray-600 sm:h-6 sm:w-6" />
+					<Circle class="h-5 w-5 text-gray-500" />
 				{/if}
 			</span>
 		</button>
 
 		<button
-			class="flex min-w-0 flex-1 items-start gap-3 text-left sm:items-center"
+			class="flex min-w-0 flex-1 items-center gap-2 text-left sm:gap-3"
 			onclick={toggleExpand}
+			aria-expanded={expanded}
 		>
 			<div class="min-w-0 flex-1">
-				<div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
-					<span class="text-sm font-semibold sm:text-base {achieved ? 'text-green-200' : ''}">
+				<div class="flex flex-wrap items-center gap-x-1.5 gap-y-1 sm:gap-x-2">
+					<span class="text-base font-semibold leading-tight {achieved ? 'text-green-200' : ''}">
 						{achievement.name}
 					</span>
 
 					{#if achievement.type !== 'standard'}
 						{@const Icon = typeIcons[achievement.type]}
 						{#if Icon}
-							<span class="flex items-center gap-1 rounded px-1.5 py-0.5 text-[10px] leading-tight sm:text-xs {achievement.type === 'missable' ? 'bg-red-900/40 text-red-300' : 'bg-steam-light text-gray-300'}">
+							<span class="flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] leading-tight sm:text-xs {achievement.type === 'missable' ? 'bg-red-900/40 text-red-300' : 'bg-steam-light text-gray-300'}">
 								<Icon class="h-3 w-3" />
 								{achievement.type}
 							</span>
 						{/if}
 					{/if}
 
-					<span class="text-[10px] sm:text-xs {difficultyColors[achievement.difficulty]}">
+					<span class="text-[11px] sm:text-xs {difficultyColors[achievement.difficulty]}">
 						{achievement.difficulty}
 					</span>
 				</div>
 
-				<p class="mt-0.5 line-clamp-2 text-xs text-gray-400 sm:line-clamp-none sm:text-sm">{achievement.description}</p>
+				<p class="mt-1 line-clamp-2 text-[13px] leading-snug text-gray-400 sm:line-clamp-none sm:text-sm">{achievement.description}</p>
 			</div>
 
-			<ChevronDown class="mt-0.5 h-5 w-5 shrink-0 text-gray-500 transition-transform duration-200 sm:mt-0 {expanded ? 'rotate-180' : ''}" />
+			<ChevronDown class="h-5 w-5 shrink-0 text-gray-500 transition-transform duration-200 {expanded ? 'rotate-180' : ''}" />
 		</button>
 	</div>
 
@@ -108,7 +145,7 @@
 	<div class="expand-panel" data-open={expanded}>
 		<div>
 			{#if rendered}
-			<div class="border-t border-white/5 px-3 pb-3 pt-3 sm:px-4 sm:pb-4">
+			<div class="border-t border-white/5 px-2 pb-2 pt-3 sm:px-3 sm:pb-3">
 				<ol class="mb-3 space-y-2 text-sm">
 					{#each achievement.guide.steps as step, i}
 						<li class="flex gap-2.5">

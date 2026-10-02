@@ -167,6 +167,11 @@
 		Math.round((completedCount / data.game.totalAchievements) * 100)
 	);
 
+	// Matches game_card.svelte: the bar switches to the same green the library grid
+	// uses for "Complete". Keyed off the displayed percentage so the colour always
+	// agrees with the number shown next to it.
+	let isComplete = $derived(progressPercent === 100);
+
 	const difficultyOrder: Record<string, number> = { easy: 0, medium: 1, hard: 2, 'very-hard': 3 };
 
 	let filteredAchievements = $derived.by(() => {
@@ -264,11 +269,13 @@
 							<Trophy class="h-4 w-4 text-steam-accent" />
 							{completedCount} / {data.game.totalAchievements}
 						</span>
-						<span class="tabular-nums text-gray-400">{progressPercent}%</span>
+						<span class="tabular-nums {isComplete ? 'text-green-400' : 'text-gray-400'}">{progressPercent}%</span>
 					</div>
 					<div class="h-3 overflow-hidden rounded-full bg-steam-light">
 						<div
-							class="h-full w-full origin-left rounded-full bg-gradient-to-r from-steam-accent to-blue-400 transition-transform duration-500 ease-out"
+							class="h-full w-full origin-left rounded-full transition-transform duration-500 ease-out {isComplete
+								? 'bg-gradient-to-r from-green-400 to-green-300'
+								: 'bg-gradient-to-r from-steam-accent to-blue-400'}"
 							style:transform="scaleX({progressPercent / 100})"
 						></div>
 					</div>

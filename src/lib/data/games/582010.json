@@ -4,105 +4,1423 @@
 	"name": "Monster Hunter: World",
 	"totalAchievements": 100,
 	"achievements": [
-		{ "id": "ART_OF_CAMOUFLAGE", "name": "The Art of Camouflage", "description": "Escape the Jagras pack by hiding in some shrubs.", "type": "standard", "difficulty": "easy", "guide": { "steps": ["During the opening tutorial, approach the Jagras pack.", "When prompted, hide in the nearby shrubs."] } },
-		{ "id": "WELCOME_NEW_WORLD", "name": "Welcome to the New World", "description": "Complete the first assigned quest.", "type": "secret", "difficulty": "easy", "guide": { "steps": ["Complete the opening story missions in Astera.", "Finish your first assigned quest to hunt a Jagras."] } },
-		{ "id": "NOTHING_STOPS", "name": "Nothing Stops This Commission", "description": "Reach a major story milestone.", "type": "secret", "difficulty": "easy", "guide": { "steps": ["Progress through the assigned quest chain.", "Complete the story mission to unlock new areas."] } },
-		{ "id": "BIGGER_THEY_ARE", "name": "The Bigger They Are...", "description": "Mount your first monster.", "type": "standard", "difficulty": "easy", "guide": { "steps": ["Jump off a ledge and attack a monster mid-air.", "Hold on when mounted and attack until it falls."] } },
-		{ "id": "HUNTERS_UNITED", "name": "Hunters United", "description": "Complete a quest via multiplayer.", "type": "multiplayer", "difficulty": "easy", "guide": { "steps": ["Fire an SOS flare during a quest or join another player's quest.", "Complete the quest with at least one other player."] } },
-		{ "id": "DEFENDER_ASTERA", "name": "Defender of Astera", "description": "Complete a key defense mission.", "type": "secret", "difficulty": "easy", "guide": { "steps": ["Progress the story to the Zorah Magdaros siege.", "Complete the defense mission."] } },
-		{ "id": "FIRST_FRIENDS", "name": "First Friends", "description": "Befriend your first Tailraider.", "type": "standard", "difficulty": "easy", "guide": { "steps": ["Find a Grimalkyne tribe in any locale.", "Complete their request to befriend them as Tailraiders."] } },
-		{ "id": "INTO_THE_DEEP", "name": "Into the Deep", "description": "Reach a deep-story milestone.", "type": "secret", "difficulty": "easy", "guide": { "steps": ["Progress the main story through the Coral Highlands.", "Complete the assigned quest."] } },
-		{ "id": "GIANT_CROWN", "name": "Giant Crown", "description": "Record your first silver crown or higher for monsters that appear from low or high rank.", "type": "standard", "difficulty": "easy", "guide": { "steps": ["Hunt large monsters — sizes are random per encounter.", "Check your Hunting Log for a silver or gold crown icon next to a monster."] } },
-		{ "id": "CAPTURE_NOVICE", "name": "Capture Novice", "description": "Capture your first monster.", "type": "standard", "difficulty": "easy", "guide": { "steps": ["Weaken a monster until it limps (skull icon on minimap).", "Place a Shock Trap or Pitfall Trap, then throw 2 Tranq Bombs."] } },
-		{ "id": "DEATH_BEGETS_LIFE", "name": "Death Begets Life", "description": "Complete a key story mission.", "type": "secret", "difficulty": "easy", "guide": { "steps": ["Progress the main story.", "Complete the assigned quest."] } },
-		{ "id": "HELP_SOS", "name": "HELP!", "description": "Fire an SOS flare for the first time.", "type": "standard", "difficulty": "easy", "guide": { "steps": ["During any quest, open the menu.", "Select 'Fire SOS Flare' to call for help."] } },
-		{ "id": "INQUISITIVE_MIND", "name": "An Inquisitive Mind", "description": "Complete your first investigation.", "type": "standard", "difficulty": "easy", "guide": { "steps": ["Collect monster tracks to unlock investigations.", "Accept and complete any investigation from the Resource Center."] } },
-		{ "id": "EMPRESS_HIGHLANDS", "name": "The Empress of the Highlands", "description": "Complete a key Coral Highlands mission.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Progress the story to the Coral Highlands.", "Complete the assigned quest against the area boss."] } },
-		{ "id": "BOSOM_BUDDIES", "name": "Bosom Buddies", "description": "Raise the proficiency of any Palico Gadget to level 10.", "type": "cumulative", "difficulty": "medium", "guide": { "steps": ["Equip a Palico Gadget and use it frequently in hunts.", "Keep using the same gadget until it reaches proficiency level 10."] } },
-		{ "id": "NEW_WORLD_SETTLER", "name": "New World Settler", "description": "Establish five camps.", "type": "cumulative", "difficulty": "easy", "guide": { "steps": ["Find camp sites in each locale (marked as delivery quests).", "Deliver the required materials to establish 5 camps total."] } },
-		{ "id": "ONE_SHALL_STAND", "name": "One Shall Stand, One Shall Fall", "description": "Complete a pivotal story battle.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Progress the main story to the Elder's Recess.", "Complete the story mission."] } },
-		{ "id": "SAPPHIRE_STAR", "name": "The Sapphire Star", "description": "Complete the main campaign.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Defeat Xeno'jiiva, the final boss of the base game.", "Watch the credits to complete the main story."] } },
-		{ "id": "FIRST_RIDE", "name": "First Ride", "description": "Use your first Raider Ride.", "type": "standard", "difficulty": "easy", "guide": { "steps": ["Befriend a Grimalkyne tribe in the Iceborne expansion.", "Request a Raider Ride from a friendly small monster."] } },
-		{ "id": "ANGLING_BITE", "name": "Angling for a Bite", "description": "Catch your first fish.", "type": "standard", "difficulty": "easy", "guide": { "steps": ["Find a fishing spot in any locale.", "Use the fishing rod to catch any fish."] } },
-		{ "id": "IMPREGNABLE_DEFENSE", "name": "Impregnable Defense", "description": "Obtain five highly rare pieces of armor.", "type": "cumulative", "difficulty": "medium", "guide": { "steps": ["Craft armor from high-rank monster materials.", "Obtain 5 pieces of Rarity 6+ armor."] } },
-		{ "id": "MONSTER_SLAYER", "name": "Monster Slayer", "description": "Hunt 100 large monsters.", "type": "cumulative", "difficulty": "medium", "guide": { "steps": ["Hunt large monsters through quests and expeditions.", "Kills and captures both count. Reach 100 total."] } },
-		{ "id": "MINIATURE_CROWN", "name": "Miniature Crown", "description": "Record your first miniature crown for monsters that appear from low or high rank.", "type": "standard", "difficulty": "easy", "guide": { "steps": ["Hunt monsters — each has a random size per encounter.", "An unusually small specimen will award a miniature crown in the log."] } },
-		{ "id": "MOVIN_ON_UP", "name": "Movin On Up", "description": "Move into an upgraded room.", "type": "standard", "difficulty": "easy", "guide": { "steps": ["Progress the main story until room upgrades unlock.", "Talk to the housekeeper to upgrade your room."] } },
-		{ "id": "MMM_SO_TASTY", "name": "Mmm, So Tasty!", "description": "Cook your first well-done steak.", "type": "standard", "difficulty": "easy", "guide": { "steps": ["Use Raw Meat on the BBQ Spit.", "Press the button when the music hits its peak and the meat turns golden."] } },
-		{ "id": "NEW_EXPEDITION", "name": "The Beginning of a New Expedition", "description": "Begin the Iceborne expansion.", "type": "secret", "difficulty": "easy", "guide": { "steps": ["Complete the base game story (defeat Xeno'jiiva).", "Start the Iceborne expansion from the quest board."] } },
-		{ "id": "TRUE_HUNT_BEGINS", "name": "The True Hunt Begins", "description": "Hunt your first large monster in a master rank quest.", "type": "standard", "difficulty": "easy", "guide": { "steps": ["Accept a master rank quest from the Iceborne expansion.", "Hunt any large monster on master rank."] } },
-		{ "id": "TEMPER_TEMPER", "name": "Temper Temper", "description": "Hunt a tempered monster.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Collect tempered monster tracks to unlock tempered investigations.", "Hunt a tempered monster."] } },
-		{ "id": "TIME_GET_SERIOUS", "name": "Time to Get Serious", "description": "Complete a key Iceborne story mission.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Progress the Iceborne story.", "Complete the assigned quest."] } },
-		{ "id": "PERSONAL_TREASURE", "name": "Personal Treasure", "description": "Find a special treasure.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Explore the Hoarfrost Reach carefully.", "Find the hidden personal treasure item."] } },
-		{ "id": "HUNTERS_LIFE", "name": "The Hunters Life for Me", "description": "Complete 50 optional quests.", "type": "cumulative", "difficulty": "medium", "guide": { "steps": ["Accept optional quests from the quest board.", "Complete 50 unique optional quests."] } },
-		{ "id": "ELUSIVE_ELDER", "name": "The Elusive Elder Dragon", "description": "Encounter an elder dragon.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Progress the story to the Elder's Recess.", "Encounter and fight an elder dragon."] } },
-		{ "id": "SOURCE_RELAXATION", "name": "Source of Relaxation", "description": "Spend some time in a natural hot spring.", "type": "standard", "difficulty": "easy", "guide": { "steps": ["Find a hot spring in the Hoarfrost Reach or other locales.", "Stand in it for a few moments."] } },
-		{ "id": "POWER_EVERYTHING", "name": "Power is Everything", "description": "Obtain five highly rare weapons.", "type": "cumulative", "difficulty": "medium", "guide": { "steps": ["Craft weapons from high-rank monster materials.", "Obtain 5 weapons of Rarity 6+."] } },
-		{ "id": "COMMISSIONED_WORK", "name": "Commissioned Work", "description": "Obtain 100,000 research points.", "type": "cumulative", "difficulty": "medium", "guide": { "steps": ["Earn research points from collecting tracks, capturing monsters, and gathering.", "Accumulate 100,000 total research points."] } },
-		{ "id": "EAGER_ENGINEER", "name": "Eager Engineer", "description": "Help the Steamworks 20 times.", "type": "cumulative", "difficulty": "easy", "guide": { "steps": ["Visit the Steamworks in Seliana.", "Play the minigame 20 times."] } },
-		{ "id": "CLUTCH_CLAW", "name": "Clutch Claw Neophyte", "description": "Study the ways of the clutch claw.", "type": "standard", "difficulty": "easy", "guide": { "steps": ["Complete the Clutch Claw tutorial in the training area.", "Use the clutch claw on a monster."] } },
-		{ "id": "CONFRONTING_UNKNOWN", "name": "Confronting the Unknown", "description": "Face a powerful Iceborne threat.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Progress the Iceborne story.", "Face the unknown threat in the story mission."] } },
-		{ "id": "INDOMITABLE_SPIRIT", "name": "Indomitable Spirit", "description": "Overcome a great challenge.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Progress the Iceborne story.", "Complete the challenging story mission."] } },
-		{ "id": "BOURGEOIS_HUNTER", "name": "Bourgeois Hunter", "description": "Possess 1,000,000 zenny.", "type": "cumulative", "difficulty": "medium", "guide": { "steps": ["Earn zenny from selling materials and completing quests.", "Accumulate 1,000,000 zenny at once."] } },
-		{ "id": "SKILLED_STEAMWORKER", "name": "Skilled Steamworker", "description": "Send the Steamworks into overdrive.", "type": "standard", "difficulty": "easy", "guide": { "steps": ["Play the Steamworks minigame in Seliana.", "Match all three sequences correctly to trigger overdrive."] } },
-		{ "id": "OLD_EVERWYRM", "name": "The Old Everwyrm", "description": "Face the Old Everwyrm.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Progress the Iceborne story to its climax.", "Defeat Shara Ishvalda, the final boss of Iceborne."] } },
-		{ "id": "STEP_ARENA", "name": "Step into the Arena", "description": "Complete your first arena quest.", "type": "standard", "difficulty": "easy", "guide": { "steps": ["Accept an arena quest from the Gathering Hub.", "Complete the arena hunt."] } },
-		{ "id": "LAND_DISCOVERIES", "name": "To the Land of Discoveries", "description": "Reach the Hoarfrost Reach.", "type": "secret", "difficulty": "easy", "guide": { "steps": ["Start the Iceborne expansion.", "Travel to the new Hoarfrost Reach area."] } },
-		{ "id": "END_AND_BEGINNING", "name": "An End and a Beginning", "description": "Complete a significant Iceborne milestone.", "type": "secret", "difficulty": "medium", "guide": { "steps": ["Progress the Iceborne story.", "Complete the milestone quest."] } },
-		{ "id": "CAPTURE_PRO", "name": "Capture Pro", "description": "Capture 50 monsters.", "type": "cumulative", "difficulty": "medium", "guide": { "steps": ["Weaken monsters and capture them with traps + tranq bombs.", "Capture 50 total monsters."] } },
-		{ "id": "HUNTERS_UNITED_FOREVER", "name": "Hunters United Forever", "description": "Complete 100 quests via multiplayer.", "type": "multiplayer", "difficulty": "medium", "guide": { "steps": ["Join or host multiplayer quests.", "Complete 100 quests with other players."] } },
-		{ "id": "EXPERIENCED_RIDER", "name": "Experienced Rider", "description": "Use Raider Ride many times.", "type": "cumulative", "difficulty": "easy", "guide": { "steps": ["Request Raider Rides from friendly small monsters in the field.", "Use the Raider Ride feature many times."] } },
-		{ "id": "UNWAVERING_DEFENSE", "name": "Unwavering Defense", "description": "Obtain five extremely rare pieces of armor.", "type": "cumulative", "difficulty": "hard", "guide": { "steps": ["Craft master rank armor from tough monsters.", "Obtain 5 pieces of Rarity 10+ armor."] } },
-		{ "id": "ELDERSLAYER", "name": "Elderslayer", "description": "Slay 50 elder dragons.", "type": "cumulative", "difficulty": "hard", "guide": { "steps": ["Hunt elder dragons through investigations and quests.", "Slay 50 total elder dragons."] } },
-		{ "id": "INTERIOR_DECORATOR", "name": "Interior Decorator", "description": "Have 50 different types of room decor to choose from.", "type": "cumulative", "difficulty": "medium", "guide": { "steps": ["Earn room decor from quests, bounties, and the Steamworks.", "Collect 50 different decor types."] } },
-		{ "id": "I_AM_REINFORCEMENTS", "name": "I Am the Reinforcements", "description": "Respond to an SOS flare, and help complete 10 quests.", "type": "multiplayer", "difficulty": "easy", "guide": { "steps": ["Join SOS quests from the quest board.", "Help complete 10 SOS quests."] } },
-		{ "id": "ESTABLISHED_HUNTER", "name": "Established Hunter", "description": "Reach hunter rank 100.", "type": "cumulative", "difficulty": "hard", "guide": { "steps": ["Complete quests to earn HR experience.", "Reach hunter rank 100."] } },
-		{ "id": "HUNTER_PRODIGY", "name": "Hunter Prodigy", "description": "Hunt 100 large monsters in master rank quests.", "type": "cumulative", "difficulty": "hard", "guide": { "steps": ["Hunt large monsters on master rank.", "Reach 100 master rank hunts."] } },
-		{ "id": "REMODELER", "name": "Remodeler", "description": "Change your room's interior for the first time.", "type": "standard", "difficulty": "easy", "guide": { "steps": ["Talk to the housekeeper in your room.", "Change the room's interior design."] } },
-		{ "id": "DEVASTATING_OFFENSE", "name": "Devastating Offense", "description": "Obtain five extremely rare weapons.", "type": "cumulative", "difficulty": "hard", "guide": { "steps": ["Craft master rank weapons from endgame materials.", "Obtain 5 weapons of Rarity 10+."] } },
-		{ "id": "FRANCHISE_HUNTER", "name": "The Franchise Hunter", "description": "Complete 50 investigations.", "type": "cumulative", "difficulty": "medium", "guide": { "steps": ["Accept investigations from the Resource Center.", "Complete 50 investigations."] } },
-		{ "id": "INDOMITABLE", "name": "Indomitable", "description": "Complete a very difficult Iceborne quest.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Progress through the endgame Iceborne content.", "Complete the challenging quest."] } },
-		{ "id": "ANOTHER_MINI_CROWN", "name": "Another Miniature Crown", "description": "Obtain your first miniature crown for capturing endemic life in master rank.", "type": "standard", "difficulty": "easy", "guide": { "steps": ["Capture small endemic creatures in master rank areas.", "Find a miniature-sized specimen."] } },
-		{ "id": "MASTER_CAPTURER", "name": "Master Capturer", "description": "Capture 50 large monsters in master rank quests.", "type": "cumulative", "difficulty": "hard", "guide": { "steps": ["Capture monsters on master rank quests.", "Reach 50 master rank captures."] } },
-		{ "id": "FATES_CONCLUSION", "name": "Fate's Conclusion", "description": "Complete the Iceborne endgame.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Complete all post-story Iceborne assigned quests.", "Defeat the final endgame threat."] } },
-		{ "id": "MONSTER_HUNTER_500", "name": "Monster Hunter", "description": "Hunt 500 large monsters.", "type": "cumulative", "difficulty": "hard", "guide": { "steps": ["Continue hunting large monsters across all ranks.", "Reach 500 total large monster hunts."] } },
-		{ "id": "MASTER_EXPLORER", "name": "Master Explorer", "description": "Establish all camps in the Hoarfrost Reach.", "type": "cumulative", "difficulty": "medium", "guide": { "steps": ["Find all camp sites in the Hoarfrost Reach.", "Deliver materials to establish every camp."] } },
-		{ "id": "INSATIABLE_INVESTIGATOR", "name": "Insatiable Investigator", "description": "Complete a large number of investigations.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Keep completing investigations from the Resource Center.", "Reach the required investigation count."] } },
-		{ "id": "ANOTHER_GIANT_CROWN", "name": "Another Giant Crown", "description": "Obtain your first gold crown for capturing endemic life in master rank.", "type": "standard", "difficulty": "medium", "guide": { "steps": ["Capture large endemic creatures in master rank.", "Find a gold-crown-sized specimen."] } },
-		{ "id": "MASTER_SLAYER", "name": "Master Slayer", "description": "Slay 50 elder dragons in master rank quests.", "type": "cumulative", "difficulty": "hard", "guide": { "steps": ["Hunt elder dragons on master rank.", "Slay 50 master rank elder dragons."] } },
-		{ "id": "EVOLVING_ECOLOGY", "name": "Evolving Ecology", "description": "Complete an ecology milestone.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Research many different monster species.", "Complete the ecology research milestone."] } },
-		{ "id": "ARCHITECTURAL_ARTIST", "name": "Architectural Artist", "description": "Have 120 different types of room decor to choose from.", "type": "cumulative", "difficulty": "hard", "guide": { "steps": ["Continue collecting room decor from all sources.", "Reach 120 different decor types."] } },
-		{ "id": "RARE_MATERIALS", "name": "In Search of Rare Materials", "description": "Obtain rare materials.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Hunt endgame monsters for their rare drops.", "Obtain the specific rare materials."] } },
-		{ "id": "SEEN_IT_ALL", "name": "Seen It All", "description": "Complete endgame content.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Complete all major endgame quests and events.", "Reach the 'Seen It All' milestone."] } },
-		{ "id": "HELPFUL_HUNTER", "name": "Helpful Hunter", "description": "Aid a low rank or high rank hunter on 10 quests as a master rank hunter.", "type": "multiplayer", "difficulty": "easy", "guide": { "steps": ["Join SOS quests from low or high rank hunters while at master rank.", "Help complete 10 such quests."] } },
-		{ "id": "MASTER_OF_MASTERS", "name": "Master of Masters", "description": "Reach master rank 200.", "type": "cumulative", "difficulty": "very-hard", "guide": { "steps": ["Complete master rank quests to earn MR experience.", "Reach master rank 200. This is an extreme grind."], "communityNotes": ["Reddit tip: Tempered elder dragon investigations give the most MR XP. Event quests can help too."] } },
-		{ "id": "RAINBOW_BRIGHT", "name": "Rainbow Bright", "description": "Complete the rainbow pigment quest.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Complete all optional quests in the base game to unlock the rainbow pigment quest.", "Complete the final quest to earn the rainbow armor pigment."] } },
-		{ "id": "MINI_CROWN_COLLECTOR", "name": "Miniature Crown Collector", "description": "Obtain a miniature crown for 10 or more monsters that appear from low or high rank.", "type": "cumulative", "difficulty": "hard", "guide": { "steps": ["Hunt monsters repeatedly for miniature crown sizes.", "Collect miniature crowns for 10+ different species."] } },
-		{ "id": "SNUGGLES_ALL", "name": "Snuggles for All", "description": "Befriend all Grimalkyne tribes.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Find all Grimalkyne tribes across every locale.", "Complete their quests to befriend each tribe."] } },
-		{ "id": "GIANT_CROWN_COLLECTOR", "name": "Giant Crown Collector", "description": "Obtain a gold crown for 10 or more monsters that appear from low or high rank.", "type": "cumulative", "difficulty": "hard", "guide": { "steps": ["Hunt monsters for gold crown sizes.", "Obtain gold crowns for 10+ species. Event quests help."] } },
-		{ "id": "LIVING_FOSSIL", "name": "A Living Fossil", "description": "Discover a rare endemic creature.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Explore rare spawn locations across all locales.", "Find the living fossil creature."] } },
-		{ "id": "FLEDGLING_OBSERVER", "name": "Fledgling Observer", "description": "Complete your first request for the Lynian Researcher.", "type": "standard", "difficulty": "easy", "guide": { "steps": ["Find the Lynian Researcher in the field.", "Complete their first photography request."] } },
-		{ "id": "GOLDEN_GLEAM", "name": "Golden Gleam", "description": "Discover a rare golden creature.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Search for rare golden endemic life.", "Capture the golden creature."] } },
-		{ "id": "FRIENDLY_POINTER", "name": "Friendly Pointer", "description": "Complete many Lynian Researcher requests.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Continue completing Lynian Researcher photo requests.", "Complete many requests to earn this achievement."] } },
-		{ "id": "MONSTER_PHD", "name": "Monster Ph.D.", "description": "Max out the research level (up to high rank) for many monsters.", "type": "cumulative", "difficulty": "hard", "guide": { "steps": ["Collect monster tracks and fight monsters to earn research points.", "Max out research for many HR monster species."] } },
-		{ "id": "BRISTLES_ALL", "name": "Bristles for All", "description": "Befriend all Boaboa.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Find the Boaboa tribe in the Hoarfrost Reach.", "Complete all Boaboa quests and befriend them."] } },
-		{ "id": "FLEDGLING_COLLECTOR", "name": "Fledgling Collector", "description": "Find your first treasure.", "type": "standard", "difficulty": "easy", "guide": { "steps": ["Explore any locale and find a hidden treasure.", "Interact with it to collect the treasure."] } },
-		{ "id": "DEFT_DIGGER", "name": "Deft Digger", "description": "Find many treasures.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Continue finding hidden treasures across all locales.", "Collect many unique treasures."] } },
-		{ "id": "SPREADING_WORD", "name": "Spreading the Word", "description": "Collect over 50 Guild Cards.", "type": "multiplayer", "difficulty": "medium", "guide": { "steps": ["Exchange Guild Cards with other hunters in the Gathering Hub.", "Collect 50+ unique Guild Cards."] } },
-		{ "id": "NOWHERE_BUT_UP", "name": "Nowhere to Go but Up", "description": "Complete 50 arena quests.", "type": "cumulative", "difficulty": "hard", "guide": { "steps": ["Accept arena quests from the Gathering Hub.", "Complete 50 total arena quests."] } },
-		{ "id": "SUBMERGED_MYSTERY", "name": "Submerged Mystery", "description": "Discover an underwater secret.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Search underwater areas in specific locales.", "Find the hidden submerged mystery."] } },
-		{ "id": "SWEET_MELODY", "name": "Sweet Melody", "description": "Hear a special melody.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Complete specific optional side content.", "Trigger the special melody event."] } },
-		{ "id": "CELESTIAL_ILLUSION", "name": "Celestial Illusion", "description": "Witness a rare celestial event.", "type": "secret", "difficulty": "hard", "guide": { "steps": ["Visit specific areas during rare conditions.", "Witness the celestial illusion."] } },
-		{ "id": "MINI_CROWN_MASTER", "name": "Miniature Crown Master", "description": "Obtain a miniature crown for many monsters in your hunting log.", "type": "cumulative", "difficulty": "very-hard", "guide": { "steps": ["Hunt every monster species repeatedly for miniature crowns.", "Collect miniature crowns for nearly all species."], "warnings": ["This is an extreme RNG grind. Event quests with guaranteed crowns are essential."] } },
-		{ "id": "GIANT_CROWN_MASTER", "name": "Giant Crown Master", "description": "Obtain a gold crown for many monsters in your hunting log.", "type": "cumulative", "difficulty": "very-hard", "guide": { "steps": ["Hunt monsters for gold crown sizes across all species.", "Event quests with boosted crown rates are the best strategy."], "communityNotes": ["Reddit tip: Crown grinding is the longest achievement. Use event quests and investigations with gold/silver rewards."] } },
-		{ "id": "CREATURES_EARTH", "name": "Creatures of the Earth", "description": "Complete a major endemic life milestone.", "type": "secret", "difficulty": "very-hard", "guide": { "steps": ["Capture many different endemic life creatures.", "Complete the full endemic life collection."] } },
-		{ "id": "OUTSTANDING_OBSERVER", "name": "Outstanding Observer", "description": "Complete many requests for the Lynian Researcher.", "type": "cumulative", "difficulty": "very-hard", "guide": { "steps": ["Complete a large number of Lynian Researcher requests.", "This requires finding and photographing many different Lynian types."] } },
-		{ "id": "MONSTER_MASTER", "name": "Monster Master", "description": "Maximize the research level for almost all large monsters.", "type": "cumulative", "difficulty": "very-hard", "guide": { "steps": ["Max out research for nearly every large monster in the game.", "Requires hunting and tracking all species extensively."] } },
-		{ "id": "TRUE_MINI_CROWN", "name": "True Miniature Crown Collector", "description": "Obtain a miniature crown for almost every monster in your hunting log.", "type": "cumulative", "difficulty": "very-hard", "guide": { "steps": ["Collect miniature crowns for nearly every huntable monster.", "This is the ultimate crown grind — expect hundreds of hours."], "warnings": ["Heavily RNG-dependent. Use crown-boosted event quests whenever available."] } },
-		{ "id": "TRUE_LARGE_CROWN", "name": "True Large Crown Collector", "description": "Obtain a gold crown for almost every monster in your hunting log.", "type": "cumulative", "difficulty": "very-hard", "guide": { "steps": ["Collect gold crowns for nearly every huntable monster.", "Same extreme grind as miniature crowns — pair them together."], "warnings": ["Most time-consuming achievement in the game. Focus on event quests."] } },
-		{ "id": "VETERAN_COLLECTOR", "name": "Veteran Collector", "description": "Find all treasure within a single locale.", "type": "cumulative", "difficulty": "hard", "guide": { "steps": ["Pick any single locale.", "Find and collect every hidden treasure in that locale."] } },
-		{ "id": "CONQUEROR_NEW_WORLD", "name": "Conqueror of the New World", "description": "Unlock all achievements for Monster Hunter: World.", "type": "standard", "difficulty": "very-hard", "guide": { "steps": ["Complete all base game achievements.", "This is the base game platinum."], "communityNotes": ["Reddit tip: Crown achievements are the bottleneck. Everything else is reasonable."] } },
-		{ "id": "ULTIMATE_COLLECTOR", "name": "Ultimate Collector", "description": "Find all treasure.", "type": "cumulative", "difficulty": "very-hard", "guide": { "steps": ["Find all hidden treasures across every locale.", "Use a treasure guide to locate them all."] } },
-		{ "id": "CONQUEROR_HINTERLANDS", "name": "Conqueror of the Hinterlands", "description": "Unlock all achievements for Monster Hunter World: Iceborne.", "type": "standard", "difficulty": "very-hard", "guide": { "steps": ["Complete all Iceborne DLC achievements.", "Includes master rank crown grinding."] } }
+		{
+			"id": "ART_OF_CAMOUFLAGE",
+			"name": "The Art of Camouflage",
+			"description": "Escape the Jagras pack by hiding in some shrubs.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/e572edbfba03fb97c5dc2f2e280c31ec152aeecb.jpg",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"During the opening tutorial, approach the Jagras pack.",
+					"When prompted, hide in the nearby shrubs."
+				]
+			}
+		},
+		{
+			"id": "WELCOME_NEW_WORLD",
+			"name": "Welcome to the New World",
+			"description": "Complete the first assigned quest.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/a1e07a657b94c6355b50c10b64906cc32d573857.jpg",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Complete the opening story missions in Astera.",
+					"Finish your first assigned quest to hunt a Jagras."
+				]
+			}
+		},
+		{
+			"id": "NOTHING_STOPS",
+			"name": "Nothing Stops This Commission",
+			"description": "Reach a major story milestone.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/170256de23e0e0be24ac69f5510f74a887b036cc.jpg",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Progress through the assigned quest chain.",
+					"Complete the story mission to unlock new areas."
+				]
+			}
+		},
+		{
+			"id": "BIGGER_THEY_ARE",
+			"name": "The Bigger They Are...",
+			"description": "Mount your first monster.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/5b3b9995d7f819c99596f8869db19c8d12c0b1e7.jpg",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Jump off a ledge and attack a monster mid-air.",
+					"Hold on when mounted and attack until it falls."
+				]
+			}
+		},
+		{
+			"id": "HUNTERS_UNITED",
+			"name": "Hunters United",
+			"description": "Complete a quest via multiplayer.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/1f753f3edfc578c88d3c076f9f6fc4e0d272f4a9.jpg",
+			"type": "multiplayer",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Fire an SOS flare during a quest or join another player's quest.",
+					"Complete the quest with at least one other player."
+				]
+			}
+		},
+		{
+			"id": "DEFENDER_ASTERA",
+			"name": "Defender of Astera",
+			"description": "Complete a key defense mission.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/10a7dd9995b8ffae25f90e4dddc014b03a09f2be.jpg",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Progress the story to the Zorah Magdaros siege.",
+					"Complete the defense mission."
+				]
+			}
+		},
+		{
+			"id": "FIRST_FRIENDS",
+			"name": "First Friends",
+			"description": "Befriend your first Tailraider.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/1a434db6ef66cffd5ae424adb89f123dff4d78e6.jpg",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find a Grimalkyne tribe in any locale.",
+					"Complete their request to befriend them as Tailraiders."
+				]
+			}
+		},
+		{
+			"id": "INTO_THE_DEEP",
+			"name": "Into the Deep",
+			"description": "Reach a deep-story milestone.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/808120f8494bc41c0af898a39b4bb3b6abab5cce.jpg",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Progress the main story through the Coral Highlands.",
+					"Complete the assigned quest."
+				]
+			}
+		},
+		{
+			"id": "GIANT_CROWN",
+			"name": "Giant Crown",
+			"description": "Record your first silver crown or higher for monsters that appear from low or high rank.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/e2907e12be9e6e924e855f2db8c1c00b0ef215a1.jpg",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Hunt large monsters — sizes are random per encounter.",
+					"Check your Hunting Log for a silver or gold crown icon next to a monster."
+				]
+			}
+		},
+		{
+			"id": "CAPTURE_NOVICE",
+			"name": "Capture Novice",
+			"description": "Capture your first monster.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/caa59189c12c52030f0d14b90c0a2623dc9ecbec.jpg",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Weaken a monster until it limps (skull icon on minimap).",
+					"Place a Shock Trap or Pitfall Trap, then throw 2 Tranq Bombs."
+				]
+			}
+		},
+		{
+			"id": "DEATH_BEGETS_LIFE",
+			"name": "Death Begets Life",
+			"description": "Complete a key story mission.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/02f71cfd5e52044720f5e8794ad6c9928c48e79a.jpg",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Progress the main story.",
+					"Complete the assigned quest."
+				]
+			}
+		},
+		{
+			"id": "HELP_SOS",
+			"name": "HELP!",
+			"description": "Fire an SOS flare for the first time.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/59005a50f06b8aca450f1567053ffff1192ebd63.jpg",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"During any quest, open the menu.",
+					"Select 'Fire SOS Flare' to call for help."
+				]
+			}
+		},
+		{
+			"id": "INQUISITIVE_MIND",
+			"name": "An Inquisitive Mind",
+			"description": "Complete your first investigation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/23f855de051d3ae04c9fd22c9b27914ff6ba9dc1.jpg",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Collect monster tracks to unlock investigations.",
+					"Accept and complete any investigation from the Resource Center."
+				]
+			}
+		},
+		{
+			"id": "EMPRESS_HIGHLANDS",
+			"name": "The Empress of the Highlands",
+			"description": "Complete a key Coral Highlands mission.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/91828efa7e920b5c74ecf952803b3c78516300de.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Progress the story to the Coral Highlands.",
+					"Complete the assigned quest against the area boss."
+				]
+			}
+		},
+		{
+			"id": "BOSOM_BUDDIES",
+			"name": "Bosom Buddies",
+			"description": "Raise the proficiency of any Palico Gadget to level 10.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/04d9de70fced3adf68ed1c20c7b6404a232888f6.jpg",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Equip a Palico Gadget and use it frequently in hunts.",
+					"Keep using the same gadget until it reaches proficiency level 10."
+				]
+			}
+		},
+		{
+			"id": "NEW_WORLD_SETTLER",
+			"name": "New World Settler",
+			"description": "Establish five camps.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/92b18a8ec402a2490f118e9a88f13cafff7f7ed4.jpg",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find camp sites in each locale (marked as delivery quests).",
+					"Deliver the required materials to establish 5 camps total."
+				]
+			}
+		},
+		{
+			"id": "ONE_SHALL_STAND",
+			"name": "One Shall Stand, One Shall Fall",
+			"description": "Complete a pivotal story battle.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/73f84995b2ad08c0d2ad49302631768fe5190736.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Progress the main story to the Elder's Recess.",
+					"Complete the story mission."
+				]
+			}
+		},
+		{
+			"id": "SAPPHIRE_STAR",
+			"name": "The Sapphire Star",
+			"description": "Complete the main campaign.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/1122a5179d2959b60b701493af25f7c67bf70253.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Defeat Xeno'jiiva, the final boss of the base game.",
+					"Watch the credits to complete the main story."
+				]
+			}
+		},
+		{
+			"id": "FIRST_RIDE",
+			"name": "First Ride",
+			"description": "Use your first Raider Ride.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/9bbdd36ddac55e4c4cec7edc884af29c663db5fb.jpg",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Befriend a Grimalkyne tribe in the Iceborne expansion.",
+					"Request a Raider Ride from a friendly small monster."
+				]
+			}
+		},
+		{
+			"id": "ANGLING_BITE",
+			"name": "Angling for a Bite",
+			"description": "Catch your first fish.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/e4569c0007fc38a200758f4f61b75e33b84bf359.jpg",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find a fishing spot in any locale.",
+					"Use the fishing rod to catch any fish."
+				]
+			}
+		},
+		{
+			"id": "IMPREGNABLE_DEFENSE",
+			"name": "Impregnable Defense",
+			"description": "Obtain five highly rare pieces of armor.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/826cbd7a0f9494fe0941b62a1da348750b6576d6.jpg",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft armor from high-rank monster materials.",
+					"Obtain 5 pieces of Rarity 6+ armor."
+				]
+			}
+		},
+		{
+			"id": "MONSTER_SLAYER",
+			"name": "Monster Slayer",
+			"description": "Hunt 100 large monsters.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/ecca9d856c1744c61b50c72062ec1d2e8d56ef6b.jpg",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Hunt large monsters through quests and expeditions.",
+					"Kills and captures both count. Reach 100 total."
+				]
+			}
+		},
+		{
+			"id": "MINIATURE_CROWN",
+			"name": "Miniature Crown",
+			"description": "Record your first miniature crown for monsters that appear from low or high rank.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/e4c73c7e29668074e719b8ba8b51a87071e8352b.jpg",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Hunt monsters — each has a random size per encounter.",
+					"An unusually small specimen will award a miniature crown in the log."
+				]
+			}
+		},
+		{
+			"id": "MOVIN_ON_UP",
+			"name": "Movin On Up",
+			"description": "Move into an upgraded room.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/70c38c10ed97f5a51c3269ac1c4d322eb7e93726.jpg",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Progress the main story until room upgrades unlock.",
+					"Talk to the housekeeper to upgrade your room."
+				]
+			}
+		},
+		{
+			"id": "MMM_SO_TASTY",
+			"name": "Mmm, So Tasty!",
+			"description": "Cook your first well-done steak.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/55b7b79c20623449e366a3e587056b03db5e734c.jpg",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Use Raw Meat on the BBQ Spit.",
+					"Press the button when the music hits its peak and the meat turns golden."
+				]
+			}
+		},
+		{
+			"id": "NEW_EXPEDITION",
+			"name": "The Beginning of a New Expedition",
+			"description": "Begin the Iceborne expansion.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/765fa26a30f56f66b4624e4d2b38c18f7e5f17e8.jpg",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Complete the base game story (defeat Xeno'jiiva).",
+					"Start the Iceborne expansion from the quest board."
+				]
+			}
+		},
+		{
+			"id": "TRUE_HUNT_BEGINS",
+			"name": "The True Hunt Begins",
+			"description": "Hunt your first large monster in a master rank quest.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/f9c980e8730f2cc4c65fc6a869bafe4bda342893.jpg",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Accept a master rank quest from the Iceborne expansion.",
+					"Hunt any large monster on master rank."
+				]
+			}
+		},
+		{
+			"id": "TEMPER_TEMPER",
+			"name": "Temper Temper",
+			"description": "Hunt a tempered monster.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/0c524255f8bd3c3af4b77b3ab7c6042e439957cd.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Collect tempered monster tracks to unlock tempered investigations.",
+					"Hunt a tempered monster."
+				]
+			}
+		},
+		{
+			"id": "TIME_GET_SERIOUS",
+			"name": "Time to Get Serious",
+			"description": "Complete a key Iceborne story mission.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/135c2614efd1af0c1f844271e459064f7fdb24a7.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Progress the Iceborne story.",
+					"Complete the assigned quest."
+				]
+			}
+		},
+		{
+			"id": "PERSONAL_TREASURE",
+			"name": "Personal Treasure",
+			"description": "Find a special treasure.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/2942a56e55e3163f37238466f64161935aac1514.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Explore the Hoarfrost Reach carefully.",
+					"Find the hidden personal treasure item."
+				]
+			}
+		},
+		{
+			"id": "HUNTERS_LIFE",
+			"name": "The Hunters Life for Me",
+			"description": "Complete 50 optional quests.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/9b08e865ae4eef6d4d0257a5f4be3116784ca961.jpg",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Accept optional quests from the quest board.",
+					"Complete 50 unique optional quests."
+				]
+			}
+		},
+		{
+			"id": "ELUSIVE_ELDER",
+			"name": "The Elusive Elder Dragon",
+			"description": "Encounter an elder dragon.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/030ca55fd6d25ad11184a30eb150266d9454785c.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Progress the story to the Elder's Recess.",
+					"Encounter and fight an elder dragon."
+				]
+			}
+		},
+		{
+			"id": "SOURCE_RELAXATION",
+			"name": "Source of Relaxation",
+			"description": "Spend some time in a natural hot spring.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/18a8aabc8c01bf628b04fe81eb917547c1e9e5c3.jpg",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find a hot spring in the Hoarfrost Reach or other locales.",
+					"Stand in it for a few moments."
+				]
+			}
+		},
+		{
+			"id": "POWER_EVERYTHING",
+			"name": "Power is Everything",
+			"description": "Obtain five highly rare weapons.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/1ca581c61c6c8e04a214df8c49735e52a0154e31.jpg",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft weapons from high-rank monster materials.",
+					"Obtain 5 weapons of Rarity 6+."
+				]
+			}
+		},
+		{
+			"id": "COMMISSIONED_WORK",
+			"name": "Commissioned Work",
+			"description": "Obtain 100,000 research points.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/bda0ee33c3d69de4a0540aa60377d117d8578f35.jpg",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Earn research points from collecting tracks, capturing monsters, and gathering.",
+					"Accumulate 100,000 total research points."
+				]
+			}
+		},
+		{
+			"id": "EAGER_ENGINEER",
+			"name": "Eager Engineer",
+			"description": "Help the Steamworks 20 times.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/6a269b2af84f65d472e98f16c2178c09d03b2845.jpg",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Visit the Steamworks in Seliana.",
+					"Play the minigame 20 times."
+				]
+			}
+		},
+		{
+			"id": "CLUTCH_CLAW",
+			"name": "Clutch Claw Neophyte",
+			"description": "Study the ways of the clutch claw.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/44a5de531256977e656e95ccbb02d2ed5ecd2174.jpg",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Complete the Clutch Claw tutorial in the training area.",
+					"Use the clutch claw on a monster."
+				]
+			}
+		},
+		{
+			"id": "CONFRONTING_UNKNOWN",
+			"name": "Confronting the Unknown",
+			"description": "Face a powerful Iceborne threat.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/8f197143da649376182352c5e1b29ce61fcd1b44.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Progress the Iceborne story.",
+					"Face the unknown threat in the story mission."
+				]
+			}
+		},
+		{
+			"id": "INDOMITABLE_SPIRIT",
+			"name": "Indomitable Spirit",
+			"description": "Overcome a great challenge.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/2cb2a603a0c7df9484010be08e567c0f4abae205.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Progress the Iceborne story.",
+					"Complete the challenging story mission."
+				]
+			}
+		},
+		{
+			"id": "BOURGEOIS_HUNTER",
+			"name": "Bourgeois Hunter",
+			"description": "Possess 1,000,000 zenny.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/24ea9003515465a82c00089b71831745cb7389a5.jpg",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Earn zenny from selling materials and completing quests.",
+					"Accumulate 1,000,000 zenny at once."
+				]
+			}
+		},
+		{
+			"id": "SKILLED_STEAMWORKER",
+			"name": "Skilled Steamworker",
+			"description": "Send the Steamworks into overdrive.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/bd2419ab7062c76742c4f620651cd43e2c834302.jpg",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Play the Steamworks minigame in Seliana.",
+					"Match all three sequences correctly to trigger overdrive."
+				]
+			}
+		},
+		{
+			"id": "OLD_EVERWYRM",
+			"name": "The Old Everwyrm",
+			"description": "Face the Old Everwyrm.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/625d283bb632e64bc10915a5070d954c8691fe4e.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Progress the Iceborne story to its climax.",
+					"Defeat Shara Ishvalda, the final boss of Iceborne."
+				]
+			}
+		},
+		{
+			"id": "STEP_ARENA",
+			"name": "Step into the Arena",
+			"description": "Complete your first arena quest.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/5a3538742740121726da5cb3e844ea6600990829.jpg",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Accept an arena quest from the Gathering Hub.",
+					"Complete the arena hunt."
+				]
+			}
+		},
+		{
+			"id": "LAND_DISCOVERIES",
+			"name": "To the Land of Discoveries",
+			"description": "Reach the Hoarfrost Reach.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/ee873f109437b926ad48aad29221002e65aa4c4e.jpg",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Start the Iceborne expansion.",
+					"Travel to the new Hoarfrost Reach area."
+				]
+			}
+		},
+		{
+			"id": "END_AND_BEGINNING",
+			"name": "An End and a Beginning",
+			"description": "Complete a significant Iceborne milestone.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/b75a17f18556fece132107768740df532ebc607d.jpg",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Progress the Iceborne story.",
+					"Complete the milestone quest."
+				]
+			}
+		},
+		{
+			"id": "CAPTURE_PRO",
+			"name": "Capture Pro",
+			"description": "Capture 50 monsters.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/81cd069f44da75443c23f65af7fdac4d3f84d6bc.jpg",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Weaken monsters and capture them with traps + tranq bombs.",
+					"Capture 50 total monsters."
+				]
+			}
+		},
+		{
+			"id": "HUNTERS_UNITED_FOREVER",
+			"name": "Hunters United Forever",
+			"description": "Complete 100 quests via multiplayer.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/4bf8679771de1418cb490fdf88783b3aa426576d.jpg",
+			"type": "multiplayer",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Join or host multiplayer quests.",
+					"Complete 100 quests with other players."
+				]
+			}
+		},
+		{
+			"id": "EXPERIENCED_RIDER",
+			"name": "Experienced Rider",
+			"description": "Use Raider Ride many times.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/acdcc3490dc8fdc4b6ace2f70e6005dd72de9c3e.jpg",
+			"type": "cumulative",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Request Raider Rides from friendly small monsters in the field.",
+					"Use the Raider Ride feature many times."
+				]
+			}
+		},
+		{
+			"id": "UNWAVERING_DEFENSE",
+			"name": "Unwavering Defense",
+			"description": "Obtain five extremely rare pieces of armor.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/06b9befc86ee7aa2b7ebb089c93016c06f89cf15.jpg",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Craft master rank armor from tough monsters.",
+					"Obtain 5 pieces of Rarity 10+ armor."
+				]
+			}
+		},
+		{
+			"id": "ELDERSLAYER",
+			"name": "Elderslayer",
+			"description": "Slay 50 elder dragons.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/c6aed8d36ecfbe858e51ed21e73ef72f87dda187.jpg",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Hunt elder dragons through investigations and quests.",
+					"Slay 50 total elder dragons."
+				]
+			}
+		},
+		{
+			"id": "INTERIOR_DECORATOR",
+			"name": "Interior Decorator",
+			"description": "Have 50 different types of room decor to choose from.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/260267b92e449cae5b63fb00705415082031c797.jpg",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Earn room decor from quests, bounties, and the Steamworks.",
+					"Collect 50 different decor types."
+				]
+			}
+		},
+		{
+			"id": "I_AM_REINFORCEMENTS",
+			"name": "I Am the Reinforcements",
+			"description": "Respond to an SOS flare, and help complete 10 quests.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/2f1fcd19d9211583db1fd49d08cf23306b0f0133.jpg",
+			"type": "multiplayer",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Join SOS quests from the quest board.",
+					"Help complete 10 SOS quests."
+				]
+			}
+		},
+		{
+			"id": "ESTABLISHED_HUNTER",
+			"name": "Established Hunter",
+			"description": "Reach hunter rank 100.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/fa430c2f5c33331a54a049c4a4e55d0cfb939b5e.jpg",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete quests to earn HR experience.",
+					"Reach hunter rank 100."
+				]
+			}
+		},
+		{
+			"id": "HUNTER_PRODIGY",
+			"name": "Hunter Prodigy",
+			"description": "Hunt 100 large monsters in master rank quests.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/5c8f61ea5affa24df1ed0915920fe0aab8a5bb2a.jpg",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Hunt large monsters on master rank.",
+					"Reach 100 master rank hunts."
+				]
+			}
+		},
+		{
+			"id": "REMODELER",
+			"name": "Remodeler",
+			"description": "Change your room's interior for the first time.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/f5b92d717d540a704f9f87d571ec7d80f6aed654.jpg",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Talk to the housekeeper in your room.",
+					"Change the room's interior design."
+				]
+			}
+		},
+		{
+			"id": "DEVASTATING_OFFENSE",
+			"name": "Devastating Offense",
+			"description": "Obtain five extremely rare weapons.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/d06fbb2242fc1dd58ff52ba111b6f66de06ce59e.jpg",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Craft master rank weapons from endgame materials.",
+					"Obtain 5 weapons of Rarity 10+."
+				]
+			}
+		},
+		{
+			"id": "FRANCHISE_HUNTER",
+			"name": "The Franchise Hunter",
+			"description": "Complete 50 investigations.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/de8b396f3ed10fb980521aedefad59013d07932d.jpg",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Accept investigations from the Resource Center.",
+					"Complete 50 investigations."
+				]
+			}
+		},
+		{
+			"id": "INDOMITABLE",
+			"name": "Indomitable",
+			"description": "Complete a very difficult Iceborne quest.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/1da29f2d7a705a2373da2f90b8951b5650dbd248.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Progress through the endgame Iceborne content.",
+					"Complete the challenging quest."
+				]
+			}
+		},
+		{
+			"id": "ANOTHER_MINI_CROWN",
+			"name": "Another Miniature Crown",
+			"description": "Obtain your first miniature crown for capturing endemic life in master rank.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/07bee3d2b2d0e7c92c93c91691075dcf482df0a9.jpg",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Capture small endemic creatures in master rank areas.",
+					"Find a miniature-sized specimen."
+				]
+			}
+		},
+		{
+			"id": "MASTER_CAPTURER",
+			"name": "Master Capturer",
+			"description": "Capture 50 large monsters in master rank quests.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/e696d868cf62d8448bd31a815c6882834cd4a53f.jpg",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Capture monsters on master rank quests.",
+					"Reach 50 master rank captures."
+				]
+			}
+		},
+		{
+			"id": "FATES_CONCLUSION",
+			"name": "Fate's Conclusion",
+			"description": "Complete the Iceborne endgame.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/760167c6d2baf6960f34b9faba674e63fb1698aa.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete all post-story Iceborne assigned quests.",
+					"Defeat the final endgame threat."
+				]
+			}
+		},
+		{
+			"id": "MONSTER_HUNTER_500",
+			"name": "Monster Hunter",
+			"description": "Hunt 500 large monsters.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/57d92b4cd95b5c581a082055c7ec9c43bd693ce2.jpg",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Continue hunting large monsters across all ranks.",
+					"Reach 500 total large monster hunts."
+				]
+			}
+		},
+		{
+			"id": "MASTER_EXPLORER",
+			"name": "Master Explorer",
+			"description": "Establish all camps in the Hoarfrost Reach.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/eeb10f3b29de5cebf72e017676d9d8d87ff2559f.jpg",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find all camp sites in the Hoarfrost Reach.",
+					"Deliver materials to establish every camp."
+				]
+			}
+		},
+		{
+			"id": "INSATIABLE_INVESTIGATOR",
+			"name": "Insatiable Investigator",
+			"description": "Complete a large number of investigations.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/c63d470d6f47c466cdabc33194a07c1317657895.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Keep completing investigations from the Resource Center.",
+					"Reach the required investigation count."
+				]
+			}
+		},
+		{
+			"id": "ANOTHER_GIANT_CROWN",
+			"name": "Another Giant Crown",
+			"description": "Obtain your first gold crown for capturing endemic life in master rank.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/2de932977d56b36f5dcdd3d4b3e74474e6626b67.jpg",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Capture large endemic creatures in master rank.",
+					"Find a gold-crown-sized specimen."
+				]
+			}
+		},
+		{
+			"id": "MASTER_SLAYER",
+			"name": "Master Slayer",
+			"description": "Slay 50 elder dragons in master rank quests.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/610f90af6f92a667e3b5486e886bb4e6200ac9ad.jpg",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Hunt elder dragons on master rank.",
+					"Slay 50 master rank elder dragons."
+				]
+			}
+		},
+		{
+			"id": "EVOLVING_ECOLOGY",
+			"name": "Evolving Ecology",
+			"description": "Complete an ecology milestone.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/ab97480080991c32a8fb6d6416882dee3fd69ef8.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Research many different monster species.",
+					"Complete the ecology research milestone."
+				]
+			}
+		},
+		{
+			"id": "ARCHITECTURAL_ARTIST",
+			"name": "Architectural Artist",
+			"description": "Have 120 different types of room decor to choose from.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/39283d5f19fdabad89983a696363797e4e3be99c.jpg",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Continue collecting room decor from all sources.",
+					"Reach 120 different decor types."
+				]
+			}
+		},
+		{
+			"id": "RARE_MATERIALS",
+			"name": "In Search of Rare Materials",
+			"description": "Obtain rare materials.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/336a6cc632fce98ebcb485392852807397f44eba.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Hunt endgame monsters for their rare drops.",
+					"Obtain the specific rare materials."
+				]
+			}
+		},
+		{
+			"id": "SEEN_IT_ALL",
+			"name": "Seen It All",
+			"description": "Complete endgame content.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/eb263d347bebc1838bf41e26d6ece17ba105679a.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete all major endgame quests and events.",
+					"Reach the 'Seen It All' milestone."
+				]
+			}
+		},
+		{
+			"id": "HELPFUL_HUNTER",
+			"name": "Helpful Hunter",
+			"description": "Aid a low rank or high rank hunter on 10 quests as a master rank hunter.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/253f4b2221c3f984e23ff25f68ad3488d8b2473d.jpg",
+			"type": "multiplayer",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Join SOS quests from low or high rank hunters while at master rank.",
+					"Help complete 10 such quests."
+				]
+			}
+		},
+		{
+			"id": "MASTER_OF_MASTERS",
+			"name": "Master of Masters",
+			"description": "Reach master rank 200.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/cbe19ef842bc5214011ba535cb05fab529f9e974.jpg",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete master rank quests to earn MR experience.",
+					"Reach master rank 200. This is an extreme grind."
+				],
+				"communityNotes": [
+					"Reddit tip: Tempered elder dragon investigations give the most MR XP. Event quests can help too."
+				]
+			}
+		},
+		{
+			"id": "RAINBOW_BRIGHT",
+			"name": "Rainbow Bright",
+			"description": "Complete the rainbow pigment quest.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/66c87222591b9eeac39c877b9074219f7c2f7b70.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete all optional quests in the base game to unlock the rainbow pigment quest.",
+					"Complete the final quest to earn the rainbow armor pigment."
+				]
+			}
+		},
+		{
+			"id": "MINI_CROWN_COLLECTOR",
+			"name": "Miniature Crown Collector",
+			"description": "Obtain a miniature crown for 10 or more monsters that appear from low or high rank.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/b2700338529c769f66f28943054a0067f1e512eb.jpg",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Hunt monsters repeatedly for miniature crown sizes.",
+					"Collect miniature crowns for 10+ different species."
+				]
+			}
+		},
+		{
+			"id": "SNUGGLES_ALL",
+			"name": "Snuggles for All",
+			"description": "Befriend all Grimalkyne tribes.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/d977daf9bbe78126edad1d79ecb680c4275343d8.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Find all Grimalkyne tribes across every locale.",
+					"Complete their quests to befriend each tribe."
+				]
+			}
+		},
+		{
+			"id": "GIANT_CROWN_COLLECTOR",
+			"name": "Giant Crown Collector",
+			"description": "Obtain a gold crown for 10 or more monsters that appear from low or high rank.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/661f5bf8872138a78167a8aa44084c7d668489f0.jpg",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Hunt monsters for gold crown sizes.",
+					"Obtain gold crowns for 10+ species. Event quests help."
+				]
+			}
+		},
+		{
+			"id": "LIVING_FOSSIL",
+			"name": "A Living Fossil",
+			"description": "Discover a rare endemic creature.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/3e17e45825e7f033698d493b99375ca9057ac8de.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Explore rare spawn locations across all locales.",
+					"Find the living fossil creature."
+				]
+			}
+		},
+		{
+			"id": "FLEDGLING_OBSERVER",
+			"name": "Fledgling Observer",
+			"description": "Complete your first request for the Lynian Researcher.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/913815f5de64b0a6746c81b4dbfb0920a2ddf874.jpg",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find the Lynian Researcher in the field.",
+					"Complete their first photography request."
+				]
+			}
+		},
+		{
+			"id": "GOLDEN_GLEAM",
+			"name": "Golden Gleam",
+			"description": "Discover a rare golden creature.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/f92e68b8a04536275caa708ab137b4e8e8dc2550.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Search for rare golden endemic life.",
+					"Capture the golden creature."
+				]
+			}
+		},
+		{
+			"id": "FRIENDLY_POINTER",
+			"name": "Friendly Pointer",
+			"description": "Complete many Lynian Researcher requests.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/8c9e7112fd77305e7db98fa199b6f09cbc527341.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Continue completing Lynian Researcher photo requests.",
+					"Complete many requests to earn this achievement."
+				]
+			}
+		},
+		{
+			"id": "MONSTER_PHD",
+			"name": "Monster Ph.D.",
+			"description": "Max out the research level (up to high rank) for many monsters.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/da00d5002d661d37feda60dc1a338212a45f2d5a.jpg",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Collect monster tracks and fight monsters to earn research points.",
+					"Max out research for many HR monster species."
+				]
+			}
+		},
+		{
+			"id": "BRISTLES_ALL",
+			"name": "Bristles for All",
+			"description": "Befriend all Boaboa.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/b750d1a4f021bf3b1e9dd93818e96cead006d06a.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Find the Boaboa tribe in the Hoarfrost Reach.",
+					"Complete all Boaboa quests and befriend them."
+				]
+			}
+		},
+		{
+			"id": "FLEDGLING_COLLECTOR",
+			"name": "Fledgling Collector",
+			"description": "Find your first treasure.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/aff6e77c422467247ff9459853aafd9c33391251.jpg",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Explore any locale and find a hidden treasure.",
+					"Interact with it to collect the treasure."
+				]
+			}
+		},
+		{
+			"id": "DEFT_DIGGER",
+			"name": "Deft Digger",
+			"description": "Find many treasures.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/52bfb922954a6bde23f1c4fe48f24a3ad1d97d93.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Continue finding hidden treasures across all locales.",
+					"Collect many unique treasures."
+				]
+			}
+		},
+		{
+			"id": "SPREADING_WORD",
+			"name": "Spreading the Word",
+			"description": "Collect over 50 Guild Cards.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/108a304cd5b36c3dc1da81e94e4c2be456f57832.jpg",
+			"type": "multiplayer",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Exchange Guild Cards with other hunters in the Gathering Hub.",
+					"Collect 50+ unique Guild Cards."
+				]
+			}
+		},
+		{
+			"id": "NOWHERE_BUT_UP",
+			"name": "Nowhere to Go but Up",
+			"description": "Complete 50 arena quests.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/9266951e2eaa624189dc42af3b3232afd0ac480b.jpg",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Accept arena quests from the Gathering Hub.",
+					"Complete 50 total arena quests."
+				]
+			}
+		},
+		{
+			"id": "SUBMERGED_MYSTERY",
+			"name": "Submerged Mystery",
+			"description": "Discover an underwater secret.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/b49e737d93c69d3047e76f3db873c80f2f8e98ad.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Search underwater areas in specific locales.",
+					"Find the hidden submerged mystery."
+				]
+			}
+		},
+		{
+			"id": "SWEET_MELODY",
+			"name": "Sweet Melody",
+			"description": "Hear a special melody.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/ee9f4a1544b29cbc2dadfcb0a0f93cf88bb12fe6.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete specific optional side content.",
+					"Trigger the special melody event."
+				]
+			}
+		},
+		{
+			"id": "CELESTIAL_ILLUSION",
+			"name": "Celestial Illusion",
+			"description": "Witness a rare celestial event.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/195b150ff6964baca24eb9bc7da0f652a873ae00.jpg",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Visit specific areas during rare conditions.",
+					"Witness the celestial illusion."
+				]
+			}
+		},
+		{
+			"id": "MINI_CROWN_MASTER",
+			"name": "Miniature Crown Master",
+			"description": "Obtain a miniature crown for many monsters in your hunting log.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/5c7899666994872fc7fb8e14cbb362570576655a.jpg",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Hunt every monster species repeatedly for miniature crowns.",
+					"Collect miniature crowns for nearly all species."
+				],
+				"warnings": [
+					"This is an extreme RNG grind. Event quests with guaranteed crowns are essential."
+				]
+			}
+		},
+		{
+			"id": "GIANT_CROWN_MASTER",
+			"name": "Giant Crown Master",
+			"description": "Obtain a gold crown for many monsters in your hunting log.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/35ce1223896d88d7630d2905f52a7078628eed77.jpg",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Hunt monsters for gold crown sizes across all species.",
+					"Event quests with boosted crown rates are the best strategy."
+				],
+				"communityNotes": [
+					"Reddit tip: Crown grinding is the longest achievement. Use event quests and investigations with gold/silver rewards."
+				]
+			}
+		},
+		{
+			"id": "CREATURES_EARTH",
+			"name": "Creatures of the Earth",
+			"description": "Complete a major endemic life milestone.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/7d340b6f29aa63c1e3ef9305978f0e06e2f5b471.jpg",
+			"type": "secret",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Capture many different endemic life creatures.",
+					"Complete the full endemic life collection."
+				]
+			}
+		},
+		{
+			"id": "OUTSTANDING_OBSERVER",
+			"name": "Outstanding Observer",
+			"description": "Complete many requests for the Lynian Researcher.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/7415ae278011bb0c7dcc5e5ddafcf2ec7d1d5a0d.jpg",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete a large number of Lynian Researcher requests.",
+					"This requires finding and photographing many different Lynian types."
+				]
+			}
+		},
+		{
+			"id": "MONSTER_MASTER",
+			"name": "Monster Master",
+			"description": "Maximize the research level for almost all large monsters.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/dd422d9c10dc537534ac60c56a309744f0bf2464.jpg",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Max out research for nearly every large monster in the game.",
+					"Requires hunting and tracking all species extensively."
+				]
+			}
+		},
+		{
+			"id": "TRUE_MINI_CROWN",
+			"name": "True Miniature Crown Collector",
+			"description": "Obtain a miniature crown for almost every monster in your hunting log.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/d7c2e3162f32d48a8712db280afec33ca2ab35f5.jpg",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Collect miniature crowns for nearly every huntable monster.",
+					"This is the ultimate crown grind — expect hundreds of hours."
+				],
+				"warnings": [
+					"Heavily RNG-dependent. Use crown-boosted event quests whenever available."
+				]
+			}
+		},
+		{
+			"id": "TRUE_LARGE_CROWN",
+			"name": "True Large Crown Collector",
+			"description": "Obtain a gold crown for almost every monster in your hunting log.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/e664ee22806bcfec84eb0c710711750f330edb68.jpg",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Collect gold crowns for nearly every huntable monster.",
+					"Same extreme grind as miniature crowns — pair them together."
+				],
+				"warnings": [
+					"Most time-consuming achievement in the game. Focus on event quests."
+				]
+			}
+		},
+		{
+			"id": "VETERAN_COLLECTOR",
+			"name": "Veteran Collector",
+			"description": "Find all treasure within a single locale.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/78638bc8ee681f2af93b09be183edbb21ba55b01.jpg",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Pick any single locale.",
+					"Find and collect every hidden treasure in that locale."
+				]
+			}
+		},
+		{
+			"id": "CONQUEROR_NEW_WORLD",
+			"name": "Conqueror of the New World",
+			"description": "Unlock all achievements for Monster Hunter: World.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/c28921e56775afc7d4de5a2fa811736aaa0f43e0.jpg",
+			"type": "standard",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete all base game achievements.",
+					"This is the base game platinum."
+				],
+				"communityNotes": [
+					"Reddit tip: Crown achievements are the bottleneck. Everything else is reasonable."
+				]
+			}
+		},
+		{
+			"id": "ULTIMATE_COLLECTOR",
+			"name": "Ultimate Collector",
+			"description": "Find all treasure.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/abc74a946753dd0982b25d93b53eba74c148a179.jpg",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Find all hidden treasures across every locale.",
+					"Use a treasure guide to locate them all."
+				]
+			}
+		},
+		{
+			"id": "CONQUEROR_HINTERLANDS",
+			"name": "Conqueror of the Hinterlands",
+			"description": "Unlock all achievements for Monster Hunter World: Iceborne.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/bccb3a5a27fe38061f851921993ca9bed884d57f.jpg",
+			"type": "standard",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete all Iceborne DLC achievements.",
+					"Includes master rank crown grinding."
+				]
+			}
+		}
 	]
 }

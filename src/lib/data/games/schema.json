@@ -15,6 +15,7 @@
 					"id": { "type": "string" },
 					"name": { "type": "string" },
 					"description": { "type": "string" },
+					"iconUrl": { "type": "string", "format": "uri" },
 					"type": {
 						"type": "string",
 						"enum": ["standard", "missable", "multiplayer", "cumulative", "secret"]

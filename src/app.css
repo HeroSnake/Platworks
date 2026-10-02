@@ -72,10 +72,12 @@
 
 /* Skip layout + paint for off-screen rows.
    `auto <size>` makes the browser remember each row's real height after the
-   first time it is rendered, so the scrollbar does not jump while estimating. */
+   first time it is rendered, so the scrollbar does not jump while estimating.
+   80px = the 64px trophy plus 2x8px card padding. Keep this in step with the
+   `h-16` on the trophy in achievement_row.svelte. */
 .achievement-item {
 	content-visibility: auto;
-	contain-intrinsic-size: auto 76px;
+	contain-intrinsic-size: auto 80px;
 }
 
 /* Promote the sticky nav and mobile bar to their own layers so scrolling the

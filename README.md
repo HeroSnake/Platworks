@@ -2,16 +2,19 @@
 
 The ultimate completionist companion for Steam gamers. Break down Steam achievements into step-by-step guides, missable alerts, and progress tracking — all in a mobile-first, 60fps interface.
 
+[![PlatWorks](https://img.shields.io/badge/GitHub-HeroSnack%2FPlatworks-66c0f4?style=flat-square&logo=github)](https://github.com/HeroSnake/Platworks)
+
 ## Features
 
 - **Achievement guides** — step-by-step instructions, video links, Reddit community tips, and missable warnings for every trophy
+- **Official trophy artwork** — every achievement shows its real Steam icon, scraped from the same official list the IDs and names came from. The trophy doubles as the check button, so the art is full-size (64px, the native resolution) *and* the tap target is a comfortable 64×64 on a phone. Unlocked trophies render in full colour with a green ring; locked ones are greyed out
 - **Progress tracking** — manually check off achievements or sync with any public Steam profile
 - **No API key required** — syncs via public Steam community XML endpoints (profile must be public)
 - **Steam account in navbar** — set your Steam ID/vanity/URL once; your avatar and persona name are cached in localStorage and refreshed after each sync, so browsing never re-queries Steam
 - **Sync all games** — one button on the home page syncs every incomplete game at once
 - **Search, sort, filter** — search games by name, search trophies by name *or* description, sort by A–Z / completion / recently played / difficulty, filter by locked state and type
 - **Remembers your preferences** — sort order and achievement filters are persisted per game and restored when you return
-- **Mobile-first UI** — one shared bottom bar (sync / search / filter / back-to-top) used by both pages, where search and filter share a single expanding row
+- **Mobile-first UI** — one shared bottom bar (sync / search / filter / back-to-top) used by both pages, where search and filter share a single expanding row. The navbar is 64px tall on phones with 44px tap targets, then tightens back to a 56px bar on desktop
 - **60fps animations** — View Transitions API for page slides, CSS grid-rows expand/collapse, GPU-only transforms
 - **AI-powered data generation** — use `/generate-game-data` to scrape and build achievement guides for any Steam game (supports multiple games at once)
 
@@ -49,8 +52,9 @@ src/
 │   ├── client/
 │   │   └── profile.ts               # localStorage cache for the Steam profile card
 │   ├── components/
-│   │   ├── achievement_row.svelte   # Expandable achievement with toggle
+│   │   ├── achievement_row.svelte   # Expandable trophy card with toggle + Steam icon
 │   │   ├── game_card.svelte         # Game card with progress bar
+│   │   ├── github_icon.svelte       # Inline GitHub mark (lucide ships no brand logos)
 │   │   └── mobile_bar.svelte        # Shared mobile bottom bar (both pages)
 │   ├── data/games/
 │   │   ├── schema.json              # JSON Schema for game data
@@ -72,9 +76,12 @@ src/
 │   └── game/[appId]/
 │       ├── +page.server.ts          # Game detail data loader
 │       └── +page.svelte             # Achievement list + search + filters + bottom bar
-└── .github/
-    ├── agents/platworks-dev.agent.md  # Copilot custom agent — project rules & gotchas
-    └── prompts/generate-game-data.prompt.md  # AI game data generator
+scripts/
+├── fetch-achievement-icons.mjs      # Scrape official Steam icons into the game JSON
+└── verify-achievement-icons.mjs    # Check every stored icon still resolves
+.github/
+├── agents/platworks-dev.agent.md  # Copilot custom agent — project rules & gotchas
+└── prompts/generate-game-data.prompt.md  # AI game data generator
 ```
 
 ## Adding a Game
@@ -88,6 +95,24 @@ Use the Copilot prompt to generate achievement data:
 This scrapes Steam, TrueAchievements, and Reddit for the full achievement list with guides, then outputs a JSON file at `src/lib/data/games/{appId}.json`.
 
 To add one manually, copy `_example.json` and follow the schema.
+
+### Adding the trophy icons
+
+Icons are not written by hand. Once a game file exists, pull the official artwork in:
+
+```bash
+node scripts/fetch-achievement-icons.mjs              # every game missing an icon
+node scripts/fetch-achievement-icons.mjs 1245620      # just one
+node scripts/fetch-achievement-icons.mjs --force      # re-scrape everything
+```
+
+It reads the public global achievement list, matches each row to your entries by display name, and writes an `iconUrl` onto every achievement. Only the *unlocked* (coloured) image is published — the locked look is a CSS grayscale of the same file, so there is only ever one URL per trophy.
+
+Entries that match nothing are listed at the end of the run. That usually means the display name drifted from Steam's, and needs a human decision — do not let the fuzzy fallback guess silently. Verify afterwards with:
+
+```bash
+node scripts/verify-achievement-icons.mjs
+```
 
 ## Available Games
 
@@ -114,3 +139,5 @@ To add one manually, copy `_example.json` and follow the schema.
 | `npm run build` | Production build |
 | `npm run preview` | Preview production build |
 | `npm run check` | `svelte-kit sync` + svelte-check (types, templates, a11y) |
+| `node scripts/fetch-achievement-icons.mjs` | Fill in `iconUrl` for every achievement that lacks one |
+| `node scripts/verify-achievement-icons.mjs` | Confirm all stored icons resolve and data is consistent |
