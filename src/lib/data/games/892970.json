@@ -1,0 +1,1081 @@
+{
+	"$schema": "./schema.json",
+	"appId": 892970,
+	"name": "Valheim",
+	"totalAchievements": 53,
+	"achievements": [
+		{
+			"id": "Arrived",
+			"name": "I Have Arrived!",
+			"description": "Enter the tenth world.",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Launch Valheim 1.0 or later and create or load any world.",
+					"Spawn in as a new Viking — the achievement fires the first time you enter the world."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Achievement tracking only began when Valheim 1.0 launched on 9 September 2026 — every boss kill and statistic from Early Access is ignored, so old saves must be replayed.",
+					"Reddit tip: Progress is per character. If your character is flagged as a cheater, no achievement will ever unlock on it."
+				],
+				"warnings": [
+					"Stats only count from the moment you install 1.0 — Early Access play history does not carry over."
+				]
+			}
+		},
+		{
+			"id": "FirstDeath",
+			"name": "The First of Many",
+			"description": "Meet your end, then prepare to do it all again...",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find any way to die in Valheim — a short fall from a rock works reliably.",
+					"Respawn at your bed or spawn point; the achievement triggers on the death itself, not the respawn."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Bank this one and the other death achievements early, while your skill levels are low — the 1.0 game files set skill loss on death to 5%, so dying is cheapest at the start."
+				]
+			}
+		},
+		{
+			"id": "BuildHouse",
+			"name": "The Homesteader",
+			"description": "Build a house.",
+			"type": "standard",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Place at least 6 floor blocks, 8 wall blocks and 4 roof blocks to form an enclosed shelter.",
+					"Put one piece of furniture inside (a bed is the natural choice) plus 1 chest.",
+					"The achievement triggers as soon as all six conditions are satisfied in the same structure."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007"
+			}
+		},
+		{
+			"id": "Boss1Eikthyr",
+			"name": "Eikthyr",
+			"description": "Defeat the Lightning Stag.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft 2 Deer Trophies and place them on the Eikthyr altar in the Meadows.",
+					"Let Eikthyr spawn, then fight him with a bow from behind the boulders or a club at melee range.",
+					"Kill him and pick up his Forsaken Power to trigger the achievement."
+				],
+				"videoUrl": "https://www.youtube.com/watch?v=IaO6hSSUg6c",
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Eikthyr is the easiest boss to solo, so killing him with no party members online also covers Lone Wolf in the same trip.",
+					"Reddit tip: Hit him with a longship parked on the altar to knock the deer into the sea for an instant kill, but only if you do not mind carrying the fight off the altar."
+				]
+			}
+		},
+		{
+			"id": "MultiplayerBoss",
+			"name": "Stronger Together",
+			"description": "Kill a boss together with a friend.",
+			"type": "multiplayer",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Join or host a world with at least one other player connected.",
+					"Summon any boss — Eikthyr is the lowest-risk choice — while the second player is present.",
+					"Land the killing blow while that other player is still alive and participating in the fight."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: The other player only needs to be connected and taking part, not dealing damage — one player can tank while the other watches.",
+					"Reddit tip: A friend can disconnect the moment before your kill lands and you will not get this one, so leave them connected until the boss dies."
+				],
+				"warnings": [
+					"Playing with a second player blocks Lone Wolf, so plan two separate boss kills if you want both."
+				]
+			}
+		},
+		{
+			"id": "BuildVillage",
+			"name": "The Architect",
+			"description": "Build a village.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Read the achievement requirements from the game files: 10x Building pieces, 40x Flooring, 40x Walls and 20x Roofing.",
+					"Then add 10x Architecture pieces, 10x Furniture, 5x Lightning pieces and 5x Decor pieces.",
+					"Spread the pieces across a real settlement rather than one stacked tower, then check the counter in your statistics."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: The 5x Lightning category is the hidden bottleneck — it needs Lightning rods, lightning lamps and Zap anchors, not just the one item you normally build."
+				],
+				"warnings": [
+					"The description gives no numbers at all, so this is one of the more opaque requirements in the set."
+				]
+			}
+		},
+		{
+			"id": "Boss2Elder",
+			"name": "The Elder",
+			"description": "Defeat the Living Forest.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Travel into the Black Forest and gather 3 Ancient Seeds.",
+					"Burn the 3 Ancient Seeds on the Elder's altar to summon him.",
+					"Break line of sight whenever he charges or calls in seeds, then punish him with a two-handed club or bow."
+				],
+				"videoUrl": "https://www.youtube.com/watch?v=IaO6hSSUg6c",
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007"
+			}
+		},
+		{
+			"id": "GrindBuild",
+			"name": "The Builder",
+			"description": "Build 500 pieces.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Place 500 building pieces anywhere in the world — any piece from the Hammer menu counts.",
+					"A normal base with a workshop, portal, farm and storage areas will supply most of the count.",
+					"Top up the remainder with cheap pieces such as Campfire, Workbench and fence posts."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: This one fills itself during normal base building — do not grind it separately."
+				]
+			}
+		},
+		{
+			"id": "SoloBoss",
+			"name": "Lone Wolf",
+			"description": "Kill a boss all by yourself.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Play solo with no other players connected to your world.",
+					"Summon and defeat any boss — Eikthyr is the easiest, Eikthyr plus a longship is close to trivial.",
+					"Finish the kill without letting a second player join or rejoin mid-fight."
+				],
+				"videoUrl": "https://www.youtube.com/watch?v=IaO6hSSUg6c",
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Having a friend connected blocks this achievement, so stack it with a solo Eikthyr kill before you start your co-op boss rush.",
+					"Reddit tip: Bosses can be re-summoned at their altars at any time, so you can deliberately farm easy solo kills."
+				],
+				"warnings": [
+					"Stronger Together requires another player — you cannot get both from the same kill."
+				]
+			}
+		},
+		{
+			"id": "Boss3Bonemass",
+			"name": "Bonemass",
+			"description": "Defeat the Writhing Dead.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Explore the Swamp and bring back 10 Withered Bones.",
+					"Sacrifice the bones on Bonemass's altar to summon him.",
+					"Drink Poison Resistance Mead, then kill him with a club while ignoring the adds he spawns."
+				],
+				"videoUrl": "https://www.youtube.com/watch?v=IaO6hSSUg6c",
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Poison Resistance Mead cuts his poison cloud damage by 75% and is the single biggest reason this fight goes from brutal to routine.",
+					"Reddit tip: The Wishbone he drops is what you use for The Treasure Hunter — kill him on a living character and keep the item."
+				]
+			}
+		},
+		{
+			"id": "DeathByTree",
+			"name": "Accidents Happen",
+			"description": "Get killed by a tree.",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find a tree in a biome where you are not being attacked — the Meadows work well.",
+					"Stand directly under the trunk and chop it without moving, letting the falling tree land on you."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Do this before you start The Survivor — dying resets your consecutive-day counter."
+				]
+			}
+		},
+		{
+			"id": "GrindCook",
+			"name": "The Cook",
+			"description": "Cook 100 dishes.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Place several Cooking Stations over a single campfire so you can queue multiple dishes at once.",
+					"Cook 100 food items in total — any recipe made at a cooking station counts, and repeats are fine.",
+					"Keep cooking through normal play; this overlaps with The Master Chef and No Adventuring On an Empty Stomach."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007"
+			}
+		},
+		{
+			"id": "Boss4Moder",
+			"name": "Moder",
+			"description": "Defeat the Dragon Mother.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Reach the Mountains and collect 3 Dragon Eggs, dropping them when they hatch if you need to.",
+					"Place the 3 Dragon Eggs on Moder's altar to summon her.",
+					"Fight her at range — she has almost no damaging melee and her attacks are easy to dodge with distance."
+				],
+				"videoUrl": "https://www.youtube.com/watch?v=IaO6hSSUg6c",
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Clear nearby Drakes and Stone Golems and start during daylight, otherwise the spawns join her and the fight snowballs.",
+					"Reddit tip: A hoe-raised pillar behind you blocks her barrage almost completely."
+				]
+			}
+		},
+		{
+			"id": "GrindLeviathan",
+			"name": "No Time For Snoozing",
+			"description": "Awaken a sea creature.",
+			"type": "secret",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Take a ship out into the Ocean biome and find a sleeping Leviathan.",
+					"Mine the Abyssal Barnacles on its back until it wakes and starts sinking.",
+					"Stay right next to its centre and ride it down until it fully submerges."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Back up your world first — sinking a Leviathan takes you a long way underwater and a failed attempt can cost your whole boat.",
+					"Reddit tip: If you fall off while it sinks you can still finish it, but you will not get the achievement until it is fully down."
+				]
+			}
+		},
+		{
+			"id": "GrindEat",
+			"name": "No Adventuring On an Empty Stomach",
+			"description": "Eat 500 items of food.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Eat 500 food items in total — anything edible counts, including cooked meals, berries and fish.",
+					"Keep your food buff timer topped up while you play; every meal you eat for a buff counts toward the total.",
+					"Stack your farming and cooking so a single harvest feeds this achievement alongside The Cook and The Farmer."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007"
+			}
+		},
+		{
+			"id": "GrindHarvest",
+			"name": "The Farmer",
+			"description": "Harvest 500 crops.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Build a farm plot and plant a crop.",
+					"Harvest 500 crops in total — replanted and regrown crops each count, so a single field loops forever.",
+					"Harvest the whole field at once each cycle to move the counter fastest."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007"
+			}
+		},
+		{
+			"id": "Boss5Yagluth",
+			"name": "Yagluth",
+			"description": "Defeat the Twisted Soul.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Enter the Plains and collect 5 Fuling Totems from Fuling villages and totems.",
+					"Place the 5 totems on Yagluth's altar to summon him.",
+					"Fight with Frost arrows or a Spirit weapon from range, and dodge his nova — a direct hit from it is close to an instant death."
+				],
+				"videoUrl": "https://www.youtube.com/watch?v=dn_5UvxlGO8",
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Clear Fuling villages and tar pits near the altar first — they will spawn into the fight and turn a hard boss into a wipe.",
+					"Reddit tip: You can hit him and backstab freely while he is still emerging from the ground at the start of the fight.",
+					"Reddit tip: A Fenris set removes the need for Fire Resistance Barley Wine entirely."
+				],
+				"warnings": [
+					"His nova deals massive damage on direct hit — do not try to trade blows in the open."
+				]
+			}
+		},
+		{
+			"id": "GrindDays",
+			"name": "The Survivor",
+			"description": "Survive for 30 consecutive days.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Finish every death-related achievement first, because dying resets the consecutive-day counter.",
+					"Build a fully enclosed base with beds, a fire and food, then hold position for 30 in-game days without dying.",
+					"Let the run play out — one Valheim day is roughly 30 real minutes, so expect around 15 hours of safe play."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Boats and Portal networks are the main risk — a portal or Longship trip during the streak can end 15 hours of progress instantly.",
+					"Reddit tip: Set the world to a longer day length if your server supports it, which cuts the real-time cost of the streak substantially."
+				],
+				"warnings": [
+					"Any death at all resets the counter to zero — do this last, or immediately after clearing the death achievements.",
+					"This is a prerequisite for Child of Odin, so it cannot be skipped on a Hard-only run."
+				]
+			}
+		},
+		{
+			"id": "GrindComfort",
+			"name": "Comfort is King",
+			"description": "Reach a comfort level of 20.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Build a small room with a roof and a lit fire inside, since furniture only counts when sheltered and lit.",
+					"Fill it with different comfort sources — Hearth, Dragon Bed, a Bear Rug, Jute Banner, Fairy Lights, a Throne, a Round Table, an Item Stand and a lit Hot Tub.",
+					"Keep adding distinct pieces until the comfort readout hits 20 — the setup above reaches 22."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Repeats of the same furniture do not stack — variety beats volume, so spread across as many different pieces as you can rather than 10 chairs.",
+					"Reddit tip: The Dragon Bed and Hot Tub are Ashlands items, so this cannot be finished before the Ashlands."
+				]
+			}
+		},
+		{
+			"id": "GrindForager",
+			"name": "The Forager",
+			"description": "Pick 250 berries and 250 mushrooms.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Pick 250 berries — the counter ticks when you interact with a berry bush, not per berry in the cluster.",
+					"Pick 250 mushrooms — this counts interactions with growing mushrooms, so planting your own counts too.",
+					"Farm Cloudberries in the Plains for the berry half and plant Jotun Puffs or Magecaps from the Mistlands for the mushroom half."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: You only need to touch a bush once to register progress for the whole cluster, so one walk through a Plains cloudberry patch pushes the number fast.",
+					"Reddit tip: Magecaps and Jotun Puffs can be planted and harvested repeatedly, which makes the mushroom half a short farm loop rather than a search."
+				]
+			}
+		},
+		{
+			"id": "Boss6Queen",
+			"name": "The Seeker Queen",
+			"description": "Defeat the Crawling Matriarch.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Clear a Winding Path or Infested Citadel in the Mistlands — the first one requires no sacrifice.",
+					"Craft a Sealbreaker and use it on the Infested Citadel door to reach the Queen.",
+					"Fight her with a bow or a Frostner, keeping distance because her spawn adds fill the arena fast."
+				],
+				"videoUrl": "https://www.youtube.com/watch?v=WqHEkwq39m0",
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Her adds are the real threat — bring a fire-based weapon or a shockwave staff and clear them before they surround you.",
+					"Reddit tip: You only need a Sealbreaker to enter, so the first attempt can be made as soon as you have one crafted."
+				]
+			}
+		},
+		{
+			"id": "Boss7Fader",
+			"name": "Fader",
+			"description": "Defeat the Emerald Flame.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Read the Vegvisir that reveals the Ashlands boss location, then explore the Ashlands for Charred Fortresses.",
+					"Collect 9 Bell Fragments and craft 3 Bells.",
+					"Place the 3 Bells around Fader's altar to summon him, then fight him with a bow or a magic build."
+				],
+				"videoUrl": "https://www.youtube.com/watch?v=YpwMB800vsg",
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: The altar location is found through a rune read inside a Putrid Hole, the same source of two of the three Dyrnwyn fragments.",
+					"Reddit tip: Fight him with slash or blunt damage — he resists elemental damage types and punishes close-range magic users."
+				],
+				"warnings": [
+					"Ashlands heat and ash damage are as dangerous as the boss itself — bring cooling food and resist meads or you will die to the environment first."
+				]
+			}
+		},
+		{
+			"id": "GrindHoney",
+			"name": "The Beekeeper",
+			"description": "Harvest 500 honey.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Craft a Beehive — it needs a Workbench, 10 Wood and 1 Queen Bee obtained by looting a Bee Queen nest.",
+					"Build a large cluster of beehives at your base so they produce passively.",
+					"Harvest 500 Honey in total — each hive yields roughly 1 Honey every 20 minutes and stores up to 4, so collect on a timer."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: This is the longest passive grind in the set — build the hive cluster in the first session and it fills while you do everything else.",
+					"Reddit tip: Hives must be placed outdoors in the rain and within range of your base, so put them next to your farm rather than across the map."
+				],
+				"warnings": [
+					"Each hive caps at 4 Honey, so harvesting on a timer matters — leaving them full for days wastes a large amount of production."
+				]
+			}
+		},
+		{
+			"id": "GrindSailHelm",
+			"name": "The Captain",
+			"description": "Sail far enough to circle the world, while manning the helm.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Build the Longship, the fastest boat in the game, and stock it with food and a portal.",
+					"Sail one full lap of the world while sitting at the helm for the whole trip — roughly 66,000 m.",
+					"Bank the distance on one continuous voyage if you can, since the counter measures distance steered rather than trips completed."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: You never need to touch land — plan a straight compass line to each edge and turn in a wide arc rather than correcting constantly, otherwise the voyage takes double.",
+					"Reddit tip: Sailing as a passenger counts toward The Sailor but not this one — only the player at the helm registers."
+				],
+				"warnings": [
+					"Steam does not display live progress for this one, so count laps manually with the map or a Portal at the halfway point."
+				]
+			}
+		},
+		{
+			"id": "Boss8FrozenKing",
+			"name": "Kall Fimbulbringer",
+			"description": "Defeat the Shackled One.",
+			"type": "secret",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Progress through the Deep North to the Aesir Passage and collect 3 Malicious Blood.",
+					"Sacrifice the blood on the Strange Bowl altar to summon him.",
+					"Phase 1: dodge the chain combos and punish the recovery windows. Phase 2: he is immune to all damage — kill the seven Aspects he summons instead. Phase 3: a 30,000 HP endurance fight, keep your stamina up and avoid the Flurry."
+				],
+				"videoUrl": "https://www.youtube.com/watch?v=9IE1tZrUXm0",
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: He resists Pierce, Fire, Frost and Lightning and Spirit does nothing — build slash or blunt and keep Fire and Frost resistance meads up.",
+					"Reddit tip: Watch the chain itself rather than his body when the swings come out; the chain telegraphs the direction far more clearly.",
+					"Reddit tip: Place a Portal near the Aesir Passage before you start, otherwise every death is a full trek back across the Deep North."
+				],
+				"warnings": [
+					"His three phases total roughly 47,000 HP, and Phase 2 makes attacking him pointless — killing him in one go is not realistic.",
+					"This is the final boss and the hardest fight in the game; expect several attempts."
+				]
+			}
+		},
+		{
+			"id": "GrindSail",
+			"name": "The Sailor",
+			"description": "Sail far enough to circle the world twice.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Take a Longship out and accumulate roughly 132,000 m of sailing distance — two full world laps.",
+					"You can sail as a passenger or at the helm, so a friend can steer while you ride along.",
+					"Distance carries across voyages, so several shorter trips add up to the same total."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: This is the single longest grind in the set — do it last so you are not sailing 132 km while still gearing up.",
+					"Reddit tip: Man the helm for the whole trip and this stacks with The Captain, turning two achievements into one voyage."
+				],
+				"warnings": [
+					"The world edge is not a wall — veer too far out while chasing distance and you will fall into the void."
+				]
+			}
+		},
+		{
+			"id": "BuildDyrnwyn",
+			"name": "The Chosen One",
+			"description": "Assemble Dyrnwyn.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Kill Lord Reto to obtain the Dyrnwyn Hilt Fragment.",
+					"Find the Blade and Tip Fragments at the locations revealed by the runestones inside Putrid Holes in the Ashlands.",
+					"Upgrade a Black Forge to level 4, then craft Dyrnwyn using the three fragments plus 20 Flametal, a Bloodstone and a Flametal Battle Idol."
+				],
+				"videoUrl": "https://www.youtube.com/watch?v=WrRw1HNvnuE",
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Only one Dyrnwyn can be forged per world, so gather the fragments with friends and let one player craft while the others skip it.",
+					"Reddit tip: Raise the drop multiplier before killing Lord Reto so he drops all three of his pieces at once instead of forcing repeated runs."
+				],
+				"warnings": [
+					"Dyrnwyn is a once-per-world craft. If you burn the fragments on something else you will have to start a new world to retry."
+				]
+			}
+		},
+		{
+			"id": "AllBosses",
+			"name": "The Viking",
+			"description": "Defeat all bosses on any difficulty.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Defeat all 8 bosses: Eikthyr, The Elder, Bonemass, Moder, Yagluth, The Seeker Queen, Fader and Kall Fimbulbringer.",
+					"All kills must be registered on the same character.",
+					"Difficulty does not matter here — do it on whatever setting you are already playing."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007"
+			}
+		},
+		{
+			"id": "BigFish",
+			"name": "A Catch Worthy of Njord",
+			"description": "Catch a four star fish.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Upgrade your Fishing skill, wear a fishing hat and bring plenty of Stamina food — a 4-star fish is visibly much larger than a normal one.",
+					"Fish with the strongest bait you have and reel the fish in with the rod; picking it up by hand does not count.",
+					"Keep trying until a 4-star fish bites — alternatively catch one by hand and toss it into an artificial pond to control the reel distance."
+				],
+				"videoUrl": "https://www.youtube.com/watch?v=JOHSeAVIsAs",
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Holding the line at about 3 ft and moving slowly from a small boat is the most reliable way to land the big one.",
+					"Reddit tip: High-star fish are far more common in the late-game biomes, so do this after Ashlands rather than fishing the Meadows."
+				]
+			}
+		},
+		{
+			"id": "DeathByAllTypes",
+			"name": "Are You Alright?",
+			"description": "Die in every way possible.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Work through the 16 death causes from the game files: enemy hit, falling, drowning, burning, freezing, poisoning, smoke, falling off the edge of the world, tree, ballista, stalactite, catapult, Ashlands ocean, the Obliterator, drawbridge and Ashlands lava.",
+					"Tick them off one at a time, checking your statistics after each death to see which cause registered.",
+					"Do this before or after The Survivor, never during a 30-day streak."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: The obscure ones are the Ashlands ocean, the drawbridge and the catapult — all three need you to be inside Ashlands structures rather than out in the open.",
+					"Reddit tip: Deaths from falling off the world edge and from the world void are separate entries, so sail out past the map border and then step off the boat for both."
+				],
+				"warnings": [
+					"Two causes cannot be forced on demand — the stalactite and the ballista — so leave those to chance and sweep the dungeon that has them.",
+					"Do not start this in the middle of The Survivor."
+				]
+			}
+		},
+		{
+			"id": "ChildOfOdin",
+			"name": "Child of Odin",
+			"description": "Embody the spirits of the Toughest Viking, Master Hunter, Survivor and Pathfinder.",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete The Toughest Viking — all 8 bosses on Hard difficulty.",
+					"Complete The Master Hunter — kill every creature type on Hard, and complete The Pathfinder — reach all four world edges with the No Map modifier.",
+					"Complete The Survivor — 30 consecutive days without dying.",
+					"This one unlocks automatically once all four prerequisites are done."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: This is the hardest capstone in the game — it forces a Hard playthrough, a full creature sweep, a no-map expedition and a 15-hour survival streak into one character."
+				],
+				"warnings": [
+					"All four prerequisites have to land on the same character, so a fresh Hard world is effectively required.",
+					"Any death during the 30-day streak resets it to zero."
+				]
+			}
+		},
+		{
+			"id": "KingsQueens",
+			"name": "Kings and Queens of Valheim",
+			"description": "Embody the spirits of the Viking, Hunter, Artisan, Master Chef, Carpenter and the Explorer.",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete The Viking, The Hunter, The Artisan, The Master Chef and The Carpenter — the five collection and combat sweeps.",
+					"Complete The Explorer by travelling roughly 10,350 m from world centre in each of the four cardinal directions.",
+					"The achievement unlocks automatically once all six are done."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: The Artisan and The Master Chef are the slow part — start tracking missing recipes from the first session so you are not discovering gaps at the end.",
+					"Reddit tip: Plan The Explorer's four legs as a single sailing route and do The Pathfinder on the same trip with the No Map modifier enabled."
+				],
+				"warnings": [
+					"Nothing here can be missed, but all six prerequisites must be finished on the same character for the capstone to fire."
+				]
+			}
+		},
+		{
+			"id": "BuildHigh",
+			"name": "Mighty Halls",
+			"description": "Raise a very tall structure.",
+			"type": "standard",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Build upward on a strong foundation — the requirement from the game files is a structure at least 49 metres tall.",
+					"Use Stonecutter pillars or Black Marble supports so the structure does not collapse before you reach the target.",
+					"Type /pos in chat to check your current altitude and keep building until the structure passes 49 m."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: This is the easier of the two vertical builds — a 49 m tower on flat ground is enough, and Top of the World is much harder.",
+					"Reddit tip: Build over a Void or a deep mine shaft so you are not limited by terrain height while stacking."
+				]
+			}
+		},
+		{
+			"id": "DeathByObliterator",
+			"name": "Obliterated",
+			"description": "You stood a bit too close.",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Craft and place an Obliterator somewhere safe away from your main base.",
+					"Put an item in it and pull the lever to trigger its lightning strike.",
+					"Stand close enough to the strike to be killed by the explosion."
+				],
+				"videoUrl": "https://www.youtube.com/watch?v=DcrPEm-wT8U",
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Place it on a platform over the ocean or a Void so the explosion does not wreck your base along with you."
+				]
+			}
+		},
+		{
+			"id": "AllMiniBosses",
+			"name": "Odin is Pleased",
+			"description": "Defeat all minibosses.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Kill Brenna in the Smouldering Tombs and Geirrhafa in the Howling Caverns.",
+					"Kill Zil and Thungr in the Sealed Tower — they count as two separate minibosses.",
+					"Kill Lord Reto in his tomb in the Ashlands. That is five minibosses in total and the achievement fires once all are down."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Zil and Thungr look like one encounter but register as two, so killing both halves is required — many players miss this and stall on the last point.",
+					"Reddit tip: Lord Reto also drops the Dyrnwyn Hilt Fragment, so kill him before you assemble Dyrnwyn."
+				]
+			}
+		},
+		{
+			"id": "DeathByTreeAll",
+			"name": "That Can't Be an Accident",
+			"description": "Get killed by every kind of tree.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Get killed by each of the 10 tree types: Fir, Oak, Pine, Ashlands Tree, Yggdrasil Shoot, Swamp Tree, Beech, Birch, Snow Fir and Snow Pine.",
+					"The two Deep North trees are both named Timber Tree in game, so die to each visually distinct one to register both.",
+					"Check your statistics after each death to confirm the new tree type was recorded."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Eight of the ten are in the base biomes you pass constantly — save the two Deep North trees for the same trip as Kall Fimbulbringer.",
+					"Reddit tip: These deaths also count toward Are You Alright?, so batch them early instead of repeating the trips."
+				],
+				"warnings": [
+					"Two trees share the Timber Tree name but are separate entries — dying to only one of them leaves the achievement stuck at 9/10."
+				]
+			}
+		},
+		{
+			"id": "AllItemCraft",
+			"name": "The Artisan",
+			"description": "Craft every kind of item.",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Save this for late game, when every crafting station and material tier is available.",
+					"Craft one of every item in the game — the full list runs to several hundred entries once plants and variants are included.",
+					"Track what is missing against a checklist spreadsheet from the first session so you do not discover gaps at the end."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Apart from the Torch, The Artisan already covers every weapon required for The Blacksmith — do Blacksmith second and it pops instantly.",
+					"Reddit tip: Place structures count separately from items, so The Carpenter does not cover this and both need real work."
+				],
+				"warnings": [
+					"This is one of the longest checklists in the game and several late-game recipes need Ashlands and Deep North materials."
+				]
+			}
+		},
+		{
+			"id": "AllWeaponCraft",
+			"name": "The Blacksmith",
+			"description": "Craft every kind of weapon.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Craft one of every weapon type in the game — melee, bows, crossbows, siege and magic weapons.",
+					"Do this as part of The Artisan sweep rather than separately, since the Artisan list already includes every weapon.",
+					"Make sure you include the Torch, which is the one weapon the Artisan does not cover."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Craft The Artisan last and this unlocks within seconds of finishing it — doing the two separately is wasted work.",
+					"Reddit tip: Crossbows, ballista and siege weapons live in different menus than melee, and it is easy to miss them in a first pass."
+				]
+			}
+		},
+		{
+			"id": "AllBuildPieces",
+			"name": "The Carpenter",
+			"description": "Build everything.",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Build every piece available in the Hammer's build menu — the extracted list runs to 549 entries including plants and variants.",
+					"Repair at least one item at the Workbench, which is a separate requirement from placing pieces.",
+					"Once each piece has been built you can dismantle them all and reclaim the materials."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Build one of everything in a throwaway test world far from your base, then dismantle — it saves fumbling with 549 pieces inside your real build.",
+					"Reddit tip: Crafting the piece is not enough; the piece has to actually be placed in the world."
+				],
+				"warnings": [
+					"Repairing an item is required and easy to forget, because it is not a building action."
+				]
+			}
+		},
+		{
+			"id": "ExploreNSEW",
+			"name": "The Explorer",
+			"description": "Travel far in all four directions.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Build the Longship and stock it with food, beds and a Portal for the return trip.",
+					"Sail to about 10,350 m from world centre toward the north edge, then repeat for south, east and west.",
+					"The four legs count independently, so partial progress on each direction carries over."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Do this on the same trip as The Pathfinder with the No Map modifier enabled — one expedition covers both.",
+					"Reddit tip: Two Portals, one on each side of the map, turn each return leg from a long sail into an instant trip."
+				],
+				"warnings": [
+					"The world edge is not a wall — sail too far past it and you fall into the void and lose everything on the boat."
+				]
+			}
+		},
+		{
+			"id": "GrindFish",
+			"name": "The Fisherman",
+			"description": "Catch every kind of fish.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Fish each species in turn — the list spans the Meadows through the Ashlands and Deep North.",
+					"Every fish must be landed by reeling it in on the rod; picking one up by hand does not register.",
+					"Use the matching bait for each biome and upgrade your Fishing skill so rarer species bite at all."
+				],
+				"videoUrl": "https://www.youtube.com/watch?v=scuMc20PONo",
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Ashlands fish only take Hot bait — grabbing the wrong bait there wastes a lot of time before the line even moves.",
+					"Reddit tip: Running a character with a high Fishing skill and no other goal is the fastest way to knock this out, since every rare fish needs a skill threshold."
+				]
+			}
+		},
+		{
+			"id": "AllFoodEaten",
+			"name": "The Gourmet",
+			"description": "Eat every kind of edible item.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Eat one of every edible item in the game, including raw and cooked versions, berries, mushrooms, fish and every mead.",
+					"Keep a checklist of what is still missing and test unusual drops as you pick them up.",
+					"Pair it with The Master Chef and The Fisherman — cooking and catching each species feeds this achievement too."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Several meads sit behind boss drops and Ashlands farming, so this cannot be finished before the Ashlands is explored.",
+					"Reddit tip: Eating is free — there is no downside to testing every food item you come across as you play."
+				]
+			}
+		},
+		{
+			"id": "KillAllCreatures",
+			"name": "The Hunter",
+			"description": "Kill every kind of creature.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Kill at least one of every creature type — hostile and passive creatures both count.",
+					"Sweep each biome deliberately rather than relying on normal play, and check your statistics to see what is still missing.",
+					"If you plan a Hard run afterwards, do it on that character so The Master Hunter comes for free."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Tamed animals count — friendly fire lets you kill boars, deer and greylings without building a farm full of pens.",
+					"Reddit tip: Several creatures only appear at night or in Ashlands storms, so a daylight sweep alone will leave gaps."
+				]
+			}
+		},
+		{
+			"id": "SailEdge",
+			"name": "The Legends Are True",
+			"description": "Sail over the edge of the world.",
+			"type": "secret",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Take a boat out toward one of the world edges until you are roughly 10,350 m from world centre.",
+					"Keep going past the point where the map ends until the boat and everything on it disappears.",
+					"The achievement fires the moment you cross the edge — you can then respawn to retrieve your gear if you set up a Portal first."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: This is the same trip as The Explorer and The Pathfinder — stack all three on one voyage to the edge.",
+					"Reddit tip: Place a Portal on the shore before you leave, otherwise you are stranded and have to walk home."
+				],
+				"warnings": [
+					"You cannot recover the items on the boat once you go over the edge — travel light or leave your gear at a Portal.",
+					"The world has no invisible wall, so it is very easy to fall off the edge by accident during The Explorer."
+				]
+			}
+		},
+		{
+			"id": "GrindTrees",
+			"name": "The Lumberjack",
+			"description": "Cut down 500 trees.",
+			"type": "cumulative",
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Chop 500 trees in total — the counter keeps climbing across every session and every biome.",
+					"Use your best available axe, upgraded to the highest tier you have, to make the chopping fast.",
+					"Cutting trees for wood and for The Builder overlap, so ordinary gathering carries most of the count."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007"
+			}
+		},
+		{
+			"id": "AllFoodCooked",
+			"name": "The Master Chef",
+			"description": "Cook every kind of dish.",
+			"type": "cumulative",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Cook one of every food recipe in the game at a Cooking Station over a campfire.",
+					"Work from a checklist — several recipes need Ashlands and Deep North ingredients that are easy to overlook.",
+					"Repeat harvests are not required, but every distinct recipe has to be made at least once."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Set up a kitchen garden with all the ingredients you can grow so you can batch-cook dozens of recipes in one session.",
+					"Reddit tip: Multiple Cooking Stations on one campfire lets you run several recipes in parallel and clear this much faster."
+				],
+				"warnings": [
+					"The Cook achievement needs 100 total dishes while this one needs every distinct recipe — the second does not replace the first."
+				]
+			}
+		},
+		{
+			"id": "KillAllCreaturesHard",
+			"name": "The Master Hunter",
+			"description": "Kill every kind of creature on hard difficulty.",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Start or join a world on the Hard difficulty preset — the difficulty must already be set before the kills register.",
+					"Kill every creature type on that character, including friendly creatures.",
+					"Enable friendly fire if you plan to kill creatures you have tamed, otherwise boars and deer cannot be finished off."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: You can weaken a boss on an easier difficulty, leave, then switch to Hard and land the kill — it counts as a Hard kill. Much easier than clearing the whole game on Hard.",
+					"Reddit tip: Selecting the Hard preset and then adjusting Death Penalty, Resource Rate, Portals, No Build Cost and Passive Enemies is allowed and still counts as a Hard world."
+				],
+				"warnings": [
+					"Kills made before switching the world to Hard do not count for this achievement.",
+					"This is a prerequisite for Child of Odin, so it forces a Hard playthrough regardless of your plans."
+				]
+			}
+		},
+		{
+			"id": "ExploreNSEWNoMap",
+			"name": "The Pathfinder",
+			"description": "Travel far in all four directions, without using a map.",
+			"type": "standard",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Create or join a world with the No Map world modifier enabled.",
+					"Sail to about 10,350 m from world centre toward the north edge without opening the map, then repeat for south, east and west.",
+					"Complete all four legs to unlock the achievement."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: You can cheese it — reach each world edge on a normal world, then briefly toggle the No Map modifier on at that edge so the game registers the stat.",
+					"Reddit tip: Steer by compass and landmark only; checking the map even once mid-voyage is the usual reason players fail."
+				],
+				"warnings": [
+					"Without the map you have no idea how close the edge is — expect to overshoot and fall into the void.",
+					"This is a prerequisite for Child of Odin."
+				]
+			}
+		},
+		{
+			"id": "AllBossesNormal",
+			"name": "The Tough Viking",
+			"description": "Defeat all bosses on normal difficulty or higher.",
+			"type": "standard",
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Set the world to Normal difficulty or higher before you start the boss run.",
+					"Defeat all 8 bosses: Eikthyr, The Elder, Bonemass, Moder, Yagluth, The Seeker Queen, Fader and Kall Fimbulbringer.",
+					"All kills must be on the same character, and they can be completed alongside The Toughest Viking."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: A full Hard run clears The Viking, The Tough Viking and The Toughest Viking at once, so pick Hard if you were undecided.",
+					"Reddit tip: Hammer Mode kills do not count toward this achievement."
+				]
+			}
+		},
+		{
+			"id": "AllBossesHard",
+			"name": "The Toughest Viking",
+			"description": "Defeat all bosses on hard difficulty.",
+			"type": "standard",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Create or join a world on the Hard difficulty preset.",
+					"Defeat all 8 bosses on that character, gearing up with Ashlands and Deep North gear before the late fights.",
+					"The same run also satisfies The Viking and The Tough Viking."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Start Hard after your character is already geared rather than from scratch — several bosses are near-impossible with bronze.",
+					"Reddit tip: Weakening a boss on an easier world, then switching to Hard for the kill, is confirmed to count as a Hard kill."
+				],
+				"warnings": [
+					"Kall Fimbulbringer on Hard is the hardest single fight in the game — expect repeated attempts.",
+					"This is a prerequisite for Child of Odin, so it forces a Hard playthrough on one character."
+				]
+			}
+		},
+		{
+			"id": "GrindTreasure",
+			"name": "The Treasure Hunter",
+			"description": "Discover 10 buried treasure chests.",
+			"type": "secret",
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Use a Wishbone — Bonemass drops one — to locate buried treasure, then dig up the marked spot.",
+					"Open the chest to register the discovery, and repeat until you have opened 10 buried chests.",
+					"Alternatively, dig up a single buried chest and re-open it repeatedly until the counter reaches 10."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Confirmed shortcut — dig up one buried treasure chest and just re-open the same one ten times and it counts each time, which turns this into a two-minute achievement.",
+					"Reddit tip: Kill Bonemass early on a character you are keeping, because the Wishbone is what makes finding the rest of them fast."
+				]
+			}
+		},
+		{
+			"id": "FindAllTrophies",
+			"name": "The Trophy Collector",
+			"description": "Collect all trophies.",
+			"type": "cumulative",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Collect one trophy from every creature that drops one — the list runs to dozens of entries across all biomes.",
+					"Track progress against a checklist, since there is no in-game counter for individual trophies.",
+					"Kill creatures deliberately rather than letting them die to the environment, which does not always award the trophy."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Pair this with The Hunter on a Hard world so each creature is killed once for both achievements.",
+					"Reddit tip: Several trophies only drop from bosses and rare spawns, so leave those until late rather than hunting them piecemeal."
+				],
+				"warnings": [
+					"The game gives no partial-progress display for this one, so keep your own list — it feels complete long before it is."
+				]
+			}
+		},
+		{
+			"id": "BuildHighWorld",
+			"name": "Top of the World",
+			"description": "Build something very high up.",
+			"type": "standard",
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Build on a high-altitude location such as a mountain peak in the Mountains or the Ashlands.",
+					"Extend the structure upward until the top piece sits at least 492 m above level zero.",
+					"Type /pos in chat to check your current altitude and keep climbing until you clear the target."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"communityNotes": [
+					"Reddit tip: Start from the highest terrain you can find and stack upward — the target is altitude, not structure height, so Mighty Halls alone will not get you there.",
+					"Reddit tip: This is the single most expensive achievement in the set because it needs 492 m of stacked building pieces."
+				],
+				"warnings": [
+					"Building this high costs an enormous amount of materials and takes a long time — plan a resource stockpile first.",
+					"Do not confuse this with Mighty Halls, which measures structure height rather than altitude."
+				]
+			}
+		}
+	]
+}

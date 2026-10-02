@@ -121,3 +121,4 @@ Files already in `src/lib/data/games/`:
 - `3321460.json` — Crimson Desert (34)
 - `4126040.json` — Aniimo (64)
 - `275850.json` — No Man's Sky (27)
+- `892970.json` — Valheim (53)

@@ -104,6 +104,7 @@ To add one manually, copy `_example.json` and follow the schema.
 | Clair Obscur: Expedition 33 | 1903340 | 55 |
 | Aniimo | 4126040 | 64 |
 | Active Matter | 2887580 | 38 |
+| Valheim | 892970 | 53 |
 
 ## Scripts
 
