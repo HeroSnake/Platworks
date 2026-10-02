@@ -50,11 +50,19 @@
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
-					"Place at least 6 floor blocks, 8 wall blocks and 4 roof blocks to form an enclosed shelter.",
-					"Put one piece of furniture inside (a bed is the natural choice) plus 1 chest.",
-					"The achievement triggers as soon as all six conditions are satisfied in the same structure."
+					"Place at least 6 floor blocks, 8 wall blocks and 4 roof blocks, plus 1 piece of furniture, 1 storage piece such as a chest, and 1 light source.",
+					"Stand inside the build while it is placed — the requirement counts pieces within the loaded zones around you, which is a 5x5 grid of 64 m zones (roughly 320 m across), not a single room.",
+					"The achievement fires once all six categories are satisfied in that loaded area."
 				],
-				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007"
+				"sourceUrl": "https://valheim.weirdgloop.org/w/Achievements",
+				"communityNotes": [
+					"Reddit tip: There is no bed requirement — a bed only counts as the single Furniture piece. Any furniture works.",
+					"Reddit tip: A build large enough to satisfy The Architect also satisfies The Homesteader, so an existing village gets this for free."
+				],
+				"warnings": [
+					"Popular community guides omit the lighting requirement — the game files and official wiki both require 1 light source, so build a torch or a hearth inside.",
+					"Categories are the usage tags of the build menu, so a piece with several tags counts toward more than one category at once."
+				]
 			}
 		},
 		{
@@ -107,16 +115,18 @@
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Read the achievement requirements from the game files: 10x Building pieces, 40x Flooring, 40x Walls and 20x Roofing.",
-					"Then add 10x Architecture pieces, 10x Furniture, 5x Lightning pieces and 5x Decor pieces.",
-					"Spread the pieces across a real settlement rather than one stacked tower, then check the counter in your statistics."
+					"Place 40x Flooring, 40x Walls and 20x Roofing pieces within the loaded zones around you.",
+					"Then add 10x Building pieces, 10x Architecture pieces, 10x Furniture, 5x Lighting and 5x Decor.",
+					"Stand inside the settlement as you build — the counter covers a 5x5 grid of 64 m zones (roughly 320 m across) centred on you, so walk through the village to register everything."
 				],
-				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"sourceUrl": "https://valheim.weirdgloop.org/w/Achievements",
 				"communityNotes": [
-					"Reddit tip: The 5x Lightning category is the hidden bottleneck — it needs Lightning rods, lightning lamps and Zap anchors, not just the one item you normally build."
+					"Reddit tip: The 5x Lighting category is the hidden bottleneck — it needs torches, lamps and similar light pieces, not just the one fixture you normally build.",
+					"Reddit tip: Because categories are usage tags, a multi-tag piece such as a roof that is also a Building counts toward several categories at once, which speeds the totals up considerably."
 				],
 				"warnings": [
-					"The description gives no numbers at all, so this is one of the more opaque requirements in the set."
+					"The description gives no numbers at all, so this is one of the more opaque requirements in the set.",
+					"Pieces do not have to be connected or pretty — but they all need to be inside the loaded zone area while you are standing there."
 				]
 			}
 		},
@@ -259,12 +269,13 @@
 				"steps": [
 					"Take a ship out into the Ocean biome and find a sleeping Leviathan.",
 					"Mine the Abyssal Barnacles on its back until it wakes and starts sinking.",
-					"Stay right next to its centre and ride it down until it fully submerges."
+					"Stay right next to its centre and ride it all the way down — it must fully submerge, not merely start to sink."
 				],
-				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"sourceUrl": "https://valheim.weirdgloop.org/w/Achievements",
 				"communityNotes": [
-					"Reddit tip: Back up your world first — sinking a Leviathan takes you a long way underwater and a failed attempt can cost your whole boat.",
-					"Reddit tip: If you fall off while it sinks you can still finish it, but you will not get the achievement until it is fully down."
+					"Reddit tip: You must fully sink it — merely damaging it or finding it does nothing, and the pre-1.0 discovery behaviour no longer applies.",
+					"Reddit tip: If it surfaces again mid-attempt the counter resets, so stay with it until you are certain it is under for good.",
+					"Reddit tip: Back up your world first — this is the one achievement with real permadeath risk and a failed attempt can cost your whole boat."
 				]
 			}
 		},
@@ -334,10 +345,11 @@
 					"Build a fully enclosed base with beds, a fire and food, then hold position for 30 in-game days without dying.",
 					"Let the run play out — one Valheim day is roughly 30 real minutes, so expect around 15 hours of safe play."
 				],
-				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"sourceUrl": "https://valheim.weirdgloop.org/w/Achievements",
 				"communityNotes": [
 					"Reddit tip: Boats and Portal networks are the main risk — a portal or Longship trip during the streak can end 15 hours of progress instantly.",
-					"Reddit tip: Set the world to a longer day length if your server supports it, which cuts the real-time cost of the streak substantially."
+					"Reddit tip: Difficulty is a set of independent world modifiers you can change at runtime with setkey in the F5 console, so you can lower the death penalty during the streak.",
+					"Reddit tip: Known bug — the consecutive-day counter can get permanently locked on certain difficulties if you already earned The Survivor before the Child of Odin patch. Temporarily switching difficulty lets the counter climb again."
 				],
 				"warnings": [
 					"Any death at all resets the counter to zero — do this last, or immediately after clearing the death achievements.",
@@ -354,13 +366,14 @@
 			"guide": {
 				"steps": [
 					"Build a small room with a roof and a lit fire inside, since furniture only counts when sheltered and lit.",
-					"Fill it with different comfort sources — Hearth, Dragon Bed, a Bear Rug, Jute Banner, Fairy Lights, a Throne, a Round Table, an Item Stand and a lit Hot Tub.",
-					"Keep adding distinct pieces until the comfort readout hits 20 — the setup above reaches 22."
+					"Fill it with one high-tier item per comfort category: any Throne, Dragon Bed, Round Table or Long Heavy Table, a heated Hot tub, Hearth, Bearskin or Wolf or Lox rug, a Red or Blue Jute Curtain, a Lava lantern, an Armor stand or Item stand, any Garland or Fey Lights, and Pots or an Asksvin Skeleton.",
+					"Keep adding until the readout reaches 20 — the setup above gives roughly 22, and you need everything within 10 m of you and under a roof."
 				],
-				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"sourceUrl": "https://valheim.weirdgloop.org/w/Comfort",
 				"communityNotes": [
-					"Reddit tip: Repeats of the same furniture do not stack — variety beats volume, so spread across as many different pieces as you can rather than 10 chairs.",
-					"Reddit tip: The Dragon Bed and Hot Tub are Ashlands items, so this cannot be finished before the Ashlands."
+					"Reddit tip: Duplicates do not stack — only the highest level item in each category is used, so you need one distinct piece per category rather than volume.",
+					"Reddit tip: The Dragon Bed and Hot tub are Ashlands items, but Mistlands gear alone reaches exactly 20, so a player who has not touched the Ashlands can still just make it.",
+					"Reddit tip: The 1.0 ceiling is now 22, or 24 with seasonal pieces such as the Maypole and Yule Tree."
 				]
 			}
 		},
@@ -456,17 +469,18 @@
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Build the Longship, the fastest boat in the game, and stock it with food and a portal.",
-					"Sail one full lap of the world while sitting at the helm for the whole trip — roughly 66,000 m.",
-					"Bank the distance on one continuous voyage if you can, since the counter measures distance steered rather than trips completed."
+					"Build the Longship, the fastest boat in the game, and stock it with food, a bed and a Portal.",
+					"Sail while personally sitting at the helm for a total of 65,973 m — one full lap of the world.",
+					"The distance counter only ticks while you are at the helm, so plan wide arcs instead of constant course corrections."
 				],
-				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"sourceUrl": "https://valheim.weirdgloop.org/w/Achievements",
 				"communityNotes": [
-					"Reddit tip: You never need to touch land — plan a straight compass line to each edge and turn in a wide arc rather than correcting constantly, otherwise the voyage takes double.",
-					"Reddit tip: Sailing as a passenger counts toward The Sailor but not this one — only the player at the helm registers."
+					"Reddit tip: One lap at the helm is 65,973 m and the world circumference works out to a 10,500 m radius, so a clean compass circuit hits the number exactly.",
+					"Reddit tip: Two laps at the helm also completes The Sailor, since that threshold is exactly double — steer the whole way and get both from one voyage."
 				],
 				"warnings": [
-					"Steam does not display live progress for this one, so count laps manually with the map or a Portal at the halfway point."
+					"Sailing as a passenger counts toward The Sailor but not this one — only distance covered at the helm registers here.",
+					"Steam shows no live progress for this achievement, so count laps manually using a Portal as a halfway marker."
 				]
 			}
 		},
@@ -503,17 +517,17 @@
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Take a Longship out and accumulate roughly 132,000 m of sailing distance — two full world laps.",
+					"Accumulate 131,946 m of sailing distance — exactly two full laps of the 65,973 m world circumference.",
 					"You can sail as a passenger or at the helm, so a friend can steer while you ride along.",
 					"Distance carries across voyages, so several shorter trips add up to the same total."
 				],
-				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"sourceUrl": "https://valheim.weirdgloop.org/w/Achievements",
 				"communityNotes": [
 					"Reddit tip: This is the single longest grind in the set — do it last so you are not sailing 132 km while still gearing up.",
-					"Reddit tip: Man the helm for the whole trip and this stacks with The Captain, turning two achievements into one voyage."
+					"Reddit tip: The threshold is exactly double The Captain's, so two laps at the helm completes both achievements in one voyage."
 				],
 				"warnings": [
-					"The world edge is not a wall — veer too far out while chasing distance and you will fall into the void."
+					"The world edge is not a wall — veer too far out while chasing distance and you will fall into the void and lose the boat."
 				]
 			}
 		},
@@ -525,18 +539,20 @@
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Kill Lord Reto to obtain the Dyrnwyn Hilt Fragment.",
-					"Find the Blade and Tip Fragments at the locations revealed by the runestones inside Putrid Holes in the Ashlands.",
-					"Upgrade a Black Forge to level 4, then craft Dyrnwyn using the three fragments plus 20 Flametal, a Bloodstone and a Flametal Battle Idol."
+					"Find the first Mysterious Location — its Vegvisir is hidden inside a Putrid Hole in the Ashlands, guarded by 2-star Charred enemies. Break a wall to enter, clear it, and take the Dyrnwyn Tip Fragment from the altar.",
+					"Read the Vegvisir at that location to reach the second Mysterious Location and collect the Blade Fragment the same way; the third location's Vegvisir then leads to the Tomb of Lord Reto.",
+					"Kill Lord Reto to drop the Hilt Fragment, then upgrade a Black Forge to level 4 and craft Dyrnwyn with the three fragments plus 20 Flametal and 1 Bloodstone."
 				],
 				"videoUrl": "https://www.youtube.com/watch?v=WrRw1HNvnuE",
-				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"sourceUrl": "https://valheim.weirdgloop.org/w/Mysterious_Location",
 				"communityNotes": [
-					"Reddit tip: Only one Dyrnwyn can be forged per world, so gather the fragments with friends and let one player craft while the others skip it.",
-					"Reddit tip: Raise the drop multiplier before killing Lord Reto so he drops all three of his pieces at once instead of forcing repeated runs."
+					"Reddit tip: Only the first location is located through Putrid Holes — the second and third chain off Vegvisirs found at the previous site, so follow the Vegvisir each time rather than searching for more runestones.",
+					"Reddit tip: Raising the drop multiplier before killing Lord Reto makes him drop all three of his pieces at once instead of forcing repeated runs.",
+					"Reddit tip: Killing Lord Reto also counts toward Odin is Pleased, so do it once and bank both."
 				],
 				"warnings": [
-					"Dyrnwyn is a once-per-world craft. If you burn the fragments on something else you will have to start a new world to retry."
+					"Dyrnwyn is a once-per-world craft. If you burn the fragments on something else you will have to start a new world to retry.",
+					"Some databases also list a Flametal Battle Idol as a material; the base recipe confirmed by the game files and the official wiki needs only the three fragments, 20 Flametal and 1 Bloodstone."
 				]
 			}
 		},
@@ -563,15 +579,20 @@
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
-					"Upgrade your Fishing skill, wear a fishing hat and bring plenty of Stamina food — a 4-star fish is visibly much larger than a normal one.",
-					"Fish with the strongest bait you have and reel the fish in with the rod; picking it up by hand does not count.",
-					"Keep trying until a 4-star fish bites — alternatively catch one by hand and toss it into an artificial pond to control the reel distance."
+					"Any of the 12 fish species can roll 4-star — quality is decided per spawn, so pick a species that is cheap to hook rather than a rare one.",
+					"Fish with the matching bait and reel the fish in with the rod; picking one up by hand does not register.",
+					"Keep casting until a 4-star fish bites. The Plains or Swamp is the best bet at roughly a 1 in 156 spawn chance, and a 4-star fish is visibly much larger and heavier than a normal one."
 				],
 				"videoUrl": "https://www.youtube.com/watch?v=JOHSeAVIsAs",
-				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"sourceUrl": "https://valheim.weirdgloop.org/w/Fish",
 				"communityNotes": [
-					"Reddit tip: Holding the line at about 3 ft and moving slowly from a small boat is the most reliable way to land the big one.",
-					"Reddit tip: High-star fish are far more common in the late-game biomes, so do this after Ashlands rather than fishing the Meadows."
+					"Reddit tip: The Ashlands and Deep North are worse, not better — their 15% level-up chance gives only a 0.29% 4-star roll versus 0.64% in the base biomes.",
+					"Reddit tip: Grouper in the Plains on Stingy Bait or Giant Herring in the Swamp on Sticky Bait are the safest targets because they drain stamina slowly.",
+					"Reddit tip: A Fishing Hat adds 20 Fishing skill, which cuts both stamina cost and escape difficulty, so wear one."
+				],
+				"warnings": [
+					"Avoid Northern Salmon on Frosty Bait — it drains stamina at 60/s and will end most attempts before the hookup.",
+					"Magmafish require Hot Bait and sit in the lower-odds Ashlands bracket, so they are a poor target despite being high-tier."
 				]
 			}
 		},
@@ -587,14 +608,14 @@
 					"Tick them off one at a time, checking your statistics after each death to see which cause registered.",
 					"Do this before or after The Survivor, never during a 30-day streak."
 				],
-				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"sourceUrl": "https://valheim.weirdgloop.org/w/Achievements",
 				"communityNotes": [
+					"Reddit tip: Two of the 16 are cross-credit — dying off the world edge also unlocks The Legends Are True, and dying to an Obliterator also unlocks Obliterated, so those two kills cover three achievements.",
 					"Reddit tip: The obscure ones are the Ashlands ocean, the drawbridge and the catapult — all three need you to be inside Ashlands structures rather than out in the open.",
-					"Reddit tip: Deaths from falling off the world edge and from the world void are separate entries, so sail out past the map border and then step off the boat for both."
+					"Reddit tip: Two of the sixteen cannot be forced on demand — the Frost Caves stalactite and the Ballista projectile — so leave those to chance and sweep the dungeon that has them."
 				],
 				"warnings": [
-					"Two causes cannot be forced on demand — the stalactite and the ballista — so leave those to chance and sweep the dungeon that has them.",
-					"Do not start this in the middle of The Survivor."
+					"Do not start this in the middle of The Survivor — any death resets the consecutive-day counter."
 				]
 			}
 		},
@@ -651,14 +672,17 @@
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
-					"Build upward on a strong foundation — the requirement from the game files is a structure at least 49 metres tall.",
-					"Use Stonecutter pillars or Black Marble supports so the structure does not collapse before you reach the target.",
-					"Type /pos in chat to check your current altitude and keep building until the structure passes 49 m."
+					"Build upward from solid ground until a placed piece sits at least 49 m straight down from it — the drop to terrain is measured and capped at 200 m, and rocks or objects do not count as ground.",
+					"Support the column with at least 5 building pieces directly below the new piece, with more than 45% of them built by you.",
+					"Type /pos in chat to check your altitude as a reference while you climb."
 				],
-				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"sourceUrl": "https://valheim.weirdgloop.org/w/Achievements",
 				"communityNotes": [
-					"Reddit tip: This is the easier of the two vertical builds — a 49 m tower on flat ground is enough, and Top of the World is much harder.",
-					"Reddit tip: Build over a Void or a deep mine shaft so you are not limited by terrain height while stacking."
+					"Reddit tip: This is the easier of the two vertical builds — a 49 m tower on flat ground is enough, whereas Top of the World needs 432 m of absolute altitude.",
+					"Reddit tip: Building over a Void or a deep mine shaft avoids terrain height limiting you while you stack."
+				],
+				"warnings": [
+					"If you build upward from a mountain peak you may satisfy Top of the World without satisfying this one, and vice versa — they track separate stats."
 				]
 			}
 		},
@@ -689,14 +713,19 @@
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Kill Brenna in the Smouldering Tombs and Geirrhafa in the Howling Caverns.",
-					"Kill Zil and Thungr in the Sealed Tower — they count as two separate minibosses.",
-					"Kill Lord Reto in his tomb in the Ashlands. That is five minibosses in total and the achievement fires once all are down."
+					"Kill Brenna in the Smouldering Tomb in the Black Forest, and Geirrhafa in the Howling Cavern in the Mountains.",
+					"Kill Zil and Thungr in the Sealed Tower in the Plains — the two of them share one bronze chest but count as two separate minibosses.",
+					"Kill Lord Reto in the Tomb of Lord Reto in the Ashlands. That is five miniboss requirements in total and the achievement fires once all are down."
 				],
-				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"sourceUrl": "https://valheim.weirdgloop.org/w/Achievements",
 				"communityNotes": [
 					"Reddit tip: Zil and Thungr look like one encounter but register as two, so killing both halves is required — many players miss this and stall on the last point.",
-					"Reddit tip: Lord Reto also drops the Dyrnwyn Hilt Fragment, so kill him before you assemble Dyrnwyn."
+					"Reddit tip: Lord Reto also drops the Dyrnwyn Hilt Fragment, so kill him before you assemble Dyrnwyn.",
+					"Reddit tip: Brenna can also be fought during the She's hot on your tail event in the Ashlands if you would rather skip the tomb."
+				],
+				"warnings": [
+					"The eight dungeon bosses from Eikthyr to Kall Fimbulbringer do not count here — they are tracked separately under The Viking and its variants.",
+					"There are no Deep North or Mistlands minibosses in the requirement list, so do not go looking for one there."
 				]
 			}
 		},
@@ -771,9 +800,9 @@
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
-					"Build every piece available in the Hammer's build menu — the extracted list runs to 549 entries including plants and variants.",
-					"Repair at least one item at the Workbench, which is a separate requirement from placing pieces.",
-					"Once each piece has been built you can dismantle them all and reclaim the materials."
+					"Build every piece available in the Hammer's build menu — the extracted list runs to 549 entries including plants, variants and seasonal pieces.",
+					"Repair the required pieces at a Workbench as well — the game files indicate each required piece needs repairing at least once.",
+					"Once each piece has been built and repaired you can dismantle them all and reclaim the materials."
 				],
 				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
 				"communityNotes": [
@@ -781,7 +810,8 @@
 					"Reddit tip: Crafting the piece is not enough; the piece has to actually be placed in the world."
 				],
 				"warnings": [
-					"Repairing an item is required and easy to forget, because it is not a building action."
+					"Repairing is required and easy to forget, because it is not a building action. Sources differ on whether every required piece must be repaired or just one, so repair them all to be safe.",
+					"Pieces are tracked by name, so variants that share a name — the three Yggdrasil Yuleklapp, for example — only count once."
 				]
 			}
 		},
@@ -793,17 +823,17 @@
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Build the Longship and stock it with food, beds and a Portal for the return trip.",
-					"Sail to about 10,350 m from world centre toward the north edge, then repeat for south, east and west.",
-					"The four legs count independently, so partial progress on each direction carries over."
+					"Build the Longship and stock it with food, a bed and a Portal for the return trip.",
+					"Reach a position past 10,350 m and before -10,350 m on both axes — about 150 m short of the world edge, close to each cardinal point.",
+					"Repeat for all four cardinal directions; each direction is tracked separately, so partial progress carries over."
 				],
-				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"sourceUrl": "https://valheim.weirdgloop.org/w/Achievements",
 				"communityNotes": [
 					"Reddit tip: Do this on the same trip as The Pathfinder with the No Map modifier enabled — one expedition covers both.",
 					"Reddit tip: Two Portals, one on each side of the map, turn each return leg from a long sail into an instant trip."
 				],
 				"warnings": [
-					"The world edge is not a wall — sail too far past it and you fall into the void and lose everything on the boat."
+					"The counting band is only about 150 m wide between 10,350 m and the world edge, and the edge is not a wall — sail too far past it and you fall into the void and lose everything on the boat."
 				]
 			}
 		},
@@ -873,18 +903,19 @@
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Take a boat out toward one of the world edges until you are roughly 10,350 m from world centre.",
-					"Keep going past the point where the map ends until the boat and everything on it disappears.",
-					"The achievement fires the moment you cross the edge — you can then respawn to retrieve your gear if you set up a Portal first."
+					"Take a boat outward past the world edge — roughly 10,420 m from centre, about 70 m beyond the 10,350 m Explorer threshold.",
+					"Keep going until you actually fall off and die; simply reaching or touching the edge does not trigger it.",
+					"The achievement fires on that death, after which you can respawn — set up a Portal on shore first so you are not stranded."
 				],
-				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"sourceUrl": "https://valheim.weirdgloop.org/w/Achievements",
 				"communityNotes": [
 					"Reddit tip: This is the same trip as The Explorer and The Pathfinder — stack all three on one voyage to the edge.",
-					"Reddit tip: Place a Portal on the shore before you leave, otherwise you are stranded and have to walk home."
+					"Reddit tip: Dying off the world edge also ticks the falling-off-the-world death cause in Are You Alright?, so it counts twice.",
+					"Reddit tip: Place a Portal on the shore before you leave, otherwise you are stranded with no way back except swimming."
 				],
 				"warnings": [
 					"You cannot recover the items on the boat once you go over the edge — travel light or leave your gear at a Portal.",
-					"The world has no invisible wall, so it is very easy to fall off the edge by accident during The Explorer."
+					"The world has no invisible wall, so it is very easy to fall off by accident while doing The Explorer."
 				]
 			}
 		},
@@ -933,11 +964,11 @@
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
-					"Start or join a world on the Hard difficulty preset — the difficulty must already be set before the kills register.",
+					"Start or join a world with the combat difficulty set to Hard or Very Hard before the kills register.",
 					"Kill every creature type on that character, including friendly creatures.",
 					"Enable friendly fire if you plan to kill creatures you have tamed, otherwise boars and deer cannot be finished off."
 				],
-				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"sourceUrl": "https://valheim.weirdgloop.org/w/World_Modifiers",
 				"communityNotes": [
 					"Reddit tip: You can weaken a boss on an easier difficulty, leave, then switch to Hard and land the kill — it counts as a Hard kill. Much easier than clearing the whole game on Hard.",
 					"Reddit tip: Selecting the Hard preset and then adjusting Death Penalty, Resource Rate, Portals, No Build Cost and Passive Enemies is allowed and still counts as a Hard world."
@@ -957,16 +988,17 @@
 			"guide": {
 				"steps": [
 					"Create or join a world with the No Map world modifier enabled.",
-					"Sail to about 10,350 m from world centre toward the north edge without opening the map, then repeat for south, east and west.",
-					"Complete all four legs to unlock the achievement."
+					"Reach the same 10,350 m cardinal threshold toward the north edge without opening the map, then repeat for south, east and west.",
+					"All four legs use their own separate No Map counters, so each must be travelled independently."
 				],
-				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"sourceUrl": "https://valheim.weirdgloop.org/w/Achievements",
 				"communityNotes": [
 					"Reddit tip: You can cheese it — reach each world edge on a normal world, then briefly toggle the No Map modifier on at that edge so the game registers the stat.",
-					"Reddit tip: Steer by compass and landmark only; checking the map even once mid-voyage is the usual reason players fail."
+					"Reddit tip: Steer by compass and landmarks only. Opening the map will not corrupt the counters, it just does not advance them."
 				],
 				"warnings": [
-					"Without the map you have no idea how close the edge is — expect to overshoot and fall into the void.",
+					"Without the map you cannot see how close the edge is — expect to overshoot and fall into the void.",
+					"Three achievements in this set are gated on world modifiers rather than difficulty: The Tough Viking and The Toughest Viking on combat difficulty, and this one on No Map.",
 					"This is a prerequisite for Child of Odin."
 				]
 			}
@@ -979,11 +1011,11 @@
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Set the world to Normal difficulty or higher before you start the boss run.",
+					"Set the world to Normal, Hard or Very Hard combat difficulty before you start the boss run — all three qualify.",
 					"Defeat all 8 bosses: Eikthyr, The Elder, Bonemass, Moder, Yagluth, The Seeker Queen, Fader and Kall Fimbulbringer.",
 					"All kills must be on the same character, and they can be completed alongside The Toughest Viking."
 				],
-				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"sourceUrl": "https://valheim.weirdgloop.org/w/World_Modifiers",
 				"communityNotes": [
 					"Reddit tip: A full Hard run clears The Viking, The Tough Viking and The Toughest Viking at once, so pick Hard if you were undecided.",
 					"Reddit tip: Hammer Mode kills do not count toward this achievement."
@@ -998,17 +1030,19 @@
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
-					"Create or join a world on the Hard difficulty preset.",
+					"Create or join a world with the combat difficulty set to Hard or Very Hard — both presets qualify.",
 					"Defeat all 8 bosses on that character, gearing up with Ashlands and Deep North gear before the late fights.",
 					"The same run also satisfies The Viking and The Tough Viking."
 				],
-				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"sourceUrl": "https://valheim.weirdgloop.org/w/World_Modifiers",
 				"communityNotes": [
 					"Reddit tip: Start Hard after your character is already geared rather than from scratch — several bosses are near-impossible with bronze.",
-					"Reddit tip: Weakening a boss on an easier world, then switching to Hard for the kill, is confirmed to count as a Hard kill."
+					"Reddit tip: Weakening a boss on an easier world, then switching to Hard for the kill, is confirmed to count as a Hard kill.",
+					"Reddit tip: Hard and Very Hard are presets that bundle several modifiers. Death Penalty, Resource Rate, Portals, No Build Cost and Passive Enemies can all be adjusted afterwards without losing the Hard classification."
 				],
 				"warnings": [
 					"Kall Fimbulbringer on Hard is the hardest single fight in the game — expect repeated attempts.",
+					"Difficulty is not one dropdown but a set of independent modifiers; make sure the combat difficulty is actually set before the kills register.",
 					"This is a prerequisite for Child of Odin, so it forces a Hard playthrough on one character."
 				]
 			}
@@ -1018,17 +1052,21 @@
 			"name": "The Treasure Hunter",
 			"description": "Discover 10 buried treasure chests.",
 			"type": "secret",
-			"difficulty": "easy",
+			"difficulty": "medium",
 			"guide": {
 				"steps": [
-					"Use a Wishbone — Bonemass drops one — to locate buried treasure, then dig up the marked spot.",
-					"Open the chest to register the discovery, and repeat until you have opened 10 buried chests.",
-					"Alternatively, dig up a single buried chest and re-open it repeatedly until the counter reaches 10."
+					"Equip a Wishbone — Bonemass drops one — which pings with rising green puffs and an accelerating sound as you approach a hidden secret.",
+					"Follow the ping to the marked spot, then dig it up with a pickaxe or break it with a hammer.",
+					"Open the chest and repeat until you have found 10 distinct buried treasures; they spawn in the Meadows grass."
 				],
-				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"sourceUrl": "https://valheim.weirdgloop.org/w/Wishbone",
 				"communityNotes": [
-					"Reddit tip: Confirmed shortcut — dig up one buried treasure chest and just re-open the same one ten times and it counts each time, which turns this into a two-minute achievement.",
-					"Reddit tip: Kill Bonemass early on a character you are keeping, because the Wishbone is what makes finding the rest of them fast."
+					"Reddit tip: The Wishbone also detects Muddy Scrap Piles in the Swamp and silver veins in the Mountains, but only buried treasure chests count toward this achievement.",
+					"Reddit tip: Kill Bonemass early on a character you are keeping, because the Wishbone is what makes finding them fast."
+				],
+				"warnings": [
+					"The Wishbone stops detecting a secret once you have opened it, so you need 10 separate buried treasures — re-looting one chest will not get you there.",
+					"Pre-generated chests from the world generator, including Ashlands Charred Chests, Mistlands Dvergr Treasure Chests and Deep North chests, do not count."
 				]
 			}
 		},
@@ -1062,18 +1100,19 @@
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
-					"Build on a high-altitude location such as a mountain peak in the Mountains or the Ashlands.",
-					"Extend the structure upward until the top piece sits at least 492 m above level zero.",
+					"Build on a high-altitude location such as a mountain peak, then stack upward until the placed piece reaches an altitude of at least 432 m.",
+					"Support the column with at least 5 building pieces directly below the new piece, with more than 45% of them built by you.",
 					"Type /pos in chat to check your current altitude and keep climbing until you clear the target."
 				],
-				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3799211007",
+				"sourceUrl": "https://valheim.weirdgloop.org/w/Achievements",
 				"communityNotes": [
-					"Reddit tip: Start from the highest terrain you can find and stack upward — the target is altitude, not structure height, so Mighty Halls alone will not get you there.",
-					"Reddit tip: This is the single most expensive achievement in the set because it needs 492 m of stacked building pieces."
+					"Reddit tip: Start from the highest terrain you can find and stack upward — this measures absolute altitude, so Mighty Halls alone will not get you there.",
+					"Reddit tip: Interior and dungeon placements do not count for this stat, so build in the open world on a mountain."
 				],
 				"warnings": [
 					"Building this high costs an enormous amount of materials and takes a long time — plan a resource stockpile first.",
-					"Do not confuse this with Mighty Halls, which measures structure height rather than altitude."
+					"Do not confuse this with Mighty Halls, which measures height above terrain rather than altitude. The two are independent objectives and neither one covers the other.",
+					"Some community guides state 492 m; the game files and the official wiki both say 432 m. Building higher is harmless, so 492+ is a safe margin."
 				]
 			}
 		}
