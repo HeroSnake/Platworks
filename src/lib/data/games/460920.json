@@ -1,0 +1,680 @@
+{
+	"$schema": "./schema.json",
+	"appId": 460920,
+	"name": "Steep",
+	"totalAchievements": 41,
+	"achievements": [
+		{
+			"id": "YOU_RE_READY_NOW",
+			"name": "You're ready now",
+			"description": "Complete the ONBOARDING sequence",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/3152158508bb30f43a768679470bc271498f95f2.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Start a new game or continue, then finish the full ONBOARDING / tutorial sequence on the mountain."
+				]
+			}
+		},
+		{
+			"id": "UPSIDE_DOWN",
+			"name": "Upside down",
+			"description": "Perform your first double backflip",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/3152158508bb30f43a768679470bc271498f95f2.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"On skis or snowboard, build speed and pull a double backflip (two full backward rotations) in one jump."
+				]
+			}
+		},
+		{
+			"id": "BABY_STEPS",
+			"name": "Baby steps",
+			"description": "Reach the ROOKIE rank in any field of expertise",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/3152158508bb30f43a768679470bc271498f95f2.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play challenges and free roam in one discipline (ski, snowboard, wingsuit, etc.).",
+					"Raise that field of expertise to ROOKIE rank."
+				]
+			}
+		},
+		{
+			"id": "SCORING_MASTER",
+			"name": "Scoring master",
+			"description": "Score more than 2000 point in one jump",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/28ae4919a7dc1dfa249c5858f38a186f5e50f59f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Chain tricks in one jump (spins, flips, grabs) until the jump score exceeds 2000 points."
+				]
+			}
+		},
+		{
+			"id": "YOU_SPIN_AROUND",
+			"name": "You spin around",
+			"description": "Perform your first 1080°",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/3152158508bb30f43a768679470bc271498f95f2.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In a big air jump, spin until you complete a 1080° (three full rotations) and land it."
+				]
+			}
+		},
+		{
+			"id": "TOURIST",
+			"name": "Tourist",
+			"description": "Find 10 Points of Interest in Alps",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/3152158508bb30f43a768679470bc271498f95f2.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open the map and travel between different mountain sectors.",
+					"Visit the required number of distinct zones / drop zones."
+				]
+			}
+		},
+		{
+			"id": "ONCE_UPON_A_TIME",
+			"name": "Once upon a time",
+			"description": "Complete a MOUNTAIN STORY in Alps",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/3152158508bb30f43a768679470bc271498f95f2.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open the Mountain Stories list in the Alps and complete any one story."
+				]
+			}
+		},
+		{
+			"id": "SEEK",
+			"name": "Seek...",
+			"description": "Find and unlock 10 Drop Zones in Alps",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/3152158508bb30f43a768679470bc271498f95f2.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Explore the Alps map and unlock 10 Drop Zones (fast-travel launch points)."
+				]
+			}
+		},
+		{
+			"id": "HALFWAY_THERE",
+			"name": "Halfway there",
+			"description": "Reach REPUTATION level 10",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/28ae4919a7dc1dfa249c5858f38a186f5e50f59f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete challenges and events to raise your overall progression rank.",
+					"Reach the midpoint rank/prestige threshold shown in the progression menu."
+				]
+			}
+		},
+		{
+			"id": "GOLD_PLATED_CHALLENGER",
+			"name": "Gold-plated challenger",
+			"description": "Get 12 Gold Medals on Alps Public Challenges",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/3152158508bb30f43a768679470bc271498f95f2.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Earn Gold medals on 12 different Alps Public Challenges."
+				]
+			}
+		},
+		{
+			"id": "CRASH_TEST",
+			"name": "Crash Test",
+			"description": "Fall and endure between 90 and 99.9 Gs",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/3152158508bb30f43a768679470bc271498f95f2.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Build huge speed (wingsuit or steep slope) and crash hard.",
+					"Survive a fall that registers between 90 and 99.9 Gs on the impact meter."
+				]
+			}
+		},
+		{
+			"id": "THE_END_OF_THE_WORLD",
+			"name": "The end of the World",
+			"description": "Reach the end of ALPS game world",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/3152158508bb30f43a768679470bc271498f95f2.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Ski/fly to the geographic edge of the Alps playable map until the “end of the world” trigger fires."
+				]
+			}
+		},
+		{
+			"id": "THE_MEMORY_REMAINS",
+			"name": "The memory remains",
+			"description": "Get 1 MEMORABLE MOMENT of each category",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/3152158508bb30f43a768679470bc271498f95f2.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Trigger one Memorable Moment in every Memorable Moment category (check the Moments menu filters)."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements"
+			}
+		},
+		{
+			"id": "RED_LETTER_DAY",
+			"name": "Red-letter day",
+			"description": "Get 15 Different MEMORABLE MOMENTS",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/28ae4919a7dc1dfa249c5858f38a186f5e50f59f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Collect 15 different Memorable Moments across categories."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements"
+			}
+		},
+		{
+			"id": "MUSH",
+			"name": "Mush!",
+			"description": "Stay on the Sled without falling for 30 seconds (Winterfest DLC required)",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/b020f0f1c35e9db513353401a497c6b508ed2e49.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"During Winterfest, hop on the sled.",
+					"Stay on the sled for 30 seconds without falling off."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements",
+				"warnings": [
+					"Requires Winterfest Pack DLC."
+				]
+			}
+		},
+		{
+			"id": "LEGEND",
+			"name": "Legend",
+			"description": "Reach the LEGEND rank in any field of expertise",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/28ae4919a7dc1dfa249c5858f38a186f5e50f59f.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Focus one field of expertise (e.g. wingsuit or ski).",
+					"Complete challenges and rank events until that field hits LEGEND rank."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements"
+			}
+		},
+		{
+			"id": "RIDING_RABBIT",
+			"name": "Riding rabbit",
+			"description": "Take off and land 5 times in the same Speed Riding run (Extreme Pack DLC required)",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/3f5428f66e3bb6b45e36864c701e68ab700ecf3d.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"In a Speed Riding run (Extreme Pack), take off and land five separate times before finishing the run."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements",
+				"warnings": [
+					"Requires Extreme Pack DLC."
+				]
+			}
+		},
+		{
+			"id": "THE_LEGEND_STARTS_HERE",
+			"name": "The legend starts here",
+			"description": "Reach REPUTATION level 25",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/e26f3e950c322b2ccd7120e0d1ccc8356a0b0599.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Finish the opening / onboarding challenges in the Alps.",
+					"Complete the first legend path mission when it appears."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements"
+			}
+		},
+		{
+			"id": "SHINIER_THAN_GOLD",
+			"name": "Shinier than Gold",
+			"description": "Get 7 GOLD MEDALS in the Alps Invitational Challenges",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/28ae4919a7dc1dfa249c5858f38a186f5e50f59f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Replay challenges and aim for the highest medal tier.",
+					"Earn a Diamond (or top-tier) result on a challenge."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements"
+			}
+		},
+		{
+			"id": "THE_DRAGON",
+			"name": "The Dragon",
+			"description": "Defeat \"The Dragon\" during Winterfest",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/c6e9aa14836ca7fa8bb43aa8003c357653f0a177.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"During the Winterfest event, open the event challenge list.",
+					"Complete / defeat the “Dragon” Winterfest boss challenge."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements",
+				"warnings": [
+					"Requires Winterfest Pack / Winterfest event content."
+				]
+			}
+		},
+		{
+			"id": "ROAD_TO_MOUNTAIN_KNOWLEDGE",
+			"name": "Road to mountain knowledge",
+			"description": "Complete 15 MOUNTAIN STORIES in Alps",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/28ae4919a7dc1dfa249c5858f38a186f5e50f59f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Open Mountain Stories on the Alps map (story points).",
+					"Complete 15 Mountain Stories."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements"
+			}
+		},
+		{
+			"id": "THE_FRATELLI_TWINS",
+			"name": "The Fratelli Twins",
+			"description": "Defeat \"The Fratelli Twins\" during Winterfest",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/6184cc7ea5956126f058afceb688c8a96418b828.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"In Winterfest challenges, select Fratelli Twins.",
+					"Win that event matchup."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements",
+				"warnings": [
+					"Requires Winterfest Pack / Winterfest event content."
+				]
+			}
+		},
+		{
+			"id": "14_CARATS_GOLD_CHALLENGER",
+			"name": "14 carats Gold challenger",
+			"description": "Get 58 Gold Medals on Alps Public Challenges",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/28ae4919a7dc1dfa249c5858f38a186f5e50f59f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Replay Alps Public Challenges and improve your lines/score.",
+					"Earn Gold on 58 different Alps public challenges."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements"
+			}
+		},
+		{
+			"id": "SUPER_SAVOYARD",
+			"name": "Super Savoyard",
+			"description": "Defeat \"Super Savoyard\" during Winterfest",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/a636228e7f169c11c7f3f90922aa1d39924a829e.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Play the Winterfest “Super Savoyard” boss challenge.",
+					"Defeat Super Savoyard."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements",
+				"warnings": [
+					"Requires Winterfest Pack / Winterfest event content."
+				]
+			}
+		},
+		{
+			"id": "THE_LEGEND_WAS_NOT_ENOUGH",
+			"name": "The legend was not enough",
+			"description": "Reach the LEGEND rank in 3 different fields of expertise",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/28ae4919a7dc1dfa249c5858f38a186f5e50f59f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Reach LEGEND rank in three different fields of expertise."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements"
+			}
+		},
+		{
+			"id": "LINCOLN_BLACK",
+			"name": "Lincoln Black",
+			"description": "Defeat \"Lincoln Black\" during Winterfest",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/5548eb9a60e60f307c7aff2dd62f98fc7c2d7545.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Open Winterfest challenges and select Lincoln Black.",
+					"Defeat Lincoln Black."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements",
+				"warnings": [
+					"Requires Winterfest Pack / Winterfest event content."
+				]
+			}
+		},
+		{
+			"id": "KING_OF_THE_WINTERFEST",
+			"name": "King of the Winterfest",
+			"description": "Defeat \"The Beast\" during Winterfest",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/11cceaeb3986aef1f764436c684895406925bfba.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"During Winterfest, challenge and defeat “The Beast” event boss/race."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements",
+				"warnings": [
+					"Requires Winterfest Pack / Winterfest event content."
+				]
+			}
+		},
+		{
+			"id": "ARE_YOU_READY_FOR_THIS",
+			"name": "Are you ready for this?",
+			"description": "Finish the Trial Rogue 4 of Extreme Pack",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/7a75c2faedb6142299678a3ddf4078b4a50ebbb3.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete Trial Rogue 4 in the Extreme Pack trial series."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements",
+				"warnings": [
+					"Requires Extreme Pack DLC."
+				]
+			}
+		},
+		{
+			"id": "LEGENDARY_LEGEND",
+			"name": "Legendary legend!",
+			"description": "Reach the LEGEND rank in 6 different fields of expertise",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/e26f3e950c322b2ccd7120e0d1ccc8356a0b0599.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Raise expertise in Wing, Race, Freestyle, etc. via challenges.",
+					"Reach LEGEND rank in 6 different expertise fields."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements"
+			}
+		},
+		{
+			"id": "I_AM_AN_EAGLE",
+			"name": "I am an eagle!",
+			"description": "Fly for 5 minutes with the Rocket Wingsuit (Extreme Pack DLC required)",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/fae156fbb94b30e206db5d69f4ebf65c82fc5cd0.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Equip the Rocket Wingsuit (Extreme Pack).",
+					"Accumulate 5 minutes of flight time with it (can be across a long session)."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements",
+				"warnings": [
+					"Requires Extreme Pack DLC."
+				]
+			}
+		},
+		{
+			"id": "THE_EXTREME_FIVE",
+			"name": "The Extreme Five",
+			"description": "Obtain the Gold medal in 5 Challenges of Extreme Pack",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/ed704127237ec134684e06ca948809a99223377c.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"In Extreme Pack challenges, earn Gold on 5 different challenges."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements",
+				"warnings": [
+					"Requires Extreme Pack DLC."
+				]
+			}
+		},
+		{
+			"id": "MOUNTAIN_LEGEND",
+			"name": "Mountain legend",
+			"description": "Complete 30 MOUNTAIN STORIES in Alps",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/e26f3e950c322b2ccd7120e0d1ccc8356a0b0599.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Continue clearing Mountain Story nodes across the Alps.",
+					"Complete 30 Mountain Stories."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements"
+			}
+		},
+		{
+			"id": "AND_YOU_SHALL_FIND",
+			"name": "... and you shall find",
+			"description": "Find and unlock 110 Drop Zones in Alps",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/28ae4919a7dc1dfa249c5858f38a186f5e50f59f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Fly/explore the Alps and unlock Drop Zones marked on the map.",
+					"Unlock 110 Drop Zones."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements"
+			}
+		},
+		{
+			"id": "SHAKED_BY_THE_BELL",
+			"name": "Shaked by the bell",
+			"description": "Fly into and ring the village church bell while wingsuiting",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/3152158508bb30f43a768679470bc271498f95f2.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Launch in a wingsuit near a village with a church steeple.",
+					"Fly into the church bell to ring it (clip the bell; do not need a perfect landing)."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements"
+			}
+		},
+		{
+			"id": "THE_EXTREME_TEN",
+			"name": "The Extreme Ten",
+			"description": "Obtain the Gold medal in 10 Challenges of Extreme Pack",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/d5b6e831cd307d49b3628373aec6149ba5c6c7c6.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Own/access the Extreme Pack challenges.",
+					"Earn Gold on 10 Extreme Pack challenges."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements",
+				"warnings": [
+					"Requires Extreme Pack DLC."
+				]
+			}
+		},
+		{
+			"id": "CHALLENGE_ACCEPTED",
+			"name": "Challenge accepted!",
+			"description": "Get 115 Bronze Medals in Alps Public Challenges",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/28ae4919a7dc1dfa249c5858f38a186f5e50f59f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete Alps Public Challenges for at least Bronze.",
+					"Reach 115 Bronze medals on Alps public challenges."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements"
+			}
+		},
+		{
+			"id": "24_CARATS_GOLD_CHALLENGER",
+			"name": "24 carats Gold challenger",
+			"description": "Get 115 Gold Medals on Alps Public Challenges",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/e26f3e950c322b2ccd7120e0d1ccc8356a0b0599.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Gold-grind the full Alps public challenge list.",
+					"Earn 115 Gold medals on Alps public challenges."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements"
+			}
+		},
+		{
+			"id": "TOUR_GUIDE",
+			"name": "Tour guide",
+			"description": "Find 149 Points of Interest in Alps",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/28ae4919a7dc1dfa249c5858f38a186f5e50f59f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Visit POV binoculars / Point of Interest markers around the Alps.",
+					"Find 149 Points of Interest."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements"
+			}
+		},
+		{
+			"id": "LIKE_THE_BACK_OF_YOUR_HAND",
+			"name": "Like the back of your hand",
+			"description": "Reach 100% exploration on one REGION in Alps",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/28ae4919a7dc1dfa249c5858f38a186f5e50f59f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Pick one Alps region and fill its exploration meter to 100% (drop zones, POIs, challenges)."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements"
+			}
+		},
+		{
+			"id": "NO_MORE_SECRETS",
+			"name": "No more secrets",
+			"description": "Find 110 Drop zones, 115 challenges and 149 Point of Interest in Alps",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/e26f3e950c322b2ccd7120e0d1ccc8356a0b0599.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Unlock 110 Drop Zones, finish 115 challenges, and find 149 Points of Interest in the Alps.",
+					"Use map filters to clear remaining markers — this is the full Alps exploration clean-up."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements",
+				"warnings": [
+					"Long exploration grind — track each category separately on the map."
+				]
+			}
+		},
+		{
+			"id": "I_CAN_SEE_MY_HOUSE_FROM_UP_THERE",
+			"name": "I can see my house from up there",
+			"description": "Safely land after jumping from all the 7 Base Jump Spots in Alaska (Extreme Pack DLC required)",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/460920/a419f164efc1c20b5fa0777cabdf167e69c7186c.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"In Alaska (Extreme Pack), jump from each of the 7 Base Jump Spots.",
+					"Land safely after every jump — dying or failing a landing voids that spot."
+				],
+				"sourceUrl": "https://truesteamachievements.com/game/Steep/achievements",
+				"warnings": [
+					"Requires Extreme Pack DLC (Alaska base jumps)."
+				]
+			}
+		}
+	]
+}

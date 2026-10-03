@@ -27,6 +27,16 @@ Steam serves two different XML shapes. **Getting a tag name wrong returns `null`
 
 No API key is used or required; everything goes through public Steam community endpoints.
 
+### Store `appdetails` is often blocked from Node
+
+`store.steampowered.com/api/appdetails` sits behind Akamai and frequently returns **Access Denied (403 HTML)** to server-side fetches. When that happens, `getGameDetails` **must not return `null`**: fall back to CDN artwork so the library still shows images.
+
+```
+https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/{appId}/header.jpg
+```
+
+Name / short description / Metacritic stay empty in that mode — callers use `steam?.name || game.name`. Do not leave `steam: null` just because the JSON API failed.
+
 ### `hero: true` is opt-in, and it is a HEAD probe
 
 `appdetails` has no wide banner. The store hero is a separate asset:

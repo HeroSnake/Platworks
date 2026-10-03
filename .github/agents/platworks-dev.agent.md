@@ -71,6 +71,7 @@ When you fix something a future agent could plausibly hit, also leave a one-line
 | [`platworks-steam.agent.md`](./platworks-steam.agent.md) | `#lib/server/steam/api.ts`, `/api/steam/*`, `#lib/types/steam.ts`, XML parsing, icon scraping, Cloudflare blocks, when Steam may be called | touching Steam calls, sync, avatars, or achievement statuses |
 | [`platworks-state.agent.md`](./platworks-state.agent.md) | `platworks:*` localStorage keys, `#lib/client/profile.ts`, sort/filter prefs, hydrating stored values | adding, renaming or reading persisted state |
 | [`platworks-gamedata.agent.md`](./platworks-gamedata.agent.md) | `src/lib/data/games/*.json`, `schema.json`, guides, warnings, `mapUrl`, difficulty/type, icon scripts | adding or editing a game's achievement data |
+| [`platworks-commits.agent.md`](./platworks-commits.agent.md) | Conventional Commits, English-only messages, type/scope vocabulary | creating or amending commits / writing commit messages |
 
 Typical combinations:
 
@@ -83,6 +84,7 @@ Typical combinations:
 | Adding a new game | this + Gamedata, then run the icon scripts |
 | `/generate-game-data` spamming URLs or inventing steps | this + Gamedata §2b (triage + fetch ledger) |
 | A framework/build error | this + SvelteKit |
+| Creating a git commit / writing a commit message | this + [`platworks-commits.agent.md`](./platworks-commits.agent.md) |
 
 Reading a domain file you don't need costs context and buries the rules that do apply. Start with the table, then open only the matching files.
 

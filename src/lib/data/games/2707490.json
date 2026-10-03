@@ -1,0 +1,344 @@
+{
+	"$schema": "./schema.json",
+	"appId": 2707490,
+	"name": "Tower Factory",
+	"totalAchievements": 21,
+	"achievements": [
+		{
+			"id": "LEVEL_COMPLETED_01",
+			"name": "Silent Meadows",
+			"description": "Win in the Silent Meadows",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2707490/b8a6cbd484dd287c9aef2a3854678c0fa3cbcf12.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Clear the tutorial, then start Silent Meadows (level 1).",
+					"Gather resources, build towers, find 2 light sanctuaries, and destroy the enemy castle to win the level."
+				]
+			}
+		},
+		{
+			"id": "LEVEL_COMPLETED_02",
+			"name": "Stony Grove",
+			"description": "Win in the Stony Grove",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2707490/b8a6cbd484dd287c9aef2a3854678c0fa3cbcf12.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Start Stony Grove (level 2).",
+					"Expand your factory, defend waves, locate the light sanctuaries, and destroy the enemy castle."
+				]
+			}
+		},
+		{
+			"id": "LEVEL_COMPLETED_03",
+			"name": "Deciduous Pathways",
+			"description": "Win in the Deciduous Pathways",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2707490/b8a6cbd484dd287c9aef2a3854678c0fa3cbcf12.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start Deciduous Pathways (level 3).",
+					"Scale production and tower coverage through denser terrain, then destroy the enemy castle."
+				]
+			}
+		},
+		{
+			"id": "LEVEL_COMPLETED_04",
+			"name": "Wanderer's Glade",
+			"description": "Win in the Wanderer's Glade",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2707490/b8a6cbd484dd287c9aef2a3854678c0fa3cbcf12.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start Wanderer's Glade (level 4).",
+					"Keep your factory upgraded through harder nights and destroy the enemy castle to win."
+				]
+			}
+		},
+		{
+			"id": "LEVEL_COMPLETED_05",
+			"name": "Winter Plateau",
+			"description": "Win in the Winter Plateau",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2707490/2ee2bcac10ca655d24d5882d1c70f3b5e776dbe8.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Unlock and start Winter Plateau (level 5).",
+					"Bring strong meta-progression upgrades, hold late nights, and destroy the enemy castle."
+				]
+			}
+		},
+		{
+			"id": "LEVEL_COMPLETED_06",
+			"name": "Stormswept Gorge",
+			"description": "Win in the Stormswept Gorge",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2707490/2ee2bcac10ca655d24d5882d1c70f3b5e776dbe8.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Unlock and start Stormswept Gorge (level 6).",
+					"Use late-game towers and boss unlocks, then destroy the enemy castle to clear the map."
+				]
+			}
+		},
+		{
+			"id": "UNLOCK_UPGRADE_TIER2",
+			"name": "Tier 2",
+			"description": "Unlock the Tier 2",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2707490/b8a6cbd484dd287c9aef2a3854678c0fa3cbcf12.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Earn gold coins by clearing nights (+1) and winning levels (+2).",
+					"Open the permanent upgrade menu and spend 20 gold coins to unlock Tier 2 — new structures such as the saw launcher and bombard become available."
+				],
+				"sourceUrl": "https://gamerbase.net/guias/tower-factory-656"
+			}
+		},
+		{
+			"id": "KILL_ENEMIES_MUSHROOM_01",
+			"name": "Mushrooms killer",
+			"description": "Kill 2500 Mushrooms",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2707490/b8a6cbd484dd287c9aef2a3854678c0fa3cbcf12.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Play normal levels and keep towers covering mushroom spawns.",
+					"Kill mushrooms across runs until the cumulative counter reaches 2500."
+				]
+			}
+		},
+		{
+			"id": "PROCESSOR_WORKING_CRUICIBLE_01",
+			"name": "The creation of Light",
+			"description": "Create Light Essence in the Light Cruicible",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2707490/b8a6cbd484dd287c9aef2a3854678c0fa3cbcf12.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Unlock and place a Light Crucible (Steam spelling: Cruicible) in your factory.",
+					"Feed it the required inputs so it produces Light Essence once."
+				]
+			}
+		},
+		{
+			"id": "STORE_RESOURCE_LIGHT_CRYSTAL_01",
+			"name": "Bury me in Crystals!",
+			"description": "Have 5 Light Crystals stored",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2707490/b8a6cbd484dd287c9aef2a3854678c0fa3cbcf12.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Produce Light Crystals through your light/factory chain.",
+					"Keep producing until you have at least 5 Light Crystals stored at the same time."
+				]
+			}
+		},
+		{
+			"id": "STORE_RESOURCE_LIGHT_ESSENCE_01",
+			"name": "Illuminati",
+			"description": "Have 1500 Light Essence stored",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2707490/b8a6cbd484dd287c9aef2a3854678c0fa3cbcf12.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Scale Light Crucible production and storage capacity.",
+					"Stockpile Light Essence until you hold 1500 at once."
+				]
+			}
+		},
+		{
+			"id": "CLICK_RESOURCE_10000",
+			"name": "Bare hands",
+			"description": "Click 10.000 times on a resource",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2707490/b8a6cbd484dd287c9aef2a3854678c0fa3cbcf12.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Manually click resource nodes on the map to harvest them.",
+					"Accumulate 10,000 clicks across runs — quiet build phases are a good time to click."
+				],
+				"sourceUrl": "https://gamerbase.net/guias/tower-factory-656"
+			}
+		},
+		{
+			"id": "STORE_RESOURCE_ANY_01",
+			"name": "Greedy",
+			"description": "Have 3000 of the same resource stored",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2707490/b8a6cbd484dd287c9aef2a3854678c0fa3cbcf12.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Pick one common resource and prioritize its production and storage.",
+					"Hold 3000 units of that same resource at once."
+				]
+			}
+		},
+		{
+			"id": "PROCESSOR_WORKING_WORKSHOP_01",
+			"name": "Hard work",
+			"description": "Have 3 Workshops working at the same time",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2707490/b8a6cbd484dd287c9aef2a3854678c0fa3cbcf12.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Build at least three Workshop buildings in your factory.",
+					"Supply all three so they are actively working at the same moment."
+				]
+			}
+		},
+		{
+			"id": "TOWERS_EFFECTS_OBELISKS_01",
+			"name": "Not without my obelisks!",
+			"description": "Have 16 towers affected by any Obelisk",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2707490/b8a6cbd484dd287c9aef2a3854678c0fa3cbcf12.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Unlock Obelisks and place them so their aura covers as many towers as possible.",
+					"Build or reposition towers inside Obelisk ranges until 16 towers are affected at once."
+				]
+			}
+		},
+		{
+			"id": "BOSS_DEFEATED_MUSHROOM",
+			"name": "Totemic Mushroom",
+			"description": "Defeat the Totemic Mushroom",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2707490/b8a6cbd484dd287c9aef2a3854678c0fa3cbcf12.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play Silent Meadows (level 1) — the Totemic Mushroom spawns on night 6 with a large pack of bats, mushrooms, and crabs.",
+					"Raise tower capacity to ~30–35 and prioritize fiery catapults, explosive ballistas, and sticky-acorn cannons for slow.",
+					"Focus fire the boss until it dies (optional for winning the level — you can return later with more meta upgrades)."
+				],
+				"sourceUrl": "https://gamerbase.net/guias/tower-factory-656",
+				"communityNotes": [
+					"Reddit tip: Boss kills grant upgrades claimed from the level-select screen — go back after a boss kill so you do not miss the reward."
+				],
+				"warnings": [
+					"You can win Silent Meadows without killing the boss — return to the level if you skip it early."
+				]
+			}
+		},
+		{
+			"id": "BOSS_DEFEATED_ORC",
+			"name": "Orc King",
+			"description": "Defeat the Orc King",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2707490/b8a6cbd484dd287c9aef2a3854678c0fa3cbcf12.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play Stony Grove (level 2) and survive until the Orc King boss wave.",
+					"Stack AoE towers and slows, then focus the Orc King until it dies.",
+					"Return to level select afterward to claim the boss unlock reward."
+				],
+				"sourceUrl": "https://gamerbase.net/guias/tower-factory-656",
+				"communityNotes": [
+					"Reddit tip: Boss upgrades show up on the level-select screen — check back after a kill."
+				]
+			}
+		},
+		{
+			"id": "BOSS_DEFEATED_BEE",
+			"name": "Fairy Bee",
+			"description": "Defeat the Fairy Bee",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2707490/b8a6cbd484dd287c9aef2a3854678c0fa3cbcf12.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Play Deciduous Pathways (level 3) and hold until the Fairy Bee boss appears.",
+					"Bring strong meta upgrades from earlier bosses, cover chokepoints, and burn the Fairy Bee down.",
+					"Claim the boss reward from level select after the fight."
+				],
+				"sourceUrl": "https://vgtimes.com/games/tower-factory/achievements-and-trophies/"
+			}
+		},
+		{
+			"id": "BOSS_DEFEATED_NAGA",
+			"name": "Supreme Archmagus of the Naga",
+			"description": "Defeat the Supreme Archmagus of the Naga",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2707490/b8a6cbd484dd287c9aef2a3854678c0fa3cbcf12.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Play Wanderer's Glade (level 4) until the Supreme Archmagus of the Naga spawns.",
+					"Use dense tower fields and prior boss unlocks to survive the pack, then focus the Archmagus.",
+					"Return to level select for the unlock reward."
+				],
+				"sourceUrl": "https://vgtimes.com/games/tower-factory/achievements-and-trophies/"
+			}
+		},
+		{
+			"id": "BOSS_DEFEATED_PENGUIN",
+			"name": "Emperor Frostbeak",
+			"description": "Defeat the Emperor Frostbeak",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2707490/2ee2bcac10ca655d24d5882d1c70f3b5e776dbe8.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Play Winter Plateau (level 5) until Emperor Frostbeak appears.",
+					"Bring late-game tower upgrades and keep production online through the boss night, then kill Frostbeak.",
+					"Claim the boss upgrade from the level-select screen."
+				],
+				"sourceUrl": "https://vgtimes.com/games/tower-factory/achievements-and-trophies/",
+				"communityNotes": [
+					"Reddit tip: Later bosses (around level 5–6) may be required before attempting the final map."
+				]
+			}
+		},
+		{
+			"id": "BOSS_DEFEATED_SNOWMAN",
+			"name": "Pontiff of the Blizzard",
+			"description": "Defeat the Pontiff of the Blizzard",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2707490/2ee2bcac10ca655d24d5882d1c70f3b5e776dbe8.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Play Stormswept Gorge (level 6) with full meta progression and earlier boss unlocks.",
+					"Survive until the Pontiff of the Blizzard spawns, then focus it down with your strongest tower synergies.",
+					"Claim the final boss reward from level select."
+				],
+				"sourceUrl": "https://vgtimes.com/games/tower-factory/achievements-and-trophies/"
+			}
+		}
+	]
+}

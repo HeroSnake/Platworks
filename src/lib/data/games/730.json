@@ -1,0 +1,25 @@
+{
+	"$schema": "./schema.json",
+	"appId": 730,
+	"name": "Counter-Strike 2",
+	"totalAchievements": 1,
+	"achievements": [
+		{
+			"id": "A_NEW_BEGINNING",
+			"name": "A New Beginning",
+			"description": "This is Counter-Strike, too.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/730/f75dd04fa12445a8ec43be65fa16ff1b8d2bf82e.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Open Practice Mode and start Training Day (bot practice).",
+					"Complete at least one full round — the secret achievement unlocks."
+				],
+				"sourceUrl": "https://steamhunters.com/apps/730/achievements"
+			}
+		}
+	]
+}

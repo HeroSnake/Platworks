@@ -13,28 +13,72 @@ export interface GetGameDetailsOptions {
 	hero?: boolean;
 }
 
+/** Stable CDN paths that do not need the store API (which Akamai often 403s from Node). */
+function cdnHeaderImage(appId: number): string {
+	return `${ASSETS}/steam/apps/${appId}/header.jpg`;
+}
+
+function cdnBackground(appId: number): string {
+	return `${ASSETS}/steam/apps/${appId}/page_bg_generated_v6b.jpg`;
+}
+
+/**
+ * When `appdetails` is blocked we still return CDN artwork so the library never
+ * renders empty image slots. Name/description stay empty — callers fall back to
+ * local game JSON for the title (`steam?.name || game.name`).
+ */
+function fallbackDetails(appId: number, heroImage: string | null): SteamGameDetails {
+	return {
+		appId,
+		name: '',
+		shortDescription: '',
+		headerImage: cdnHeaderImage(appId),
+		heroImage,
+		background: cdnBackground(appId),
+		metacriticScore: null,
+		metacriticUrl: null
+	};
+}
+
 export async function getGameDetails(
 	appId: number,
 	{ hero = false }: GetGameDetailsOptions = {}
 ): Promise<SteamGameDetails | null> {
-	const res = await fetch(`${STORE_API}/appdetails?appids=${appId}`);
-	if (!res.ok) return null;
+	const heroImage = hero ? await getHeroImage(appId) : null;
 
-	const json = await res.json();
-	const data = json[String(appId)];
-	if (!data?.success) return null;
+	// Without `l=english`, Steam geo-localizes name/description. Browser UA: bare
+	// Node fetches are frequently Access-Denied by Akamai on store.steampowered.com.
+	try {
+		const res = await fetch(`${STORE_API}/appdetails?appids=${appId}&l=english`, {
+			headers: {
+				'User-Agent':
+					'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+				Accept: 'application/json'
+			}
+		});
+		if (res.ok) {
+			const json = await res.json();
+			const data = json[String(appId)];
+			if (data?.success) {
+				const d = data.data;
+				return {
+					appId,
+					name: d.name,
+					shortDescription: d.short_description,
+					headerImage: d.header_image || cdnHeaderImage(appId),
+					heroImage,
+					background: d.background_raw ?? d.background ?? cdnBackground(appId),
+					metacriticScore: d.metacritic?.score ?? null,
+					metacriticUrl: d.metacritic?.url ?? null
+				};
+			}
+		}
+	} catch {
+		/* fall through to CDN-only details */
+	}
 
-	const d = data.data;
-	return {
-		appId,
-		name: d.name,
-		shortDescription: d.short_description,
-		headerImage: d.header_image,
-		heroImage: hero ? await getHeroImage(appId) : null,
-		background: d.background_raw ?? d.background,
-		metacriticScore: d.metacritic?.score ?? null,
-		metacriticUrl: d.metacritic?.url ?? null
-	};
+	// Store API down / 403 — keep images alive via the asset CDN.
+	return fallbackDetails(appId, heroImage);
 }
 
 /**

@@ -226,7 +226,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.steam?.name ?? data.game.name} — PlatWorks</title>
+	<title>{data.steam?.name || data.game.name} — PlatWorks</title>
 </svelte:head>
 
 <div class="relative min-h-screen">
@@ -276,7 +276,7 @@
 
 				<div class="relative flex flex-col justify-end px-4 pt-24 pb-5 sm:px-8 sm:pt-32 sm:pb-6">
 					<h1 class="text-2xl font-bold tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] sm:text-4xl">
-						{data.steam?.name ?? data.game.name}
+						{data.steam?.name || data.game.name}
 					</h1>
 
 					{#if data.steam?.shortDescription}

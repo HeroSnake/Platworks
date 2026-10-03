@@ -1,0 +1,733 @@
+{
+	"$schema": "./schema.json",
+	"appId": 1145360,
+	"name": "Hades",
+	"totalAchievements": 49,
+	"achievements": [
+		{
+			"id": "ESCAPED_TARTARUS",
+			"name": "Escaped Tartarus",
+			"description": "Clear Tartarus",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/062a2b7bdc156af9438bdc440a19833addd2ae38.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Start a run and fight through Tartarus chambers until you defeat the Fury (Megaera / Alecto / Tisiphone).",
+					"Clearing Tartarus unlocks the exit to Asphodel."
+				]
+			}
+		},
+		{
+			"id": "ESCAPED_ASPHODEL",
+			"name": "Escaped Asphodel",
+			"description": "Clear Asphodel",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/202d5cd97dd3b727e0eaa8ffc02a62dcf67cd5d7.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Reach Asphodel after Tartarus, then clear its chambers and defeat the Hydra (Lernie).",
+					"The exit boat takes you to Elysium."
+				]
+			}
+		},
+		{
+			"id": "ARMS_COLLECTOR",
+			"name": "Arms Collector",
+			"description": "Unlock each of the Infernal Arms",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/c44928fe7cd58ab1de32bedc19ad8742e7fbd46b.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Buy each Infernal Arm from the House Contractor courtyard weapon stands (Darkness / keys as required).",
+					"Unlock Stygius, Varatha, Aegis, Coronacht, Twin Fists, Exagryph — and rail/railgun if listed separately in your build."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2231460116"
+			}
+		},
+		{
+			"id": "FRIENDS_IN_HIGH_PLACES",
+			"name": "Friends in High Places",
+			"description": "Use Greater Call to invoke an Olympian's aid",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/7e1ab5c124e5dd635afa5fe19f473c68fcd6c7a0.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Equip a boon that grants a Greater Call (God Gauge ability).",
+					"Fill the God Gauge in combat, then activate the Call to summon that Olympian’s aid."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2231460116"
+			}
+		},
+		{
+			"id": "ESCAPED_ELYSIUM",
+			"name": "Escaped Elysium",
+			"description": "Clear Elysium",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/88462d92e0873977f421761575c97d64a35c7519.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Clear Elysium chambers and defeat Theseus & Asterius in the stadium.",
+					"You then enter Temple of Styx toward the final escape."
+				]
+			}
+		},
+		{
+			"id": "CHTHONIC_COLLEAGUES",
+			"name": "Chthonic Colleagues",
+			"description": "Fulfill the 'Chthonic Colleagues' Prophecy",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/b76ca2f12ea9979c95ae86963f667652d43681a3.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Gift Nectar to underworld residents listed on the prophecy (Skelly, Cerberus, Hypnos, etc.).",
+					"Claim “Chthonic Colleagues” on the Fated List when it completes."
+				]
+			}
+		},
+		{
+			"id": "IS_THERE_NO_ESCAPE",
+			"name": "Is There No Escape?",
+			"description": "Clear an escape attempt",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/1e04b5827b4aaf83024c2fb4a4f442dca3662e84.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Complete a full escape attempt — defeat [Redacted] / clear the final boss for the first time."
+				]
+			}
+		},
+		{
+			"id": "DEATH_DEALER",
+			"name": "Death Dealer",
+			"description": "Beat Thanatos by 15 kills or more",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/7967d292c27c0648e858de0a732e95e261b0ecd7.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"When Thanatos appears mid-run for a kill contest, focus on clearing enemies faster than he does.",
+					"Win the contest by 15 kills or more before the encounter ends."
+				]
+			}
+		},
+		{
+			"id": "SKELLY_SLAYER",
+			"name": "Skelly Slayer",
+			"description": "Slay Skelly 15 times",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/a43007a0bc3131c5eff646d2826a8aed25f46572.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"In the House courtyard, attack the Skelly training dummy until he “dies”.",
+					"Repeat across visits until you have slain him 15 times (progress is cumulative)."
+				]
+			}
+		},
+		{
+			"id": "WELL_STOCKED",
+			"name": "Well Stocked",
+			"description": "Buy 9 'Well of Charon' items in one escape attempt",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/8f2852034f35b54ad9bfa0724edb99e035d4000f.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In a single escape attempt, buy 9 different items from Wells of Charon (the mid-run shops)."
+				]
+			}
+		},
+		{
+			"id": "THREE_HEADED_BOY",
+			"name": "Three-Headed Boy",
+			"description": "Pet Cerberus 10 times",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/e29db983a563aef28a1ba6a82517f0c6a837d97c.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In the House, interact with Cerberus to pet him (when the prompt appears).",
+					"Do this across visits until you reach 10 pets."
+				]
+			}
+		},
+		{
+			"id": "DAY_OR_NIGHT_TRADER",
+			"name": "Day-or-Night Trader",
+			"description": "Trade 20 times with the Wretched Broker",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/4b7482ff88a54dc9b4a45caa47dead8d1974420f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Visit the Wretched Broker in the House lounge and trade resources (Darkness, Gems, Nectar, etc.).",
+					"Complete 20 separate trades — any Broker exchange counts."
+				]
+			}
+		},
+		{
+			"id": "BACK_TO_WORK",
+			"name": "Back to Work",
+			"description": "Earn access to and enter the Administrative Chamber",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/1776a30454aa801d3399011caad961405ec9f002.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Progress Nyx / House story conversations until the Administrative Chamber unlocks.",
+					"Enter the chamber behind the House (west side / Nyx’s work area) once access is granted."
+				]
+			}
+		},
+		{
+			"id": "BLESSED_BY_THE_GODS",
+			"name": "Blessed by the Gods",
+			"description": "Choose 100 different Olympian Boon effects",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/c1643a221427393ed8219c07dc0f9f3d7c03ad6f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Across many runs, pick up Olympian boon rooms and choose different boon effects.",
+					"Aim for rarity variety and every god — 100 unique boon effects total (Codex / memory helps track novelty)."
+				]
+			}
+		},
+		{
+			"id": "BLOOD_BOUND",
+			"name": "Blood Bound",
+			"description": "Max any Weapon Aspect",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/e3bb07b7634343df913679d4339d30ada76b92c9.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Spend Titan Blood at a weapon’s Aspect screen to upgrade one Aspect.",
+					"Raise any single Aspect to its maximum rank (usually rank 5)."
+				]
+			}
+		},
+		{
+			"id": "URGE_TO_SING",
+			"name": "Urge to Sing",
+			"description": "Compel Orpheus to sing again",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/3cdb7ffbc8fa9cef4e0e46fc7fcd0f41063eaa65.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Gift Nectar to Orpheus and progress his story with Nyx / House conversations.",
+					"Continue until Orpheus resumes singing in the House lounge."
+				]
+			}
+		},
+		{
+			"id": "GROWN_CLOSE",
+			"name": "Grown Close",
+			"description": "Forge a bond with any character",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/e60877f10cbb1e5e39d20d11dbbb5d18e241bf23.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Gift Nectar to a character until you unlock their Keepsake.",
+					"Continue gifting Ambrosia / deepening the relationship until you forge a bond (heart / companion path)."
+				]
+			}
+		},
+		{
+			"id": "RIVER_DENIZENS",
+			"name": "River Denizens",
+			"description": "Catch a fish from each region",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/a55792a3a2608483e8eef70455a9607b97c87bf9.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Buy the Fishing Rod from the House Contractor.",
+					"Catch at least one fish in Tartarus, Asphodel, Elysium, Styx, and surface/other listed regions."
+				]
+			}
+		},
+		{
+			"id": "HOME_MAKEOVER",
+			"name": "Home Makeover",
+			"description": "Pay for 50 jobs from the House Contractor",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/4c17f85a0562d743eff491f27a29e80a43267e4d.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Earn Gemstones from runs and spend them at the House Contractor board.",
+					"Purchase 50 separate Contractor jobs (decor, quality-of-life, fishing rod, etc.)."
+				]
+			}
+		},
+		{
+			"id": "THE_FAMILY_SECRET",
+			"name": "The Family Secret",
+			"description": "Complete the main quest in the story",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/003c20be2db8daa201cff8f3273d2f8fcf0b3c4a.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Escape the Underworld and finish the main story quest beats with Persephone.",
+					"Keep talking to characters between runs after your first clear."
+				]
+			}
+		},
+		{
+			"id": "TO_CHARON_S_CREDIT",
+			"name": "To Charon's Credit",
+			"description": "Earn a Loyalty Card",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/f43f1e57a7cac838c15ad7e61936038cf003eecd.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Buy items from Charon’s shops during runs (Wells and Charon shop rooms).",
+					"After enough purchases, Charon awards a Loyalty Card — equip/claim it when offered."
+				]
+			}
+		},
+		{
+			"id": "HAD_TO_HAPPEN",
+			"name": "Had to Happen",
+			"description": "Fulfill any 15 Prophecies",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/9fc644bf5aa2091bc5f1f660e69c4eb5a27c66fd.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In the House of Hades, open the prophecy board (Minor Prophecies).",
+					"Complete and claim any 15 prophecies from that board."
+				]
+			}
+		},
+		{
+			"id": "TOOLS_OF_THE_ARCHITECT",
+			"name": "Tools of the Architect",
+			"description": "Choose 50 different Daedalus Hammer enchantments",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/5cc8c6f4c07269c501cc94d15008bfe935a80036.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In Daedalus Hammer rooms, pick different weapon enchantments across runs.",
+					"Collect 50 unique Hammer upgrades — try every Infernal Arm to widen the pool."
+				]
+			}
+		},
+		{
+			"id": "RARE_COLLECTIBLE",
+			"name": "Rare Collectible",
+			"description": "Equip a Chthonic Companion",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/880d43e5490ecfb7ad5ba2f8c1b2b32911dcfd36.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Deepen a bond with a character who grants a Chthonic Companion (Ambrosia path).",
+					"Equip the Companion from the Keepsake / Companion display before a run."
+				]
+			}
+		},
+		{
+			"id": "MASTER_OF_ARMS",
+			"name": "Master of Arms",
+			"description": "Fulfill the 'Master of Arms' Prophecy",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/abcab80ccd1d60a51fc5a0f395f882d324d937f6.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Unlock each Infernal Arm from the courtyard weapon stands.",
+					"Claim the “Master of Arms” prophecy on the Fated List."
+				]
+			}
+		},
+		{
+			"id": "WEAPON_OF_FATE",
+			"name": "Weapon of Fate",
+			"description": "Clear an escape attempt with a hidden Weapon Aspect",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/06ae59ceaedac2b66b2d7ed8da68d64838c4bb82.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Unlock a hidden Aspect (requires specific NPC dialogue + Titan Blood — e.g. Aspect of Arthur, Lucifer, Gilgamesh, etc.).",
+					"Equip that hidden Aspect and clear a full escape (defeat [Redacted])."
+				]
+			}
+		},
+		{
+			"id": "SOMETHING_FROM_EVERYONE",
+			"name": "Something From Everyone",
+			"description": "Unlock each standard Keepsake",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/d817eec3019bbcc10a17195fd202fb4509a13835.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Gift Nectar to each character who grants a standard Keepsake.",
+					"Collect every standard Keepsake at least once."
+				]
+			}
+		},
+		{
+			"id": "HOLD_THE_ONIONS",
+			"name": "Hold the Onions",
+			"description": "Clear an Infernal Gate without taking damage",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/9c533183452db35626388fe7553f55397804b7db.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Enter an Infernal Gate (chaos gate style challenge room).",
+					"Clear it without taking any damage."
+				]
+			}
+		},
+		{
+			"id": "WELL_VERSED",
+			"name": "Well Versed",
+			"description": "Fully Unlock the Olympians' Codex entries",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/9b59e00276851d852f7b88ed065d47c4e3d5ca59.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Meet each Olympian through boons and exhaust their Codex entry requirements (repeated meetings / story beats).",
+					"Fully unlock every Olympian entry in the Codex."
+				]
+			}
+		},
+		{
+			"id": "WAR_GOD_S_BLOODLUST",
+			"name": "War-God's Bloodlust",
+			"description": "Fulfill the 'War-God's Bloodlust' Prophecy",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/c6cb9013e2ff24fa967d60e339c7a1bf2cf3b0c7.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Take Ares boons and defeat the number of enemies the prophecy requires with his aid.",
+					"Claim “War-God’s Bloodlust” from the Fated List."
+				]
+			}
+		},
+		{
+			"id": "CHAMPION_OF_ELYSIUM",
+			"name": "Champion of Elysium",
+			"description": "Clear Elysium with the 'Extreme Measures' Condition",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/2556b5d122c23c3bf105f99ba0f08e24fae42e05.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Enable the Pact 'Extreme Measures' condition.",
+					"Clear Elysium (beat the EM-empowered Theseus & Asterius) with that condition active."
+				]
+			}
+		},
+		{
+			"id": "MUSICIAN_AND_MUSE",
+			"name": "Musician and Muse",
+			"description": "Fulfill the 'Musician and Muse' Prophecy",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/b423ba32aca9b61638d11b091cd3d846cf4cd9c0.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Progress Orpheus and Eurydice’s storylines (gifts + post-clear conversations).",
+					"Claim the “Musician and Muse” prophecy once their reunion path completes."
+				]
+			}
+		},
+		{
+			"id": "HASTE_OF_HERMES",
+			"name": "Haste of Hermes",
+			"description": "Get 20% dodge chance with the Lambent Plume",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/5dbe89eed58da232615918addfc856441465ca04.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Obtain Hermes’ Lambent Plume keepsake (gift Nectar to Hermes).",
+					"Equip it and clear consecutive chambers without taking damage to stack dodge until you reach 20% dodge chance."
+				]
+			}
+		},
+		{
+			"id": "BAD_CALL",
+			"name": "Bad Call",
+			"description": "Use an Olympian's Greater Call against them in a Trial",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/03cec4faf34c7e6f36206622e52c81bc4879e993.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Enter a Trial of the Gods chamber where two Olympians compete.",
+					"Fill your God Gauge with one god’s Call, then use that Greater Call while fighting the other god’s champions."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2231460116"
+			}
+		},
+		{
+			"id": "THE_USELESS_TRINKET",
+			"name": "The Useless Trinket",
+			"description": "Earn the first of Skelly's prizes",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/4c4be2fc0e6f1c6906e41ac2aa3a9d87985e7a98.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Check Skelly’s statue objectives in the courtyard.",
+					"Meet the first prize requirement (often a clear with a certain weapon or condition) and claim his first prize."
+				]
+			}
+		},
+		{
+			"id": "THANKS_BUT_NO_THANKS",
+			"name": "Thanks, But No Thanks",
+			"description": "Purge a Legendary Boon",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/138da3abcf890220c6807afb13642cc950282466.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Obtain a Legendary boon during a run.",
+					"Visit a Purge / sell fountain (or equivalent remove-boon well) and purge that Legendary boon."
+				]
+			}
+		},
+		{
+			"id": "SLASHED_BENEFITS",
+			"name": "Slashed Benefits",
+			"description": "Fulfill the 'Slashed Benefits' Prophecy",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/49532f6187591c23b3d39760c87e5ad82e7d37c1.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open “Slashed Benefits” on the Fated List.",
+					"Meet its Pact / Mirror conditions as written, clear the requirement, then claim it."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2231460116"
+			}
+		},
+		{
+			"id": "NYX_S_MIRROR",
+			"name": "Nyx's Mirror",
+			"description": "Have at least one rank in each Mirror of Night Talent",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/e8a52646444bacaaf3899bc7bb22f05ab2e5223f.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Unlock Mirror of Night talents with Darkness (and keys for the second side if needed).",
+					"Put at least 1 rank into every talent on both Mirror sides."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2231460116"
+			}
+		},
+		{
+			"id": "NIGHT_AND_DARKNESS",
+			"name": "Night and Darkness",
+			"description": "Fulfill the 'Night and Darkness' Prophecy",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/fa367c6ffb8495cdaac17bdfdccfe358e3a089fe.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Progress Nyx and Chaos storylines (gifts, dialogue after clears).",
+					"Claim “Night and Darkness” when the Fated List marks it complete."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2231460116"
+			}
+		},
+		{
+			"id": "END_TO_TORMENT",
+			"name": "End to Torment",
+			"description": "Fulfill the 'End to Torment' Prophecy",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/437398a6a89d53e5a114fb11bc2ee538e990349e.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Progress Sisyphus / Bouldy story gifts and related prophecies.",
+					"Claim “End to Torment” from the Fated List when finished."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2231460116"
+			}
+		},
+		{
+			"id": "INFERNAL_ARMS",
+			"name": "Infernal Arms",
+			"description": "Unlock all Weapon Aspects",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/35779dd3575af4fcc9b4aa9e42c5639dd4ff5ded.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Spend Titan Blood at the House Contractor / weapon aspects screen.",
+					"Unlock every Weapon Aspect across all Infernal Arms."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2231460116"
+			}
+		},
+		{
+			"id": "DARK_REFLECTIONS",
+			"name": "Dark Reflections",
+			"description": "Fulfill the 'Dark Reflections' Prophecy",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/a0c5d48ab08be24d5da63f5e28876ce619d5992f.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Fulfill “Dark Reflections” on the Fated List (typically Mirror of Night investment goals).",
+					"Claim it once every listed talent requirement is met."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2231460116"
+			}
+		},
+		{
+			"id": "DIVIDED_BY_DEATH",
+			"name": "Divided by Death",
+			"description": "Fulfill the 'Divided by Death' Prophecy",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/1136200c4e397c4ff3af5c97d3f0d16614dac1d7.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Progress Zagreus / Thanatos relationship and related combat meetings.",
+					"Claim “Divided by Death” from the Fated List when the story requirements complete."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2231460116"
+			}
+		},
+		{
+			"id": "ONE_FOR_THE_AGES",
+			"name": "One for the Ages",
+			"description": "Reach the epilogue of the story",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/6065e9fa889e953201201a062d0a8f8dd75e943e.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Continue story conversations after the main ending until the epilogue triggers.",
+					"Requires multiple post-clear runs and gift/talk progress with key characters."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2231460116"
+			}
+		},
+		{
+			"id": "HARSH_CONDITIONS",
+			"name": "Harsh Conditions",
+			"description": "Fulfill the 'Harsh Conditions' Prophecy",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/40d01fbcb70ed7eeb41c98244683895f7b2befec.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Enable multiple Pact of Punishment conditions and clear runs as the prophecy requires.",
+					"Claim “Harsh Conditions” from the Fated List."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2231460116"
+			}
+		},
+		{
+			"id": "SKELLY_S_LAST_LAMENTATIONS",
+			"name": "Skelly's Last Lamentations",
+			"description": "Earn the second of Skelly's prizes",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/5cb095fe7abc9fdf7340bc25637e97fab4fa682d.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Meet Skelly's challenge goals in the courtyard to earn his second prize.",
+					"Check the Skelly statue objectives between runs."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2231460116"
+			}
+		},
+		{
+			"id": "THORN_OF_THANATOS",
+			"name": "Thorn of Thanatos",
+			"description": "Get 30% bonus damage with the Pierced Butterfly",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/97caa23cdfb43ae581ee56c0b3b4eaadd7eda49d.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Obtain Thanatos’ Pierced Butterfly keepsake (gift Nectar to Thanatos).",
+					"Equip it and clear consecutive chambers without taking damage until bonus damage reaches 30%."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2231460116"
+			}
+		},
+		{
+			"id": "COMPLETE_SET",
+			"name": "Complete Set",
+			"description": "Earn all Chthonic Companions",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/aa9c66d2af7aa367490f953e54829b9c95fef474.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Earn every Chthonic Companion through story/heart progress with the related characters."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2231460116"
+			}
+		},
+		{
+			"id": "FRIENDS_FOREVER",
+			"name": "Friends Forever",
+			"description": "Max-rank each standard Keepsake",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1145360/27423565bd81b365b8ec37462e44c6215df26beb.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Raise every standard Keepsake to max rank by clearing encounters while it is equipped.",
+					"Unequip when maxed and rotate — companions/keepsakes from DLC rules follow the in-game list of “standard” keepsakes."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2231460116"
+			}
+		}
+	]
+}

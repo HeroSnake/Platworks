@@ -1,0 +1,958 @@
+{
+	"$schema": "./schema.json",
+	"appId": 1091500,
+	"name": "Cyberpunk 2077",
+	"totalAchievements": 57,
+	"mapUrl": "https://mapgenie.io/cyberpunk-2077/maps/night-city",
+	"achievements": [
+		{
+			"id": "THE_FOOL",
+			"name": "The Fool",
+			"description": "Become a mercenary.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/7975d6e5d790b88f030195e3b1a38e49a5de1c8d.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Finish the prologue / Act 1 until V is operating as a merc in Night City.",
+					"Completing the early story beat that puts you on the streets unlocks this."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "THE_LOVERS",
+			"name": "The Lovers",
+			"description": "Steal the Relic.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/25bab7e2288262ad801664e62f241e2839edb457.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Progress the main job through The Heist.",
+					"Steal the Relic during the Konpeki Plaza heist sequence."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "RIGHT_BACK_AT_YA",
+			"name": "Right Back At Ya",
+			"description": "Kill or incapacitate an enemy who threw a grenade at you.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/33a8a122a08532ec727598142e6b5689ae7eed8b.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"When an enemy throws a grenade, shoot them before it detonates (or kill them immediately after).",
+					"Any weapon works — pistols/SMGs are easiest in close fights."
+				]
+			}
+		},
+		{
+			"id": "THE_WHEEL_OF_FORTUNE",
+			"name": "The Wheel of Fortune",
+			"description": "Interrogate Anders Hellman.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/61c7ccea74b66ef3f5d51c078d900d930346e74a.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Continue the main quest until you capture Anders Hellman.",
+					"Complete the interrogation scene with him."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "STANISLAVSKI_S_METHOD",
+			"name": "Stanislavski's Method",
+			"description": "Use a dialogue option related to V's life path 10 times.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/943a38cb96238b7b020672cf360d9e763dcf6feb.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"In dialogue, pick options tagged with your life path (Nomad / Streetkid / Corpo) when they appear.",
+					"Use 10 life-path dialogue choices across the campaign — early gigs and main jobs offer plenty."
+				]
+			}
+		},
+		{
+			"id": "THE_HERMIT",
+			"name": "The Hermit",
+			"description": "Find Alt Cunningham.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/d1e79618b612be87bff4f5c70b1e825e37b05540.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Follow the main quest into Beyond the Blackwall / Alt Cunningham story beats.",
+					"Complete the mission where you find Alt Cunningham."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "TRUE_SOLDIER",
+			"name": "True Soldier",
+			"description": "Kill or incapacitate 300 enemies using ranged weapons.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/2f63e6b9c0774f8f63b9f053ba9ec145e90c678c.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Kill or incapacitate enemies with guns, tech, or smart weapons (not melee).",
+					"300 kills is cumulative — story + gigs + NCPD scanners will cover it naturally."
+				]
+			}
+		},
+		{
+			"id": "THE_HIGH_PRIESTESS",
+			"name": "The High Priestess",
+			"description": "Talk with Hanako Arasaka.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/8f5eacf50eb2ad11fe9dbd1d3a98c306d54ff545.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Progress the main quest until Hanako Arasaka contacts you.",
+					"Complete the meeting / talk with Hanako (Nocturne Op55N1 lead-in)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "FULL_BODY_CONVERSION",
+			"name": "Full Body Conversion",
+			"description": "Install at least one implant in each system and body part.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/a3acd634e21dea672bb35c0d6a9707ff5079aed1.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Visit a ripperdoc and install at least one cyberware piece in every slot category (Operating System, Frontal Cortex, Arms, Skeleton, Nervous System, Integumentary, Face, Hands, Circulatory, Legs).",
+					"Empty/default starter pieces may not count — buy and install a new implant per system."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "CHRISTMAS_TREE_ATTACK",
+			"name": "Christmas Tree Attack",
+			"description": "Complete a Breach Protocol with a minimum of 3 daemons uploaded.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/8af08786073d0d2ba2374f00eb6bd876c593891e.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"During the related gig/mission, use the environment hazard / explosive set piece.",
+					"Kill the required enemies with that Christmas-tree / festive trap moment."
+				]
+			}
+		},
+		{
+			"id": "LEGEND_OF_THE_AFTERLIFE",
+			"name": "Legend of The Afterlife",
+			"description": "Reach max Street Cred.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/997859e0c89dda10f11a091a566999e68e6f9ce3.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Raise Street Cred by finishing gigs, NCPD Scanner Hustles, and side jobs.",
+					"Street Cred max is 50 — check the character menu progress bar."
+				]
+			}
+		},
+		{
+			"id": "LIFE_OF_THE_ROAD",
+			"name": "Life of the Road",
+			"description": "Complete Panam Palmer's storyline.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/ce6eab1ce0ee6621350749c53e4bace6518e3056.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Follow and finish the full romance/side storyline: Panam Palmer's storyline.",
+					"Keep calling/texting the character until their quest chain ends."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "GUN_FU",
+			"name": "Gun Fu",
+			"description": "Kill or incapacitate 3 enemies in quick succession with a revolver or pistol in close combat.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/96b9d0c95bc80867a61a2870c6ddec9ab424f728.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Use a pistol or revolver at close range.",
+					"Kill/incapacitate 3 enemies in rapid succession (Kerenzikov / Sandevistan helps)."
+				]
+			}
+		},
+		{
+			"id": "THE_WORLD",
+			"name": "The World",
+			"description": "Complete the main storyline.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/25c57ecea783efc3f9d04eec43401264ed5eb9b2.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Follow and finish the full romance/side storyline: the main storyline.",
+					"Keep calling/texting the character until their quest chain ends."
+				]
+			}
+		},
+		{
+			"id": "BUSHIDO_AND_CHILL",
+			"name": "Bushido and Chill",
+			"description": "Watch Bushido X with Rogue.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/ddedbfc44a125a864027e504de48fde92751c7b1.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Progress Rogue’s side content / Afterlife romance-adjacent hangout.",
+					"Watch Bushido X with Rogue when the scene is offered."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "TRUE_WARRIOR",
+			"name": "True Warrior",
+			"description": "Kill or incapacitate 100 enemies using melee weapons.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/714db842d4bbf426994d8cc7450769e75c47da8b.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Kill or incapacitate 100 enemies with melee weapons (katanas, bats, fists, mantis blades, etc.).",
+					"Stack with Blunt/Blade builds or finishers in crowded NCPD fights."
+				]
+			}
+		},
+		{
+			"id": "MASTER_CRAFTER",
+			"name": "Master Crafter",
+			"description": "Craft 3 Legendary items.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/0b30a85424064ad230d3d0b0101fb2f4c731366d.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Unlock Legendary crafting perks / upgrade components as needed.",
+					"Craft 3 separate Legendary items at the crafting panel (weapons or clothing)."
+				]
+			}
+		},
+		{
+			"id": "JUDY_VS_NIGHT_CITY",
+			"name": "Judy vs Night City",
+			"description": "Complete Judy Alvarez's storyline.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/0a1df4318c75f42845fc3a1a28739d8acea3b7e7.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Follow and finish the full romance/side storyline: Judy Alvarez's storyline.",
+					"Keep calling/texting the character until their quest chain ends."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "TWO_HEADS_ONE_BULLET",
+			"name": "Two Heads, One Bullet",
+			"description": "Kill or incapacitate 2 enemies with the same sniper rifle shot.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/26d6c25c2ca7e5877b26347fc05f5eb2dd504bbf.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Use a sniper rifle on two enemies lined up (head/body aligned).",
+					"One shot must kill/incapacitate both — Tech snipers that pierce or careful positioning work."
+				]
+			}
+		},
+		{
+			"id": "TO_PROTECT_AND_SERVE",
+			"name": "To Protect and Serve",
+			"description": "Complete River Ward's storyline.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/a51caf46e315b285be58a7d6cf7013a7b0c44a41.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Follow and finish the full romance/side storyline: River Ward's storyline.",
+					"Keep calling/texting the character until their quest chain ends."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "THE_QUICK_AND_THE_DEAD",
+			"name": "The Quick and the Dead",
+			"description": "Kill or incapacitate 50 enemies while time is slowed.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/7d368314167adc79672ac5ccb090704352f7f733.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Equip Sandevistan or Kerenzikov (or similar time-slow cyberware/perks).",
+					"Kill/incapacitate 50 enemies while time is slowed — cumulative across encounters."
+				]
+			}
+		},
+		{
+			"id": "ALL_THE_PRESIDENT_S_MEN",
+			"name": "All the President's Men",
+			"description": "Save President Myers.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/3945a4e6479605ab55c7dae52857e040d118d5c7.jpg",
+			"types": [
+				"dlc"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play Phantom Liberty and progress the main path involving President Myers.",
+					"Complete the sequence where you save President Myers."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "ARACHNOPHOBIA",
+			"name": "Arachnophobia",
+			"description": "Defeat the Chimera.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/cf77d0555d0222cdcbe7fb19a7e38871c820f230.jpg",
+			"types": [
+				"dlc"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In Phantom Liberty, reach the Chimera boss encounter.",
+					"Defeat the Chimera to unlock the achievement."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "I_AM_THE_LAW",
+			"name": "I Am The Law",
+			"description": "Complete all Cyberpsycho Sightings.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/0b89d8dacb03eabb93041f02e623729ca3e4c41b.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete every Cyberpsycho Sighting (Regina calls / map markers).",
+					"Neutralize each cyberpsycho and send evidence where required."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "THE_WANDERING_FOOL",
+			"name": "The Wandering Fool",
+			"description": "Find all the tarot graffiti for the job Fool on the Hill.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/5fe10094d667c5f6da21589aad5c8ebd07f0e78b.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start/progress the \"Fool on the Hill\" job involving tarot graffiti.",
+					"Photograph/find every tarot graffiti location on the map."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "TEN_OUT_OF_TEN",
+			"name": "Ten out of Ten",
+			"description": "Reach the max level in any skill.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/a9109d1262f0121dd2c4369a5cbbdde0b7c347bb.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Invest perk points / use skills until any one skill tree hits maximum level.",
+					"Focus one tree (e.g. Cool or Body) rather than spreading points."
+				]
+			}
+		},
+		{
+			"id": "BREATHTAKING",
+			"name": "Breathtaking",
+			"description": "Collect all items that once belonged to Johnny Silverhand.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/27664ed21cfe3db65108a6ed1b25e383a6aafdb8.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Collect every item that belonged to Johnny Silverhand (weapons, clothes, items tied to his quests).",
+					"Finish related side content and stash checks until the set is complete."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "THE_SUN",
+			"name": "The Sun",
+			"description": "Become a legend of the Afterlife.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/8bf8ad71b62614b329eab2bac069724d34d69b27.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Build Street Cred and finish the main story on the path that makes V a legend of the Afterlife.",
+					"Choose the solo/Afterlife legend ending at the finale."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "V_FOR_VENDETTA",
+			"name": "V for Vendetta",
+			"description": "After reviving with Second Heart, kill or incapacitate the enemy who killed you within 5 seconds.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/5d34ce9108d8ac3018a1de3a2a485956bb7a9109.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Install the Second Heart cyberware (Circulatory system).",
+					"Die to an enemy, revive via Second Heart, then kill that same enemy within 5 seconds."
+				]
+			}
+		},
+		{
+			"id": "THE_STAR",
+			"name": "The Star",
+			"description": "Leave Night City with the Aldecaldos.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/96506dab554565fd3dc78446a6df17040b353f16.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete Panam's storyline and stay allied with the Aldecaldos.",
+					"Choose the ending that leaves Night City with the Aldecaldos."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/",
+				"warnings": [
+					"Aldecaldos ending — requires Panam/Aldecaldos relationship progress."
+				]
+			}
+		},
+		{
+			"id": "TO_BAD_DECISIONS",
+			"name": "To Bad Decisions!",
+			"description": "Complete Kerry Eurodyne's storyline.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/3ac542374888a4a57a2ef35fb2bf3a5546daaaca.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Follow and finish the full romance/side storyline: Kerry Eurodyne's storyline.",
+					"Keep calling/texting the character until their quest chain ends."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "SPIN_DOCTOR",
+			"name": "Spin Doctor",
+			"description": "Complete \"Run This Town\".",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/b2c92946b6ac64d267e486616ad9a55d7364b4eb.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Progress Judy / related side content until the braindance edit opportunity.",
+					"Complete the braindance editing sequence successfully."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "TEMPERANCE",
+			"name": "Temperance",
+			"description": "Let Johnny Silverhand keep your body.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/c81713b7813e1675add335a1ce778588b70d09f9.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Reach the ending choice involving Johnny Silverhand.",
+					"Choose to let Johnny keep V’s body (Temperance ending)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "MUST_BE_RATS",
+			"name": "Must Be Rats",
+			"description": "Perform the Distract Enemies quickhack 30 times without drawing attention to yourself.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/9f6b540aa3fa924f3600afdff35a763e75454c8c.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Equip a cyberdeck with the Distract Enemies quickhack.",
+					"Use Distract Enemies 30 times while remaining undetected (stealth / remote camera play)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "EASY_COME_EASY_GO",
+			"name": "Easy Come, Easy Go",
+			"description": "Steal the Arasaka medical truck or deliver 10 vehicles to El Capitan.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/594432b0da5af1d3cc01394cc853c04abb5baf4b.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Either steal the Arasaka medical truck during the related Phantom Liberty / story opportunity,",
+					"Or deliver 10 vehicles to El Capitan via his vehicle delivery gigs."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "KING_OF_WANDS",
+			"name": "King of Wands",
+			"description": "Take Songbird to the stars.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/ad8075ab98162f93a200fc6a8c55cccf4c8d1b1d.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"In Phantom Liberty, progress Songbird’s story to the ending choice.",
+					"Choose the path that takes Songbird to the stars / orbital outcome."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "THE_JUNGLE",
+			"name": "The Jungle",
+			"description": "Complete all gigs and NCPD Scanner Hustles in Santo Domingo.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/3162cccaaaa83b1f5b3fe50af30a74d6a1541298.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open the map and clear every Gig and NCPD Scanner Hustle marker in Santo Domingo.",
+					"Use MapGenie / in-game filters — greyed icons mean unfinished."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "DIRTY_DEEDS",
+			"name": "Dirty Deeds",
+			"description": "Complete every Gig in Dogtown.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/d02f68667532c5497561799ccb2dae4692cad14d.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open the Journal gigs list filtered to Dogtown.",
+					"Complete every gig available in Dogtown (Phantom Liberty)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "MEAN_STREETS",
+			"name": "Mean Streets",
+			"description": "Complete all gigs and NCPD Scanner Hustles in Heywood.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/f95b51e241c93e045c9adea4e199d2980b972b6f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open the map and clear every Gig and NCPD Scanner Hustle marker in Heywood.",
+					"Use MapGenie / in-game filters — greyed icons mean unfinished."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "GUNSLINGER",
+			"name": "Gunslinger",
+			"description": "Shoot an enemy grenade in midair with a revolver.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/d13a7170dd835e73cf30a7ee6da0ebf3670c23a1.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Use a revolver and wait for an enemy grenade throw.",
+					"Shoot the grenade in mid-air before it lands — slow-mo cyberware helps."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "FREQUENT_FLYER",
+			"name": "Frequent Flyer",
+			"description": "Find all fast travel dataterms.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/f5aa6c12eef1c0e2a3d102ebf01b3a1048bd6b20.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Find every fast travel dataterm across Night City and the Badlands.",
+					"Tick them off on MapGenie — the achievement unlocks when the last one is discovered."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "CITY_LIGHTS",
+			"name": "City Lights",
+			"description": "Complete all gigs and NCPD Scanner Hustles in City Center.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/31d389c6630c86434f193e7645cc78d22a790bff.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open the map and clear every Gig and NCPD Scanner Hustle marker in City Center.",
+					"Use MapGenie / in-game filters — greyed icons mean unfinished."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "IT_S_ELEMENTARY",
+			"name": "It's Elementary",
+			"description": "Complete all gigs and NCPD Scanner Hustles in Watson.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/b7512099ad421258b91b49ab12d46ffd2bb948da.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open the map and clear every Gig and NCPD Scanner Hustle marker in Watson.",
+					"Use MapGenie / in-game filters — greyed icons mean unfinished."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "GREETINGS_FROM_PACIFICA",
+			"name": "Greetings from Pacifica!",
+			"description": "Complete all gigs and NCPD Scanner Hustles in Pacifica.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/c2294767a5ee7ef08429307a739f99e51e453a97.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open the map and clear every Gig and NCPD Scanner Hustle marker in Pacifica.",
+					"Use MapGenie / in-game filters — greyed icons mean unfinished."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "LITTLE_TOKYO",
+			"name": "Little Tokyo",
+			"description": "Complete all gigs and NCPD Scanner Hustles in Westbrook.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/96ca1665384409e4a0ea76cc7271021da58cc896.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open the map and clear every Gig and NCPD Scanner Hustle marker in Westbrook.",
+					"Use MapGenie / in-game filters — greyed icons mean unfinished."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "AUTOJOCK",
+			"name": "Autojock",
+			"description": "Buy all vehicles available for purchase.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/7ae50754d5cf0c37a73c2e0d4e88410cd51dd5b9.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Buy every vehicle listed for sale from fixers/websites as you level Street Cred.",
+					"Check each district’s vehicle offers — missing one car blocks the unlock."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "THE_DEVIL",
+			"name": "The Devil",
+			"description": "Help Takemura avenge the death of Saburo Arasaka.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/e63819b5dc0e127a2535e4fd76f726b1ba442afa.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Keep Takemura alive through his questline (do not let him die in the story beats that can kill him).",
+					"Choose the ending path where you help Takemura avenge Saburo Arasaka."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/",
+				"warnings": [
+					"Ending-specific — requires the Takemura revenge path. Make saves before the point of no return."
+				]
+			}
+		},
+		{
+			"id": "THE_APB_IS_NOT_ENOUGH",
+			"name": "The APB is Not Enough",
+			"description": "Become Dogtown's most wanted criminal.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/6d73d22167309783b6128282dbd00154df5fb0ae.jpg",
+			"types": [
+				"dlc"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"In Dogtown (Phantom Liberty), raise your wanted / bounty with Barghest forces.",
+					"Keep fighting Barghest until you hit the maximum Dogtown wanted state."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "THE_WASTELAND",
+			"name": "The Wasteland",
+			"description": "Complete all gigs and NCPD Scanner Hustles in the Badlands.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/58f6286727bb4a5a43a373149ff1ede77345b1a8.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open the map and clear every Gig and NCPD Scanner Hustle marker in the Badlands.",
+					"Use MapGenie / in-game filters — greyed icons mean unfinished."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "RELIC_RULER",
+			"name": "Relic Ruler",
+			"description": "Unlock all Perks in the Relic Perk tree.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/79b4c15ba2ec5fa27e4cac0a19cb740cbb53b5ff.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"In Phantom Liberty, collect all 15 Relic perk points (story gifts + Militech data terminals + ICA areas).",
+					"Spend points to unlock every perk in the Relic tree."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3060201765"
+			}
+		},
+		{
+			"id": "ROUGH_LANDING",
+			"name": "Rough Landing",
+			"description": "While Berserk cyberware is active, perform a Superhero Landing to kill or incapacitate 2 enemies.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/514ebb07bb23ed93234a4f299761db840d06bbbb.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Install Berserk cyberware and activate it.",
+					"From a height, perform a Superhero Landing on a group and kill/incapacitate 2 enemies with that landing."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "THE_TOWER",
+			"name": "The Tower",
+			"description": "Complete \"Things Done Changed\".",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/c3c3b1235ae0dde8783ea38bf696c7269a63b3cb.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Unlock the Phantom Liberty ending path that leads to “Things Done Changed”.",
+					"Complete the quest “Things Done Changed”."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "JUDGEMENT_DAY",
+			"name": "Judgement Day",
+			"description": "Eliminate three bosses from the \"Increased criminal activity\" category.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/dffa26250fa32ba85772c75eec4fd7d8765fe157.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"In Dogtown, clear all three \"Increased Criminal Activity\" boss sites.",
+					"Kill each boss and loot the area rewards."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "KING_OF_SWORDS",
+			"name": "King of Swords",
+			"description": "Take Songbird home.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/c6e7c9cc51fde9a554fcf07e5f1114edcc4090c0.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"In Phantom Liberty’s finale branch, take Songbird home (NUSA/Reed path variant)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "DAEMON_IN_THE_SHELL",
+			"name": "Daemon In The Shell",
+			"description": "Kill or incapacitate 3 enemies with one \"Detonate Grenade\" quickhack.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/b3d81a567599dacdbf32fa024e4d9baafc19599b.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Upload Detonate Grenade to enemies who are clustered and carrying grenades.",
+					"One Detonate Grenade quickhack must kill/incapacitate 3 enemies (chain in a tight group)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/"
+			}
+		},
+		{
+			"id": "KING_OF_PENTACLES",
+			"name": "King of Pentacles",
+			"description": "Refuse Songbird's request.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/172f9e9e8e3b8eaeae2bb84feb87127b58353dba.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Reload your late Phantom Liberty save.",
+					"Refuse Songbird's request to unlock this ending achievement."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/",
+				"warnings": [
+					"Phantom Liberty — mutually exclusive with King of Cups. Save beforehand."
+				]
+			}
+		},
+		{
+			"id": "KING_OF_CUPS",
+			"name": "King of Cups",
+			"description": "Fulfill Songbird's request.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1091500/51413a8a5e4f2e9de1c2d76b87d5c7980c9f7344.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Play Phantom Liberty to the final Songbird decision.",
+					"Fulfill Songbird's request (opposite of Refuse)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/cyberpunk-2077-steam/achievements/",
+				"warnings": [
+					"Phantom Liberty — mutually exclusive with King of Pentacles. Save before the final Songbird choice."
+				]
+			}
+		}
+	]
+}

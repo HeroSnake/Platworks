@@ -20,7 +20,8 @@ export const load: PageServerLoad = async () => {
 			const steam = await getGameDetails(g.appId);
 			return {
 				appId: g.appId,
-				name: steam?.name ?? g.name,
+				// `||` not `??`: CDN fallback returns name:'' when appdetails is blocked.
+				name: steam?.name || g.name,
 				totalAchievements: g.totalAchievements,
 				achievementIds: g.achievements.map((a) => a.id),
 				achievementNames: Object.fromEntries(g.achievements.map((a) => [normalizeName(a.name), a.id])),

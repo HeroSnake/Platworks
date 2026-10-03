@@ -1,0 +1,219 @@
+{
+	"$schema": "./schema.json",
+	"appId": 1172470,
+	"name": "Apex Legends",
+	"totalAchievements": 12,
+	"achievements": [
+		{
+			"id": "JUMPMASTER",
+			"name": "Jumpmaster",
+			"description": "Be the Jumpmaster 5 times",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1172470/2828944fd7bb6f31f3f26c957d2dd2aea1e5d3ab.jpg",
+			"types": [
+				"multiplayer",
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"In Battle Royale, be selected as Jumpmaster (or take control of the drop).",
+					"Drop as Jumpmaster in 5 separate matches — the counter is cumulative."
+				]
+			}
+		},
+		{
+			"id": "FULLY_KITTED",
+			"name": "Fully Kitted",
+			"description": "Equip a fully kitted weapon",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1172470/8a11ed285547d9d5e04d3278c61255058da5cfce.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Loot a Fully Kitted (gold) weapon from the Hot Zone, Care Packages, Vaults, Loot Ticks, or fill every attachment slot with legendary parts.",
+					"Equip that fully kitted weapon once during a match."
+				],
+				"sourceUrl": "https://apexlegends.wiki.gg/wiki/Achievements"
+			}
+		},
+		{
+			"id": "KILL_LEADER",
+			"name": "Kill Leader",
+			"description": "Become the Kill Leader",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1172470/88c298423ddcf009d522b6833086bb51f9ee4fe6.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Get at least 3 kills in a match — the first player to reach 3 kills becomes Kill Leader.",
+					"Hold Kill Leader for any amount of time (even one second counts)."
+				],
+				"sourceUrl": "https://apexlegends.wiki.gg/wiki/Achievements",
+				"warnings": [
+					"Having the most kills below 3 does not count — you must reach 3 kills first."
+				]
+			}
+		},
+		{
+			"id": "TEAM_PLAYER",
+			"name": "Team Player",
+			"description": "Respawn a teammate",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1172470/03754c9a8c98ec9362e245a8bd0e8cdbb2e22aea.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Pick up a fallen teammate's banner.",
+					"Use a Respawn Beacon or Mobile Respawn Beacon to bring them back."
+				],
+				"sourceUrl": "https://apexlegends.wiki.gg/wiki/Achievements"
+			}
+		},
+		{
+			"id": "APEX_RECON",
+			"name": "Apex Recon",
+			"description": "Win a game as a recon character",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1172470/aab5291d3cad6c61b4c013494e3b87b9e59db9b1.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Select a Recon Legend (radar icon): Bloodhound, Crypto, Seer, or Vantage.",
+					"Win a Battle Royale match as that Legend."
+				],
+				"sourceUrl": "https://apexlegends.wiki.gg/wiki/Achievements"
+			}
+		},
+		{
+			"id": "APEX_ASSAULT",
+			"name": "Apex Assault",
+			"description": "Win a game as an assault character",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1172470/65bc35fdbe07c89fe3e3b06ab3079e6fc143cc38.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Select an Assault Legend (assault icon): Bangalore, Fuse, Ash, Mad Maggie, or Ballistic.",
+					"Win a Battle Royale match — the old \"Offense\" class maps to Assault after the Season 16 rework."
+				],
+				"sourceUrl": "https://apexlegends.wiki.gg/wiki/Achievements"
+			}
+		},
+		{
+			"id": "DECKED_OUT",
+			"name": "Decked Out",
+			"description": "Equip any 2 legendary equipment items at the same time",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1172470/dc4f9a6c122b4890a3852818cb14430a7ae692b9.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Loot two legendary (gold) equipment pieces — helmet, body armor, backpack, or knockdown shield.",
+					"Equip both at the same time. Best sources: Vaults, Care Packages, legendary Loot Ticks, Cargo Bots, Loot MRVNs."
+				],
+				"sourceUrl": "https://apexlegends.wiki.gg/wiki/Achievements"
+			}
+		},
+		{
+			"id": "APEX_SUPPORT",
+			"name": "Apex Support",
+			"description": "Win a game as a support character",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1172470/527fbb4017b393f13d34bacb1fe58bcc616a1c27.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Select a Support Legend (cross icon): Gibraltar, Lifeline, Mirage, Loba, Newcastle, or Conduit.",
+					"Win a Battle Royale match as that Legend."
+				],
+				"sourceUrl": "https://apexlegends.wiki.gg/wiki/Achievements"
+			}
+		},
+		{
+			"id": "THE_PLAYER",
+			"name": "The Player",
+			"description": "Reach player level 50",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1172470/cde23ba5b41f315f5d399064ed0bb9ff51fc1342.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play Apex matches across modes — XP and challenges count toward account progress.",
+					"Reach the level / badge requirement for this achievement (progress carries between sessions)."
+				]
+			}
+		},
+		{
+			"id": "APEX_CONTROLLER",
+			"name": "Apex Controller",
+			"description": "Win a game as a controller character",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1172470/31a63848bdf4ae32577c6d2bd35e4db6875033a0.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Select a Controller Legend (controller icon): Caustic, Wattson, Rampart, or Catalyst.",
+					"Win a Battle Royale match — this replaced the old Defensive class after Season 16."
+				],
+				"sourceUrl": "https://apexlegends.wiki.gg/wiki/Achievements",
+				"warnings": [
+					"Do not confuse Controller with Support — many former defensive legends moved into Support."
+				]
+			}
+		},
+		{
+			"id": "WELL_ROUNDED",
+			"name": "Well-Rounded",
+			"description": "Deal 5,000 damage with 8 different Legends",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1172470/6f44b7a073fb4fe324f9f12b527a910046f2809c.jpg",
+			"types": [
+				"multiplayer",
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Pick 8 Legends and deal 5,000 damage with each one individually (40,000 total).",
+					"Track progress via Legends → Banners → Trackers → Damage Done. Knockdown Shield and Gibraltar Gun Shield damage do not count."
+				],
+				"sourceUrl": "https://apexlegends.wiki.gg/wiki/Achievements"
+			}
+		},
+		{
+			"id": "APEX_LEGEND",
+			"name": "Apex Legend",
+			"description": "Win a game with 8 different Legends",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1172470/b0f02c79abaea0b5be9a953d07d01dbbf0ebc45a.jpg",
+			"types": [
+				"multiplayer",
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Win Battle Royale matches with 8 different Legends (only BR wins count).",
+					"Rotate Legends after each win until eight unique Champions are recorded."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2283427897"
+			}
+		}
+	]
+}

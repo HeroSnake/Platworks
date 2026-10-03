@@ -1,0 +1,1278 @@
+{
+	"$schema": "./schema.json",
+	"appId": 1716740,
+	"name": "Starfield",
+	"totalAchievements": 82,
+	"mapUrl": "https://mapgenie.io/starfield",
+	"achievements": [
+		{
+			"id": "FOR_ALL_INTO_THE_STARFIELD",
+			"name": "For All, Into the Starfield",
+			"description": "Enter Space for the First Time",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/32e8c71e1505d193d1b6a05d1ee7227a6ae87f0d.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Finish character creation and the mining/tutorial opening.",
+					"Board a ship and enter space for the first time."
+				]
+			}
+		},
+		{
+			"id": "ONE_SMALL_STEP",
+			"name": "One Small Step",
+			"description": "Join Constellation",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/0729dcb8405098120444da084ad31e2e46215b33.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Travel to the Lodge in New Atlantis.",
+					"Join Constellation when Barrett / Sarah invites you."
+				]
+			}
+		},
+		{
+			"id": "DUST_OFF",
+			"name": "Dust Off",
+			"description": "Reach Level 5",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/024f4e6b528023b39445296cfa763b680aa321bf.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Gain XP from quests, exploration, and combat.",
+					"Reach player level 5."
+				]
+			}
+		},
+		{
+			"id": "TRAVELER",
+			"name": "Traveler",
+			"description": "Reach Level 10",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/849bb1c79f96782abd82e3e2a882f47e9411413f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Keep completing activities and main quests.",
+					"Reach player level 10."
+				]
+			}
+		},
+		{
+			"id": "CHIEF_ENGINEER",
+			"name": "Chief Engineer",
+			"description": "Modify a Ship",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/dba2192846b56b838f6909c9ac31cb8d18ac9fb4.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Talk to a Ship Services Technician in any major port.",
+					"Enter the ship builder and install or swap any module, then confirm."
+				]
+			}
+		},
+		{
+			"id": "HOME_SWEET_HOME",
+			"name": "Home Sweet Home",
+			"description": "Build an Outpost",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/c0e641f78bf36e99c8fb62ec4f030fb1a66a7a14.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Land on a planet and open the Outpost beacon placement tool.",
+					"Place an outpost beacon to found an outpost."
+				]
+			}
+		},
+		{
+			"id": "STELLAR_CARTOGRAPHY",
+			"name": "Stellar Cartography",
+			"description": "Visit 20 Star Systems",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/35477dc870a9497baabea175059980163d4e1c81.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Open the star map and grav-jump to new systems.",
+					"Visit 20 different star systems."
+				]
+			}
+		},
+		{
+			"id": "INTO_THE_UNKNOWN",
+			"name": "Into the Unknown",
+			"description": "Complete \"Into the Unknown\"",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/ac71bd1c1f743e4fb0e187a901aec3076add7279.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Follow the Constellation main quest after joining.",
+					"Complete the mission Into the Unknown."
+				]
+			}
+		},
+		{
+			"id": "ELITE",
+			"name": "Elite",
+			"description": "Reach Level 25",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/d8480bcbc955f85195f50809063530394c80a26f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Continue questing and exploring.",
+					"Reach player level 25."
+				]
+			}
+		},
+		{
+			"id": "DARK_MATTER",
+			"name": "Dark Matter",
+			"description": "Eliminate 300 Human Enemies",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/08668813836df2ac9ef358b521e714873c690189.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Fight human enemies in POIs, missions, and settlements.",
+					"Eliminate 300 human enemies (cumulative)."
+				]
+			}
+		},
+		{
+			"id": "PRIVATEER",
+			"name": "Privateer",
+			"description": "Complete 30 Terminal or Misc. Missions",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/07fc185394b324311376354f74884f85631ee7c2.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Take missions from mission boards / kiosks and misc. quest givers.",
+					"Complete 30 terminal or miscellaneous missions."
+				]
+			}
+		},
+		{
+			"id": "SUPRA_ET_ULTRA",
+			"name": "Supra et Ultra",
+			"description": "Join the UC Vanguard",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/01e109cc407b7036244bfc2a533bed6252ddaa2f.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In New Atlantis MAST district, speak to Commander Tuala.",
+					"Complete the UC Vanguard induction to join."
+				]
+			}
+		},
+		{
+			"id": "DEPUTIZED",
+			"name": "Deputized",
+			"description": "Join the Freestar Rangers",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/e9bce0e7385808f68e4569cf2c10f13da8398f74.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Travel to Akila City and speak with the Freestar Rangers at their HQ.",
+					"Complete the joining quest to become a Ranger."
+				]
+			}
+		},
+		{
+			"id": "ALL_THAT_MONEY_CAN_BUY",
+			"name": "All That Money Can Buy",
+			"description": "Complete \"All That Money Can Buy\"",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/51961696e18723d8c78174a095e01ad0df8ac55b.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Continue the main quest to Neon.",
+					"Complete All That Money Can Buy."
+				]
+			}
+		},
+		{
+			"id": "JACKED_IN",
+			"name": "Jacked In",
+			"description": "Access 50 Computers",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/89bc90f7a3ab620f052b9d5917f27aa55c846f5f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Interact with computers in POIs and ships.",
+					"Access 50 computers (hacked or unlocked)."
+				]
+			}
+		},
+		{
+			"id": "FIXER",
+			"name": "Fixer",
+			"description": "Complete 30 Activities",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/8e85a36cd80c9c7a4f6919fe5d581511455ed21b.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Clear Activity quests from your mission log (radiant / city activities).",
+					"Complete 30 Activities."
+				]
+			}
+		},
+		{
+			"id": "ROOK_MEETS_KING",
+			"name": "Rook Meets King",
+			"description": "Join the Crimson Fleet",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/7091e3c0f26ad8b78f44af109b97034acd106522.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Get arrested by UC SysDef or seek out the Crimson Fleet / The Key.",
+					"Join the Crimson Fleet questline."
+				]
+			}
+		},
+		{
+			"id": "FURTHER_INTO_THE_UNKNOWN",
+			"name": "Further Into the Unknown",
+			"description": "Complete \"Further Into the Unknown\"",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/d56af90695dc30d53cd28625448b875a05824fd3.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Resume the Constellation main quest.",
+					"Complete Further Into the Unknown."
+				]
+			}
+		},
+		{
+			"id": "CYBER_JOCKEY",
+			"name": "Cyber Jockey",
+			"description": "Bypass 50 Digital Locks",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/f4919bf7a887b80e43db9b84b08065ffd1d8228a.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Invest in the Security skill and carry digipicks.",
+					"Successfully bypass 50 digital locks."
+				]
+			}
+		},
+		{
+			"id": "HIGH_PRICE_TO_PAY",
+			"name": "High Price to Pay",
+			"description": "Complete \"High Price to Pay\"",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/461bedee3e5ae1764315a5f00bf951a61083ba25.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Advance the main story after Further Into the Unknown.",
+					"Complete High Price to Pay."
+				]
+			}
+		},
+		{
+			"id": "BACK_TO_THE_GRIND",
+			"name": "Back to the Grind",
+			"description": "Join Ryujin Industries",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/2d07a62b571fe140ba14de94147442867fa21428.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Travel to Ryujin Tower in Neon.",
+					"Apply / complete the interview to join Ryujin Industries."
+				]
+			}
+		},
+		{
+			"id": "SURGICAL_STRIKE",
+			"name": "Surgical Strike",
+			"description": "Complete \"Surgical Strike\"",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/a9689fe39a8c52875e1e015d431d63578a44276d.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Join Ryujin (Back to the Grind), then continue Imogene’s missions.",
+					"Complete Surgical Strike."
+				]
+			}
+		},
+		{
+			"id": "IN_THEIR_FOOTSTEPS",
+			"name": "In Their Footsteps",
+			"description": "Complete \"In Their Footsteps\"",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/208c36b009be56a5ac5cc103ca829142d840955b.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Continue the main quest markers.",
+					"Complete In Their Footsteps."
+				]
+			}
+		},
+		{
+			"id": "THE_DEVILS_YOU_KNOW",
+			"name": "The Devils You Know",
+			"description": "Complete \"The Devils You Know\"",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/99b8e444eccaa43587b11f657d1397a349fccd0f.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Continue the UC Vanguard / Terrormorph investigation arc.",
+					"Complete The Devils You Know."
+				]
+			}
+		},
+		{
+			"id": "THE_BEST_THERE_IS",
+			"name": "The Best There Is",
+			"description": "Complete \"The Best There Is\"",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/2c26f017b9bf8cd7df307960fb9ba32b2ce1c8e6.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Progress Crimson Fleet missions after joining.",
+					"Complete The Best There Is."
+				]
+			}
+		},
+		{
+			"id": "THE_HAMMER_FALLS",
+			"name": "The Hammer Falls",
+			"description": "Complete \"The Hammer Falls\"",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/d4d7505e45e98974f6f0886a4df27c7bc7b18257.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Progress the Freestar Rangers questline.",
+					"Complete The Hammer Falls."
+				]
+			}
+		},
+		{
+			"id": "A_LEGACY_FORGED",
+			"name": "A Legacy Forged",
+			"description": "Complete \"A Legacy Forged\"",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/7af810752e6f540f931576c24eda222078abd3e1.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Finish the UC Vanguard questline after The Devils You Know.",
+					"Complete A Legacy Forged."
+				]
+			}
+		},
+		{
+			"id": "ENTANGLED",
+			"name": "Entangled",
+			"description": "Complete \"Entangled\"",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/9ea68a164ee28daf394e7146a8d14c3dcccc5878.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Travel to the Nishina Research Station when the main quest sends you.",
+					"Complete Entangled (either resolution finishes the quest)."
+				]
+			}
+		},
+		{
+			"id": "UNEARTHED",
+			"name": "Unearthed",
+			"description": "Complete \"Unearthed\"",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/18b74ba228866e60e062d27e60429099b7ff3278.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Follow the main quest to the NASA / ancient site objectives.",
+					"Complete Unearthed."
+				]
+			}
+		},
+		{
+			"id": "LEGACY_S_END",
+			"name": "Legacy's End",
+			"description": "Complete \"Legacy's End\"",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/712b9f042342e3adf02f067416bd1bc82d11dae7.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Finish the Crimson Fleet vs SysDef finale.",
+					"Complete Legacy’s End (Fleet or SysDef side both count)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/",
+				"warnings": [
+					"Your allegiance choice changes the ending, but either completion grants the achievement."
+				]
+			}
+		},
+		{
+			"id": "INDUSTRIALIST",
+			"name": "Industrialist",
+			"description": "Produce 500 Total Resources from Outposts",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/89f2d24e221d9392764c785a6b895fd1db636440.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Build extractors at outposts and let them run.",
+					"Produce 500 total resources from outposts."
+				]
+			}
+		},
+		{
+			"id": "WAR_OF_ANGELS",
+			"name": "War of Angels",
+			"description": "Collect 20 Quantum Essence",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/8b8ced6960bf1ff00d07bf830b0691baf45b13d6.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Defeat Starborn enemies (main quest / NG+ / temples).",
+					"Collect 20 Quantum Essence from fallen Starborn."
+				]
+			}
+		},
+		{
+			"id": "ONE_GIANT_LEAP",
+			"name": "One Giant Leap",
+			"description": "Complete \"One Giant Leap\"",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/2f7121980c065588dfead3f130d8326ab0d8093d.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Finish the remaining main-quest steps to Unity.",
+					"Complete One Giant Leap."
+				]
+			}
+		},
+		{
+			"id": "GUILTY_PARTIES",
+			"name": "Guilty Parties",
+			"description": "Complete \"Guilty Parties\"",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/c9a6bd700a9c9ed00fc24cb1cea85acb8f1bfce6.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Continue Ryujin Industries missions.",
+					"Complete Guilty Parties."
+				],
+				"warnings": [
+					"Choice-heavy quest — finish it fully either way for the achievement."
+				]
+			}
+		},
+		{
+			"id": "ANOTHER_BUG_HUNT",
+			"name": "Another Bug Hunt",
+			"description": "Eliminate 300 Creatures",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/b7cb12d0e6fc26f510362977b677260573881320.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Hunt fauna / xenofauna on planets and in caves.",
+					"Eliminate 300 creatures (cumulative)."
+				]
+			}
+		},
+		{
+			"id": "SPACE_OPERA",
+			"name": "Space Opera",
+			"description": "Reach Level 50",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/07d5d87a3b7565efcefcf824d0061a34fceda231.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Push faction quests and exploration for XP.",
+					"Reach player level 50."
+				]
+			}
+		},
+		{
+			"id": "REPLICATOR",
+			"name": "Replicator",
+			"description": "Craft 100 Items",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/32a8d964f05e6239a2db721686aad43cfb1b7a3f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Use industrial / pharmaceutical / weapon workbenches.",
+					"Craft 100 items total."
+				]
+			}
+		},
+		{
+			"id": "EXECUTIVE_LEVEL",
+			"name": "Executive Level",
+			"description": "Complete \"Executive Level\"",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/4362c63ef1cb2283d2307dec2e08e89a60a57662.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Finish the remaining Ryujin quests after Guilty Parties.",
+					"Complete Executive Level."
+				]
+			}
+		},
+		{
+			"id": "STARCROSSED",
+			"name": "Starcrossed",
+			"description": "Reach Maximum Relationship Level with a Companion",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/9cf53ab9239c46871ad135a992e16f78a5188357.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Travel with a romanceable companion and pick affinity-friendly dialogue.",
+					"Reach the maximum relationship rank / commitment scene."
+				]
+			}
+		},
+		{
+			"id": "SOLDIER_OF_FORTUNE",
+			"name": "Soldier of Fortune",
+			"description": "Mod 50 Weapons",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/62ad3ff5aa5271d0c8c8e971d33ebe03ad5319d4.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Use a Weapon Workbench to attach mods.",
+					"Mod 50 weapons (repeat mods on different guns counts)."
+				]
+			}
+		},
+		{
+			"id": "I_USE_THEM_FOR_SMUGGLING",
+			"name": "I Use Them For Smuggling",
+			"description": "Successfully Smuggle Contraband",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/27d5e5759831f46e94ee1045847e16c6155ba49f.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Carry Contraband in a shielded cargo bay.",
+					"Pass through a scan without being caught (or dump evidence after a successful sneak-through)."
+				]
+			}
+		},
+		{
+			"id": "THIRST_FOR_KNOWLEDGE",
+			"name": "Thirst for Knowledge",
+			"description": "Read 20 Skill Magazines",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/6764fa547799ba520a22e9295e6200efe61df692.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Loot Skill Magazines from POIs and settlements.",
+					"Read 20 different skill magazines."
+				]
+			}
+		},
+		{
+			"id": "THE_FAMILY_YOU_CHOOSE",
+			"name": "The Family You Choose",
+			"description": "Recruit 10 Separate Companions",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/08596968cfb9c43f094be60b0e25b18d308a3cc8.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Recruit companions from Constellation, factions, and unique NPCs.",
+					"Recruit 10 separate companions over the playthrough."
+				]
+			}
+		},
+		{
+			"id": "BOOTS_ON_THE_GROUND",
+			"name": "Boots on the Ground",
+			"description": "Land on 100 Planets",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/28bc63c37d0d551c938de248102abc4a8962b1c7.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Land your ship on planet/moon surfaces across the Settled Systems.",
+					"Accumulate 100 distinct planetary landings."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "ROCK_COLLECTION",
+			"name": "Rock Collection",
+			"description": "Gather 500 Inorganic Resources",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/b4d081d53841d565833cd6eb6a747ebbdf469017.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Mine inorganic nodes with the cutter or outpost extractors.",
+					"Gather 500 inorganic resources."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "FLEET_COMMANDER",
+			"name": "Fleet Commander",
+			"description": "Collect 10 Ships",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/177d2cbed272fe6490be178d188ffee5e474178b.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Buy ships, capture them via boarding, or earn quest rewards.",
+					"Own 10 ships in your collection."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "REACH_FOR_THE_STARS",
+			"name": "Reach for the Stars",
+			"description": "Reach Level 100",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/2663b5f3a2f8b20e260177569ebfca4b4a8e187b.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Plan a long grind (NG+ Unity loops help).",
+					"Reach player level 100."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "WHAT_REMAINS",
+			"name": "What Remains",
+			"description": "Complete “What Remains”",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/1867aab589670a53f3957fbf225478def3b04bbb.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Start the Shattered Space DLC and follow the Va’ruun’kai intro.",
+					"Complete What Remains."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "THE_STARS_MY_DESTINATION",
+			"name": "The Stars My Destination",
+			"description": "Visit all Star Systems",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/bff65c4959d6ec96d4a8c9b40b76a43a59b722eb.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Use a star-system checklist (MapGenie / wiki list).",
+					"Grav-jump until every star system has been visited."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "THE_PROMISED_BROKEN",
+			"name": "The Promised, Broken",
+			"description": "Complete “The Promised, Broken”",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/f31b2af306dd35170d0a29e03ea2ea5dd20de8e3.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Continue the Shattered Space main quest.",
+					"Complete The Promised, Broken."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "ZEALOUS_OVERREACH",
+			"name": "Zealous Overreach",
+			"description": "Complete \"Zealous Overreach\"",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/716af36a2361405fe5cf9be513dd6444c34a4837.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Progress Shattered Space story missions.",
+					"Complete Zealous Overreach."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "THE_OTHER_SIDE",
+			"name": "The Other Side",
+			"description": "Complete “The Other Side”",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/8c06ee175153e459c4a226533063be4504604bf6.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Follow DLC main-quest markers into the Vortex-related objectives.",
+					"Complete The Other Side."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "CONFLICT_IN_CONVICTION",
+			"name": "Conflict in Conviction",
+			"description": "Complete \"Conflict in Conviction\"",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/5e3f8a6a7ed90b0021a3f368b883afe5fc9eee9f.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Continue the DLC narrative.",
+					"Complete Conflict in Conviction."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "EXHUMING_THE_PAST",
+			"name": "Exhuming the Past",
+			"description": "Complete \"Exhuming the Past\"",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/c80e56e56eafd54aa59257ec7b6d929d0d54e402.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Follow the DLC archaeology / ruin questline.",
+					"Complete Exhuming the Past."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "THE_SCALED_CITADEL",
+			"name": "The Scaled Citadel",
+			"description": "Complete \"The Scaled Citadel\"",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/de810131400569fbfc7ca6745f6211f81ba4597f.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Reach the endgame citadel mission in Shattered Space.",
+					"Complete The Scaled Citadel."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "SHIPPING_MAGNATE",
+			"name": "Shipping Magnate",
+			"description": "Connect 5 Outposts with Cargo Links",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/9d28e9a9cb5046cf7c4ef8a04f12b884dfcccb71.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Build at least five outposts and research Cargo Links.",
+					"Connect 5 outposts together with cargo links."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "FACING_YOUR_FEARS",
+			"name": "Facing Your Fears",
+			"description": "Defeat 25 Vortex Horrors",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/1151684cdb607fabaea0936853ed1abd9843cb64.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Fight Vortex Horrors in Shattered Space areas.",
+					"Defeat 25 Vortex Horrors."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "FULLY_EQUIPPED",
+			"name": "Fully Equipped",
+			"description": "Find a spaceship equipment module schematic and install an equipment module on your ship",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/8bb0bdf19acdfbf607fa3913942ae5b3e2c53d0f.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Find a spaceship equipment module schematic.",
+					"Install an equipment module on your ship at a ship builder / relevant station."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "LIFE_BEGETS_LIFE",
+			"name": "Life Begets Life",
+			"description": "Gather 500 Organic Resources",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/5015b93446a2d22ef7d956edc2344dc7bd012dc9.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Harvest plants/creatures or use outpost organic extractors.",
+					"Gather 500 organic resources."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "LOST_LUXURY",
+			"name": "Lost Luxury",
+			"description": "Complete “Lost Luxury”",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/35fd84ec5745e3483f2681c9de72b0a83c260ca5.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Pick up the Lost Luxury quest when available in the update content.",
+					"Complete Lost Luxury."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "TOP_TIER",
+			"name": "Top Tier",
+			"description": "Apply a Rank 4 Legendary Effect to a piece of your equipment",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/8afc8fca0c9ba72e3d278b0380759c35838d9553.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Obtain a legendary effect applicable to gear.",
+					"Apply a Rank 4 Legendary Effect to a piece of equipment."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "INCURSION_FIGHTER",
+			"name": "Incursion Fighter",
+			"description": "Clear out 5 Incursions",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/5e3bc439baef66cc19dbb28d1deac7e29ba58a8d.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Respond to Incursion activity sites.",
+					"Clear out 5 Incursions."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "REDEMPTION_ARC",
+			"name": "Redemption Arc",
+			"description": "Defeat 10 Redeemed",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/1a78ce1f7a425b5932d735743a7da008352f4012.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Engage Redeemed enemies in DLC content.",
+					"Defeat 10 Redeemed."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "INTO_THE_VOID",
+			"name": "Into the VOID",
+			"description": "Complete “Into the VOID”",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/54ad1879f13feb2030a843e2cc423c61e878e461.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Start the VOID-related update questline when it appears.",
+					"Complete Into the VOID."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "SAVIOR_OF_THE_PROMISED",
+			"name": "Savior of the Promised",
+			"description": "Aid the People of Va’ruun’kai",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/4e1293ac5171ed14de14e4dc53028d8cc20447bf.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Choose the DLC ending that aids Va’ruun’kai’s people.",
+					"Finish the finale on that path."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/",
+				"warnings": [
+					"Ending-dependent — pick the aid-the-people outcome."
+				]
+			}
+		},
+		{
+			"id": "THE_GREAT_UNKNOWN",
+			"name": "The Great Unknown",
+			"description": "Discover 50 Locations on Va’ruun’kai",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/f810c8a63c6c8e4740b3460ae02127e430a45dcc.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Explore Va’ruun’kai and discover map locations / POIs.",
+					"Discover 50 locations on Va’ruun’kai."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "BATTLE_OF_THE_UNIFIER",
+			"name": "Battle of the Unifier",
+			"description": "Complete “Battle of the Unifier”",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/8c851d0cf1391eaff008aea2896d42984f02e559.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Progress the update story to the Unifier conflict.",
+					"Complete Battle of the Unifier."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "THIS_FOR_THAT",
+			"name": "This for That",
+			"description": "Build out and hand over an outpost to a faction",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/5d08f5dafc36029b6ae55934dfea8ae3c9c3625a.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Build an outpost that meets a faction hand-over requirement.",
+					"Transfer/hand the outpost to the requesting faction."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "OVERCLOCKED",
+			"name": "Overclocked",
+			"description": "Fully upgrade Delta",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/e9ff49c2ca4768b5d6c7bd8b401145719a258029.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Progress Delta’s upgrade quests/vendors in the update content.",
+					"Fully upgrade Delta."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "HALF_THE_BATTLE",
+			"name": "Half the Battle",
+			"description": "Let Sarah Morgan know about her action figure",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/a8d832831dab83c2c1652a260da8fb0f3e7340ed.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Collect Sarah Morgan’s action figure (misc. collectible).",
+					"Speak to Sarah Morgan and tell her about the figure."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "FIVE_OF_A_KIND",
+			"name": "Five of a Kind",
+			"description": "Craft one of each type of Vortex Grenade",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/4df2851884cda043e4891e9fae8a8735bc9dd830.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Gather Vortex Grenade crafting materials in Shattered Space.",
+					"Craft one of each Vortex Grenade type."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "QUANTUM_HOARDER",
+			"name": "Quantum Hoarder",
+			"description": "Retrieve your inventory from another universe",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/f580ccc7bd6d47a51fcd2a68410be5af942c1f5f.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Enter Unity / NG+ after leaving gear behind.",
+					"Use the mechanic that retrieves your inventory from another universe."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "INCURSION_EXTERMINATOR",
+			"name": "Incursion Exterminator",
+			"description": "Clear out 15 Incursions",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/2d48b02dcfd940902f7d0069281bf9329b60b8e1.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Keep clearing Incursion sites.",
+					"Clear out 15 Incursions."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "JUST_LIKE_GRANDMA_USED_TO_MAKE",
+			"name": "Just Like Grandma Used to Make",
+			"description": "Eat the questionable food offered by a spacefaring Old Woman",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/f085b3fd63afccedd84a7ebb93d65291c3f33892.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Find the spacefaring Old Woman encounter.",
+					"Accept and eat the questionable food she offers."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "GREATER_THAN",
+			"name": "Greater Than",
+			"description": "Convince Delta that you are worthy of the title Captain",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/03937d3930f19b16e4c95311842385c7d662e7ed.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Follow Delta’s questline dialogue checks.",
+					"Succeed in convincing Delta you deserve the Captain title."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "MASTER_OF_MAGNETISM",
+			"name": "Master of Magnetism",
+			"description": "Use a magnet to destroy the robot for Ivica in New Babylon",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/3f3530d128e29b64b0976a85023bef1ebfe0076a.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"In New Babylon, speak with Ivica about the robot problem.",
+					"Use a magnet to destroy the robot as requested."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "INCURSION_ELIMINATOR",
+			"name": "Incursion Eliminator",
+			"description": "Clear out 30 Incursions",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/f76be6862cd582785d534e35ff411592ab39e4a1.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Farm Incursion locations across systems.",
+					"Clear out 30 Incursions."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "STAY_OF_EXECUTION",
+			"name": "Stay of Execution",
+			"description": "Stop Bernhard from killing Caruso",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/ec9b6f83cd3d0551ee719d8ce489a2e703d24804.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Find the Bernhard / Caruso confrontation event.",
+					"Intervene and stop Bernhard from killing Caruso."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "RIDDLE_MANAGEMENT",
+			"name": "Riddle Management",
+			"description": "Prevent any deaths by answering riddles",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/f619653a52f3232c7e0ed29fed9ff141cb3e9b0b.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Encounter the riddle sequence in the update content.",
+					"Answer every riddle correctly so nobody dies."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "LESS_THAN",
+			"name": "Less Than",
+			"description": "Prove the superiority of artificial life",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/5d7fe0506d7b427ea1d9f06bfcce57caa830c158.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Follow the artificial-life / Delta-related quest branch.",
+					"Complete the outcome that proves artificial life’s superiority."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "THEY_RE_NOT_TOYS",
+			"name": "They’re Not Toys!",
+			"description": "Collect all Action Figures",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/3f38eafd1dc2c259de2672500a843b74f4798bd1.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Collect action figures from POIs across the Settled Systems.",
+					"Obtain every action figure on the checklist."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		},
+		{
+			"id": "CONTRACT_KILLER",
+			"name": "Contract Killer",
+			"description": "Kill 10 targets for the Arbitrator",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1716740/74e2d0ebec1d5521c36464a840a1271d3d33c5da.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Take contracts from the Arbitrator.",
+					"Kill 10 assigned targets for them."
+				],
+				"sourceUrl": "https://www.exophase.com/game/starfield-steam/achievements/"
+			}
+		}
+	]
+}

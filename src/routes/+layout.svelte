@@ -16,7 +16,8 @@
 	let isHome = $derived(page.url.pathname === '/');
 	let isGamePage = $derived(page.url.pathname.startsWith('/game/'));
 	let gameName = $derived(
-		isGamePage ? ((page.data as any)?.steam?.name ?? (page.data as any)?.game?.name ?? '') : ''
+		// `||` — CDN fallback leaves steam.name as '' when appdetails is blocked.
+		isGamePage ? ((page.data as any)?.steam?.name || (page.data as any)?.game?.name || '') : ''
 	);
 	let showSteamId = $state(false);
 	let steamId = $state(browser ? (localStorage.getItem('platworks:steamId') ?? '') : '');
@@ -118,7 +119,7 @@
 	<nav class="sticky-nav sticky top-0 z-50 border-b border-white/5 bg-steam-dark/80 backdrop-blur-md">
 		<!-- Taller on mobile (64px vs 56px) so the controls get real thumb-sized hit
 		     areas; every interactive element in here is 44px wide below `sm`. -->
-		<div class="mx-auto flex h-16 max-w-5xl items-center gap-2 px-3 sm:h-14 sm:gap-2.5 sm:px-4">
+		<div class="flex h-16 w-full items-center gap-2 px-3 sm:h-14 sm:gap-2.5 sm:px-6 lg:px-8">
 			{#if !isHome}
 				<a
 					href="/"

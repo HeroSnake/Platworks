@@ -1,0 +1,1294 @@
+{
+	"$schema": "./schema.json",
+	"appId": 292030,
+	"name": "The Witcher 3: Wild Hunt",
+	"totalAchievements": 78,
+	"mapUrl": "https://mapgenie.io/witcher-3",
+	"achievements": [
+		{
+			"id": "LILAC_AND_GOOSEBERRIES",
+			"name": "Lilac and Gooseberries",
+			"description": "Find Yennefer of Vengerberg.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/6078587189483353f06f48d0eefdaaa0791e9e13.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Finish the White Orchard prologue and travel to Velen.",
+					"Progress the main quest until you reunite with Yennefer (Lilac and Gooseberries questline)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "BUTCHER_OF_BLAVIKEN",
+			"name": "Butcher of Blaviken",
+			"description": "Kill at least 5 opponents in under 10 seconds.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/76e5ab1da1c29adf03f4bafe14f1dc098bd3ecc7.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Kill at least 5 opponents in under 10 seconds.",
+					"Use the quest journal and map filters if the target is location-gated."
+				]
+			}
+		},
+		{
+			"id": "FIST_OF_THE_SOUTH_STAR",
+			"name": "Fist of the South Star",
+			"description": "Defeat an opponent in a fistfight without taking any damage.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/892ee6bff989959ea26f353157a1e48f33c9e968.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find fistfight tournament / challenger NPCs in taverns and notice boards.",
+					"Win a fistfight without taking any damage — keep blocks high and counter."
+				]
+			}
+		},
+		{
+			"id": "LET_S_COOK",
+			"name": "Let's Cook!",
+			"description": "Learn 12 potion formulae.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/cc738e3d91875361de309e67d887dab9dd684851.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Open the Alchemy menu and learn a potion, oil, or bomb formula from a recipe.",
+					"Craft that mixture at a campfire / alchemy surface."
+				]
+			}
+		},
+		{
+			"id": "CAN_T_TOUCH_THIS",
+			"name": "Can't Touch This!",
+			"description": "Kill 5 foes in a fight without taking damage (except for Toxicity) and without using the Quen Sign.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/e6ab11c635a0e099b82943671ef77433f338fd64.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Kill an enemy using only your fists (no sword/signs finishing if it blocks progress).",
+					"Easiest on a weak drowners / bandits after leveling a bit."
+				]
+			}
+		},
+		{
+			"id": "BOOKWORM",
+			"name": "Bookworm",
+			"description": "Read 30 books, journals or other documents.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/ac3230e2cf5420c9aec901bab804f59b55421f88.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Read books and documents from loot, vendors, and quest rewards.",
+					"Read 30 different books/documents total."
+				]
+			}
+		},
+		{
+			"id": "FAMILY_COUNSELOR",
+			"name": "Family Counselor",
+			"description": "Find the baron's wife and daughter.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/883f82ffa933d6d12da3e8733f340b082a08c325.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete the Bloody Baron questline in Velen (Family Matters).",
+					"Find Anna and Tamara to finish the baron’s family subplot."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/",
+				"warnings": [
+					"Some outcomes change based on your choices with the Whispering Hillock — finish Family Matters carefully."
+				]
+			}
+		},
+		{
+			"id": "FRIENDS_WITH_BENEFITS",
+			"name": "Friends With Benefits",
+			"description": "Complete the subplot involving Keira Metz.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/bdd4d0466a3aca46ff416c3f3ee72d5a1ab4e777.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete Keira Metz’s side quests in Velen (including For the Advancement of Learning).",
+					"Send her to Kaer Morhen when given the choice — do not kill her or leave her hostile."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/",
+				"warnings": [
+					"Missable. Killing Keira or failing her questline locks this out for the playthrough."
+				]
+			}
+		},
+		{
+			"id": "BOMBARDIER",
+			"name": "Bombardier",
+			"description": "Collect the formulae for 6 different bomb types.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/0a0e169c93d95d9d44ebce034df859daba1d56fd.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Buy or loot bomb recipes from herbalists and quest rewards.",
+					"Learn formulae for 6 different bomb types in the Alchemy panel."
+				]
+			}
+		},
+		{
+			"id": "TRIPLE_THREAT",
+			"name": "Triple Threat",
+			"description": "Kill 3 opponents in one fight using 3 different methods (swords, bombs, crossbow, Signs, etc.).",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/2f1359c55f3ead5c6cfcc7ad19d4ffad4b583680.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In one combat encounter, kill three enemies using three different method categories.",
+					"Example mix: sword kill + Igni/Aard kill + bomb or crossbow kill before the fight fully ends."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "A_FRIEND_IN_NEED",
+			"name": "A Friend in Need",
+			"description": "Find and free Dandelion.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/07bae88f1ee9b856ddfc1d8e28ae7eedd4bcde95.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Follow the Novigrad main quests hunting for Dandelion.",
+					"Complete the quest chain that frees him (Get Junior / Count Reuven’s Treasure path)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "SHRIEKER",
+			"name": "Shrieker",
+			"description": "Complete the contract on the shrieker.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/15ba42e467dd64b4d4be2d2d686a7d5e5cadbd5a.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find the notice-board contract for the shrieker and accept it.",
+					"Track the quest, kill the target, and turn the contract in."
+				]
+			}
+		},
+		{
+			"id": "NECROMANCER",
+			"name": "Necromancer",
+			"description": "Help Yennefer extract information from Skjall's body.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/652e39d4e750183a390a4e9f2f99018c1b335a20.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In Skellige, continue Yennefer’s questline after finding Skjall.",
+					"Help her perform the necromancy ritual on Skjall’s body."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "ENVIRONMENTALLY_UNFRIENDLY",
+			"name": "Environmentally Unfriendly",
+			"description": "Kill 50 opponents using the environment (e.g. swamp gas, insects or objects).",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/dd53b81dd01f0e5e192a3dd74f3be85d2d352887.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Detonate swamp gas with Igni, knock foes into spikes, or use nest insects.",
+					"Get 50 environmental kills total."
+				]
+			}
+		},
+		{
+			"id": "MUTANT",
+			"name": "Mutant",
+			"description": "Fill all mutagen slots.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/460a057757aa460c17cb4f9a47edb64b80d82baa.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Unlock mutagen slots via ability points / Greater Mutagens progression.",
+					"Fill every mutagen slot on the character panel at once."
+				]
+			}
+		},
+		{
+			"id": "FIRE_IN_THE_HOLE",
+			"name": "Fire in the Hole",
+			"description": "Destroy 10 monster nests using bombs.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/18278d6acee5b23a5c479908b58ba0d384084ea4.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Destroy 10 monster nests using bombs.",
+					"Use the quest journal and map filters if the target is location-gated."
+				]
+			}
+		},
+		{
+			"id": "KINGMAKER",
+			"name": "Kingmaker",
+			"description": "Complete the subplot about choosing Skellige's ruler.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/31a0391e642217dcabcefd4c55ba32539d45c516.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In Skellige, complete the quests that decide the next ruler (Clan an Craite / Tuirseach path).",
+					"Finish Coronation / King’s Gambit outcomes so a ruler is chosen."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "SOMETHING_MORE",
+			"name": "Something More",
+			"description": "Find Ciri.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/97246533609245ba270e7a8eb39a64d319ce5011.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Push the main story through Skellige and related Ciri flashbacks.",
+					"Reach the story beat where you finally catch up with Ciri."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "GLOBETROTTER",
+			"name": "Globetrotter",
+			"description": "Discover 100 fast travel points.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/7259b0914d17ab810cf8d328bde32fee451274af.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Explore Velen, Novigrad, Skellige, and expansions; approach signposts.",
+					"Discover 100 fast travel points."
+				]
+			}
+		},
+		{
+			"id": "MUNCHKIN",
+			"name": "Munchkin",
+			"description": "Reach character development level 35.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/d40d29f01f627f0cab311e249a401ff507e496fc.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete quests and kill enemies for XP.",
+					"Reach character level 35."
+				]
+			}
+		},
+		{
+			"id": "THE_DOPPLER_EFFECT",
+			"name": "The Doppler Effect",
+			"description": "Resolve the doppler problem in Novigrad.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/6b408f870900feec6124e5bc7953c01f399c7fd7.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Resolve the doppler problem in Novigrad.",
+					"Use the quest journal and map filters if the target is location-gated."
+				]
+			}
+		},
+		{
+			"id": "XENONAUT",
+			"name": "Xenonaut",
+			"description": "Visit Tir ná Lia and convince Ge'els to betray Eredin.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/46b0b574e6334d81211e0c3db1539d3a76364144.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Progress the main quest until you travel to Tir ná Lia.",
+					"Convince Ge’els to turn against Eredin during the audience."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "FEARLESS_VAMPIRE_SLAYER",
+			"name": "Fearless Vampire Slayer",
+			"description": "Complete the contract on Sarasti.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/6bad719fc32da9534c2381b23f35f53c0998640e.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find the notice-board contract for Sarasti and accept it.",
+					"Track the quest, kill the target, and turn the contract in."
+				]
+			}
+		},
+		{
+			"id": "THE_KING_IS_DEAD",
+			"name": "The King is Dead",
+			"description": "Defeat Eredin.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/53e0820b82445eeafe38f4991b947ed6ef64406d.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Reach the final battles of the main story.",
+					"Defeat Eredin in the endgame confrontation."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "PASSED_THE_TRIAL",
+			"name": "Passed the Trial",
+			"description": "Finish the game on any difficulty.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/bc1da5cdbd6e323308f012851cf4c3f6a1439c3f.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play through the main story on the required difficulty.",
+					"Finish the game on any difficulty."
+				]
+			}
+		},
+		{
+			"id": "ASHES_TO_ASHES",
+			"name": "Ashes to Ashes",
+			"description": "Complete the contract on Therazane.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/62d76aa7f2f5f04d9554ab81dc115e7b2ecb99f1.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find the notice-board contract for Therazane and accept it.",
+					"Track the quest, kill the target, and turn the contract in."
+				]
+			}
+		},
+		{
+			"id": "THE_WITCHER_S_GONE_SOUTH",
+			"name": "The Witcher's Gone South",
+			"description": "Travel to the Duchy of Toussaint.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/d8374b28d93ef6b6feca2e82bcedd6b715679681.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Travel to the Duchy of Toussaint.",
+					"Use the quest journal and map filters if the target is location-gated."
+				]
+			}
+		},
+		{
+			"id": "FULL_CREW",
+			"name": "Full Crew",
+			"description": "Bring all possible allies to Kaer Morhen for the battle against the Hunt.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/1a0b226212540b6d2d03c751abf1f5794a44b821.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Before the Battle of Kaer Morhen, recruit every available ally (Keira, Letho if alive, Ermion, etc.).",
+					"Complete their prerequisite quests so they appear at the keep."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/",
+				"warnings": [
+					"Missable. Several allies require side quests finished before the point of no return."
+				]
+			}
+		},
+		{
+			"id": "I_M_NOT_KISSING_THAT",
+			"name": "I'm Not Kissing That",
+			"description": "Kill the prince cursed into a toad.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/291cd726ee742ada9498be3b020e697fd5eedf91.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Kill the prince cursed into a toad.",
+					"Use the quest journal and map filters if the target is location-gated."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "FIEND_OR_FOE",
+			"name": "Fiend or Foe?",
+			"description": "Complete the contract on Morvudd.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/a965adb6e79d3db464162c16c77f57b6e57afb03.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find the notice-board contract for Morvudd and accept it.",
+					"Track the quest, kill the target, and turn the contract in."
+				]
+			}
+		},
+		{
+			"id": "ARMED_AND_DANGEROUS",
+			"name": "Armed and Dangerous",
+			"description": "Find and equip all the elements of one set of witcher gear.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/720fb19b6f8513203187ad68b8894a4ce54418be.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find and equip all the elements of one set of witcher gear.",
+					"Use the quest journal and map filters if the target is location-gated."
+				]
+			}
+		},
+		{
+			"id": "GERALT_AND_FRIENDS",
+			"name": "Geralt and Friends",
+			"description": "Win a round of gwent using only neutral cards.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/bb2a8ee492a0eb86885c7e3969a6e0f7b4b2468a.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open a gwent match against an NPC or in a tournament.",
+					"Win a round of gwent using only neutral cards."
+				]
+			}
+		},
+		{
+			"id": "PACTA_SUNT_SERVANDA",
+			"name": "Pacta Sunt Servanda",
+			"description": "Finish the \"Hearts of Stone\" expansion.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/091f8005a05b18b335683f639c2f145b6a416067.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start the expansion questline from the main menu / notice.",
+					"Play through until the expansion credits."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "BRAWLER",
+			"name": "Brawler",
+			"description": "Defeat Olaf, the Skellige champion of unarmed combat.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/78baf8e4d8b11dc11e874b8821293d4e19f2f098.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Defeat Olaf, the Skellige champion of unarmed combat.",
+					"Use the quest journal and map filters if the target is location-gated."
+				]
+			}
+		},
+		{
+			"id": "ALL_IN",
+			"name": "All In",
+			"description": "Play three hero cards in one round of gwent and win the match.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/5fb8fc4d48ea8ff21226716cd8e0f6f18ab21980.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open a gwent match against an NPC or in a tournament.",
+					"Play three hero cards in one round of gwent and win the match."
+				]
+			}
+		},
+		{
+			"id": "ASSASSIN_OF_KINGS",
+			"name": "Assassin of Kings",
+			"description": "Take part in the assassination of King Radovid.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/19eae932cd305251be54b13048e158063ade7351.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In Novigrad/Radovid political quests, side with Dijkstra/Roche path that targets Radovid.",
+					"Participate in the assassination sequence Reason of State."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/",
+				"warnings": [
+					"Missable. Requires specific political choices; opposing paths skip the assassination."
+				]
+			}
+		},
+		{
+			"id": "WEAPON_W",
+			"name": "Weapon \"W\"",
+			"description": "Develop a mutation.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/d03aa746e0bc11026aab5916d0e6663be256ef4c.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Develop a mutation.",
+					"Use the quest journal and map filters if the target is location-gated."
+				]
+			}
+		},
+		{
+			"id": "BRAWL_MASTER",
+			"name": "Brawl Master",
+			"description": "Complete all fistfighting quests in Velen, Skellige and Novigrad.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/f94f1bdb9686f1cc38369bd48649a5e9c05d1839.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete fistfight questlines in Velen, Novigrad, and Skellige (notice boards / taverns).",
+					"Finish every fistfighting quest in those regions."
+				]
+			}
+		},
+		{
+			"id": "RAD_STEEZ_BRO",
+			"name": "Rad Steez, Bro!",
+			"description": "Slide downhill uninterrupted for at least 10 seconds.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/0664ea245ca8bff2c019d2e461fd0a038baad590.jpg",
+			"types": [
+				"cumulative",
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Find a long steep slope (Skellige mountains work well).",
+					"Sprint into a slide and stay sliding downhill for 10+ seconds without stopping."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "PLAYING_HOUSE",
+			"name": "Playing House",
+			"description": "Use all available options for developing Corvo Bianco.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/da6dabfb0424a0fc16bb508c4dfd70510168ad88.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Use all available options for developing Corvo Bianco.",
+					"Use the quest journal and map filters if the target is location-gated."
+				]
+			}
+		},
+		{
+			"id": "LAST_ACTION_HERO",
+			"name": "Last Action Hero",
+			"description": "Be decorated with the Order of Vitis Vinifera.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/2e8fb1c91b87aacb66367127083dd0fe1b92fd32.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Be decorated with the Order of Vitis Vinifera.",
+					"Use the quest journal and map filters if the target is location-gated."
+				]
+			}
+		},
+		{
+			"id": "WOODLAND_SPIRIT",
+			"name": "Woodland Spirit",
+			"description": "Complete the contract on the Woodland Spirit.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/592b0ea4f7c32493db460f0b22b4ef895f1f60c1.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Find the notice-board contract for the Woodland Spirit and accept it.",
+					"Track the quest, kill the target, and turn the contract in."
+				]
+			}
+		},
+		{
+			"id": "EMBODIMENT_OF_THE_FIVE_VIRTUES",
+			"name": "Embodiment of the Five Virtues",
+			"description": "Be given Aerondight by the Lady of the Lake.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/fc36a7914ebf20e8e541ebd708dee34edcbb7c59.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"In Blood and Wine, uphold the five chivalric virtues during Toussaint quests.",
+					"Complete the Lady of the Lake / Aerondight trial so she awards the sword."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/",
+				"warnings": [
+					"Failing virtue checks can lock Aerondight — use a guide checklist for virtue moments."
+				]
+			}
+		},
+		{
+			"id": "A_KNIGHT_TO_REMEMBER",
+			"name": "A Knight to Remember",
+			"description": "Obtain a flawless victory in all the competitions during the knights' tourney.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/b57d937008fa24399f9e148bfd9ddf764d9973c1.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Enter the knights’ tourney in Toussaint.",
+					"Win every competition without failing any event for a flawless run."
+				]
+			}
+		},
+		{
+			"id": "GWENT_MASTER",
+			"name": "Gwent Master",
+			"description": "Defeat Tybalt and win the gwent tournament held at the Passiflora.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/8281c490cee74176cb65792dafb2a0a43370be7d.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open a gwent match against an NPC or in a tournament.",
+					"Defeat Tybalt and win the gwent tournament held at the Passiflora."
+				]
+			}
+		},
+		{
+			"id": "CURATOR_OF_NIGHTMARES",
+			"name": "Curator of Nightmares",
+			"description": "Recreate all of Iris' nightmares in the Painted World.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/9e07c312af37292c5901eb2d8fa9cd5dca1dedf3.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"In the Painted World (Hearts of Stone), interact with Iris’s memories/nightmares.",
+					"Recreate every nightmare scene before finishing the area."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "GERALT_THE_PROFESSIONAL",
+			"name": "Geralt: The Professional",
+			"description": "Complete all witcher contracts.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/a3418fb0090f1efbeb5012dc4af5c944518df6a6.jpg",
+			"types": [
+				"cumulative",
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Clear every ? witcher contract marker on the base-game maps (White Orchard, Velen, Novigrad, Skellige).",
+					"Finish each contract quest in your journal — DLC contracts are separate."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "FAST_AND_FURIOUS",
+			"name": "Fast and Furious",
+			"description": "Win all the horse races in the game.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/449b8d58103ca7ed90f4cdbf2cc76d434cbb3172.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Win all the horse races in the game.",
+					"Use the quest journal and map filters if the target is location-gated."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "SHOPAHOLIC",
+			"name": "Shopaholic",
+			"description": "Buy all the items put on the block at the Borsodis' Auction House.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/84b4c4faf61763647718f5aa0d72c8a0ae304cfb.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"During Hearts of Stone, attend the Borsodis’ Auction House sequence.",
+					"Buy every lot put up for auction (bring crowns)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/",
+				"warnings": [
+					"Missable in that auction scene — reload a save if you skipped lots."
+				]
+			}
+		},
+		{
+			"id": "THE_GRAPES_OF_WRATH_STOMPED",
+			"name": "The Grapes of Wrath Stomped",
+			"description": "Help unite the warring vineyards and have a wine named in your honor.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/6aa435136c0dd0027b1aaeb4d45039520bad5c11.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete the Blood and Wine vineyard war side content (Coronata / Vermentino).",
+					"Unite the vineyards so a wine is named after Geralt."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "DRESSED_TO_KILL",
+			"name": "Dressed to Kill",
+			"description": "Unlock the bonus for equipping all the witcher gear elements from one School.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/f117ec5bce5ef47bddbf5cd6425a9df1d97bc1f5.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Unlock the bonus for equipping all the witcher gear elements from one School.",
+					"Use the quest journal and map filters if the target is location-gated."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "EVEN_ODDS",
+			"name": "Even Odds",
+			"description": "Kill 2 monsters you have a contract on without using Signs, potions, mutagens, oils or bombs.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/7f481d90fd7d0a1164b6df055c2f97d299d8b91c.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Take a monster contract, then fight the target with no Signs, potions, mutagens, oils, or bombs.",
+					"Do this on 2 different contract monsters."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "LET_THE_GOOD_TIMES_ROLL",
+			"name": "Let the Good Times Roll!",
+			"description": "Participate in all the activities at the wedding.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/50eddb5a3a6a5c6bf26abee1818279c204a8cc17.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"During the Hearts of Stone wedding at the Estate.",
+					"Join every minigame/activity available before leaving the party."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "PEST_CONTROL",
+			"name": "Pest Control",
+			"description": "Destroy all monster nests in the Velen / Novigrad region, or in Skellige.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/5d71ca10e0422dee6e1cf69ea9bd94609b22e085.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Destroy all monster nests in the Velen / Novigrad region, or in Skellige.",
+					"Use the quest journal and map filters if the target is location-gated."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "DENDROLOGIST",
+			"name": "Dendrologist",
+			"description": "Acquire all the Abilities in one tree.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/433ba53ca210c08419c7166f3c07aa45c854936a.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Acquire all the Abilities in one tree.",
+					"Use the quest journal and map filters if the target is location-gated."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "TURNED_EVERY_STONE",
+			"name": "Turned Every Stone",
+			"description": "Find all grandmaster diagrams for each witcher school.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/0e352549ec74cc3012d20266ffecf67ba7d3daa7.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Find all grandmaster diagrams for each witcher school.",
+					"Use the quest journal and map filters if the target is location-gated."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "I_HAVE_A_GWENT_PROBLEM",
+			"name": "I Have a Gwent Problem",
+			"description": "Collect all the cards in the Skellige deck.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/6b5685d92e6435d574e3fc33552ad3d8d4830189.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Collect all the cards in the Skellige deck.",
+					"Use the quest journal and map filters if the target is location-gated."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "WILD_ROSE_DETHORNED",
+			"name": "Wild Rose Dethorned",
+			"description": "Defeat all the fallen knights and loot their campsites.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/f1e4073f57743bb8dfc4d60817edd44eb03de8e1.jpg",
+			"types": [
+				"cumulative",
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Defeat all the fallen knights and loot their campsites.",
+					"Use the quest journal and map filters if the target is location-gated."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "RAN_THE_GAUNTLET",
+			"name": "Ran the Gauntlet",
+			"description": "Finish the game on the \"Blood and Broken Bones!\" or \"Death March!\" difficulty levels.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/cba4abe872ecb92a755cbc9cf1ffa708b7aef42e.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Play on Blood and Broken Bones! or Death March! from the start.",
+					"Finish the main story on that difficulty."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "KILLED_IT",
+			"name": "Killed It",
+			"description": "Win a round of gwent with a total strength of at least 187.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/149dd41b2197904091bcc8d36529a3cb6340d217.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open a gwent match against an NPC or in a tournament.",
+					"Win a round of gwent with a total strength of at least 187."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "POWER_OVERWHELMING",
+			"name": "Power Overwhelming",
+			"description": "Have all possible Place of Power bonuses active at the same time.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/0511acb3579013edc90b1bd7e0446aa3f53b3fae.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Activate every Place of Power on the map (draw ability points from the glowing pillars).",
+					"Have all Place of Power bonuses active at once — revisit any that expired if needed."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "CARD_COLLECTOR",
+			"name": "Card Collector",
+			"description": "Acquire all gwent cards available in the base version of the game.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/1e6f6151af80b51f081ecc5b711a25fda9b16998.jpg",
+			"types": [
+				"missable",
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Play gwent against merchants, innkeeps, and unique NPCs across the base game.",
+					"Buy remaining cards from traders; use a checklist for missable unique cards (e.g. certain quest NPCs)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/",
+				"warnings": [
+					"Some unique cards are missable if quest NPCs die or leave before you play them."
+				]
+			}
+		},
+		{
+			"id": "KAER_MORHEN_TRAINED",
+			"name": "Kaer Morhen Trained",
+			"description": "Perform 10 effective counterattacks in a row without getting hit or parrying.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/e5c0ea87e4b1d9044cbc51e10735a3b0750c4f65.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Perform 10 effective counterattacks in a row without getting hit or parrying.",
+					"Use the quest journal and map filters if the target is location-gated."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "CAN_QUIT_ANYTIME_I_WANT",
+			"name": "Can Quit Anytime I Want",
+			"description": "Be under the influence of seven potions or decoctions at the same time.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/9aac1ac17f7e357ecd0b2e7cefaf7e5d07814677.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Be under the influence of seven potions or decoctions at the same time.",
+					"Use the quest journal and map filters if the target is location-gated."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "WALKED_THE_PATH",
+			"name": "Walked the Path",
+			"description": "Finish the game on the \"Death March!\" difficulty level.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/03afa403f58958f72f7540345ba16a3439d1f830.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Start a new game (or NG+) on Death March! difficulty.",
+					"Finish the entire main story without lowering difficulty."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/",
+				"warnings": [
+					"Changing difficulty down can void Death March credit — stay on Death March the whole run."
+				]
+			}
+		},
+		{
+			"id": "RETURN_TO_SENDER",
+			"name": "Return to Sender",
+			"description": "Kill 3 opponents with their own arrows.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/79ab71bb3164e20c2bb15a128aecfd3ecadab1ce.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Fight human archers; use Aard or timing to make their arrows hit them, or the reflecting skill/setup that counts.",
+					"Kill 3 opponents with their own arrows."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "DAVID_AND_GOLYAT",
+			"name": "David and Golyat",
+			"description": "Kill Golyat with a crossbow bolt to his eye.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/91928a571176513cf75824dee99f2c3ef6339484.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Find the giant Golyat in Toussaint.",
+					"Shoot a crossbow bolt into his eye to kill him (aim for the glowing weak spot)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "THAT_IS_THE_EVILEST_THING",
+			"name": "That Is the Evilest Thing",
+			"description": "Ignite the gas produced by a Dragon's Dream bomb using a burning opponent. Do this 10 times.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/03ce4a6f6131fdf139f2701f41de357140e34afe.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Throw a Dragon’s Dream bomb to create gas.",
+					"Ignite it by hitting a burning enemy (Igni or burning oil) — repeat 10 times."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "OVERKILL",
+			"name": "Overkill",
+			"description": "Make an opponent suffer from bleeding, poisoning and burning simultaneously. Do this 10 times.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/225ea779283e0e6168ad010e14a43346974adac3.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Make an opponent suffer from bleeding, poisoning and burning simultaneously. Do this 10 times.",
+					"Use the quest journal and map filters if the target is location-gated."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "WHAT_WAS_THAT",
+			"name": "What Was That?",
+			"description": "Attack, counter, cast a Sign and throw a bomb (in any order) in under 4 seconds.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/305ccec5f9c42bf46f5b83bd6fc2a4602188b3d5.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"In combat, quickly: light attack, counter, cast any Sign, and throw a bomb.",
+					"Land all four actions within 4 seconds (any order)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "KLING_OF_THE_CLINK",
+			"name": "Kling of the Clink",
+			"description": "Serve time in Toussaint.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/5075db2ffa46de3c230de477c8fc931b743f6eab.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"In Toussaint, get arrested (or choose the path that jails Geralt).",
+					"Serve the prison sequence to unlock the achievement."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "MOO_RDERER",
+			"name": "Moo-rderer",
+			"description": "Kill 20 cows.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/9c66ebb6c151916c7686630f02b49f42cb20ee8e.jpg",
+			"types": [
+				"cumulative",
+				"secret"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Find cows in fields (White Orchard / Velen).",
+					"Kill 20 cows total — a panicking herd makes this fast."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "I_WORE_OFIERI_BEFORE_IT_WAS_COOL",
+			"name": "I Wore Ofieri Before It Was Cool",
+			"description": "Collect all available Ofieri armor and horse gear, and at least one Ofieri sword.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/1e2d9cf257ccfe34ec86448675e338c0c504f3ce.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Collect all available Ofieri armor and horse gear, and at least one Ofieri sword.",
+					"Use the quest journal and map filters if the target is location-gated."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "THE_ENEMY_OF_MY_ENEMY",
+			"name": "The Enemy of My Enemy",
+			"description": "Use the Axii Sign to force one opponent to kill another. Do this 20 times.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/a0e870df280a9b606a55c13398c6c631c70d4cf9.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Use the Axii Sign to force one opponent to kill another. Do this 20 times.",
+					"Use the quest journal and map filters if the target is location-gated."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "WHEN_IT_S_MANY_AGAINST_ONE",
+			"name": "When It's Many Against One…",
+			"description": "Provoke all Iris von Everec's Nightmares into fighting you at the same time and defeat them.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/095d742e3027646a854f3b2511e2c8f4c25862c7.jpg",
+			"types": [
+				"cumulative",
+				"secret"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"In Iris’s realm, provoke/aggro all Nightmares so they fight you together.",
+					"Defeat the full group in one encounter."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "HASTA_LA_VISTA",
+			"name": "Hasta la Vista™",
+			"description": "Kill a frozen opponent with a crossbow bolt.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/96b81977f5938a42d86afe8efa87a69e0d302573.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Freeze an enemy (Northern Wind bomb or similar freeze effect).",
+					"While they are frozen, kill them with a crossbow bolt."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "HUMPTY_DUMPTY",
+			"name": "Humpty Dumpty",
+			"description": "Kill 10 opponents by knocking them off somewhere high with the Aard Sign.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/f1258da57e56a1bca7b68d6bbf824c5ba102e6f9.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Find enemies on cliffs or ledges.",
+					"Use Aard to knock 10 of them to their death from height."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		},
+		{
+			"id": "MASTER_MARKSMAN",
+			"name": "Master Marksman",
+			"description": "Kill 50 human and nonhuman opponents by striking them in the head with a crossbow bolt.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/292030/f242418c2ce272157e918a1c3ac4a00ba41b0f04.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Equip a crossbow and aim for heads on humans/nonhumans.",
+					"Get 50 crossbow headshot kills."
+				],
+				"sourceUrl": "https://www.exophase.com/game/the-witcher-3-wild-hunt-steam/achievements/"
+			}
+		}
+	]
+}

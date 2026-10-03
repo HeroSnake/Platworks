@@ -16,7 +16,7 @@ tools: [read, edit, search, execute]
 | Component | Role |
 |---|---|
 | `achievement_row.svelte` | expandable trophy card: toggle + Steam icon + badges |
-| `game_card.svelte` | library card with the completion progress bar |
+| `game_card.svelte` | library card mirrors the game-page hero (full-bleed art, two scrims, title + chips overlaid); home grid is full-bleed and grows to 5 cols at `2xl` |
 | `github_icon.svelte` | inline GitHub mark |
 | `mobile_bar.svelte` | shared bottom bar for **both** pages |
 | `src/routes/+layout.svelte` | navbar, account popover, View Transitions; owns `REPO_URL` and `platworks:steamId` |

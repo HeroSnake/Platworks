@@ -1,0 +1,855 @@
+{
+	"$schema": "./schema.json",
+	"appId": 1174180,
+	"name": "Red Dead Redemption 2",
+	"totalAchievements": 51,
+	"mapUrl": "https://mapgenie.io/rdr2",
+	"achievements": [
+		{
+			"id": "JUST_A_SCRATCH",
+			"name": "Just a Scratch",
+			"description": "Complete 'Enter, Pursued by a Memory'.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/1d0bdc25d376a74b0ee37355ee32f9eb308dd90c.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Play the opening snow missions until you finish \"Enter, Pursued by a Memory\"."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "BACK_IN_THE_MUD",
+			"name": "Back in the Mud",
+			"description": "Complete Chapter 1.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/3f5b6b4295a58d39b7619e5723f94b8f475dd81e.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Finish every Chapter 1 story mission through the snow escape.",
+					"Chapter select is unavailable early — play in order."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "TRUSTY_STEED",
+			"name": "Trusty Steed",
+			"description": "Reach max bonding level with a horse.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/e968b36e4c3fba5addab9f4d4a31ddf935cb2804.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Reach maximum bonding level with your horse (pat, feed, ride frequently).",
+					"Keep the same horse until the bonding bar maxes."
+				]
+			}
+		},
+		{
+			"id": "GIVE_TO_THE_POOR",
+			"name": "Give to the Poor",
+			"description": "Donate $250 to the gang tithing box.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/db4c73fe207337b21d4112dcdf0e24b36d101792.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Open the camp ledger / tithing box when you are at camp.",
+					"Donate until you have given a total of $250."
+				]
+			}
+		},
+		{
+			"id": "TO_GREENER_PASTURES",
+			"name": "To Greener Pastures",
+			"description": "Complete Chapter 2.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/cede247d21de983c4d0d8aed8b75d1324cac9bf3.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Complete all Chapter 2 story missions out of Horseshoe Overlook.",
+					"Optional strangers can wait — story missions gate the chapter clear."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "LOCKED_AND_LOADED",
+			"name": "Locked and Loaded",
+			"description": "Upgrade each available component for a single sidearm or longarm weapon.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/9f07d5b06a35ec4b44f7081de6851090d43ecdfb.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"At a gunsmith, fully upgrade every available component on one sidearm or longarm."
+				]
+			}
+		},
+		{
+			"id": "TAKE_FROM_THE_RICH",
+			"name": "Take From the Rich",
+			"description": "Rob or loot $250.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/1ecb9a2efacd9822676a57221e770e294176bcb8.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Rob trains, coaches, homesteads, or loot bodies/cash registers.",
+					"Accumulate $250 total from robbery/looting (not normal mission payouts alone)."
+				]
+			}
+		},
+		{
+			"id": "SETTLING_FEUDS",
+			"name": "Settling Feuds",
+			"description": "Complete Chapter 3.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/ab025f0eacc998f62125d7a7bb186e9fbdd95d24.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete all Chapter 3 story missions around Clemens Point.",
+					"Finish the last Chapter 3 mission to unlock the achievement."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "BREAKOUT",
+			"name": "Breakout",
+			"description": "Red Dead Online: Complete the Intro.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/926ad55990bb91ebce118232aef4606e9fdd64e0.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Launch Red Dead Online from the title screen.",
+					"Finish the Online introduction / tutorial flow."
+				]
+			}
+		},
+		{
+			"id": "WASHED_ASHORE",
+			"name": "Washed Ashore",
+			"description": "Complete Chapter 4.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/a07e4dac160f638c24ac851ffc0aea19bc51f12d.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play through Chapter 4 story missions from Saint Denis / related camp.",
+					"Complete the final Chapter 4 mission."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "NO_TRAITORS",
+			"name": "No Traitors",
+			"description": "Complete Chapter 5.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/79a6c1cb5ac1f88150802768ab8c6a7078d272c1.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete every Chapter 5 story mission (Guarma and aftermath).",
+					"Finish the last Chapter 5 mission."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "THIRD_TIME_LUCKY",
+			"name": "Third Time Lucky",
+			"description": "Complete 'Goodbye, Dear Friend'.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/70286589047c58568477e6ba124161d6047cd023.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete the story mission 'Goodbye, Dear Friend' in Chapter 6."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "REDEMPTION",
+			"name": "Redemption",
+			"description": "Complete 'Red Dead Redemption'.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/94fa0722da3453c6cd222b97b77880c29f7dc97c.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Progress Chapter 6 until the mission 'Red Dead Redemption'.",
+					"Complete that mission."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "COWBOY_BUILDER",
+			"name": "Cowboy Builder",
+			"description": "Complete 'A New Jerusalem'.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/d2fdc9461799c466b1ff7a9f3666cd2dbb4f61e3.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In the Epilogue, complete the mission 'A New Jerusalem'."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "ENDLESS_SUMMER",
+			"name": "Endless Summer",
+			"description": "Complete the Epilogue.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/caca2e3bed70ec5ce18c7d7e9a261aef5cf55737.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play as John in the Epilogue.",
+					"Complete every Epilogue Part 1 and Part 2 story mission through the final ranch / ending beat."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "EXTREME_PERSONALITY",
+			"name": "Extreme Personality",
+			"description": "Reach maximum or minimum Honor level.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/da06def2b4fd81d0e02beb4eee72f35666165b5f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Raise Honor to the maximum (help strangers, donate, peaceful choices) or dump it to minimum (loot, kill innocents, antagonize).",
+					"Check the Honor bar in the pause menu — tip must reach either extreme."
+				]
+			}
+		},
+		{
+			"id": "IT_WAS_THIS_BIG",
+			"name": "It was THIS Big!",
+			"description": "Catch a fish weighing at least 16 lbs (7.3 kg).",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/2da795e555aea18f61a0963c7a53d1f0a3598080.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Buy a fishing rod and use the right bait for large species (Lake Sturgeon, Channel Catfish, etc.).",
+					"Catch any fish weighing at least 16 lb / 7.3 kg — lakes near Flat Iron Lake are good."
+				]
+			}
+		},
+		{
+			"id": "BREAKING_AND_ENTERING",
+			"name": "Breaking and Entering",
+			"description": "Recover the stash from 4 homesteads.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/1e5b34e1120f9d7c05d5d3b30ff4404174297350.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find homestead robbery locations (often marked after encounters or on MapGenie).",
+					"Recover the stash from 4 different homesteads."
+				]
+			}
+		},
+		{
+			"id": "FRIENDS_WITH_BENEFITS",
+			"name": "Friends With Benefits",
+			"description": "Complete a Companion Activity in each camp.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/8f23138781fcfe026db01e662dc371e4989e77d7.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"At camp, look for companion activity prompts (with Dutch, Hosea, Charles, etc.).",
+					"Complete at least one companion activity in each camp you live at across chapters."
+				]
+			}
+		},
+		{
+			"id": "GETTING_STARTED",
+			"name": "Getting Started",
+			"description": "Red Dead Online: Reach Rank 10.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/335e01c93fa8589cb324512f6cd512f9c7158aa6.jpg",
+			"types": [
+				"multiplayer",
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Progress the story until you unlock: Red Dead Online: Reach Rank 10.",
+					"Play on any difficulty — story achievements are mostly unmissable if you finish the game."
+				]
+			}
+		},
+		{
+			"id": "PONY_UP",
+			"name": "Pony Up",
+			"description": "Spend $5000 across all shops.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/df915ba333f89296aed56a99a48bcabe8dba1577.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Spend money at general stores, gunsmiths, stables, doctors, hotels, etc.",
+					"Reach $5000 total spent across all shops (cumulative)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "SELF_SUFFICIENT",
+			"name": "Self Sufficient",
+			"description": "Craft 30 unique items in Story Mode.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/5dbdc27157fb37733ac523d08a32033cd96715ce.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"At a campfire or crafting menu, craft different recipes (tonics, food, ammo types, etc.).",
+					"Craft 30 unique item types in Story Mode."
+				]
+			}
+		},
+		{
+			"id": "STRENGTH_IN_NUMBERS",
+			"name": "Strength in Numbers",
+			"description": "Red Dead Online: Complete a Free Roam mission as part of a Posse with at least 2 members.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/85e8caa42574e16fa1778fd690d483a5950c8913.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Progress the story until you unlock: Red Dead Online: Complete a Free Roam mission as part of a Posse with at least 2 members.",
+					"Play on any difficulty — story achievements are mostly unmissable if you finish the game."
+				]
+			}
+		},
+		{
+			"id": "WESTERN_STRANGER",
+			"name": "Western Stranger",
+			"description": "Complete 10 Stranger mission strands.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/c97461b35c26b932a49485ff5ae47191fd181409.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Progress the story until you unlock: Complete 10 Stranger mission strands.",
+					"Play on any difficulty — story achievements are mostly unmissable if you finish the game."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "HOBBY_HORSE",
+			"name": "Hobby Horse",
+			"description": "Play all mini games.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/b9035447f996165e28534b3c44efbaa6d8e975f2.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Play each mini-game at least once: Poker, Blackjack, Dominoes, Five Finger Fillet, and any others listed in the Compendium.",
+					"Towns and camps host tables — check MapGenie for locations."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "BUCKLE_UP",
+			"name": "Buckle Up",
+			"description": "Red Dead Online: Achieve 5 gold belt buckles from awards.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/87d37fee2036caac90df6161a616557135a11253.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"In Red Dead Online, open Awards and work toward gold belt buckles.",
+					"Earn gold on 5 different award categories."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "BUTCHERED",
+			"name": "Butchered",
+			"description": "Red Dead Online: Sell 20 items to the Butcher.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/26f3176aa06edb773a62306861a12b45a4cb6db9.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"In Red Dead Online, hunt or gather animal parts.",
+					"Sell 20 items to any Butcher."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "LENDING_A_HAND",
+			"name": "Lending a Hand",
+			"description": "Complete all optional Honor story missions.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/66e9c4410bb51cfe5b7764e4b8af6ea0193eaa04.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete every optional Honor story mission (high-honor side story opportunities).",
+					"These appear as optional mission markers during later chapters — do them before they expire."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/",
+				"warnings": [
+					"Can be missed if you rush past chapter windows — check for optional yellow markers."
+				]
+			}
+		},
+		{
+			"id": "ERRAND_BOY",
+			"name": "Errand Boy",
+			"description": "Deliver 5 camp companion item requests.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/85fa32d0b3d635e177ad68ccc5665a115c0e8391.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"At camp, talk to companions until they request a specific item.",
+					"Find and deliver 5 of these item requests (Pearson, Hosea, etc.)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/",
+				"warnings": [
+					"Some requests are chapter-limited — do them while that companion is in camp."
+				]
+			}
+		},
+		{
+			"id": "GUN_FOR_HIRE",
+			"name": "Gun For Hire",
+			"description": "Red Dead Online: Accept 10 Free Roam missions from characters around the world.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/1d64c48392a4a9b38a8118fd325498530e377c85.jpg",
+			"types": [
+				"multiplayer",
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Progress the story until you unlock: Red Dead Online: Accept 10 Free Roam missions from characters around the world.",
+					"Play on any difficulty — story achievements are mostly unmissable if you finish the game."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "PICKED_TO_PERFECTION",
+			"name": "Picked to Perfection",
+			"description": "Red Dead Online: Pick 25 Herbs.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/ea928b474186033ac7a82eea19e0d1940f40d34a.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"In Red Dead Online, pick herbs in free roam.",
+					"Collect 25 herbs (any combination)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "MASTER_CRAFTSMAN",
+			"name": "Master Craftsman",
+			"description": "Red Dead Online: Craft 20 items (excluding ammo).",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/d7c4bb70fadf697ce7a0293a5cbb04c82e4715fd.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"In Red Dead Online, use a camp fire / crafting menu.",
+					"Craft 20 items that are not ammunition."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "SERIES_MAJOR",
+			"name": "Series Major",
+			"description": "Red Dead Online: Take part in a Series.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/9f66223e68c7596b2cfed77b8cdaf2fdc2872f54.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"From the Online menu, join any Series playlist (Showdown, Race, etc.).",
+					"Participate in at least one Series match."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "COLLECTOR_S_ITEM",
+			"name": "Collector's Item",
+			"description": "Complete one of the Collectable strands.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/56cb09991e4ceb05d09ecc6ee6d06e46eb3b4101.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Start any collectible strand (Cigarette Cards, Dinosaur Bones, Dreamcatchers, etc.).",
+					"Fully complete one collectible set / strand."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "ARTIFICIAL_INTELLIGENCE",
+			"name": "Artificial Intelligence",
+			"description": "Discover the fate of Marko Dragic.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/2c1db095cc0aa079bf967a38e967846754ca87a3.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Progress the story until you unlock: Discover the fate of Marko Dragic.",
+					"Play on any difficulty — story achievements are mostly unmissable if you finish the game."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "POSSE_UP",
+			"name": "Posse Up",
+			"description": "Red Dead Online: Form a Persistent Posse.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/fc90e95976838f7a277f19c3cabd46b66d6be0d0.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"In Red Dead Online, open the Posse menu.",
+					"Create a Persistent Posse (not just a temporary one)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "NOTORIOUS",
+			"name": "Notorious",
+			"description": "Red Dead Online: Reach Rank 50.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/f23eb5e7531ff94d44c31bedc0ec1f6365f4504d.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Play Red Dead Online activities, missions, and free roam to earn XP.",
+					"Reach Online Rank 50."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "HOME_COMFORTS",
+			"name": "Home Comforts",
+			"description": "Red Dead Online: Purchase 5 camp improvements.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/ead550cec661a7a0b9e9b38bf92f91848e424860.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Open your Online camp theme / improvements catalog.",
+					"Purchase 5 camp improvements."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "SKIN_DEEP",
+			"name": "Skin Deep",
+			"description": "Skin every species of animal in Story Mode.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/86b6b74c73308cfec94f6e05c191c7ce7e857f3f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Hunt and skin animals across all regions; study the Compendium list.",
+					"Skin every animal species required in Story Mode."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "ZOOLOGIST",
+			"name": "Zoologist",
+			"description": "Study every animal across all states in Story Mode.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/7d617edd1fe18419760f6f365a274c4fbe40567c.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Study every animal species across all states with binoculars/scope.",
+					"Use MapGenie animal checklists — legendary animals are separate from study counts."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "PAYING_RESPECTS",
+			"name": "Paying Respects",
+			"description": "Find the graves of each of your fallen companions.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/901fc090f41e93f4f798e81e06ab226d06fb158c.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"After the story/epilogue, visit the grave of each fallen companion.",
+					"Arthur’s grave and other gang graves are marked — stand/interact at each."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "BEST_IN_THE_WEST",
+			"name": "Best in the West",
+			"description": "Attain 100% completion.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/7685a51c88bc2e5ae61b20660030467a376b56f1.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Attain 100% completion (story, strangers, hobbies, collectibles, miscellaneous checklist).",
+					"Track remaining % in the pause menu and clear MapGenie markers."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "ALL_S_FAIR",
+			"name": "All's Fair",
+			"description": "Red Dead Online: Successfully counter a rival Posse's Free Roam mission.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/178f91958459e5a06885a702ed96077679fe30ac.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Progress the story until you unlock: Red Dead Online: Successfully counter a rival Posse's Free Roam mission.",
+					"Play on any difficulty — story achievements are mostly unmissable if you finish the game."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "EVENTFUL",
+			"name": "Eventful",
+			"description": "Red Dead Online: Play 5 Free Roam Events.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/942df6d288001ed3cd95f1b4afe61f1b9d3230f3.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Join Free Roam Events when they pop up on the Online map / toast notifications.",
+					"Complete 5 Free Roam Events."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "GOLD_RUSH",
+			"name": "Gold Rush",
+			"description": "Earn 70 Gold Medals in Story missions.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/2e87c6247c68c13041833a9f4993449b7ef0e4bf.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Earn Gold Medals on 70 Story missions (replay from the log to improve ranks)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "HORSES_FOR_COURSES",
+			"name": "Horses for Courses",
+			"description": "Red Dead Online: Concurrently own 5 horses.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/013e906b76174844bd3d43b9fa5ea32233231bda.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Buy or acquire horses at stables in Red Dead Online.",
+					"Own 5 horses at the same time in your stable."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "BOUNTIFUL",
+			"name": "Bountiful",
+			"description": "Survive 3 days holding a bounty of $250 in all states.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/db61903a5678931086307c8e07ef5cdf5f9859e0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Hold a bounty of at least $250 in every state for 3 full days without clearing it.",
+					"Avoid lawmen / sleep-wait carefully while the timer runs."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "NON_REGULATION",
+			"name": "Non-Regulation",
+			"description": "Red Dead Online: Craft 25 pieces of ammunition.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/2cfcf05c99e1f9424c97bd2fd08b9120510aa7d1.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"In Red Dead Online, craft ammunition at a campfire (split point, express, etc.).",
+					"Craft 25 pieces of ammunition total."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "GRIN_AND_BEAR_IT",
+			"name": "Grin and Bear it",
+			"description": "Survive 18 bear attacks and kill the bear each time in Story Mode.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/aef9a5ba1605f7d31a6a5aaf9aa061a800ca2a65.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Get attacked by a bear 18 separate times and kill that bear each time.",
+					"Save before engagements so you can repeat safely."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "IT_S_ART",
+			"name": "It's Art",
+			"description": "Find a permanent home for the squirrel statue.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/d31cc96a1ae81d5c9859d2a782268dfe86e917b1.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Obtain the squirrel statue collectible and find its permanent home placement.",
+					"Follow the related stranger/collectible chain (MapGenie marks the statue path)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		},
+		{
+			"id": "THE_REAL_DEAL",
+			"name": "The Real Deal",
+			"description": "Red Dead Online: Achieve MVP 3 times (in a round with at least 4 players).",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1174180/286dcd75cc2958570f6c18b0ac1d45aec3a60f29.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Play Online PvP / Series modes with at least 4 players in the round.",
+					"Finish as MVP three separate times."
+				],
+				"sourceUrl": "https://www.exophase.com/game/red-dead-redemption-2-steam/achievements/"
+			}
+		}
+	]
+}

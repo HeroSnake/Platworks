@@ -1,0 +1,2052 @@
+{
+	"$schema": "./schema.json",
+	"appId": 1366540,
+	"name": "Dyson Sphere Program",
+	"totalAchievements": 128,
+	"achievements": [
+		{
+			"id": "KNOW_ANY_CAMPFIRE_SONGS",
+			"name": "Know any campfire songs?",
+			"description": "Consume at least 40 wood by burning it.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/b640928d4b3e92a2126bfc851ce48acd2f931c51.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Burn the stated fuel in Icarus or generators.",
+					"Consume at least 40 wood by burning it."
+				]
+			}
+		},
+		{
+			"id": "DON_T_UNDERESTIMATE_PLANT_FUEL",
+			"name": "Don't underestimate Plant Fuel",
+			"description": "Consume at least 100 Plant Fuel by burning it.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/5c2987382b8a081b211bae97b071a77b625ceb0d.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Burn the stated fuel in Icarus or generators.",
+					"Consume at least 100 Plant Fuel by burning it."
+				]
+			}
+		},
+		{
+			"id": "INFINITE_FACTORY_I",
+			"name": "Infinite Factory I",
+			"description": "Exceed a total energy consumption of 1GJ.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/25846c087a22fe4cfa115aea4f1b88564638395a.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Keep factories running — cumulative consumption counts across the save.",
+					"Pass 1GJ total energy consumed."
+				]
+			}
+		},
+		{
+			"id": "SMALL_FACTORY",
+			"name": "Small factory",
+			"description": "Reach a total power generation of 20MW.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/3d4f44fdc99630dc8933c382b541d5e36d1b9f77.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Expand fuel generators, renewables, or sphere receivers across planets.",
+					"Raise cluster power generation until it reaches 20MW."
+				]
+			}
+		},
+		{
+			"id": "INFINITE_FACTORY_II",
+			"name": "Infinite Factory II",
+			"description": "Exceed a total energy consumption of 1TJ.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/6e5089550571761f6c4065e314bc944611fb3f98.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Keep factories running — cumulative consumption counts across the save.",
+					"Pass 1TJ total energy consumed."
+				]
+			}
+		},
+		{
+			"id": "MINERAL_FIELD_DEPLETED",
+			"name": "Mineral field depleted",
+			"description": "Deplete 1 Vein.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/f366c3a79fc52a9a2a4dd0559ce4a5f6249ea363.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Place Mining Machines on every node of a vein and keep them powered.",
+					"Leave them running until the vein counter reaches 0 (fully depleted)."
+				]
+			}
+		},
+		{
+			"id": "MEDIUM_FACTORY",
+			"name": "Medium factory",
+			"description": "Reach a total power generation of 100MW.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/0ecd9ef8acf77cf26b4e1df651f00111ce135b74.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Expand fuel generators, renewables, or sphere receivers across planets.",
+					"Raise cluster power generation until it reaches 100MW."
+				]
+			}
+		},
+		{
+			"id": "LOW_BATTERY",
+			"name": "Low battery",
+			"description": "Have Icarus’ energy below 5% for more than 3 minutes when on the ground.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/aa3a993c252c7382d166d6b4035e9eb8bcf53702.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Land and avoid energy recharge (no energy exchangers, careful with fuel).",
+					"Remain on the ground with mecha energy below 5% for more than 3 minutes."
+				]
+			}
+		},
+		{
+			"id": "BLACKBOX_DESIGNER",
+			"name": "Blackbox designer",
+			"description": "Copy and save a Blueprint.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/10c95ea10f177eedd2d4700f6711dd0babfa11fd.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Select the Blueprint copy tool and drag over a group of buildings.",
+					"Save the selection as a named Blueprint in your library."
+				]
+			}
+		},
+		{
+			"id": "HIGH_RISE",
+			"name": "High-rise",
+			"description": "Build a building at least 7 stories tall.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/34c82c65d9f089f160e755c7e43f0ee7e185ee55.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Use foundations and stack buildings vertically (storages, labs, assemblers on lattices).",
+					"Create a column at least 7 stories / building levels tall."
+				]
+			}
+		},
+		{
+			"id": "TICKETS_PLEASE",
+			"name": "Tickets please!",
+			"description": "Establish an Interstellar Logistics Transportation line.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/184c3bf18ad1be2882ddd6b8e7e19fd0d409b41b.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Build Interstellar Logistics Stations on two different planets.",
+					"Assign logistics vessels and set a supply↔demand route between them."
+				]
+			}
+		},
+		{
+			"id": "NICE_SURPRISE_1",
+			"name": "Nice Surprise 1",
+			"description": "Obtain at least 100 Titanium Ore by collecting Stone.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/5039e4d0be46f8c5f9b711509ecbf21a08ec6f84.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Mine Stone on planets where Titanium appears as a stone byproduct.",
+					"Collect stone until you have gained at least 100 Titanium Ore from that process."
+				]
+			}
+		},
+		{
+			"id": "LIKE_A_DIAMOND_IN_THE_SKY",
+			"name": "Like a diamond in the sky",
+			"description": "Light a star that belongs to you in the Milky Way View.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/27066e21646b5bba415a5ce98d6f2257fd4437ab.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Progress far enough to use the Milky Way View (upload / constellation UI).",
+					"Light a star system associated with your cluster."
+				]
+			}
+		},
+		{
+			"id": "THE_SUN_RISES_IN_THE_WEST",
+			"name": "The sun rises in the...West?",
+			"description": "Find and land on a planet rotating on a reverse axis.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/ac3c5f6182a17b9633610b37b95c27dd17708aea.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Scan the star map for planets matching the axial/tidal condition.",
+					"Find and land on a planet rotating on a reverse axis."
+				]
+			}
+		},
+		{
+			"id": "LIGHT_FOOTED",
+			"name": "Light-footed",
+			"description": "Unlock upgrade to make mecha reach 12m/s movement speed.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/84c93811f2bf9fc2832965c5591929a669f59a36.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open the Tech / Upgrade panel and spend matrices/hash.",
+					"Unlock upgrade to make mecha reach 12m/s movement speed."
+				]
+			}
+		},
+		{
+			"id": "SLIP_N_SLIDE",
+			"name": "Slip 'n' slide",
+			"description": "Fill 10 tanks of fluid in a game.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/1c17620684385f5272b5dc2427dace0c1eae0095.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Build Storage Tanks and connect fluid pumps / belts / sorters.",
+					"Fill 10 separate tanks to capacity across the save."
+				]
+			}
+		},
+		{
+			"id": "I_M_GONNA_NEED_MORE_DRONES",
+			"name": "I'm gonna need more drones!",
+			"description": "Control 10 or more Construction Drones.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/9b649288ce4776363eda8a1e2dcf7f8560a6e836.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Research Construction Drone count upgrades in the tech tree.",
+					"Equip Icarus so you control 10 or more Construction Drones at once."
+				]
+			}
+		},
+		{
+			"id": "I_M_NOT_TILTED",
+			"name": "I'm not tilted",
+			"description": "Find and land on a planet rotating on a horizontal axis.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/add48a94b73bc61c1c90fd11cb1f9426a5140a66.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Scan the star map for planets matching the axial/tidal condition.",
+					"Find and land on a planet rotating on a horizontal axis."
+				]
+			}
+		},
+		{
+			"id": "NOW_BOARDING",
+			"name": "Now Boarding",
+			"description": "Have at least 100 Logistics Drones for a planet in transit.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/b7722749e34351c8e838842c5a831f95b4a857ce.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Mass-build Planetary Logistics Stations and drones on one planet.",
+					"Create enough active routes that 100+ logistics drones are in transit together."
+				]
+			}
+		},
+		{
+			"id": "ONLY_IMPOSSIBLE_UNTIL_IT_S_NOT",
+			"name": "Only impossible until it's not",
+			"description": "Start warp engine.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/e5015a8c32c5d933d72b6e9b4b2e94fdda4614c4.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Research the Drive Engine / warp-related technologies and craft Warpers.",
+					"Enter spaceflight and activate the warp engine for interstellar travel."
+				]
+			}
+		},
+		{
+			"id": "SAIL_AWAY_WITH_ME",
+			"name": "Sail away with me",
+			"description": "Unlock upgrade to make the Solar Sail last 2 hours.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/75ad5e606908b5315a9597c96aa5fa625a89cc02.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open the Tech / Upgrade panel and spend matrices/hash.",
+					"Unlock upgrade to make the Solar Sail last 2 hours."
+				]
+			}
+		},
+		{
+			"id": "PLANET_EXPLORER_I",
+			"name": "Planet Explorer I",
+			"description": "Land on 5 different planets!",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/48452f16fcd89ad31de9d58b9179af1a6d1ac492.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Use the mecha sail / vessels to travel between planets.",
+					"Land on 5 different planets!."
+				]
+			}
+		},
+		{
+			"id": "CENTREBRAIN_NEEDS_MORE_ENERGY_I",
+			"name": "CentreBrain needs more energy I",
+			"description": "Total power generation of the Dyson Sphere reaches 200MW.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/169b4e78035b01e21f224c93286f3bd181f01c2f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Launch Solar Sails / Rockets to build out your Dyson Sphere structure.",
+					"Grow sphere output until generation reaches 200MW."
+				]
+			}
+		},
+		{
+			"id": "SPACE_INVADERS",
+			"name": "Space invaders",
+			"description": "Use the mineral burial function to bury at least 20 Veins.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/36184987e9fe459410bb49a5ac58e1eb7aa5d338.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Unlock the vein burial / cover function used for landscaping veins.",
+					"Bury at least 20 mineral veins on planets where you need flat build space."
+				]
+			}
+		},
+		{
+			"id": "LARGE_FACTORY",
+			"name": "Large factory",
+			"description": "Reach a total power generation of 1GW.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/d236ce60df04d789473cb07d28ef85df72001e9e.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Expand fuel generators, renewables, or sphere receivers across planets.",
+					"Raise cluster power generation until it reaches 1GW."
+				]
+			}
+		},
+		{
+			"id": "EMPLOYEE_OF_THE_MONTH",
+			"name": "Employee of the month",
+			"description": "Unlock upgrade to allow Pile Sorters to load and unload cargos simultaneously.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/538378bc2fd8b38a4afb2a59554ed80d9902141f.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open the Tech / Upgrade panel and spend matrices/hash.",
+					"Unlock upgrade to allow Pile Sorters to load and unload cargos simultaneously."
+				]
+			}
+		},
+		{
+			"id": "BUILD_IT_AND_THEY_WILL_COME",
+			"name": "Build it and they will come",
+			"description": "Build 10 Orbital Collectors.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/eea248b652cc1a214cf4a4a4fbf1cdb32e06ed51.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Unlock Orbital Collectors and rocket launches to gas giants.",
+					"Deploy 10 Orbital Collectors collecting hydrogen/fire ice from a gas giant."
+				]
+			}
+		},
+		{
+			"id": "INTERGALACTIC_LOGISTICS",
+			"name": "Intergalactic logistics",
+			"description": "Establish 5 Interstellar Logistics Transportation lines between different planetary systems.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/b32a7e2a7b7fffbb1af217df19209f1ab733f89b.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Build Interstellar Logistics Stations on two planets and supply vessels.",
+					"Set a remote demand/supply pair so a shipping line becomes active."
+				]
+			}
+		},
+		{
+			"id": "CENTREBRAIN_NEEDS_MORE_ENERGY_II",
+			"name": "CentreBrain needs more energy II",
+			"description": "Total power generation of the Dyson Sphere reaches 1GW.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/75056104e5cd23c6c2e64136517c2d6368baabc5.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Launch Solar Sails / Rockets to build out your Dyson Sphere structure.",
+					"Grow sphere output until generation reaches 1GW."
+				]
+			}
+		},
+		{
+			"id": "BULLSEYE",
+			"name": "Bullseye",
+			"description": "Launch a total of 100K Solar Sails.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/3e563d6ed119e7cc34308d0160516a8bb3da8f72.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Mass-produce Solar Sails and launch them via EM-Rail Ejectors toward a Dyson Swarm.",
+					"Reach 100,000 total Solar Sails launched (statistics panel)."
+				]
+			}
+		},
+		{
+			"id": "WHO_APPROVED_THIS",
+			"name": "Who approved this?",
+			"description": "Unlock technology to make the construction latitude of the Dyson Sphere node reach 45 degrees.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/c15534bf644313f1245539fea87858136877b363.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open the Tech / Upgrade panel and spend matrices/hash.",
+					"Unlock technology to make the construction latitude of the Dyson Sphere node reach 45 degrees."
+				]
+			}
+		},
+		{
+			"id": "SUPER_NOVA",
+			"name": "Super Nova!",
+			"description": "Activate Supernova.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/5a35c17ac68974be483eeb3c2c4fb70cdd02b5d5.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Progress the Dark Fog / late story technologies until Supernova is available.",
+					"Activate Supernova from the relevant UI once unlocked."
+				]
+			}
+		},
+		{
+			"id": "INTERSTELLAR_CONVOY",
+			"name": "Interstellar convoy",
+			"description": "Have at least 50 Interstellar Logistics Vessels in space.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/9143f59152c86d6740aace33aec6e9de5ca1bf14.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Build Interstellar Logistics Stations on two planets and supply vessels.",
+					"Set a remote demand/supply pair so a shipping line becomes active."
+				]
+			}
+		},
+		{
+			"id": "WHERE_NO_COAL_HAS_GONE_BEFORE",
+			"name": "Where no coal has gone before",
+			"description": "Use coal as the only fuel to move from one planet to another.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/15c89b205b2ad4ad40784fbb1ece3454dc858448.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Fill Icarus’s fuel slot with coal only.",
+					"Fly from one planet to another without using any other fuel type."
+				]
+			}
+		},
+		{
+			"id": "NO_COAL_NO_PROBLEM",
+			"name": "No coal? No problem!",
+			"description": "Generate more than 60MW of electricity on a planet using Wind Turbines.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/21f7fa6b792eb9a3edac421110b0b99b1c494e11.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Expand generators and factory load across your cluster.",
+					"Generate more than 60MW of electricity on a planet using Wind Turbines. Check the statistics panel for current totals."
+				]
+			}
+		},
+		{
+			"id": "WHAT_TIME_IS_IT",
+			"name": "What time is it?",
+			"description": "Find and land on a planet with day and night tidal locking.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/81866dbce77fdf817f6b8f91a42b32fadc7ebd1d.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Scan the star map for planets matching the axial/tidal condition.",
+					"Find and land on a planet with day and night tidal locking."
+				]
+			}
+		},
+		{
+			"id": "SUNBATHER",
+			"name": "Sunbather",
+			"description": "Generate more than 180MW of electricity on a planet using Solar Panels.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/399dc7e1628cfff90a3f1fed1de9bdd588a9b8f7.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Expand generators and factory load across your cluster.",
+					"Generate more than 180MW of electricity on a planet using Solar Panels. Check the statistics panel for current totals."
+				]
+			}
+		},
+		{
+			"id": "BACKUP_PLAN",
+			"name": "Backup plan",
+			"description": "Build a Star Cluster with an energy storage capacity of 27GJ or more.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/590323a5821e77f9ecb336552167e2d48160943d.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Expand generators and factory load across your cluster.",
+					"Build a Star Cluster with an energy storage capacity of 27GJ or more. Check the statistics panel for current totals."
+				]
+			}
+		},
+		{
+			"id": "NICE_SURPRISE_3",
+			"name": "Nice Surprise 3",
+			"description": "Obtain at least 100 Organic Crystals by collecting plants.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/112427d775a72d39a645fb5e0f54b3d8a2dd5c11.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Hand-gather plants on planets that drop Organic Crystals as a byproduct.",
+					"Collect plants until you have obtained at least 100 Organic Crystals this way."
+				]
+			}
+		},
+		{
+			"id": "MY_PLANET_MY_RULES",
+			"name": "My planet, my rules!",
+			"description": "Name a planet.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/8ac04b3d49daac66f19dec0224b7dc27e9af472d.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open a planet’s detail panel in the starmap / planet view.",
+					"Rename the planet and confirm — any custom name unlocks it."
+				]
+			}
+		},
+		{
+			"id": "CRITICAL_THINKER",
+			"name": "Critical thinker",
+			"description": "Produce a total of 60,000 Critical Photons.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/3d7534da4cec26e1a99b6745bd472df9b86fda88.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Automate the recipe and leave it running.",
+					"Produce a total of 60,000 Critical Photons."
+				]
+			}
+		},
+		{
+			"id": "RIGHT_UNDER_MY_NOSE",
+			"name": "Right Under My Nose",
+			"description": "Land on a planet that is 8000m or closer to a Dark Fog Hive.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/db278142d28e1193b39c295578177db7561054f5.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Locate a Dark Fog Hive in space near a planet.",
+					"Land on a planet whose distance to that Hive is 8000 m or less."
+				]
+			}
+		},
+		{
+			"id": "MISSION_ACCOMPLISHED",
+			"name": "Mission accomplished",
+			"description": "Complete the game.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/ca4e83e1eb102cfa224f6aa0afa0c4057d8dddaa.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Build Dyson Sphere capacity and produce Universe Matrices.",
+					"Upload enough matrices / finish the CentreBrain mission objectives to complete the game."
+				]
+			}
+		},
+		{
+			"id": "DUST_TO_DUST_I",
+			"name": "Dust to dust I",
+			"description": "Collect 1M soil piles from Dark Fog.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/b067fb26ea7d721e6ecea0041f651f664bdcf17a.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Destroy Dark Fog units / bases that drop soil piles.",
+					"Collect a cumulative 1,000,000 soil piles from Dark Fog sources."
+				]
+			}
+		},
+		{
+			"id": "GIANT_FACTORY",
+			"name": "Giant factory",
+			"description": "Reach a total power generation of 5GW.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/c6b5bf64ba7b6f2512718df611a46f6ffeeccfcd.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Expand fuel generators, renewables, or sphere receivers across planets.",
+					"Raise cluster power generation until it reaches 5GW."
+				]
+			}
+		},
+		{
+			"id": "GREEN_POWER",
+			"name": "Green power",
+			"description": "Produce at least 43,200 Electromagnetic turbines per hour.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/5b7f92f086e5143f0bc57d6819b1e049ea56b148.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Scale assemblers/labs with sufficient belt throughput for the recipe.",
+					"Produce at least 43,200 Electromagnetic turbines per hour (check Production panel rates)."
+				]
+			}
+		},
+		{
+			"id": "PLANET_EXPLORER_II",
+			"name": "Planet Explorer II",
+			"description": "Land on 15 different planets!",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/7097914347857d370eb7f23bca3dae648aee72b6.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Use the mecha sail / vessels to travel between planets.",
+					"Land on 15 different planets!."
+				]
+			}
+		},
+		{
+			"id": "WE_HAVE_LIFT_OFF",
+			"name": "We have lift-off",
+			"description": "Launch a total of 30,000 Small Carrier Rockets.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/1f9923a976e9fc8f7c7554535144e9eefb4d01d8.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Produce Small Carrier Rockets and launch them at a Dyson Sphere frame.",
+					"Launch a total of 30,000 Small Carrier Rockets."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "GOING_NUCLEAR",
+			"name": "Going nuclear",
+			"description": "Generate more than 600MW of power on a planet using Mini Fusion Power Plants.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/4dd1b2a5fdc94aeece97d6801ca2146b74f564b7.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Expand generators and factory load across your cluster.",
+					"Generate more than 600MW of power on a planet using Mini Fusion Power Plants. Check the statistics panel for current totals."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "DON_T_SAND_SO_CLOSE_TO_ME",
+			"name": "Don't sand so close to me",
+			"description": "Collect at least 4M units of sand in a game.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/2b24bd6703344ba4807ac3940fc7bd6491819cb1.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Use the foundation / soil tool to gather sand, or process soil piles.",
+					"Accumulate at least 4,000,000 sand in the save."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "HAPPY_HUNTING_I",
+			"name": "Happy Hunting I",
+			"description": "Neutralize 100 Dark Fog space units.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/60e73f21c211b8e2694955d91eafeb1a2702cdf8.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Engage Dark Fog space units with Icarus or planetary defenses.",
+					"Neutralize 100 Dark Fog space units."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "GOT_DEUTERIUM",
+			"name": "Got Deuterium?",
+			"description": "Use Fractionators to produce at least 100K Deuterium per hour on a single planet.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/266a07a5a64c1cc287481e9126afe32ea4fb6d0e.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Scale assemblers/labs with sufficient belt throughput for the recipe.",
+					"Use Fractionators to produce at least 100K Deuterium per hour on a single planet (check Production panel rates)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "NICE_SURPRISE_2",
+			"name": "Nice Surprise 2",
+			"description": "Obtain at least 100 Silicon Ore by collecting Stone.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/26ad841e608858f92d1ff20e79448509be16076f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Mine Stone on planets where Silicon Ore appears as a stone byproduct.",
+					"Obtain at least 100 Silicon Ore by collecting Stone."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "NO_DIVING",
+			"name": "No diving!",
+			"description": "Have a mecha run out of energy and fall into water.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/6675ede0c03ed40e64a7a28a3535e64eefe259eb.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Fly or walk Icarus over a body of water with almost no energy.",
+					"Let energy hit 0 so Icarus falls into the water."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "MAXIMUM_EFFICIENCY",
+			"name": "Maximum efficiency",
+			"description": "Build and maintain 100 Ray Receivers with a receiving efficiency of over 85%.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/e057c638bacc594ca26d1cb0ce0d07f901a277c7.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Build Ray Receivers around a strong Dyson Swarm/Sphere and clear line-of-sight.",
+					"Keep 100 receivers simultaneously above 85% receiving efficiency."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "UNIVERSE_MATRIX_YELLOW_BELT",
+			"name": "Universe matrix, Yellow Belt",
+			"description": "Produce at least 21,600 Universe matrices per hour.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/320ac4ffbcd843f96914cef0e88170f9dd3cdaa2.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Scale assemblers/labs with sufficient belt throughput for the recipe.",
+					"Produce at least 21,600 Universe matrices per hour (check Production panel rates)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "INFINITE_FACTORY_III",
+			"name": "Infinite Factory III",
+			"description": "Exceed a total energy consumption of 1PJ.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/abdae478f4a7d09b0286cf8b5a88dfb12b404605.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Keep factories running — cumulative consumption counts across the save.",
+					"Pass 1PJ total energy consumed."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "GOTCHA",
+			"name": "Gotcha",
+			"description": "Find Dark Fog Communicator.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/9351618041564b46fe46360b6a79b4ed67bf01b4.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Explore Dark Fog related POIs / drops after engaging Fog forces.",
+					"Pick up a Dark Fog Communicator when it appears."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "ARE_YOU_PROUD_OF_ME_STEPHEN",
+			"name": "Are you proud of me, Stephen?",
+			"description": "Find and orbit a Black Hole.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/af37c3ab2a3dae89a1c6b2d10ebafb3c6793a8b6.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Survey the cluster for a Black Hole system.",
+					"Fly Icarus there and enter orbit around the Black Hole."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "ALL_SYSTEMS_ARE_GO",
+			"name": "All systems are go!",
+			"description": "Achieve discharge power of more than 300MW on a planet using Energy Hubs.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/4e6cd5931a44a3c9c72ad37495d927be49b424a5.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Expand generators and factory load across your cluster.",
+					"Achieve discharge power of more than 300MW on a planet using Energy Hubs. Check the statistics panel for current totals."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "FORGOT_ABOUT_THAT",
+			"name": "Forgot about that",
+			"description": "Build Wind Turbines on a planet with no atmosphere.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/3261eb8637703200d5a5cfeed9ed5fc03d5c8ca5.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Find a planet flagged with no atmosphere in the planet panel.",
+					"Build at least one Wind Turbine there (it will produce no wind power — that’s fine)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "SPACE_JUNK",
+			"name": "Space junk",
+			"description": "Exhaust both fuel and energy while flying in space.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/6d9fa1c9ae706ca8f95be83a78bd96ad65986ba7.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Enter spaceflight, burn remaining fuel, and avoid energy recharge.",
+					"Exhaust both fuel and mecha energy while still in space."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "ELECTROMAGNETIC_MATRIX",
+			"name": "Electromagnetic matrix",
+			"description": "Produce at least 43,200 Electromagnetic matrices per hour.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/9fdc160c2f1d3f50b2a0e5e78d43abc3ed79b80c.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Scale assemblers/labs with sufficient belt throughput for the recipe.",
+					"Produce at least 43,200 Electromagnetic matrices per hour (check Production panel rates)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "SONIC_BOOM",
+			"name": "Sonic boom!",
+			"description": "Exceed a sailing speed of 340m/s in the atmosphere.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/56455616dbbe3f2c978127c20a030e3fad94cfd7.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Upgrade Icarus sails / engines and dive in atmosphere.",
+					"Exceed 340 m/s sailing speed while still in atmosphere (not warp)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "ENERGY_MATRIX",
+			"name": "Energy matrix",
+			"description": "Produce at least 43,200 Energy matrices per hour.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/497fbb6a24c6591eb8b63d3981a87a0ce301c176.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Scale assemblers/labs with sufficient belt throughput for the recipe.",
+					"Produce at least 43,200 Energy matrices per hour (check Production panel rates)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "DUST_TO_DUST_II",
+			"name": "Dust to dust II",
+			"description": "Collect 10M soil piles from Dark Fog.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/3850a4d78679788e500454838cbc5d068815f394.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Scale anti-Fog farming with planet-wide defenses and loot pickup.",
+					"Collect 10,000,000 soil piles from Dark Fog."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "HAPPY_HUNTING_II",
+			"name": "Happy Hunting II",
+			"description": "Neutralize 1000 Dark Fog space units.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/8f437fe1e2aaa07482d68ea91296bb436fad8f1b.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Engage Dark Fog space units with Icarus or planetary defenses.",
+					"Neutralize 1000 Dark Fog space units."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "STRUCTURE_MATRIX",
+			"name": "Structure matrix",
+			"description": "Produce at least 43,200 Structure matrices per hour.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/a2267e513d1ff9156ca06aa7f6bbd8355c41d00a.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Scale assemblers/labs with sufficient belt throughput for the recipe.",
+					"Produce at least 43,200 Structure matrices per hour (check Production panel rates)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "UNIVERSE_MATRIX_GREEN_BELT",
+			"name": "Universe matrix, Green Belt",
+			"description": "Produce at least 43,200 Universe matrices per hour.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/28fe0cea612d57456be3e1aeda0960419a8ccf86.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Scale assemblers/labs with sufficient belt throughput for the recipe.",
+					"Produce at least 43,200 Universe matrices per hour (check Production panel rates)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "POWER_SURGE",
+			"name": "Power surge",
+			"description": "Use 12 Wireless Power Towers to charge a mecha at the same time.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/582cdeb4ade2b00689575567c28f4b6ab902358f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Place Wireless Power Towers covering one landing spot.",
+					"Stand so 12 towers charge Icarus at the same time."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "SECRETS_OF_THE_UNIVERSE_I",
+			"name": "Secrets of the universe I",
+			"description": "Upload a total of 1M Universe matrices.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/f474542fede42528fcfb7b31943ac199aecfa8c9.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Feed Universe Matrices into Matrix Labs set to research/upload.",
+					"Upload a total of 1M Universe matrices."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "GRAVITY_MATRIX",
+			"name": "Gravity matrix",
+			"description": "Produce at least 43,200 Gravity matrices per hour.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/3c4c65e31978e3851862a43a63f54b7e54c0cde8.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Scale assemblers/labs with sufficient belt throughput for the recipe.",
+					"Produce at least 43,200 Gravity matrices per hour (check Production panel rates)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "INFORMATION_MATRIX",
+			"name": "Information matrix",
+			"description": "Produce at least 43,200 Information matrices per hour.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/eb568e895f6384ddb5c571c55babf0d89d33a456.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Scale assemblers/labs with sufficient belt throughput for the recipe.",
+					"Produce at least 43,200 Information matrices per hour (check Production panel rates)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "BOY_GENIUS",
+			"name": "Boy genius",
+			"description": "Find and orbit a Neutron Star.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/0c0e4bbd9c9dbbfc3ccc6faa326523986e116aa9.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Locate a Neutron Star in the cluster map.",
+					"Travel there and enter orbit around it."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "BURN_BABY_BURN",
+			"name": "Burn baby burn",
+			"description": "Have Icarus burn at least 16 different fuels in a game.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/c97bba5d4fa4b96750fcbad2fdf45bd267244e47.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Craft or loot many fuel types (wood, coal, energetic graphite, hydrogen, antimatter fuel rods, etc.).",
+					"Burn at least 16 different fuels in Icarus over the save."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "YOU_SHALL_NOT_PASS",
+			"name": "You Shall Not Pass!",
+			"description": "Neutralize a Relay Station before it lands on a planet.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/a1084cbad9f1dd3caebe3f6931cf69388b18ce99.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Watch for Dark Fog Relay Stations descending toward a planet.",
+					"Destroy the Relay in space before it successfully lands."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "CHEMIST",
+			"name": "Chemist",
+			"description": "Make 20 Organic Crystals by hand using the original formula.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/2cd80ac1c394d83c99b9004c86304dc27e710818.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Unlock the early Organic Crystal recipe (plastic + refined oil + water, or the classic hand recipe).",
+					"Hand-craft Organic Crystals in the Replicator 20 times using that original formula."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "BON_VOYAGE",
+			"name": "Bon voyage!",
+			"description": "Travel to the planetary system farthest from your original system.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/d3e8c7ca89a24dae80f8243c30eb34a97c8a90a4.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Check distances from your starter system in the cluster view.",
+					"Travel to the planetary system with the maximum distance from your origin."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "NICE_SURPRISE_5",
+			"name": "Nice Surprise 5",
+			"description": "Obtain at least 10 Carbon Nanotubes by collecting plants.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/033565a4f485c7fc44e08463efae0b4fe0d0313b.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Gather specific plants that can yield Carbon Nanotubes.",
+					"Obtain at least 10 Carbon Nanotubes by collecting plants."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "RUNNING_ON_FUMES",
+			"name": "Running on fumes",
+			"description": "Manually collect 20 Hydrogen with Icarus on a Gas Giant while energy is at 5% or less.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/af864614499cd9869f516be817be81bf9353a8e2.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Fly to a Gas Giant with energy at 5% or less.",
+					"Manually collect 20 Hydrogen with Icarus without recharging above that threshold."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "UNIVERSE_FACTORY",
+			"name": "Universe factory",
+			"description": "Reach a total power generation of 50GW.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/d2a3cec10695ec87078d38bf63bc99e20c31e5f6.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Expand fuel generators, renewables, or sphere receivers across planets.",
+					"Raise cluster power generation until it reaches 50GW."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "UNIVERSE_MATRIX_BLUE_BELT",
+			"name": "Universe matrix, Blue Belt",
+			"description": "Produce at least 108,000 Universe matrices per hour.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/2baf60ae33c4b6749b8abfc1d118e38501c010a0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Scale assemblers/labs with sufficient belt throughput for the recipe.",
+					"Produce at least 108,000 Universe matrices per hour (check Production panel rates)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "IT_S_ON_FIRE",
+			"name": "It's on Fire",
+			"description": "Icarus' Replicator speed reaches 400%.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/f1cad69ca27ab5411302b25ee905e54fc166ceb3.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Research Replicator speed upgrades and related mecha tech.",
+					"Raise Icarus Replicator crafting speed to 400%."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "FASTER_THAN_LIGHT",
+			"name": "Faster than light",
+			"description": "Reach a sailing speed of 3000m/s in non-warp transportation.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/27eb1f3f365e20fb93c75adcc9764c7133f87d13.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Upgrade sails/engines heavily without using warp.",
+					"Hit 3000 m/s sailing speed in normal (non-warp) spaceflight."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "ALL_CALCULATED",
+			"name": "All Calculated",
+			"description": "Unlock all secret technologies.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/c7b42b73a5dc1d405e6cc6fcac036ab56c66465a.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Unlock every secret/hidden technology node available in the research panel."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "ICARUS_PHD",
+			"name": "Icarus, PhD",
+			"description": "Unlock all technologies (upgrade Unlimited Technology at least once).",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/98650b2de753317ec9a86f8aab345f8727bd42d6.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Research the full technology tree in the Tech panel.",
+					"Upgrade at least one Unlimited Technology node once after unlocking it."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "FIRING_ON_ALL_CYLINDERS",
+			"name": "Firing on all cylinders",
+			"description": "Unlock upgrade to decrease the mineral mining consumption rate to less than 15%.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/7ca385f584bc3de466bdc6b9b8e7933c86fee881.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Open the Tech / Upgrade panel and spend matrices/hash.",
+					"Unlock upgrade to decrease the mineral mining consumption rate to less than 15%."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "MEMENTO",
+			"name": "Memento!",
+			"description": "Don't dismantle the landing capsule before completing the game.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/7f8c3b0063b0609015463fb4d0cde0531d46c54e.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"At the start, leave the landing capsule intact (do not dismantle it).",
+					"Finish the main mission while the capsule still exists on the starting planet."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/",
+				"warnings": [
+					"Missable. Dismantling the landing capsule voids this for the save."
+				]
+			}
+		},
+		{
+			"id": "A_T_FIELD",
+			"name": "A.T Field",
+			"description": "Planetary Shield's coverage reaches 100% over a planet.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/55735150092e6b4ccb731bb413107f2da5a86e64.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Research and build Planetary Shield generators.",
+					"Expand coverage until the planet shows 100% Planetary Shield coverage."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "SOLAR_SAIL_NO_THANK_YOU",
+			"name": "Solar Sail? No thank you!",
+			"description": "Complete the game without launching a Solar Sail.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/45ad60efd245b82926a65f16ec7bb857fe2d5d02.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete the game using rockets / other sphere construction without launching Solar Sails.",
+					"Avoid the Solar Sail launcher buildings entirely until the credits."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/",
+				"warnings": [
+					"Missable challenge run — launching any Solar Sail fails it."
+				]
+			}
+		},
+		{
+			"id": "BEFORE_OUR_TIME",
+			"name": "Before our time",
+			"description": "Land on another planet outside the initial planetary system before unlocking Warp drive.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/04f0d9cfeeef5001437805cc99f9386f59d963d9.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Before unlocking Warp drive, use a sub-light sail to leave the home system.",
+					"Land on a planet in another planetary system."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "SECRETS_OF_THE_UNIVERSE_II",
+			"name": "Secrets of the universe II",
+			"description": "Upload a total of 10M Universe matrices.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/221726573d18b466bb71e6f66497c337b6ac1e68.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Feed Universe Matrices into Matrix Labs set to research/upload.",
+					"Upload a total of 10M Universe matrices."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "YOU_STARTED_IT",
+			"name": "You Started It",
+			"description": "Have Icarus destroyed by Dark Fog at Passive Dark Fog aggressiveness.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/e86d75d6fc831458de19443d39e55d8089e17606.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Set Dark Fog aggressiveness to Passive in new game / settings where available.",
+					"Engage Fog until Icarus is destroyed by them under Passive aggressiveness."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "ONE_GIANT_LEAP_FOR_MANKIND",
+			"name": "One giant leap for mankind!",
+			"description": "Leave the original planet and land on another within an hour.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/c7bc099360ba85cbb9e60dde56fe035bfcf43dec.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Rush basic thrusters and a small ship loadout.",
+					"Leave the starting planet and land on another within the first hour."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "ENVIRONMENTAL_NIGHTMARE",
+			"name": "Environmental nightmare",
+			"description": "Drop 3000 units of Titanium Ingot at once while flying through space.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/1208ba078c5a33a934dab7ab0ce61be0c55db820.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Carry 3000+ Titanium Ingots into space.",
+					"Drop 3000 Titanium Ingots at once from the inventory while flying in space."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "ALIEN_MINERAL_PROTECTION_ACT",
+			"name": "Alien Mineral Protection Act",
+			"description": "Complete the game without gathering rare veins to obtain rare ores.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/416aa92e19cfa5d3b3d8c312fff7d7d29ff36547.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Finish the game without mining rare vein types for rare ores.",
+					"Use only common veins / synthesis paths that avoid rare ore gathering."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "WRONG_PLACE",
+			"name": "Wrong Place",
+			"description": "Land on a planet occupied by over 20 Planetary Bases.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/f3c21b30a29f0dd2da28a276fb7e3cdee34ebac6.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Scout Fog-occupied planets in the mid/late game.",
+					"Land on a planet that currently has over 20 Dark Fog Planetary Bases."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "I_CAN_SEE_MY_HOUSE_FROM_HERE",
+			"name": "I can see my house from here!",
+			"description": "Get Icarus 40m above sea level without entering flight mode.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/9287dbc1255cdb987b92d53ef8ef8266eac28233.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Use terrain / buildings / jet techniques without switching to full flight mode.",
+					"Get Icarus at least 40 m above sea level while not in flight mode."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "DUST_TO_DUST_III",
+			"name": "Dust to dust III",
+			"description": "Collect 100M soil piles from Dark Fog.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/5ff63bdec0a2d0e57b3fa98ba7dbf3b2d2903ee4.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Automate Fog farming and soil pickup across multiple planets.",
+					"Reach 100,000,000 soil piles collected from Dark Fog."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "I_SAW_THIS_IN_A_MOVIE_ONCE",
+			"name": "I saw this in a movie once",
+			"description": "Cover a planet with a Foundation.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/69312ef7cf5596905f5ffcf23890ddecbd262035.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Produce huge amounts of Foundation / soil.",
+					"Pave an entire planet surface with Foundation until it is fully covered."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "GLOBAL_OFFENSE",
+			"name": "Global Offense",
+			"description": "Be simultaneously assaulted by 12 Planetary Bases on a planet.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/249eed31f6c73b7b1fd15ca297e5ae4d2bba3ba0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Provoke Dark Fog on a heavily occupied planet.",
+					"Survive a moment where 12 Planetary Bases are assaulting you at once."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "ENVIRONMENTALIST",
+			"name": "Environmentalist",
+			"description": "Complete the game without using Foundations.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/f15c03336e6fbaf344dbf81b26c2a2110a74edc9.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete the main mission without placing Foundations.",
+					"Build around water/terrain instead of paving."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "HAPPY_HUNTING_III",
+			"name": "Happy Hunting III",
+			"description": "Neutralize 10000 Dark Fog space units.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/ac967a2fe5e2f587eeac7bc3b45cefd828ce5cf9.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Engage Dark Fog space units with Icarus or planetary defenses.",
+					"Neutralize 10000 Dark Fog space units."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "NICE_SURPRISE_4",
+			"name": "Nice Surprise 4",
+			"description": "Obtain at least 100 Sulfuric Acid by collecting plants.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/6a31eee4d5e8555eae6a7250a864b13ff458aa5d.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Collect plants that can yield Sulfuric Acid on suitable biomes.",
+					"Obtain at least 100 Sulfuric Acid by collecting plants."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "CENTREBRAIN_NEEDS_MORE_ENERGY_III",
+			"name": "CentreBrain needs more energy III",
+			"description": "Total power generation of the Dyson Sphere reaches 1TW.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/aab1014e9e9d302bbe182ee7f198a39343224b8a.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Launch Solar Sails / Rockets to build out your Dyson Sphere structure.",
+					"Grow sphere output until generation reaches 1TW."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "MINERALS_BY_THE_DOZEN",
+			"name": "Minerals by the dozen",
+			"description": "Cover at least 12 Veins with one Mining machine.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/b2fcfe8b7b6e5603453a766d5f9e8faebb673d86.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Find a dense vein cluster where nodes sit close together.",
+					"Place a single Mining Machine covering at least 12 vein nodes."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "MAGPIE",
+			"name": "Magpie",
+			"description": "Discover 7 kinds of rare minerals, and collect at least 10 by hand.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/ad8492ed00896e9284f995176ec229419fe95f4e.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Explore multiple planets for rare veins (Fire Ice, Optical Grating Crystal, etc.).",
+					"Discover 7 rare mineral types and hand-pick at least 10 ore from them."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "BULLET_STORM",
+			"name": "Bullet Storm",
+			"description": "Bullet consumption reaches 360/min on any planet.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/be80561f63aa9891b4042fff9b9c8e25fa2650f4.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Mass turrets with ammo belts on a defense planet.",
+					"Reach 360 bullets consumed per minute on any single planet (stats)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "DETERMINATION",
+			"name": "Determination",
+			"description": "Use more than 80K foundations on a Waterworld planet.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/938ecbada97f2273a3900f46e8d434d51f6c98b8.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Colonize a Waterworld (mostly ocean) planet.",
+					"Place more than 80,000 Foundation tiles on that waterworld."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "WELL_TRAVELED",
+			"name": "Well traveled",
+			"description": "Travel to at least 32 planetary systems in a game.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/d3670e75b67a70f97cb1768475c6945b711203bf.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Build warpers and vessels for long-range travel.",
+					"Visit at least 32 different planetary systems."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "DATA_RULES_EVERYTHING_AROUND_ME",
+			"name": "Data rules everything around me",
+			"description": "Achieve a Matrix Lab upload rate of 1M hash/s.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/fa633d98b079a7c5eb1f4ff97534d46dcb41b1af.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Fill Matrix Labs with hash/universe matrices and proliferator if needed.",
+					"Reach a Matrix Lab upload rate of 1M hash/s."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "INVINCIBLE",
+			"name": "Invincible",
+			"description": "Base radius of Icarus' Energy Shield reaches 25m.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/72f24aa491ad62d08ee101bc14227cf14dad60f2.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Upgrade Icarus Energy Shield radius techs.",
+					"Raise the shield base radius to 25 m."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "LET_THERE_BE_LIGHT",
+			"name": "Let there be light!",
+			"description": "Light an Artificial Star on the North and South Pole of the original planet, an Ice Field Gelisol Planet, and the eternal night side of a tide-locked planet.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/c30dff358413efcc014a17d8dfa7fa89b5408971.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Build Artificial Stars at: north pole and south pole of the starter planet.",
+					"Also light one on an Ice Field Gelisol planet and one on the dark side of a tide-locked planet."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "X0_5_RESOURCE_COMPLETION",
+			"name": "x0.5 Resource completion",
+			"description": "Complete the game on x0.5 resource difficulty.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/dcdf88c11630cb981615bdd7181cc21ee6cbb1a1.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Start a new game with ×0.5 resource multiplier.",
+					"Complete the main mission on that setting."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "DIDN_T_BREAK_A_SWEAT",
+			"name": "Didn't break a sweat!",
+			"description": "Complete the game within 25 hours on x1 (or less) resource difficulty.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/41eed34373913e0db814bc18a50d236fedd91522.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Set resources to ×1 or lower.",
+					"Complete the main mission in under 25 hours (use production rush + warp)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "MISSION_IMPOSSIBLE",
+			"name": "Mission impossible!",
+			"description": "Complete the game within 10 hours on x1 (or less) resource difficulty.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/cd1745880cfa939b03f13c0fb30c679c13918fd0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Set resources to ×1 or lower and plan a speedrun factory.",
+					"Complete the main mission in under 10 hours."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "WE_CAN_MAKE_IT_IF_WE_TRY",
+			"name": "We can make it if we try",
+			"description": "Build a Dyson Sphere around a Red Giant star with a power generation performance of more than 10GW.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/8cd5dad10b10d3cf86fd74a90c4565d311ee5563.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Expand generators and factory load across your cluster.",
+					"Build a Dyson Sphere around a Red Giant star with a power generation performance of more than 10GW. Check the statistics panel for current totals."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "A_PENNY_SAVED",
+			"name": "A Penny Saved",
+			"description": "Complete the mission without any buildings destroyed at Difficulty 1.0 or above.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/ca21ce596bcee9966bc6f222fda172c8fa431466.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"On Difficulty 1.0+, prevent any of your buildings from being destroyed.",
+					"Finish the mission with a clean building HP record."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "MONSTER_KILL",
+			"name": "Monster Kill",
+			"description": "Icarus neutralizes over 1,000 Dark Fog units within 1 minute.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/28b43f5ad956358f9e4479abe6ca3c4601fd9e20.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Pull a huge Dark Fog wave into AOE weapons / bombs.",
+					"Neutralize over 1,000 Fog units within a single 60-second window."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "LEAN_MEAN_CLEANING_MACHINE",
+			"name": "Lean mean cleaning machine",
+			"description": "Use Icarus' garbage clearing function to absorb 50,000 units of Iron Ingot at the same time.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/61718f982f42a4a20b29b85b8ce9765ead08b5a5.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Dump or spill a giant pile of Iron Ingots on the ground.",
+					"Use Icarus garbage clearing to absorb 50,000 Iron Ingots in one action."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "PEACE_LOVE",
+			"name": "Peace & Love",
+			"description": "Complete the mission without any Dark Fog buildings neutralized at Difficulty 1.0 or above.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/88c8be4b64d9b54d8aaaf277a4b292d05bc79716.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Play on Difficulty 1.0+ without destroying any Dark Fog buildings.",
+					"Finish the mission while leaving Fog structures intact."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "WAR_HAS_CHANGED",
+			"name": "War has Changed",
+			"description": "Complete the mission without building any Turrets at Difficulty 1.0 or above.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/6b2ea8620fa0f9391606d1f0ccb929be41b2a4a0.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"On Difficulty 1.0+, never build turrets.",
+					"Defend with Icarus / other means and complete the mission."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "POPCORN",
+			"name": "POPCORN!",
+			"description": "Implosion Cannon neutralizes 40 enemies or more with 1 shot.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/6bb399737ae7b691c2b99b3bae9f5453f14f1e77.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Equip Implosion Cannons on defense vs dense Fog packs.",
+					"Get a single Implosion Cannon shot that neutralizes 40+ enemies."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "IN_THE_SPOTLIGHT",
+			"name": "In the Spotlight",
+			"description": "Have 40 Laser Towers shoot the same target at Difficulty 1.0 or above.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/a918a47058102edfff98a528a6821f05d9b6f693.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Build 40 Laser Towers with clear line of fire on one target.",
+					"On Difficulty 1.0+, have all 40 shoot the same target simultaneously."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "STRANGLE_IN_THE_CRADLE",
+			"name": "Strangle in the cradle",
+			"description": "Wipe out a Dark Fog Planetary Base within 1 hour at Difficulty 1.0 or above.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/90d9a1ffe530e26ca5b3fad538d2efd5a32ecd18.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"On Difficulty 1.0+, rush a newly landed Fog Planetary Base.",
+					"Destroy that base within 1 hour of the run/condition start."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "WON_T_LIE_LOW",
+			"name": "Won't Lie Low",
+			"description": "Attract an attack from a space unit within 1 hour at Difficulty 1.0 or above.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/6f775fb29d7ccf5a2dc54d492d6c8d0378799ef5.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"On Difficulty 1.0+, aggression-farm space Fog units early.",
+					"Draw a space-unit attack within the first hour."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "UNBOWED_UNBENT_UNBROKEN",
+			"name": "Unbowed, Unbent, Unbroken",
+			"description": "Keep Icarus' energy shield's power consumption at 1GW while resisting damage for over 1 minute.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/c61737fe18caa5ced1d50eeb67ba5a43ecde69e9.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Upgrade shields and stand in heavy continuous damage.",
+					"Keep shield power consumption at 1 GW while resisting damage for over 1 minute."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		},
+		{
+			"id": "SHOOT_ONESELF_IN_THE_FOOT",
+			"name": "Shoot Oneself in the Foot",
+			"description": "Lure Lancers to destroy a Planetary Base.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1366540/20a07614d494a4e2b65dd964b34aab5141d33d57.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Pull Dark Fog Lancers toward a Planetary Base.",
+					"Position so their attacks destroy the Planetary Base."
+				],
+				"sourceUrl": "https://www.exophase.com/game/dyson-sphere-program-steam/achievements/"
+			}
+		}
+	]
+}

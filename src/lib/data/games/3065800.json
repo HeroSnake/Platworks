@@ -1,0 +1,237 @@
+{
+	"$schema": "./schema.json",
+	"appId": 3065800,
+	"name": "Marathon",
+	"totalAchievements": 14,
+	"achievements": [
+		{
+			"id": "WELCOME_TO_TAU_CETI",
+			"name": "Welcome to Tau Ceti",
+			"description": "Complete or skip your initial run.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3065800/b0beb7efdb463e1b1f679d081d584b5a723b2697.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Start the game and begin your first run on Tau Ceti IV.",
+					"Either finish the initial run or skip it when prompted — either path unlocks the achievement."
+				]
+			}
+		},
+		{
+			"id": "THIS_IS_MARATHON",
+			"name": "This is Marathon",
+			"description": "Experience shell death for the first time.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3065800/19a0369cc4f9e5dcb3b2c0a1ed2476e629b2c62b.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Deploy a Shell into a run.",
+					"Die once (shell death) — the achievement unlocks on your first death."
+				]
+			}
+		},
+		{
+			"id": "EVERYTHING_RUNS_ON_CYBERACME",
+			"name": "Everything Runs on CyberAcme",
+			"description": "Re-establish communication with the Sol system.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3065800/a023065b7f7bc82416a38f77dcf2559555c5dad2.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Progress early story/faction work with CyberAcme.",
+					"Complete the priority contract that re-establishes communication with Sol (often tied to the \"Welcome to Tau Ceti\" contract chain)."
+				],
+				"sourceUrl": "https://hunterscabin.com/guides/PUfo9egAHEcTsA1adhlj"
+			}
+		},
+		{
+			"id": "RUN_REPEAT",
+			"name": "Run, Repeat",
+			"description": "Exfil successfully 7 times.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3065800/dfa6e8fb0f4da19da488257cf6ca4a17e3b16ed7.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Enter runs, gather loot, and reach an extraction point alive.",
+					"Successfully exfil 7 times total — failed runs do not count."
+				]
+			}
+		},
+		{
+			"id": "RUN_EXECUTABLE",
+			"name": "Run Executable",
+			"description": "Complete 21 runs.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3065800/5b453d874b852138538e07ce52049a1c31ff4aad.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Deploy into runs with any Shell.",
+					"Complete 21 runs total — you do not need to exfil successfully; finishing/ending the run counts."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3726999020"
+			}
+		},
+		{
+			"id": "ANTIESTABLISHMENT",
+			"name": "Antiestablishment",
+			"description": "Eliminate 147 UESC units.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3065800/04fc500e24de9058b9c8e42fecf8a633c9416b0a.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Fight UESC AI forces during runs.",
+					"Kill 147 UESC units across all runs — track naturally while looting and contracting."
+				]
+			}
+		},
+		{
+			"id": "END_RUN",
+			"name": "End Run",
+			"description": "Eliminate 14 rival Runners.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3065800/54d9906ca51121d342911e0eb07ce0361fc12689.jpg",
+			"types": [
+				"multiplayer",
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Engage other player Runners in contested areas.",
+					"Secure 14 rival Runner eliminations across runs."
+				]
+			}
+		},
+		{
+			"id": "JACKPOT",
+			"name": "Jackpot",
+			"description": "Loot 777 containers.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3065800/e3f24dd1084c8a3244db183bdeda0e835d718857.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open loot containers whenever you see them during runs.",
+					"Loot 777 containers total — prioritize dense POIs and contract routes."
+				]
+			}
+		},
+		{
+			"id": "RIP_UESC",
+			"name": "RIP UESC",
+			"description": "Eliminate 28 UESC commanders.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3065800/b5315d0de05f988e542353558b40722796eb9fc1.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Hunt elite UESC commander units (stronger than regular UESC infantry).",
+					"Eliminate 28 commanders across runs."
+				]
+			}
+		},
+		{
+			"id": "SIGN_HERE",
+			"name": "Sign Here",
+			"description": "Complete 35 contracts.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3065800/f133b59d9a4a108aade385db96a0a556dab32ec8.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Accept faction contracts from the Factions/Contracts menus (multiple factions can be active).",
+					"Turn in 35 completed contracts total — progress is visible under each faction's Contracts section."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3726999020"
+			}
+		},
+		{
+			"id": "CUTTING_EDGE",
+			"name": "Cutting Edge",
+			"description": "Unlock 7 capstone upgrades.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3065800/ab5b9db3772f66ace84a98267dc1aca7766b21a1.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open a Faction upgrade screen — capstones are the numbered circles (I–VI) at the bottom of each tree.",
+					"Unlock regular upgrades until a capstone fills (typically every 6 upgrades), then buy that capstone.",
+					"Repeat until you own 7 capstones total — they can be spread across different factions."
+				],
+				"sourceUrl": "https://gamersocialclub.ca/2026/03/10/marathon-100-achievement-trophy-guide/"
+			}
+		},
+		{
+			"id": "RELIABLE_ASSET",
+			"name": "Reliable Asset",
+			"description": "Reach VIP status with a faction.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3065800/7a151cab2db236add00b8c75d6fc37d242a15f0d.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Pick one faction and focus reputation: contracts, runs, and combat XP for that faction.",
+					"Reach faction level 30 (VIP). Only one faction needs VIP — not all of them.",
+					"Use systems like C.A.R.R.I. if available to speed reputation gains."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3726999020",
+				"communityNotes": [
+					"Reddit tip: VIP is with a single faction, not every mega-corp — that makes the grind much more doable."
+				]
+			}
+		},
+		{
+			"id": "SEASONED_VETERAN",
+			"name": "Seasoned Veteran",
+			"description": "Earn 100 Season Levels in a single season.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3065800/8ea1c270f8fcac4417435a59ff4166e8e5655402.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Play during one active season and earn Season XP from runs, contracts, and objectives.",
+					"Reach Season Level 100 before the season resets — progress does not carry across seasons."
+				],
+				"warnings": [
+					"Must be completed within a single season window."
+				]
+			}
+		},
+		{
+			"id": "ESCAPE_WILL_MAKE_ME",
+			"name": "Escape Will Make Me...",
+			"description": "Complete all other achievements for Marathon.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3065800/e10f0d427db283e01db02619b4b4c256070e2a0a.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Unlock every other Marathon achievement first.",
+					"This meta-achievement unlocks automatically once the other 13 are complete."
+				],
+				"sourceUrl": "https://gamersocialclub.ca/2026/03/10/marathon-100-achievement-trophy-guide/"
+			}
+		}
+	]
+}

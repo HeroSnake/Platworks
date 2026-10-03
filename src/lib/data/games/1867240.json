@@ -1,0 +1,196 @@
+{
+	"$schema": "./schema.json",
+	"appId": 1867240,
+	"name": "WARDOGS",
+	"totalAchievements": 10,
+	"achievements": [
+		{
+			"id": "THIS_IS_WARDOGS",
+			"name": "This is WARDOGS",
+			"description": "Complete the Tutorial",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1867240/480db7d8ba4805eed0fea1a9e0564ae58042e4d8.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Start the Tutorial from the main menu.",
+					"Complete every Tutorial objective through to the end — the achievement unlocks automatically."
+				]
+			}
+		},
+		{
+			"id": "THAT_WAS_RUDE",
+			"name": "That was rude",
+			"description": "Punch Kristopher in the Tutorial",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1867240/7675d4e92049c26d3661dd341f74c05f291ae25e.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Enter the Tutorial (do not skip it).",
+					"Find the character named Kristopher during the Tutorial sequence.",
+					"Melee-punch Kristopher once — the secret achievement unlocks immediately."
+				],
+				"sourceUrl": "https://vgtimes.com/guides/169176-wardogs-how-to-unlock-all-10-achievements.html",
+				"warnings": [
+					"Missable if you skip or rush past Kristopher in the Tutorial — you will need to replay the Tutorial later just for this punch."
+				]
+			}
+		},
+		{
+			"id": "RICOCHET",
+			"name": "Ricochet",
+			"description": "Kill an enemy player with a ricochet bullet",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1867240/5ff2f5faf3755b5d6c835e1cfd55d1eead6713d5.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In a multiplayer match, aim at solid cover (walls, buildings, rocks) at a shallow angle near an enemy.",
+					"Fire so the bullet bounces off the surface and kills the enemy — sniper ricochets off buildings also count if the kill is from the bounce."
+				],
+				"sourceUrl": "https://vgtimes.com/guides/169176-wardogs-how-to-unlock-all-10-achievements.html"
+			}
+		},
+		{
+			"id": "LONG_SHOT",
+			"name": "Long Shot",
+			"description": "Get a kill from over 950m away",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1867240/a9e1bdbc330a7afdb19083c1c179514c5d87e8ab.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Progress the Recon branch and equip a reliable sniper loadout.",
+					"Find a clear open sightline of 950m+ (bridges and long valleys work well).",
+					"Engage a spotted target and secure the kill while standing more than 950 meters away."
+				],
+				"sourceUrl": "https://vgtimes.com/guides/169176-wardogs-how-to-unlock-all-10-achievements.html"
+			}
+		},
+		{
+			"id": "DO_NOT_RESUSCITATE",
+			"name": "Do Not Resuscitate",
+			"description": "Kill an enemy player using the defibrillator charge",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1867240/ae7ffad9077623ec893e20c29df3706192240388.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Level the Medic track to Level 11, then spend $50,000 to unlock the Defibrillator.",
+					"Buy a Defibrillator ($1,600, 2.6 kg) and a battery so it can charge.",
+					"Get into close range of an enemy (corners/cover help) and hit them with the electrical discharge to kill them."
+				],
+				"sourceUrl": "https://vgtimes.com/guides/169176-wardogs-how-to-unlock-all-10-achievements.html",
+				"communityNotes": [
+					"Reddit tip: There are no fixed roles — medic XP from revives/heals unlocks defibs; anyone can buy them once unlocked."
+				]
+			}
+		},
+		{
+			"id": "FAT_STACKS",
+			"name": "Fat Stacks",
+			"description": "Reach $100,000 net profit in a single life",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1867240/d5f6a9fd744f93efc8382d8f4337493a456096cd.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Stay alive for a long profitable life — dying resets the single-life counter.",
+					"Stack income from Recon spotting (mark + assist cash when teammates kill spotted enemies), building useful structures, and helicopter supply transport.",
+					"Reach $100,000 net profit before you die once."
+				],
+				"sourceUrl": "https://vgtimes.com/guides/169176-wardogs-how-to-unlock-all-10-achievements.html"
+			}
+		},
+		{
+			"id": "TOP_DOG",
+			"name": "Top Dog",
+			"description": "Finish the match as the top cash earner across all teams",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1867240/a9d77e8bea22723c6bdb199bf542466b62107734.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Play the full match focused on cash: objectives, spotting, builds, revives/heals with defibrillators and large batteries.",
+					"Stay alive and keep earning through the end — you must finish #1 cash earner across all three teams."
+				]
+			}
+		},
+		{
+			"id": "BIG_SPENDER",
+			"name": "Big Spender",
+			"description": "Spend $100,000 on a single loadout",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1867240/99a4f6c2d244acc91061d4d3c74fd3fe3f04afb6.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Bank a large cash pile first (often right after unlocking Fat Stacks in the same life).",
+					"In one purchase, equip the most expensive loadout you can until the single loadout spend hits $100,000."
+				],
+				"sourceUrl": "https://vgtimes.com/guides/169176-wardogs-how-to-unlock-all-10-achievements.html",
+				"warnings": [
+					"Rarest achievement (~0.1% global) — you need both a huge cash reserve and a single purchase that clears $100k."
+				]
+			}
+		},
+		{
+			"id": "CZ_SURVIVOR",
+			"name": "CZ Survivor",
+			"description": "Spend 60 minutes in the CZ without dying",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1867240/1d944351cf721742e83d9054b3f7cedf96dbca37.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Enter the Control Zone (CZ) and stay inside it.",
+					"Play from cover with your team — avoid being the first into every fight and skip unnecessary duels.",
+					"Accumulate 60 continuous minutes in the CZ without dying once."
+				],
+				"sourceUrl": "https://vgtimes.com/guides/169176-wardogs-how-to-unlock-all-10-achievements.html",
+				"warnings": [
+					"Any death resets the timer — treat this as a patience run, not a frag chase."
+				]
+			}
+		},
+		{
+			"id": "CLEAN_SWEEP",
+			"name": "Clean Sweep",
+			"description": "Win a match without another team scoring a point",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1867240/ceadee2d2165f68c230ba0418630a630206e5191.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Queue with an organized squad or wait for a strong coordinated team.",
+					"Dominate CZ/objective control so neither of the other two teams scores a single point.",
+					"Win the match with the shutout intact."
+				],
+				"sourceUrl": "https://vgtimes.com/guides/169176-wardogs-how-to-unlock-all-10-achievements.html",
+				"warnings": [
+					"Not realistically soloable — one slip that lets another team score voids the run."
+				]
+			}
+		}
+	]
+}

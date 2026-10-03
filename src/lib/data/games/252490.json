@@ -1,0 +1,1730 @@
+{
+	"$schema": "./schema.json",
+	"appId": 252490,
+	"name": "Rust",
+	"totalAchievements": 116,
+	"achievements": [
+		{
+			"id": "VISIT_A_ROAD",
+			"name": "Visit a Road",
+			"description": "Visit a Road",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/17af2133e2b7a1e16f70ea6e801fd792b93c037a.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Open the map (G) and look for the dirt/tarmac roads linking monuments.",
+					"Walk onto any road — barrels often line them, so this usually pops while looting early."
+				]
+			}
+		},
+		{
+			"id": "COLLECT_300_METAL_ORE",
+			"name": "Collect 300 Metal Ore",
+			"description": "Collect 300 Metal Ore",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/b989a707829fcf4b69fba6f1d2b89f6e8a752039.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Mine rust-coloured metal ore nodes (common in rocky/mountain areas) until you have 300 ore.",
+					"The achievement counts raw ore as you mine it — smelting is optional for the unlock."
+				]
+			}
+		},
+		{
+			"id": "DESTROY_10_BARRELS",
+			"name": "Destroy 10 Barrels",
+			"description": "Destroy 10 Barrels",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/7faf41f0589a4e02fb8b1efe2cc970a4b28960db.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find loot barrels along roads and around monuments.",
+					"Break 10 barrels with any tool or weapon, then loot the scrap and components."
+				]
+			}
+		},
+		{
+			"id": "CONSTRUCT_BASE",
+			"name": "Construct Base",
+			"description": "Construct a Base",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/2afae89715b94862d8b3d6c7319029d9711f75a1.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Craft a Building Plan and Hammer (default blueprints, wood only).",
+					"Place foundations, walls, a doorway and a roof — even a 2x1 with a door and Tool Cupboard counts."
+				]
+			}
+		},
+		{
+			"id": "COLLECT_65_SCRAP",
+			"name": "Collect 65 Scrap",
+			"description": "Collect 65 Scrap",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/e5f7c678cd5b3aa10ab21f25a227d57bf0071cfd.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Loot roadside barrels and monument crates, or recycle unwanted components at a recycler (Outpost/Bandit Camp).",
+					"Gather 65 scrap total."
+				]
+			}
+		},
+		{
+			"id": "ACQUIRE_50_LOW_GRADE_FUEL",
+			"name": "Acquire 50 Low Grade Fuel",
+			"description": "Acquire 50 Low Grade Fuel",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/17d45ab640dc06debd555ef955d731743330a53b.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Loot barrels/crates for low grade fuel, or craft it from animal fat + cloth.",
+					"Hold 50 low grade fuel at once or accumulate the acquire counter to 50."
+				]
+			}
+		},
+		{
+			"id": "UPGRADE_BASE",
+			"name": "Upgrade Base",
+			"description": "Upgrade your base",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/d7d425b5b3f35e6089d59267ea6766920db82a41.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Equip the Hammer, look at a twig/wood building block, and upgrade it to a higher tier (wood → stone → metal → armoured)."
+				]
+			}
+		},
+		{
+			"id": "COLLECT_WOOD",
+			"name": "Collect Wood",
+			"description": "Collect 100 Wood",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/d896ed9975dc2b03acc89625ed7b70827354f625.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Hit trees with your starting rock (or a Stone Hatchet) until you gather 100 wood.",
+					"Aim for the glowing hit marker after the first swing for bonus yield."
+				]
+			}
+		},
+		{
+			"id": "COLLECT_700_WOOD",
+			"name": "Collect 700 Wood",
+			"description": "Collect 700 Wood",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/4ddf4089ef99a6127829e55fcd83882bd5a5115f.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Craft a Stone Hatchet, then chop trees until you have collected 700 wood total across your account."
+				]
+			}
+		},
+		{
+			"id": "GIDDY_UP",
+			"name": "Giddy Up!",
+			"description": "Ride a horse for 1km",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/b07c1edf5557615d25e47af8a0afd35e772dbb60.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find a wild horse and mount it (or tame one).",
+					"Ride continuously until you cover 1 km — open areas and roads make tracking distance easier."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2647607320"
+			}
+		},
+		{
+			"id": "FIRST_NOTES",
+			"name": "First Notes",
+			"description": "Play your first instrument",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/4bb0b7751ff16bf7eaac8c7b26a670d7a794288b.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find or buy any instrument (often in barrels or vending machines).",
+					"Equip it and press a note key to play — the achievement unlocks on first play."
+				]
+			}
+		},
+		{
+			"id": "COLLECT_200_STONE",
+			"name": "Collect 200 Stone",
+			"description": "Collect 200 Stone",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/9bb0de24d60c60fed3ecf424a8c88138d32768aa.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Mine grey stone nodes and pick up loose stones until you have 200 stone.",
+					"A Stone Pickaxe roughly doubles gather rate over the starting rock."
+				]
+			}
+		},
+		{
+			"id": "COLLECT_30_CLOTH",
+			"name": "Collect 30 Cloth",
+			"description": "Collect 30 Cloth",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/fc5304ea9e38e787eee8ede64434287da8b8be23.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Harvest hemp bushes (tall green plants) and skin animals until you have 30 cloth."
+				]
+			}
+		},
+		{
+			"id": "CRAFT_CAMP_FIRE",
+			"name": "Craft Camp Fire",
+			"description": "Craft a campfire",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/f0284c3969b32b838a65da0327c72055182244a7.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Gather Wood, open the crafting menu (TAB).",
+					"Craft a Camp Fire — place it to cook food and stay warm."
+				]
+			}
+		},
+		{
+			"id": "CRAFT_STONE_HATCHET",
+			"name": "Craft Stone Hatchet",
+			"description": "Craft a Stone Hatchet",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/e73a5b8d19963a652ed5bd3b63a8e5cb24d8969d.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Gather Wood and Stones from nodes / debris.",
+					"Craft a Stone Hatchet for faster wood gathering."
+				]
+			}
+		},
+		{
+			"id": "EQUIP_CLOTHING",
+			"name": "Equip Clothing",
+			"description": "Equip 3 pieces of clothing",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/d6608020131ae466d272ed3b15a6cde75c51f2bf.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Loot or craft any clothing and fill 3 clothing slots (hat, shirt, pants, etc.)."
+				]
+			}
+		},
+		{
+			"id": "CRAFT_SPEAR",
+			"name": "Craft Spear",
+			"description": "Craft a wooden spear",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/508043e2b9e9a18435f06128bc157c4b87d38437.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft a Wooden Spear from wood early after spawning.",
+					"Use it for hunting and basic melee until you find better weapons."
+				]
+			}
+		},
+		{
+			"id": "KILL_AN_ANIMAL",
+			"name": "Kill an Animal",
+			"description": "Kill an Animal",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/d62c19a40f0cbceb176e0e19ec38763b17c02e25.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Kill any animal (chickens/boars are safest early) with a rock or spear."
+				]
+			}
+		},
+		{
+			"id": "CRAFT_HAMMER",
+			"name": "Craft Hammer",
+			"description": "Craft a Hammer",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/d42c08fe5b833f86ba2c1b187609e0ddde9866a5.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft a Hammer from wood.",
+					"Equip it to upgrade, rotate, and repair building blocks."
+				]
+			}
+		},
+		{
+			"id": "PLACE_CAMP_FIRE",
+			"name": "Place Camp Fire",
+			"description": "Place a camp fire",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/8dde5848abac85e61a376bcadc2a6f267c909324.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft a Campfire, equip it from inventory, and place it on a flat surface (ideally inside your base)."
+				]
+			}
+		},
+		{
+			"id": "CRAFT_STONE_PICKAXE",
+			"name": "Craft Stone Pickaxe",
+			"description": "Craft a Stone Pickaxe",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/d02b8e1965d9d46c94406740bf87b50ff309f476.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft a Stone Pickaxe from wood + stone.",
+					"Mine ore and stone nodes with it."
+				]
+			}
+		},
+		{
+			"id": "CRAFT_BUILDING_PLAN",
+			"name": "Craft Building Plan",
+			"description": "Craft a Building Plan",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/89ad139b74cf827f03837c4f5363ced02f067c62.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft a Building Plan from wood.",
+					"Equip it to place twig foundations, walls, and stairs."
+				]
+			}
+		},
+		{
+			"id": "SOMETHING_OF_A_SCIENTIST_MYSELF",
+			"name": "Something of a scientist myself",
+			"description": "Kill 5 Scientists",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/2d9ec986506f0c9361f89aa2f877ae0ef19b88a2.jpg",
+			"types": [
+				"cumulative",
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find scientists at monuments (Military Tunnel, Oil Rig, Launch Site, Outpost, etc.).",
+					"Kill 5 scientists total — they are armed NPCs, so bring a gun and meds."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2647607320"
+			}
+		},
+		{
+			"id": "PLACE_SLEEPING_BAG",
+			"name": "Place Sleeping Bag",
+			"description": "Place a sleeping bag",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/1de5839ab559cf5e0254b56edaf08056d064b6af.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft a Sleeping Bag and place it inside a locked room in your base.",
+					"This sets your respawn point so you do not beach-respawn after every death."
+				]
+			}
+		},
+		{
+			"id": "COLLECT_50_CLOTH",
+			"name": "Collect 50 Cloth",
+			"description": "Collect 50 Cloth",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/516bd0f6849eecd903db2e0685dabb264cf11090.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Keep picking hemp and skinning animals until you reach 50 cloth total."
+				]
+			}
+		},
+		{
+			"id": "CRAFT_SLEEPING_BAG",
+			"name": "Craft Sleeping Bag",
+			"description": "Craft a Sleeping Bag",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/8fbbef71f79837d2b1fd523de8dbd66725d437a1.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Harvest hemp plants for Cloth (or recycle clothing).",
+					"Craft a Sleeping Bag and place it as your respawn point."
+				]
+			}
+		},
+		{
+			"id": "SEALBREAKER",
+			"name": "Sealbreaker",
+			"description": "Completely fill your hydration bar",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/df517479e3cb671c4e4d14c4b8d075cd6784dfb1.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Hidden achievement. Steam does not publish a description for this hidden achievement, so we are not going to guess at the trigger. Check a community guide or the in-game achievement list once it unlocks."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2647607320"
+			}
+		},
+		{
+			"id": "SKIN_AN_ANIMAL",
+			"name": "Skin an Animal",
+			"description": "Skin an Animal",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/9b6324a9628b7031c53edd4567cc4f6e5e7f0c9e.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"After killing an animal, hold E on the corpse to harvest meat, cloth, and bone."
+				]
+			}
+		},
+		{
+			"id": "CRAFT_ARROWS",
+			"name": "Craft Arrows",
+			"description": "Craft some Arrows",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/48459ed7c2fbd67c131000481e538fe81d7eeec8.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft Wooden Arrows (or better) from the crafting menu."
+				]
+			}
+		},
+		{
+			"id": "PLACE_WOODEN_BOX",
+			"name": "Place Wooden Box",
+			"description": "Place a Wooden Box",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/9e74ca137375a1ccb62da49e9158915d10b55cd3.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Place a Wooden Storage Box on a floor inside your base."
+				]
+			}
+		},
+		{
+			"id": "GLUTTON",
+			"name": "Glutton",
+			"description": "Completely fill your food bar",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/3b9d9664a85847891233384f230e0b2ecfc92e01.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Hidden achievement. Steam does not publish a description for this hidden achievement, so we are not going to guess at the trigger. Check a community guide or the in-game achievement list once it unlocks."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2647607320"
+			}
+		},
+		{
+			"id": "CRAFT_LOCK",
+			"name": "Craft Lock",
+			"description": "Craft a lock",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/7f628feb31d62026bf1ee2ad48f2a8b03266d185.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft a Key Lock (or Code Lock if researched), then place it on a door."
+				]
+			}
+		},
+		{
+			"id": "LOCK_THE_LOCK",
+			"name": "Lock the Lock",
+			"description": "Lock the Lock",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/66868746ea579b4c937bddcedef0e7a42e22793f.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Place a lock on a door/box and lock it (set a code or use the key)."
+				]
+			}
+		},
+		{
+			"id": "CRAFT_WOODEN_BOX",
+			"name": "Craft Wooden Box",
+			"description": "Craft a Wooden Box",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/8450998ea34fd69bac35a1c414971a37b140392c.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft a Wooden Storage Box and place it in your base for loot."
+				]
+			}
+		},
+		{
+			"id": "PLACE_LOCK",
+			"name": "Place Lock",
+			"description": "Place a Lock",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/c58a86b8ef74d41c6b60dbc335bd9db155c6bb83.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft a Key Lock or Code Lock.",
+					"Place it on a door or box, then lock it (set a code if using a Code Lock)."
+				]
+			}
+		},
+		{
+			"id": "CRAFT_TOOL_CUPBOARD",
+			"name": "Craft Tool Cupboard",
+			"description": "Craft a Tool Cupboard",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/424767f3da728f12ba6845209a9287835449a11f.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft a Tool Cupboard (TC) once you have wood + stones.",
+					"Place it inside your base and authorize yourself."
+				]
+			}
+		},
+		{
+			"id": "CRAFT_WOODEN_DOOR",
+			"name": "Craft Wooden Door",
+			"description": "Craft a Wooden Door",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/67a1397076adeabc6bd131a672cb4a887cc6a65b.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft a Wooden Door from wood.",
+					"Place it into a doorframe and add a lock."
+				]
+			}
+		},
+		{
+			"id": "CRAFT_HUNTING_BOW",
+			"name": "Craft Hunting Bow",
+			"description": "Craft a Hunting Bow",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/f84c412f3f927bd6166cf9d21bf9940a966906fa.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft a Hunting Bow from wood + cloth.",
+					"Craft Wooden Arrows and hunt animals or players."
+				]
+			}
+		},
+		{
+			"id": "PLACE_TOOL_CUPBOARD",
+			"name": "Place Tool Cupboard",
+			"description": "Place a tool Cupboard",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/537b696c5db5ce2767f274e3528ca8777101239a.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft a Tool Cupboard, then place it fully inside your base footprint.",
+					"Authorize on the TC — anything outside its radius is not protected."
+				]
+			}
+		},
+		{
+			"id": "PLACE_WOODEN_DOOR",
+			"name": "Place Wooden Door",
+			"description": "Place a Wooden Door",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/c698a319a079645b4057df792202065643e25837.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Equip a Wooden Door and place it in a doorway on your base."
+				]
+			}
+		},
+		{
+			"id": "CRAFT_BURLAP_PANTS",
+			"name": "Craft Burlap Pants",
+			"description": "Craft Burlap Pants",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/18245f5b1a0bbc1a01f3260e3b05714e926c33eb.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Gather the required materials, then open the crafting menu (default TAB).",
+					"Craft Burlap Pants and keep it in your inventory or hotbar."
+				]
+			}
+		},
+		{
+			"id": "CRAFT_BURLAP_SHIRT",
+			"name": "Craft Burlap Shirt",
+			"description": "Craft a Burlap Shirt",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/d3ab09d3756e27167e8fafc4636cfa045a7710f0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Gather the required materials, then open the crafting menu (default TAB).",
+					"Craft Burlap Shirt and keep it in your inventory or hotbar."
+				]
+			}
+		},
+		{
+			"id": "PLACE_A_FURNACE",
+			"name": "Place a Furnace",
+			"description": "Place a Furnace",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/4462fd5d4d51ea55ec22586ac0d228a054315ea7.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft or loot Furnace first.",
+					"Equip it from the belt/hotbar and place it on a valid surface/frame."
+				]
+			}
+		},
+		{
+			"id": "CRAFT_BURLAP_HEADWRAP",
+			"name": "Craft Burlap Headwrap",
+			"description": "Craft a Burlap Headwrap",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/bc2648316ce4c3c0f68ab1259f91530c67c4aa84.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Gather the required materials, then open the crafting menu (default TAB).",
+					"Craft Burlap Headwrap and keep it in your inventory or hotbar."
+				]
+			}
+		},
+		{
+			"id": "SAVE_THE_PLANET",
+			"name": "Save The Planet",
+			"description": "Recycle 5 empty cans at a recycler",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/579ad1d9c9b1d4c8e634d5ffa874b675898e84db.jpg",
+			"types": [
+				"cumulative",
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find and eat Cans of Beans or Tuna to produce empty cans.",
+					"Bring 5 empty cans to a recycler at a monument (Outpost, Bandit Camp, Lighthouse, etc.) and recycle them."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2647607320"
+			}
+		},
+		{
+			"id": "CRAFT_A_FURNACE",
+			"name": "Craft a Furnace",
+			"description": "Craft a Furnace",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/d592f97fdd63b79ea4719e9aaa626235b96be15f.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Gather the required materials, then open the crafting menu (default TAB).",
+					"Craft Furnace and keep it in your inventory or hotbar."
+				]
+			}
+		},
+		{
+			"id": "PLACE_A_WORKBENCH",
+			"name": "Place a Workbench",
+			"description": "Place a Workbench",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/bcaec1a3ca191273ad366ffdff4f30d74e29fd3f.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft or loot Workbench first.",
+					"Equip it from the belt/hotbar and place it on a valid surface/frame."
+				]
+			}
+		},
+		{
+			"id": "RESEARCH_AN_ITEM",
+			"name": "Research an Item",
+			"description": "Research an Item",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/0f5ed511d50436bf40c7f32f37db038a53463394.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"At a Research Table, research any item you do not already know the blueprint for."
+				]
+			}
+		},
+		{
+			"id": "CRAFT_A_WORKBENCH",
+			"name": "Craft a Workbench",
+			"description": "Craft a Workbench",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/f64b1a30ca7904a5474d45f80dd1c953947293c6.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Gather the required materials, then open the crafting menu (default TAB).",
+					"Craft Workbench and keep it in your inventory or hotbar."
+				]
+			}
+		},
+		{
+			"id": "PLACE_A_RESEARCH_TABLE",
+			"name": "Place a Research Table",
+			"description": "Place a Research Table",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/8e4e3005464436ee3077a7852373f6afc7cc5c22.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft or loot Research Table first.",
+					"Equip it from the belt/hotbar and place it on a valid surface/frame."
+				]
+			}
+		},
+		{
+			"id": "CRAFT_A_MACHETE",
+			"name": "Craft a Machete",
+			"description": "Craft a Machete",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/e2b98ff8413556f22da12250f46d14b5d68d53ee.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Gather the required materials, then open the crafting menu (default TAB).",
+					"Craft Machete and keep it in your inventory or hotbar."
+				]
+			}
+		},
+		{
+			"id": "I_M_THE_CAPTAIN_NOW",
+			"name": "I'm the Captain now",
+			"description": "Reach the bridge of the Cargo Ship",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/dc5390235efb1a5c06cd1e76cd094757ec3c1456.jpg",
+			"types": [
+				"multiplayer",
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Board the periodic Cargo Ship event when it spawns.",
+					"Fight through scientists to the top bridge area of the ship."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2647607320"
+			}
+		},
+		{
+			"id": "CRAFT_NAILGUN_NAILS",
+			"name": "Craft Nailgun Nails",
+			"description": "Craft Nailgun Nails",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/2e7958f97495705c6ab17dd203c52d34f3a60ff3.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Gather the required materials, then open the crafting menu (default TAB).",
+					"Craft Nailgun Nails and keep it in your inventory or hotbar."
+				]
+			}
+		},
+		{
+			"id": "CRAFT_A_RESEARCH_TABLE",
+			"name": "Craft a Research Table",
+			"description": "Craft a Research Table",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/ec8091d0430360d7327a2ac822ccb9f5feafa3a5.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Gather the required materials, then open the crafting menu (default TAB).",
+					"Craft Research Table and keep it in your inventory or hotbar."
+				]
+			}
+		},
+		{
+			"id": "ON_THE_DECK",
+			"name": "On The Deck",
+			"description": "Land a minicopter on an oil rig Helipad",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/4d0b37d0d3ba7a695ea4cd3cc6559186d28049b8.jpg",
+			"types": [
+				"multiplayer",
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Obtain a Minicopter (usually bought at Bandit Camp).",
+					"Fly to Small or Large Oil Rig and land cleanly on the helipad."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2647607320"
+			}
+		},
+		{
+			"id": "CRAFT_A_NAILGUN",
+			"name": "Craft a Nailgun",
+			"description": "Craft a Nailgun",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/751fb6e29495847045b382b4cdc60d05bf50c7e8.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Gather the required materials, then open the crafting menu (default TAB).",
+					"Craft Nailgun and keep it in your inventory or hotbar."
+				]
+			}
+		},
+		{
+			"id": "I_SHOULD_BUY_THIS_SOUNDTRACK",
+			"name": "I should buy this Soundtrack",
+			"description": "Listen to the Rust soundtrack from a Boom Box for 30 seconds",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/3c40595a6a203413381b37cf78ca1f77e21d0d98.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Play the Rust soundtrack on a Boom Box and listen for 30 seconds."
+				]
+			}
+		},
+		{
+			"id": "BIG_BROTHER",
+			"name": "Big Brother",
+			"description": "Watch another player through a CCTV camera",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/e75e5d92d90cfe680bc8ea682c7bf876e1e8923e.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Craft/loot a Computer Station and pair CCTV cameras (monument cams work with the right IDs).",
+					"Open the station and view another player through a live camera feed."
+				]
+			}
+		},
+		{
+			"id": "BUCKLE_UP",
+			"name": "Buckle Up",
+			"description": "Start a fully repaired car with a full set of T3 engine parts",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/63f90742f0c137fa42634c77f32bdb12cc58f92e.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Fully repair a car and fit a full set of Tier 3 engine parts, then start it."
+				]
+			}
+		},
+		{
+			"id": "FRIENDLY_NEIGHBOUR",
+			"name": "Friendly Neighbour",
+			"description": "Wave at 5 different players",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/7fb0e7ee3f0c6bee31b44b6e4c92f07affc85cd6.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Hold the gesture/wheel key and select Wave.",
+					"Wave at 5 different players (not the same person five times)."
+				]
+			}
+		},
+		{
+			"id": "PAPARAZZI",
+			"name": "Paparazzi",
+			"description": "Take a photo of another player",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/843a3897267256b31881b3579afa1b54bdb361c4.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Equip a camera item / photo function available on the wipe.",
+					"Take a photograph that includes another player."
+				]
+			}
+		},
+		{
+			"id": "DUDE_WHERE_S_MY_BOAT",
+			"name": "Dude, where's my boat?",
+			"description": "Swim 200M in the deep sea",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/b8bcdb6316373dabbbc562021459f05e2a006e68.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Enter the Deep Sea naval zone.",
+					"Swim 200 meters without a boat — plan stamina/food carefully."
+				],
+				"sourceUrl": "https://www.exophase.com/game/rust-steam/achievements/"
+			}
+		},
+		{
+			"id": "SUNGLASSES_AT_NIGHT",
+			"name": "Sunglasses at Night",
+			"description": "Equip a pair of sunglasses after the sun goes down",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/c437ed42d85c43ac9ab8240f0979a41c1468b9ec.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Obtain sunglasses (loot, vendors, or crafting related to the Sunburn pack items).",
+					"Wait until nighttime, then equip the sunglasses."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2647607320"
+			}
+		},
+		{
+			"id": "FRESH_GRADUATE",
+			"name": "Fresh Graduate",
+			"description": "Complete the Tutorial Island",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/623b5094cddc34b42a57b1249a53c9b768280d9e.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Join Tutorial Island from the SESSION tab (or use launch options if the button is missing).",
+					"Complete every tutorial task, then leave via the boat/menu."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3728561076"
+			}
+		},
+		{
+			"id": "MISSION_ACCOMPLISHED",
+			"name": "Mission Accomplished",
+			"description": "Complete 5 missions for NPC's",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/44e13fc6903b7d95f9274601ed9c6fa682ac3416.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete 5 NPC missions (Outpost/Bandit Camp style quests)."
+				]
+			}
+		},
+		{
+			"id": "BAD_NEIGHBOUR",
+			"name": "Bad Neighbour",
+			"description": "Use a megaphone while in another player's Tool Cupboard radius.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/2d81eb5a2489941c526123f6c4778f57dbfd1d34.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Use a megaphone while standing inside another player's Tool Cupboard radius."
+				]
+			}
+		},
+		{
+			"id": "THREAD_THE_NEEDLE",
+			"name": "Thread the Needle",
+			"description": "Land a Minicopter on the Cargo Ship",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/36654dcb66fa436760051f777d3e38528e2eee4c.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Locate the moving Cargo Ship monument on the ocean.",
+					"Land a Minicopter on its deck without destroying the scrap heli."
+				]
+			}
+		},
+		{
+			"id": "BATTLE_BUS",
+			"name": "Battle Bus",
+			"description": "Drive a modular car with 4 passengers",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/6333b47c7e167e9e4086b90d780d7207d08b38f6.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Build or loot a modular car with enough seating modules.",
+					"Drive it with 4 passengers aboard (5 people including you)."
+				]
+			}
+		},
+		{
+			"id": "ARCTIC_SPEED",
+			"name": "Arctic Speed",
+			"description": "Acquire a snowmobile in an Arctic Research Base",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/1b51a547461dfc108ebec3abf64a884862e9cd4c.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Loot or acquire a snowmobile inside an Arctic Research Base."
+				]
+			}
+		},
+		{
+			"id": "MUSICAL_MAESTRO",
+			"name": "Musical Maestro",
+			"description": "Play every instrument",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/8369dd7d58af42d8ae7b47692f6629e706340e9a.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Find or craft every instrument type (trumpet, cowbell, etc.).",
+					"Play each instrument at least once via the interaction key."
+				]
+			}
+		},
+		{
+			"id": "GETTING_THE_BAND_TOGETHER",
+			"name": "Getting the band together",
+			"description": "Join a team of at least 4 people where everyone has instruments equipped",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/09cc77e5f33c1038410e59edce198a2e21c40a57.jpg",
+			"types": [
+				"multiplayer",
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Form a team of 4+ players.",
+					"Have every teammate equip an instrument at the same time."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=2647607320"
+			}
+		},
+		{
+			"id": "SOAKED",
+			"name": "Soaked",
+			"description": "Soak another player above the damage threshold using a water gun.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/ecbdb79c5148c2b8c9774be5748a08be09ca783b.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Soak another player past the damage threshold with a water gun."
+				]
+			}
+		},
+		{
+			"id": "ON_THE_RECORD",
+			"name": "On the Record",
+			"description": "Record another player speaking onto a Cassette.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/60decac6c7baeeae0c0e46f2193f808564e535b8.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Craft a Cassette Recorder and blank cassette.",
+					"Record another player’s voice while they are speaking nearby."
+				]
+			}
+		},
+		{
+			"id": "HEAVY_INDUSTRY",
+			"name": "Heavy Industry",
+			"description": "Activate the Excavator",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/075a0a67670da05230bc283c631c9a4cf706c656.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Go to the Giant Excavator monument with diesel fuel.",
+					"Fuel and activate the Excavator."
+				]
+			}
+		},
+		{
+			"id": "COOL_KIDS_CLUB",
+			"name": "Cool Kids Club",
+			"description": "Be in a team where every team member is riding a Boogie Board or Inner Tube (minimum 4 members)",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/bcb911d8f5a617694d26ed4fe1cf0c0a735230b5.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Form a team of at least 4 players.",
+					"Have every member ride a Boogie Board or Inner Tube at the same time."
+				]
+			}
+		},
+		{
+			"id": "LIQUIDATOR",
+			"name": "Liquidator",
+			"description": "Get a kill using a water gun.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/8ba8761a609266bd54f54040f711749aab81f941.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Craft or loot a Water Gun and fill it.",
+					"Get a kill credited with the Water Gun (usually on a low-HP / already weak target — as the game rules allow)."
+				]
+			}
+		},
+		{
+			"id": "LIKE_NOBODY_S_WATCHING",
+			"name": "Like Nobody's Watching",
+			"description": "Dance near a playing Boom Box on an active Disco Floor.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/953d15c43b4b7f6f91b570426526f292c368b7c2.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Place a Boom Box and Disco Floor, start music.",
+					"Use a dance gesture while standing on the active Disco Floor near the music."
+				]
+			}
+		},
+		{
+			"id": "NO_PRESSURE",
+			"name": "No Pressure",
+			"description": "Get a kill with a super soaker pumped at the lowest pressure.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/6af5f079d3f3b3833d603326180c716367a1164e.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Kill a player with a super soaker pumped at the lowest pressure setting."
+				]
+			}
+		},
+		{
+			"id": "RADICAL",
+			"name": "Radical",
+			"description": "Splash another player with a Water Pistol while that player is irradiated",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/19fe595eec28e2ff65755e4498457e20c9fa9390.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Irradiate another player (radiation zones / weapons that apply rads).",
+					"Splash them with a Water Pistol while they are still irradiated."
+				]
+			}
+		},
+		{
+			"id": "I_CAN_NO_LONGER_SEE",
+			"name": "I can no longer see",
+			"description": "Stare into a laser light for 30 seconds.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/455176078c6cc399b2c08f9188a9988fe4dd2243.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Find a laser light decoration / strobe.",
+					"Look directly into it for 30 continuous seconds."
+				]
+			}
+		},
+		{
+			"id": "TERROR_IN_THE_DEEP",
+			"name": "Terror in the Deep",
+			"description": "Travel to an underwater lab with a submarine",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/51a50e6fa62ffeeb515145d88a5945b3abd16ca7.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Obtain a submarine and dive to an Underwater Lab.",
+					"Dock/enter the lab after traveling there by sub."
+				]
+			}
+		},
+		{
+			"id": "RUST_AIR",
+			"name": "Rust Air",
+			"description": "Pilot a Scrap Transport Helicopter with 5 passengers",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/488187c2ab913efbb3490241d16d43c58d104189.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Pilot a Scrap Transport Helicopter (Chinook-style player scrap heli).",
+					"Fly with 5 passengers on board."
+				]
+			}
+		},
+		{
+			"id": "SHIPSHAPE",
+			"name": "Shipshape",
+			"description": "Build your first boat",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/dda08f8e204daca8d658a1fcec9a52201e15a78f.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Gather the materials for a boat at the coast or a Floating City.",
+					"Build your first boat — the achievement unlocks on construction."
+				],
+				"sourceUrl": "https://www.exophase.com/game/rust-steam/achievements/"
+			}
+		},
+		{
+			"id": "NEW_HORIZONS",
+			"name": "New Horizons",
+			"description": "Enter the Deep Sea",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/979d5600864489909cb28a72a02aedefea05703a.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Sail or fly out past the normal map border into the Deep Sea zone.",
+					"Enter the Deep Sea for the first time."
+				]
+			}
+		},
+		{
+			"id": "PARTY_BOAT",
+			"name": "Party Boat",
+			"description": "Dance with 2 other players at the front of the Cargo Ship.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/4fded8febc44edd08846c9c1d8b18e917c1e93ac.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Board the Cargo Ship with two other players.",
+					"All three dance at the front/bow area together."
+				]
+			}
+		},
+		{
+			"id": "FULL_COLLECTION",
+			"name": "Full Collection",
+			"description": "Play an instrument while floating in an Inner Tube while listening to a Boom Box play a radio stream",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/4f1b442b17de89d6ce3d86995b9499cf9c58a554.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Float in an Inner Tube, play an instrument, and have a Boom Box playing a radio stream at the same time."
+				]
+			}
+		},
+		{
+			"id": "IT_S_HONEST_WORK",
+			"name": "It's Honest Work",
+			"description": "Plant a different seed in every slot in a Large Planter Box",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/523b85abf47a73d95839c0209a5981ab3f66be1a.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Plant a different seed type in every slot of a Large Planter Box."
+				]
+			}
+		},
+		{
+			"id": "ON_TRACK",
+			"name": "On Track",
+			"description": "Kill 10 Tunnel Dwellers while on a moving work cart",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/0bd065aae608e2beeea12da82a617f9388e25ea4.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"While riding a moving work cart, kill 10 Tunnel Dwellers."
+				]
+			}
+		},
+		{
+			"id": "NEED_MORE_FIBRE",
+			"name": "Need more fibre",
+			"description": "Eat 10 coconuts",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/e2dfc1243bd8ed54241aa36ed69369ef871368aa.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Find coconut food on tropical / island loot.",
+					"Eat 10 coconuts (cumulative)."
+				]
+			}
+		},
+		{
+			"id": "PRO_ANGLER",
+			"name": "Pro Angler",
+			"description": "Catch one of every fish",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/b5bf8e4d5c7270b4dc154650ad29dad36648404a.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Catch every fish type with a fishing rod (check the fishing guide for missing species)."
+				]
+			}
+		},
+		{
+			"id": "PEW_PEW",
+			"name": "Pew Pew",
+			"description": "Find the hidden Revolver on the Tutorial Island",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/8ccea74fc805f9d97b581ee95c625373342a0811.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Join Tutorial Island on an official Facepunch server (use launch options if the tutorial button is missing).",
+					"Before finishing tutorial tasks, run to the Lighthouse and check the backside near rocks/water for a hidden Elite Crate.",
+					"Open/get close to the crate and loot the Revolver — the achievement unlocks."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3728561076",
+				"warnings": [
+					"Easy to miss if you rush the tutorial — grab the crate before finishing and leaving the island."
+				]
+			}
+		},
+		{
+			"id": "SAFE_HARBOR",
+			"name": "Safe Harbor",
+			"description": "Reach a Floating City",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/59b001cca362acd1689db98d80f5392d4be55460.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Locate a Floating City ocean monument on the map.",
+					"Reach / dock at the Floating City."
+				]
+			}
+		},
+		{
+			"id": "OCEANS_ARE_NOW_BATTLEFIELDS",
+			"name": "Oceans are now battlefields",
+			"description": "Hit another boat with a cannon",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/5141a36fb5c175bcb2a979483ce13da6a471474d.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Mount a cannon on a tugboat / boat that supports it.",
+					"Score a hit on another player-owned boat with the cannon."
+				]
+			}
+		},
+		{
+			"id": "TREASURE_AHOY",
+			"name": "Treasure ahoy!",
+			"description": "Open 5 loot containers on Tropical Islands",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/fe102cb75c0ab1863aef5752fee05b372c7db059.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"On Tropical Islands, open 5 loot containers (crates/caches)."
+				]
+			}
+		},
+		{
+			"id": "HIGH_ROLLER",
+			"name": "High Roller",
+			"description": "Win 3 rounds of poker at Bandit Camp",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/a8c1f61b0011634053645003f3848f998bd2456b.jpg",
+			"types": [
+				"multiplayer",
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Go to Bandit Camp’s poker table with enough scrap.",
+					"Win 3 poker rounds there."
+				]
+			}
+		},
+		{
+			"id": "DEATH_FROM_ABOVE",
+			"name": "Death from Above",
+			"description": "Kill another player with the MLRS",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/8c2d7705fdbc75566a5cbfb3367f8544c8583756.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Find another player with the MLRS in the world (monuments, roads, or biome spawns).",
+					"Defeat it with guns, melee, or traps — loot the body if relevant."
+				]
+			}
+		},
+		{
+			"id": "HOSTILE_WATERS",
+			"name": "Hostile Waters",
+			"description": "Start opening a locked crate on a Ghost Ship",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/419f01c7962498751a3a64cb6cd5ba892e0d4b12.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Find a Ghost Ship event on the ocean.",
+					"Start hacking/opening a locked crate on it."
+				]
+			}
+		},
+		{
+			"id": "STRENGTH_IN_NUMBERS",
+			"name": "Strength in Numbers",
+			"description": "Join a clan",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/861b0241a89ccf3e68fde1977b139b195861b6aa.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Open the clan UI and create or accept a clan invite.",
+					"Become a clan member."
+				]
+			}
+		},
+		{
+			"id": "APEX_PREDATOR",
+			"name": "Apex Predator",
+			"description": "Kill 3 sharks with a speargun",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/4b10863688978e3ab6067b0394f41145f71c13ac.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Find 3 sharks with a speargun in the world (monuments, roads, or biome spawns).",
+					"Defeat it with guns, melee, or traps — loot the body if relevant."
+				]
+			}
+		},
+		{
+			"id": "SMOOTH_SAILING",
+			"name": "Smooth Sailing",
+			"description": "Travel 3KM with a companion in a Kayak",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/165145746192399678813a2e93b5e78882935dd3.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Sit in a Kayak with a teammate as companion.",
+					"Travel a combined 3 km while sharing the kayak."
+				]
+			}
+		},
+		{
+			"id": "WASTE_NOT_WANT_NOT",
+			"name": "Waste Not, Want Not",
+			"description": "Recycle 10 cars at Junkyard",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/ff013ea4f25e4d4a9861ef8945758e0fc479455f.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Take modular cars to the Junkyard recycler/crusher.",
+					"Recycle 10 cars there."
+				]
+			}
+		},
+		{
+			"id": "STOLEN_GOODS",
+			"name": "Stolen Goods",
+			"description": "Kill a player with a weapon on a stolen PT boat",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/359b1c13c27a677970739f86da057be278fa18ec.jpg",
+			"types": [
+				"multiplayer",
+				"secret"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Find an unattended PT boat and take control of it (stolen, not one you spawned/own).",
+					"Use a mounted weapon on that stolen PT boat to kill another player."
+				],
+				"sourceUrl": "https://truesteamachievements.com/a3452255/stolen-goods-achievement"
+			}
+		},
+		{
+			"id": "SWIM_WITH_THE_FISHES",
+			"name": "Swim with the fishes",
+			"description": "Jump off a plank while wearing handcuffs and a hood",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/a1d2f9460701eee2cd9a528e08e7aeee07bdc4a9.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Equip handcuffs and a hood.",
+					"Jump off a plank (ship plank / pirate-style jump) while wearing both."
+				],
+				"sourceUrl": "https://www.exophase.com/game/rust-steam/achievements/"
+			}
+		},
+		{
+			"id": "NEW_FRIENDS",
+			"name": "New friends",
+			"description": "Be a member of a clan with at least 10 members",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/d702b661e506f1bc87208da10fe3fff57fea10ad.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Join or grow a clan until it has 10+ members.",
+					"Remain a member while the roster is at least 10."
+				]
+			}
+		},
+		{
+			"id": "WORKING_TOGETHER",
+			"name": "Working together",
+			"description": "Score points for your clan",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/07041ff6b60cb58bd55fd97b1badc6349651a156.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Participate in clan-scored activities / events that award clan points.",
+					"Earn any clan score contribution for your clan."
+				]
+			}
+		},
+		{
+			"id": "RENT_IS_DUE",
+			"name": "Rent is due",
+			"description": "Rent a room at the apartment complex",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/17919d32dcb3a59f37f178e950e7ffbc8dbc65c6.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Go to the Apartment complex monument vendor.",
+					"Pay scrap to rent a room."
+				]
+			}
+		},
+		{
+			"id": "POWER_TRIP",
+			"name": "Power Trip",
+			"description": "Add a heavy fuse to power plant",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/14b3d98ccc2f4e8b26ae50e4ba63b0f2b4b56b6b.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"At Power Plant, insert a heavy fuse to power the monument."
+				]
+			}
+		},
+		{
+			"id": "ON_TARGET",
+			"name": "On target",
+			"description": "Kill a player with a mortar",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/72eb7ea474ffc243a132d5234ab480f389bcc0bd.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Find a player with a mortar in the world (monuments, roads, or biome spawns).",
+					"Defeat it with guns, melee, or traps — loot the body if relevant."
+				]
+			}
+		},
+		{
+			"id": "KING_OF_THE_JUNGLE",
+			"name": "King of the Jungle",
+			"description": "Travel 250m with vines in a single life",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/16a6ec7a6e3927ac52124b075305ce655b57df7d.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"In a single life, travel 250 m using vines without dying."
+				]
+			}
+		},
+		{
+			"id": "WINNER_WINNER",
+			"name": "Winner Winner",
+			"description": "Pet a chicken on the head",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/ebc66bfe0c4e02f97273dae4f4edd63e9708627f.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find a chicken.",
+					"Interact to pet it on the head."
+				],
+				"sourceUrl": "https://www.exophase.com/game/rust-steam/achievements/"
+			}
+		},
+		{
+			"id": "SPACE_JUNK",
+			"name": "Space Junk",
+			"description": "Bring a satellite out of orbit",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/0235f6acb0d1ff3d2dbbae0a7e2d81e504d5c47c.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete the satellite / space event steps available on the wipe.",
+					"Bring a satellite out of orbit as the event requires."
+				]
+			}
+		},
+		{
+			"id": "NO_REFUNDS",
+			"name": "No refunds",
+			"description": "Make a purchase from the travelling vendor",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/dc300675161018a8997c628c720fa7392c7ee8ff.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Find the travelling vendor NPC/vehicle when it spawns.",
+					"Buy any item from that vendor."
+				]
+			}
+		},
+		{
+			"id": "BITE_BACK",
+			"name": "Bite back",
+			"description": "Kill a snake",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/cb6caca7e9a32f77177a726cc71da9780bdc02a1.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find a snake in tropical/jungle areas.",
+					"Kill the snake with any weapon."
+				],
+				"sourceUrl": "https://www.exophase.com/game/rust-steam/achievements/"
+			}
+		},
+		{
+			"id": "NOT_JUST_A_LOG",
+			"name": "Not just a log",
+			"description": "Be killed by a crocodile",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/bb1c8481f1b213c6c5f222d0d3444a727b58cd15.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find crocodile waters on Tropical Islands.",
+					"Let a crocodile kill you (stand in its aggro range)."
+				],
+				"sourceUrl": "https://www.exophase.com/game/rust-steam/achievements/"
+			}
+		},
+		{
+			"id": "PIE_HARD",
+			"name": "Pie Hard",
+			"description": "Hit a player with a thrown pie",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/7172cab1041fae39e1e90cdd16fdaa63f72a9238.jpg",
+			"types": [
+				"multiplayer",
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Obtain a throwable pie item.",
+					"Throw it and hit another player."
+				],
+				"sourceUrl": "https://www.exophase.com/game/rust-steam/achievements/"
+			}
+		},
+		{
+			"id": "PEN_PAL",
+			"name": "Pen Pal",
+			"description": "Drop a note item in another players mailbox",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/252490/a4a413712dbd0d84c17f01f45fc43775388b7f4b.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Craft/find a note and drop it into another player's mailbox."
+				]
+			}
+		}
+	]
+}

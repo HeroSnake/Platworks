@@ -165,7 +165,7 @@
 	}
 </script>
 
-<div class="mx-auto max-w-5xl px-4 pb-20 pt-6 sm:pb-16 sm:pt-10">
+<div class="w-full px-4 pb-20 pt-6 sm:px-6 sm:pb-16 sm:pt-10 lg:px-8">
 	<!-- Hero -->
 	<section class="mb-8 sm:mb-12">
 		<h1 class="text-2xl font-bold tracking-tight sm:text-3xl">Your Library</h1>
@@ -222,15 +222,15 @@
 		</div>
 	{:else if !hydrated}
 		<!-- Placeholder so the server markup and the first client render agree on layout. -->
-		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-			{#each Array(data.games.length) as _, i (i)}
-				<div class="h-28 animate-pulse rounded-xl bg-steam-blue sm:h-64"></div>
+		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+			{#each Array(Math.min(data.games.length, 10)) as _, i (i)}
+				<div class="min-h-40 animate-pulse rounded-2xl bg-steam-blue sm:min-h-48"></div>
 			{/each}
 		</div>
 	{:else if filteredAndSorted.length === 0}
 		<p class="py-12 text-center text-gray-500">No games match "{searchQuery}"</p>
 	{:else}
-		<div class="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
 			{#each filteredAndSorted as game (game.appId)}
 				<GameCard {game} completed={completions[game.appId] ?? 0} />
 			{/each}
