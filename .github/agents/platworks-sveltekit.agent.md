@@ -18,12 +18,50 @@ SvelteKit 3 is a large break from v2. These are the traps that have already bitt
 | Trap | Detail |
 |---|---|
 | **`svelte.config.js` must not exist** | Its presence is a hard `config_file_unsupported` error, not a warning. Config goes in `vite.config.ts` → `sveltekit({ adapter, compilerOptions })`. `adapter` is **top-level**, no `kit: {}` wrapper. Options SvelteKit doesn't claim are forwarded to `vite-plugin-svelte` (that is where `compilerOptions` lands) |
+| **`adapter-auto` is not used** | The target is **Vercel** and it is pinned as `@sveltejs/adapter-vercel` in `vite.config.ts`. Do not reintroduce `adapter-auto` "because it is the default": on Vercel it detects the platform from `process.env.VERCEL`, then runs `npm install` of the adapter **during the build**, which mutates `package.json` and needs a network round-trip. A pinned adapter is faster, deterministic, and configurable |
 | **`$lib` is removed** | Use `#lib`. It needs **both** the `imports` field in `package.json` *and* a mirrored `paths` entry in `tsconfig.json` — Vite resolves from the former, TypeScript from the latter. Missing the mirror yields ~29 phantom type errors while the app runs fine |
 | **`$app/environment` is removed** | Use `$app/env` (exports `browser`, `dev`, `building`, `version`) |
 | **`tsconfig.json` extends `$app/tsconfig`** | Not `./.svelte-kit/tsconfig.json`. The generated base now lives at `node_modules/$app/tsconfig.json` and ships `paths: {}` — SvelteKit no longer generates any lib path, so you must supply it |
 | **`goto()` options were renamed** | `replaceState`→`replace`, `invalidateAll`→`refreshAll`; `noScroll`+`keepFocus` collapsed into a single `reset` flag |
 | **Shallow `goto` still fires `onNavigate`** | `goto(url, { shallow: true })` calls `_before_navigate()` internally, so `onNavigate` runs and the View Transition plays. For "update the URL only" use the **deprecated** `replaceState(url, state)` from `$app/navigation` — it is the one API that skips the navigation hooks. It logs a one-time dev warning; that is the accepted cost |
 | **Per-keystroke navigation** | Never call `goto()` from an `oninput` handler. Besides animating, it can re-run `+page.server.ts` (the library `load` fetches Steam details for every game) |
+| **`#lib/server/*` in a component fails the build** | A page that imports a server-only module fails with `SvelteKit error: server_only_import`. The SSR build succeeds first, so the log **looks** like a successful build until the client environment errors — always check the exit code, not the chunk listing. Move the lookup into `+page.server.ts` and take the data via `data` props. A scratch/debug page is still a route: it ships with the app |
+
+## 1a. Reading a build log that "succeeded"
+
+Kit 3 builds the SSR environment first and the client second. A truncated log or a
+scrollback cut at the server chunks is the classic signature of a **client-only
+failure**: the server output looks complete, then
+
+```
+✗ Build failed
+[plugin vite-plugin-sveltekit-guard]
+SvelteKit error: server_only_import
+```
+
+If the log ends at `.svelte-kit/output/server/...` with no `output/client/` listing
+and no `✓ done`, the build did not finish. Confirm with `echo $?`, and confirm a
+real client bundle exists under `.svelte-kit/output/client/_app/immutable/entry/`.
+
+## 1b. Deployment
+
+Deployed from the **Vercel web UI** (git push → auto build). No CI config in the
+repo; Vercel runs `npm ci && npm run build` and consumes `.vercel/output`.
+
+| Setting | Value |
+|---|---|
+| Framework preset | SvelteKit (auto-detected) |
+| Build command | `npm run build` (default) |
+| Install command | `npm ci` (default) |
+| Output directory | `.vercel/output` — **do not override**; the adapter writes it |
+
+`adapter-vercel` emits **Build Output API v3**: `output/static` for assets and
+`output/functions/` for SSR plus each `+server.ts` route. A healthy build ends with
+`Using @sveltejs/adapter-vercel` then `✔ done`, and `package.json` is **not**
+modified during it — if it is, `adapter-auto` has crept back in.
+
+`dotenv` is a dependency but nothing in `src/` reads `process.env`; Steam needs no
+key. No environment variables are required on Vercel.
 
 ## 2. Routing and server loads
 
@@ -33,7 +71,7 @@ SvelteKit 3 is a large break from v2. These are the traps that have already bitt
 | `/game/[appId]` | `+page.svelte` + `+page.server.ts` | achievement list, search, filters, bottom bar |
 | `/api/steam/sync/[appId]` | `+server.ts` | one game's achievement statuses |
 | `/api/steam/profile` | `+server.ts` | name + avatar |
-| `/linktest` | `+page.svelte` | scratch page for manual checks; delete before shipping |
+| `/linktest` | `+page.svelte` + `+page.server.ts` | scratch page for inspecting link combinations in `achievement_row.svelte`. Temporary — **delete it (the directory, both files) once the inspection is done**; it is a real route and ships to production |
 
 Adding a route means adding a row here and a line to the README structure tree.
 

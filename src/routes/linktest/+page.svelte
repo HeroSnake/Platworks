@@ -1,24 +1,26 @@
 <script lang="ts">
 	import AchievementRow from '#lib/components/achievement_row.svelte';
-	import type { Achievement, GameData } from '#lib/types/game';
-	import { getGameByAppId } from '#lib/server/games';
+	import type { Achievement } from '#lib/types/game';
+	import type { PageData } from './$types';
+
+	let { data }: { data: PageData } = $props();
 
 	// Real enriched data, so this exercises the actual link combinations a
-	// completionist will hit. Temporary — deleted after inspection.
-	const game = getGameByAppId(1903340) as GameData;
-	const byId = new Map(game.achievements.map((a) => [a.id, a]));
+	// completionist will hit. The lookup itself lives in +page.server.ts because
+	// `#lib/server/*` cannot be imported into browser code.
+	const byId = $derived(new Map(data.game.achievements.map((a) => [a.id, a])));
 
-	const cases: { label: string; a: Achievement; gameMap?: string }[] = [
+	const cases: { label: string; a: Achievement; gameMap?: string }[] = $derived([
 		{
 			label: 'source + game map (A Peculiar Encounter)',
 			a: byId.get('A_PECULIAR_ENCOUNTER')!,
-			gameMap: game.mapUrl
+			gameMap: data.game.mapUrl
 		},
 		{ label: 'source only, no game map', a: byId.get('PAINTRESS')! },
 		{
 			label: 'game map fallback',
 			a: { ...byId.get('LUMIERE')!, guide: { steps: ['Only steps, no links.'] } },
-			gameMap: game.mapUrl
+			gameMap: data.game.mapUrl
 		},
 		{
 			label: 'own deep-link map overrides game map',
@@ -29,9 +31,9 @@
 					mapUrl: 'https://mapgenie.io/clair-obscur-expedition-33#old-lumiere'
 				}
 			},
-			gameMap: game.mapUrl
+			gameMap: data.game.mapUrl
 		}
-	];
+	]);
 </script>
 
 <div class="mx-auto max-w-2xl space-y-2 bg-steam-dark p-2">

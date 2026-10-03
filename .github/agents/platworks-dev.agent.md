@@ -28,23 +28,32 @@ Update **the file that owns the domain**:
 | Add a reusable pattern | the domain file it belongs to (framework, state, or UI) |
 | Change a constraint or rule | the relevant file in this table |
 
-Update **`README.md`** when you:
+Update **`README.md`** — rarely. It is deliberately short and aimed at someone
+deciding whether to clone the app, **not** at someone working in it:
 
 | Change | Where to record it |
 |---|---|
-| Add/move/rename a file or route | § Project Structure tree |
-| Add a user-visible feature | § Features |
-| Change the framework/tooling versions | § Tech Stack |
-| Add a script | § Scripts |
+| Add a user-visible feature | § What it does, if it isn't already implied |
+| Add or remove a game | § Games table |
+| Change how you install and run it | § Running it |
+| Change the framework in a way a human would notice | § Built with, one clause |
+| Add/move/rename a file, route, script or component | **nothing** — that is this directory's job |
+| Framework gotcha, schema change, icon-script flag | **nothing** — the owning domain file |
+
+The README deliberately has **no project-structure tree, no scripts table, and no
+deploy config section**. They were removed as duplication: a structure tree goes
+stale the moment a file moves, and it duplicates §4 of this file, while script and
+adapter detail belongs to the file that owns it. If you find yourself wanting to add
+one back, put it in the domain file instead.
 
 ### The two are not the same thing
 
 Do not assume that updating an agent file covers the README, or vice versa:
 
 - **`.github/agents/`** = rules, traps, architecture, and *why*. Reader: you, in six months.
-- **README** = what the app does and how to run it. Reader: a human deciding whether to clone it.
+- **README** = what the app does and how to run it, in under a screen. Reader: a human deciding whether to clone it.
 
-A framework gotcha (e.g. "`svelte.config.js` must not exist") belongs in `platworks-sveltekit.agent.md`; its one-line practical consequence for a newcomer ("config lives in `vite.config.ts`") may also deserve the README's contributor note. Duplicating a whole trap list in the README is a mistake — link to this directory instead.
+A framework gotcha (e.g. "`svelte.config.js` must not exist") belongs in `platworks-sveltekit.agent.md` and **nowhere else**. The README's single contributor note links to this directory instead of restating rules — if a rule appears in both, one of them will go stale.
 
 Do **not** add changelog-style "what I did today" entries to any of them. Record only durable knowledge: the rule, the trap, the reason. Keep each file short enough to be read in full.
 

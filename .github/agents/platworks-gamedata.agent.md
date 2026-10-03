@@ -5,7 +5,9 @@ tools: [read, edit, search, execute, web]
 
 # PlatWorks — game data layer
 
-**You own:** `src/lib/data/games/*.json`, `schema.json`, `_example.json`, `#lib/types/game.ts`, `#lib/server/games.ts`, and `scripts/`.
+**You own:** `src/lib/data/games/*.json`, `schema.json`, `_example.json`, `#lib/types/game.ts`, `#lib/server/games.ts`, `scripts/`, and the README § Games table.
+
+**This file is the single source of truth for adding a game.** The README's contribution note used to carry these steps and duplicated them; it now just points here.
 
 **Always paired with:** [platworks-dev.agent.md](./platworks-dev.agent.md). The `/generate-game-data` prompt in `.github/prompts/generate-game-data.prompt.md` is the AI path to this work and already carries the mandatory research rules.
 
@@ -73,6 +75,6 @@ The scraping target and all of its traps (one URL per trophy, 64×64 native, dis
 3. `node scripts/fetch-achievement-icons.mjs {appId}`.
 4. `node scripts/verify-achievement-icons.mjs`.
 5. `npm run check` — the loader glob and the type mirror are validated by the build.
-6. README § Features only if the game changes what the app *does*; the structure tree needs no edit for a data file.
+6. Add a row to the **README § Games** table — the appId and achievement count. That is the only README edit a data file needs.
 
 Adding a *type* or *difficulty* value means updating `schema.json`, `game.ts`, and the filter UI in `game/[appId]/+page.svelte` together.
