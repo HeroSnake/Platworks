@@ -2,9 +2,7 @@
 
 A completionist companion for Steam gamers: every achievement unpacked into step-by-step guides, missable warnings, and progress tracking.
 
-
-
-
+<img width="1523" height="932" alt="image" src="https://github.com/user-attachments/assets/075cad15-d102-4c35-81ee-6fcc98c07211" />
 
 [![PlatWorks](https://img.shields.io/badge/GitHub-HeroSnack%2FPlatworks-66c0f4?style=flat-square&logo=github)](https://github.com/HeroSnake/Platworks)
 
