@@ -174,7 +174,7 @@ for (const appId of appIds) {
 		name: a.name,
 		description: a.description,
 		...(a.iconUrl ? { iconUrl: a.iconUrl } : {}),
-		type: a.type,
+			types: a.types,
 		difficulty: a.difficulty,
 		guide: a.guide
 	}));

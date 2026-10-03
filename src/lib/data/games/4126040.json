@@ -9,7 +9,7 @@
 			"name": "First Companion",
 			"description": "Team up with Helion or Lunara.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/a755c9bcb2906eb1310b9e2fea63503e59f35c4d.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -23,7 +23,7 @@
 			"name": "Starbound Journey",
 			"description": "Earn limited badge: Starbound Journey.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/9315dd45e6a8dde1a9bb4dedf4ac24e8f3ffc325.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -37,7 +37,7 @@
 			"name": "First Step into a New World",
 			"description": "Step onto the lands of Idyll.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/6fb538bf162c55ef259d472e3997029312fba58a.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -51,7 +51,7 @@
 			"name": "Badge Beginnings",
 			"description": "Earn your first Collection Badge.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/8ee479f75389b99b24563c05c721067180c99edc.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -65,7 +65,7 @@
 			"name": "Echo of the Veins",
 			"description": "Activate the Branch in Breezy Plains and receive the ancient blessing.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/4ae80ec7402c6ac50d2d0806f592f7ebb6a7caef.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -79,7 +79,9 @@
 			"name": "Aniilog Beginner",
 			"description": "10 Aniimo recorded in the Index, more friends to connect with.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/7f2057e8edf094beb3620948233d36c0fd66d944.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -93,7 +95,7 @@
 			"name": "First Sanctum Foray",
 			"description": "Clear the first Sanctum and restore the Vein energy.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/5125d27b7b15b10c50e7e596ea7363d16f0f70cc.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -107,7 +109,7 @@
 			"name": "You're Gonna Need a Bigger Aniipod",
 			"description": "Obtain your first Alpha Aniimo.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/baa995af38aa83ed74746f27f6c01b13451d00b3.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -122,7 +124,7 @@
 			"name": "Healing Hugs",
 			"description": "Hug your Aniimo for the first time.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/9d51e1ed862f6af79a893df19ec2d3ca604234e4.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -136,7 +138,9 @@
 			"name": "Alpha Annihilator",
 			"description": "Defeat 5 Alpha/Omega Aniimo.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/ce6c675ceb40468f4b20b1b4f01e4be6c6214277.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -150,7 +154,7 @@
 			"name": "Home on Wheels",
 			"description": "The Homeland is complete, and now you have a place to call your own.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/c26adc878575f4e3f2f6a58d96aaddd68772fcbd.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -164,7 +168,7 @@
 			"name": "Twinkle, Twinkle, Little Star",
 			"description": "Your first Sparkling Aniimo, faintly shimmering.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/fa268f06c5c657f63eeb2a2209f59aee6c09b97c.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -182,7 +186,9 @@
 			"name": "Guided by the Light",
 			"description": "Illuminate 10 Blooms and converge the beams.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/2fb34038593b0acda3ce536e7dfd305fc91cb5fc.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -196,7 +202,9 @@
 			"name": "Perfect",
 			"description": "5 Perfect Aniimo. The path ahead is bright.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/cffc4c75c2b7b9dc8670b0bbe51079f43ecd3ef2.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -210,7 +218,7 @@
 			"name": "In the Same Frame",
 			"description": "Capture a moment with your Aniimo by your side.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/6298069fb68c1567e0250201de566ce894d5f4a4.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -224,7 +232,7 @@
 			"name": "Prismana Splendor",
 			"description": "Your first Prismana Aniimo, brilliantly hued.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/1640526357e3a7b0d5e808168ab4f9290d4ec71a.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -242,7 +250,7 @@
 			"name": "Junior Wayfarer",
 			"description": "Become a Junior Wayfarer.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/74e48945e8c130ecc142c990620573776f2da9c0.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -256,7 +264,9 @@
 			"name": "Index Adept",
 			"description": "40 Aniimo recorded in the Index, more companions to find.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/b0c03a0df3da4dcee16ecad25963106b95f975cb.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -270,7 +280,7 @@
 			"name": "Sparkling Bright",
 			"description": "A Sparkling Prismana Aniimo, dazzlingly radiant.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/67bcf64246de3ceb14a00a5e8e3e1e319a164b13.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -287,7 +297,9 @@
 			"name": "Hatching Plans",
 			"description": "Witness 10 Eggs hatching.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/b3a6e4a1ce9f7a189ac382126620b1ec8783de8a.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -301,7 +313,9 @@
 			"name": "Cashflow",
 			"description": "500k Credits slip through your fingers.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/6f3429aca7815844e5c6afce92d94451e24da901.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -315,7 +329,7 @@
 			"name": "Radiant as a Rainbow",
 			"description": "Witness a Prismana Flow.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/cf80c3e50244d53f8366e87599d1c5a600cb402d.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -330,7 +344,9 @@
 			"name": "Rising Challenger",
 			"description": "Complete 10 Pathfinder Challenges, steady and sure.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/b7c00674a26ca31f48484378e841b95b0fe21865.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -344,7 +360,7 @@
 			"name": "Carry That Weight",
 			"description": "Obtain a Level 10 Carried Item.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/050dee505918499b96668a639a95c5bddd3d2242.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -358,7 +374,7 @@
 			"name": "Windchaser: Bronze",
 			"description": "Earn the Bronze Collection Badge for Breezy Plains.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/1adfeb56f29cbf0d77d2af13ccaa954fa6c0fc23.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -372,7 +388,7 @@
 			"name": "Blessed Flow",
 			"description": "Level up the Branch in Breezy Plains to Prismana Radiance.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/a4339b35875016659c5046e7e94c344e5ae6d7be.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -386,7 +402,7 @@
 			"name": "Trailblazer of the Plains",
 			"description": "Cross every area of Breezy Plains.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/c4f7839047713781a9b3073ad00bf2e228958dea.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -400,7 +416,9 @@
 			"name": "Alpha Predator",
 			"description": "Defeat 20 Alpha/Omega Aniimo.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/ce6c675ceb40468f4b20b1b4f01e4be6c6214277.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -414,7 +432,7 @@
 			"name": "Windchaser: Silver",
 			"description": "Earn the Silver Collection Badge for Breezy Plains.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/0aa5958595c650c851537b7403df73b5cf958749.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -428,7 +446,9 @@
 			"name": "Chest Chaser",
 			"description": "Each of the 200 Chests across the world contains a surprise.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/244beafef4d0bec6050eccaba1529b9a3454d7e8.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -445,7 +465,7 @@
 			"name": "Egg-scape Unscathed",
 			"description": "Successfully evacuate in Operation: Egg Heist.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/8490816069cc95395b97ec8998e2a8904edfdc52.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -459,7 +479,7 @@
 			"name": "Brilliant Hues",
 			"description": "Finish the Breezy Plains lore.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/0eff98b2c34d48c653754cf3392b2c9c23186209.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -473,7 +493,9 @@
 			"name": "Dressed for the Part",
 			"description": "Fill your wardrobe with 5 outfits. A fresh new look every day.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/c9ce8c96046c202a0c70ae9203101733a02051b0.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -487,7 +509,7 @@
 			"name": "Windswept Epilogue",
 			"description": "Reach the destination of every journey in Breezy Plains.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/0eff98b2c34d48c653754cf3392b2c9c23186209.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -501,7 +523,7 @@
 			"name": "Holo Trainee",
 			"description": "Clear any one of the Grass, Water or Fire Holo-Battle Sim.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/395d383167298f8c0573eaf248dfcfefc8622b6c.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -515,7 +537,9 @@
 			"name": "Rainbow of the Ground",
 			"description": "Team up with Irisalis.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/8697544484d51850e2881ea565340607130f90a0.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -529,7 +553,9 @@
 			"name": "Box of Badges",
 			"description": "Collect 20 badges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/807f0ebca9a6df1ca2dcff3eb1c5ee3b83a3711f.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -543,7 +569,7 @@
 			"name": "Trail of the Wind",
 			"description": "Complete the Journey quests: Binding Oath, Stars and the Knight, and Warrior.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/38238cb17309d3877110b7565c1fc27ee11c3607.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -557,7 +583,7 @@
 			"name": "Novice Trailblazer",
 			"description": "Become a Novice Trailblazer.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/13a4014c4dd3e80a65c696fb99dc5688414c140d.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -571,7 +597,7 @@
 			"name": "Rising Egg Scout",
 			"description": "Reach the Rising Egg Scout rank in Operation: Egg Heist.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/8490816069cc95395b97ec8998e2a8904edfdc52.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -585,7 +611,9 @@
 			"name": "Treasured Trade",
 			"description": "Complete 1 Aniimo exchange. Both sides get what they wanted.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/a9dbee1a916221ff1bc092fbe37b6e07a41dec8e.jpg",
-			"type": "multiplayer",
+			"types": [
+				"multiplayer"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -599,7 +627,7 @@
 			"name": "Welcome Home",
 			"description": "Upgrade RV to Level 8. It's becoming more and more like a proper home.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/f14c5d798862fa2b147552fb596a61dc6ae5449b.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -613,7 +641,9 @@
 			"name": "Aniilog Expert",
 			"description": "80 Aniimo recorded in the Index, every page full of memories.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/b0c03a0df3da4dcee16ecad25963106b95f975cb.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -627,7 +657,7 @@
 			"name": "A Match Made Through Music",
 			"description": "Play the flute and meet with the first Pathfinder.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/e84b6190c191aa6bcdbc33e259f06b0818168845.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -641,7 +671,9 @@
 			"name": "Sanctum Savant",
 			"description": "10 Sanctums, each full of challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/5125d27b7b15b10c50e7e596ea7363d16f0f70cc.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -655,7 +687,7 @@
 			"name": "Six-Star Supremacy",
 			"description": "Ascend an Aniimo to 6 stars for the first time. What an achievement!",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/4c38e88a6752afd13cd5b3562e8cf02e1fa27840.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -672,7 +704,9 @@
 			"name": "Over the Rainbow",
 			"description": "10 Prismana Aniimo. That's a whole squad of rare ones.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/1640526357e3a7b0d5e808168ab4f9290d4ec71a.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -690,7 +724,9 @@
 			"name": "Aniimo Treasure Team",
 			"description": "Your Aniimo go on 5 trips and came back loaded with gifts.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/cccde9bd2a56e1f9d4e74924355e3982e5270c6d.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -704,7 +740,7 @@
 			"name": "Wanderer's Might",
 			"description": "Level up the Branch in Breezy Plains to Wanderer's Might.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/6824393a306bb54a3772ea4ee5f262736b226d2f.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -718,7 +754,7 @@
 			"name": "Safe and Sound",
 			"description": "Evacuate safely in Operation: Egg Heist Team Mode on Nightmare.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/8490816069cc95395b97ec8998e2a8904edfdc52.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -739,7 +775,9 @@
 			"name": "Challenge Ace",
 			"description": "Complete 50 Pathfinder Challenges, forged through perseverance.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/b7c00674a26ca31f48484378e841b95b0fe21865.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -753,7 +791,9 @@
 			"name": "Institute Senior",
 			"description": "Reach Level 60.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/de61b5ce0cb128076b3e16ce35a1bd05164c710b.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -767,7 +807,7 @@
 			"name": "Expert Egg Raider",
 			"description": "Reach the Expert Egg Raider rank in Operation: Egg Heist.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/8490816069cc95395b97ec8998e2a8904edfdc52.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -781,7 +821,9 @@
 			"name": "Supreme Supplier",
 			"description": "Fulfill 80 Home orders.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/cc87e9df29d806e1d71e16f11aaf2cdad3c201e4.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -795,7 +837,7 @@
 			"name": "Aniimology Expert",
 			"description": "Upgrade the Breezy Plains Aniilog to Level 9.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/1aaf15d42de73e112ff54b5c111088051eca1de9.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -809,7 +851,9 @@
 			"name": "Prismana Hoard",
 			"description": "Obtain 5 Prismatic collectibles in Operation: Egg Heist.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/b91f3d7b6e23ba56d1d933b3834d52a158445562.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -823,7 +867,9 @@
 			"name": "Interlink Star",
 			"description": "Get 50 stars in the Holo-Battle Interlink.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/d9abe2869642fe88c2e04057aec2fede65aaf043.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -838,7 +884,9 @@
 			"name": "A Buddy for My Buddy",
 			"description": "Gift 1 Aniimo to a friend in Companion Mode.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/a2cd88c61b70fc7f891525c82f9a60b0c9f6e02d.jpg",
-			"type": "multiplayer",
+			"types": [
+				"multiplayer"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -852,7 +900,7 @@
 			"name": "Holo Training Ace",
 			"description": "Clear any one of the Grass, Water or Fire Holo-Battle Sim on Hard.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/3299b94d3d8b25f323ba10e43d878c9a8ce7808f.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -867,7 +915,9 @@
 			"name": "Victory Badges",
 			"description": "Snatch 6 Victory Badges from Elite Pathfinders.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/6fe4eb007e2264d74caa14cf98e84df4b5d8ae4b.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -882,7 +932,9 @@
 			"name": "Hearts in Tune",
 			"description": "Reach Level 5 Bond with a friend.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/2cbcee2016e64484a0c592d336fb6a1850a6ed9c.jpg",
-			"type": "multiplayer",
+			"types": [
+				"multiplayer"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -899,7 +951,7 @@
 			"name": "Windchaser: Gold",
 			"description": "Earn the Gold Collection Badge for Breezy Plains.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/52e81f1efeb7eb0441e7a03482fd5967e217c74c.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -917,7 +969,9 @@
 			"name": "Friends in Focus",
 			"description": "Take 1 photo with a friend in the Photo Studio.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/ffc9e865c021d0f7e7df507f4c23d7e63fc2d1b9.jpg",
-			"type": "multiplayer",
+			"types": [
+				"multiplayer"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -931,7 +985,9 @@
 			"name": "Travel Buddy",
 			"description": "Add your first friend.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/4126040/cda270f0b59242ab27197a2ff9d4d69c41de57ea.jpg",
-			"type": "multiplayer",
+			"types": [
+				"multiplayer"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [

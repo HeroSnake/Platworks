@@ -11,6 +11,14 @@ export interface GameData {
 	achievements: Achievement[];
 }
 
+/**
+ * Non-exclusive traits an achievement can carry. Deliberately omits `standard`:
+ * a plain trophy is the *absence* of tags (`types: []`), not a tag itself. Allowing
+ * `standard` alongside a real one would permit contradictions like
+ * `['standard', 'secret']`.
+ */
+export type AchievementType = 'missable' | 'multiplayer' | 'cumulative' | 'secret';
+
 export interface Achievement {
 	id: string;
 	name: string;
@@ -22,8 +30,13 @@ export interface Achievement {
 	 * no second URL to store. Optional: games added by hand may not have one yet.
 	 */
 	iconUrl?: string;
-	/** 'missable' if it can be permanently missed in a playthrough */
-	type: 'standard' | 'missable' | 'multiplayer' | 'cumulative' | 'secret';
+	/**
+	 * Tags describing how the achievement can be earned. They are non-exclusive:
+	 * a trophy can be both `secret` and `missable`, or `cumulative` and `multiplayer`.
+	 * An empty array means an ordinary trophy with no notable traits — there is no
+	 * `standard` tag.
+	 */
+	types: AchievementType[];
 	difficulty: 'easy' | 'medium' | 'hard' | 'very-hard';
 	guide: AchievementGuide;
 }

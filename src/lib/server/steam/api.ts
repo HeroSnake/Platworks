@@ -2,8 +2,21 @@ import type { SteamGameDetails, SteamAchievementStatus, SteamProfile } from '#li
 
 const STORE_API = 'https://store.steampowered.com/api';
 const COMMUNITY = 'https://steamcommunity.com';
+const ASSETS = 'https://shared.akamai.steamstatic.com/store_item_assets';
 
-export async function getGameDetails(appId: number): Promise<SteamGameDetails | null> {
+export interface GetGameDetailsOptions {
+	/**
+	 * Probe for the wide `library_hero.jpg` banner. Off by default: the library page
+	 * calls this for every game, and the probe costs an extra round trip each. The
+	 * single-game page opts in because it is the only caller that renders a hero.
+	 */
+	hero?: boolean;
+}
+
+export async function getGameDetails(
+	appId: number,
+	{ hero = false }: GetGameDetailsOptions = {}
+): Promise<SteamGameDetails | null> {
 	const res = await fetch(`${STORE_API}/appdetails?appids=${appId}`);
 	if (!res.ok) return null;
 
@@ -17,10 +30,26 @@ export async function getGameDetails(appId: number): Promise<SteamGameDetails | 
 		name: d.name,
 		shortDescription: d.short_description,
 		headerImage: d.header_image,
+		heroImage: hero ? await getHeroImage(appId) : null,
 		background: d.background_raw ?? d.background,
 		metacriticScore: d.metacritic?.score ?? null,
 		metacriticUrl: d.metacritic?.url ?? null
 	};
+}
+
+/**
+ * Steam's store-page hero banner (1920x620). Not part of `appdetails` and not
+ * guaranteed to exist — roughly one game in a dozen 404s — so this is a HEAD probe
+ * and callers must be ready for null.
+ */
+async function getHeroImage(appId: number): Promise<string | null> {
+	const url = `${ASSETS}/steam/apps/${appId}/library_hero.jpg`;
+	try {
+		const res = await fetch(url, { method: 'HEAD' });
+		return res.ok ? url : null;
+	} catch {
+		return null;
+	}
 }
 
 /** Resolves any Steam input to a Steam64 ID using public XML profiles. */

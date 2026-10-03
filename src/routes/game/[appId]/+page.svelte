@@ -20,6 +20,10 @@
 
 	let storageKey = $derived(`platworks:checked:${data.game.appId}`);
 
+	// The wide library_hero banner when Steam has one, otherwise the 460x215 header.
+	// Both are decorative here — the h1 carries the name.
+	let heroImage = $derived(data.steam?.heroImage ?? data.steam?.headerImage ?? null);
+
 	let localChecked = $state<Record<string, boolean>>(loadLocal());
 	let syncing = $state(false);
 	let syncError = $state<string | null>(null);
@@ -107,31 +111,34 @@
 	type SortValue = 'default' | 'difficulty' | 'name';
 
 	// Completion filter + sort are global preferences, while the type filter is scoped
-	// per game because every game exposes its own set of achievement types.
+		// per game because every game exposes its own set of achievement tags.
 	let filter = $state<FilterValue>('all');
-	let typeFilter = $state<string>('all');
-	let gameSort = $state<SortValue>('default');
-	// Session-only: a trophy search is transient, unlike the filters below.
-	let trophyQuery = $state('');
+		// 'all' plus any tag present in the game, plus the synthetic 'standard' entry for
+		// trophies that carry no tags at all.
+		let typeFilter = $state<string>('all');
+		let gameSort = $state<SortValue>('default');
+		// Session-only: a trophy search is transient, unlike the filters below.
+		let trophyQuery = $state('');
 
-	function loadPrefs(appId: number): { filter: FilterValue; typeFilter: string; gameSort: SortValue } {
-		const fallback = { filter: 'all' as FilterValue, typeFilter: 'all', gameSort: 'default' as SortValue };
-		if (!browser) return fallback;
-		try {
-			const f = localStorage.getItem(`platworks:filter:${appId}`);
-			const t = localStorage.getItem(`platworks:typeFilter:${appId}`);
-			const s = localStorage.getItem('platworks:gameSort');
-			// Drop a stored type the game no longer defines (data files get regenerated).
-			const types = new Set<string>(data.game.achievements.map((a) => a.type));
-			return {
-				filter: f === 'locked' || f === 'unlocked' ? f : 'all',
-				typeFilter: t && t !== 'all' && types.has(t) ? t : 'all',
-				gameSort: s === 'difficulty' || s === 'name' ? s : 'default'
-			};
-		} catch {
-			return fallback;
+		function loadPrefs(appId: number): { filter: FilterValue; typeFilter: string; gameSort: SortValue } {
+			const fallback = { filter: 'all' as FilterValue, typeFilter: 'all', gameSort: 'default' as SortValue };
+			if (!browser) return fallback;
+			try {
+				const f = localStorage.getItem(`platworks:filter:${appId}`);
+				const t = localStorage.getItem(`platworks:typeFilter:${appId}`);
+				const s = localStorage.getItem('platworks:gameSort');
+				// Drop a stored tag the game no longer defines (data files get regenerated).
+				const tags = new Set<string>(data.game.achievements.flatMap((a) => a.types));
+				const valid = t && (t === 'standard' || tags.has(t)) ? t : 'all';
+				return {
+					filter: f === 'locked' || f === 'unlocked' ? f : 'all',
+					typeFilter: valid,
+					gameSort: s === 'difficulty' || s === 'name' ? s : 'default'
+				};
+			} catch {
+				return fallback;
+			}
 		}
-	}
 
 	// Same hydration hazard as the library grid: the server always renders "default"
 	// order, so letting a persisted sort drive the first client render would hydrate the
@@ -188,15 +195,28 @@
 			const achieved = achievedMap[a.id];
 			if (filter === 'locked' && achieved) return false;
 			if (filter === 'unlocked' && !achieved) return false;
-			if (typeFilter !== 'all' && a.type !== typeFilter) return false;
-			return true;
+			// A trophy matches a tag filter if it carries that tag; 'standard' is the
+						// inverse — it selects the untagged ones.
+						if (typeFilter === 'standard') {
+							if (a.types.length) return false;
+						} else if (typeFilter !== 'all' && !(a.types as string[]).includes(typeFilter)) {
+							return false;
+						}
+						return true;
 		});
 		if (gameSort === 'name') return [...list].sort((a, b) => a.name.localeCompare(b.name));
 		if (gameSort === 'difficulty') return [...list].sort((a, b) => (difficultyOrder[a.difficulty] ?? 0) - (difficultyOrder[b.difficulty] ?? 0));
 		return list;
 	});
 
-	let achievementTypes = $derived([...new Set(data.game.achievements.map((a) => a.type))]);
+	// Tags are non-exclusive, so a trophy can appear under several filters at once.
+		// 'standard' is a synthetic entry (not a real tag) offered only when the game
+		// actually has untagged trophies, to select them.
+		let achievementTypes = $derived.by((): string[] => {
+			const tags = [...new Set<string>(data.game.achievements.flatMap((a) => a.types))].sort();
+			if (data.game.achievements.some((a) => a.types.length === 0)) tags.push('standard');
+			return tags;
+		});
 
 	const filterOptions: Array<{ value: typeof filter; label: string; icon: typeof Trophy }> = [
 		{ value: 'all', label: 'All', icon: Trophy },
@@ -230,140 +250,169 @@
 				Games
 			</a>
 
-			<!-- Game header -->
-			<div class="mb-6 sm:mb-8">
-				{#if data.steam?.headerImage}
+			<!-- Game hero: title, description and chips overlaid on the full-width banner.
+			     Edge-to-edge on phones (-mx-4 cancels the container's px-4); rounded once
+			     the max-w-4xl container starts biting. The min-h reserves the artwork band
+			     above the text; the pt is only a floor for short copy, so a long blurb
+			     grows the hero instead of being clipped. -->
+			<div class="relative -mx-4 mb-5 min-h-56 overflow-hidden bg-steam-blue sm:mx-0 sm:mb-6 sm:min-h-72 sm:rounded-2xl">
+				{#if heroImage}
+					<!-- Decorative: the game name is the h1 below it, so a non-empty alt would
+					     only make a screen reader announce the title twice. `high` because this
+					     image is the page's LCP. -->
 					<img
-						src={data.steam.headerImage}
-						alt={data.game.name}
-						class="mb-4 w-full rounded-xl shadow-lg sm:mb-6 sm:max-w-sm"
+						src={heroImage}
+						alt=""
+						fetchpriority="high"
+						class="absolute inset-0 h-full w-full object-cover"
 					/>
 				{/if}
 
-				<h1 class="text-2xl font-bold sm:text-3xl">{data.steam?.name ?? data.game.name}</h1>
+				<!-- Two scrims, not one: the flat one stops a bright banner from washing out
+				     the title, the gradient keeps the copy off the artwork's busiest band.
+				     Steam banners vary wildly in brightness, so neither is optional. -->
+				<div class="absolute inset-0 bg-steam-dark/45" aria-hidden="true"></div>
+				<div class="absolute inset-0 bg-gradient-to-t from-steam-dark via-steam-dark/85 to-transparent" aria-hidden="true"></div>
 
-				{#if data.steam?.shortDescription}
-					<p class="mt-2 text-sm text-gray-400 sm:text-base">{data.steam.shortDescription}</p>
-				{/if}
+				<div class="relative flex flex-col justify-end px-4 pt-24 pb-5 sm:px-8 sm:pt-32 sm:pb-6">
+					<h1 class="text-2xl font-bold tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] sm:text-4xl">
+						{data.steam?.name ?? data.game.name}
+					</h1>
 
-				<div class="mt-3 flex flex-wrap items-center gap-2">
-					{#if data.game.mapUrl}
-						<!-- A link, so it gets a real 40px tap target on phones. The
-						     neighbouring Metacritic chip is a plain span and can stay compact. -->
-						<a
-							href={data.game.mapUrl}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="inline-flex min-h-10 items-center gap-1.5 rounded bg-steam-light px-3 text-xs text-gray-200 active:bg-steam-accent/80 sm:min-h-8 sm:px-2.5 sm:py-1 sm:text-sm"
-						>
-							<MapPinned class="h-3.5 w-3.5 shrink-0" />
-							Interactive Map
-						</a>
-					{/if}
-					{#if data.steam?.metacriticScore}
-						<span class="flex items-center gap-1 rounded bg-steam-green px-2 py-1 text-xs font-bold sm:text-sm">
-							<Star class="h-3.5 w-3.5" />
-							{data.steam.metacriticScore}
-						</span>
+					{#if data.steam?.shortDescription}
+						<p class="mt-2 max-w-2xl text-sm leading-relaxed text-gray-300 sm:text-base">
+							{data.steam.shortDescription}
+						</p>
 					{/if}
 
-					{#if !steamId}
-						<span class="flex items-center gap-1.5 rounded bg-yellow-900/50 px-2 py-1 text-xs text-yellow-300">
-							<WifiOff class="h-3.5 w-3.5" />
-							<span class="hidden sm:inline">Set your Steam ID to sync (top right)</span>
-							<span class="sm:hidden">No Steam ID</span>
-						</span>
-					{/if}
-				</div>
-
-				<!-- Progress -->
-				<div class="mt-5">
-					<div class="mb-1.5 flex items-center justify-between text-sm">
-						<span class="flex items-center gap-1.5 font-medium">
-							<Trophy class="h-4 w-4 text-steam-accent" />
-							{completedCount} / {data.game.totalAchievements}
-						</span>
-						<span class="tabular-nums {isComplete ? 'text-green-400' : 'text-gray-400'}">{progressPercent}%</span>
-					</div>
-					<div class="h-3 overflow-hidden rounded-full bg-steam-light">
-						<div
-							class="h-full w-full origin-left rounded-full transition-transform duration-500 ease-out {isComplete
-								? 'bg-gradient-to-r from-green-400 to-green-300'
-								: 'bg-gradient-to-r from-steam-accent to-blue-400'}"
-							style:transform="scaleX({progressPercent / 100})"
-						></div>
-					</div>
-				</div>
-
-				<!-- Sync section (desktop only) -->
-				<div class="mt-4 hidden flex-wrap items-center gap-3 sm:flex">
-					<button
-						class="inline-flex items-center gap-2 rounded-lg bg-steam-accent px-4 py-2 text-sm font-semibold text-steam-dark transition-colors hover:bg-steam-accent/90 disabled:opacity-50"
-						onclick={syncWithSteam}
-						disabled={syncing}
-					>
-						{#if syncing}
-							<Loader2 class="h-4 w-4 animate-spin" />
-							Syncing...
-						{:else}
-							<RefreshCw class="h-4 w-4" />
-							Sync
+					<div class="mt-3 flex flex-wrap items-center gap-2">
+						{#if data.game.mapUrl}
+							<!-- A link, so it gets a real 40px tap target on phones. The
+							     neighbouring Metacritic chip is a plain span and can stay compact. -->
+							<a
+								href={data.game.mapUrl}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-flex min-h-10 items-center gap-1.5 rounded bg-steam-light px-3 text-xs text-gray-200 active:bg-steam-accent/80 sm:min-h-8 sm:px-2.5 sm:py-1 sm:text-sm"
+							>
+								<MapPinned class="h-3.5 w-3.5 shrink-0" />
+								Interactive Map
+							</a>
 						{/if}
-					</button>
-					{#if syncError}
-						<span class="text-xs text-red-400">{syncError}</span>
-					{/if}
-					{#if syncSuccess}
-						<span class="text-xs text-green-400">{syncSuccess}</span>
-					{/if}
+						{#if data.steam?.metacriticScore}
+							<span class="flex items-center gap-1 rounded bg-steam-green px-2 py-1 text-xs font-bold text-white sm:text-sm">
+								<Star class="h-3.5 w-3.5" />
+								{data.steam.metacriticScore}
+							</span>
+						{/if}
+
+						{#if !steamId}
+							<span class="flex items-center gap-1.5 rounded bg-yellow-900/60 px-2 py-1 text-xs text-yellow-300">
+								<WifiOff class="h-3.5 w-3.5" />
+								<span class="hidden sm:inline">Set your Steam ID to sync (top right)</span>
+								<span class="sm:hidden">No Steam ID</span>
+							</span>
+						{/if}
+					</div>
 				</div>
 			</div>
 
-			<!-- Filters (desktop only — mobile uses bottom bar) -->
-			<div class="mb-6 hidden sm:block">
-				<div class="flex flex-wrap items-center gap-2 sm:gap-3">
-					<div class="flex min-w-0 flex-1 items-center gap-2 rounded-lg bg-steam-blue px-3 py-2">
-						<Search class="h-4 w-4 shrink-0 text-gray-500" />
-						<input
-							type="text"
-							placeholder="Search trophies..."
-							class="min-w-0 flex-1 bg-transparent text-sm text-gray-200 outline-none placeholder:text-gray-500"
-							bind:value={trophyQuery}
-						/>
-					</div>
+			<!-- Progress + sync share one wrapper so the gap below them is consistent.
+						     The sync row is desktop-only and the filter row below is too, so on mobile
+						     this wrapper's bottom margin is the only thing separating the bar from the
+						     list — it has to live here rather than on either child. -->
+						<div class="mb-6">
+							<!-- Progress -->
+							<div>
+								<div class="mb-2 flex items-center justify-between text-sm">
+									<span class="flex items-center gap-1.5 font-medium">
+										<Trophy class="h-4 w-4 text-steam-accent" />
+										{completedCount} / {data.game.totalAchievements}
+									</span>
+									<span class="tabular-nums {isComplete ? 'text-green-400' : 'text-gray-400'}">{progressPercent}%</span>
+								</div>
+								<div class="h-3 overflow-hidden rounded-full bg-steam-light">
+									<div
+										class="h-full w-full origin-left rounded-full transition-transform duration-500 ease-out {isComplete
+											? 'bg-gradient-to-r from-green-400 to-green-300'
+											: 'bg-gradient-to-r from-steam-accent to-blue-400'}"
+										style:transform="scaleX({progressPercent / 100})"
+									></div>
+								</div>
+							</div>
 
-					<div class="flex rounded-lg bg-steam-blue p-0.5 text-sm sm:p-1">
-						{#each filterOptions as opt}
-							<button
-								class="flex items-center gap-1.5 rounded-md px-3 py-2 transition-colors sm:py-1.5 {filter === opt.value ? 'bg-steam-accent text-steam-dark font-semibold' : 'text-gray-400 hover:text-gray-200'}"
-								onclick={() => filter = opt.value}
-							>
-								<opt.icon class="h-3.5 w-3.5 sm:hidden" />
-								{opt.label}
-							</button>
-						{/each}
-					</div>
+							<!-- Sync section (desktop only) -->
+							<div class="mt-4 hidden flex-wrap items-center gap-3 sm:flex">
+								<button
+									class="inline-flex items-center gap-2 rounded-lg bg-steam-accent px-4 py-2 text-sm font-semibold text-steam-dark transition-colors hover:bg-steam-accent/90 disabled:opacity-50"
+									onclick={syncWithSteam}
+									disabled={syncing}
+								>
+									{#if syncing}
+										<Loader2 class="h-4 w-4 animate-spin" />
+										Syncing...
+									{:else}
+										<RefreshCw class="h-4 w-4" />
+										Sync
+									{/if}
+								</button>
+								{#if syncError}
+									<span class="text-xs text-red-400">{syncError}</span>
+								{/if}
+								{#if syncSuccess}
+									<span class="text-xs text-green-400">{syncSuccess}</span>
+								{/if}
+							</div>
+						</div>
 
-					<select
-						class="min-w-0 rounded-lg border-none bg-steam-blue px-3 py-2 text-sm text-gray-300 outline-none"
-						bind:value={typeFilter}
-					>
-						<option value="all">All types</option>
-						{#each achievementTypes as t}
-							<option value={t}>{t[0].toUpperCase() + t.slice(1)}</option>
-						{/each}
-					</select>
+						<!-- Filters (desktop only — mobile uses bottom bar) -->
+						<div class="mb-6 hidden sm:block">
+							<!-- h-10 on every control, not padding: the search field, the segmented
+							     filter, the two selects and the count all line up on one 40px row that
+							     also satisfies the tap-target floor in platworks-ui.agent.md §5. -->
+							<div class="flex flex-wrap items-center gap-2 sm:gap-3">
+								<div class="flex h-10 min-w-0 flex-1 items-center gap-2 rounded-lg bg-steam-blue px-3">
+									<Search class="h-4 w-4 shrink-0 text-gray-500" />
+									<input
+										type="text"
+										placeholder="Search trophies..."
+										class="min-w-0 flex-1 bg-transparent text-sm text-gray-200 outline-none placeholder:text-gray-500"
+										bind:value={trophyQuery}
+									/>
+								</div>
 
-					<select
-						class="shrink-0 rounded-lg border-none bg-steam-blue px-3 py-2 text-sm text-gray-300 outline-none"
-						bind:value={gameSort}
-					>
+								<div class="flex h-10 rounded-lg bg-steam-blue p-1 text-sm">
+									{#each filterOptions as opt}
+										<button
+											class="flex items-center gap-1.5 rounded-md px-3 transition-colors {filter === opt.value ? 'bg-steam-accent text-steam-dark font-semibold' : 'text-gray-400 hover:text-gray-200'}"
+											onclick={() => filter = opt.value}
+										>
+											<opt.icon class="h-3.5 w-3.5 sm:hidden" />
+											{opt.label}
+										</button>
+									{/each}
+								</div>
+
+								<select
+									class="h-10 min-w-0 rounded-lg border-none bg-steam-blue px-3 text-sm text-gray-300 outline-none"
+									bind:value={typeFilter}
+								>
+									<option value="all">All types</option>
+									{#each achievementTypes as t}
+										<option value={t}>{t[0].toUpperCase() + t.slice(1)}</option>
+									{/each}
+								</select>
+
+								<select
+									class="h-10 shrink-0 rounded-lg border-none bg-steam-blue px-3 text-sm text-gray-300 outline-none"
+									bind:value={gameSort}
+								>
 						<option value="default">Default</option>
 						<option value="name">A–Z</option>
 						<option value="difficulty">Difficulty</option>
 					</select>
 
-					<span class="hidden text-sm text-gray-500 sm:block">
+					<span class="hidden text-sm tabular-nums text-gray-500 sm:block">
 						{filteredAchievements.length} shown
 					</span>
 				</div>
@@ -409,10 +458,10 @@
 >
 	{#snippet panel()}
 		<div class="flex items-center gap-2">
-			<div class="flex rounded-lg bg-steam-blue p-0.5 text-sm">
+					<div class="flex h-10 shrink-0 rounded-lg bg-steam-blue p-1 text-sm">
 				{#each filterOptions as opt}
 					<button
-						class="flex items-center gap-1 rounded-md px-2.5 py-1.5 text-xs {filter === opt.value ? 'bg-steam-accent text-steam-dark font-semibold' : 'text-gray-400'}"
+								class="flex items-center gap-1 rounded-md px-2.5 text-xs {filter === opt.value ? 'bg-steam-accent text-steam-dark font-semibold' : 'text-gray-400'}"
 						onclick={() => filter = opt.value}
 					>
 						{opt.label}
@@ -420,7 +469,7 @@
 				{/each}
 			</div>
 			<select
-				class="min-w-0 flex-1 rounded-lg border-none bg-steam-blue px-2 py-1.5 text-xs text-gray-300 outline-none"
+						class="h-10 min-w-0 flex-1 rounded-lg border-none bg-steam-blue px-2 text-xs text-gray-300 outline-none"
 				bind:value={typeFilter}
 			>
 				<option value="all">All types</option>
@@ -429,7 +478,7 @@
 				{/each}
 			</select>
 			<select
-				class="shrink-0 rounded-lg border-none bg-steam-blue px-2 py-1.5 text-xs text-gray-300 outline-none"
+						class="h-10 shrink-0 rounded-lg border-none bg-steam-blue px-2 text-xs text-gray-300 outline-none"
 				bind:value={gameSort}
 			>
 				<option value="default">Default</option>

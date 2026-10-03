@@ -10,7 +10,7 @@
 			"name": "Novice Adventurer",
 			"description": "Complete chapter 1 of main quests.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/c05f04fc5033ff67d2078db084751b45eba3b91d.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -25,7 +25,9 @@
 			"name": "Master Camper",
 			"description": "Complete the activation of the camp at Howling Hill.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/2df91d42db90145457a0561585d88108054d66f7.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -43,7 +45,7 @@
 			"name": "Protector of Pailune",
 			"description": "Complete chapter 7 of main quests.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/30efce32e45de2979d7405ca7a6df2b5bc957cae.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -58,7 +60,9 @@
 			"name": "Expert Storyteller",
 			"description": "Complete all main quests.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/790e5659ae8d8b915e47e57d753080df8724eb98.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -76,7 +80,9 @@
 			"name": "Lightbringer",
 			"description": "Complete all sanctum challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/99d2b0f01339cfe3937e4e92652f0e65417eb3d4.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -94,7 +100,9 @@
 			"name": "Conqueror of Spires",
 			"description": "Complete all spire challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/9c791e66809413ced99624b9e0fe2ac18d0f1101.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -112,7 +120,9 @@
 			"name": "Beast Slayer",
 			"description": "Complete all New Power challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/385743dbdbce3c3d363191a279e557a95f3f6848.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -130,7 +140,7 @@
 			"name": "Proud Returnee",
 			"description": "Complete the camp relocation to Pailune.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/52e174374d915e41a99d58304b4f98f312192cbc.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -145,7 +155,9 @@
 			"name": "Master of Swords",
 			"description": "Complete all sword challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/076ddb13bb16683a13fff314b792314a133a0ded.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -163,7 +175,9 @@
 			"name": "Conqueror of the Abysses",
 			"description": "Complete all Abyss challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/686a3c4abed8551b5de3c9e7cf06d7742bf7a6f8.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -184,7 +198,9 @@
 			"name": "Master of Spears",
 			"description": "Complete all spear challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/257444acc5d9411a3d3324d7cc8b814de492a070.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -199,7 +215,9 @@
 			"name": "Maze Pathfinder",
 			"description": "Complete all maze challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/119768c5fce4b96db3c8a45c5b918f75844c1d2d.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -217,7 +235,9 @@
 			"name": "Navigator of the Stars",
 			"description": "Complete all constellation challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/6abf780b94efe545a78862dd886ab29012e126e2.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -235,7 +255,9 @@
 			"name": "Master of Shields",
 			"description": "Complete all shield challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/3b1df180431b87706ad49798cb1361b9fa5bb6e4.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -250,7 +272,9 @@
 			"name": "Puzzle Solver",
 			"description": "Complete all ancient ruins challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/0482a83ab0498e6cce5f95027ab58c2c9ca4d2d3.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -268,7 +292,9 @@
 			"name": "Master of Bows",
 			"description": "Complete all bow challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/8c3495c4c5e0a4ae6f4475aca2cf2a0210c9b92c.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -283,7 +309,9 @@
 			"name": "Pilgrim of Wonders",
 			"description": "Complete all secret place challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/5e61be52f0a5f57b48c3e28df350927ecc5fb25f.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -301,7 +329,9 @@
 			"name": "Master of Rapiers",
 			"description": "Complete all rapier and shield challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/aec1f62bdb827b93d02c51a36b13eedbd236bb5e.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -316,7 +346,9 @@
 			"name": "Master of Two-Handed Weapons",
 			"description": "Complete all two-handed weapon challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/69affa1164fe87c2b391b5ccf54e92ad6b09d5d7.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -331,7 +363,9 @@
 			"name": "Master of Firearms",
 			"description": "Complete all gun challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/a28700b6deeca57541ec26322afbdf969f6576e7.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -346,7 +380,9 @@
 			"name": "Relentless Warrior",
 			"description": "Complete all training challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/e4767ae4b05c1ae6e0914947e6bc354284d3baa6.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -361,7 +397,9 @@
 			"name": "Master of Artillery",
 			"description": "Complete all cannon challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/7cbe129dc0bb025e7bfc7dc4913b52559eff2eaf.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -376,7 +414,9 @@
 			"name": "Battlefield Conqueror",
 			"description": "Complete all battle challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/7dfe8c02c6cb6015df9e46c384cfe998ca9d2ae7.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -394,7 +434,9 @@
 			"name": "Grand Collector of Arms",
 			"description": "Complete all special equipment challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/1f75d635084e5553ca24e699fa4fbbea2db9b451.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -412,7 +454,9 @@
 			"name": "Tamer of Legends",
 			"description": "Complete all horse challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/0ddc1f406a0e400e644f53befb2df3800e2bc0a8.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -430,7 +474,9 @@
 			"name": "Ultimate Hunter",
 			"description": "Complete all hunting challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/aea72c848e3819ce2d1f880c4b72e1be49d9123e.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -445,7 +491,9 @@
 			"name": "Expert Explorer",
 			"description": "Complete all exploration challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/eabcf404e3d39552127b70c60f422a515217f825.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -463,7 +511,9 @@
 			"name": "Brilliant Tactician",
 			"description": "Complete all operation challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/625609b8e7ba322dc2135986505ce3713fbb1dbb.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -478,7 +528,9 @@
 			"name": "The Golden Merchant",
 			"description": "Complete all trade challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/3865607b5e7f544e121f971e3e635b1d30c8a382.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -493,7 +545,9 @@
 			"name": "Shadowlord",
 			"description": "Complete all Above the Law challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/3d5bcf197cad22d785aa622a1159a831c18acbd9.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -508,7 +562,9 @@
 			"name": "Lord of Honor",
 			"description": "Complete all Challenges and Changes challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/dd97c5172615b7176bd786ef086c89446238f02a.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -523,7 +579,9 @@
 			"name": "True Gamer",
 			"description": "Complete all minigame challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/6a3435f25c05104b43c0b9f0c581cf9e4bc611b2.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -538,7 +596,9 @@
 			"name": "Unvanquished Strategist",
 			"description": "Complete all mastery challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/90b42713d14ac72b8e87f54342c18e17bb541776.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -556,7 +616,9 @@
 			"name": "Natural Collector",
 			"description": "Complete all life challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/0fd8de88f3ab48b55e74812105b932c81a57e30b.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [

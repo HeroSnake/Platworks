@@ -55,6 +55,15 @@
 		cumulative: Repeat,
 		secret: EyeOff
 	};
+
+		// Only `missable` earns an alarm colour; the rest are neutral so a row carrying
+		// several tags doesn't turn into a wall of colour.
+		const typeStyles: Record<string, string> = {
+			missable: 'bg-red-900/40 text-red-300',
+			multiplayer: 'bg-steam-light text-gray-300',
+			cumulative: 'bg-steam-light text-gray-300',
+			secret: 'bg-steam-light text-gray-300'
+		};
 </script>
 
 <div class="achievement-item rounded-xl border {achieved ? 'border-steam-green/30 bg-steam-green/20' : 'border-transparent bg-steam-blue'}">
@@ -119,15 +128,15 @@
 						{achievement.name}
 					</span>
 
-					{#if achievement.type !== 'standard'}
-						{@const Icon = typeIcons[achievement.type]}
+					{#each achievement.types as tag (tag)}
+											{@const Icon = typeIcons[tag]}
 						{#if Icon}
-							<span class="flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] leading-tight sm:text-xs {achievement.type === 'missable' ? 'bg-red-900/40 text-red-300' : 'bg-steam-light text-gray-300'}">
+												<span class="flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] leading-tight sm:text-xs {typeStyles[tag] ?? 'bg-steam-light text-gray-300'}">
 								<Icon class="h-3 w-3" />
-								{achievement.type}
+													{tag}
 							</span>
 						{/if}
-					{/if}
+										{/each}
 
 					<span class="text-[11px] sm:text-xs {difficultyColors[achievement.difficulty]}">
 						{achievement.difficulty}

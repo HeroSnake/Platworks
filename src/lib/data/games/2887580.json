@@ -9,7 +9,7 @@
 			"name": "Welcome to the Agency",
 			"description": "Activate your shelter.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/1279ce825a8391176d18688185549a981e7ae3d0.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -23,7 +23,7 @@
 			"name": "A 20-minute adventure",
 			"description": "Successfully extract from raid for the first time.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/d780575ee4870bdc0caa1f55a9165c106e03cdf8.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -38,7 +38,7 @@
 			"name": "The Floor Is Lava",
 			"description": "Activate 5 traps in one raid.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/a27d08fa03fbebcabce63573cc40025147f0390e.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -52,7 +52,9 @@
 			"name": "The Fifth Element",
 			"description": "Unlock 5 different replicator blueprints.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/d304aa13d3096581741aceb74d5a829e865fbdf6.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -66,7 +68,9 @@
 			"name": "The search for the Higgs Boson",
 			"description": "Refine 50 enriched items.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/8ac1c3ef01913707aac6b003bbb1d2fa2075c13b.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -81,7 +85,9 @@
 			"name": "Awesome Mix, vol. 3",
 			"description": "Add 10 new tracks to your music collection.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/e77b4774b4d7d043839c8ae19d6895d98c57e3b2.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -95,7 +101,7 @@
 			"name": "Thanks, Sky!",
 			"description": "Loot the airdrop in raid.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/57e4c4e1c9599566a8b48d716790f65538f85bf9.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -113,7 +119,9 @@
 			"name": "Staff Reduction",
 			"description": "Eliminate 5 operatives in raids.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/5e93595990cc456c96bc92566941f035fd713600.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -130,7 +138,9 @@
 			"name": "I want to believe",
 			"description": "Visit 10 anomalous signals in raids.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/cf560c25f8020ea11084ca86e742e0148cb4ed23.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -144,7 +154,9 @@
 			"name": "Active pockets",
 			"description": "Collect and extract 300 Active Matter from raids in total.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/ed825e2cc0f80b90fe3acf527f1d9e5c3801586e.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -159,7 +171,7 @@
 			"name": "Second Chance",
 			"description": "Return to the raid after using a revive beacon.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/10e73240c300f6bcb692110f4f5fe0e9e006521e.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -173,7 +185,9 @@
 			"name": "Smart Shooter",
 			"description": "Eliminate 10 enemies with a weapon with at least 3 attachments on it.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/8bab90812cfd776a8c1c11aebd45abe199d93f94.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -187,7 +201,9 @@
 			"name": "Working Week",
 			"description": "Visit 7 different raids.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/8e72bca9104fdce2b77735df7bc3d455c14a904a.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -201,7 +217,7 @@
 			"name": "Provided Destiny",
 			"description": "Successfully extract from the raid with Provided Equipment from the Agency.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/531db311b699eabe1cc80b3dbb3f134e30ba03ee.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -215,7 +231,9 @@
 			"name": "Press F… to Revive",
 			"description": "Revive a squadmate in raid.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/14272092446ec41b205366a5f63699b214dc2e7b.jpg",
-			"type": "multiplayer",
+			"types": [
+				"multiplayer"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -229,7 +247,7 @@
 			"name": "Citius, Altius, Fortius",
 			"description": "Equip different chronogenes in all body sleeve slots.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/2e13e8b5b1ac52da9914c2a14936894acc711438.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -243,7 +261,9 @@
 			"name": "Who You Gonna Call?",
 			"description": "Eliminate 12 different types of anomalies as an operative.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/eac83aaaad6310a26268c4749a59adf08b467cc7.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -257,7 +277,9 @@
 			"name": "Elementary, My Dear…",
 			"description": "Complete 5 cases from the Investigation Terminal.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/d4a4b8941ebb8d6d59b71b9e7dd8cbb1f40e03b5.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -271,7 +293,9 @@
 			"name": "Mission: Possible",
 			"description": "Complete 5 Priority Raid objectives.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/b0f4c1264fcc5c654a4f296b8e317716d099614a.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -285,7 +309,9 @@
 			"name": "Extraction Denied",
 			"description": "Prevent an enemy operative from extracting.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/71c29421bc6a182067169fc7d173ee2c854ed695.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -302,7 +328,9 @@
 			"name": "Fishing in the multiverse",
 			"description": "Replicate 50 items.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/410f8ecce6e36f54b3329e501b649ed74d430a9b.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -316,7 +344,9 @@
 			"name": "Shades of my personality",
 			"description": "Unlock 5 different Body Sleeves.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/9cb48dbe7ec4add76e3fc9ecf0fabf3e0fad4b57.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -330,7 +360,7 @@
 			"name": "Shaken, Not Stirred",
 			"description": "Fuse 3 different recipe results combining 2 or more ingredients in Replicator.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/fc4698578447e72109274ac7e07716eb8b9f4061.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -345,7 +375,9 @@
 			"name": "Hack the Planet",
 			"description": "Hack 3 mindvaults.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/4dfa7e1c179fb6fa976030761a525ca9243010f9.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -359,7 +391,9 @@
 			"name": "Open Sesame",
 			"description": "Use 5 keys during raids.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/b3737ff9eeef2a777b64f23c259f7c7252648542.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -373,7 +407,7 @@
 			"name": "Chronogenes for Dummies",
 			"description": "Fuse a Tier 3 chronogene in the Replicator.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/723d510d001412ed97b826cc96d45b54c1aaed35.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -387,7 +421,7 @@
 			"name": "Physics Advantage",
 			"description": "Eliminate an operative while standing in anomalous gravity zone.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/e1b19cf1ccbd2ce0ddb85a8f179d0e5552400d52.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -404,7 +438,7 @@
 			"name": "Nobody Gets Hurt",
 			"description": "Successfully extract from the raid without making a single shot.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/10c1e17f6c8b5c7ef549c5686f95c5f7904bbeb2.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -425,7 +459,9 @@
 			"name": "Dead Man's Chest",
 			"description": "Extract items 5 times using a safe container after your death in the raid.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/3c592c7391be6dd1cb2b1233628464a9cff3afef.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -440,7 +476,7 @@
 			"name": "Witness Me!",
 			"description": "Eliminate a hostile with a vehicle.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/9654b9f1dcaf6f76362694f8dbc04bc364892f85.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -457,7 +493,9 @@
 			"name": "All Clues Found",
 			"description": "Find all clues in an investigation.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/794d68d3730526ef55c247f8e47f6aaa79c31b77.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -472,7 +510,9 @@
 			"name": "Hold the Line!",
 			"description": "Capture the beacon in the Hired Ops match.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/67239b968757032c1b07d3161d38401b418d9e90.jpg",
-			"type": "multiplayer",
+			"types": [
+				"multiplayer"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -486,7 +526,9 @@
 			"name": "All Aboard!",
 			"description": "Complete a special raid event.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/ae8d3e75dcfd63f413a823ea8b6f77b4f1a750df.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -500,7 +542,7 @@
 			"name": "Secure, Contain, Protect",
 			"description": "Successfully extract with the monster artifact in inventory.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/b9ac63b878e178b2a93d4ebf2ddc78aa16bdb6d0.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -521,7 +563,7 @@
 			"name": "The cycle of life",
 			"description": "Create personal Timeline.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/e536ccd25851ed105db1504199d9578af632459a.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -536,7 +578,9 @@
 			"name": "Winner Takes All",
 			"description": "Complete combat master task in the Hired Ops.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/5baf7e82e05dd0d4a3dbe591cda3a9191ac69f4b.jpg",
-			"type": "multiplayer",
+			"types": [
+				"multiplayer"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -553,7 +597,9 @@
 			"name": "Big Brother Approved",
 			"description": "Complete a very rare challenge.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/ba9468c2a75d0ee2500af977c58ea23b87de8b38.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -570,7 +616,7 @@
 			"name": "A job no one else could do",
 			"description": "Get all the other achievements.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2887580/74b4d944d855c721e7b33fed8106907c6e0a8a7d.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [

@@ -81,6 +81,7 @@ Typical combinations:
 | A new page or route | this + SvelteKit (+ UI if it renders anything) |
 | Sort/filter does not persist | this + State + SvelteKit |
 | Adding a new game | this + Gamedata, then run the icon scripts |
+| `/generate-game-data` spamming URLs or inventing steps | this + Gamedata §2b (triage + fetch ledger) |
 | A framework/build error | this + SvelteKit |
 
 Reading a domain file you don't need costs context and buries the rules that do apply. Start with the table, then open only the matching files.
@@ -114,6 +115,7 @@ Reading a domain file you don't need costs context and buries the rules that do 
 | Client profile cache | `#lib/client/profile.ts` | `loadProfile()`, `saveProfile()`, `clearProfile()`, `refreshProfile()` |
 | Components | `#lib/components/` | `achievement_row.svelte`, `game_card.svelte`, `github_icon.svelte`, `mobile_bar.svelte` |
 | Game data | `#lib/data/games/{appId}.json` | per-game achievement guides |
+| Game-data scratch | `.tmp/game-data/{appId}/` | gitignored; fetch `ledger.json` + `findings.jsonl` + throwaway scrapers for `/generate-game-data`. Repo-local on purpose — Windows + WSL must see the same path. Deleted when the run finishes; see [platworks-gamedata.agent.md](./platworks-gamedata.agent.md) §2b |
 | Layout | `src/routes/+layout.svelte` | navbar + account popover; owns `platworks:steamId` |
 | Routes | `src/routes/` | `/` library · `/game/[appId]` detail · `/api/steam/sync/[appId]` · `/api/steam/profile` · `/linktest` |
 

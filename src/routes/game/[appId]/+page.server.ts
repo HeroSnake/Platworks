@@ -17,7 +17,9 @@ export const load: PageServerLoad = async ({ params }) => {
 	const game = getGameByAppId(appId);
 	if (!game) error(404, 'Game not found');
 
-	const steam = await getGameDetails(appId);
+	// `hero: true` — this is the only page that renders a wide banner, and it is the
+	// only one that can afford the extra HEAD probe (the library loads every game).
+	const steam = await getGameDetails(appId, { hero: true });
 
 	return { game, steam } satisfies GamePageData;
 };

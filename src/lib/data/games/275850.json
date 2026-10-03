@@ -9,7 +9,7 @@
 			"name": "Cradle",
 			"description": "Claim a Base or Buy a Freighter",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/3afe76084baa3dd92aae0b65a571debc294c7496.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -24,7 +24,7 @@
 			"name": "Foundation",
 			"description": "Attain 'Entrepreneur' status in Most Units Accrued",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/19042a7f38333541ae531f9696e5565222f0a107.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -39,7 +39,7 @@
 			"name": "Babel-17",
 			"description": "Attain 'Confused' status in Words Collected",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/a95f991caace28102b096b311220c37c2db845b6.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -54,7 +54,7 @@
 			"name": "Contact",
 			"description": "Attain 'Known' status in Alien Colonist Encounters",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/e6914dde493d614f8ddcf0dc2da8ebdff1e6840f.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -69,7 +69,7 @@
 			"name": "Use of Weapons",
 			"description": "Attain 'Novice' status in Ships Destroyed",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/a113fa5a9fdc43a4bfc3c8e9eefed7dd3d83d512.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -84,7 +84,9 @@
 			"name": "The Space Merchants",
 			"description": "Attain 'Trader' status in Most Units Accrued",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/a7db82f9cf031d2c8650699620a141a8ec047aad.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -99,7 +101,7 @@
 			"name": "Symphony For A Lost Traveler",
 			"description": "Attain 'Nomad' status in On-foot Exploration",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/074c86480501f3b8e6df1356a76f69d6bdd59714.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -114,7 +116,9 @@
 			"name": "The Diamond Age",
 			"description": "Attain 'Magnate' status in Most Units Accrued",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/f5456fe4e62808ebea8744119d14493b3377c56d.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -132,7 +136,7 @@
 			"name": "The Stars, Like Dust",
 			"description": "Attain 'Trailblazer' status in Space Exploration",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/e0150cea4966e9e1fd258d8bce049351301197e4.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -147,7 +151,9 @@
 			"name": "The Languages of Pao",
 			"description": "Attain 'Interpreter' status in Words Collected",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/6fa137c0196416513b602dcab218dcd645bdc5ad.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -162,7 +168,9 @@
 			"name": "Have Spacesuit - Will Travel",
 			"description": "Attain 'Adventurer' status in On-foot Exploration",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/f47ab90c7901b9cffdd7cf42a68f9d32841f815b.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -177,7 +185,7 @@
 			"name": "Navigators",
 			"description": "Build an Exocraft",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/1974ae21eb7c029066e2f551e7776509a8d7f49d.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -191,7 +199,7 @@
 			"name": "Who Goes There?",
 			"description": "Attain 'Diplomat' status in Alien Colonist Encounters",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/60469c813cb1163b667273072733d6b01a77cd5b.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -206,7 +214,7 @@
 			"name": "Pattern for Conquest",
 			"description": "Attain 'Notorious' status in Ships Destroyed",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/1f1f1ab0eec5bb66088eb3fe5e3152ecae54cf88.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -221,7 +229,9 @@
 			"name": "What Mad Universe",
 			"description": "Attain 'Ambassador' status in Alien Colonist Encounters",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/a42180c0978f839cb27545b9c05559975d217af5.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -236,7 +246,9 @@
 			"name": "The Forever War",
 			"description": "Attain 'Legend' status in Ships Destroyed",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/dc5ddaf982342455a426f0496624d864751c9105.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -254,7 +266,9 @@
 			"name": "The Longest Voyage",
 			"description": "Attain 'Pioneer' status in Space Exploration",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/495cfdeb808de4301f1f1b6927fb507dda58de9b.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -269,7 +283,7 @@
 			"name": "Reunion",
 			"description": "Visit another Player's Base",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/39681b3ee235013da1fbbe02cef1ff588f81c996.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -284,7 +298,9 @@
 			"name": "Citizen of the Galaxy",
 			"description": "Attain 'Babelfish' status in Words Collected",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/ad9a20dc8085b9ea68ec10ee7699d65c44049cf3.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -299,7 +315,7 @@
 			"name": "A Scanner Darkly",
 			"description": "Attain 'Naturalist' status in Planet Zoology Scanned",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/28dcbf78426409acadb58a9a44d8138f392cb44e.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -317,7 +333,9 @@
 			"name": "A Space Odyssey",
 			"description": "Attain 'Discoverer' status in Space Exploration",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/abdd69a585070d4bfc36b8f18cba043554857e13.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -332,7 +350,9 @@
 			"name": "The Star Beast",
 			"description": "Attain 'Archivist' status in Planet Zoology Scanned",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/0a15960049f3f135c43cbf56e011fee48ddf8b97.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -347,7 +367,9 @@
 			"name": "Galapagos",
 			"description": "Attain 'Encyclopedia' status in Planet Zoology Scanned",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/3ec83fb4201e7101f1d5825ce01d23464d8371a8.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -362,7 +384,7 @@
 			"name": "Stranger in a Strange Land",
 			"description": "Attain 'Robust' status in Extreme Survival",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/ad6ee2bc4cacc230e86b2a34a2056874b8bcb058.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -380,7 +402,9 @@
 			"name": "The Sentinel",
 			"description": "Attain 'Everlasting' status in Extreme Survival",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/7a0f63211f6eaa7c0adb73c074a34e3e66cd44ee.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -401,7 +425,9 @@
 			"name": "Take a Deep Breath",
 			"description": "Reach the Centre of the Galaxy in Survival Mode",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/80e37dcdf88e84e5285ff8e885a9cd8b3cb94419.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -420,7 +446,9 @@
 			"name": "To Live Forever",
 			"description": "Reach the Centre of the Galaxy in Permadeath Mode",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/275850/8e9490176f97027824b35b491c916eb3b47214fa.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [

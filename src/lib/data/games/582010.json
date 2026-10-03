@@ -9,7 +9,7 @@
 			"name": "The Art of Camouflage",
 			"description": "Escape the Jagras pack by hiding in some shrubs.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/e572edbfba03fb97c5dc2f2e280c31ec152aeecb.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -23,7 +23,9 @@
 			"name": "Welcome to the New World",
 			"description": "Complete the first assigned quest.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/a1e07a657b94c6355b50c10b64906cc32d573857.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -37,7 +39,9 @@
 			"name": "Nothing Stops This Commission",
 			"description": "Reach a major story milestone.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/170256de23e0e0be24ac69f5510f74a887b036cc.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -51,7 +55,7 @@
 			"name": "The Bigger They Are...",
 			"description": "Mount your first monster.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/5b3b9995d7f819c99596f8869db19c8d12c0b1e7.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -65,7 +69,9 @@
 			"name": "Hunters United",
 			"description": "Complete a quest via multiplayer.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/1f753f3edfc578c88d3c076f9f6fc4e0d272f4a9.jpg",
-			"type": "multiplayer",
+			"types": [
+				"multiplayer"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -79,7 +85,9 @@
 			"name": "Defender of Astera",
 			"description": "Complete a key defense mission.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/10a7dd9995b8ffae25f90e4dddc014b03a09f2be.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -93,7 +101,7 @@
 			"name": "First Friends",
 			"description": "Befriend your first Tailraider.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/1a434db6ef66cffd5ae424adb89f123dff4d78e6.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -107,7 +115,9 @@
 			"name": "Into the Deep",
 			"description": "Reach a deep-story milestone.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/808120f8494bc41c0af898a39b4bb3b6abab5cce.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -121,7 +131,7 @@
 			"name": "Giant Crown",
 			"description": "Record your first silver crown or higher for monsters that appear from low or high rank.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/e2907e12be9e6e924e855f2db8c1c00b0ef215a1.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -135,7 +145,7 @@
 			"name": "Capture Novice",
 			"description": "Capture your first monster.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/caa59189c12c52030f0d14b90c0a2623dc9ecbec.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -149,7 +159,9 @@
 			"name": "Death Begets Life",
 			"description": "Complete a key story mission.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/02f71cfd5e52044720f5e8794ad6c9928c48e79a.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -163,7 +175,7 @@
 			"name": "HELP!",
 			"description": "Fire an SOS flare for the first time.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/59005a50f06b8aca450f1567053ffff1192ebd63.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -177,7 +189,7 @@
 			"name": "An Inquisitive Mind",
 			"description": "Complete your first investigation.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/23f855de051d3ae04c9fd22c9b27914ff6ba9dc1.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -191,7 +203,9 @@
 			"name": "The Empress of the Highlands",
 			"description": "Complete a key Coral Highlands mission.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/91828efa7e920b5c74ecf952803b3c78516300de.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -205,7 +219,9 @@
 			"name": "Bosom Buddies",
 			"description": "Raise the proficiency of any Palico Gadget to level 10.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/04d9de70fced3adf68ed1c20c7b6404a232888f6.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -219,7 +235,9 @@
 			"name": "New World Settler",
 			"description": "Establish five camps.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/92b18a8ec402a2490f118e9a88f13cafff7f7ed4.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -233,7 +251,9 @@
 			"name": "One Shall Stand, One Shall Fall",
 			"description": "Complete a pivotal story battle.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/73f84995b2ad08c0d2ad49302631768fe5190736.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -247,7 +267,9 @@
 			"name": "The Sapphire Star",
 			"description": "Complete the main campaign.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/1122a5179d2959b60b701493af25f7c67bf70253.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -261,7 +283,7 @@
 			"name": "First Ride",
 			"description": "Use your first Raider Ride.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/9bbdd36ddac55e4c4cec7edc884af29c663db5fb.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -275,7 +297,7 @@
 			"name": "Angling for a Bite",
 			"description": "Catch your first fish.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/e4569c0007fc38a200758f4f61b75e33b84bf359.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -289,7 +311,9 @@
 			"name": "Impregnable Defense",
 			"description": "Obtain five highly rare pieces of armor.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/826cbd7a0f9494fe0941b62a1da348750b6576d6.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -303,7 +327,9 @@
 			"name": "Monster Slayer",
 			"description": "Hunt 100 large monsters.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/ecca9d856c1744c61b50c72062ec1d2e8d56ef6b.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -317,7 +343,7 @@
 			"name": "Miniature Crown",
 			"description": "Record your first miniature crown for monsters that appear from low or high rank.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/e4c73c7e29668074e719b8ba8b51a87071e8352b.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -331,7 +357,7 @@
 			"name": "Movin On Up",
 			"description": "Move into an upgraded room.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/70c38c10ed97f5a51c3269ac1c4d322eb7e93726.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -345,7 +371,7 @@
 			"name": "Mmm, So Tasty!",
 			"description": "Cook your first well-done steak.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/55b7b79c20623449e366a3e587056b03db5e734c.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -359,7 +385,9 @@
 			"name": "The Beginning of a New Expedition",
 			"description": "Begin the Iceborne expansion.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/765fa26a30f56f66b4624e4d2b38c18f7e5f17e8.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -373,7 +401,7 @@
 			"name": "The True Hunt Begins",
 			"description": "Hunt your first large monster in a master rank quest.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/f9c980e8730f2cc4c65fc6a869bafe4bda342893.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -387,7 +415,9 @@
 			"name": "Temper Temper",
 			"description": "Hunt a tempered monster.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/0c524255f8bd3c3af4b77b3ab7c6042e439957cd.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -401,7 +431,9 @@
 			"name": "Time to Get Serious",
 			"description": "Complete a key Iceborne story mission.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/135c2614efd1af0c1f844271e459064f7fdb24a7.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -415,7 +447,9 @@
 			"name": "Personal Treasure",
 			"description": "Find a special treasure.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/2942a56e55e3163f37238466f64161935aac1514.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -429,7 +463,9 @@
 			"name": "The Hunters Life for Me",
 			"description": "Complete 50 optional quests.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/9b08e865ae4eef6d4d0257a5f4be3116784ca961.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -443,7 +479,9 @@
 			"name": "The Elusive Elder Dragon",
 			"description": "Encounter an elder dragon.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/030ca55fd6d25ad11184a30eb150266d9454785c.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -457,7 +495,7 @@
 			"name": "Source of Relaxation",
 			"description": "Spend some time in a natural hot spring.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/18a8aabc8c01bf628b04fe81eb917547c1e9e5c3.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -471,7 +509,9 @@
 			"name": "Power is Everything",
 			"description": "Obtain five highly rare weapons.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/1ca581c61c6c8e04a214df8c49735e52a0154e31.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -485,7 +525,9 @@
 			"name": "Commissioned Work",
 			"description": "Obtain 100,000 research points.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/bda0ee33c3d69de4a0540aa60377d117d8578f35.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -499,7 +541,9 @@
 			"name": "Eager Engineer",
 			"description": "Help the Steamworks 20 times.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/6a269b2af84f65d472e98f16c2178c09d03b2845.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -513,7 +557,7 @@
 			"name": "Clutch Claw Neophyte",
 			"description": "Study the ways of the clutch claw.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/44a5de531256977e656e95ccbb02d2ed5ecd2174.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -527,7 +571,9 @@
 			"name": "Confronting the Unknown",
 			"description": "Face a powerful Iceborne threat.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/8f197143da649376182352c5e1b29ce61fcd1b44.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -541,7 +587,9 @@
 			"name": "Indomitable Spirit",
 			"description": "Overcome a great challenge.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/2cb2a603a0c7df9484010be08e567c0f4abae205.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -555,7 +603,9 @@
 			"name": "Bourgeois Hunter",
 			"description": "Possess 1,000,000 zenny.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/24ea9003515465a82c00089b71831745cb7389a5.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -569,7 +619,7 @@
 			"name": "Skilled Steamworker",
 			"description": "Send the Steamworks into overdrive.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/bd2419ab7062c76742c4f620651cd43e2c834302.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -583,7 +633,9 @@
 			"name": "The Old Everwyrm",
 			"description": "Face the Old Everwyrm.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/625d283bb632e64bc10915a5070d954c8691fe4e.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -597,7 +649,7 @@
 			"name": "Step into the Arena",
 			"description": "Complete your first arena quest.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/5a3538742740121726da5cb3e844ea6600990829.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -611,7 +663,9 @@
 			"name": "To the Land of Discoveries",
 			"description": "Reach the Hoarfrost Reach.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/ee873f109437b926ad48aad29221002e65aa4c4e.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -625,7 +679,9 @@
 			"name": "An End and a Beginning",
 			"description": "Complete a significant Iceborne milestone.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/b75a17f18556fece132107768740df532ebc607d.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -639,7 +695,9 @@
 			"name": "Capture Pro",
 			"description": "Capture 50 monsters.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/81cd069f44da75443c23f65af7fdac4d3f84d6bc.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -653,7 +711,9 @@
 			"name": "Hunters United Forever",
 			"description": "Complete 100 quests via multiplayer.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/4bf8679771de1418cb490fdf88783b3aa426576d.jpg",
-			"type": "multiplayer",
+			"types": [
+				"multiplayer"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -667,7 +727,9 @@
 			"name": "Experienced Rider",
 			"description": "Use Raider Ride many times.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/acdcc3490dc8fdc4b6ace2f70e6005dd72de9c3e.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -681,7 +743,9 @@
 			"name": "Unwavering Defense",
 			"description": "Obtain five extremely rare pieces of armor.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/06b9befc86ee7aa2b7ebb089c93016c06f89cf15.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -695,7 +759,9 @@
 			"name": "Elderslayer",
 			"description": "Slay 50 elder dragons.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/c6aed8d36ecfbe858e51ed21e73ef72f87dda187.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -709,7 +775,9 @@
 			"name": "Interior Decorator",
 			"description": "Have 50 different types of room decor to choose from.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/260267b92e449cae5b63fb00705415082031c797.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -723,7 +791,9 @@
 			"name": "I Am the Reinforcements",
 			"description": "Respond to an SOS flare, and help complete 10 quests.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/2f1fcd19d9211583db1fd49d08cf23306b0f0133.jpg",
-			"type": "multiplayer",
+			"types": [
+				"multiplayer"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -737,7 +807,9 @@
 			"name": "Established Hunter",
 			"description": "Reach hunter rank 100.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/fa430c2f5c33331a54a049c4a4e55d0cfb939b5e.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -751,7 +823,9 @@
 			"name": "Hunter Prodigy",
 			"description": "Hunt 100 large monsters in master rank quests.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/5c8f61ea5affa24df1ed0915920fe0aab8a5bb2a.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -765,7 +839,7 @@
 			"name": "Remodeler",
 			"description": "Change your room's interior for the first time.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/f5b92d717d540a704f9f87d571ec7d80f6aed654.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -779,7 +853,9 @@
 			"name": "Devastating Offense",
 			"description": "Obtain five extremely rare weapons.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/d06fbb2242fc1dd58ff52ba111b6f66de06ce59e.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -793,7 +869,9 @@
 			"name": "The Franchise Hunter",
 			"description": "Complete 50 investigations.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/de8b396f3ed10fb980521aedefad59013d07932d.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -807,7 +885,9 @@
 			"name": "Indomitable",
 			"description": "Complete a very difficult Iceborne quest.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/1da29f2d7a705a2373da2f90b8951b5650dbd248.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -821,7 +901,7 @@
 			"name": "Another Miniature Crown",
 			"description": "Obtain your first miniature crown for capturing endemic life in master rank.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/07bee3d2b2d0e7c92c93c91691075dcf482df0a9.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -835,7 +915,9 @@
 			"name": "Master Capturer",
 			"description": "Capture 50 large monsters in master rank quests.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/e696d868cf62d8448bd31a815c6882834cd4a53f.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -849,7 +931,9 @@
 			"name": "Fate's Conclusion",
 			"description": "Complete the Iceborne endgame.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/760167c6d2baf6960f34b9faba674e63fb1698aa.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -863,7 +947,9 @@
 			"name": "Monster Hunter",
 			"description": "Hunt 500 large monsters.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/57d92b4cd95b5c581a082055c7ec9c43bd693ce2.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -877,7 +963,9 @@
 			"name": "Master Explorer",
 			"description": "Establish all camps in the Hoarfrost Reach.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/eeb10f3b29de5cebf72e017676d9d8d87ff2559f.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -891,7 +979,9 @@
 			"name": "Insatiable Investigator",
 			"description": "Complete a large number of investigations.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/c63d470d6f47c466cdabc33194a07c1317657895.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -905,7 +995,7 @@
 			"name": "Another Giant Crown",
 			"description": "Obtain your first gold crown for capturing endemic life in master rank.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/2de932977d56b36f5dcdd3d4b3e74474e6626b67.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -919,7 +1009,9 @@
 			"name": "Master Slayer",
 			"description": "Slay 50 elder dragons in master rank quests.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/610f90af6f92a667e3b5486e886bb4e6200ac9ad.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -933,7 +1025,9 @@
 			"name": "Evolving Ecology",
 			"description": "Complete an ecology milestone.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/ab97480080991c32a8fb6d6416882dee3fd69ef8.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -947,7 +1041,9 @@
 			"name": "Architectural Artist",
 			"description": "Have 120 different types of room decor to choose from.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/39283d5f19fdabad89983a696363797e4e3be99c.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -961,7 +1057,9 @@
 			"name": "In Search of Rare Materials",
 			"description": "Obtain rare materials.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/336a6cc632fce98ebcb485392852807397f44eba.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -975,7 +1073,9 @@
 			"name": "Seen It All",
 			"description": "Complete endgame content.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/eb263d347bebc1838bf41e26d6ece17ba105679a.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -989,7 +1089,9 @@
 			"name": "Helpful Hunter",
 			"description": "Aid a low rank or high rank hunter on 10 quests as a master rank hunter.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/253f4b2221c3f984e23ff25f68ad3488d8b2473d.jpg",
-			"type": "multiplayer",
+			"types": [
+				"multiplayer"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -1003,7 +1105,9 @@
 			"name": "Master of Masters",
 			"description": "Reach master rank 200.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/cbe19ef842bc5214011ba535cb05fab529f9e974.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -1020,7 +1124,9 @@
 			"name": "Rainbow Bright",
 			"description": "Complete the rainbow pigment quest.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/66c87222591b9eeac39c877b9074219f7c2f7b70.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -1034,7 +1140,9 @@
 			"name": "Miniature Crown Collector",
 			"description": "Obtain a miniature crown for 10 or more monsters that appear from low or high rank.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/b2700338529c769f66f28943054a0067f1e512eb.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -1048,7 +1156,9 @@
 			"name": "Snuggles for All",
 			"description": "Befriend all Grimalkyne tribes.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/d977daf9bbe78126edad1d79ecb680c4275343d8.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -1062,7 +1172,9 @@
 			"name": "Giant Crown Collector",
 			"description": "Obtain a gold crown for 10 or more monsters that appear from low or high rank.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/661f5bf8872138a78167a8aa44084c7d668489f0.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -1076,7 +1188,9 @@
 			"name": "A Living Fossil",
 			"description": "Discover a rare endemic creature.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/3e17e45825e7f033698d493b99375ca9057ac8de.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -1090,7 +1204,7 @@
 			"name": "Fledgling Observer",
 			"description": "Complete your first request for the Lynian Researcher.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/913815f5de64b0a6746c81b4dbfb0920a2ddf874.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -1104,7 +1218,9 @@
 			"name": "Golden Gleam",
 			"description": "Discover a rare golden creature.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/f92e68b8a04536275caa708ab137b4e8e8dc2550.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -1118,7 +1234,9 @@
 			"name": "Friendly Pointer",
 			"description": "Complete many Lynian Researcher requests.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/8c9e7112fd77305e7db98fa199b6f09cbc527341.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -1132,7 +1250,9 @@
 			"name": "Monster Ph.D.",
 			"description": "Max out the research level (up to high rank) for many monsters.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/da00d5002d661d37feda60dc1a338212a45f2d5a.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -1146,7 +1266,9 @@
 			"name": "Bristles for All",
 			"description": "Befriend all Boaboa.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/b750d1a4f021bf3b1e9dd93818e96cead006d06a.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -1160,7 +1282,7 @@
 			"name": "Fledgling Collector",
 			"description": "Find your first treasure.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/aff6e77c422467247ff9459853aafd9c33391251.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -1174,7 +1296,9 @@
 			"name": "Deft Digger",
 			"description": "Find many treasures.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/52bfb922954a6bde23f1c4fe48f24a3ad1d97d93.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -1188,7 +1312,9 @@
 			"name": "Spreading the Word",
 			"description": "Collect over 50 Guild Cards.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/108a304cd5b36c3dc1da81e94e4c2be456f57832.jpg",
-			"type": "multiplayer",
+			"types": [
+				"multiplayer"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -1202,7 +1328,9 @@
 			"name": "Nowhere to Go but Up",
 			"description": "Complete 50 arena quests.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/9266951e2eaa624189dc42af3b3232afd0ac480b.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -1216,7 +1344,9 @@
 			"name": "Submerged Mystery",
 			"description": "Discover an underwater secret.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/b49e737d93c69d3047e76f3db873c80f2f8e98ad.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -1230,7 +1360,9 @@
 			"name": "Sweet Melody",
 			"description": "Hear a special melody.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/ee9f4a1544b29cbc2dadfcb0a0f93cf88bb12fe6.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -1244,7 +1376,9 @@
 			"name": "Celestial Illusion",
 			"description": "Witness a rare celestial event.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/195b150ff6964baca24eb9bc7da0f652a873ae00.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -1258,7 +1392,9 @@
 			"name": "Miniature Crown Master",
 			"description": "Obtain a miniature crown for many monsters in your hunting log.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/5c7899666994872fc7fb8e14cbb362570576655a.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -1275,7 +1411,9 @@
 			"name": "Giant Crown Master",
 			"description": "Obtain a gold crown for many monsters in your hunting log.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/35ce1223896d88d7630d2905f52a7078628eed77.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -1292,7 +1430,9 @@
 			"name": "Creatures of the Earth",
 			"description": "Complete a major endemic life milestone.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/7d340b6f29aa63c1e3ef9305978f0e06e2f5b471.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -1306,7 +1446,9 @@
 			"name": "Outstanding Observer",
 			"description": "Complete many requests for the Lynian Researcher.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/7415ae278011bb0c7dcc5e5ddafcf2ec7d1d5a0d.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -1320,7 +1462,9 @@
 			"name": "Monster Master",
 			"description": "Maximize the research level for almost all large monsters.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/dd422d9c10dc537534ac60c56a309744f0bf2464.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -1334,7 +1478,9 @@
 			"name": "True Miniature Crown Collector",
 			"description": "Obtain a miniature crown for almost every monster in your hunting log.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/d7c2e3162f32d48a8712db280afec33ca2ab35f5.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -1351,7 +1497,9 @@
 			"name": "True Large Crown Collector",
 			"description": "Obtain a gold crown for almost every monster in your hunting log.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/e664ee22806bcfec84eb0c710711750f330edb68.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -1368,7 +1516,9 @@
 			"name": "Veteran Collector",
 			"description": "Find all treasure within a single locale.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/78638bc8ee681f2af93b09be183edbb21ba55b01.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -1382,7 +1532,7 @@
 			"name": "Conqueror of the New World",
 			"description": "Unlock all achievements for Monster Hunter: World.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/c28921e56775afc7d4de5a2fa811736aaa0f43e0.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -1399,7 +1549,9 @@
 			"name": "Ultimate Collector",
 			"description": "Find all treasure.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/abc74a946753dd0982b25d93b53eba74c148a179.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -1413,7 +1565,7 @@
 			"name": "Conqueror of the Hinterlands",
 			"description": "Unlock all achievements for Monster Hunter World: Iceborne.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/582010/bccb3a5a27fe38061f851921993ca9bed884d57f.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [

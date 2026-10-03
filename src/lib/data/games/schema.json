@@ -11,15 +11,20 @@
 			"type": "array",
 			"items": {
 				"type": "object",
-				"required": ["id", "name", "description", "type", "difficulty", "guide"],
+				"required": ["id", "name", "description", "types", "difficulty", "guide"],
 				"properties": {
 					"id": { "type": "string" },
 					"name": { "type": "string" },
 					"description": { "type": "string" },
 					"iconUrl": { "type": "string", "format": "uri" },
-					"type": {
-						"type": "string",
-						"enum": ["standard", "missable", "multiplayer", "cumulative", "secret"]
+					"types": {
+						"description": "Non-exclusive traits. Empty array = an ordinary trophy; there is no 'standard' tag.",
+						"type": "array",
+						"uniqueItems": true,
+						"items": {
+							"type": "string",
+							"enum": ["missable", "multiplayer", "cumulative", "secret"]
+						}
 					},
 					"difficulty": {
 						"type": "string",

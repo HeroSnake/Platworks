@@ -9,7 +9,7 @@
 			"name": "Stand Alone",
 			"description": "Complete Always Faithful.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/30fc2a6cc0f2e271c90187a7e76be65ce87d4f15.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -24,7 +24,7 @@
 			"name": "Rock of Gibraltar",
 			"description": "Complete The Rock and Operation Gladius.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/91b79cfadb3d9ef18f9dd94ed8c3052e3f0429df.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -39,7 +39,7 @@
 			"name": "Devil in the Dark",
 			"description": "Complete Night Raid.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/0b8f78ce16dd7329797543666b47180f7faf32cf.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -54,7 +54,7 @@
 			"name": "Secret Service",
 			"description": "Complete No Sleep and Moving Mountains.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/2c1bd5cad972a4c494c1931f9afaaa26b3fff0ec.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -69,7 +69,7 @@
 			"name": "High Roller",
 			"description": "Complete Nile Guard.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/e87339709a9beca45b512e7e3b7dcd6f83f5ed72.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -84,7 +84,7 @@
 			"name": "Damned If You Do",
 			"description": "Complete Operation Ember Strike.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/212d2d9d21976710b26b1738e2b0668efc404882.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -99,7 +99,7 @@
 			"name": "Cloak and Dagger",
 			"description": "Complete the Battlefield 6 Campaign.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/2cf23b9ba327c86ae9fd11fe82a538572e9dd656.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -114,7 +114,7 @@
 			"name": "In Memoriam",
 			"description": "Pick up a Campaign collectible.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/b4e639eef3a6ed280dd31868ee1c945d62a495c9.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -129,7 +129,9 @@
 			"name": "Dogs of War",
 			"description": "Pick up 5 Campaign collectibles.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/98ec07d329f103ea552e6f71fe05653b05e88fc1.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -143,7 +145,9 @@
 			"name": "Hounds of War",
 			"description": "Pick up 10 Campaign collectibles.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/3f53d5b34882e0bbf810a2e893e712878c91af45.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -157,7 +161,9 @@
 			"name": "Wolves of War",
 			"description": "Pick up 20 Campaign collectibles.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/4790f504ac2e243ae3e060bc4f3408de107105c5.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -171,7 +177,9 @@
 			"name": "Pack Leader",
 			"description": "Pick up all Campaign collectibles.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/041a4cde9e6dd7cd891c060d556b5aac68f0d784.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -190,7 +198,7 @@
 			"name": "Peak Performance",
 			"description": "Complete a Single Player mission on the hardest difficulty.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/77a32ee9f542c7c3008ed23dff011172282e5caf.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -209,7 +217,9 @@
 			"name": "Liquidator",
 			"description": "Headshot kill 50 Enemies in the Campaign.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/acc8e2fdc6b47946fc164c8a3fe797a6328032a5.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -225,7 +235,7 @@
 			"name": "One Stone",
 			"description": "Eliminate 3 enemies with a single grenade in Single Player.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/c0d2f93cd05b93295982d3449be1213f7fab5a5a.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -241,7 +251,9 @@
 			"name": "Armor Annihilation",
 			"description": "Destroy 10 enemy vehicles in Single Player.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/665d9a49325780af09afc857d091668bd1c04ce7.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -256,7 +268,9 @@
 			"name": "End of an Era",
 			"description": "Find the dinosaur figurine in the NATO base in Always Faithful.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/ec2f70126dc76471138ad3a05ef444c8b4f1e327.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -275,7 +289,9 @@
 			"name": "Efficiency",
 			"description": "Destroy 10 mannequins in The Rock.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/1ef85c0e1f03d23d94aa8896bf48ab83c79aa63c.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -290,7 +306,9 @@
 			"name": "Deep-Six",
 			"description": "Destroy 3 floating mines in Operation Gladius.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/758b09dabe7fda373d7edb4c2709d0fdde78f2b3.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -305,7 +323,7 @@
 			"name": "Sidearm Savant",
 			"description": "Complete Night Raid using only pistols, knives, or gadgets.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/c06fd3276ae7b36700e8dac0866465134c38ddba.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -327,7 +345,7 @@
 			"name": "Looks Like A Nail",
 			"description": "Kill five enemies with a sledgehammer in No Sleep.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/ee1356b61f160f4a0fdbb2e4afa1f86c6298c4ec.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -343,7 +361,7 @@
 			"name": "Bullseye Blitz",
 			"description": "Land six consecutive headshots in Moving Mountains.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/d9661076c2b8534a4898aa52b4f364c3d0f4a1c0.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -362,7 +380,9 @@
 			"name": "Roadside Assistance",
 			"description": "Collapse an overpass on a tank in Nile Guard.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/484bbc39cdb7650d1e595d91bb80c00f76b04889.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -378,7 +398,7 @@
 			"name": "Being Watched",
 			"description": "Spot a total of 20 enemies with your drone in Operation Ember Strike.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/c8dbc0b23e7a21e0fd270d543ce4fa3aad4f6ca0.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -393,7 +413,9 @@
 			"name": "No Reinforcements",
 			"description": "Shoot down the reinforcement chopper with a tank during Always Forward.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/21972c64d39f7307588fe086e498accab616b3d6.jpg",
-			"type": "secret",
+			"types": [
+				"secret"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -412,7 +434,9 @@
 			"name": "Private First Class Montes",
 			"description": "Reach Rank 9.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/3b82b159694a593fb0ace2c7cb23e17a42da6eb5.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -426,7 +450,9 @@
 			"name": "Lance Corporal Matkovic",
 			"description": "Reach Rank 14.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/2379514048937d36b36a6a24067d6122dc71c7cf.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -440,7 +466,9 @@
 			"name": "Sergeant Redford",
 			"description": "Reach Rank 25.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/e069f1d8036e155a09e054ea2e4a628fe7fc8f2e.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -454,7 +482,9 @@
 			"name": "Punished",
 			"description": "Get 129 kills in Multiplayer.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/cecf674d7d80cfdde5f21bc49f0cd4b68d1d2798.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -468,7 +498,9 @@
 			"name": "Medal of Honor",
 			"description": "Commit 414 acts of valor in Multiplayer.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/9b4fd8435a3cea37d6f347717f491c190b504622.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -482,7 +514,7 @@
 			"name": "Road Rash",
 			"description": "Get a Roadkill with vehicles in Multiplayer.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/a098f3546906258e84641e0c9591288d109ded8a.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -497,7 +529,9 @@
 			"name": "Front line",
 			"description": "Take or Defend 41 sectors in Breakthrough.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/f08b5a858f485391372524615ede3680d8e12543.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -512,7 +546,9 @@
 			"name": "Wrench Monkey",
 			"description": "Repair vehicles for 2042 damage in Multiplayer.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/75ae7d44428d5d6f971a1b5b359e6bae7c1f538c.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -530,7 +566,7 @@
 			"name": "Heavy Weaponry",
 			"description": "Get 5 kills with LMGs without reloading in Multiplayer.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/1a31b47488d95d427f1857cc69db6fa99e61063b.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -548,7 +584,9 @@
 			"name": "Five by Five",
 			"description": "Get 5 multi-kills as Assault in Multiplayer.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/1ece4a3b300b451b0c829df9932e73ea942456a0.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -564,7 +602,9 @@
 			"name": "Stolz der Nation",
 			"description": "Get 250 sniper rifle kills as Recon in Multiplayer.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/4ad38975e9664e23759d0b8c6717784694b954b2.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -582,7 +622,9 @@
 			"name": "A Joyful Nurse",
 			"description": "Revive 1996 players as Support in Multiplayer.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/d4364e38bf36e1dd66d1e67666a4f6352f5476b5.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -604,7 +646,9 @@
 			"name": "Command and Conquest 2",
 			"description": "Capture 128 objectives in Conquest.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/d942e56b6c5e43839e5eb3d7b129f42191e0191a.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -619,7 +663,7 @@
 			"name": "Super Bomb man",
 			"description": "Arm or disarm 5 M-COM explosives in a Multiplayer match.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/5ecd07e96afca319a52bcb4eba1b933830f73428.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -638,7 +682,7 @@
 			"name": "1200",
 			"description": "Get 6 sidearm headshot kills in a Multiplayer match.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/0ee90d395ad8b0bc99646e84dc61d0deabcf4306.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -656,7 +700,9 @@
 			"name": "A Little C-4 Knocking on Your Door",
 			"description": "Deal 2000 damage to enemy vehicles with the Demolition Charge.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/7ed5e16927c332bd987875affd79c8b404b540c9.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -672,7 +718,7 @@
 			"name": "First Blood 2",
 			"description": "Perform 10 takedowns in a Multiplayer match.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/b1ea5fccdc7c4be65f1d733514ec6805e1bc88c7.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -691,7 +737,9 @@
 			"name": "Collector",
 			"description": "Loot 10 Superior or Unique items.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/629e837942216efa73a695a14f93452e5b6b0acf.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -706,7 +754,9 @@
 			"name": "May the Odds Forever Be in Your Favor",
 			"description": "Play 74 matches in any version of Battle Royale.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/4b08a8decd8c29841ebd20a04e78ced306b2b45b.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -721,7 +771,9 @@
 			"name": "Here's Your Birthday Present",
 			"description": "Deploy 42 call-ins.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/d83cbe9e84eb10f3064ffe5b7fabcb1d3562b54e.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -736,7 +788,9 @@
 			"name": "Stone Cold",
 			"description": "Stun enemies 316 times in Battle Royale or Gauntlet.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/d19cee08016b601ed50bddb2b5e12c7d8a328274.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -754,7 +808,9 @@
 			"name": "Rise from Your Grave",
 			"description": "Revive teammates 1988 times in Battle Royale or Gauntlet.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/6a343e2f39927330419df2b72ea45d91a3b560b3.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -772,7 +828,9 @@
 			"name": "Army of Two",
 			"description": "Win 7 matches in Battle Royale: Duos.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/d64621a9873375e9703ff933096e24a10707c23f.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -790,7 +848,9 @@
 			"name": "Never-Ending Game",
 			"description": "Play 125 rounds of Gauntlet.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/628b342bbd2355a5d3c594320a2eda453fb581e7.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -805,7 +865,7 @@
 			"name": "Everybody Fights, Nobody Quits",
 			"description": "Win a Battle Royale match as a full squad with total squad survival.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/4f3d4fdfb3a25a2be297138319973190d68c5928.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
@@ -827,7 +887,9 @@
 			"name": "Mission Accepted",
 			"description": "Complete 214 missions in any version of Battle Royale.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/b2322517393014a45b4280b1ab6c28c4424b0497.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
@@ -842,7 +904,9 @@
 			"name": "Dog of War",
 			"description": "Collect 9 dog tags in Battle Royale or Gauntlet.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/249298ba2ba8157de7eca84e453111a413b013c2.jpg",
-			"type": "cumulative",
+			"types": [
+				"cumulative"
+			],
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -857,7 +921,7 @@
 			"name": "Mozambique Here!",
 			"description": "Ping a Shotgun in Battle Royale.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/2807960/b352539423f5ab0e1882507f39579932411e6d47.jpg",
-			"type": "standard",
+			"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [

@@ -3,6 +3,12 @@ export interface SteamGameDetails {
 	name: string;
 	shortDescription: string;
 	headerImage: string;
+	/**
+	 * Wide banner for the game-page hero, or null when the caller did not ask for one
+	 * (see `getGameDetails`'s `hero` option). Steam's `header_image` is only 460x215,
+	 * which goes visibly soft stretched across a full-width hero.
+	 */
+	heroImage: string | null;
 	background: string;
 	metacriticScore: number | null;
 	metacriticUrl: string | null;

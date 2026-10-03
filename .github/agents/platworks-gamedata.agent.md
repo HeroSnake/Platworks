@@ -1,5 +1,5 @@
 ---
-description: "Use when adding or editing a game's achievement data in PlatWorks: src/lib/data/games/*.json, schema.json, guides, warnings, mapUrl, difficulty/type fields, or the icon fetch/verify scripts."
+description: "Use when adding or editing a game's achievement data in PlatWorks: src/lib/data/games/*.json, schema.json, guides, warnings, mapUrl, difficulty/types tag fields, or the icon fetch/verify scripts."
 tools: [read, edit, search, execute, web]
 ---
 
@@ -27,19 +27,96 @@ src/lib/data/games/
 `#lib/server/games.ts` loads them with `import.meta.glob('#lib/data/games/[0-9]*.json')` — **the numeric prefix in the glob is what keeps `_example.json` and `schema.json` out of the library**. Renaming or adding a non-numeric file there will surface it as a broken game.
 
 Per game: `appId`, `name`, `totalAchievements`, optional `mapUrl`, and `achievements[]`.
-Per achievement: `id`, `name`, `description`, optional `iconUrl`, `type` (`standard | missable | multiplayer | cumulative | secret`), `difficulty` (`easy | medium | hard | very-hard`), and a `guide`.
+Per achievement: `id`, `name`, `description`, optional `iconUrl`, `types` (a **list**), `difficulty` (`easy | medium | hard | very-hard`), and a `guide`.
+
+### `types` is a tag list, not an enum
+
+`types` is `AchievementType[]` and the tags are **non-exclusive** — a trophy can be
+`["missable","secret"]` or `["cumulative","multiplayer"]`. It replaced a single
+`type` string because that model forced a choice between two true facts: Remnant II's
+`Succession` is *both* missable (the one true ending can be locked out) and secret
+(Steam hides its description), and the old enum could only keep one.
+
+**There is deliberately no `standard` tag.** An empty array *is* the plain trophy.
+Adding `standard` back would permit contradictions like `["standard","secret"]`.
+The type filter in `game/[appId]/+page.svelte` offers a synthetic `standard` entry,
+and it is a selection, not a tag — it matches `types.length === 0`.
+
+Tag order in the JSON is canonical (`missable, multiplayer, cumulative, secret`) so a
+hand-edited file and a generated one sort identically; the validator enforces it.
 
 ## 2. Guide depth is a quality bar, not a suggestion
 
 **Never invent a URL.** Only write one that was actually opened. A plausible-but-
 unverified TrueAchievements or wiki link is worse than no link, because it looks
-correct and fails silently for the user.
+correct and fails silently for the user. This also rules out reconstructed slugs
+(`trueachievements.com/a<id>/<guessed-name>`): if you did not read it on a page,
+you did not open it.
 
 The same rule drives three fields:
 
-- `guide.sourceUrl` — deep link to *this* achievement's page, not a game index. Most games should end up with one on the large majority of entries; `0%` coverage means the research was not done.
+- `guide.sourceUrl` — deep link to *this* achievement's page, not a game index. Required for **complex** achievements (score ≥ 4 on the prompt's traits table); pointless on trivial ones. Coverage of *complex* trophies is the bar — a raw percentage is not, and a game whose list is entirely self-explanatory legitimately ends at `0%` (three shipped files do).
 - `guide.videoUrl` — a video walkthrough, when one genuinely exists.
 - `guide.communityNotes` / `guide.warnings` — **optional ≠ skip**. `warnings` is load-bearing: anything permanently missable, one-time-only, or commonly failed belongs there.
+
+`guide.steps` has a schema minimum of **one** (`minItems: 1`), not two. A trivial trophy gets exactly the steps its own text implies; padding it to five is noise, and noise in one entry makes the whole file harder to trust.
+
+## 2b. Research is triage-gated, not per-achievement
+
+`/generate-game-data` scores every achievement **offline** from its name and
+description before it makes a single request, then works down: achievement text →
+one index page → per-achievement pages → one Reddit sweep per game. The scrape
+target, the traits table, and the per-game request budget all live in
+[`generate-game-data.prompt.md`](../prompts/generate-game-data.prompt.md).
+
+### The todo list is the progress bar
+
+The run is split into **eight phases per game** (Locate · Fetch achievement list ·
+Triage achievements · Research complex achievements · Interactive map · Write game
+JSON · Fetch trophy icons · Delete scratch dir) plus **two run-level tasks**
+(`npm run check`, `Update README games table`). The prompt owns the exact phase
+names; the bar is the `todo` list, and one todo exists per phase per game from
+before the first fetch.
+
+The rules that make it readable rather than decorative:
+
+- Created **up front and complete**, so it can be read as progress at all — three games is 26 todos, not 3.
+- `in_progress` on entry, `done` on exit. **Never batch-complete**; a bar that jumps 40% → 90% in one step reports nothing.
+- **Exactly one `in_progress`** — work is sequential by design.
+- Research may be **split per archetype after triage, never before** — splitting on a guess just adds noise.
+- **`blocked` with a reason**, never a quiet `done`: no achievement page, all sources 403, not on Steam.
+- An **already-generated game is asked about, never silently skipped or overwritten** — one batched question covering every collision, offering **replace** / **merge** / **keep**. A kept game collapses to one `Skip` todo instead of eight phantom phases; a replaced game runs all eight with phase 6 retitled. The hardcoded "Current library" list in the prompt is a convenience, never the check — glob the directory.
+- `todo_deps` chain phase N → N−1, and each game → the previous game's cleanup, so the ready-task query yields exactly the one task that should be running.
+
+The trap: a progress bar that is created as the work happens, or completed in
+one sweep at the end, is worse than no bar — it looks like progress while telling
+the user nothing.
+
+Two traps behind it:
+
+- **Re-fetching a page you already read** is the main cost sink. The agent logs
+  every URL to `.tmp/game-data/{appId}/ledger.json` *before* fetching, and checks
+  it before every request. Without the ledger the same wiki index gets re-opened
+  four times in one run.
+- **Writing a URL from memory.** Three shipped games (`582010`, `2887580`,
+  `4126040`) have `0%` `sourceUrl` coverage and that is the intended outcome, not
+  a to-do. Do not "fix" them by inventing links.
+
+### Scratch workspace: `.tmp/game-data/{appId}/`
+
+The agent may create and delete anything under `.tmp/` (gitignored): the fetch
+`ledger.json`, a `findings.jsonl` of per-achievement results, and throwaway
+`.mjs` scrapers under `scripts/`. It is repo-local **on purpose** — this repo is
+edited from Windows and built from WSL, so a system temp dir is two different
+paths and the agent loses its own work mid-run. Scratch files never go in
+`src/`, the repo root, or `scripts/` (which ships durable tooling). The directory
+is deleted once `npm run check` passes; if a scraper proves worth keeping, promote
+it to `scripts/` deliberately with usage documented.
+
+**Verified:** `tsconfig.json` has `include: ["src", "*"]`, but TypeScript skips
+dot-directories in wildcard patterns, so `.tmp/**` is never type-checked even with
+`allowJs`/`checkJs` on. A junk `.mjs` under `.tmp/` leaves `npm run check` at 0
+errors. Do not add a speculative `exclude` entry for it.
 
 ## 3. Interactive maps
 
@@ -71,10 +148,13 @@ The scraping target and all of its traps (one URL per trophy, 64×64 native, dis
 ## 5. Adding a game, end to end
 
 1. `/generate-game-data "Game Name"` in Copilot, or hand-copy `_example.json`.
+   If the game is already in `src/lib/data/games/`, the prompt **asks** whether to
+   replace, merge or keep it — answer that question before the run continues.
 2. Write `src/lib/data/games/{appId}.json` — verify `totalAchievements` matches the array length.
 3. `node scripts/fetch-achievement-icons.mjs {appId}`.
 4. `node scripts/verify-achievement-icons.mjs`.
 5. `npm run check` — the loader glob and the type mirror are validated by the build.
-6. Add a row to the **README § Games** table — the appId and achievement count. That is the only README edit a data file needs.
+6. Delete `.tmp/game-data/` once the run is verified.
+7. Add a row to the **README § Games** table — the appId and achievement count. That is the only README edit a data file needs.
 
-Adding a *type* or *difficulty* value means updating `schema.json`, `game.ts`, and the filter UI in `game/[appId]/+page.svelte` together.
+Adding a *tag* value means updating `schema.json`, `game.ts` (`AchievementType`), and the badge/icon maps in `achievement_row.svelte` together. Adding a *difficulty* value means `schema.json`, `game.ts`, and the filter/sort UI in `game/[appId]/+page.svelte`.

@@ -19,13 +19,30 @@ Steam serves two different XML shapes. **Getting a tag name wrong returns `null`
 
 | Function | Purpose |
 |---|---|
-| `getGameDetails(appId)` | name, short description, header, background, Metacritic |
+| `getGameDetails(appId, { hero? })` | name, short description, header, background, Metacritic |
 | `resolveSteamId(input)` | vanity name / profile URL / ID → Steam64 |
 | `getPlayerProfile(steamId64)` | name + avatar |
 | `getPlayerAchievements(steamId64, appId)` | per-achievement `achieved` + `unlockTime` |
 | `normalizeName(name)` | key used to join achievement names to other lists — strips the whole `["'‘’“”]` class rather than turning quotes into spaces |
 
 No API key is used or required; everything goes through public Steam community endpoints.
+
+### `hero: true` is opt-in, and it is a HEAD probe
+
+`appdetails` has no wide banner. The store hero is a separate asset:
+
+```
+https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/{appId}/library_hero.jpg
+```
+
+It is **1920x620**, versus `header_image`'s **460x215**. That ratio matters: the game page stretches the banner full-bleed, and 460x215 upscaled to ~900px wide is visibly soft.
+
+Two things to know before using it:
+
+- **It is not guaranteed to exist.** Roughly one game in twelve 404s, so `getHeroImage` returns `string | null` and callers must fall back to `headerImage`.
+- **The probe is a `HEAD`, not free.** The library page calls `getGameDetails` for *every* game on load, so `hero` defaults to `false` and only `/game/[appId]` opts in. Do not flip the default without re-measuring the library's load time.
+
+Steam also serves `page_bg_raw.jpg` (`background_raw`), which is enormous — a 33k-pixel panorama, ~1.3 MB. It is fine as a CSS page background and is what `background` resolves to; never put it in an `<img>`.
 
 ## 2. Profile XML — `https://steamcommunity.com/profiles/{steamId64}/?xml=1`
 

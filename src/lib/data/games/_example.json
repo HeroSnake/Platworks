@@ -9,7 +9,7 @@
 			"name": "Timber!!",
 			"description": "Chop down your first tree.",
 			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/105600/example.jpg",
-			"type": "standard",
+						"types": [],
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
@@ -23,7 +23,7 @@
 			"name": "Homicidal Maniac",
 			"description": "Defeat every type of NPC.",
 			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/105600/example2.jpg",
-			"type": "missable",
+						"types": ["missable", "cumulative"],
 			"difficulty": "hard",
 			"guide": {
 				"steps": [

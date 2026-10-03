@@ -52,9 +52,9 @@
 	<!-- Animated via grid-template-rows so the list underneath never re-lays-out. -->
 	<div class="expand-panel" data-open={mode !== 'none'}>
 		<div>
-			<div class="px-4 py-2.5">
+					<div class="px-4 py-2">
 				{#if mode === 'search'}
-					<div class="flex items-center gap-2 rounded-lg bg-steam-blue px-3 py-2">
+									<div class="flex h-10 items-center gap-2 rounded-lg bg-steam-blue px-3">
 						<Search class="h-4 w-4 shrink-0 text-gray-500" />
 						<!-- text, not search: avoids WebKit's own clear button colliding with ours. -->
 						<input
