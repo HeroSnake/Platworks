@@ -39,7 +39,7 @@ npm run dev
 
 No API key or `.env` file required. Set your Steam ID directly in the app via the account button (top-right navbar).
 
-> **Note for contributors:** this project targets **SvelteKit 3**. Config lives in `vite.config.ts` — creating a `svelte.config.js` is a hard startup error — and shared code is imported with `#lib`, not `$lib`. Run `npm run check` before committing; it regenerates types first. `.github/agents/platworks-dev.agent.md` documents the framework gotchas and project rules.
+> **Note for contributors:** this project targets **SvelteKit 3**. Config lives in `vite.config.ts` — creating a `svelte.config.js` is a hard startup error — and shared code is imported with `#lib`, not `$lib`. Run `npm run check` before committing; it regenerates types first. `.github/agents/` holds the project rules, split by domain — start at `platworks-dev.agent.md`, which routes you to the file that owns what you're changing.
 
 ## Project Structure
 
@@ -80,7 +80,13 @@ scripts/
 ├── fetch-achievement-icons.mjs      # Scrape official Steam icons into the game JSON
 ├── verify-achievement-icons.mjs     # Check every stored icon still resolves
 .github/
-├── agents/platworks-dev.agent.md  # Copilot custom agent — project rules & gotchas
+├── agents/                          # Agent rules, split by domain
+│   ├── platworks-dev.agent.md       #   entry point — routing table + cross-cutting rules
+│   ├── platworks-sveltekit.agent.md #   SvelteKit 3, config, routing, hydration
+│   ├── platworks-ui.agent.md        #   components, Tailwind, animation, performance
+│   ├── platworks-steam.agent.md     #   Steam API, XML parsing, sync, icon scraping
+│   ├── platworks-state.agent.md     #   localStorage keys and the cached profile
+│   └── platworks-gamedata.agent.md  #   game JSON, schema, guides, icon scripts
 └── prompts/generate-game-data.prompt.md  # AI game data generator
 ```
 
