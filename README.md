@@ -17,7 +17,7 @@ PlatWorks turns a game's trophy list into something you can actually act on. Ins
 - **Interactive maps** — open-world games link straight to a community map, both from the game header and from individual trophy locations
 - **No API key, no accounts** — PlatWorks reads Steam's public endpoints only. There is nothing to sign up for and no key to configure
 
-<img width="1516" height="394" alt="image" src="https://github.com/user-attachments/assets/ac82fb2d-9d6d-4300-a557-5b1d8657fe50" />
+<img width="864" height="369" alt="image" src="https://github.com/user-attachments/assets/a79284c2-5db6-4cde-a402-8f845d9c51a9" />
 
 ## Games
 
