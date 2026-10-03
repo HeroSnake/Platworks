@@ -3,6 +3,7 @@
 	"appId": 1623730,
 	"name": "Palworld",
 	"totalAchievements": 75,
+	"mapUrl": "https://palworld.gg/fr/map",
 	"achievements": [
 		{
 			"id": "BEGINNING_OF_THE_LEGEND",

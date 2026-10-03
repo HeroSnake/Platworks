@@ -2,6 +2,12 @@ export interface GameData {
 	appId: number;
 	name: string;
 	totalAchievements: number;
+	/**
+	 * Interactive map for the whole game, when one good one exists. Prefer a
+	 * maintained map over a dead wiki link, and omit the field entirely for linear
+	 * or multiplayer games where a map would not help.
+	 */
+	mapUrl?: string;
 	achievements: Achievement[];
 }
 
@@ -26,8 +32,14 @@ export interface AchievementGuide {
 	steps: string[];
 	/** URL to a video walkthrough */
 	videoUrl?: string;
-	/** URL to a written guide */
+	/** URL to a written guide, ideally a deep link for this specific achievement */
 	sourceUrl?: string;
+	/**
+	 * Interactive map deep link for this achievement's location. Falls back to the
+	 * game's own `mapUrl` in the UI, so only set it when the achievement is tied to
+	 * a specific spot worth linking straight to.
+	 */
+	mapUrl?: string;
 	/** Community tips, usually from Reddit */
 	communityNotes?: string[];
 	/** Warnings for missable or tricky achievements */

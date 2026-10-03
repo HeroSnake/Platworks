@@ -83,7 +83,7 @@ When you fix something a future agent could plausibly hit, also leave a one-line
 | Types | `#lib/types/` | `game.ts` → `GameData`, `Achievement`, `AchievementGuide`; `steam.ts` → `SteamGameDetails`, `SteamAchievementStatus`, `SteamProfile` |
 | Steam API | `#lib/server/steam/api.ts` | server-only: `getGameDetails()`, `resolveSteamId()`, `getPlayerProfile()`, `getPlayerAchievements()`, `normalizeName()` |
 | Game loader | `#lib/server/games.ts` | `getAllGames()`, `getGameByAppId()` via `import.meta.glob('#lib/data/games/[0-9]*.json')` |
-| Icon tooling | `scripts/` | `fetch-achievement-icons.mjs` (write `iconUrl`), `verify-achievement-icons.mjs` (audit). Run with `node`, not npm |
+| Icon tooling | `scripts/` | `fetch-achievement-icons.mjs` (write `iconUrl`), `verify-achievement-icons.mjs` (audit icons). Run with `node`, not npm |
 | Client profile cache | `#lib/client/profile.ts` | `loadProfile()`, `saveProfile()`, `clearProfile()`, `refreshProfile()` |
 | Components | `#lib/components/` | `achievement_row.svelte`, `game_card.svelte`, `github_icon.svelte`, `mobile_bar.svelte` |
 | Game data | `#lib/data/games/{appId}.json` | per-game achievement guides |
@@ -105,6 +105,23 @@ The mobile bottom bar is **one component used by both pages**. Do not fork a sec
 |---|---|---|
 | `/api/steam/sync/[appId]` | GET | `{ connected, steamId, achievements }` — one game |
 | `/api/steam/profile` | GET | `{ connected, steamId, profile }` — name + avatar |
+
+### Guide depth is a quality bar, not a suggestion
+
+**Never invent a URL.** Only write one that was actually opened. A plausible-but-
+unverified TrueAchievements or wiki link is worse than no link, because it looks
+correct and fails silently for the user.
+
+### Interactive maps
+
+`GameData.mapUrl` is the game's map (shown in the header and as the fallback
+"Game Map" link in every trophy).
+
+Verification rule: **only save a `mapUrl` that returned HTTP 200.** `wiki.gg` and
+`fandom` return 403 to scripted requests (Cloudflare bot protection) even though
+they work in a browser; that is not the same as a dead link, but it is also not
+verified. Those were deliberately left out — do not add them without checking in
+a real browser first.
 
 ### The trophy card: the icon *is* the checkbox
 
@@ -181,6 +198,16 @@ Steam serves two different XML shapes. Getting a tag name wrong returns `null`, 
 ### `extractTag()` limitations
 
 In `#lib/server/steam/api.ts`. Case-insensitive, and will **not** match a tag that carries attributes (`<avatar position="0">`). If Steam adds attributes to a tag you need, extend the regex rather than working around it.
+
+### Some websites might be Cloudflare-blocked from scripts, especially if spammed
+
+`www.trueachievements.com` returns **403 to every request from Node**, including
+full browser header sets — it is bot protection, not a missing User-Agent. No
+script in this repo can scrape it; the per-achievement guide links had to be
+read through an agent with web access instead.
+
+This is why `scripts/` has no guide-link fetcher: it cannot exist. The same block
+applies to `wiki.gg` and `fandom` (403), while Steam's own endpoints are fine.
 
 ### Achievement icons — the global stats page
 

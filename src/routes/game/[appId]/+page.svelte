@@ -9,6 +9,7 @@
 		Search,
 		RefreshCw,
 		Loader2,
+		MapPinned
 	} from '@lucide/svelte';
 	import AchievementRow from '#lib/components/achievement_row.svelte';
 	import MobileBar from '#lib/components/mobile_bar.svelte';
@@ -246,6 +247,19 @@
 				{/if}
 
 				<div class="mt-3 flex flex-wrap items-center gap-2">
+					{#if data.game.mapUrl}
+						<!-- A link, so it gets a real 40px tap target on phones. The
+						     neighbouring Metacritic chip is a plain span and can stay compact. -->
+						<a
+							href={data.game.mapUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-flex min-h-10 items-center gap-1.5 rounded bg-steam-light px-3 text-xs text-gray-200 active:bg-steam-accent/80 sm:min-h-8 sm:px-2.5 sm:py-1 sm:text-sm"
+						>
+							<MapPinned class="h-3.5 w-3.5 shrink-0" />
+							Interactive Map
+						</a>
+					{/if}
 					{#if data.steam?.metacriticScore}
 						<span class="flex items-center gap-1 rounded bg-steam-green px-2 py-1 text-xs font-bold sm:text-sm">
 							<Star class="h-3.5 w-3.5" />

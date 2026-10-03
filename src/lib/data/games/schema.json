@@ -6,6 +6,7 @@
 		"appId": { "type": "integer" },
 		"name": { "type": "string" },
 		"totalAchievements": { "type": "integer" },
+		"mapUrl": { "type": "string", "format": "uri" },
 		"achievements": {
 			"type": "array",
 			"items": {
@@ -35,6 +36,7 @@
 							},
 							"videoUrl": { "type": "string", "format": "uri" },
 							"sourceUrl": { "type": "string", "format": "uri" },
+							"mapUrl": { "type": "string", "format": "uri" },
 							"communityNotes": {
 								"type": "array",
 								"items": { "type": "string" }

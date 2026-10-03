@@ -3,6 +3,7 @@
 	"appId": 1903340,
 	"name": "Clair Obscur: Expedition 33",
 	"totalAchievements": 55,
+	"mapUrl": "https://mapgenie.io/clair-obscur-expedition-33",
 	"achievements": [
 		{
 			"id": "LUMIERE",
@@ -15,7 +16,8 @@
 				"steps": [
 					"Start a new game.",
 					"Complete the opening sequence to officially begin the expedition."
-				]
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477200/lumiere-achievement"
 			}
 		},
 		{
@@ -29,6 +31,10 @@
 				"steps": [
 					"Attack an enemy repeatedly to fill their Break gauge.",
 					"Once the gauge is full, the enemy will enter a Broken state."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477250/time-to-spill-some-ink-achievement",
+				"communityNotes": [
+					"Reddit tip: Fill the Break gauge then land a Gradient Attack to break it. A broken enemy is also the setup for most combat achievements."
 				]
 			}
 		},
@@ -43,6 +49,10 @@
 				"steps": [
 					"Use Gustave in combat and hold the Overcharge attack.",
 					"Fully charge it and release it on an enemy near their Break threshold."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477238/overcharge-achievement",
+				"communityNotes": [
+					"Reddit tip: Gustave only — switching character mid-fight cancels the charge, and it must land on an enemy that actually Breaks."
 				]
 			}
 		},
@@ -57,7 +67,8 @@
 				"steps": [
 					"Progress the main story past the opening.",
 					"Travel to the Spring Meadows region."
-				]
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477201/spring-meadows-achievement"
 			}
 		},
 		{
@@ -71,6 +82,10 @@
 				"steps": [
 					"Find a Paint Cage in the overworld (glowing objects).",
 					"Attack it to break it open and collect the reward."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477249/paint-cage-achievement",
+				"communityNotes": [
+					"Reddit tip: Paint Cages are commonly walked past because they blend into the scenery. Break them with any Gradient Attack when you spot the dark shell."
 				]
 			}
 		},
@@ -85,7 +100,8 @@
 				"steps": [
 					"Continue the main story beyond Spring Meadows.",
 					"Arrive at the Flying Waters region."
-				]
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477202/flying-waters-achievement"
 			}
 		},
 		{
@@ -99,7 +115,8 @@
 				"steps": [
 					"Collect weapon upgrade materials from enemies and exploration.",
 					"Visit the upgrade station and enhance any weapon once."
-				]
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477232/weapon-upgrade-achievement"
 			}
 		},
 		{
@@ -113,7 +130,8 @@
 				"steps": [
 					"Collect Lumina from exploration or battles.",
 					"Spend a Lumina point on character upgrades."
-				]
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477234/lumina-achievement"
 			}
 		},
 		{
@@ -129,8 +147,9 @@
 					"Watch the scene to unlock the achievement."
 				],
 				"warnings": [
-					"Some camp scenes are only available at specific story points."
-				]
+					"Missable. The optional scenes must be triggered manually at camp; the game gives no prompt and no reminder if one is left unseen."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477252/curious-achievement"
 			}
 		},
 		{
@@ -144,6 +163,10 @@
 				"steps": [
 					"Progress the story past Flying Waters.",
 					"Arrive at the Ancient Sanctuary."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477203/ancient-sanctuary-achievement",
+				"communityNotes": [
+					"Reddit tip: This is the Expedition 1 hub — you return here constantly, so sweep the area for Gestrals and chests before moving on."
 				]
 			}
 		},
@@ -158,6 +181,10 @@
 				"steps": [
 					"Continue the main story.",
 					"Arrive at Gestral Village."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477204/gestral-village-achievement",
+				"communityNotes": [
+					"Reddit tip: Every Gestral here can be challenged for a Gestral Game, which is what unlocks Monoco's full skill list. Talk to each one rather than rushing past."
 				]
 			}
 		},
@@ -172,7 +199,8 @@
 				"steps": [
 					"Progress the story past Gestral Village.",
 					"Reach the Esquie's Nest location."
-				]
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477205/esquies-nest-achievement"
 			}
 		},
 		{
@@ -186,6 +214,10 @@
 				"steps": [
 					"Find and engage a legendary enemy in the overworld.",
 					"Defeat them in combat."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477253/legend-achievement",
+				"communityNotes": [
+					"Reddit tip: Tied to the Esquie recruitment chain — do the optional conversations before the story moves you past the area."
 				]
 			}
 		},
@@ -200,7 +232,8 @@
 				"steps": [
 					"Progress through the main story.",
 					"Arrive at Stone Wave Cliffs."
-				]
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477206/stone-wave-cliffs-achievement"
 			}
 		},
 		{
@@ -214,6 +247,10 @@
 				"steps": [
 					"Continue the main story.",
 					"Arrive at the Forgotten Battlefield."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477207/forgotten-battlefield-achievement",
+				"communityNotes": [
+					"Reddit tip: Loaded in as a flashback — there is nothing to do here but look, so do not expect gameplay."
 				]
 			}
 		},
@@ -222,12 +259,16 @@
 			"name": "Expedition 33",
 			"description": "Reach a key story milestone.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1903340/da9d2ab2f3e47e4d19c42c5fb27b9c49f315a763.jpg",
-			"type": "secret",
+			"type": "missable",
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
 					"Progress the main story through the mid-game.",
 					"Reach the Expedition 33 milestone event."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477246/expedition-33-achievement",
+				"warnings": [
+					"Missable. Characters are unlocked by optional story decisions. One party member is only available if you chose a specific dialogue option earlier and cannot be recruited after the fact."
 				]
 			}
 		},
@@ -242,7 +283,8 @@
 				"steps": [
 					"Continue the story.",
 					"Arrive at Monoco's Station."
-				]
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477208/monocos-station-achievement"
 			}
 		},
 		{
@@ -251,7 +293,7 @@
 			"description": "Achieve a perfect combat encounter.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1903340/f49024626ed746f41970997955eead148ee383da.jpg",
 			"type": "secret",
-			"difficulty": "medium",
+			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
 					"Complete an entire combat encounter without taking damage.",
@@ -259,6 +301,10 @@
 				],
 				"communityNotes": [
 					"Reddit tip: Easier on early-game enemies. The timing system is similar to action-command RPGs."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477242/perfection-achievement",
+				"warnings": [
+					"Rank S with Verso is the hardest combat check in the game. Rank is graded on turn count and damage taken, so a slow or careless fight drops the grade immediately."
 				]
 			}
 		},
@@ -273,6 +319,10 @@
 				"steps": [
 					"Progress the story to the late-game.",
 					"Arrive at Old Lumière."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477209/old-lumiere-achievement",
+				"communityNotes": [
+					"Reddit tip: The main source of upgrade materials this early. Leaving without clearing it leaves you under-leveled for the next region."
 				]
 			}
 		},
@@ -287,7 +337,8 @@
 				"steps": [
 					"Earn XP from combat encounters and quest completion.",
 					"Reach character level 33."
-				]
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477235/expeditioner-achievement"
 			}
 		},
 		{
@@ -301,6 +352,10 @@
 				"steps": [
 					"Progress the main story.",
 					"Complete the First Axon encounter."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477210/first-axon-achievement",
+				"communityNotes": [
+					"Reddit tip: Break is the whole fight. Chip the Gradient bar down, then dump your highest-damage Gradient Attack into the Break for a free damage window."
 				]
 			}
 		},
@@ -315,7 +370,8 @@
 				"steps": [
 					"Continue past the First Axon.",
 					"Complete the Second Axon encounter."
-				]
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477211/second-axon-achievement"
 			}
 		},
 		{
@@ -324,7 +380,7 @@
 			"description": "Defeat a boss without taking any damage.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1903340/62d4676ebd03f2a3cefb99ea6fe4039cf4f5b838.jpg",
 			"type": "standard",
-			"difficulty": "hard",
+			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
 					"Learn a boss's attack patterns thoroughly.",
@@ -332,6 +388,10 @@
 				],
 				"communityNotes": [
 					"Reddit tip: The first boss (Spring Meadows) is easiest for this. Master the timing-based dodge system."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477251/professional-achievement",
+				"warnings": [
+					"A full boss with zero damage taken, including the overworld phase. Bring reliable healing or a revive item, and do not attempt it on a first clear."
 				]
 			}
 		},
@@ -346,7 +406,8 @@
 				"steps": [
 					"Find a Monolith structure in the overworld.",
 					"Interact with it to trigger the event."
-				]
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477212/monolith-achievement"
 			}
 		},
 		{
@@ -360,6 +421,10 @@
 				"steps": [
 					"Chain multiple perfect actions in a row during combat.",
 					"Trigger the Perfect Flow state."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477239/perfect-flow-achievement",
+				"warnings": [
+					"Requires four unbroken turns with Lune. Taking damage or using another skill resets the counter."
 				]
 			}
 		},
@@ -374,6 +439,10 @@
 				"steps": [
 					"Progress the story to the Paintress encounter.",
 					"Complete the associated story event."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477213/paintress-achievement",
+				"warnings": [
+					"Final boss. If you have not beaten the Serpenphare (À On) and found Esquie, this fight is tuned well beyond a first attempt."
 				]
 			}
 		},
@@ -388,7 +457,8 @@
 				"steps": [
 					"Progress through the late-game story.",
 					"Return to the starting city of Lumière."
-				]
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477214/back-to-lumiere-achievement"
 			}
 		},
 		{
@@ -396,7 +466,7 @@
 			"name": "A Peculiar Encounter",
 			"description": "Defeat the Mime in Lumière.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1903340/14e791876ad075f208fed78388271833173527df.jpg",
-			"type": "standard",
+			"type": "missable",
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
@@ -404,7 +474,11 @@
 					"Defeat the Mime in combat."
 				],
 				"communityNotes": [
-					"Reddit tip: The Mime is a hidden optional boss. Look for a performer in the streets of Lumière."
+					"Reddit tip: If you never saw the Mime before leaving Lumière, use the camp to restart the chapter from the start of the region."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477254/a-peculiar-encounter-achievement",
+				"warnings": [
+					"Missable, and one of the most commonly missed in the game. The Mime in Lumière is an entirely optional encounter — you must deliberately initiate the fight. Walk past him and he is gone for good."
 				]
 			}
 		},
@@ -419,6 +493,10 @@
 				"steps": [
 					"Build up the Synergy gauge by performing consecutive perfect actions.",
 					"Trigger the Synergy ability when the gauge is full."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477240/synergy-achievement",
+				"warnings": [
+					"Requires Percée on a Marked enemy while Maelle is in Virtuose Stance. Being hit drops the stance and resets the requirement."
 				]
 			}
 		},
@@ -427,12 +505,16 @@
 			"name": "The End",
 			"description": "Complete the main story.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1903340/b3ea2c44ab6c5642b220f7dc4ae9075c8a70b3f1.jpg",
-			"type": "secret",
+			"type": "missable",
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
 					"Progress through all story chapters.",
 					"Defeat the final boss and watch the ending."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477215/the-end-achievement",
+				"warnings": [
+					"Missable. Several conversations in Lumière are one-time only and the game will not remind you afterwards. Finish every optional dialogue option before leaving the region."
 				]
 			}
 		},
@@ -447,6 +529,10 @@
 				"steps": [
 					"Invest Lumina points into a single stat.",
 					"Reach the maximum value for that stat on one character."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477241/maximisation-achievement",
+				"warnings": [
+					"Needs 20 stacks of Foretell on one target during Twilight. Stacks are lost if the target dies early, so pick a durable one."
 				]
 			}
 		},
@@ -455,12 +541,19 @@
 			"name": "Plane, Train, and Submarine",
 			"description": "Use all three vehicle types.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1903340/7bdff2763d0975b1d1a0b7741a810eadd487c733.jpg",
-			"type": "secret",
+			"type": "missable",
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
 					"Progress the story to unlock all three vehicle types.",
 					"Ride the plane, train, and submarine at least once each."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477216/plane-train-and-submarine-achievement",
+				"warnings": [
+					"Missable. Esquie only offers one of his abilities per conversation, and the order matters. The chapter can be replayed from camp if you skip one, but it cannot be recovered by walking past him later."
+				],
+				"communityNotes": [
+					"Reddit tip: Talk to Esquie after every major story beat rather than saving it for one sitting — the ability order is tied to story progress."
 				]
 			}
 		},
@@ -475,7 +568,8 @@
 				"steps": [
 					"Continue earning XP from combat and quests.",
 					"Reach character level 66."
-				]
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477236/trailbreaker-achievement"
 			}
 		},
 		{
@@ -489,6 +583,10 @@
 				"steps": [
 					"Progress the main story.",
 					"Recruit Sciel to your party when the opportunity arises."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477227/sciel-achievement",
+				"communityNotes": [
+					"Reddit tip: Relationship levels come from the shared campsite conversations. Bump every character before advancing the story, not after."
 				]
 			}
 		},
@@ -497,12 +595,16 @@
 			"name": "Sprong",
 			"description": "Recruit Sprong.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1903340/44ce5fbc492bcb89da7d342202b409ea4dae62fd.jpg",
-			"type": "secret",
+			"type": "missable",
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
 					"Continue the story.",
 					"Recruit Sprong to your party."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477225/sprong-achievement",
+				"warnings": [
+					"Missable. Sprong is an optional superboss fought in a side region."
 				]
 			}
 		},
@@ -517,6 +619,10 @@
 				"steps": [
 					"Progress to the Esquie's Nest area.",
 					"Recruit Esquie to your party."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477231/esquie-achievement",
+				"warnings": [
+					"Missable. Esquie's relationship is tied to conversations that must be triggered in sequence; skipping ahead locks the level out."
 				]
 			}
 		},
@@ -531,6 +637,10 @@
 				"steps": [
 					"Continue through the story.",
 					"Recruit Lune to your party."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477230/lune-achievement",
+				"communityNotes": [
+					"Reddit tip: Same relationship system as the others — do the optional campsite chats at every level threshold."
 				]
 			}
 		},
@@ -545,6 +655,10 @@
 				"steps": [
 					"Progress the main story.",
 					"Recruit Maelle to your party."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477229/maelle-achievement",
+				"communityNotes": [
+					"Reddit tip: Same relationship system as the others — do the optional campsite chats at every level threshold."
 				]
 			}
 		},
@@ -559,6 +673,10 @@
 				"steps": [
 					"Reach Monoco's Station in the story.",
 					"Recruit Monoco to your party."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477228/monoco-achievement",
+				"communityNotes": [
+					"Reddit tip: Same relationship system as the others — do the optional campsite chats at every level threshold."
 				]
 			}
 		},
@@ -573,7 +691,8 @@
 				"steps": [
 					"Unlock and experiment with the Chroma combat system.",
 					"Reach proficiency with the Chroma mechanics."
-				]
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477247/chroma-proficiency-achievement"
 			}
 		},
 		{
@@ -587,6 +706,10 @@
 				"steps": [
 					"Learn the Wheel-based combat system.",
 					"Successfully use the Wheel mechanic in a key encounter."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477243/wheel-control-achievement",
+				"warnings": [
+					"Requires four consecutive turns casting an Upgraded Skill with Monoco. A failed cast breaks the chain."
 				]
 			}
 		},
@@ -595,12 +718,16 @@
 			"name": "À On",
 			"description": "Trigger the À On event.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1903340/2b46e33316b67a484d7fcb7a44c675d3ba9cccc2.jpg",
-			"type": "secret",
+			"type": "missable",
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
 					"Progress through the late-game story.",
 					"Trigger the À On story event."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477224/a-on-achievement",
+				"warnings": [
+					"Missable. The Serpenphare is an optional superboss and the hardest check in the game. Nothing marks it as optional once you pass it."
 				]
 			}
 		},
@@ -615,6 +742,10 @@
 				"steps": [
 					"Collect enough upgrade materials from endgame content.",
 					"Fully upgrade any single weapon to its maximum level."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477233/weapon-mastery-achievement",
+				"communityNotes": [
+					"Reddit tip: End-game upgrade materials only drop after the Paintress, so this cannot be done during the earlier regions."
 				]
 			}
 		},
@@ -629,7 +760,8 @@
 				"steps": [
 					"During a Carreau attack, hit the perfect timing window.",
 					"Land a flawless Carreau in combat."
-				]
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477244/carreau-parfait-achievement"
 			}
 		},
 		{
@@ -637,12 +769,16 @@
 			"name": "Clea",
 			"description": "Recruit Clea.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1903340/3bdd69001337b9489645949414007759a8b56a82.jpg",
-			"type": "secret",
+			"type": "missable",
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
 					"Progress to the late-game story.",
 					"Recruit Clea to your party."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477221/clea-achievement",
+				"warnings": [
+					"Missable. Clea is an optional superboss encountered late in the game. There is no prompt telling you the fight is optional — walk past and it is gone."
 				]
 			}
 		},
@@ -651,12 +787,16 @@
 			"name": "Noir et Blanc",
 			"description": "Experience the Noir et Blanc event.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1903340/75d20ef2b7e8c0fab546d50347644c8cf8001192.jpg",
-			"type": "secret",
+			"type": "missable",
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
 					"Progress through the endgame story.",
 					"Witness the Noir et Blanc story event."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477226/noir-et-blanc-achievement",
+				"warnings": [
+					"Missable. The Painting Workshop mystery is optional, and the achievement only fires once the painting itself is solved — not when you enter the area."
 				]
 			}
 		},
@@ -671,6 +811,10 @@
 				"steps": [
 					"Unlock the Endless challenge mode after completing the story.",
 					"Survive and complete the Endless gauntlet."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477222/endless-achievement",
+				"communityNotes": [
+					"Reddit tip: Tower floors scale and loop, so the run is a damage race. Bring healing items rather than trying to avoid all damage."
 				]
 			}
 		},
@@ -687,7 +831,11 @@
 					"Complete the final sequence to achieve this ending."
 				],
 				"warnings": [
-					"Missable — requires specific dialogue and quest choices throughout the game. Multiple playthroughs may be needed."
+					"Missable. Simon is an optional superboss fought in a hidden arena. He can be re-attempted each cycle, so a failed fight is not lost — but skipping him entirely means the achievement never fires."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477219/peace-at-last-achievement",
+				"communityNotes": [
+					"Reddit tip: Simon punishes ranged play hard. Bring a party built to stick to him and burst him down rather than trying to out-last the fight."
 				]
 			}
 		},
@@ -704,7 +852,11 @@
 					"Interact with each lost Gestral to rescue them."
 				],
 				"communityNotes": [
-					"Reddit tip: There are Gestrals hidden in every major area. Check behind waterfalls and in dead-end paths."
+					"Reddit tip: Use Esquie's glide to reach the ones on high ledges — most are a short detour from the main path, not deep exploration."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477223/lost-gestrals-achievement",
+				"warnings": [
+					"Missable. Several Lost Gestrals only spawn during specific story moments or before a region is left. If you fast-travel past an area, some will not return."
 				]
 			}
 		},
@@ -719,6 +871,13 @@
 				"steps": [
 					"Find Gestral Game challenges in settlements.",
 					"Complete every minigame challenge."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477220/gestral-games-achievement",
+				"warnings": [
+					"Several Gestral Games are missable — the Gestral must be challenged before it leaves the area. Re-scan old regions before leaving the game."
+				],
+				"communityNotes": [
+					"Reddit tip: The chess-like and sequence-memory games catch people out. Losing is allowed, but you must win at least once each."
 				]
 			}
 		},
@@ -733,6 +892,13 @@
 				"steps": [
 					"Search for hidden feet collectible items across all areas.",
 					"Collect the complete set."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477245/feet-collection-achievement",
+				"warnings": [
+					"Requires buying every Monoco skill from the Gestral merchants. Each merchant sells a limited set and does not restock, so talk to all of them."
+				],
+				"communityNotes": [
+					"Reddit tip: The merchants are spread across regions — you cannot buy the full list without backtracking to earlier areas."
 				]
 			}
 		},
@@ -749,8 +915,9 @@
 					"Complete their request to unlock this achievement."
 				],
 				"warnings": [
-					"Missable — only available during specific story moments. The choice cannot be undone."
-				]
+					"Missable. The Nevron quest chain has optional follow-ups that only trigger if you progress the main chain first. Do the side requests as they appear."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477218/aiding-the-enemy-achievement"
 			}
 		},
 		{
@@ -764,6 +931,10 @@
 				"steps": [
 					"Grind XP from endgame encounters and optional bosses.",
 					"Reach the maximum character level of 99."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477237/survivor-achievement",
+				"communityNotes": [
+					"Reddit tip: The level cap only moves with the endgame areas — check the requirements before grinding in the early zones."
 				]
 			}
 		},
@@ -780,8 +951,9 @@
 					"Collect all journals — some are in hidden areas."
 				],
 				"communityNotes": [
-					"Reddit tip: Journals are the main lore collectible. Use a guide for the ones in missable areas."
-				]
+					"Reddit tip: Journals are scattered off the critical path and easy to walk past. Sweep each region before fast-travelling on."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477217/follow-the-trail-achievement"
 			}
 		},
 		{
@@ -797,7 +969,11 @@
 					"Some are rewards from quests, others are hidden in exploration areas."
 				],
 				"communityNotes": [
-					"Reddit tip: The 33 records match the expedition number. Some are in easily-missed side paths."
+					"Reddit tip: Several records are missable once you leave a region. Keep a checklist as you go rather than relying on the in-game counter alone."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a477248/connoisseur-achievement",
+				"warnings": [
+					"33 records spread across every region including optional areas. Some only appear after story progress, so a full sweep cannot be done in one pass."
 				]
 			}
 		}

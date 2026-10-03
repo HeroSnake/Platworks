@@ -3,6 +3,7 @@
 	"appId": 2246340,
 	"name": "Monster Hunter Wilds",
 	"totalAchievements": 50,
+	"mapUrl": "https://atlasforge.gg/monster-hunter-wilds/map/forbidden_lands/",
 	"achievements": [
 		{
 			"id": "WINDWARD_LANDS",

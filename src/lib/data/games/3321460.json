@@ -3,6 +3,7 @@
 	"appId": 3321460,
 	"name": "Crimson Desert",
 	"totalAchievements": 34,
+	"mapUrl": "https://mapgenie.io/crimson-desert",
 	"achievements": [
 		{
 			"id": "NOVICE_ADVENTURER",
@@ -13,9 +14,10 @@
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
-					"Progress through the opening story missions.",
-					"Complete all objectives in chapter 1 of the main quest line."
-				]
+					"Play through chapter 1 of the main quest without skipping.",
+					"The achievement fires at the chapter 1 finale."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628248/novice-adventurer-achievement"
 			}
 		},
 		{
@@ -23,12 +25,16 @@
 			"name": "Master Camper",
 			"description": "Complete the activation of the camp at Howling Hill.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/2df91d42db90145457a0561585d88108054d66f7.jpg",
-			"type": "standard",
+			"type": "cumulative",
 			"difficulty": "easy",
 			"guide": {
 				"steps": [
-					"Travel to Howling Hill in the open world.",
-					"Interact with the camp site and complete the activation process."
+					"Find Howling Hill in the north of the Calador region.",
+					"Clear and activate the camp — several follow-up objectives unlock once the camp is fully built out."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628249/master-camper-achievement",
+				"warnings": [
+					"Do this early. The camp is your main fast-travel and upgrade hub, and Proud Returnee requires relocating it later."
 				]
 			}
 		},
@@ -41,9 +47,10 @@
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
-					"Progress through the main story to chapter 7.",
-					"Complete all objectives in the Pailune storyline."
-				]
+					"Progress the main quest to chapter 7.",
+					"The achievement fires at the chapter 7 finale."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628275/protector-of-pailune-achievement"
 			}
 		},
 		{
@@ -51,12 +58,16 @@
 			"name": "Expert Storyteller",
 			"description": "Complete all main quests.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/790e5659ae8d8b915e47e57d753080df8724eb98.jpg",
-			"type": "standard",
+			"type": "cumulative",
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
-					"Complete every chapter of the main quest line.",
-					"Watch the final cutscene to confirm completion."
+					"Clear every main quest chapter, including the side stories attached to them.",
+					"This is the story completion trophy and only fires once the whole narrative is done."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628278/expert-storyteller-achievement",
+				"communityNotes": [
+					"Reddit tip: Side stories in the quest log are not optional for this one. Sweep the Codex for any quest you have left running before moving to endgame areas."
 				]
 			}
 		},
@@ -65,16 +76,17 @@
 			"name": "Lightbringer",
 			"description": "Complete all sanctum challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/99d2b0f01339cfe3937e4e92652f0e65417eb3d4.jpg",
-			"type": "standard",
+			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Locate all sanctums scattered across the world.",
-					"Complete the combat or puzzle challenge inside each sanctum."
+					"Open the Codex and find the sanctum challenge list.",
+					"Complete every sanctum challenge — each is a separate encounter that must be cleared, not a single fight."
 				],
 				"communityNotes": [
-					"Reddit tip: Some sanctums only unlock after story progression. Check back after completing the main quest."
-				]
+					"Reddit tip: Sanctums unlock progressively with story progress, so this cannot be finished in one sitting early on."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628271/lightbringer-achievement"
 			}
 		},
 		{
@@ -82,12 +94,16 @@
 			"name": "Conqueror of Spires",
 			"description": "Complete all spire challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/9c791e66809413ced99624b9e0fe2ac18d0f1101.jpg",
-			"type": "standard",
+			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Find all spire locations on the map.",
-					"Complete each spire's unique challenge to claim the reward."
+					"Locate the spire challenge entries in the Codex.",
+					"Complete every spire challenge; each is a timed or objective-based climb rather than a standard combat encounter."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628251/conqueror-of-spires-achievement",
+				"warnings": [
+					"Spire challenges are spread across the whole map, and several only become available after you unlock the surrounding region."
 				]
 			}
 		},
@@ -96,12 +112,16 @@
 			"name": "Beast Slayer",
 			"description": "Complete all New Power challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/385743dbdbce3c3d363191a279e557a95f3f6848.jpg",
-			"type": "standard",
+			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Unlock New Power challenges through story progression.",
-					"Defeat all required beasts to complete every challenge."
+					"Go to the Codex hunting/new power challenge category.",
+					"Complete every New Power challenge — these are fought against world beasts rather than ordinary enemies."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628265/beast-slayer-achievement",
+				"warnings": [
+					"New Power challenges are gated behind main quest progress. The beasts cannot be fought until you unlock them."
 				]
 			}
 		},
@@ -114,9 +134,10 @@
 			"difficulty": "medium",
 			"guide": {
 				"steps": [
-					"Progress the main story until the camp relocation quest triggers.",
-					"Complete the relocation objectives to move camp to Pailune."
-				]
+					"Complete the camp relocation objective to Pailune, which triggers from the Howling Hill camp once the story unlocks it.",
+					"The achievement fires when the move completes."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628268/proud-returnee-achievement"
 			}
 		},
 		{
@@ -128,8 +149,12 @@
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Equip a sword weapon type.",
-					"Complete every sword-specific combat challenge in the training system."
+					"Open the sword challenge category in the Codex.",
+					"Complete every sword challenge entry. These are weapon-specific mastery trials, so you need each sword type unlocked first."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628253/master-of-swords-achievement",
+				"communityNotes": [
+					"Reddit tip: Check the Codex weapon list first and see which swords you actually own — a surprising number of players finish this without unlocking every type, then discover the missing entries need a specific drop."
 				]
 			}
 		},
@@ -138,12 +163,19 @@
 			"name": "Conqueror of the Abysses",
 			"description": "Complete all Abyss challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/686a3c4abed8551b5de3c9e7cf06d7742bf7a6f8.jpg",
-			"type": "standard",
+			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Discover all Abyss dungeon entrances.",
-					"Clear each Abyss dungeon and defeat the boss within."
+					"Find Abyss challenges in the Codex.",
+					"Complete every Abyss challenge. These are late-game, high-difficulty encounters."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628279/conqueror-of-the-abysses-achievement",
+				"warnings": [
+					"Abyss challenges require you to have reached the relevant endgame regions first, so they cannot be completed during early story progress."
+				],
+				"communityNotes": [
+					"Reddit tip: Abyss challenges unlock progressively with the story. If the Codex entry stays greyed out, it is a story gate rather than something you have missed."
 				]
 			}
 		},
@@ -156,9 +188,10 @@
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Equip a spear weapon type.",
-					"Complete every spear-specific combat challenge."
-				]
+					"Open the spear challenge category in the Codex.",
+					"Complete every spear challenge — each requires mastery trials with a spear you have unlocked."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628256/master-of-spears-achievement"
 			}
 		},
 		{
@@ -166,12 +199,16 @@
 			"name": "Maze Pathfinder",
 			"description": "Complete all maze challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/119768c5fce4b96db3c8a45c5b918f75844c1d2d.jpg",
-			"type": "standard",
+			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Find all maze dungeon entrances across the world.",
-					"Navigate and complete each maze to earn the reward."
+					"Find each maze and enter it from the world map or by tracking the maze entries in the Codex.",
+					"Solve and clear every maze in the game."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628250/maze-pathfinder-achievement",
+				"communityNotes": [
+					"Reddit tip: Mazes are marked on the world map, but several sit in regions you cannot reach until late in the story. Do a second pass after unlocking everything rather than trying to clear them on the way through."
 				]
 			}
 		},
@@ -180,12 +217,16 @@
 			"name": "Navigator of the Stars",
 			"description": "Complete all constellation challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/6abf780b94efe545a78862dd886ab29012e126e2.jpg",
-			"type": "standard",
+			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Find constellation puzzle locations (often at elevated points).",
-					"Solve each constellation puzzle by aligning the stars correctly."
+					"Open the constellation challenge category in the Codex.",
+					"Complete every constellation challenge — these are navigation and observation objectives tied to specific landmarks."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628252/navigator-of-the-stars-achievement",
+				"communityNotes": [
+					"Reddit tip: The constellation challenges are observation tasks tied to landmarks, so you need to physically be at the viewpoint. You cannot complete them from the map screen."
 				]
 			}
 		},
@@ -198,9 +239,10 @@
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Equip a shield-based weapon setup.",
-					"Complete every shield-specific combat challenge."
-				]
+					"Open the shield challenge category in the Codex.",
+					"Complete every shield challenge, which test blocking and parrying rather than raw damage."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628254/master-of-shields-achievement"
 			}
 		},
 		{
@@ -208,12 +250,16 @@
 			"name": "Puzzle Solver",
 			"description": "Complete all ancient ruins challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/0482a83ab0498e6cce5f95027ab58c2c9ca4d2d3.jpg",
-			"type": "standard",
+			"type": "cumulative",
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Locate all ancient ruins across the map.",
-					"Solve the puzzles within each ruin."
+					"Locate the ancient ruins scattered across the world.",
+					"Complete the challenge at every ancient ruin — each is a distinct environmental puzzle."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628270/puzzle-solver-achievement",
+				"communityNotes": [
+					"Reddit tip: Ancient ruins are easy to walk past because most look like ordinary rock formations. Check the Codex for their approximate locations."
 				]
 			}
 		},
@@ -226,9 +272,10 @@
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Equip a bow weapon type.",
-					"Complete every bow-specific combat challenge."
-				]
+					"Open the bow challenge category in the Codex.",
+					"Complete every bow challenge. Accuracy matters here — these are not damage checks."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628255/master-of-bows-achievement"
 			}
 		},
 		{
@@ -236,16 +283,17 @@
 			"name": "Pilgrim of Wonders",
 			"description": "Complete all secret place challenges.",
 			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/3321460/5e61be52f0a5f57b48c3e28df350927ecc5fb25f.jpg",
-			"type": "standard",
+			"type": "cumulative",
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
-					"Discover all hidden secret locations in the world.",
-					"Complete the challenge or interaction at each secret place."
+					"Open the secret place challenge category in the Codex.",
+					"Travel to and activate every secret place listed. Most are unmarked on the world map, so use the Codex markers."
 				],
 				"communityNotes": [
 					"Reddit tip: Secret places are often behind destructible walls, underwater, or require specific traversal abilities."
-				]
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628269/pilgrim-of-wonders-achievement"
 			}
 		},
 		{
@@ -257,9 +305,10 @@
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Equip rapier and shield weapon setup.",
-					"Complete every rapier-specific combat challenge."
-				]
+					"Open the rapier challenge category in the Codex.",
+					"Complete every rapier and shield challenge entry."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628259/master-of-rapiers-achievement"
 			}
 		},
 		{
@@ -271,9 +320,10 @@
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Equip a two-handed weapon type.",
-					"Complete every two-handed weapon combat challenge."
-				]
+					"Open the two-handed weapon challenge category in the Codex.",
+					"Complete every two-handed weapon challenge — these test heavy attacks and stamina management."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628257/master-of-twohanded-weapons-achievement"
 			}
 		},
 		{
@@ -285,9 +335,10 @@
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Equip a firearm weapon type.",
-					"Complete every gun-specific combat challenge."
-				]
+					"Open the gun challenge category in the Codex.",
+					"Complete every gun challenge, which test reload timing and weapon handling more than aim."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628260/master-of-firearms-achievement"
 			}
 		},
 		{
@@ -299,9 +350,10 @@
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
-					"Access the training system from camp or training grounds.",
-					"Complete every training challenge across all weapon types and difficulty tiers."
-				]
+					"Open the training challenge category in the Codex.",
+					"Complete every training challenge — these are combat drills that must be performed without dying."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628261/relentless-warrior-achievement"
 			}
 		},
 		{
@@ -313,9 +365,10 @@
 			"difficulty": "hard",
 			"guide": {
 				"steps": [
-					"Equip cannon/artillery weapons.",
-					"Complete every cannon-specific combat challenge."
-				]
+					"Open the cannon challenge category in the Codex.",
+					"Complete every cannon challenge — these require positioning the artillery rather than fighting directly."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628258/master-of-artillery-achievement"
 			}
 		},
 		{
@@ -327,8 +380,12 @@
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
-					"Access battle challenges from the challenge menu.",
-					"Complete all large-scale battle encounters."
+					"Open the battle challenge category in the Codex.",
+					"Complete every battle challenge, including the large-scale battlefield encounters."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628262/battlefield-conqueror-achievement",
+				"warnings": [
+					"The late battle challenges require you to have unlocked their regions. Expect to return here after progressing well past the starting area."
 				]
 			}
 		},
@@ -341,8 +398,12 @@
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
-					"Find and collect all special equipment scattered across the world.",
-					"Complete the challenges tied to each special equipment piece."
+					"Open the special equipment challenge category in the Codex.",
+					"Obtain every entry in the special equipment list — these are the named, high-tier weapons."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628272/grand-collector-of-arms-achievement",
+				"warnings": [
+					"Several special equipment pieces are region-locked. Collect them as you explore rather than assuming they can be bought later."
 				]
 			}
 		},
@@ -355,8 +416,12 @@
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
-					"Find and tame various horses across the world.",
-					"Complete all horse-related challenges including races and combat."
+					"Open the horse challenge category in the Codex.",
+					"Complete every horse challenge — these require capturing and training mounts rather than defeating anything."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628273/tamer-of-legends-achievement",
+				"communityNotes": [
+					"Reddit tip: Horses appear in specific spots and some only spawn at certain times or after story progress. Check the Codex for spawn conditions."
 				]
 			}
 		},
@@ -369,9 +434,10 @@
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
-					"Accept hunting challenges from the challenge board.",
-					"Hunt all target creatures and complete every hunting challenge."
-				]
+					"Open the hunting challenge category in the Codex.",
+					"Complete every hunting challenge against the game's large predators."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628276/ultimate-hunter-achievement"
 			}
 		},
 		{
@@ -383,8 +449,12 @@
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
-					"Explore every region of the map thoroughly.",
-					"Complete all exploration milestones and discoveries."
+					"Open the exploration challenge category in the Codex.",
+					"Complete every exploration challenge, which cover map corners, viewpoints and hard-to-reach areas."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628280/expert-explorer-achievement",
+				"communityNotes": [
+					"Reddit tip: Exploration challenges reward coverage of the map edges. If you fast-travel a lot you will miss these — walk the regions instead."
 				]
 			}
 		},
@@ -397,9 +467,10 @@
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
-					"Access operation challenges from the challenge menu.",
-					"Complete all tactical operation missions."
-				]
+					"Open the operation challenge category in the Codex.",
+					"Complete every operation challenge — these are multi-stage missions rather than single fights."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628263/brilliant-tactician-achievement"
 			}
 		},
 		{
@@ -411,9 +482,10 @@
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
-					"Engage with the trading system across different settlements.",
-					"Complete all trade routes and fulfill every trade challenge."
-				]
+					"Open the trade challenge category in the Codex.",
+					"Complete every trade challenge, which require buying and selling specific goods between regions."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628264/the-golden-merchant-achievement"
 			}
 		},
 		{
@@ -425,9 +497,10 @@
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
-					"Engage with the outlaw/criminal side activities.",
-					"Complete all 'Above the Law' challenge objectives."
-				]
+					"Open the Above the Law challenge category in the Codex.",
+					"Complete every challenge in this category. They are late-game combat trials gated behind story progress."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628266/shadowlord-achievement"
 			}
 		},
 		{
@@ -439,9 +512,10 @@
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
-					"Access the Challenges and Changes category.",
+					"Open the Challenges and Changes category in the Codex.",
 					"Complete every challenge in this category."
-				]
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628267/lord-of-honor-achievement"
 			}
 		},
 		{
@@ -453,9 +527,10 @@
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
-					"Find all minigames across the world (card games, dice, etc.).",
-					"Complete every minigame challenge to earn the reward."
-				]
+					"Open the minigame challenge category in the Codex.",
+					"Complete every minigame challenge in the game."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628274/true-gamer-achievement"
 			}
 		},
 		{
@@ -467,8 +542,12 @@
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
-					"Mastery challenges unlock after completing specific categories.",
-					"Complete the final mastery challenge in every category."
+					"Open the mastery challenge category in the Codex.",
+					"Complete every mastery challenge — these are the toughest trials and effectively gate the completion of the game."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628281/unvanquished-strategist-achievement",
+				"communityNotes": [
+					"Reddit tip: This is effectively the last achievement in the game. Expect to bounce between it, the mastery challenges and the endgame Codex categories for a long while."
 				]
 			}
 		},
@@ -481,9 +560,10 @@
 			"difficulty": "very-hard",
 			"guide": {
 				"steps": [
-					"Engage with farming, fishing, cooking, and crafting systems.",
-					"Complete every life skill challenge."
-				]
+					"Open the life challenge category in the Codex.",
+					"Complete every life challenge, which involve gathering and observing natural features around the map."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a628277/natural-collector-achievement"
 			}
 		}
 	]

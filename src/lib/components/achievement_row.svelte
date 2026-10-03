@@ -164,7 +164,7 @@
 								href={achievement.guide.videoUrl}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="inline-flex items-center gap-1.5 rounded-lg bg-red-900/30 px-3 py-2 text-xs text-red-300 active:bg-red-900/50 sm:px-2.5 sm:py-1 sm:hover:bg-red-900/50"
+								class="inline-flex min-h-10 items-center gap-1.5 rounded-lg bg-red-900/30 px-3 py-2 text-xs text-red-300 active:bg-red-900/50 sm:min-h-0 sm:px-2.5 sm:py-1 sm:hover:bg-red-900/50"
 							>
 								<Video class="h-4 w-4 sm:h-3.5 sm:w-3.5" />
 								Video Guide
@@ -175,7 +175,7 @@
 								href={achievement.guide.sourceUrl}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="inline-flex items-center gap-1.5 rounded-lg bg-steam-light/50 px-3 py-2 text-xs text-gray-300 active:bg-steam-light sm:px-2.5 sm:py-1 sm:hover:bg-steam-light"
+								class="inline-flex min-h-10 items-center gap-1.5 rounded-lg bg-steam-light/50 px-3 py-2 text-xs text-gray-300 active:bg-steam-light sm:min-h-0 sm:px-2.5 sm:py-1 sm:hover:bg-steam-light"
 							>
 								<ExternalLink class="h-4 w-4 sm:h-3.5 sm:w-3.5" />
 								Written Guide

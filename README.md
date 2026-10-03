@@ -6,7 +6,7 @@ The ultimate completionist companion for Steam gamers. Break down Steam achievem
 
 ## Features
 
-- **Achievement guides** — step-by-step instructions, video links, Reddit community tips, and missable warnings for every trophy
+- **Achievement guides** — step-by-step instructions, video links, Reddit community tips, and missable warnings for every trophy. Every non-trivial and complex trophy links to a full walkthrough, and most games also carry an interactive map for the location
 - **Official trophy artwork** — every achievement shows its real Steam icon, scraped from the same official list the IDs and names came from. The trophy doubles as the check button, so the art is full-size (64px, the native resolution) *and* the tap target is a comfortable 64×64 on a phone. Unlocked trophies render in full colour with a green ring; locked ones are greyed out
 - **Progress tracking** — manually check off achievements or sync with any public Steam profile
 - **No API key required** — syncs via public Steam community XML endpoints (profile must be public)
@@ -78,7 +78,7 @@ src/
 │       └── +page.svelte             # Achievement list + search + filters + bottom bar
 scripts/
 ├── fetch-achievement-icons.mjs      # Scrape official Steam icons into the game JSON
-└── verify-achievement-icons.mjs    # Check every stored icon still resolves
+├── verify-achievement-icons.mjs     # Check every stored icon still resolves
 .github/
 ├── agents/platworks-dev.agent.md  # Copilot custom agent — project rules & gotchas
 └── prompts/generate-game-data.prompt.md  # AI game data generator
@@ -112,6 +112,15 @@ Entries that match nothing are listed at the end of the run. That usually means 
 
 ```bash
 node scripts/verify-achievement-icons.mjs
+```
+
+### Interactive maps
+
+Open-world games set `mapUrl` once on the game object; the app shows a button in
+the header and a "Game Map" link in every expanded trophy:
+
+```json
+"mapUrl": "https://mapgenie.io/elden-ring"
 ```
 
 ## Available Games
