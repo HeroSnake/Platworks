@@ -26,6 +26,7 @@ All keys are namespaced `platworks:*`. Read them through a `load*()` helper, nev
 | `platworks:gameSort` | game page | `default \| name \| difficulty` (global) |
 | `platworks:profile` | `#lib/client/profile.ts` | `StoredProfile` = `SteamProfile & { cachedAt }` |
 | `platworks:library` | `#lib/client/library.ts` | `number[]` of appIds — the player's own subset. See §5 |
+| `platworks:theme` | `#lib/client/theme.ts` | palette id, validated against `THEMES` on read. See §6 |
 
 **Trophy search is session-only** (`trophyQuery`) and is deliberately not persisted.
 
@@ -70,3 +71,11 @@ Two rules this key exists to enforce:
 - **An empty selection is not "zero games", it is "no choice yet"**, and the page falls through to the public catalogue. That is why `effectiveScope` is a `$derived` that coerces `'mine'` → `'all'` when `myLibrary` is empty: removing the last game cannot strand the player on a blank grid.
 
 `loadLibrary()` validates and de-duplicates on read, because a hand-edited or corrupt entry must not throw during render. That is also why the module returns the new array rather than mutating — the page assigns the return value straight back into `$state`, so storage and state can never disagree.
+
+## 6. The colour theme
+
+`#lib/client/theme.ts` owns `THEMES`, `loadTheme()` and `saveTheme()`. Three rules that are not obvious from the code:
+
+- **The theme is applied by an inline script in `src/app.html`, before first paint — not by this module.** Moving it into the layout means Svelte hydrates first and every load flashes the default Ember palette before switching, which on a dark UI reads as a white flash. `+layout.svelte` therefore reads the theme back off `document.documentElement`, not out of `localStorage`: the DOM is what is actually on screen, and a second source of truth could disagree with it.
+- **The validator list exists twice** — once in `theme.ts` (`THEMES`) and once as a literal array in the `app.html` inline script, which runs before this module is ever fetched. **Adding a palette means updating both**, or the picker will offer a theme the first paint refuses to apply.
+- **Tokens are declared `@theme inline` in `app.css` as `var(--pw-*)` references**, so the ~114 existing `steam-*` class usages retheme from one `data-theme` attribute. Renaming a token would require touching every component; adding a palette must never require it.

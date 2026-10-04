@@ -71,7 +71,7 @@ When you fix something a future agent could plausibly hit, also leave a one-line
 | [`platworks-sveltekit.agent.md`](./platworks-sveltekit.agent.md) | `vite.config.ts`, `tsconfig.json`, `#lib` imports, routing, `+page.server.ts` / `+server.ts`, navigation APIs, hydration, reactivity patterns | touching routing, config, server loads, `goto`, SSR/client mismatches, `svelte-check` errors |
 | [`platworks-ui.agent.md`](./platworks-ui.agent.md) | `#lib/components/*`, `src/app.css`, Tailwind, the mobile bar, the trophy card, progress bars, icons, animation, performance, tap targets | changing anything a user sees or touches |
 | [`platworks-steam.agent.md`](./platworks-steam.agent.md) | `#lib/server/steam/api.ts`, `/api/steam/*`, `#lib/types/steam.ts`, XML parsing, icon scraping, Cloudflare blocks, when Steam may be called | touching Steam calls, sync, avatars, or achievement statuses |
-| [`platworks-state.agent.md`](./platworks-state.agent.md) | `platworks:*` localStorage keys, `#lib/client/profile.ts`, `#lib/client/library.ts`, the user library, sort/filter prefs, hydrating stored values | adding, renaming or reading persisted state |
+| [`platworks-state.agent.md`](./platworks-state.agent.md) | `platworks:*` localStorage keys, `#lib/client/profile.ts`, `#lib/client/library.ts`, `#lib/client/theme.ts`, the user library, sort/filter prefs, the six colour palettes, hydrating stored values | adding, renaming or reading persisted state |
 | [`platworks-gamedata.agent.md`](./platworks-gamedata.agent.md) | `src/lib/data/games/*.json`, `schema.json`, guides, warnings, `mapUrl`, difficulty/type, icon scripts | adding or editing a game's achievement data |
 | [`platworks-commits.agent.md`](./platworks-commits.agent.md) | Conventional Commits, English-only messages, type/scope vocabulary | creating or amending commits / writing commit messages |
 
@@ -115,10 +115,13 @@ Reading a domain file you don't need costs context and buries the rules that do 
 | Types | `#lib/types/` | `game.ts` → `GameData`, `Achievement`, `AchievementGuide`; `steam.ts` → `SteamGameDetails`, `SteamAchievementStatus`, `SteamProfile` |
 | Steam API | `#lib/server/steam/api.ts` | server-only: `getGameDetails()`, `resolveSteamId()`, `getPlayerProfile()`, `getPlayerAchievements()`, `normalizeName()` |
 | Game loader | `#lib/server/games.ts` | `getAllGames()`, `getGameByAppId()` via `import.meta.glob('#lib/data/games/[0-9]*.json')` |
-| Icon tooling | `scripts/` | `fetch-achievement-icons.mjs` (write `iconUrl`), `verify-achievement-icons.mjs` (audit icons). Run with `node`, not npm |
+| Icon tooling | `scripts/` | `fetch-game-images.mjs` (mirrors header + hero into `static/images/games/{appId}/`; run after adding a game), `fetch-achievement-icons.mjs` (writes remote `iconUrl`), `verify-achievement-icons.mjs` (audit icons). Run with `node`, not npm |
+| Game artwork | `static/images/games/{appId}/` | committed `header.jpg` + `hero.jpg`, served from `/images/games/...`. The app never requests Steam's CDN for these; achievement icons are the deliberate exception |
 | Client profile cache | `#lib/client/profile.ts` | `loadProfile()`, `saveProfile()`, `clearProfile()`, `refreshProfile()` |
 | Client user library | `#lib/client/library.ts` | `loadLibrary()`, `saveLibrary()`, `addToLibrary()`, `removeFromLibrary()`, `clearLibrary()` — appIds only, owns `platworks:library` |
-| Components | `#lib/components/` | `achievement_row.svelte`, `game_card.svelte`, `github_icon.svelte`, `mobile_bar.svelte` |
+| Colour theme | `#lib/client/theme.ts` + `#lib/components/theme_picker.svelte` | six palettes in `app.css` as `[data-theme]` blocks; applied pre-paint by an inline script in `src/app.html`, owns `platworks:theme` |
+| Components | `#lib/components/` | `achievement_row.svelte`, `game_card.svelte`, `github_icon.svelte`, `mobile_bar.svelte`, `theme_picker.svelte`, plus the shared primitives `progress_bar` / `progress_ring` / `stat_tile` / `segmented_control` / `search_field` / `action_button` / `difficulty_pips` — **use these instead of hand-rolling a control** |
+| Pre-paint script | `src/app.html` | inline, synchronous: applies the stored palette and loads the webfonts before first paint. Moving either into Svelte causes a flash |
 | Game data | `#lib/data/games/{appId}.json` | per-game achievement guides |
 | Game-data scratch | `.tmp/game-data/{appId}/` | gitignored; fetch `ledger.json` + `findings.jsonl` + throwaway scrapers for `/generate-game-data`. Repo-local on purpose — Windows + WSL must see the same path. Deleted when the run finishes; see [platworks-gamedata.agent.md](./platworks-gamedata.agent.md) §2b |
 | Layout | `src/routes/+layout.svelte` | navbar + account popover; owns `platworks:steamId` |
@@ -160,14 +163,16 @@ npm run dev
 - Prefer the project's npm scripts; they already handle `svelte-kit sync`.
 - **The VS Code TypeScript server goes stale after `tsconfig.json` changes** and will report phantom errors like "file not found" for files that exist. Trust `npm run check` over the editor diagnostics, and re-run `svelte-kit sync` after tsconfig edits.
 - Smoke-test with `curl -s -o /dev/null -w '%{http_code}' http://localhost:5173/<route>`.
-- Browser testing is **not** currently set up: Playwright installs, but Chromium is missing system libs (`libnspr4.so`). It needs `npx playwright install-deps chromium` run as root in WSL. Until then, verify UI changes by reading the SSR output over `curl` and by reading the relevant library source.
+- **Playwright + Chromium now work in this environment.** They used to fail with `libnspr4.so: cannot open shared object file`; that is fixed by installing the system libs as root:
+  `wsl -d Ubuntu -u root -- apt-get install -y libnspr4 libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libpango-1.0-0 libcairo2 libasound2t64`
+- `playwright` is **not** a project dependency, so `import { chromium } from "playwright"` fails. Import it by absolute path from the npx cache instead: `import { chromium } from "/home/florent/.npm/_npx/<hash>/node_modules/playwright/index.mjs"` (find the hash with `ls -d ~/.npm/_npx/*/node_modules/playwright`).
+- **Use it for UI work.** `curl` cannot see horizontal overflow, duplicated controls, tap-target sizes or console errors — all of which shipped in the last rework and were only caught by a real browser. A useful audit is: load each route at 390/768/1440, then assert `documentElement.scrollWidth === clientWidth`, count visible instances of every control, flag any interactive element under 40px, and collect `pageerror` + console errors. Write the script to `.tmp/` (gitignored) and delete it afterwards — inline `node -e` through the PowerShell→WSL quoting chain is not worth attempting.
 - `@vercel/analytics` is **not installed and not used** — do not re-add it. Its latest stable declares a peer range of Kit 1 or 2 only, so it cannot be installed on Kit 3 without `--legacy-peer-deps`.
 
 ## 8. Code style
 
 - `snake_case` files, `PascalCase` components, `camelCase` variables/functions
 - Prefer `const` and `$derived` over mutable state
-- Dark-first Tailwind: `bg-gray-900 text-gray-100` base; `dark:` only to override
+- Dark-first. Use the palette tokens (`steam-dark/blue/light/accent/green`, `ink`, `ink-dim`, `ink-faint`, `line`) rather than Tailwind's `gray-*` ramp, so text follows the active theme.
 - Group classes: layout → spacing → sizing → colors → typography → effects
-- Custom colours: `steam-dark`, `steam-blue`, `steam-light`, `steam-accent`, `steam-green`
-- Comments explain **why**, not what. Leave one where a future agent would otherwise "simplify" a deliberate workaround.
+- **Never touch source files from PowerShell with `Set-Content`/`Get-Content`.** They default to a non-UTF-8 codepage: reading em-dashes and ellipses as Latin-1 and re-saving as UTF-8 silently double-encodes them, and `Set-Content -Encoding UTF8` prepends a BOM. `npm run check` will not catch it — it looks like correct source. Use the `edit` tool, or write files from WSL. If it has already happened, the fix is a byte-level re-decode, not `replace`.

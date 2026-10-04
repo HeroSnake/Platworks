@@ -1,8 +1,8 @@
 <script lang="ts">
 	import {
-		CheckCircle,
+		CircleCheckBig,
 		Circle,
-		AlertTriangle,
+		TriangleAlert,
 		Video,
 		ExternalLink,
 		MessageCircle,
@@ -12,6 +12,7 @@
 		EyeOff,
 		Trophy
 	} from '@lucide/svelte';
+	import DifficultyPips from '#lib/components/difficulty_pips.svelte';
 	import type { Achievement } from '#lib/types/game';
 
 	let { achievement, achieved, steamLocked, unlockTime, ontoggle } = $props<{
@@ -49,24 +50,28 @@
 		'very-hard': 'text-red-400'
 	};
 
-	const typeIcons: Record<string, typeof AlertTriangle> = {
-		missable: AlertTriangle,
+	const typeIcons: Record<string, typeof TriangleAlert> = {
+		missable: TriangleAlert,
 		multiplayer: Users,
 		cumulative: Repeat,
 		secret: EyeOff
 	};
 
-		// Only `missable` earns an alarm colour; the rest are neutral so a row carrying
-		// several tags doesn't turn into a wall of colour.
-		const typeStyles: Record<string, string> = {
-			missable: 'bg-red-900/40 text-red-300',
-			multiplayer: 'bg-steam-light text-gray-300',
-			cumulative: 'bg-steam-light text-gray-300',
-			secret: 'bg-steam-light text-gray-300'
-		};
+	// Only `missable` earns an alarm colour; the rest are neutral so a row carrying
+	// several tags doesn't turn into a wall of colour.
+	const typeStyles: Record<string, string> = {
+		missable: 'bg-red-500/15 text-red-300',
+		multiplayer: 'bg-steam-light text-ink-dim',
+		cumulative: 'bg-steam-light text-ink-dim',
+		secret: 'bg-steam-light text-ink-dim'
+	};
 </script>
 
-<div class="achievement-item rounded-xl border {achieved ? 'border-steam-green/30 bg-steam-green/20' : 'border-transparent bg-steam-blue'}">
+<div
+	class="achievement-item rounded-xl border transition-colors {achieved
+		? 'border-steam-green/30 bg-steam-green/10'
+		: 'border-line bg-steam-blue'}"
+>
 	<div class="flex w-full items-center gap-2 p-2 sm:gap-3 sm:p-3">
 		<!-- The trophy doubles as the check toggle. Steam's icons are natively 64x64,
 		     so this renders 1:1 with no upscaling, and folding the check onto the art
@@ -100,7 +105,7 @@
 				/>
 			{:else}
 				<span class="flex h-16 w-16 items-center justify-center rounded-lg bg-steam-light ring-1 ring-white/10">
-					<Trophy class="h-7 w-7 text-gray-500" />
+					<Trophy class="h-7 w-7 text-ink-faint" />
 				</span>
 			{/if}
 
@@ -110,43 +115,41 @@
 					: ''}"
 			>
 				{#if achieved}
-					<CheckCircle class="h-5 w-5 text-green-400" />
+					<CircleCheckBig class="h-5 w-5 text-steam-green" />
 				{:else}
-					<Circle class="h-5 w-5 text-gray-500" />
+					<Circle class="h-5 w-5 text-ink-faint" />
 				{/if}
 			</span>
 		</button>
 
 		<button
-			class="flex min-w-0 flex-1 items-center gap-2 text-left sm:gap-3"
+			class="flex min-h-10 min-w-0 flex-1 items-center gap-2 text-left sm:gap-3"
 			onclick={toggleExpand}
 			aria-expanded={expanded}
 		>
 			<div class="min-w-0 flex-1">
 				<div class="flex flex-wrap items-center gap-x-1.5 gap-y-1 sm:gap-x-2">
-					<span class="text-base font-semibold leading-tight {achieved ? 'text-green-200' : ''}">
+					<span class="text-sm font-semibold leading-tight {achieved ? 'text-steam-green' : 'text-ink'}">
 						{achievement.name}
 					</span>
 
 					{#each achievement.types as tag (tag)}
-											{@const Icon = typeIcons[tag]}
+						{@const Icon = typeIcons[tag]}
 						{#if Icon}
-												<span class="flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] leading-tight sm:text-xs {typeStyles[tag] ?? 'bg-steam-light text-gray-300'}">
-								<Icon class="h-3 w-3" />
-													{tag}
+							<span class="flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] leading-tight {typeStyles[tag] ?? 'bg-steam-light text-ink-dim'}">
+												<Icon class="h-3 w-3" />
+												{tag}
 							</span>
 						{/if}
-										{/each}
+					{/each}
 
-					<span class="text-[11px] sm:text-xs {difficultyColors[achievement.difficulty]}">
-						{achievement.difficulty}
-					</span>
+					<DifficultyPips difficulty={achievement.difficulty} />
 				</div>
 
-				<p class="mt-1 line-clamp-2 text-[13px] leading-snug text-gray-400 sm:line-clamp-none sm:text-sm">{achievement.description}</p>
+				<p class="mt-1 line-clamp-2 text-[13px] leading-snug text-ink-dim sm:line-clamp-none sm:text-sm">{achievement.description}</p>
 			</div>
 
-			<ChevronDown class="h-5 w-5 shrink-0 text-gray-500 transition-transform duration-200 {expanded ? 'rotate-180' : ''}" />
+			<ChevronDown class="h-5 w-5 shrink-0 text-ink-faint transition-transform duration-200 {expanded ? 'rotate-180' : ''}" />
 		</button>
 	</div>
 
@@ -154,14 +157,20 @@
 	<div class="expand-panel" data-open={expanded}>
 		<div>
 			{#if rendered}
-			<div class="border-t border-white/5 px-2 pb-2 pt-3 sm:px-3 sm:pb-3">
+			<!--
+				`pl-[4.25rem]` indents the guide to the text column (icon + gap), so the
+				steps read as belonging to the title rather than floating under the
+				artwork. It collapses to the row padding on phones, where the indent
+				would cost more width than it buys.
+			-->
+			<div class="border-t border-line px-3 pb-3 pt-3 sm:pl-[4.25rem]">
 				<ol class="mb-3 space-y-2 text-sm">
 					{#each achievement.guide.steps as step, i}
 						<li class="flex gap-2.5">
-							<span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-steam-light text-xs text-gray-300">
+							<span class="tabular mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-steam-light font-mono text-[11px] font-bold text-ink-dim">
 								{i + 1}
 							</span>
-							<span class="text-gray-300">{step}</span>
+							<span class="text-ink-dim">{step}</span>
 						</li>
 					{/each}
 				</ol>
@@ -173,9 +182,9 @@
 								href={achievement.guide.videoUrl}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="inline-flex min-h-10 items-center gap-1.5 rounded-lg bg-red-900/30 px-3 py-2 text-xs text-red-300 active:bg-red-900/50 sm:min-h-0 sm:px-2.5 sm:py-1 sm:hover:bg-red-900/50"
+								class="inline-flex min-h-10 items-center gap-1.5 rounded-lg border border-line bg-steam-light px-3 text-xs font-medium text-ink hover:bg-steam-light/80 sm:min-h-0 sm:px-2.5 sm:py-1"
 							>
-								<Video class="h-4 w-4 sm:h-3.5 sm:w-3.5" />
+								<Video class="h-3.5 w-3.5" />
 								Video Guide
 							</a>
 						{/if}
@@ -184,9 +193,9 @@
 								href={achievement.guide.sourceUrl}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="inline-flex min-h-10 items-center gap-1.5 rounded-lg bg-steam-light/50 px-3 py-2 text-xs text-gray-300 active:bg-steam-light sm:min-h-0 sm:px-2.5 sm:py-1 sm:hover:bg-steam-light"
+								class="inline-flex min-h-10 items-center gap-1.5 rounded-lg border border-line bg-steam-light px-3 text-xs font-medium text-ink hover:bg-steam-light/80 sm:min-h-0 sm:px-2.5 sm:py-1"
 							>
-								<ExternalLink class="h-4 w-4 sm:h-3.5 sm:w-3.5" />
+								<ExternalLink class="h-3.5 w-3.5" />
 								Written Guide
 							</a>
 						{/if}
@@ -196,8 +205,8 @@
 				{#if achievement.guide.warnings?.length}
 					<div class="mb-3 space-y-1.5">
 						{#each achievement.guide.warnings as warning}
-							<div class="flex items-start gap-2 rounded-lg bg-yellow-900/20 px-3 py-2.5 text-xs text-yellow-300 sm:text-sm">
-								<AlertTriangle class="mt-0.5 h-4 w-4 shrink-0" />
+							<div class="flex items-start gap-2 rounded-lg border border-yellow-500/25 bg-yellow-500/10 px-3 py-2.5 text-xs text-yellow-300 sm:text-sm">
+								<TriangleAlert class="mt-0.5 h-4 w-4 shrink-0" />
 								<span>{warning}</span>
 							</div>
 						{/each}
@@ -207,7 +216,7 @@
 				{#if achievement.guide.communityNotes?.length}
 					<div class="space-y-1.5">
 						{#each achievement.guide.communityNotes as note}
-							<div class="flex items-start gap-2 text-xs text-gray-400 sm:text-sm">
+							<div class="flex items-start gap-2 text-xs text-ink-dim sm:text-sm">
 								<MessageCircle class="mt-0.5 h-4 w-4 shrink-0 text-orange-400" />
 								<span>{note}</span>
 							</div>
@@ -216,7 +225,7 @@
 				{/if}
 
 				{#if unlockTime}
-					<p class="mt-3 text-xs text-gray-500">
+					<p class="mt-3 text-xs text-ink-faint">
 						Unlocked {unlockTime.toLocaleDateString()}
 					</p>
 				{/if}

@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Trophy, Star, Plus, Check, Minus } from '@lucide/svelte';
+	import { Plus, Check, Minus, Star, Trophy } from '@lucide/svelte';
+	import ProgressBar from '#lib/components/progress_bar.svelte';
 	import type { GameListItem } from '../../routes/+page.server';
 
 	/**
@@ -30,147 +31,125 @@
 </script>
 
 <!--
-	The card is dominated by the completion ring. Progression is the number this app
-	exists to show, so the artwork is background, the blurb is gone entirely, and the
-	ring carries both the percentage and the raw count inside it.
+	Rebuilt around a linear bar instead of the 112px ring.
 
-	The <a> and the library <button> are siblings, not nested: a <button> inside an
-	<a> is invalid HTML and its clicks activate the link instead. The <a>'s ::after
-	stretches over the card so the whole thing stays one big tap target.
+	Two reasons, both measured rather than aesthetic:
+	  1. At four-plus cards per row the eye compares bar *lengths* far faster than
+	     ring arcs, so the ranking is readable at a glance.
+	  2. The ring forced a min-h-48 card. That height is what broke the header
+	     artwork's letterbox bars — the image edge stopped landing inside the
+	     gradient's solid band and a hard line appeared across the card. Cropping
+	     the header into a fixed 16:9 box makes that seam geometrically impossible.
 
-	The wrapper is `bg-steam-dark`, NOT `bg-steam-blue`, and that is load-bearing:
-	it is the colour that shows through where the contained image stops, so it has
-	to match the solid end of the gradient below. Blue under a steam-dark gradient
-	draws a hard horizontal line across the card.
+	`object-cover` is now safe: the title is rendered as text directly beneath the
+	art, so cropping a 460x215 header no longer removes the game's name. The old
+	`object-contain object-top` existed only because the logo baked into the
+	artwork was the sole identifier.
+
+	The <a> and the library <button> are siblings, not nested: a <button> inside
+	an <a> is invalid HTML and its clicks activate the link instead. The <a>'s
+	::after stretches over the card so the whole thing stays one big tap target.
 -->
 <div
-	class="group relative overflow-hidden rounded-lg bg-steam-dark transition-transform duration-150 will-change-transform active:scale-[0.98] sm:hover:scale-[1.02] sm:hover:shadow-xl"
+	class="group relative overflow-hidden rounded-xl border border-line bg-steam-blue transition-transform duration-150 will-change-transform active:scale-[0.98] sm:hover:-translate-y-0.5 sm:hover:border-steam-light"
 >
 	<a href="/game/{game.appId}" class="block after:absolute after:inset-0">
-		{#if game.steam?.headerImage}
+		<div class="relative aspect-video bg-steam-light">
 			<!--
-				Decorative: the h2 carries the name.
+				Placeholder painted UNDER the artwork, always present.
 
-				`object-contain`, never `object-cover`. Steam headers are 460×215 and bake
-				the game's logo into the artwork; filling a taller card with `cover` crops
-				the sides off and takes the readable half of the logo with it.
+				Two games in the catalogue (Aniimo, WARDOGS) have no Steam header at
+				all — both CDN paths 404 — so `onerror` hides the <img>. Without this
+				layer that left an empty flat rectangle that read as "broken". Painting
+				it underneath also means a `loading="lazy"` image that has not started
+				yet shows the placeholder instead of a blank slot.
 
-				`object-top` pins the frame to the top edge, so when the card is taller
-				than 460/215 *all* of the empty space collects at the bottom — underneath
-				the overlay row and inside the gradient's solid band, where it cannot be
-				seen. Centring would split the bars and leave a seam halfway up the art.
+				All four layers below are `absolute` with `z-index: auto`, so tree order
+				decides: placeholder → image → scrim → badges.
 			-->
-			<img
-				src={game.steam.headerImage}
-				alt=""
-				class="absolute inset-0 h-full w-full object-contain object-top"
-				onerror={(e) => {
-					// Akamai path 404s for some apps — one Cloudflare retry, then hide.
-					const el = e.currentTarget as HTMLImageElement;
-					if (el.dataset.fallback) {
-						el.style.display = 'none';
-						return;
-					}
-					el.dataset.fallback = '1';
-					el.src = `https://cdn.cloudflare.steamstatic.com/steam/apps/${game.appId}/header.jpg`;
-				}}
-			/>
-		{:else}
-			<div class="absolute inset-0 flex items-center justify-center bg-steam-light">
-				<Trophy class="h-10 w-10 text-gray-500" />
+			<div
+				class="absolute inset-0 flex flex-col items-center justify-center gap-1.5 bg-gradient-to-br from-steam-blue via-steam-blue to-steam-light"
+				aria-hidden="true"
+			>
+				<Trophy class="h-8 w-8 text-ink-faint" />
+				<span class="px-3 text-center text-[11px] font-medium text-ink-faint">No artwork</span>
 			</div>
-		{/if}
+			{#if game.steam?.headerImage}
+				<!-- Decorative: the h3 below carries the name.
 
-		<!--
-			Two scrims, not one — same rule as game/[appId] hero. The flat pass stops a
-			bright header washing out; the gradient carries the overlay row.
+				     Local path, so there is no CDN retry here: a failure means this
+				     game has no header art, not that the first host was wrong. The
+				     placeholder underneath takes over. -->
+				<img
+					src={game.steam.headerImage}
+					alt=""
+					loading="lazy"
+					decoding="async"
+					class="absolute inset-0 h-full w-full object-cover"
+					onerror={(e) => {
+						(e.currentTarget as HTMLImageElement).style.display = 'none';
+					}}
+				/>
+			{/if}
+			<!-- One soft scrim for the badge row. The old two-scrim gradient existed to
+			     hide the letterbox seam, and there is no longer a seam to hide. -->
+			<div class="absolute inset-0 bg-steam-dark/25" aria-hidden="true"></div>
 
-			`from-35%` is the load-bearing part. Everything in the bottom 35% is solid
-			steam-dark, which is where the letterbox bars land at every breakpoint, so
-			the image's lower edge dissolves into the background instead of terminating
-			on a visible line. The remaining 65% is one long fade up to fully
-			transparent, so the artwork is untouched at the top and there is no band to
-			spot the seam in.
+			{#if game.steam?.metacriticScore}
+				<span class="tabular absolute left-2 top-2 z-10 inline-flex min-h-6 items-center gap-1 rounded-md bg-steam-dark/70 px-1.5 py-0.5 font-mono text-[11px] font-bold text-ink backdrop-blur-sm">
+					<Star class="h-3 w-3 fill-current text-yellow-400" />
+					{game.steam.metacriticScore}
+				</span>
+			{/if}
+		</div>
 
-			Do not grow the card without re-checking that band. It is the one number
-			holding the artwork edge invisible, and it is a percentage of a height that
-			moves with the content.
-		-->
-		<div class="absolute inset-0 bg-steam-dark/45" aria-hidden="true"></div>
-		<div class="absolute inset-0 bg-gradient-to-t from-steam-dark from-35% to-transparent" aria-hidden="true"></div>
-
-		<!-- Metacritic lives in the corner so it cannot compete with the ring. -->
-		{#if game.steam?.metacriticScore}
-			<span class="absolute left-2 top-2 z-10 inline-flex min-h-7 items-center gap-1 rounded bg-steam-green px-2 py-0.5 text-xs font-bold text-white sm:left-3 sm:top-3">
-				<Star class="h-3.5 w-3.5" />
-				{game.steam.metacriticScore}
-			</span>
-		{/if}
-
-		<!--
-			Ring on the left, title beside it. Side-by-side rather than stacked on
-			purpose: stacking a 112px ring above the title made the card tall enough
-			that the letterbox bars grew taller than the gradient's solid band, and the
-			artwork edge became visible again. Beside the title the card stays short.
-		-->
-		<div class="relative flex min-h-40 items-center gap-3 px-3 pb-3 pt-14 sm:min-h-48 sm:gap-4 sm:px-4 sm:pb-4 sm:pt-16">
-			<div class="relative h-24 w-24 shrink-0 sm:h-28 sm:w-28">
-				<svg class="h-full w-full -rotate-90" viewBox="0 0 36 36" aria-hidden="true">
-					<circle cx="18" cy="18" r="15.5" fill="none" stroke-width="2.5" class="stroke-steam-light/70" />
-					<!--
-						`stroke` is deliberately left out of the transition (only
-						`stroke-dasharray` animates) so a completion flip does not repaint
-						the whole card. The 0.974 factor is the circumference of r=15.5 in
-						this 36-unit viewBox.
-					-->
-					<circle
-						cx="18" cy="18" r="15.5" fill="none" stroke-width="2.5"
-						stroke-dasharray={`${percent * 0.974} 100`}
-						stroke-linecap="round"
-						class="transition-[stroke-dasharray] duration-500 ease-out {percent === 100
-							? 'stroke-green-400'
-							: 'stroke-steam-accent'}"
-					/>
-				</svg>
-
-				<!-- Both numbers live in the middle of the ring: percentage over count. -->
-				<div class="absolute inset-0 flex flex-col items-center justify-center">
-					<span class="text-xl font-bold leading-none tabular-nums text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] sm:text-2xl">
-						{percent}%
-					</span>
-					<span class="mt-1 text-[11px] font-medium tabular-nums text-gray-300 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
-						{completed}/{game.totalAchievements}
-					</span>
-				</div>
-			</div>
-
-			<h2 class="min-w-0 flex-1 text-lg font-bold leading-tight tracking-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] group-hover:text-steam-accent sm:text-xl">
+		<div class="px-3 py-2.5">
+			<h3 class="truncate font-display text-sm font-semibold leading-tight tracking-tight text-ink">
 				{game.name}
-			</h2>
+			</h3>
+			<div class="mt-2">
+				<ProgressBar percent={percent} height={5} label={`${completed}/${game.totalAchievements}`} />
+			</div>
+			<p class="tabular mt-1.5 font-mono text-[11px] {percent === 100 ? 'text-steam-green' : 'text-ink-faint'}">
+				{percent === 100 ? 'Complete' : `${percent}% complete`}
+			</p>
 		</div>
 	</a>
 
 	<!--
-		Overlays the artwork's top-right corner. The card's `pt-14`/`sm:pt-16` reserves
-		the band it and the Metacritic chip sit in. Absolute at every breakpoint: the
-		card is full-bleed and has no mobile/desktop split to key off.
+		The button is a 40px hit area with NO visual of its own; the 28px chip inside
+		carries every bit of styling.
+
+		They used to be the same element. The button is 40px and sits at
+		`-right-1 -top-1` to grow the tap target past the artwork, so putting the
+		background on it painted a 40px solid square that the card's
+		`overflow-hidden` then clipped into an L-shape over the top-right corner.
+
+		`rounded-lg` on the button only matters as a hit-area shape. The visible
+		edge is the chip's own `rounded-md`.
 	-->
 	{#if onToggle}
 		<button
-			class="absolute right-2 top-2 z-10 flex h-10 w-10 items-center justify-center rounded-md {toggleMode === 'add'
-				? 'bg-steam-dark/80 text-gray-200 backdrop-blur-sm'
-				: 'bg-steam-accent text-steam-dark'}"
+			type="button"
+			class="absolute -right-1 -top-1 z-10 flex h-10 w-10 items-center justify-center rounded-lg"
 			onclick={() => onToggle(game.appId)}
 			aria-label={toggleLabel}
 			title={toggleLabel}
+			aria-pressed={toggleMode !== 'add'}
 		>
-			{#if toggleMode === 'add'}
-				<Plus class="h-5 w-5" />
-			{:else if toggleMode === 'added'}
-				<Check class="h-5 w-5" />
-			{:else}
-				<Minus class="h-5 w-5" />
-			{/if}
+			<span
+				class="flex h-7 w-7 items-center justify-center rounded-md border backdrop-blur-sm transition-colors {toggleMode === 'add'
+					? 'border-white/15 bg-steam-dark/60 text-ink hover:bg-steam-dark/85'
+					: 'border-transparent bg-steam-accent text-steam-dark'}"
+			>
+				{#if toggleMode === 'add'}
+					<Plus class="h-4 w-4" />
+				{:else if toggleMode === 'added'}
+					<Check class="h-4 w-4" />
+				{:else}
+					<Minus class="h-4 w-4" />
+				{/if}
+			</span>
 		</button>
 	{/if}
 </div>

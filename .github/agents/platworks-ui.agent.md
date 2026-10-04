@@ -15,11 +15,57 @@ tools: [read, edit, search, execute]
 
 | Component | Role |
 |---|---|
-| `achievement_row.svelte` | expandable trophy card: toggle + Steam icon + badges |
-| `game_card.svelte` | library card is **dominated by the completion ring** (`h-24 sm:h-28`, percentage + count inside it), title beside it, Metacritic in the corner, no blurb; `rounded-lg`, home grid grows to 5 cols at `2xl` |
+| `progress_bar.svelte` | **the default progress indicator** — linear, `scaleX` fill, optional `label`. Used on cards, the game header and the library tiles |
+| `progress_ring.svelte` | ring, reserved for the few numbers that deserve ceremony (library total, game header). Never on a card |
+| `stat_tile.svelte` | a headline figure with a label. Replaced the muted grey span line that used to carry every total |
+| `segmented_control.svelte` | single-choice radio group; scrollable rather than wrapping. Used for scope, sort and the completion filter |
+| `search_field.svelte` | the app's only search input. Both pages and the mobile bar use it |
+| `action_button.svelte` | primary/secondary button with `loading`. Sync was copy-pasted with three class strings before this |
+| `difficulty_pips.svelte` | 1-4 filled pips + label. Difficulty must never be hue-only |
+| `game_filters.svelte` | the game page's **entire** filter row, rendered once at every breakpoint |
+| `theme_picker.svelte` | six-palette swatch radio group, inside the account popover |
+| `achievement_row.svelte` | expandable trophy card: toggle + Steam icon + badges + pips |
+| `game_card.svelte` | compact card: 16:9 artwork, title, linear bar, count. No ring |
 | `github_icon.svelte` | inline GitHub mark |
 | `mobile_bar.svelte` | shared bottom bar for **both** pages |
 | `src/routes/+layout.svelte` | navbar, account popover, View Transitions; owns `REPO_URL` and `platworks:steamId` |
+
+### Render a filter ONCE, not once per breakpoint
+
+The game page's filters lived in the page body *and* inside the mobile bar's `panel` snippet, each hidden at the opposite breakpoint. The measured result:
+
+| | completion filter | type select | sort select | map link |
+|---|---|---|---|---|
+| mobile 390px | **2** | **2** | **2** | 1 |
+| tablet 768px | 1 | 1 | 1 | **2** |
+
+Two copies of a control drift, and these had already drifted into different heights, labels and option sets. `game_filters.svelte` now holds the whole filter row and is rendered **once, unconditionally**, at every width — `overflow-x-auto` keeps it one row and makes the extras reachable by swiping.
+
+Three rules follow from that:
+
+- **Do not re-add a `panel` snippet to either page's `mobile_bar`.** Neither page passes one, so the bar carries progress, search and sync only and its filter button hides itself. Sort and the game filters both live in the page at every breakpoint — one control surface per page, not one per breakpoint.
+- **The library toolbar is ONE row: scope → search → sort → sync.** Scope was briefly its own block above the rest, which stretched it the full page width, because `display:flex` fills a block parent. As a flex item it shrink-wraps. `segmented_control.svelte` now carries `w-fit shrink-0` so it looks the same in either container — do not drop those.
+- **Never hide a control at one breakpoint and re-render it at another.** If it must exist in two places, that is a sign it should be one component with a `hidden` class, or one component rendered once.
+- **Search is the one control allowed to differ per breakpoint** (`hidden sm:block` in both the library toolbar and `game_filters.svelte`), because the mobile bar owns it on a phone. One search box per breakpoint, never both.
+
+### Tap targets: `h-9` is 36px, not 40px
+
+`h-9` = 2.25rem = **36px** and fails the 40px floor. The audit in §6 catches these; the ones that were wrong:
+
+| Control | Was | Now |
+|---|---|---|
+| `game_card.svelte` library toggle | `h-7 w-7` (28px) | `h-10 w-10` hit area, 28px visual chip inside via a negative inset |
+| `segmented_control.svelte` | `h-9` | `h-10` (both sizes) |
+| `game_filters.svelte` selects + chips | `h-9` | `h-10` |
+| navbar back / GitHub / account | 36px | 44px / 40px / 44px |
+| `achievement_row.svelte` expand button | collapsed to **39.6px** on rows with an empty description | `min-h-10` |
+
+That last one is the subtle case: the expand button sizes to its content, so a secret trophy with no description left only the title line and it fell under the floor. **A content-sized interactive element needs an explicit minimum.**
+
+### Component rules
+
+- **Do not hand-roll a control that already exists.** The old code carried a desktop `<input>` *and* a separate copy in the mobile bar, plus two different filter UIs — the exact drift these components exist to prevent.
+- `progress_ring.svelte` and `progress_bar.svelte` both take `percent` and clamp it. A corrupt `localStorage` value must never produce a negative dash length, which SVG renders as nothing.
 
 ### Shared component: `mobile_bar.svelte`
 
@@ -43,25 +89,87 @@ The card is a `<div class="relative overflow-hidden rounded-lg">` holding the `<
 
 The `<a>` gets `after:absolute after:inset-0` so the whole card stays tappable; the button needs `z-10` to win over that overlay. Do not "simplify" this back into `<a><button>`.
 
-The button is an **absolute overlay on the artwork's top-right corner at every breakpoint**. An earlier revision put it in the right rail on mobile, standing in for the chevron — but the card is now full-bleed and no longer has a chevron or a mobile/desktop split, so one overlay covers both. The card's `pt-16`/`sm:pt-20` reserves the band it sits in.
+The button is an **absolute overlay on the artwork's top-right corner at every breakpoint**. An earlier revision put it in the right rail on mobile, standing in for the chevron — but the card is full-bleed and no longer has a chevron or a mobile/desktop split, so one overlay covers both.
 
-**Corners are `rounded-lg`, not `rounded-2xl`** (and the toggle button `rounded-md`). Large radii made full-bleed Steam artwork read as too soft next to the store's own rounded capsules. **The skeleton must match** (`rounded-lg`, `min-h-40 sm:min-h-48`) or the grid visibly jumps when the hydration gate opens.
+### Card artwork: `object-cover` in a fixed 16:9 box
 
-### Card artwork: `object-contain object-top`, never `object-cover`
+This **inverted** an earlier rule and the reason is worth keeping, because the old reasoning still looks persuasive.
 
-Steam header images are **460×215 and bake the game's logo into the artwork**. Filling a taller card with `object-cover` crops the sides off — which is exactly where the readable half of the logo is, so the title in the art gets cut and unreadable. An earlier revision compounded it by scaling to `h-[106%] w-[106%]` and centering, a deliberate overscan so rounded corners would not flash the wrapper fill. **That overscan is gone**: with `object-contain` the image is never clipped, so there is no corner to flash and no reason to zoom.
+Steam header images are 460×215 and bake the game's logo into the artwork, so `object-cover` used to be forbidden — cropping took the readable half of the logo with it. The card has since been rebuilt around a **text title directly beneath the image**, and the image is now cropped into a fixed `aspect-video` box. With the name rendered as text, losing the logo from the art costs nothing, and the letterbox bars that `object-contain` forced are gone entirely.
 
 ```
-<img class="absolute inset-0 h-full w-full object-contain object-top" />
+<div class="relative aspect-video bg-steam-light">
+  <img class="h-full w-full object-cover" />
 ```
 
-Contain leaves empty bars wherever the card is not exactly 460/215, and **the card's height is content-driven** (`min-h-40 sm:min-h-48` are floors, not fixed heights), so the bars are unavoidable and their position has to be chosen. Three rules make them invisible, and all three are load-bearing:
+Two consequences:
 
-- **`object-top`.** A contained frame pinned to the top puts *every* bar at the bottom, where the overlay text and the solid part of the gradient already are. Centring splits them and leaves a seam halfway up the artwork.
-- **The wrapper is `bg-steam-dark`, not `bg-steam-blue`.** That fill is what shows through the bars, and `steam-blue` (`#1b2838`) is a different colour from `steam-dark` (`#171a21`) — blue under a steam-dark gradient draws a hard horizontal line straight across the card. This is the single easiest thing to regress by "tidying" the wrapper colour.
-- **`bg-gradient-to-t from-steam-dark from-35% to-transparent`.** The `from-35%` stop makes the bottom 35% fully opaque, which is where the bars land at every breakpoint, so the image's lower edge dissolves instead of terminating on a visible line. The remaining 65% is one long fade to fully transparent, leaving no band in which to spot a seam. Verified in the built CSS: `--tw-gradient-stops` resolves to steam-dark at `var(--tw-gradient-from-position)` then transparent, so the stop really is emitted — check it rather than trusting the class name.
+- **The `from-35%` gradient and the `bg-steam-dark` wrapper fill are obsolete.** They existed only to hide the letterbox seam. With no bars there is no seam; the card now uses `bg-steam-blue` + a single flat `bg-steam-dark/25` scrim. Do not restore the two-scrim gradient "for safety" — there is nothing left for it to hide.
+- **The fixed aspect ratio is what makes the card's height predictable**, so the skeleton (`aspect-[16/10]`, `rounded-xl`) must stay close in proportion or the grid jumps when the hydration gate opens.
 
-Do not add a fixed height or an `aspect-*` utility to "fix" the bars: `overflow-hidden` would then clip a long title.
+### The bar is the card, not a ring in it
+
+The card was once dominated by a 112px ring. It is now dominated by a linear bar:
+
+```
+[ ★ 91 ]  [ artwork 16:9            ]  [ + ]
+          Elden Ring
+          ▓▓▓▓▓▓░░░░░░  18/42
+          43% complete
+```
+
+- **Linear beats a ring at card density.** At four-plus cards per row the eye compares bar *lengths* far faster than ring arcs, so the ranking is readable at a glance. Rings survive only where a single number deserves ceremony — the library total and the game-page header.
+- **The ring also cost 40% of the card's height**, which is what broke the artwork seam above. Two bugs, one fix.
+- **`shortDescription` is not rendered.** It is still in the `+page.server.ts` payload (the navbar and the game page use `steam`), so finding it in the HTML is not a bug — finding it in the *markup* is.
+- **Metacritic sits on the artwork** at `absolute left-2 top-2` with a dark scrim; it is not worth a row of vertical space next to a bar.
+- **The grid is `grid-cols-2 sm:3 lg:4 xl:5 2xl:6`.** The card lost its ring and is now dominated by a 16:9 image plus two short lines, so the minimum readable width dropped to ~170px and a laptop fits roughly twice as many games above the fold as before.
+
+`toggleMode` is `'add' | 'added' | 'remove'`, not a boolean: in **My Library** every card is already selected, so a check icon would read as "all done". It shows a **minus** there ("take this back out") and a **check** in **All Games** for games already added.
+
+### The toggle is a hit area around a chip, not a 40px button
+
+The library toggle is a 40×40 `<button>` with **no visual of its own**; the 28×28 chip inside carries every bit of styling. They used to be the same element, which painted a 40px solid square at `-right-1 -top-1` that the card's `overflow-hidden` then sliced into an L-shape over the corner.
+
+Keep the visual on the inner chip. If you raise or lower the tap target, change the button's box only.
+
+### Artwork has a placeholder painted underneath it
+
+`game_card.svelte` and the game-page hero each render four stacked `absolute` layers with `z-index: auto`, so tree order decides: **placeholder → image → scrim → badges**.
+
+- The placeholder is always in the DOM, so a `loading="lazy"` image that has not started shows it instead of a blank slot.
+- **Aniimo (4126040) and WARDOGS (1867240) have no Steam header, and no hero either.** `onerror` hides the `<img>` and the placeholder takes over. That is a permanent state, not an error.
+- **There is no CDN retry.** Artwork is local (`/images/games/{appId}/`, see [platworks-steam.agent.md](./platworks-steam.agent.md) §1), so a failure means the game has no art — retrying a remote URL would only re-add the external dependency.
+
+### Difficulty is never hue-only
+
+`difficulty_pips.svelte` renders 1–4 filled pips **plus** the level's name. The old rows printed the word in a colour and nothing else, which is unreadable for colour-blind players and survives a screenshot as an anonymous coloured word. The pip count carries the level; the label still names it. Do not replace this with a colour-swatch badge.
+
+`missable` is the **only** achievement tag that earns an alarm colour. `multiplayer`, `cumulative` and `secret` are neutral, so a row carrying several tags does not become a wall of colour.
+
+### Totals are stat tiles, not a grey text line
+
+The library page's headline used to be `"12 games · 847/1994 · 42%"` in small muted grey — technically the app's whole value proposition rendered as its least prominent element. It is now four `stat_tile.svelte` instances, with overall completion leading in the accent colour.
+
+The tiles live in a **grid that always renders**, wrapping any `{#if}`. A tile that appears when its data becomes available pushes the grid down mid-gesture — the same failure as the scope switcher below.
+
+### Two-pane on desktop, stacked with a gap on mobile
+
+The page container is **only a grid at `lg`**. Below that the `<aside>` and the `<section>` are plain block siblings, so the aside's own `gap-3` cannot separate them — anything spanning the boundary needs its own margin. The filters wrapper is `mt-4 lg:mt-0`: the `mt-4` is the stacked-column gap on a phone, and the `lg:mt-0` zeroes it because at `lg` the columns sit side by side and a top margin would push the toolbar out of alignment with the top of the sidebar.
+
+Dropping that `mt-4` during a refactor made the toolbar sit flush against the stats panel on every phone. **The gap belongs on the element that crosses the column boundary, not on either column's last child.**
+
+`lg:grid-cols-[288px_minmax(0,1fr)]`. The old page capped the whole thing at `max-w-4xl`, which is a narrow ribbon on a 1440px display.
+
+- **The sidebar is `lg:sticky lg:top-[4.5rem]` only.** Below `lg` it is the first block in flow; a sticky tall hero would pin to the top of the scroll and leave no room for the list.
+- **The left column is, in order: artwork → name + description → chips → trophy information → actions.** The progress panel used to be the first block of the *right* column, which put "which game is this" and "how far through am I" in opposite columns with the whole list between them.
+- **The artwork carries no text, and that is not a style choice.** The name and description sit below it in normal flow. An absolutely positioned block inside a fixed-ratio box cannot grow: a Steam blurb longer than the box escapes it, overlaps the artwork and spills out of the 288px sidebar. Measured before the fix — text escaped the sidebar at 1024, 1440 and 1920. The description is `line-clamp-3` at every width; Steam's longer blurbs run 300+ characters and the sidebar is 288px.
+- **The hero is `aspect-[21/9]` below `lg`, `lg:aspect-video` above.** The old `min-h-56` banner plus a full stats panel plus two stacked buttons pushed the first achievement roughly **900px** down on a phone.
+- **Type and Sort must stay reachable on a phone.** They were once `hidden sm:block`, leaving mobile with only All/Locked/Done. The filter row scrolls horizontally (`.scrollbar-none`) rather than wrapping, so it never pushes the list down.
+- **There is no `<select>` for the achievement type.** The chip row does that job directly beneath it, with counts and a `missable` icon. The select was the same filter one control apart, and the chips were always the better presentation — "All types" is simply the state where no chip is pressed, and each chip toggles itself off on a second tap. Sort is the only `<select>` left.
+- **The chip row renders whenever `types.length > 0`, not `> 1`.** Gating it on "more than one" made the toolbar gain or lose a row depending on the game, which is the same instability as the scope switcher appearing late.
+- **Keep the guide prose inside a readable measure.** The sidebar is a fixed 288px precisely so the list column does not become a 1100px-wide line of text as an expanded row grows.
+
+### The trophy card: the icon *is* the checkbox
 
 ### Library scope: nothing above the grid may appear or disappear
 
@@ -74,26 +182,6 @@ Three rules now hold the page still:
 - **The first-run hint lives in a fixed `h-5` slot directly under the switcher.** One line tall whether or not it has text, so showing and hiding it costs nothing. It carries `aria-live="polite"`, because after a `+` tap that is the only place the selection change is announced.
 
 The reserved 20px is deliberate and is the price of the stability. Do not reclaim it.
-
-### The ring is the card, not a detail in it
-
-Progression is what this app exists to show, so `game_card.svelte` spends its area on the completion ring and nothing else competes with it:
-
-```
-[ ★ 91 ]                          [ + ]   ← corners, out of the way
-   ╭───────╮   Clair Obscur:
-  │   55%  │   Expedition 33
-  │  30/55 │
-   ╰───────╯
-```
-
-- **Both numbers live inside the ring** — percentage over `completed/total`. The chip beside it that used to carry the count is gone; do not reintroduce a second `{percent}%` anywhere on the card.
-- **`shortDescription` is not rendered.** It is still in the `+page.server.ts` payload (the avatar/menu and the game page use `steam`), so finding it in the HTML is not a bug — finding it in the *markup* is.
-- **No "Complete" chip.** A green ring at 100% says it. This is why the stricter `completed === total` check no longer exists on this card.
-- **Metacritic moved to `absolute left-2 top-2`.** It used to sit in a chip row under the title; beside a 112px ring there was no room for it, and it is not worth a row of vertical space.
-- **The ring is beside the title, not above it.** Stacking them made the card tall enough that the letterbox bars outgrew the gradient's `from-35%` band and the artwork edge reappeared. **If you make the ring taller, re-check that band** — it is a percentage of a height that moves with the content.
-
-`toggleMode` is `'add' | 'added' | 'remove'`, not a boolean: in **My Library** every card is already selected, so a check icon would read as "all done". It shows a **minus** there ("take this back out") and a **check** in **All Games** for games already added.
 
 ### The trophy card: the icon *is* the checkbox
 
@@ -125,26 +213,10 @@ is no `standard` tag to check for.
 
 ### The game page hero: text overlaid on the banner
 
-`game/[appId]/+page.svelte` renders one full-bleed hero — the title, the short description and the chips sit **on top of** the artwork, not under it. Do not reintroduce the old stacked "small image, then heading, then paragraph" layout.
-
-```
-┌────────────────────────────────────┐
-│         (banner, object-cover)     │
-│                    ─── scrim ───   │
-│   REMNANT II®                      │
-│   REMNANT II® pits survivors …     │
-│   [Interactive Map] [★ 91]         │
-└────────────────────────────────────┘
-   ▓▓▓▓▓▓▓▓▓░░░░░░░░░░  78%       ← progress stays OUTSIDE
-```
-
-Three rules that are easy to undo by accident:
-
 - **Two scrims, not one.** A flat `bg-steam-dark/45` plus a `bg-gradient-to-t` from `steam-dark`. Steam banners range from near-black to almost white, so the flat pass stops a bright one washing out the title and the gradient keeps the copy off the busiest band. Dropping either regresses some games.
-- **`min-h` reserves the artwork; `pt` is only a floor.** The `min-h-56 / sm:min-h-72` is what guarantees a band of visible art above the text. The `pt` on the inner column exists so *short* copy still clears the image — keep it small so a long blurb grows the hero rather than getting clipped.
+- **A fixed `aspect-*`, not `min-h`.** It is `aspect-[21/9]` below `lg` and `lg:aspect-video` above — see §1 for why the old `min-h-56` hero buried the list on a phone. With a fixed ratio there is no `pt` floor to reason about.
 - **The image is decorative.** `alt=""` because the game name is the `h1` right there; a non-empty alt makes a screen reader announce the title twice. It also carries `fetchpriority="high"` — it is the page's LCP.
-
-Full-bleed on phones via `-mx-4`, cancelling the container's `px-4`, with `sm:mx-0 sm:rounded-2xl` once `max-w-4xl` starts biting.
+- **The blurb clamps to two lines below `lg`** and is unclamped above. Long Steam copy must not push the list off the first screenful on a phone.
 
 ### Vertical rhythm: the gap belongs on the wrapper, not the last child
 
@@ -172,44 +244,44 @@ The repo URL lives in one constant, `REPO_URL` in `+layout.svelte`. Change it th
 
 ## 2. Progress indicators: one green for "complete"
 
-There are three, and they all turn the **same** green at 100% so a finished game looks finished wherever you see it:
+Both shapes now live in components, and all of them turn the **same** green (`--pw-success`, exposed as `steam-green`) at 100% so a finished game looks finished wherever you see it:
 
-| Where | Shape | Incomplete | Complete |
-|---|---|---|---|
-| `game_card.svelte` (library) | **dominant donut**, `h-24 sm:h-28`, % + count inside | `stroke-steam-accent` | `stroke-green-400` |
-| `game/[appId]/+page.svelte` (header bar) | linear bar | `from-steam-accent to-blue-400` | `from-green-400 to-green-300` |
-| `mobile_bar.svelte` (bottom ring) | donut ring, `h-9` | `stroke-steam-accent` | `stroke-green-400` |
+| Where | Component | Shape | Incomplete | Complete |
+|---|---|---|---|---|
+| library cards, game header, stat tiles | `progress_bar.svelte` | **linear**, `scaleX` fill | `bg-steam-accent` | `bg-steam-green` |
+| game header, mobile bar | `progress_ring.svelte` | donut, `r=15.5` in a 36-unit viewBox | `stroke-steam-accent` | `stroke-steam-green` |
 
-The library card and the mobile bar share one ring construction: an `<svg viewBox="0 0 36 36">`
-rotated `-rotate-90`, a track circle and a `stroke-linecap="round"` arc driven by
-`stroke-dasharray={`${percent * 0.974} 100`}`. **The `0.974` is the circumference of
-`r=15.5` in that viewBox** — it converts a percentage into a fraction of the 100-unit
-dash path. Both rings put their numbers in the middle in `tabular-nums`.
+**Rings are for the few numbers that deserve ceremony** — the library total and the game-page header. Bars are for everything else; see §1 for why the card lost its ring.
+
+The ring is an `<svg viewBox="0 0 36 36">` rotated `-rotate-90`, a track circle and a `stroke-linecap="round"` arc driven by `stroke-dasharray`. **The circumference factor (0.974) is that of `r=15.5`** — it converts a percentage into a fraction of the 100-unit dash path. It is computed in `progress_ring.svelte`, not repeated per call site.
 
 Two rules that are easy to undo by accident:
 
-- **Never put `stroke` in the transition list** (§4). Only `stroke-dasharray` animates. The
-  colour flips on every completion, and transitioning it would repaint the card or the bar.
-- **The ring owns the numbers.** On the library card both the percentage and the count are
-  inside it — there is no chip repeating either.
+- **Never put `stroke` in the transition list** (§4). Only `stroke-dasharray` animates. The colour flips on every completion, and transitioning it would repaint the component.
+- **Both components clamp `percent`.** A corrupt `localStorage` value must not produce a negative dash length or a negative `scaleX`, which render as nothing at all.
 
-`green-400` is the reference: it was already the "Complete" colour on the library card. Do not introduce a second shade of green, and do not swap `green-400` for the darker `--color-steam-green` theme token — that is the Metacritic badge, not the completion colour.
+`--pw-success` is the reference green. Do not introduce a second shade, and do not reach for Tailwind's `green-400` — it does not follow the palette. **`--pw-accent` is for interactive things** (buttons, links, focus) and `--pw-success` is for progress; in Ember the two happen to be the same colour, but Amber, Cobalt and Cyberpunk split them deliberately.
 
-All three key off `progressPercent === 100`, **not** `completedCount === total`. `Math.round` means 999/1000 already displays "100%", and a ring that reads 100% must not still be blue.
+All of them key off `percent === 100`, **not** `completed === total`. `Math.round` means 999/1000 already displays "100%", and a bar that reads 100% must not still be accent-coloured.
 
 ## 3. Styling
 
 - Tailwind CSS 4, **CSS-first** `@theme` in `src/app.css` — there is no `tailwind.config.js`.
+- **Six palettes, one set of token names.** `app.css` declares `steam-dark/blue/light/accent/green` as `@theme inline` `var(--pw-*)` references, and each palette is a `[data-theme]` block overriding those vars. Swapping palette is one attribute on `<html>` — do **not** rename a token or you touch every component. Adding a palette = one CSS block + one entry in `THEMES` + one entry in the `app.html` validator list (see [platworks-state.agent.md](./platworks-state.agent.md) §6).
+- Use the semantic tokens `--color-ink` / `ink-dim` / `ink-faint` / `line` for new markup rather than Tailwind's gray ramp, so text re-themes with the palette. Existing `text-gray-400` usages still work but do not follow the accent themes.
 - Dark-first: `bg-gray-900 text-gray-100` as the base; `dark:` only to override.
-- Custom colours: `steam-dark`, `steam-blue`, `steam-light`, `steam-accent`, `steam-green`.
 - Group classes: layout → spacing → sizing → colors → typography → effects.
 - No inline styles when a Tailwind utility exists.
+- **Contrast:** all six palettes are verified against WCAG AA — body text ≥ 4.5:1, dim text ≥ 4.5:1, faint/decorative ≥ 3:1, accent-on-background ≥ 3:1, and accent-ink-on-accent ≥ 4.5:1. Re-check when editing a palette, since `--pw-accent-ink` exists precisely so text on an accent button stays legible on the lighter palettes.
 
 ## 4. Animation
 
 - View Transitions for page navigation **only** — never for in-page state.
 - Expand/collapse via CSS `grid-template-rows` (`.expand-panel`); never DOM add/remove.
 - **Never put `stroke` in an SVG's transition list.** The mobile bar's ring re-renders on every checkbox tap, so animating its colour repaints the whole bar; transition `stroke-dasharray` only.
+- **`prefers-reduced-motion` is honoured** by one `!important` block at the end of `app.css`. It drops every `animation-duration` and `transition-duration` to `0.01ms` rather than disabling animation, so state transitions still happen — the panel still opens, the bar still turns green. Disabling animations outright leaves controls looking broken.
+- That block is last in the file and `!important` on purpose: a `duration-500` utility would otherwise win on specificity.
+- Counts use `tabular-nums` (the `.tabular` utility) so digits do not shuffle sideways while animating.
 
 ## 5. Performance
 
@@ -222,4 +294,13 @@ All three key off `progressPercent === 100`, **not** `completedCount === total`.
 
 ## 6. Verifying a UI change
 
-No browser harness is set up (Playwright's Chromium is missing system libs in WSL). Verify by reading the SSR output over `curl` and by reading the component source — full notes in [platworks-dev.agent.md](./platworks-dev.agent.md) §7.
+**Use Playwright — it works here now.** The setup and the absolute-path import for it are in [platworks-dev.agent.md](./platworks-dev.agent.md) §7.
+
+At minimum, for any layout change, load every route at **390 / 768 / 1440** and assert:
+
+1. `documentElement.scrollWidth === documentElement.clientWidth` (no horizontal overflow)
+2. **Every control appears exactly once** — count visible `[role=radiogroup]`, `select`, and `input[type=text]`. This is the check that catches the duplicated-filter class of bug, which `curl` and `svelte-check` both miss completely.
+3. **No interactive element under 40px tall.** See the `h-9` = 36px trap in §1.
+4. No `pageerror` and no console errors.
+
+Also screenshot each combo and actually look at it. Two of the bugs fixed in the last pass — a map link rendered twice on tablet, and a filter row whose search field sat off-screen — were obvious in a screenshot and invisible to every other check.

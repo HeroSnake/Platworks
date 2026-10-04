@@ -12,9 +12,12 @@ PlatWorks turns a game's trophy list into something you can actually act on. Ins
 
 - **Guides for every trophy** — step-by-step instructions, video walkthroughs, community tips from Reddit, and clear warnings on missable or one-time-only achievements
 - **Real trophy artwork** — the official Steam icon for all 1647 achievements, not placeholders. The trophy *is* the checkbox: tap it to mark it done
+- **Artwork that never breaks** — every game's card and hero image is committed to the repo and served from here, so game art cannot disappear because a CDN moved a file or rate-limited a request
 - **Your library, your numbers** — pick the games you actually own and every total, percentage and sync is measured against that list, not the whole catalogue
 - **Progress that sticks** — check off trophies by hand, or connect a public Steam profile and sync them in bulk. Your completion percentage follows you from game to game
 - **Search and filter** — find games by name, trophies by name or description, then sort by completion, recently played, or difficulty and filter by locked state and trophy type
+- **Six colour themes** — Ember, Amber, Cobalt, Matrix, Cyberpunk and Vapor, all dark-first and all checked for WCAG AA contrast. Pick one from the account menu in the top-right; it sticks, and there is no flash on load
+- **Built to be readable** — difficulty is shown with pips rather than colour alone, every control has a 40px+ tap target, and the whole interface honours your reduced-motion setting
 - **Interactive maps** — open-world games link straight to a community map, both from the game header and from individual trophy locations
 - **No API key, no accounts** — PlatWorks reads Steam's public endpoints only. There is nothing to sign up for and no key to configure
 
@@ -76,14 +79,22 @@ npm run build    # production build
 
 ## Built with
 
-SvelteKit 3 and Svelte 5 runes, Tailwind CSS 4, TypeScript, and Steam's public community endpoints. No backend of its own — game data lives in the repo, and Steam is queried from the server at request time.
+SvelteKit 3 and Svelte 5 runes, Tailwind CSS 4, TypeScript, Space Grotesk + Inter + JetBrains Mono, and Steam's public community endpoints. No backend of its own — game data lives in the repo, and Steam is queried from the server at request time.
 
 ## Contributing
 
 Project rules, architecture, and the traps that have already been fixed live in [`.github/agents/`](.github/agents/). Start with [`platworks-dev.agent.md`](.github/agents/platworks-dev.agent.md) — it routes you to the file that owns whatever you're changing, whether that's UI, Steam integration, persisted state, or game data.
 
+Adding a colour theme? The palettes are `[data-theme]` blocks in `src/app.css`; see [platworks-state.agent.md](.github/agents/platworks-state.agent.md) §6, which lists the three places a new palette must be registered.
+
 Game data can also be generated for you:
 
 ```
 /generate-game-data "Game Name"
+```
+
+Then mirror its artwork into the repo:
+
+```
+node scripts/fetch-game-images.mjs <appId>
 ```

@@ -38,7 +38,7 @@
 
 <div class="mx-auto max-w-2xl space-y-2 bg-steam-dark p-2">
 	{#each cases as c (c.label)}
-		<p class="px-1 pt-2 text-[11px] uppercase tracking-wide text-gray-500">{c.label}</p>
+		<p class="px-1 pt-2 text-[11px] uppercase tracking-wide text-ink-faint">{c.label}</p>
 		<AchievementRow
 			achievement={c.a}
 			achieved={false}
@@ -51,7 +51,7 @@
 			<div>
 				<div class="border-t border-white/5 px-2 pb-2 pt-3">
 					<ol class="mb-3 space-y-2 text-sm">
-						{#each c.a.guide.steps as s, i (i)}<li class="text-gray-300">{i + 1}. {s}</li>{/each}
+						{#each c.a.guide.steps as s, i (i)}<li class="text-ink-dim">{i + 1}. {s}</li>{/each}
 					</ol>
 					{#if c.a.guide.videoUrl || c.a.guide.sourceUrl || c.a.guide.mapUrl || c.gameMap}
 						<div class="mb-3 flex flex-wrap gap-2">
@@ -59,12 +59,12 @@
 								<a href={c.a.guide.videoUrl} class="inline-flex items-center gap-1.5 rounded-lg bg-red-900/30 px-3 py-2 text-xs text-red-300">Video</a>
 							{/if}
 							{#if c.a.guide.sourceUrl}
-								<a href={c.a.guide.sourceUrl} class="inline-flex items-center gap-1.5 rounded-lg bg-steam-light/50 px-3 py-2 text-xs text-gray-300">Written Guide</a>
+								<a href={c.a.guide.sourceUrl} class="inline-flex items-center gap-1.5 rounded-lg bg-steam-light/50 px-3 py-2 text-xs text-ink-dim">Written Guide</a>
 							{/if}
 							{#if c.a.guide.mapUrl || c.gameMap}
 								<a
 									href={c.a.guide.mapUrl ?? c.gameMap}
-									class="inline-flex items-center gap-1.5 rounded-lg bg-steam-light/50 px-3 py-2 text-xs text-gray-300"
+									class="inline-flex items-center gap-1.5 rounded-lg bg-steam-light/50 px-3 py-2 text-xs text-ink-dim"
 								>
 									{c.a.guide.mapUrl ? 'Location Map' : 'Game Map'}
 								</a>

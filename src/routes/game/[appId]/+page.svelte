@@ -6,13 +6,15 @@
 		Star,
 		Lock,
 		Unlock,
-		Search,
 		RefreshCw,
-		Loader2,
 		MapPinned
 	} from '@lucide/svelte';
 	import AchievementRow from '#lib/components/achievement_row.svelte';
 	import MobileBar from '#lib/components/mobile_bar.svelte';
+	import GameFilters from '#lib/components/game_filters.svelte';
+	import ProgressRing from '#lib/components/progress_ring.svelte';
+	import ProgressBar from '#lib/components/progress_bar.svelte';
+	import ActionButton from '#lib/components/action_button.svelte';
 	import { browser } from '$app/env';
 	import { refreshProfile } from '#lib/client/profile';
 
@@ -175,10 +177,18 @@
 		Math.round((completedCount / data.game.totalAchievements) * 100)
 	);
 
-	// Matches game_card.svelte: the bar switches to the same green the library grid
-	// uses for "Complete". Keyed off the displayed percentage so the colour always
-	// agrees with the number shown next to it.
-	let isComplete = $derived(progressPercent === 100);
+	// Counts the sidebar reports and the filter chips label. Derived rather than
+	// passed down so the sidebar, the chips and the segmented filter can never
+	// disagree about how many of each exist.
+	let missableCount = $derived(
+		data.game.achievements.filter((a) => (a.types as string[]).includes('missable')).length
+	);
+	let lockedCount = $derived(data.game.totalAchievements - completedCount);
+	let difficultyMix = $derived.by(() => {
+		const order = ['easy', 'medium', 'hard', 'very-hard'] as const;
+		const counts = order.map((lv) => data.game.achievements.filter((a) => a.difficulty === lv).length);
+		return counts.join(' / ');
+	});
 
 	const difficultyOrder: Record<string, number> = { easy: 0, medium: 1, hard: 2, 'very-hard': 3 };
 
@@ -218,11 +228,27 @@
 			return tags;
 		});
 
-	const filterOptions: Array<{ value: typeof filter; label: string; icon: typeof Trophy }> = [
-		{ value: 'all', label: 'All', icon: Trophy },
-		{ value: 'locked', label: 'Locked', icon: Lock },
-		{ value: 'unlocked', label: 'Done', icon: Unlock }
-	];
+		// Per-tag totals for the filter chips. A chip with no count on it is a chip the
+		// player taps and gets nothing from.
+		let typeCounts = $derived.by((): Record<string, number> => {
+			const counts: Record<string, number> = {};
+			for (const a of data.game.achievements) {
+				if (a.types.length === 0) counts.standard = (counts.standard ?? 0) + 1;
+				for (const t of a.types) counts[t] = (counts[t] ?? 0) + 1;
+			}
+			return counts;
+		});
+
+	// Filter options are declared inline where `segmented_control.svelte` renders
+	// them, with live counts — so the old `filterOptions` array is gone.
+
+	// Built once here and handed to `game_filters.svelte`, so the counts cannot
+	// drift from what the filter actually produces.
+	let completionFilterOptions = $derived([
+		{ value: 'all', label: 'All', count: data.game.totalAchievements },
+		{ value: 'locked', label: 'Locked', icon: Lock, count: lockedCount },
+		{ value: 'unlocked', label: 'Done', icon: Unlock, count: completedCount }
+	]);
 </script>
 
 <svelte:head>
@@ -233,196 +259,203 @@
 	<!-- Fixed background layer. Using `position: fixed` (instead of bg-fixed on a
 	     full-page element) plus a plain overlay keeps the visual result while
 	     avoiding a full-viewport repaint on every scroll frame. -->
-	<div class="pointer-events-none fixed inset-0 z-0" aria-hidden="true">
-		{#if data.steam?.background}
-			<div class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-				style:background-image="url({data.steam.background})"
-			></div>
-		{/if}
-		<div class="absolute inset-0 bg-steam-dark/90"></div>
-	</div>
-
+	<!--
+		Steam's page background is gone. It rendered behind a 90% `bg-steam-dark`
+		scrim, so a tenth of it was visible, and the real files run to 1.6 MB each —
+		17 MB of repo for something that could not be seen. Removing it also drops
+		a full-viewport image request from every game page load.
+	-->
 	<div class="relative z-10">
-		<div class="mx-auto max-w-4xl px-4 pb-16 pt-4 sm:pt-8">
+		<!--
+			Two-pane on desktop, one column below `lg`.
+
+			`max-w-4xl` used to cap the whole page, which is a narrow ribbon on a 1440px
+			display — the widest possible waste of a screen built for wide screens. The
+			sidebar is a fixed 288px and the list takes the rest, which keeps the guide
+			prose that expands inside each row comfortably inside a readable measure
+			while the progress summary stays on screen while you scroll 200 trophies.
+		-->
+		<div class="mx-auto max-w-[1400px] px-4 pb-24 pt-4 sm:px-6 sm:pt-6 lg:grid lg:grid-cols-[288px_minmax(0,1fr)] lg:gap-6 lg:px-8 lg:pb-16">
+			<!--
+				Sticky on desktop only. Below `lg` it is the first block in the flow, so
+				`position: sticky` would pin a tall hero to the top of the scroll and
+				leave almost no room for the list.
+			-->
+			<aside class="flex flex-col gap-3 lg:sticky lg:top-[4.5rem] lg:self-start lg:gap-4">
 			<!-- Back link (desktop only — mobile uses navbar back arrow + bottom bar home) -->
-			<a href="/" class="mb-6 hidden items-center gap-1.5 text-sm text-gray-400 hover:text-steam-accent sm:inline-flex">
+			<a
+				href="/"
+				class="-ml-1 hidden h-10 items-center gap-1.5 self-start rounded-lg px-2 text-sm text-ink-dim hover:text-steam-accent lg:inline-flex"
+			>
 				<ArrowLeft class="h-4 w-4" />
 				Games
 			</a>
 
-			<!-- Game hero: title, description and chips overlaid on the full-width banner.
-			     Edge-to-edge on phones (-mx-4 cancels the container's px-4); rounded once
-			     the max-w-4xl container starts biting. The min-h reserves the artwork band
-			     above the text; the pt is only a floor for short copy, so a long blurb
-			     grows the hero instead of being clipped. -->
-			<div class="relative -mx-4 mb-5 min-h-56 overflow-hidden bg-steam-blue sm:mx-0 sm:mb-6 sm:min-h-72 sm:rounded-2xl">
+			<!-- Game hero. Short and wide below `lg` (21:9) so the checklist starts in
+			     the first screenful; full 16:9 once there is room beside it.
+
+			     The artwork carries NO text. The name and description sit below it in
+			     normal flow instead of being overlaid, because an absolutely
+			     positioned block inside a fixed-ratio box is the one layout that
+			     cannot grow: a Steam blurb longer than the box escapes it, overlaps
+			     the artwork and spills out of the 288px sidebar. See §1 of
+			     platworks-ui.agent.md. -->
+			<div class="relative aspect-[21/9] overflow-hidden rounded-xl bg-steam-blue lg:aspect-video">
+				<!-- Same placeholder-behind-the-image contract as `game_card.svelte`:
+				     a game with no Steam banner must show something intentional, not an
+				     empty surface. See the note there for the two affected appIds. -->
+				<div
+					class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-steam-blue to-steam-light"
+					aria-hidden="true"
+				>
+					<Trophy class="h-10 w-10 text-ink-faint" />
+				</div>
 				{#if heroImage}
 					<!-- Decorative: the game name is the h1 below it, so a non-empty alt would
 					     only make a screen reader announce the title twice. `high` because this
-					     image is the page's LCP. -->
+					     image is the page's LCP.
+
+					     `onerror` hides the img and lets the placeholder show. There is no
+					     remote retry: artwork is local, so a failure means the game has no
+					     hero on Steam, not that the first CDN path was wrong. -->
 					<img
 						src={heroImage}
 						alt=""
 						fetchpriority="high"
 						class="absolute inset-0 h-full w-full object-cover"
+						onerror={(e) => {
+							(e.currentTarget as HTMLImageElement).style.display = 'none';
+						}}
 					/>
 				{/if}
-
-				<!-- Two scrims, not one: the flat one stops a bright banner from washing out
-				     the title, the gradient keeps the copy off the artwork's busiest band.
-				     Steam banners vary wildly in brightness, so neither is optional. -->
-				<div class="absolute inset-0 bg-steam-dark/45" aria-hidden="true"></div>
-				<div class="absolute inset-0 bg-gradient-to-t from-steam-dark via-steam-dark/85 to-transparent" aria-hidden="true"></div>
-
-				<div class="relative flex flex-col justify-end px-4 pt-24 pb-5 sm:px-8 sm:pt-32 sm:pb-6">
-					<h1 class="text-2xl font-bold tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] sm:text-4xl">
-						{data.steam?.name || data.game.name}
-					</h1>
-
-					{#if data.steam?.shortDescription}
-						<p class="mt-2 max-w-2xl text-sm leading-relaxed text-gray-300 sm:text-base">
-							{data.steam.shortDescription}
-						</p>
-					{/if}
-
-					<div class="mt-3 flex flex-wrap items-center gap-2">
-						{#if data.game.mapUrl}
-							<!-- A link, so it gets a real 40px tap target on phones. The
-							     neighbouring Metacritic chip is a plain span and can stay compact. -->
-							<a
-								href={data.game.mapUrl}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="inline-flex min-h-10 items-center gap-1.5 rounded bg-steam-light px-3 text-xs text-gray-200 active:bg-steam-accent/80 sm:min-h-8 sm:px-2.5 sm:py-1 sm:text-sm"
-							>
-								<MapPinned class="h-3.5 w-3.5 shrink-0" />
-								Interactive Map
-							</a>
-						{/if}
-						{#if data.steam?.metacriticScore}
-							<span class="flex items-center gap-1 rounded bg-steam-green px-2 py-1 text-xs font-bold text-white sm:text-sm">
-								<Star class="h-3.5 w-3.5" />
-								{data.steam.metacriticScore}
-							</span>
-						{/if}
-
-						{#if !steamId}
-							<span class="flex items-center gap-1.5 rounded bg-yellow-900/60 px-2 py-1 text-xs text-yellow-300">
-								<WifiOff class="h-3.5 w-3.5" />
-								<span class="hidden sm:inline">Set your Steam ID to sync (top right)</span>
-								<span class="sm:hidden">No Steam ID</span>
-							</span>
-						{/if}
-					</div>
-				</div>
 			</div>
 
-			<!-- Progress + sync share one wrapper so the gap below them is consistent.
-						     The sync row is desktop-only and the filter row below is too, so on mobile
-						     this wrapper's bottom margin is the only thing separating the bar from the
-						     list — it has to live here rather than on either child. -->
-						<div class="mb-6">
-							<!-- Progress -->
-							<div>
-								<div class="mb-2 flex items-center justify-between text-sm">
-									<span class="flex items-center gap-1.5 font-medium">
-										<Trophy class="h-4 w-4 text-steam-accent" />
-										{completedCount} / {data.game.totalAchievements}
-									</span>
-									<span class="tabular-nums {isComplete ? 'text-green-400' : 'text-gray-400'}">{progressPercent}%</span>
-								</div>
-								<div class="h-3 overflow-hidden rounded-full bg-steam-light">
-									<div
-										class="h-full w-full origin-left rounded-full transition-transform duration-500 ease-out {isComplete
-											? 'bg-gradient-to-r from-green-400 to-green-300'
-											: 'bg-gradient-to-r from-steam-accent to-blue-400'}"
-										style:transform="scaleX({progressPercent / 100})"
-									></div>
-								</div>
-							</div>
+			<!-- Picture → name → description, as one block, in the flow. -->
+			<div>
+				<h1 class="font-display text-xl font-bold tracking-tight text-ink sm:text-2xl">
+					{data.steam?.name || data.game.name}
+				</h1>
 
-							<!-- Sync section (desktop only) -->
-							<div class="mt-4 hidden flex-wrap items-center gap-3 sm:flex">
-								<button
-									class="inline-flex items-center gap-2 rounded-lg bg-steam-accent px-4 py-2 text-sm font-semibold text-steam-dark transition-colors hover:bg-steam-accent/90 disabled:opacity-50"
-									onclick={syncWithSteam}
-									disabled={syncing}
-								>
-									{#if syncing}
-										<Loader2 class="h-4 w-4 animate-spin" />
-										Syncing...
-									{:else}
-										<RefreshCw class="h-4 w-4" />
-										Sync
-									{/if}
-								</button>
-								{#if syncError}
-									<span class="text-xs text-red-400">{syncError}</span>
-								{/if}
-								{#if syncSuccess}
-									<span class="text-xs text-green-400">{syncSuccess}</span>
-								{/if}
-							</div>
-						</div>
+				<!-- Clamped everywhere, not just on phones: the sidebar is 288px and
+				     Steam's longer blurbs run 300+ characters. Full text stays on the
+				     store page, linked from the map row. -->
+				{#if data.steam?.shortDescription}
+					<p class="mt-1.5 line-clamp-3 text-[13px] leading-relaxed text-ink-dim">
+						{data.steam.shortDescription}
+					</p>
+				{/if}
+			</div>
 
-						<!-- Filters (desktop only — mobile uses bottom bar) -->
-						<div class="mb-6 hidden sm:block">
-							<!-- h-10 on every control, not padding: the search field, the segmented
-							     filter, the two selects and the count all line up on one 40px row that
-							     also satisfies the tap-target floor in platworks-ui.agent.md §5. -->
-							<div class="flex flex-wrap items-center gap-2 sm:gap-3">
-								<div class="flex h-10 min-w-0 flex-1 items-center gap-2 rounded-lg bg-steam-blue px-3">
-									<Search class="h-4 w-4 shrink-0 text-gray-500" />
-									<input
-										type="text"
-										placeholder="Search trophies..."
-										class="min-w-0 flex-1 bg-transparent text-sm text-gray-200 outline-none placeholder:text-gray-500"
-										bind:value={trophyQuery}
-									/>
-								</div>
-
-								<div class="flex h-10 rounded-lg bg-steam-blue p-1 text-sm">
-									{#each filterOptions as opt}
-										<button
-											class="flex items-center gap-1.5 rounded-md px-3 transition-colors {filter === opt.value ? 'bg-steam-accent text-steam-dark font-semibold' : 'text-gray-400 hover:text-gray-200'}"
-											onclick={() => filter = opt.value}
-										>
-											<opt.icon class="h-3.5 w-3.5 sm:hidden" />
-											{opt.label}
-										</button>
-									{/each}
-								</div>
-
-								<select
-									class="h-10 min-w-0 rounded-lg border-none bg-steam-blue px-3 text-sm text-gray-300 outline-none"
-									bind:value={typeFilter}
-								>
-									<option value="all">All types</option>
-									{#each achievementTypes as t}
-										<option value={t}>{t[0].toUpperCase() + t.slice(1)}</option>
-									{/each}
-								</select>
-
-								<select
-									class="h-10 shrink-0 rounded-lg border-none bg-steam-blue px-3 text-sm text-gray-300 outline-none"
-									bind:value={gameSort}
-								>
-						<option value="default">Default</option>
-						<option value="name">A–Z</option>
-						<option value="difficulty">Difficulty</option>
-					</select>
-
-					<span class="hidden text-sm tabular-nums text-gray-500 sm:block">
-						{filteredAchievements.length} shown
+			<div class="flex flex-wrap items-center gap-2">
+				{#if data.steam?.metacriticScore}
+					<span class="tabular inline-flex min-h-8 items-center gap-1 rounded-md bg-steam-light px-2 py-1 font-mono text-xs font-bold text-ink">
+						<Star class="h-3.5 w-3.5 fill-current text-yellow-400" />
+						{data.steam.metacriticScore}
 					</span>
+				{/if}
+				{#if !steamId}
+					<span class="inline-flex min-h-8 items-center gap-1.5 rounded-md border border-yellow-500/25 bg-yellow-500/10 px-2 py-1 text-xs text-yellow-300">
+						<WifiOff class="h-3.5 w-3.5 shrink-0" />
+						<span class="hidden sm:inline">Set your Steam ID to sync</span>
+						<span class="sm:hidden">No Steam ID</span>
+					</span>
+				{/if}
+			</div>
+
+			<!--
+				Trophy information belongs in the LEFT column, under picture → name →
+				description. It was previously the first block of the right column, which
+				meant the two things you read first — which game this is, and how far
+				through it you are — were in opposite columns with a 200-trophy list
+				between nothing and them.
+			-->
+			<div class="rounded-xl border border-line bg-steam-blue p-3.5">
+				<div class="flex items-center gap-3.5">
+					<ProgressRing percent={progressPercent} size={54} fontSize={11.5} strokeWidth={4} />
+					<div class="min-w-0 flex-1">
+						<p class="tabular font-mono text-lg font-bold leading-none tracking-tight text-ink">
+							{completedCount} / {data.game.totalAchievements}
+						</p>
+						<p class="mt-1 text-xs text-ink-faint">trophies unlocked</p>
+						<div class="mt-2">
+							<ProgressBar percent={progressPercent} height={6} />
+						</div>
+					</div>
 				</div>
+
+				<div class="mt-3 flex items-center justify-between border-t border-line py-2 text-sm">
+					<span class="text-ink-dim">Remaining</span>
+					<span class="tabular font-mono font-bold text-ink">{data.game.totalAchievements - completedCount}</span>
+				</div>
+				<div class="flex items-center justify-between border-t border-line py-2 text-sm">
+					<span class="text-ink-dim">Missable</span>
+					<span class="tabular font-mono font-bold text-yellow-400">{missableCount}</span>
+				</div>
+				<div class="flex items-center justify-between border-t border-line py-2 text-sm">
+					<span class="text-ink-dim">Difficulty mix</span>
+					<span class="tabular font-mono font-bold text-ink">{difficultyMix}</span>
+				</div>
+
+				<!--
+					Sync is hidden below `sm` because the mobile bar already carries it —
+					two sync buttons would be the same duplication as the filters. The map
+					link stays at every width: nothing else offers it, so hiding it on a
+					phone would make it unreachable.
+				-->
+				<div class="mt-3 flex flex-col gap-2">
+					<div class="hidden sm:block">
+						<ActionButton label="Sync with Steam" icon={RefreshCw} onclick={syncWithSteam} loading={syncing} full />
+					</div>
+					{#if data.game.mapUrl}
+						<a
+							href={data.game.mapUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="flex h-10 w-full items-center justify-center gap-2 rounded-lg border border-line bg-steam-blue text-sm font-medium text-ink hover:bg-steam-light"
+						>
+							<MapPinned class="h-4 w-4 shrink-0" />
+							Interactive map
+						</a>
+					{/if}
+				</div>
+
+				{#if syncError}
+					<p class="mt-2 text-xs text-red-400">{syncError}</p>
+				{/if}
+				{#if syncSuccess}
+					<p class="mt-2 text-xs text-steam-green">{syncSuccess}</p>
+				{/if}
+			</div>
+			</aside>
+
+			<section class="min-w-0">
+			<!--
+				Filters, rendered ONCE for every breakpoint — see `game_filters.svelte`.
+
+				`mt-4 lg:mt-0` is the gap between the sidebar and this column when they
+				stack on a phone. The container is only a grid at `lg`, so below that
+				the two are plain block siblings and the aside's own `gap-3` cannot
+				separate them — without this the toolbar touched the stats panel. At `lg`
+				they are side-by-side columns and the margin would just push the toolbar
+				out of alignment with the top of the sidebar, so it goes to zero.
+			-->
+			<div class="mt-4 lg:mt-0">
+				<GameFilters
+					bind:filter
+					bind:typeFilter
+					bind:gameSort
+					bind:query={trophyQuery}
+					completionFilterOptions={completionFilterOptions}
+					types={achievementTypes}
+					typeCounts={typeCounts}
+				/>
 			</div>
 
 			<!-- Achievement list -->
-			<div class="flex flex-col gap-2 pb-20 sm:pb-0">
+			<div class="mt-3 flex flex-col gap-2">
 				{#if !hydrated}
 					{#each Array(Math.min(data.game.achievements.length, 12)) as _, i (i)}
-						<div class="h-16 animate-pulse rounded-lg bg-steam-blue"></div>
+						<div class="h-16 animate-pulse rounded-xl bg-steam-blue"></div>
 					{/each}
 				{:else}
 					{#each filteredAchievements as achievement (achievement.id)}
@@ -436,15 +469,36 @@
 					{/each}
 
 					{#if filteredAchievements.length === 0}
-						<p class="py-16 text-center text-gray-500">No achievements match filters.</p>
+						<div class="py-16 text-center">
+							<p class="text-ink-dim">No achievements match these filters.</p>
+							<div class="mt-3 flex justify-center">
+								<ActionButton
+									label="Reset filters"
+									variant="secondary"
+									onclick={() => {
+										filter = 'all';
+										typeFilter = 'all';
+										trophyQuery = '';
+									}}
+								/>
+							</div>
+						</div>
 					{/if}
 				{/if}
 			</div>
+			</section>
 		</div>
 	</div>
-</div>
+	</div>
 
-<!-- Mobile bottom bar -->
+<!--
+	Mobile bottom bar.
+
+	Deliberately passes NO `panel` snippet. The filters live once, in the page,
+	rendered by `game_filters.svelte` at every breakpoint — a second copy inside
+	this bar is what had "Filter by type" rendered twice on a phone. The bar
+	carries progress, search and sync, and nothing else.
+-->
 <MobileBar
 	percent={progressPercent}
 	primary="{completedCount}/{data.game.totalAchievements}"
@@ -453,38 +507,7 @@
 	statusTone={syncError ? 'error' : 'ok'}
 	syncing={syncing}
 	onsync={syncWithSteam}
-	searchPlaceholder="Search trophies..."
+	searchPlaceholder="Search trophies…"
+	searchLabel="Search trophies"
 	bind:query={trophyQuery}
->
-	{#snippet panel()}
-		<div class="flex items-center gap-2">
-					<div class="flex h-10 shrink-0 rounded-lg bg-steam-blue p-1 text-sm">
-				{#each filterOptions as opt}
-					<button
-								class="flex items-center gap-1 rounded-md px-2.5 text-xs {filter === opt.value ? 'bg-steam-accent text-steam-dark font-semibold' : 'text-gray-400'}"
-						onclick={() => filter = opt.value}
-					>
-						{opt.label}
-					</button>
-				{/each}
-			</div>
-			<select
-						class="h-10 min-w-0 flex-1 rounded-lg border-none bg-steam-blue px-2 text-xs text-gray-300 outline-none"
-				bind:value={typeFilter}
-			>
-				<option value="all">All types</option>
-				{#each achievementTypes as t}
-					<option value={t}>{t[0].toUpperCase() + t.slice(1)}</option>
-				{/each}
-			</select>
-			<select
-						class="h-10 shrink-0 rounded-lg border-none bg-steam-blue px-2 text-xs text-gray-300 outline-none"
-				bind:value={gameSort}
-			>
-				<option value="default">Default</option>
-				<option value="name">A–Z</option>
-				<option value="difficulty">Difficulty</option>
-			</select>
-		</div>
-	{/snippet}
-</MobileBar>
+/>

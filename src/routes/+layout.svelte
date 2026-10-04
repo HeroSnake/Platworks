@@ -3,6 +3,8 @@
 	import favicon from '#lib/assets/favicon.svg';
 	import { Trophy, ArrowLeft, User, RefreshCw, Loader2, ExternalLink } from '@lucide/svelte';
 	import GithubIcon from '#lib/components/github_icon.svelte';
+	import ThemePicker from '#lib/components/theme_picker.svelte';
+	import { saveTheme, type ThemeId } from '#lib/client/theme';
 	import { page } from '$app/state';
 	import { onNavigate } from '$app/navigation';
 	import { browser } from '$app/env';
@@ -21,6 +23,18 @@
 	);
 	let showSteamId = $state(false);
 	let steamId = $state(browser ? (localStorage.getItem('platworks:steamId') ?? '') : '');
+
+	// The palette is read back from the DOM rather than localStorage: `app.html`
+	// has already applied it before first paint, so the SSR markup and the first
+	// client render agree on it. Reading storage again here would be a second
+	// source of truth that could disagree with what is actually on screen.
+	let theme = $state<ThemeId>(browser
+		? ((document.documentElement.getAttribute('data-theme') as ThemeId | null) ?? 'ember')
+		: 'ember');
+
+	function setTheme(id: ThemeId) {
+		theme = saveTheme(id);
+	}
 
 	// Served straight from localStorage — we never hit Steam just to render a page.
 	let profile = $state<StoredProfile | null>(loadProfile());
@@ -115,15 +129,15 @@
 	<link rel="apple-touch-icon" href="/icon.svg" />
 </svelte:head>
 
-<div class="min-h-screen bg-steam-dark text-gray-100">
+<div class="min-h-screen bg-steam-dark text-ink">
 	<nav class="sticky-nav sticky top-0 z-50 border-b border-white/5 bg-steam-dark/80 backdrop-blur-md">
 		<!-- Taller on mobile (64px vs 56px) so the controls get real thumb-sized hit
 		     areas; every interactive element in here is 44px wide below `sm`. -->
-		<div class="flex h-16 w-full items-center gap-2 px-3 sm:h-14 sm:gap-2.5 sm:px-6 lg:px-8">
+		<div class="flex h-16 w-full items-center gap-2 px-3 sm:h-16 sm:gap-2.5 sm:px-6 lg:px-8">
 			{#if !isHome}
 				<a
 					href="/"
-					class="-ml-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-gray-400 active:bg-steam-blue sm:-ml-1 sm:h-9 sm:w-9"
+					class="-ml-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-ink-dim active:bg-steam-blue sm:-ml-1 sm:h-10 sm:w-10"
 					aria-label="Back to games"
 				>
 					<ArrowLeft class="h-6 w-6 sm:h-5 sm:w-5" />
@@ -132,11 +146,11 @@
 
 			<a href="/" class="flex min-w-0 items-center gap-2 rounded-lg px-1 py-2 font-semibold tracking-tight">
 				<Trophy class="h-6 w-6 shrink-0 text-steam-accent sm:h-5 sm:w-5" />
-				<span class="truncate text-lg sm:text-base {isGamePage ? 'hidden sm:inline' : ''}">PlatWorks</span>
+				<span class="truncate font-display text-lg sm:text-base {isGamePage ? 'hidden sm:inline' : ''}">PlatWorks</span>
 			</a>
 
 			{#if isGamePage && gameName}
-				<span class="min-w-0 truncate text-base text-gray-300 sm:hidden">{gameName}</span>
+				<span class="min-w-0 truncate text-sm font-medium text-ink-dim sm:text-base sm:hidden">{gameName}</span>
 			{/if}
 
 			<!-- Right-hand controls share one flex row so the account popover can stay
@@ -146,7 +160,7 @@
 					href={REPO_URL}
 					target="_blank"
 					rel="noreferrer noopener"
-					class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-gray-400 active:bg-steam-blue sm:h-9 sm:w-9"
+					class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-ink-dim active:bg-steam-blue sm:h-10 sm:w-10"
 					aria-label="PlatWorks on GitHub"
 					title="PlatWorks on GitHub"
 				>
@@ -154,8 +168,14 @@
 				</a>
 
 				<div class="relative shrink-0" bind:this={menuWrap}>
+					<!--
+						`h-11` (44px) at every breakpoint. It used to shrink to 36px on desktop
+						via the avatar's own `sm:h-7`, which failed the 40px tap-target floor
+						measured in the layout audit. The avatar inside stays 28px; the button
+						around it carries the target.
+					-->
 					<button
-						class="flex items-center gap-2 rounded-full pl-1 pr-1 sm:py-1 sm:pr-3 {showSteamId ? 'bg-steam-blue' : 'active:bg-steam-blue'} {steamId && !profile ? 'text-steam-accent' : ''}"
+						class="flex h-11 items-center gap-2 rounded-full pl-1 pr-1 sm:pr-3 {showSteamId ? 'bg-steam-blue' : 'active:bg-steam-blue'} {steamId && !profile ? 'text-steam-accent' : ''}"
 						onclick={toggleSteamPanel}
 						aria-label="Steam account"
 						aria-expanded={showSteamId}
@@ -165,15 +185,15 @@
 							<img
 								src={profile.avatar}
 								alt={profile.name}
-								class="h-11 w-11 shrink-0 rounded-full object-cover ring-1 ring-white/10 sm:h-7 sm:w-7"
+								class="h-7 w-7 shrink-0 rounded-full object-cover ring-1 ring-white/10"
 							/>
 						{:else}
-							<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-steam-blue sm:h-7 sm:w-7">
-								<User class="h-6 w-6 text-gray-400 sm:h-5 sm:w-5" />
+							<span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-steam-blue">
+								<User class="h-5 w-5 text-ink-dim" />
 							</span>
 						{/if}
 						{#if profile?.name}
-							<span class="hidden max-w-[9rem] truncate text-sm text-gray-200 md:block">{profile.name}</span>
+							<span class="hidden max-w-[9rem] truncate text-sm text-ink md:block">{profile.name}</span>
 						{/if}
 					</button>
 
@@ -192,12 +212,12 @@
 									/>
 								{:else}
 									<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-steam-blue">
-										<User class="h-5 w-5 text-gray-400" />
+										<User class="h-5 w-5 text-ink-dim" />
 									</span>
 								{/if}
 								<div class="min-w-0 flex-1">
-									<p class="truncate text-sm font-semibold text-gray-100">{profile.name}</p>
-									<p class="truncate text-xs text-gray-500">{profile.steamId}</p>
+									<p class="truncate text-sm font-semibold text-ink">{profile.name}</p>
+									<p class="truncate text-xs text-ink-faint">{profile.steamId}</p>
 								</div>
 								{#if profile.visibility && profile.visibility !== '3'}
 									<span class="shrink-0 rounded bg-yellow-900/50 px-2 py-1 text-[10px] text-yellow-300">Private</span>
@@ -206,11 +226,11 @@
 						{/if}
 
 						<div class="p-3">
-							<label for="steam-id" class="mb-1.5 block text-[11px] font-medium uppercase tracking-wide text-gray-500">
+							<label for="steam-id" class="mb-1.5 block text-[11px] font-medium uppercase tracking-wide text-ink-faint">
 								Steam ID or vanity name
 							</label>
 							<div class="flex items-center gap-2 rounded-lg bg-steam-blue px-3 py-2 focus-within:ring-1 focus-within:ring-steam-accent/60">
-								<User class="h-4 w-4 shrink-0 text-gray-500" />
+								<User class="h-4 w-4 shrink-0 text-ink-faint" />
 								<input
 									id="steam-id"
 									type="text"
@@ -218,7 +238,7 @@
 									autocomplete="off"
 									spellcheck="false"
 									placeholder="76561198… or profile URL"
-									class="min-w-0 flex-1 bg-transparent text-sm text-gray-200 outline-none placeholder:text-gray-500"
+									class="min-w-0 flex-1 bg-transparent text-sm text-ink outline-none placeholder:text-ink-faint"
 									bind:value={steamId}
 									oninput={saveSteamId}
 									onkeydown={(e) => { if (e.key === 'Enter') commitSteamId(); }}
@@ -228,7 +248,7 @@
 							{#if profileError}
 								<p class="mt-2 text-xs text-red-400">{profileError}</p>
 							{:else if steamId.trim() && !profile && !refreshingProfile}
-								<p class="mt-2 truncate text-xs text-gray-500">Connected: {steamId}</p>
+								<p class="mt-2 truncate text-xs text-ink-faint">Connected: {steamId}</p>
 							{/if}
 
 							<div class="mt-3 flex items-center gap-2">
@@ -249,13 +269,28 @@
 										href={profile.profileUrl}
 										target="_blank"
 										rel="noreferrer noopener"
-										class="flex h-10 shrink-0 items-center gap-1.5 rounded-lg bg-steam-blue px-3 text-sm text-gray-300 active:bg-steam-light"
+										class="flex h-10 shrink-0 items-center gap-1.5 rounded-lg bg-steam-blue px-3 text-sm text-ink-dim active:bg-steam-light"
 									>
 										<ExternalLink class="h-4 w-4" />
 										Profile
 									</a>
 								{/if}
 							</div>
+						</div>
+
+						<!--
+							Appearance, below the account block and separated by a rule.
+
+							Placed inside the existing popover rather than given its own
+							navbar button: it is a low-frequency preference, the navbar is
+							already at its tap-target minimum on a phone, and the popover
+							floats above the page so adding a section never reflows anything.
+						-->
+						<div class="border-t border-white/5 p-3">
+							<p class="mb-2 text-[11px] font-medium uppercase tracking-wide text-ink-faint">
+								Theme
+							</p>
+							<ThemePicker {theme} onchange={setTheme} />
 						</div>
 					</div>
 				{/if}

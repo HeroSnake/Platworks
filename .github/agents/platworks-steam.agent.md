@@ -19,7 +19,7 @@ Steam serves two different XML shapes. **Getting a tag name wrong returns `null`
 
 | Function | Purpose |
 |---|---|
-| `getGameDetails(appId, { hero? })` | name, short description, header, background, Metacritic |
+| `getGameDetails(appId, { hero? })` | name, short description, local header/hero paths, Metacritic |
 | `resolveSteamId(input)` | vanity name / profile URL / ID → Steam64 |
 | `getPlayerProfile(steamId64)` | name + avatar |
 | `getPlayerAchievements(steamId64, appId)` | per-achievement `achieved` + `unlockTime` |
@@ -27,32 +27,37 @@ Steam serves two different XML shapes. **Getting a tag name wrong returns `null`
 
 No API key is used or required; everything goes through public Steam community endpoints.
 
+### Game artwork is local — never reintroduce a CDN URL
+
+`headerImage` and `heroImage` are **public paths under `/images/games/{appId}/`**, served from files committed to `static/images/games/{appId}/`:
+
+| File | Size | Used by |
+|---|---|---|
+| `header.jpg` | 460×215 | library card |
+| `hero.jpg` | 1920×620 | game page hero — **absent for some games** |
+
+`scripts/fetch-game-images.mjs` owns those files. Run it after adding a game; it is idempotent and skips what is already there. Three traps, each of which caused a real bug:
+
+- **The obvious CDN path is a guess.** `shared.akamai.steamstatic.com/store_item_assets/steam/apps/{appId}/header.jpg` serves most games, but Steam hosts others from a **content-hashed** directory (`/apps/4126040/bf9b76d2…/header.jpg`). Aniimo (4126040) and WARDOGS (1867240) are both in that group, so the guess 404s for them however often it is retried. That is why the script resolves URLs from `appdetails` rather than composing them.
+- **`appdetails` intermittently 403s from Node.** When it did, `getGameDetails` swapped the real URL for that guess, which is why artwork appeared and vanished between reloads. With the files committed it cannot affect rendering. A process-lifetime `detailsCache` still guards the *text* fields, so one 403 cannot blank every blurb.
+- **Never add a remote `onerror` retry** for a header or hero. Artwork is local, so a failure means the game has no art on Steam — not that the first host was wrong. The components reveal a placeholder instead; see [platworks-ui.agent.md](./platworks-ui.agent.md) §1.
+
+**Achievement icons are the deliberate exception** and still load from Steam: 1647 of them would add far too much to the repo. `scripts/fetch-achievement-icons.mjs` owns `iconUrl` and must keep writing remote URLs. Only `fetch-game-images.mjs` produces local paths.
+
+**Steam's page background is gone.** `SteamGameDetails.background` no longer exists and must not be re-added. The layer rendered behind a 90% `bg-steam-dark` scrim — a tenth of it visible — and the real files ran to 1.6 MB each, so 17 MB of repo bought something invisible. Removing it also dropped a full-viewport image request from every game page.
+
 ### Store `appdetails` is often blocked from Node
 
-`store.steampowered.com/api/appdetails` sits behind Akamai and frequently returns **Access Denied (403 HTML)** to server-side fetches. When that happens, `getGameDetails` **must not return `null`**: fall back to CDN artwork so the library still shows images.
-
-```
-https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/{appId}/header.jpg
-```
+`store.steampowered.com/api/appdetails` sits behind Akamai and frequently returns **Access Denied (403 HTML)** to server-side fetches. When that happens, `getGameDetails` **must not return `null`**: fall back to the local artwork path so the library still shows images.
 
 Name / short description / Metacritic stay empty in that mode — callers use `steam?.name || game.name`. Do not leave `steam: null` just because the JSON API failed.
 
-### `hero: true` is opt-in, and it is a HEAD probe
+### `hero: true` is opt-in, and costs nothing
 
-`appdetails` has no wide banner. The store hero is a separate asset:
+`appdetails` has no wide banner, so the hero is a separate local asset. It is **1920x620** versus `header_image`'s **460x215**; that ratio matters, because 460x215 upscaled across a full-width banner is visibly soft.
 
-```
-https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/{appId}/library_hero.jpg
-```
-
-It is **1920x620**, versus `header_image`'s **460x215**. That ratio matters: the game page stretches the banner full-bleed, and 460x215 upscaled to ~900px wide is visibly soft.
-
-Two things to know before using it:
-
-- **It is not guaranteed to exist.** Roughly one game in twelve 404s, so `getHeroImage` returns `string | null` and callers must fall back to `headerImage`.
-- **The probe is a `HEAD`, not free.** The library page calls `getGameDetails` for *every* game on load, so `hero` defaults to `false` and only `/game/[appId]` opts in. Do not flip the default without re-measuring the library's load time.
-
-Steam also serves `page_bg_raw.jpg` (`background_raw`), which is enormous — a 33k-pixel panorama, ~1.3 MB. It is fine as a CSS page background and is what `background` resolves to; never put it in an `<img>`.
+- **It is not guaranteed to exist.** Roughly one game in twelve has none on Steam, so the file is simply absent and the component's `onerror` reveals the placeholder. There is **no probe**: the old `HEAD` request against the CDN was an external call on every game page load, for information the client discovers for free when the file 404s.
+- **`hero` still defaults to `false`** because the library page calls `getGameDetails` for every game and never renders a hero.
 
 ## 2. Profile XML — `https://steamcommunity.com/profiles/{steamId64}/?xml=1`
 
@@ -92,6 +97,8 @@ Traps, all of which have already cost time here:
 - **A silent no-op is the dangerous case.** If a display name drifts, an unmatched entry must surface in the script's report. Never let a fuzzy fallback quietly assign a neighbouring trophy's art.
 
 `iconUrl` is **optional** in the schema so a hand-added game still validates; `achievement_row.svelte` simply omits the `<img>` when it is absent.
+
+**`iconUrl` stays a Steam CDN URL — do not localise these.** Game artwork (header, hero) was moved into `static/images/games/` for correctness, but there are 1647 icons and they would add far too much to the repo. They remain the one intentional external image dependency. See §1.
 
 ## 4. Cloudflare-blocked hosts
 

@@ -2,14 +2,20 @@ export interface SteamGameDetails {
 	appId: number;
 	name: string;
 	shortDescription: string;
+	/**
+	 * Local path under `/images/games/{appId}/`, mirrored into the repo by
+	 * `scripts/fetch-game-images.mjs`. Never a Steam CDN URL — the app must not
+	 * depend on an external image host for artwork it could just as well ship.
+	 */
 	headerImage: string;
 	/**
-	 * Wide banner for the game-page hero, or null when the caller did not ask for one
-	 * (see `getGameDetails`'s `hero` option). Steam's `header_image` is only 460x215,
-	 * which goes visibly soft stretched across a full-width hero.
+	 * Local path under `/images/games/{appId}/hero.jpg`, or null when the caller did
+	 * not ask for one (see `getGameDetails`'s `hero` option). Steam's `header_image`
+	 * is only 460x215, which goes visibly soft across a full-width hero. Not every
+	 * game has one; when the file is absent the component's `onerror` reveals the
+	 * placeholder beneath it.
 	 */
 	heroImage: string | null;
-	background: string;
 	metacriticScore: number | null;
 	metacriticUrl: string | null;
 }

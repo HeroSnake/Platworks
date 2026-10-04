@@ -2,12 +2,156 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-	--color-steam-blue: #1b2838;
-	--color-steam-dark: #171a21;
-	--color-steam-light: #2a475e;
-	--color-steam-accent: #66c0f4;
-	--color-steam-green: #4c6b22;
+/* ============================================================
+   THEMING — six palettes, one set of token names
+   ============================================================
+   The `steam-*` tokens below are declared as `var()` references rather than
+   literal colours. That is the whole trick: ~114 class usages across the app
+   (`bg-steam-blue`, `text-steam-accent`, …) keep working unchanged, and the
+   palette swap is a single `data-theme` attribute on <html>.
+
+   Keep the token *names* stable. Adding a seventh palette means adding one
+   `[data-theme=…]` block here — never renaming a token.
+*/
+@theme inline {
+	/* Surfaces, darkest to lightest. */
+	--color-steam-dark: var(--pw-bg);
+	--color-steam-blue: var(--pw-surface);
+	--color-steam-light: var(--pw-surface-2);
+
+	/* Interactive + progress. */
+	--color-steam-accent: var(--pw-accent);
+	--color-steam-green: var(--pw-success);
+
+	/* Text + lines, so components stop reaching for Tailwind's gray ramp. */
+	--color-ink: var(--pw-text);
+	--color-ink-dim: var(--pw-dim);
+	--color-ink-faint: var(--pw-faint);
+	--color-line: var(--pw-border);
+
+	--font-display: var(--pw-font-display);
+	--font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+	--font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* --- Ember (default): warm graphite + mint --- */
+:root,
+:root[data-theme='ember'] {
+	--pw-bg: #0a0b0d;
+	--pw-surface: #15181d;
+	--pw-surface-2: #242932;
+	--pw-border: #252a32;
+	--pw-text: #e9ecef;
+	--pw-dim: #98a1ae;
+	--pw-faint: #6b7482;
+	--pw-accent: #4ade9b;
+	--pw-accent-ink: #04291b;
+	--pw-success: #4ade9b;
+}
+
+/* --- Amber: Steam-adjacent, accent split from completion green --- */
+:root[data-theme='amber'] {
+	--pw-bg: #0b0c0e;
+	--pw-surface: #131519;
+	--pw-surface-2: #242830;
+	--pw-border: #31363f;
+	--pw-text: #e6e8ec;
+	--pw-dim: #9aa3af;
+	--pw-faint: #6f7783;
+	--pw-accent: #ff9e3d;
+	--pw-accent-ink: #3b1800;
+	--pw-success: #4ade80;
+}
+
+/* --- Cobalt: cold blue, closest to Steam's own identity --- */
+:root[data-theme='cobalt'] {
+	--pw-bg: #070a11;
+	--pw-surface: #111827;
+	--pw-surface-2: #212b3d;
+	--pw-border: #253048;
+	--pw-text: #e8edf5;
+	--pw-dim: #97a3b8;
+	--pw-faint: #67748c;
+	--pw-accent: #4cc2ff;
+	--pw-accent-ink: #032434;
+	--pw-success: #3dd68c;
+}
+
+/* --- Matrix: phosphor green on near-black --- */
+:root[data-theme='matrix'] {
+	--pw-bg: #030604;
+	--pw-surface: #0a120a;
+	--pw-surface-2: #182618;
+	--pw-border: #1f331f;
+	--pw-text: #d6ffe0;
+	--pw-dim: #7fbf8a;
+	--pw-faint: #4f7f5c;
+	--pw-accent: #00ff66;
+	--pw-accent-ink: #001f0b;
+	--pw-success: #00ff66;
+}
+
+/* --- Cyberpunk: cyan + magenta on indigo-black --- */
+:root[data-theme='cyberpunk'] {
+	--pw-bg: #08060f;
+	--pw-surface: #120d1f;
+	--pw-surface-2: #241a3d;
+	--pw-border: #33244f;
+	--pw-text: #f0e9ff;
+	--pw-dim: #a99bc4;
+	--pw-faint: #6f6191;
+	--pw-accent: #00e5ff;
+	--pw-accent-ink: #00232b;
+	--pw-success: #ff3d9a;
+}
+
+/* --- Vapor: violet, premium/editorial --- */
+:root[data-theme='vapor'] {
+	--pw-bg: #0b0811;
+	--pw-surface: #161022;
+	--pw-surface-2: #2a2042;
+	--pw-border: #2e2447;
+	--pw-text: #efe9f7;
+	--pw-dim: #a79bbf;
+	--pw-faint: #776b90;
+	--pw-accent: #a78bfa;
+	--pw-accent-ink: #1c0f3d;
+	--pw-success: #5fd69b;
+}
+
+/*
+   Matrix reads as Matrix because of the monospace, not the green. Swapping the
+   font family per-palette is cheap and does more work than any colour tweak.
+   Only the display face changes — body text stays Inter everywhere.
+*/
+:root {
+	--pw-font-display: 'Space Grotesk', Inter, system-ui, sans-serif;
+}
+:root[data-theme='matrix'] {
+	--pw-font-display: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+@layer base {
+	/*
+	   Counts animate on every check-off. Tabular figures keep the digits the same
+	   width, so the number does not shuffle sideways while it counts.
+	*/
+	.tabular {
+		font-variant-numeric: tabular-nums;
+	}
+
+	/*
+	   Horizontally scrollable chip rows (filters, type tags). The scrollbar is a
+	   permanent affordance saying "there is more to the right", and on a touch
+	   device it overlaps the row it belongs to.
+	*/
+	.scrollbar-none {
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+	.scrollbar-none::-webkit-scrollbar {
+		display: none;
+	}
 }
 
 /* GPU-accelerated expand/collapse */
@@ -86,4 +230,26 @@
 .fixed-bottom-bar {
 	will-change: transform;
 	backface-visibility: hidden;
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================
+   Everything above animates transform/opacity/grid-rows, all of which are cheap
+   — but "cheap" is not "wanted". This drops every duration to ~0 rather than
+   disabling animation, so state transitions (the panel still opens, the check
+   still turns green) survive intact and nothing merely looks broken.
+
+   `!important` is deliberate: a utility like `duration-500` would otherwise win
+   on specificity. Kept last so it overrides the rules above it.
+*/
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }

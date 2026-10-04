@@ -4,6 +4,34 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="text-scale" content="scale" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!--
+			Applies the stored palette before first paint.
+
+			This must stay inline and synchronous in <head>. Moving it into the
+			layout means Svelte hydrates first, so every load flashes the default
+			Ember palette before switching to the user's choice — on a dark UI that
+			reads as a white flash. The value is checked against the known set so a
+			hand-edited entry cannot leave <html> with an unstyled attribute.
+		-->
+		<script>
+			try {
+				var t = localStorage.getItem('platworks:theme');
+				if (
+					t &&
+					['ember', 'amber', 'cobalt', 'matrix', 'cyberpunk', 'vapor'].indexOf(t) !== -1
+				) {
+					document.documentElement.setAttribute('data-theme', t);
+				}
+			} catch (e) {
+				/* private mode / storage disabled — keep the default */
+			}
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

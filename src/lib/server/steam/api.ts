@@ -2,39 +2,57 @@ import type { SteamGameDetails, SteamAchievementStatus, SteamProfile } from '#li
 
 const STORE_API = 'https://store.steampowered.com/api';
 const COMMUNITY = 'https://steamcommunity.com';
-const ASSETS = 'https://shared.akamai.steamstatic.com/store_item_assets';
 
 export interface GetGameDetailsOptions {
 	/**
-	 * Probe for the wide `library_hero.jpg` banner. Off by default: the library page
-	 * calls this for every game, and the probe costs an extra round trip each. The
-	 * single-game page opts in because it is the only caller that renders a hero.
+	 * Include the wide `hero.jpg` banner. Off by default: the library page calls this
+	 * for every game and never renders a hero. The single-game page opts in.
 	 */
 	hero?: boolean;
 }
 
-/** Stable CDN paths that do not need the store API (which Akamai often 403s from Node). */
-function cdnHeaderImage(appId: number): string {
-	return `${ASSETS}/steam/apps/${appId}/header.jpg`;
-}
-
-function cdnBackground(appId: number): string {
-	return `${ASSETS}/steam/apps/${appId}/page_bg_generated_v6b.jpg`;
-}
+/**
+ * Game artwork is committed to `static/images/games/{appId}/` and served from
+ * there — the app must never request Steam's CDN for a header or hero.
+ *
+ * `scripts/fetch-game-images.mjs` owns those files. It resolves the URLs from
+ * `appdetails`, because the obvious un-hashed CDN path is a guess that 404s for
+ * some apps: Steam serves those from a content-hashed directory instead
+ * (`/apps/4126040/bf9b76d2…/header.jpg`). Aniimo and WARDOGS are both in that
+ * group. `appdetails` also 403s intermittently from Node, which is what made
+ * artwork appear and vanish between reloads; since the files now live in the repo,
+ * none of that can affect rendering.
+ *
+ * The achievement icons are the deliberate exception and still load from Steam —
+ * 1647 of them would add far too much to the repo. See
+ * `scripts/fetch-achievement-icons.mjs`.
+ */
+const localHeader = (appId: number) => `/images/games/${appId}/header.jpg`;
+const localHero = (appId: number) => `/images/games/${appId}/hero.jpg`;
 
 /**
- * When `appdetails` is blocked we still return CDN artwork so the library never
- * renders empty image slots. Name/description stay empty — callers fall back to
- * local game JSON for the title (`steam?.name || game.name`).
+ * Successful `appdetails` responses, kept for the life of the server process.
+ *
+ * Artwork no longer depends on this, but name, description and the Metacritic
+ * score do, and the store API intermittently 403s from Node. Caching means one
+ * success is enough and a later 403 cannot blank out every game's blurb.
+ *
+ * Artwork does not change for a shipped app, so there is no TTL.
+ */
+const detailsCache = new Map<number, SteamGameDetails>();
+
+/**
+ * When `appdetails` is blocked we still return local artwork, so the library
+ * never renders empty image slots. Name/description stay empty — callers fall
+ * back to local game JSON for the title (`steam?.name || game.name`).
  */
 function fallbackDetails(appId: number, heroImage: string | null): SteamGameDetails {
 	return {
 		appId,
 		name: '',
 		shortDescription: '',
-		headerImage: cdnHeaderImage(appId),
+		headerImage: localHeader(appId),
 		heroImage,
-		background: cdnBackground(appId),
 		metacriticScore: null,
 		metacriticUrl: null
 	};
@@ -44,37 +62,52 @@ export async function getGameDetails(
 	appId: number,
 	{ hero = false }: GetGameDetailsOptions = {}
 ): Promise<SteamGameDetails | null> {
-	const heroImage = hero ? await getHeroImage(appId) : null;
+	// A cached entry already has the authoritative header URL, so there is nothing
+	// to re-fetch. See the cache comment for why this is correctness, not speed.
+	const cached = detailsCache.get(appId);
+	if (cached) return hero && !cached.heroImage ? { ...cached, heroImage: localHeroImage(appId) } : cached;
+
+	const heroImage = hero ? localHeroImage(appId) : null;
 
 	// Without `l=english`, Steam geo-localizes name/description. Browser UA: bare
 	// Node fetches are frequently Access-Denied by Akamai on store.steampowered.com.
-	try {
-		const res = await fetch(`${STORE_API}/appdetails?appids=${appId}&l=english`, {
-			headers: {
-				'User-Agent':
-					'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-				Accept: 'application/json'
+	//
+	// Two attempts with a short gap: the 403 is intermittent rather than a hard
+	// block, and a retry is far cheaper than shipping a game with no artwork.
+	for (let attempt = 0; attempt < 2; attempt++) {
+		if (attempt > 0) await new Promise((r) => setTimeout(r, 250));
+
+		try {
+			const res = await fetch(`${STORE_API}/appdetails?appids=${appId}&l=english`, {
+				headers: {
+					'User-Agent':
+						'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+					Accept: 'application/json'
+				}
+			});
+			if (res.ok) {
+				const json = await res.json();
+				const data = json[String(appId)];
+				if (data?.success) {
+					const d = data.data;
+					const details: SteamGameDetails = {
+						appId,
+						name: d.name,
+						shortDescription: d.short_description,
+						// Local paths, always — never Steam's CDN, even though `appdetails`
+						// hands us a perfectly good `header_image`.
+						headerImage: localHeader(appId),
+						heroImage,
+						metacriticScore: d.metacritic?.score ?? null,
+						metacriticUrl: d.metacritic?.url ?? null
+					};
+					detailsCache.set(appId, details);
+					return details;
+				}
 			}
-		});
-		if (res.ok) {
-			const json = await res.json();
-			const data = json[String(appId)];
-			if (data?.success) {
-				const d = data.data;
-				return {
-					appId,
-					name: d.name,
-					shortDescription: d.short_description,
-					headerImage: d.header_image || cdnHeaderImage(appId),
-					heroImage,
-					background: d.background_raw ?? d.background ?? cdnBackground(appId),
-					metacriticScore: d.metacritic?.score ?? null,
-					metacriticUrl: d.metacritic?.url ?? null
-				};
-			}
+		} catch {
+			/* retry, then fall through to CDN-only details */
 		}
-	} catch {
-		/* fall through to CDN-only details */
 	}
 
 	// Store API down / 403 — keep images alive via the asset CDN.
@@ -82,18 +115,16 @@ export async function getGameDetails(
 }
 
 /**
- * Steam's store-page hero banner (1920x620). Not part of `appdetails` and not
- * guaranteed to exist — roughly one game in a dozen 404s — so this is a HEAD probe
- * and callers must be ready for null.
+ * Steam's store-page hero banner (1920x620), mirrored to
+ * `static/images/games/{appId}/hero.jpg` by `scripts/fetch-game-images.mjs`.
+ *
+ * Roughly one game in a dozen has none on Steam. There is no probe for that: the
+ * probe used to be a HEAD request to the CDN, which was an external call on every
+ * game page load for information the client can discover for free — a missing
+ * file 404s and the component's `onerror` reveals the placeholder underneath.
  */
-async function getHeroImage(appId: number): Promise<string | null> {
-	const url = `${ASSETS}/steam/apps/${appId}/library_hero.jpg`;
-	try {
-		const res = await fetch(url, { method: 'HEAD' });
-		return res.ok ? url : null;
-	} catch {
-		return null;
-	}
+function localHeroImage(appId: number): string | null {
+	return localHero(appId);
 }
 
 /** Resolves any Steam input to a Steam64 ID using public XML profiles. */

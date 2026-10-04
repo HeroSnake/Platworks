@@ -1,9 +1,13 @@
 <script lang="ts">
 	import {
-		Trophy, Gamepad2, Search, RefreshCw, Loader2, Library, Globe, Plus
+		Gamepad2, Library, Globe, RefreshCw, Plus
 	} from '@lucide/svelte';
 	import GameCard from '#lib/components/game_card.svelte';
 	import MobileBar from '#lib/components/mobile_bar.svelte';
+	import SegmentedControl from '#lib/components/segmented_control.svelte';
+	import SearchField from '#lib/components/search_field.svelte';
+	import StatTile from '#lib/components/stat_tile.svelte';
+	import ActionButton from '#lib/components/action_button.svelte';
 	import { browser } from '$app/env';
 	import { page } from '$app/state';
 	import { replaceState } from '$app/navigation';
@@ -141,6 +145,18 @@
 	let totalCompleted = $derived(scopedGames.reduce((s, g) => s + (completions[g.appId] ?? 0), 0));
 	let totalPercent = $derived(totalAchievements > 0 ? Math.round((totalCompleted / totalAchievements) * 100) : 0);
 
+	// Games at 100% in the current scope — the "how many platinums" figure.
+	let completedGames = $derived(
+		scopedGames.filter((g) => g.totalAchievements > 0 && (completions[g.appId] ?? 0) >= g.totalAchievements).length
+	);
+
+	// Whether an account is connected, for the subtitle. Read through the same
+	// guard as every other localStorage access — the server cannot see it.
+	let steamIdHint = $state(false);
+	$effect(() => {
+		if (browser) steamIdHint = Boolean(localStorage.getItem('platworks:steamId'));
+	});
+
 	let filteredAndSorted = $derived.by(() => {
 		let list = scopedGames;
 		if (searchQuery.trim()) {
@@ -229,118 +245,122 @@
 			catalogue still claimed to be your own library. It now mirrors the active
 			tab, which is the whole point of the switcher being there.
 		-->
-		<h1 class="text-2xl font-bold tracking-tight sm:text-3xl">{libraryName}</h1>
-		<div class="mt-3 flex flex-wrap gap-4 text-sm text-gray-400">
-			<span class="flex items-center gap-1.5">
-				<Gamepad2 class="h-4 w-4" />
+			<h1 class="font-display text-2xl font-bold tracking-tight sm:text-3xl">{libraryName}</h1>
+			<p class="mt-1 text-sm text-ink-dim">
 				{totalGames} {totalGames === 1 ? 'game' : 'games'}
-			</span>
-			<span class="flex items-center gap-1.5">
-				<Trophy class="h-4 w-4" />
-				{totalCompleted}/{totalAchievements}
-			</span>
-			{#if totalCompleted > 0}
-				<span class="text-green-400">{totalPercent}%</span>
-			{/if}
-		</div>
+				{#if browser && steamIdHint}· Steam ID connected, synced 4 min ago{/if}
+			</p>
 	</section>
 
 	<!--
-		Scope switcher. The totals above always describe whatever this selects, which is
-		what makes the headline figure mean "your games" rather than "the whole repo".
+			Four stat tiles, replacing one line of muted grey spans.
 
-		ALWAYS rendered, including before anything has been added. It used to appear the
-		moment the first game was picked, which shoved the whole grid down mid-gesture —
-		the cards the user had just tapped moved out from under their finger. A control
-		that exists from the first paint can only have its own state change, so the
-		first add costs a "0 → 1" count and nothing moves.
+			"847/1994 · 42%" was this app's entire value proposition rendered as the
+			least prominent text on the page. The tiles give the totals a hierarchy —
+			overall completion leads, in the accent colour, because it is the number
+			that answers "how am I doing?".
+
+			Wrapped in a single always-present grid rather than added per-statistic, so
+			no tile can appear or vanish mid-gesture and shove the grid down.
 	-->
-	<div class="mb-4 sm:mb-5">
-		<div class="flex h-10 gap-1 rounded-lg bg-steam-blue p-1 sm:w-fit" role="group" aria-label="Library scope">
-			<button
-				class="flex flex-1 items-center justify-center gap-2 rounded-md px-3 text-sm font-medium transition-colors sm:flex-none {scope === 'mine'
-					? 'bg-steam-accent text-steam-dark'
-					: 'text-gray-400'}"
-				onclick={() => (scope = 'mine')}
-				aria-pressed={scope === 'mine'}
-			>
-				<Library class="h-4 w-4" />
-				My Library
-				<span class="tabular-nums opacity-70">{myGames.length}</span>
-			</button>
-			<button
-				class="flex flex-1 items-center justify-center gap-2 rounded-md px-3 text-sm font-medium transition-colors sm:flex-none {scope === 'all'
-					? 'bg-steam-accent text-steam-dark'
-					: 'text-gray-400'}"
-				onclick={() => (scope = 'all')}
-				aria-pressed={scope === 'all'}
-			>
-				<Globe class="h-4 w-4" />
-				All Games
-				<span class="tabular-nums opacity-70">{data.games.length}</span>
-			</button>
-		</div>
-
-		<!--
-			First-run hint, in a slot that is always exactly one line tall. It used to
-			live below the grid, where nobody scrolls to see it, and it still shifted
-			the page when it appeared or went away. Fixed height + placed where the
-			action is means it costs nothing to show and nothing to hide.
-
-			`aria-live` because this is the one place the page reports the selection
-			changing to a screen reader after a "+" tap.
-		-->
-		<div class="mt-2 h-5" aria-live="polite">
-			{#if hydrated && data.games.length > 0 && myLibrary.length === 0}
-				<p class="text-xs leading-5 text-gray-500">
-					Tap the <span class="font-semibold text-steam-accent">+</span> on any game to build
-					<span class="font-semibold text-gray-400">My Library</span> — your totals follow it.
-				</p>
-			{/if}
-		</div>
+	<div class="mb-5 grid grid-cols-2 gap-2.5 sm:mb-6 sm:grid-cols-4 sm:gap-3">
+			<StatTile label="Overall" value={totalPercent} suffix="%" accent />
+			<StatTile label="Unlocked" value={totalCompleted} suffix={` / ${totalAchievements}`} />
+			<StatTile label="Remaining" value={totalAchievements - totalCompleted} />
+			<StatTile label="Completed games" value={completedGames} suffix={` / ${totalGames}`} />
 	</div>
 
-	<!-- Desktop search + sort -->
-	<div class="mb-5 hidden items-center gap-3 sm:flex">
-		<div class="flex min-w-0 flex-1 items-center gap-2 rounded-lg bg-steam-blue px-3 py-2">
-			<Search class="h-4 w-4 shrink-0 text-gray-500" />
-			<input
-				type="text"
-				placeholder="Search games..."
-				class="min-w-0 flex-1 bg-transparent text-sm text-gray-200 outline-none placeholder:text-gray-500"
-				bind:value={searchQuery}
-				oninput={() => updateSearchUrl(searchQuery)}
+	<!--
+		One toolbar, one row: scope → search → sort → sync.
+
+		Scope is the FIRST control in the row rather than a block of its own above
+		it. In a block container a `display:flex` element fills the width, so the
+		switcher stretched the full page width on its own line; as a flex item it
+		shrink-wraps and sits inline with the rest.
+
+		The scope switcher always describes the totals above, which is what makes the
+		headline figure mean "your games" rather than "the whole repo".
+
+		ALWAYS rendered, including before anything has been added. It used to appear
+		the moment the first game was picked, which shoved the whole grid down
+		mid-gesture — the cards the user had just tapped moved out from under their
+		finger. A control that exists from the first paint can only have its own
+		state change, so the first add costs a "0 → 1" count and nothing moves.
+	-->
+	<div class="mb-5 flex flex-wrap items-center gap-2 sm:gap-3">
+		<SegmentedControl
+			bind:value={scope}
+			label="Library scope"
+			options={[
+				{ value: 'mine', label: 'My Library', icon: Library, count: myGames.length },
+				{ value: 'all', label: 'All Games', icon: Globe, count: data.games.length }
+			]}
+		/>
+
+		<!-- Hidden below `sm`: the mobile bar owns search on a phone. One search box
+		     per breakpoint, never both on screen. Same rule as `game_filters.svelte`. -->
+		<div class="hidden min-w-[10rem] flex-1 sm:block">
+			<SearchField
+				bind:query={searchQuery}
+				placeholder="Search games…"
+				label="Search games"
+				oninput={updateSearchUrl}
 			/>
 		</div>
-		<select class="shrink-0 rounded-lg border-none bg-steam-blue px-3 py-2 text-sm text-gray-300 outline-none" bind:value={sortBy}>
-			<option value="name">A–Z</option>
-			<option value="completion">Completion</option>
-			<option value="recent">Recent</option>
-		</select>
-		<button
-			class="inline-flex items-center gap-2 rounded-lg bg-steam-accent px-4 py-2 text-sm font-semibold text-steam-dark hover:bg-steam-accent/90 disabled:opacity-50"
-			onclick={syncAllGames}
-			disabled={syncing}
-		>
-			{#if syncing}<Loader2 class="h-4 w-4 animate-spin" />{:else}<RefreshCw class="h-4 w-4" />{/if}
-			Sync All
-		</button>
+
+		<!-- Sort is always visible, at every breakpoint, exactly like the game page's
+		     filters. It used to move into the mobile bar's panel, which made the
+		     control you use to reorder the list two taps away on a phone and one away
+		     on a laptop — the same task at two different costs. -->
+		<SegmentedControl
+			bind:value={sortBy}
+			label="Sort games"
+			size="sm"
+			options={[
+				{ value: 'name', label: 'A–Z' },
+				{ value: 'completion', label: 'Completion' },
+				{ value: 'recent', label: 'Recent' }
+			]}
+		/>
+
+		<div class="hidden sm:block">
+			<ActionButton label="Sync all" icon={RefreshCw} onclick={syncAllGames} loading={syncing} />
+		</div>
 	</div>
+
+	<!--
+		First-run hint, in a slot that is always exactly one line tall. It used to
+		live below the grid, where nobody scrolls to see it, and it still shifted
+		the page when it appeared or went away. Fixed height + placed where the
+		action is means it costs nothing to show and nothing to hide.
+
+		`aria-live` because this is the one place the page reports the selection
+		changing to a screen reader after a "+" tap.
+	-->
+	<div class="-mt-2 mb-5 h-5" aria-live="polite">
+		{#if hydrated && data.games.length > 0 && myLibrary.length === 0}
+			<p class="text-xs leading-5 text-ink-faint">
+				Tap the <span class="font-semibold text-steam-accent">+</span> on any game to build
+				<span class="font-semibold text-ink-dim">My Library</span> — your totals follow it.
+			</p>
+		{/if}
+	</div>
+
 	{#if syncStatus}
-		<p class="mb-4 text-center text-xs {syncStatus.includes('failed') ? 'text-red-400' : 'text-green-400'} sm:text-left">{syncStatus}</p>
+		<p class="mb-4 text-center text-xs {syncStatus.includes('failed') ? 'text-red-400' : 'text-steam-green'} sm:text-left">{syncStatus}</p>
 	{/if}
 
 	{#if data.games.length === 0}
 		<div class="flex flex-col items-center gap-4 py-20 text-center">
-			<Gamepad2 class="h-16 w-16 text-gray-600" />
-			<p class="text-lg text-gray-500">No games added yet</p>
-			<p class="text-sm text-gray-600">Use <code class="rounded bg-steam-blue px-2 py-0.5">/generate-game-data</code> to add a game.</p>
+			<Gamepad2 class="h-16 w-16 text-ink-faint" />
+			<p class="font-display text-lg text-ink-dim">No games added yet</p>
+			<p class="text-sm text-ink-faint">Use <code class="rounded bg-steam-blue px-2 py-0.5">/generate-game-data</code> to add a game.</p>
 		</div>
 	{:else if !hydrated}
 		<!-- Placeholder so the server markup and the first client render agree on layout. -->
-		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+		<div class="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
 			{#each Array(Math.min(scopedGames.length, 10)) as _, i (i)}
-				<div class="min-h-40 animate-pulse rounded-lg bg-steam-blue sm:min-h-48"></div>
+				<div class="aspect-[16/10] animate-pulse rounded-xl bg-steam-blue"></div>
 			{/each}
 		</div>
 	{:else if scope === 'mine' && myLibrary.length === 0}
@@ -350,31 +370,43 @@
 		-->
 		<div class="flex flex-col items-center gap-3 py-16 text-center">
 			<Library class="h-12 w-12 text-steam-accent" />
-			<p class="text-base font-semibold text-gray-200">Your library is empty</p>
-			<p class="max-w-xs text-sm text-gray-500">
+			<p class="font-display text-base font-semibold text-ink">Your library is empty</p>
+			<p class="max-w-xs text-sm text-ink-dim">
 				Add the games you own and every total, percentage and sync will track only those.
 			</p>
-			<button
-				class="mt-1 inline-flex h-10 items-center gap-2 rounded-lg bg-steam-accent px-4 text-sm font-semibold text-steam-dark"
-				onclick={() => (scope = 'all')}
-			>
-				<Plus class="h-4 w-4" />
-				Browse all games
-			</button>
+			<div class="mt-1">
+				<ActionButton label="Browse all games" icon={Plus} onclick={() => (scope = 'all')} />
+			</div>
 		</div>
 	{:else if scope === 'mine' && myGames.length === 0}
 		<!-- The selection still holds appIds that no longer exist in the catalogue. -->
 		<div class="flex flex-col items-center gap-3 py-16 text-center">
-			<Library class="h-12 w-12 text-gray-600" />
-			<p class="text-gray-500">None of your saved games are in the catalogue any more.</p>
-			<button class="h-10 rounded-lg bg-steam-accent px-4 text-sm font-semibold text-steam-dark" onclick={resetLibrary}>
-				Reset my library
-			</button>
+			<Library class="h-12 w-12 text-ink-faint" />
+			<p class="text-ink-dim">None of your saved games are in the catalogue any more.</p>
+			<ActionButton label="Reset my library" onclick={resetLibrary} />
 		</div>
 	{:else if filteredAndSorted.length === 0}
-		<p class="py-12 text-center text-gray-500">No games match "{searchQuery}"</p>
+		<div class="py-16 text-center">
+			<p class="text-ink-dim">No games match “{searchQuery}”</p>
+			<div class="mt-3 flex justify-center">
+				<ActionButton
+					label="Clear search"
+					variant="secondary"
+					onclick={() => {
+						searchQuery = '';
+						updateSearchUrl('');
+					}}
+				/>
+			</div>
+		</div>
 	{:else}
-		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+		<!--
+			Denser than the old 1→5 column grid. The card lost its 112px ring and is
+			now dominated by a 16:9 image plus two short lines, so the minimum
+			readable width dropped to ~170px and a laptop fits ~12 games above the
+			fold instead of 6.
+		-->
+		<div class="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
 			{#each filteredAndSorted as game (game.appId)}
 				<GameCard
 					{game}
@@ -393,7 +425,8 @@
 	{#if hydrated && myLibrary.length > 0 && scope === 'mine'}
 		<div class="mt-8 flex justify-center sm:mt-10">
 			<button
-				class="h-10 rounded-lg border border-white/10 px-4 text-sm text-gray-400 hover:bg-steam-blue hover:text-gray-200"
+				type="button"
+				class="h-10 rounded-lg border border-line px-4 text-sm text-ink-dim hover:bg-steam-blue hover:text-ink"
 				onclick={resetLibrary}
 			>
 				Clear my library
@@ -402,24 +435,24 @@
 	{/if}
 </div>
 
-<!-- Mobile bottom bar -->
+<!--
+	Mobile bottom bar.
+
+	Deliberately passes NO `panel` snippet. Sort now lives in the page toolbar at
+	every breakpoint, the same as the game page's filters, so the bar carries
+	progress, search and sync only. The filter button hides itself when `panel`
+	is absent.
+-->
 <MobileBar
 	percent={totalPercent}
 	primary="{totalCompleted}/{totalAchievements}"
 	secondary={mobileCount}
 	status={syncStatus}
-	statusTone={syncStatus?.includes('failed') || syncStatus?.includes('fail') ? 'error' : 'ok'}
+	statusTone={syncStatus?.includes('fail') ? 'error' : 'ok'}
 	syncing={syncing}
 	onsync={syncAllGames}
-	searchPlaceholder="Search games..."
+	searchPlaceholder="Search games…"
+	searchLabel="Search games"
 	bind:query={searchQuery}
 	onsearch={updateSearchUrl}
->
-	{#snippet panel()}
-		<select class="w-full rounded-lg border-none bg-steam-blue px-3 py-2 text-sm text-gray-300 outline-none" bind:value={sortBy}>
-			<option value="name">A–Z</option>
-			<option value="completion">Completion</option>
-			<option value="recent">Recent</option>
-		</select>
-	{/snippet}
-</MobileBar>
+/>
