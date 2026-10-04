@@ -44,8 +44,8 @@ rating survives being colour-blind, greyscale, or read on a bright screen outdoo
 
 Optional, and read-only.
 
-PlatWorks can pull your real achievement list from a **public** Steam profile, so you don't tick 1647
-boxes by hand. Paste a Steam ID, a vanity URL, or a profile link into the account button in the top-right
+PlatWorks can pull your real achievement list from a **public** Steam profile, so you don't tick all
+trophies by hand. Paste a Steam ID, a vanity URL, or a profile link into the account button in the top-right
 and it syncs.
 
 **There is no sign-up, no password, and no API key.** PlatWorks only reads Steam's public community
@@ -65,8 +65,7 @@ endpoints. Your progress lives in your browser, and disconnecting clears it.
 
 ## The catalogue
 
-**29 games, 1647 achievements**, every one with its official trophy artwork committed to this repo — so
-the art can't disappear because a CDN moved a file or rate-limited a request.
+**29 games, 1647 achievements** :
 
 | Game | Achievements | Map |
 |------|-------------:|:---:|
