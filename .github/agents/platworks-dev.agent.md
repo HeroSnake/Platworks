@@ -13,6 +13,8 @@ This file is the **entry point**. It holds only the rules that apply to every ta
 
 **Every bug fix and every feature must end by updating the relevant file in `.github/agents/` — and `README.md` — if either changed anything about how the project works.**
 
+These files are **in scope to edit, not read-only references**. Every agent already carries `edit` in its frontmatter, and rewriting them in place as the code moves is the expected behaviour — not an exception. The only thing to get right is which *file* to edit; see the routing table below.
+
 This directory is the project's memory. A future agent that trusts it will move fast; one that finds it stale will repeat work that has already been done, or reintroduce a bug that was already fixed. `README.md` is the human-facing equivalent: it is what a new contributor reads first, and a stale structure diagram or feature list there is just as misleading as a stale rule here.
 
 Update **the file that owns the domain**:
@@ -69,7 +71,7 @@ When you fix something a future agent could plausibly hit, also leave a one-line
 | [`platworks-sveltekit.agent.md`](./platworks-sveltekit.agent.md) | `vite.config.ts`, `tsconfig.json`, `#lib` imports, routing, `+page.server.ts` / `+server.ts`, navigation APIs, hydration, reactivity patterns | touching routing, config, server loads, `goto`, SSR/client mismatches, `svelte-check` errors |
 | [`platworks-ui.agent.md`](./platworks-ui.agent.md) | `#lib/components/*`, `src/app.css`, Tailwind, the mobile bar, the trophy card, progress bars, icons, animation, performance, tap targets | changing anything a user sees or touches |
 | [`platworks-steam.agent.md`](./platworks-steam.agent.md) | `#lib/server/steam/api.ts`, `/api/steam/*`, `#lib/types/steam.ts`, XML parsing, icon scraping, Cloudflare blocks, when Steam may be called | touching Steam calls, sync, avatars, or achievement statuses |
-| [`platworks-state.agent.md`](./platworks-state.agent.md) | `platworks:*` localStorage keys, `#lib/client/profile.ts`, sort/filter prefs, hydrating stored values | adding, renaming or reading persisted state |
+| [`platworks-state.agent.md`](./platworks-state.agent.md) | `platworks:*` localStorage keys, `#lib/client/profile.ts`, `#lib/client/library.ts`, the user library, sort/filter prefs, hydrating stored values | adding, renaming or reading persisted state |
 | [`platworks-gamedata.agent.md`](./platworks-gamedata.agent.md) | `src/lib/data/games/*.json`, `schema.json`, guides, warnings, `mapUrl`, difficulty/type, icon scripts | adding or editing a game's achievement data |
 | [`platworks-commits.agent.md`](./platworks-commits.agent.md) | Conventional Commits, English-only messages, type/scope vocabulary | creating or amending commits / writing commit messages |
 
@@ -115,6 +117,7 @@ Reading a domain file you don't need costs context and buries the rules that do 
 | Game loader | `#lib/server/games.ts` | `getAllGames()`, `getGameByAppId()` via `import.meta.glob('#lib/data/games/[0-9]*.json')` |
 | Icon tooling | `scripts/` | `fetch-achievement-icons.mjs` (write `iconUrl`), `verify-achievement-icons.mjs` (audit icons). Run with `node`, not npm |
 | Client profile cache | `#lib/client/profile.ts` | `loadProfile()`, `saveProfile()`, `clearProfile()`, `refreshProfile()` |
+| Client user library | `#lib/client/library.ts` | `loadLibrary()`, `saveLibrary()`, `addToLibrary()`, `removeFromLibrary()`, `clearLibrary()` — appIds only, owns `platworks:library` |
 | Components | `#lib/components/` | `achievement_row.svelte`, `game_card.svelte`, `github_icon.svelte`, `mobile_bar.svelte` |
 | Game data | `#lib/data/games/{appId}.json` | per-game achievement guides |
 | Game-data scratch | `.tmp/game-data/{appId}/` | gitignored; fetch `ledger.json` + `findings.jsonl` + throwaway scrapers for `/generate-game-data`. Repo-local on purpose — Windows + WSL must see the same path. Deleted when the run finishes; see [platworks-gamedata.agent.md](./platworks-gamedata.agent.md) §2b |

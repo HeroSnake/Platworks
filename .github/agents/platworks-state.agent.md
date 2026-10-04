@@ -25,6 +25,7 @@ All keys are namespaced `platworks:*`. Read them through a `load*()` helper, nev
 | `platworks:typeFilter:{appId}` | game page | per game — each game has its own types |
 | `platworks:gameSort` | game page | `default \| name \| difficulty` (global) |
 | `platworks:profile` | `#lib/client/profile.ts` | `StoredProfile` = `SteamProfile & { cachedAt }` |
+| `platworks:library` | `#lib/client/library.ts` | `number[]` of appIds — the player's own subset. See §5 |
 
 **Trophy search is session-only** (`trophyQuery`) and is deliberately not persisted.
 
@@ -58,3 +59,14 @@ Sort, filter and search state all fall under this. The gate implementation is in
 - `refreshProfile()` is called after a successful sync, once per sync-all run, and on explicit user refresh. Guard it with an `anyConnected` flag so a failed sync does not trigger a profile request, and so sync-all refreshes once rather than once per game.
 - `refreshProfile()` writes the resolved Steam64 ID back to `platworks:steamId`, so a vanity name is only resolved once.
 - Steam's default avatar is an all-zero hash; the module returns `null` there so the UI falls back to an icon rather than rendering the placeholder. Details in [platworks-steam.agent.md](./platworks-steam.agent.md) §2.
+
+## 5. The user library
+
+`#lib/client/library.ts` owns `loadLibrary()`, `saveLibrary()`, `addToLibrary()`, `removeFromLibrary()` and `clearLibrary()`. It stores **appIds**, not game objects — the catalogue already arrives from `+page.server.ts`, so storing a copy of it would go stale the moment a game is edited.
+
+Two rules this key exists to enforce:
+
+- **Totals are measured against the player's subset, never the catalogue.** Without this, adding a game to the repo silently moves someone's completion percentage. Every aggregate on the library page (game count, `completed/total`, percent, the mobile bar ring) derives from `scopedGames`, and so does **Sync All** — syncing games the player does not own would waste Steam API calls.
+- **An empty selection is not "zero games", it is "no choice yet"**, and the page falls through to the public catalogue. That is why `effectiveScope` is a `$derived` that coerces `'mine'` → `'all'` when `myLibrary` is empty: removing the last game cannot strand the player on a blank grid.
+
+`loadLibrary()` validates and de-duplicates on read, because a hand-edited or corrupt entry must not throw during render. That is also why the module returns the new array rather than mutating — the page assigns the return value straight back into `$state`, so storage and state can never disagree.

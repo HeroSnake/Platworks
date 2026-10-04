@@ -12,6 +12,7 @@ PlatWorks turns a game's trophy list into something you can actually act on. Ins
 
 - **Guides for every trophy** — step-by-step instructions, video walkthroughs, community tips from Reddit, and clear warnings on missable or one-time-only achievements
 - **Real trophy artwork** — the official Steam icon for all 1647 achievements, not placeholders. The trophy *is* the checkbox: tap it to mark it done
+- **Your library, your numbers** — pick the games you actually own and every total, percentage and sync is measured against that list, not the whole catalogue
 - **Progress that sticks** — check off trophies by hand, or connect a public Steam profile and sync them in bulk. Your completion percentage follows you from game to game
 - **Search and filter** — find games by name, trophies by name or description, then sort by completion, recently played, or difficulty and filter by locked state and trophy type
 - **Interactive maps** — open-world games link straight to a community map, both from the game header and from individual trophy locations

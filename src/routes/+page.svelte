@@ -1,6 +1,6 @@
 <script lang="ts">
 	import {
-		Trophy, Gamepad2, Search, RefreshCw, Loader2
+		Trophy, Gamepad2, Search, RefreshCw, Loader2, Library, Globe, Plus
 	} from '@lucide/svelte';
 	import GameCard from '#lib/components/game_card.svelte';
 	import MobileBar from '#lib/components/mobile_bar.svelte';
@@ -8,6 +8,7 @@
 	import { page } from '$app/state';
 	import { replaceState } from '$app/navigation';
 	import { refreshProfile } from '#lib/client/profile';
+	import { loadLibrary, addToLibrary, removeFromLibrary, clearLibrary } from '#lib/client/library';
 
 	let { data } = $props();
 
@@ -87,15 +88,61 @@
 	// The grid therefore stays off the DOM until we know we're on the client.
 	let hydrated = $state(false);
 
-	$effect(() => { hydrated = true; });
+	// ---- User library vs public library -------------------------------------
+	// `data.games` is the public catalogue: it grows whenever a game is added to the
+	// repo. The player picks their own subset, stored as appIds in localStorage, and
+	// every total on this page is measured against that subset — so importing a new
+	// game can never silently move someone's completion percentage.
+	let myLibrary = $state<number[]>([]);
+	let scope = $state<'mine' | 'all'>('all');
 
-	let totalGames = $derived(data.games.length);
-	let totalAchievements = $derived(data.games.reduce((s, g) => s + g.totalAchievements, 0));
-	let totalCompleted = $derived(Object.values(completions).reduce((s, c) => s + c, 0));
+	// Loaded in the same effect as the hydration gate, and deliberately before it:
+	// the gate exists to keep the first client render identical to the SSR markup,
+	// and the grid it reveals must already know the real selection. Opening the gate
+	// first would render the catalogue for a frame and then swap to the user's games.
+	$effect(() => {
+		const stored = loadLibrary();
+		myLibrary = stored;
+		// A returning player with a selection lands on their own library. An empty
+		// one has nothing to show, so they get the public catalogue instead.
+		if (stored.length > 0) scope = 'mine';
+		hydrated = true;
+	});
+
+	let myLibrarySet = $derived(new Set(myLibrary));
+	let myGames = $derived(data.games.filter((g) => myLibrarySet.has(g.appId)));
+
+	// `scope` is authoritative. 'mine' with an empty selection is a real state with
+	// its own empty view, not a dead tab: the switcher is always on screen, so
+	// coercing 'mine' → 'all' whenever the library is empty would have made
+	// "My Library (0)" do nothing at all when clicked.
+	let scopedGames = $derived(scope === 'mine' ? myGames : data.games);
+
+	// Must match the switcher's own labels exactly. The heading and the active tab
+	// describing different libraries is the same class of bug as the switcher
+	// appearing late: the page tells you two things at once.
+	let libraryName = $derived(scope === 'mine' ? 'My Library' : 'All Games');
+
+	function toggleGame(appId: number) {
+		if (myLibrarySet.has(appId)) {
+			myLibrary = removeFromLibrary(appId);
+		} else {
+			myLibrary = addToLibrary(appId);
+		}
+	}
+
+	function resetLibrary() {
+		myLibrary = clearLibrary();
+		scope = 'all';
+	}
+
+	let totalGames = $derived(scopedGames.length);
+	let totalAchievements = $derived(scopedGames.reduce((s, g) => s + g.totalAchievements, 0));
+	let totalCompleted = $derived(scopedGames.reduce((s, g) => s + (completions[g.appId] ?? 0), 0));
 	let totalPercent = $derived(totalAchievements > 0 ? Math.round((totalCompleted / totalAchievements) * 100) : 0);
 
 	let filteredAndSorted = $derived.by(() => {
-		let list = data.games;
+		let list = scopedGames;
 		if (searchQuery.trim()) {
 			const q = searchQuery.trim().toLowerCase();
 			list = list.filter((g) => g.name.toLowerCase().includes(q));
@@ -113,6 +160,14 @@
 		});
 	});
 
+	// The bar's subtitle drops to "N of M" only while a search is actually narrowing
+	// the list, so it never shows a redundant "12 of 12".
+	let mobileCount = $derived.by(() => {
+		const shown = filteredAndSorted.length;
+		const total = scopedGames.length;
+		return shown === total ? `${total} ${total === 1 ? 'game' : 'games'}` : `${shown} of ${total}`;
+	});
+
 	async function syncAllGames() {
 		const sid = getSteamId();
 		if (!sid) {
@@ -122,7 +177,7 @@
 		syncing = true;
 		syncStatus = null;
 
-		const incomplete = data.games.filter((g) => (completions[g.appId] ?? 0) < g.totalAchievements);
+		const incomplete = scopedGames.filter((g) => (completions[g.appId] ?? 0) < g.totalAchievements);
 		let totalSynced = 0;
 		let errors = 0;
 		let anyConnected = false;
@@ -167,8 +222,14 @@
 
 <div class="w-full px-4 pb-20 pt-6 sm:px-6 sm:pb-16 sm:pt-10 lg:px-8">
 	<!-- Hero -->
-	<section class="mb-8 sm:mb-12">
-		<h1 class="text-2xl font-bold tracking-tight sm:text-3xl">Your Library</h1>
+	<section class="mb-6 sm:mb-8">
+		<!--
+			Names the library actually on screen. This was hardcoded to "Your Library"
+			while the switcher below moved between two different ones, so browsing the
+			catalogue still claimed to be your own library. It now mirrors the active
+			tab, which is the whole point of the switcher being there.
+		-->
+		<h1 class="text-2xl font-bold tracking-tight sm:text-3xl">{libraryName}</h1>
 		<div class="mt-3 flex flex-wrap gap-4 text-sm text-gray-400">
 			<span class="flex items-center gap-1.5">
 				<Gamepad2 class="h-4 w-4" />
@@ -183,6 +244,61 @@
 			{/if}
 		</div>
 	</section>
+
+	<!--
+		Scope switcher. The totals above always describe whatever this selects, which is
+		what makes the headline figure mean "your games" rather than "the whole repo".
+
+		ALWAYS rendered, including before anything has been added. It used to appear the
+		moment the first game was picked, which shoved the whole grid down mid-gesture —
+		the cards the user had just tapped moved out from under their finger. A control
+		that exists from the first paint can only have its own state change, so the
+		first add costs a "0 → 1" count and nothing moves.
+	-->
+	<div class="mb-4 sm:mb-5">
+		<div class="flex h-10 gap-1 rounded-lg bg-steam-blue p-1 sm:w-fit" role="group" aria-label="Library scope">
+			<button
+				class="flex flex-1 items-center justify-center gap-2 rounded-md px-3 text-sm font-medium transition-colors sm:flex-none {scope === 'mine'
+					? 'bg-steam-accent text-steam-dark'
+					: 'text-gray-400'}"
+				onclick={() => (scope = 'mine')}
+				aria-pressed={scope === 'mine'}
+			>
+				<Library class="h-4 w-4" />
+				My Library
+				<span class="tabular-nums opacity-70">{myGames.length}</span>
+			</button>
+			<button
+				class="flex flex-1 items-center justify-center gap-2 rounded-md px-3 text-sm font-medium transition-colors sm:flex-none {scope === 'all'
+					? 'bg-steam-accent text-steam-dark'
+					: 'text-gray-400'}"
+				onclick={() => (scope = 'all')}
+				aria-pressed={scope === 'all'}
+			>
+				<Globe class="h-4 w-4" />
+				All Games
+				<span class="tabular-nums opacity-70">{data.games.length}</span>
+			</button>
+		</div>
+
+		<!--
+			First-run hint, in a slot that is always exactly one line tall. It used to
+			live below the grid, where nobody scrolls to see it, and it still shifted
+			the page when it appeared or went away. Fixed height + placed where the
+			action is means it costs nothing to show and nothing to hide.
+
+			`aria-live` because this is the one place the page reports the selection
+			changing to a screen reader after a "+" tap.
+		-->
+		<div class="mt-2 h-5" aria-live="polite">
+			{#if hydrated && data.games.length > 0 && myLibrary.length === 0}
+				<p class="text-xs leading-5 text-gray-500">
+					Tap the <span class="font-semibold text-steam-accent">+</span> on any game to build
+					<span class="font-semibold text-gray-400">My Library</span> — your totals follow it.
+				</p>
+			{/if}
+		</div>
+	</div>
 
 	<!-- Desktop search + sort -->
 	<div class="mb-5 hidden items-center gap-3 sm:flex">
@@ -223,17 +339,65 @@
 	{:else if !hydrated}
 		<!-- Placeholder so the server markup and the first client render agree on layout. -->
 		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-			{#each Array(Math.min(data.games.length, 10)) as _, i (i)}
-				<div class="min-h-40 animate-pulse rounded-2xl bg-steam-blue sm:min-h-48"></div>
+			{#each Array(Math.min(scopedGames.length, 10)) as _, i (i)}
+				<div class="min-h-40 animate-pulse rounded-lg bg-steam-blue sm:min-h-48"></div>
 			{/each}
+		</div>
+	{:else if scope === 'mine' && myLibrary.length === 0}
+		<!--
+			The player opened My Library before adding anything. A real, explainable
+			state — not a dead end, and not something to silently redirect away from.
+		-->
+		<div class="flex flex-col items-center gap-3 py-16 text-center">
+			<Library class="h-12 w-12 text-steam-accent" />
+			<p class="text-base font-semibold text-gray-200">Your library is empty</p>
+			<p class="max-w-xs text-sm text-gray-500">
+				Add the games you own and every total, percentage and sync will track only those.
+			</p>
+			<button
+				class="mt-1 inline-flex h-10 items-center gap-2 rounded-lg bg-steam-accent px-4 text-sm font-semibold text-steam-dark"
+				onclick={() => (scope = 'all')}
+			>
+				<Plus class="h-4 w-4" />
+				Browse all games
+			</button>
+		</div>
+	{:else if scope === 'mine' && myGames.length === 0}
+		<!-- The selection still holds appIds that no longer exist in the catalogue. -->
+		<div class="flex flex-col items-center gap-3 py-16 text-center">
+			<Library class="h-12 w-12 text-gray-600" />
+			<p class="text-gray-500">None of your saved games are in the catalogue any more.</p>
+			<button class="h-10 rounded-lg bg-steam-accent px-4 text-sm font-semibold text-steam-dark" onclick={resetLibrary}>
+				Reset my library
+			</button>
 		</div>
 	{:else if filteredAndSorted.length === 0}
 		<p class="py-12 text-center text-gray-500">No games match "{searchQuery}"</p>
 	{:else}
 		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
 			{#each filteredAndSorted as game (game.appId)}
-				<GameCard {game} completed={completions[game.appId] ?? 0} />
+				<GameCard
+					{game}
+					completed={completions[game.appId] ?? 0}
+					onToggle={toggleGame}
+					toggleMode={scope === 'mine'
+						? 'remove'
+						: myLibrarySet.has(game.appId)
+							? 'added'
+							: 'add'}
+				/>
 			{/each}
+		</div>
+	{/if}
+
+	{#if hydrated && myLibrary.length > 0 && scope === 'mine'}
+		<div class="mt-8 flex justify-center sm:mt-10">
+			<button
+				class="h-10 rounded-lg border border-white/10 px-4 text-sm text-gray-400 hover:bg-steam-blue hover:text-gray-200"
+				onclick={resetLibrary}
+			>
+				Clear my library
+			</button>
 		</div>
 	{/if}
 </div>
@@ -242,7 +406,7 @@
 <MobileBar
 	percent={totalPercent}
 	primary="{totalCompleted}/{totalAchievements}"
-	secondary="{filteredAndSorted.length} games"
+	secondary={mobileCount}
 	status={syncStatus}
 	statusTone={syncStatus?.includes('failed') || syncStatus?.includes('fail') ? 'error' : 'ok'}
 	syncing={syncing}
