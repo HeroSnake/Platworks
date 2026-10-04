@@ -5,9 +5,9 @@ tools: [read, edit, search, execute, web]
 
 # PlatWorks — game data layer
 
-**You own:** `src/lib/data/games/*.json`, `schema.json`, `_example.json`, `#lib/types/game.ts`, `#lib/server/games.ts`, `scripts/`, and the README § Games table.
+**You own:** `src/lib/data/games/*.json`, `schema.json`, `_example.json`, `#lib/types/game.ts`, `#lib/server/games.ts`, `scripts/`, and the README catalogue table.
 
-**This file is the single source of truth for adding a game.** The README's contribution note used to carry these steps and duplicated them; it now just points here.
+**This file is the single source of truth for adding a game.** The README's contributing section points here.
 
 **Always paired with:** [platworks-dev.agent.md](./platworks-dev.agent.md). The `/generate-game-data` prompt in `.github/prompts/generate-game-data.prompt.md` is the AI path to this work and already carries the mandatory research rules.
 
@@ -32,10 +32,9 @@ Per achievement: `id`, `name`, `description`, optional `iconUrl`, `types` (a **l
 ### `types` is a tag list, not an enum
 
 `types` is `AchievementType[]` and the tags are **non-exclusive** — a trophy can be
-`["missable","secret"]` or `["cumulative","multiplayer"]`. It replaced a single
-`type` string because that model forced a choice between two true facts: Remnant II's
-`Succession` is *both* missable (the one true ending can be locked out) and secret
-(Steam hides its description), and the old enum could only keep one.
+`["missable","secret"]` or `["cumulative","multiplayer"]`. A single-value model would force a choice between
+two true facts: Remnant II's `Succession` is *both* missable (the one true ending can be locked out) and
+secret (Steam hides its description).
 
 **There is deliberately no `standard` tag.** An empty array *is* the plain trophy.
 Adding `standard` back would permit contradictions like `["standard","secret"]`.
@@ -98,9 +97,8 @@ Two traps behind it:
   every URL to `.tmp/game-data/{appId}/ledger.json` *before* fetching, and checks
   it before every request. Without the ledger the same wiki index gets re-opened
   four times in one run.
-- **Writing a URL from memory.** Three shipped games (`582010`, `2887580`,
-  `4126040`) have `0%` `sourceUrl` coverage and that is the intended outcome, not
-  a to-do. Do not "fix" them by inventing links.
+- **Writing a URL from memory.** Some shipped games have `0%` `sourceUrl` coverage and that is the
+  intended outcome, not a to-do. Do not "fix" them by inventing links.
 
 ### Scratch workspace: `.tmp/game-data/{appId}/`
 
@@ -122,7 +120,10 @@ errors. Do not add a speculative `exclude` entry for it.
 
 `GameData.mapUrl` is the game's map (shown in the header and as the fallback "Game Map" link in every trophy). `guide.mapUrl` is a per-trophy deep link; only set it when the trophy is tied to a specific spot worth jumping straight to.
 
-Verification rule: **only save a `mapUrl` that returned HTTP 200.** `wiki.gg` and `fandom` return 403 to scripted requests (Cloudflare bot protection) even though they work in a browser; that is not the same as a dead link, but it is also not verified. Those were deliberately left out — do not add them without checking in a real browser first. Prefer MapGenie → official map → wiki map page.
+Verification rule: **only save a `mapUrl` that returned HTTP 200.** `wiki.gg` and `fandom` return 403 to
+scripted requests (Cloudflare bot protection) even though they work in a browser; that is not the same as
+a dead link, but it is also not verified. Omit those rather than saving them unverified — do not add them
+without checking in a real browser first. Prefer MapGenie → official map → wiki map page.
 
 Omit `mapUrl` entirely for linear or competitive games. That is a correct answer, not an omission.
 
@@ -155,6 +156,7 @@ The scraping target and all of its traps (one URL per trophy, 64×64 native, dis
 4. `node scripts/verify-achievement-icons.mjs`.
 5. `npm run check` — the loader glob and the type mirror are validated by the build.
 6. Delete `.tmp/game-data/` once the run is verified.
-7. Add a row to the **README § Games** table — the appId and achievement count. That is the only README edit a data file needs.
+7. Add a row to the **README catalogue** table — the game name and achievement count. That is the only
+   README edit a data file needs.
 
 Adding a *tag* value means updating `schema.json`, `game.ts` (`AchievementType`), and the badge/icon maps in `achievement_row.svelte` together. Adding a *difficulty* value means `schema.json`, `game.ts`, and the filter/sort UI in `game/[appId]/+page.svelte`.

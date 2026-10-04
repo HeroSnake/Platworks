@@ -438,24 +438,29 @@
 				separate them — without this the toolbar touched the stats panel. At `lg`
 				they are side-by-side columns and the margin would just push the toolbar
 				out of alignment with the top of the sidebar, so it goes to zero.
-			-->
-			<div class="mt-4 lg:mt-0">
-				<GameFilters
-					bind:filter
-					bind:typeFilter
-					bind:gameSort
-					bind:query={trophyQuery}
-					completionFilterOptions={completionFilterOptions}
-					types={achievementTypes}
-					typeCounts={typeCounts}
-				/>
-			</div>
+
+							`pw-quiet` is the background pattern's quiet band: a flat `--pw-bg` layer
+							so the tile stops behind the control row. It bleeds to the 1400px
+							container edge, not the viewport, because the container is centred and
+							max-width'd here.
+						-->
+						<div class="pw-quiet mt-4 lg:mt-0">
+							<GameFilters
+								bind:filter
+								bind:typeFilter
+								bind:gameSort
+								bind:query={trophyQuery}
+								completionFilterOptions={completionFilterOptions}
+								types={achievementTypes}
+								typeCounts={typeCounts}
+							/>
+						</div>
 
 			<!-- Achievement list -->
 			<div class="mt-3 flex flex-col gap-2">
 				{#if !hydrated}
 					{#each Array(Math.min(data.game.achievements.length, 12)) as _, i (i)}
-						<div class="h-16 animate-pulse rounded-xl bg-steam-blue"></div>
+						<div class="h-[90px] animate-pulse rounded-xl bg-steam-blue"></div>
 					{/each}
 				{:else}
 					{#each filteredAchievements as achievement (achievement.id)}

@@ -45,7 +45,7 @@
 	class="flex items-center justify-center gap-2 rounded-lg font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50 {size === 'sm'
 		? 'h-9 px-3 text-xs'
 		: 'h-10 px-4 text-sm'} {full ? 'w-full' : ''} {variant === 'primary'
-		? 'bg-steam-accent text-steam-dark hover:bg-steam-accent/90'
+		? 'bg-steam-accent text-accent-ink hover:bg-steam-accent/90'
 		: 'border border-line bg-steam-blue text-ink hover:bg-steam-light'}"
 >
 	{#if loading}

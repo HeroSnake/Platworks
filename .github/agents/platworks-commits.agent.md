@@ -68,13 +68,13 @@ Omit the scope when the change spans several areas and none dominates.
 ```
 feat(games): add Hades and Deep Rock Galactic achievement guides
 
-Includes polished steps, Steam icons, and README catalog counts.
+Includes polished steps, Steam icons, and README catalogue counts.
 ```
 
 ```
-fix(steam): fall back to CDN headers when appdetails is blocked
+fix(steam): keep local artwork paths when appdetails is blocked
 
-Akamai often returns Access Denied to Node; returning null left the
+Akamai returns Access Denied to Node; returning null left the
 library with empty image slots.
 ```
 

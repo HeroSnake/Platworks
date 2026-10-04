@@ -4,7 +4,7 @@
 	import { Trophy, ArrowLeft, User, RefreshCw, Loader2, ExternalLink } from '@lucide/svelte';
 	import GithubIcon from '#lib/components/github_icon.svelte';
 	import ThemePicker from '#lib/components/theme_picker.svelte';
-	import { saveTheme, type ThemeId } from '#lib/client/theme';
+	import { saveTheme, THEMES, type ThemeId } from '#lib/client/theme';
 	import { page } from '$app/state';
 	import { onNavigate } from '$app/navigation';
 	import { browser } from '$app/env';
@@ -32,9 +32,18 @@
 		? ((document.documentElement.getAttribute('data-theme') as ThemeId | null) ?? 'ember')
 		: 'ember');
 
-	function setTheme(id: ThemeId) {
-		theme = saveTheme(id);
-	}
+	/**
+		 * Keeps the mobile browser chrome in step with the palette. The tag is a static
+		 * default in the markup — it cannot be a binding, because the server does not
+		 * know the theme. A hex cannot be derived from a CSS variable in `content`, so
+		 * the live value is read back off the document once the attribute is applied.
+		 */
+		function setTheme(id: ThemeId) {
+			theme = saveTheme(id);
+			const meta = document.querySelector('meta[name="theme-color"]');
+			const bg = getComputedStyle(document.documentElement).getPropertyValue('--pw-bg').trim();
+			if (meta && bg) meta.setAttribute('content', bg);
+		}
 
 	// Served straight from localStorage — we never hit Steam just to render a page.
 	let profile = $state<StoredProfile | null>(loadProfile());
@@ -119,7 +128,7 @@
 	<meta name="description" content="Your completionist companion for Steam achievements. Step-by-step guides, missable alerts, progress tracking, and Steam sync." />
 	<link rel="icon" href={favicon} />
 	<link rel="manifest" href="/manifest.json" />
-	<meta name="theme-color" content="#171a21" />
+	<meta name="theme-color" content="#0c0a09" />
 	<meta property="og:title" content="PlatWorks" />
 	<meta property="og:description" content="Break down Steam achievements into step-by-step guides, missable alerts, and progress tracking." />
 	<meta property="og:type" content="website" />
@@ -129,8 +138,81 @@
 	<link rel="apple-touch-icon" href="/icon.svg" />
 </svelte:head>
 
-<div class="min-h-screen bg-steam-dark text-ink">
-	<nav class="sticky-nav sticky top-0 z-50 border-b border-white/5 bg-steam-dark/80 backdrop-blur-md">
+<!--
+	Background pattern — one fixed tile behind the whole app.
+
+	Why an inline SVG <pattern> and not a `background-image` data URI: the tile's
+	colours are CSS variables (`--pw-pattern-dash`, `--pw-pattern-trophy`), so all
+	six palettes follow `data-theme` with nothing to regenerate, and a paint server
+	called from SVG markup resolves everywhere. Safari will not reliably resolve
+	`background-image: url(#id)` pointing at one, which is what forces the data-URI
+	approach and six duplicated files. See the BACKGROUND PATTERN block in `app.css`.
+
+	Geometry: a 135px lattice. Trophies sit on it (centre + four corners, so it
+	tiles seamlessly); the 45° dash rows run on the lattice's mid-diagonals, so a
+	row passes BETWEEN two trophies rather than through one. Four marks a quarter
+	of a row apart, so a row divides its own segment and still tiles. Every motif
+	shares the same 45° tilt — that is what makes it read as fabric.
+-->
+<div class="pw-pattern" aria-hidden="true">
+	<svg xmlns="http://www.w3.org/2000/svg" focusable="false">
+		<defs>
+			<path id="pw-mark" d="M-6 -6 6 6" />
+			<g id="pw-trophy" transform="translate(-1.24 12) scale(0.78) rotate(-45)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+				<path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+				<path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+				<path d="M4 22h16" />
+				<path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+				<path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+				<path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+			</g>
+			<g id="pw-chains" fill="none" stroke="var(--pw-pattern-dash)" stroke-width="3.4" stroke-linecap="round">
+				<use href="#pw-mark" transform="translate(0 67.5)" />
+				<use href="#pw-mark" transform="translate(16.87 84.37)" />
+				<use href="#pw-mark" transform="translate(33.75 101.25)" />
+				<use href="#pw-mark" transform="translate(50.62 118.12)" />
+				<use href="#pw-mark" transform="translate(67.5 0)" />
+				<use href="#pw-mark" transform="translate(84.37 16.87)" />
+				<use href="#pw-mark" transform="translate(101.25 33.75)" />
+				<use href="#pw-mark" transform="translate(118.12 50.62)" />
+			</g>
+			<g id="pw-trophies" stroke="var(--pw-pattern-trophy)" stroke-width="1.9">
+				<use href="#pw-trophy" transform="translate(67.5 67.5)" />
+				<use href="#pw-trophy" transform="translate(0 0)" />
+				<use href="#pw-trophy" transform="translate(135 0)" />
+				<use href="#pw-trophy" transform="translate(0 135)" />
+				<use href="#pw-trophy" transform="translate(135 135)" />
+			</g>
+			<pattern id="pw-tile" width="135" height="135" patternUnits="userSpaceOnUse">
+				<use href="#pw-chains" />
+				<use href="#pw-trophies" />
+			</pattern>
+			<!-- Same geometry at 96px. `patternTransform` scales the tile content,
+			     so the stroke widths shrink with it and stay proportional. -->
+			<pattern id="pw-tile-sm" width="135" height="135" patternUnits="userSpaceOnUse" patternTransform="scale(0.7111)">
+				<use href="#pw-chains" />
+				<use href="#pw-trophies" />
+			</pattern>
+		</defs>
+		<rect width="100%" height="100%" />
+	</svg>
+</div>
+
+<!--
+	`relative z-10` is load-bearing, not decoration. The background pattern's
+	`::before` band sits at `z-index: -1` and has to land above the fixed pattern
+	layer, which requires this element to be a stacking context.
+	`bg-steam-dark` moved to `body` in `app.css` — keeping it here would paint
+	over the fixed pattern layer and hide the pattern entirely.
+-->
+<div class="relative z-10 min-h-screen text-ink">
+	<!--
+		No `backdrop-filter`. The nav was `bg-steam-dark/80 backdrop-blur-md`, which
+		resampled a flat page colour for a frosted look. With the pattern behind it
+		that blur smeared the tile into a soft band under the nav, so it is opaque
+		now. Same for the popover and the mobile bar.
+	-->
+	<nav class="sticky-nav sticky top-0 z-50 border-b border-white/5 bg-steam-dark">
 		<!-- Taller on mobile (64px vs 56px) so the controls get real thumb-sized hit
 		     areas; every interactive element in here is 44px wide below `sm`. -->
 		<div class="flex h-16 w-full items-center gap-2 px-3 sm:h-16 sm:gap-2.5 sm:px-6 lg:px-8">
@@ -201,7 +283,7 @@
 					<!-- Floats over the page instead of expanding the nav, so nothing below
 					     shifts when it opens. Width is capped to the viewport so it stays
 					     fully on-screen down to ~320px wide. -->
-					<div class="pop-in absolute right-0 top-[calc(100%+0.5rem)] w-[min(21rem,calc(100vw-1.5rem))] overflow-hidden rounded-xl border border-white/10 bg-steam-dark/95 shadow-2xl shadow-black/60 backdrop-blur-xl">
+					<div class="pop-in absolute right-0 top-[calc(100%+0.5rem)] w-[min(23rem,calc(100vw-1.5rem))] overflow-hidden rounded-xl border border-white/10 bg-steam-dark shadow-2xl shadow-black/60">
 						{#if profile}
 							<div class="flex items-center gap-3 border-b border-white/5 p-3">
 								{#if profile.avatar}
@@ -253,7 +335,7 @@
 
 							<div class="mt-3 flex items-center gap-2">
 								<button
-									class="flex h-10 flex-1 items-center justify-center gap-2 rounded-lg bg-steam-accent px-3 text-sm font-semibold text-steam-dark active:bg-steam-accent/80 disabled:opacity-50"
+									class="flex h-10 flex-1 items-center justify-center gap-2 rounded-lg bg-steam-accent px-3 text-sm font-semibold text-accent-ink active:bg-steam-accent/80 disabled:opacity-50"
 									onclick={commitSteamId}
 									disabled={!steamId.trim() || refreshingProfile}
 								>
@@ -287,11 +369,16 @@
 							floats above the page so adding a section never reflows anything.
 						-->
 						<div class="border-t border-white/5 p-3">
-							<p class="mb-2 text-[11px] font-medium uppercase tracking-wide text-ink-faint">
-								Theme
-							</p>
-							<ThemePicker {theme} onchange={setTheme} />
-						</div>
+													<div class="mb-2 flex items-baseline justify-between gap-2">
+														<p class="text-[11px] font-medium uppercase tracking-wide text-ink-faint">
+															Theme
+														</p>
+														<p class="truncate text-[11px] text-ink-faint">
+															{THEMES.find((t) => t.id === theme)?.label}
+														</p>
+													</div>
+													<ThemePicker {theme} onchange={setTheme} />
+												</div>
 					</div>
 				{/if}
 				</div>

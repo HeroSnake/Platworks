@@ -55,7 +55,7 @@
 	}
 </script>
 
-<div class="fixed-bottom-bar fixed inset-x-0 bottom-0 z-50 border-t border-line bg-steam-dark/95 backdrop-blur-md sm:hidden">
+<div class="fixed-bottom-bar fixed inset-x-0 bottom-0 z-50 border-t border-line bg-steam-dark sm:hidden">
 	<!-- Animated via grid-template-rows so the list underneath never re-lays-out. -->
 	<div class="expand-panel" data-open={mode !== 'none'}>
 		<div>
@@ -100,7 +100,7 @@
 		<button
 			type="button"
 			class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg {mode === 'search'
-				? 'bg-steam-accent text-steam-dark'
+				? 'bg-steam-accent text-accent-ink'
 				: 'bg-steam-blue text-ink-dim'}"
 			onclick={() => toggle('search')}
 			aria-label="Search"
@@ -113,7 +113,7 @@
 			<button
 				type="button"
 				class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg {mode === 'filter'
-					? 'bg-steam-accent text-steam-dark'
+					? 'bg-steam-accent text-accent-ink'
 					: 'bg-steam-blue text-ink-dim'}"
 				onclick={() => toggle('filter')}
 				aria-label="Filters"
@@ -126,7 +126,7 @@
 		{#if onsync}
 			<button
 				type="button"
-				class="flex h-10 shrink-0 items-center gap-1.5 rounded-lg bg-steam-accent px-3 text-xs font-semibold text-steam-dark active:bg-steam-accent/80 disabled:opacity-50"
+				class="flex h-10 shrink-0 items-center gap-1.5 rounded-lg bg-steam-accent px-3 text-xs font-semibold text-accent-ink active:bg-steam-accent/80 disabled:opacity-50"
 				onclick={onsync}
 				disabled={syncing}
 			>

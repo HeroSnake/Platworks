@@ -140,7 +140,7 @@
 			<span
 				class="flex h-7 w-7 items-center justify-center rounded-md border backdrop-blur-sm transition-colors {toggleMode === 'add'
 					? 'border-white/15 bg-steam-dark/60 text-ink hover:bg-steam-dark/85'
-					: 'border-transparent bg-steam-accent text-steam-dark'}"
+					: 'border-transparent bg-steam-accent text-accent-ink'}"
 			>
 				{#if toggleMode === 'add'}
 					<Plus class="h-4 w-4" />

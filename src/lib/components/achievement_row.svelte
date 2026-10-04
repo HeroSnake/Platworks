@@ -67,18 +67,47 @@
 	};
 </script>
 
+<!--
+	The card is always opaque `bg-steam-blue`. The "achieved" tint is a separate
+	layer *inside* it rather than a translucent fill of its own: `bg-steam-green/10`
+	straight on the row lets the page background pattern show straight through the
+	trophy, which is unreadable. Compositing the tint over an opaque base keeps the
+	tint and keeps the text legible.
+-->
 <div
-	class="achievement-item rounded-xl border transition-colors {achieved
-		? 'border-steam-green/30 bg-steam-green/10'
-		: 'border-line bg-steam-blue'}"
+	class="achievement-item relative rounded-xl border bg-steam-blue {achieved
+		? 'border-steam-green/30'
+		: 'border-line'}"
 >
-	<div class="flex w-full items-center gap-2 p-2 sm:gap-3 sm:p-3">
+	{#if achieved}
+		<div class="pointer-events-none absolute inset-0 rounded-xl bg-steam-green/10"></div>
+	{/if}
+	<div class="relative flex w-full items-center gap-2 p-2 sm:gap-3 sm:p-3">
 		<!-- The trophy doubles as the check toggle. Steam's icons are natively 64x64,
 		     so this renders 1:1 with no upscaling, and folding the check onto the art
 		     buys back the ~40px of rail a separate checkbox column would cost — which
-		     is what keeps the name readable down to a 320px viewport. -->
+		     is what keeps the name readable down to a 320px viewport.
+
+		     `self-stretch` fills the row's content box, and the `-ml-*` / `pl-*` pair
+		     bleeds the button horizontally into the row's left padding, so the strip
+		     starts at the card's inner border. The row's *vertical* padding is covered
+		     by the `before:` overlay instead: a negative vertical margin here would
+		     shrink the flex line's cross size and collapse the card back to ~67px.
+
+		     `z-10` keeps this rail above the expand button's stretched `::after`, so the
+		     left strip toggles and everything else in the header row expands.
+
+		     The `before:` overlay is a real box, so it takes the click itself and it
+		     bubbles to this button. It is bounded by the row — it bridges the padding,
+		     it never reaches into the expanded panel — so it is safe at every width.
+
+		     The image is centred inside the button, and the check badge is anchored to
+		     the image rather than to the button, or it would drift to the card's
+		     bottom-right as the row grows. -->
 		<button
-			class="relative shrink-0 {steamLocked ? 'cursor-default' : 'cursor-pointer'}"
+			class="relative z-10 -ml-2 flex shrink-0 self-stretch items-center pl-2 before:absolute before:-inset-y-2 before:left-0 before:right-0 before:content-[''] sm:-ml-3 sm:pl-3 sm:before:-inset-y-3 {steamLocked
+				? 'cursor-default'
+				: 'cursor-pointer'}"
 			onclick={handleToggle}
 			aria-label={steamLocked
 				? `${achievement.name} — unlocked on Steam`
@@ -88,7 +117,8 @@
 			aria-pressed={achieved}
 			title={steamLocked ? 'Unlocked on Steam' : achieved ? 'Mark as not done' : 'Mark as done'}
 		>
-			{#if achievement.iconUrl}
+			<span class="relative block h-16 w-16 shrink-0">
+				{#if achievement.iconUrl}
 				<!-- Steam publishes only the unlocked (coloured) icon; the locked look is a
 				     CSS grayscale of this same file, so there is no second URL to fetch.
 				     alt is empty on purpose — the name is rendered next to it. -->
@@ -103,27 +133,36 @@
 						? 'opacity-100 ring-2 ring-steam-green/50'
 						: 'opacity-55 grayscale ring-1 ring-white/10'}"
 				/>
-			{:else}
+				{:else}
 				<span class="flex h-16 w-16 items-center justify-center rounded-lg bg-steam-light ring-1 ring-white/10">
 					<Trophy class="h-7 w-7 text-ink-faint" />
 				</span>
-			{/if}
-
-			<span
-				class="absolute -bottom-1.5 -right-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-steam-dark ring-2 ring-steam-dark {justToggled
-					? 'check-pop'
-					: ''}"
-			>
-				{#if achieved}
-					<CircleCheckBig class="h-5 w-5 text-steam-green" />
-				{:else}
-					<Circle class="h-5 w-5 text-ink-faint" />
 				{/if}
+
+				<span
+					class="absolute -bottom-1.5 -right-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-steam-dark ring-2 ring-steam-dark {justToggled
+						? 'check-pop'
+						: ''}"
+				>
+					{#if achieved}
+						<CircleCheckBig class="h-5 w-5 text-steam-green" />
+					{:else}
+						<Circle class="h-5 w-5 text-ink-faint" />
+					{/if}
+				</span>
 			</span>
 		</button>
 
+		<!--
+		     `after:absolute after:inset-0` is what makes the *whole* header row — card
+		     padding included — the expand target. `inset-0` resolves against the row
+		     (`relative`), not against this button, so the card's padding stops being a
+		     dead zone. It stops at the row, so the open guide keeps its own links.
+
+		     The toggle button carries `z-10` to win over this overlay in the left rail.
+		-->
 		<button
-			class="flex min-h-10 min-w-0 flex-1 items-center gap-2 text-left sm:gap-3"
+			class="after:absolute after:inset-0 flex min-h-10 min-w-0 flex-1 items-center gap-2 text-left sm:gap-3"
 			onclick={toggleExpand}
 			aria-expanded={expanded}
 		>

@@ -23,6 +23,14 @@
 	--color-steam-accent: var(--pw-accent);
 	--color-steam-green: var(--pw-success);
 
+	/*
+	   Text that sits ON the accent — never `text-steam-dark`. The page bg and the
+	   accent are unrelated colours, so a dark accent (Ember) and a pale one (Amber)
+	   cannot both be labelled with the same token. This is the only ink allowed on
+	   a `bg-steam-accent` surface.
+	*/
+	--color-accent-ink: var(--pw-accent-ink);
+
 	/* Text + lines, so components stop reaching for Tailwind's gray ramp. */
 	--color-ink: var(--pw-text);
 	--color-ink-dim: var(--pw-dim);
@@ -34,95 +42,135 @@
 	--font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
-/* --- Ember (default): warm graphite + mint --- */
+/*
+   Every palette below declares the same eleven tokens, and each one must make a
+   *different* choice for them. The rules a palette has to satisfy:
+
+   - The surface ramp carries the palette's own hue. Two themes that differ only
+     in `--pw-accent` read as the same app with a different button; a theme whose
+     `--pw-bg` / `--pw-surface` / `--pw-border` are tinted toward its primary reads
+     as a different app. That is the whole difference between Ember and Amber.
+   - The primary must be far from its neighbours on the hue wheel, and at least one
+     step from any other palette's `--pw-success`, so "interactive" and "complete"
+     never look like each other.
+   - Contrast is verified, not eyeballed: text on bg >= 4.5:1, dim on bg >= 4.5:1,
+     faint >= 3:1 (decorative), accent on bg >= 3:1, accent-ink on accent >= 4.5:1,
+     and text on surface >= 4.5:1. `npm run check` does not test this — a palette
+     edit has to be re-verified by hand.
+
+   ORDER IS THE PICKER ORDER. Do not reorder these blocks without reordering
+   `THEMES` in `#lib/client/theme.ts` and the validator array in `src/app.html`.
+*/
 :root,
 :root[data-theme='ember'] {
-	--pw-bg: #0a0b0d;
-	--pw-surface: #15181d;
-	--pw-surface-2: #242932;
-	--pw-border: #252a32;
-	--pw-text: #e9ecef;
-	--pw-dim: #98a1ae;
-	--pw-faint: #6b7482;
-	--pw-accent: #4ade9b;
-	--pw-accent-ink: #04291b;
-	--pw-success: #4ade9b;
-}
-
-/* --- Amber: Steam-adjacent, accent split from completion green --- */
-:root[data-theme='amber'] {
-	--pw-bg: #0b0c0e;
-	--pw-surface: #131519;
-	--pw-surface-2: #242830;
-	--pw-border: #31363f;
-	--pw-text: #e6e8ec;
-	--pw-dim: #9aa3af;
-	--pw-faint: #6f7783;
-	--pw-accent: #ff9e3d;
-	--pw-accent-ink: #3b1800;
+	/* Ember: a coal that has just caught — warm soot-black, molten orange. */
+	--pw-bg: #0c0a09;
+	--pw-surface: #18130f;
+	--pw-surface-2: #272019;
+	--pw-border: #332a22;
+	--pw-text: #f1eae2;
+	--pw-dim: #a4988c;
+	--pw-faint: #74695d;
+	--pw-accent: #ff7a45;
+	--pw-accent-ink: #2b0e03;
 	--pw-success: #4ade80;
+	/*
+	   Background pattern inks. The accent draws the dashes, --pw-dim the
+	   trophies — two tokens per palette and nothing else, so a seventh palette
+	   needs no new variables. See the BACKGROUND PATTERN block further down.
+	*/
+	--pw-pattern-dash: rgba(255, 122, 69, 0.11);
+	--pw-pattern-trophy: rgba(164, 152, 140, 0.16);
 }
 
-/* --- Cobalt: cold blue, closest to Steam's own identity --- */
+/* Amber: deep caramel and pale honey — lighter and far less saturated than Ember. */
+:root[data-theme='amber'] {
+	--pw-bg: #120f09;
+	--pw-surface: #1e1a11;
+	--pw-surface-2: #2f291d;
+	--pw-border: #3d3627;
+	--pw-text: #f6f0e3;
+	--pw-dim: #b5a996;
+	--pw-faint: #807566;
+	--pw-accent: #ffd27d;
+	--pw-accent-ink: #382705;
+	--pw-success: #6ee7a0;
+	--pw-pattern-dash: rgba(255, 210, 125, 0.13);
+	--pw-pattern-trophy: rgba(181, 169, 150, 0.17);
+}
+
+/* Cobalt: deep navy and ice azure — the cold, clean, closest to Steam. */
 :root[data-theme='cobalt'] {
-	--pw-bg: #070a11;
-	--pw-surface: #111827;
-	--pw-surface-2: #212b3d;
-	--pw-border: #253048;
-	--pw-text: #e8edf5;
-	--pw-dim: #97a3b8;
-	--pw-faint: #67748c;
-	--pw-accent: #4cc2ff;
-	--pw-accent-ink: #032434;
-	--pw-success: #3dd68c;
+	--pw-bg: #060910;
+	--pw-surface: #0f1626;
+	--pw-surface-2: #1d2840;
+	--pw-border: #26314e;
+	--pw-text: #e8eefb;
+	--pw-dim: #98a6c6;
+	--pw-faint: #6a7897;
+	--pw-accent: #4c8dff;
+		--pw-accent-ink: #04163a;
+	--pw-success: #3ddc97;
+	--pw-pattern-dash: rgba(76, 141, 255, 0.12);
+	--pw-pattern-trophy: rgba(152, 166, 198, 0.17);
 }
 
-/* --- Matrix: phosphor green on near-black --- */
+/* Matrix: phosphor green on green-black, set in the monospace display face. */
 :root[data-theme='matrix'] {
-	--pw-bg: #030604;
-	--pw-surface: #0a120a;
-	--pw-surface-2: #182618;
-	--pw-border: #1f331f;
-	--pw-text: #d6ffe0;
-	--pw-dim: #7fbf8a;
-	--pw-faint: #4f7f5c;
+	--pw-bg: #020604;
+	--pw-surface: #08110b;
+	--pw-surface-2: #14261a;
+	--pw-border: #1d3726;
+	--pw-text: #d4ffe2;
+	--pw-dim: #7cc08e;
+	--pw-faint: #4d8059;
 	--pw-accent: #00ff66;
-	--pw-accent-ink: #001f0b;
+	--pw-accent-ink: #00200b;
 	--pw-success: #00ff66;
-}
-
-/* --- Cyberpunk: cyan + magenta on indigo-black --- */
-:root[data-theme='cyberpunk'] {
-	--pw-bg: #08060f;
-	--pw-surface: #120d1f;
-	--pw-surface-2: #241a3d;
-	--pw-border: #33244f;
-	--pw-text: #f0e9ff;
-	--pw-dim: #a99bc4;
-	--pw-faint: #6f6191;
-	--pw-accent: #00e5ff;
-	--pw-accent-ink: #00232b;
-	--pw-success: #ff3d9a;
-}
-
-/* --- Vapor: violet, premium/editorial --- */
-:root[data-theme='vapor'] {
-	--pw-bg: #0b0811;
-	--pw-surface: #161022;
-	--pw-surface-2: #2a2042;
-	--pw-border: #2e2447;
-	--pw-text: #efe9f7;
-	--pw-dim: #a79bbf;
-	--pw-faint: #776b90;
-	--pw-accent: #a78bfa;
-	--pw-accent-ink: #1c0f3d;
-	--pw-success: #5fd69b;
+	--pw-pattern-dash: rgba(0, 255, 102, 0.10);
+	--pw-pattern-trophy: rgba(124, 192, 142, 0.16);
 }
 
 /*
-   Matrix reads as Matrix because of the monospace, not the green. Swapping the
-   font family per-palette is cheap and does more work than any colour tweak.
-   Only the display face changes — body text stays Inter everywhere.
+   Cyberpunk: indigo-black, electric cyan, hot magenta for completion. The only
+   palette whose `--pw-success` is not a green — progress is magenta here so the
+   neon reads as two colours rather than one.
+*/
+:root[data-theme='cyberpunk'] {
+	--pw-bg: #07060e;
+	--pw-surface: #110d20;
+	--pw-surface-2: #211836;
+	--pw-border: #30224f;
+	--pw-text: #f1eaff;
+	--pw-dim: #ab9ecb;
+	--pw-faint: #726395;
+	--pw-accent: #00e5ff;
+	--pw-accent-ink: #00222b;
+	--pw-success: #ff2d95;
+	--pw-pattern-dash: rgba(0, 229, 255, 0.13);
+	--pw-pattern-trophy: rgba(171, 158, 203, 0.18);
+}
+
+/* Vapor: plum and orchid — the softest ramp of the six, and the only lilac primary. */
+:root[data-theme='vapor'] {
+	--pw-bg: #0d0812;
+	--pw-surface: #1a1226;
+	--pw-surface-2: #2e2042;
+	--pw-border: #3b2a54;
+	--pw-text: #f4ecfb;
+	--pw-dim: #b2a2c9;
+	--pw-faint: #7d6d96;
+	--pw-accent: #c08bff;
+	--pw-accent-ink: #28073f;
+	--pw-success: #63e0a4;
+	--pw-pattern-dash: rgba(192, 139, 255, 0.12);
+	--pw-pattern-trophy: rgba(178, 162, 201, 0.18);
+}
+
+/*
+   The display face is a palette choice, not just a colour one: Matrix reads as
+   Matrix because of the monospace, not the green. Only the display face changes —
+   body text stays Inter everywhere.
 */
 :root {
 	--pw-font-display: 'Space Grotesk', Inter, system-ui, sans-serif;
@@ -130,8 +178,22 @@
 :root[data-theme='matrix'] {
 	--pw-font-display: 'JetBrains Mono', ui-monospace, monospace;
 }
+:root[data-theme='cyberpunk'] {
+	--pw-font-display: 'Orbitron', 'Space Grotesk', system-ui, sans-serif;
+}
 
 @layer base {
+	/*
+	   The page background lives here, NOT on the layout wrapper in
+	   `+layout.svelte`. The wrapper has to be transparent so the fixed pattern
+	   layer behind it shows through; if it carried `bg-steam-dark` it would paint
+	   over the pattern and the whole layer would be invisible. See the BACKGROUND
+	   PATTERN block below.
+	*/
+	body {
+		background: var(--pw-bg);
+	}
+
 	/*
 	   Counts animate on every check-off. Tabular figures keep the digits the same
 	   width, so the number does not shuffle sideways while it counts.
@@ -217,11 +279,14 @@
 /* Skip layout + paint for off-screen rows.
    `auto <size>` makes the browser remember each row's real height after the
    first time it is rendered, so the scrollbar does not jump while estimating.
-   80px = the 64px trophy plus 2x8px card padding. Keep this in step with the
-   `h-16` on the trophy in achievement_row.svelte. */
+   90px = the 64px trophy plus 2x12px row padding (`sm:p-3`) plus the 1px borders.
+   A collapsed card is exactly this tall; the estimate is only ever wrong for an
+   expanded one, which the `auto` keyword then fixes. Keep this in step with the
+   `h-16` trophy and the row's padding in achievement_row.svelte — and never let a
+   negative vertical margin into that row, or the card collapses to ~67px. */
 .achievement-item {
 	content-visibility: auto;
-	contain-intrinsic-size: auto 80px;
+	contain-intrinsic-size: auto 90px;
 }
 
 /* Promote the sticky nav and mobile bar to their own layers so scrolling the
@@ -230,6 +295,109 @@
 .fixed-bottom-bar {
 	will-change: transform;
 	backface-visibility: hidden;
+}
+
+/* ============================================================
+   BACKGROUND PATTERN
+   ------------------------------------------------------------
+   A tilted 135px tile behind the whole app: 45° dashes in the palette's
+   accent, the app's own lucide Trophy at the same 45° in --pw-dim.
+
+   The tile is an inline SVG <pattern> rendered by `+layout.svelte`, NOT a
+   `background-image` data URI. That is deliberate: the colours are CSS
+   variables, so all six palettes follow `data-theme` for free, and a paint
+   server referenced from SVG markup works everywhere — whereas Safari will not
+   reliably resolve `background-image: url(#id)` pointing at one.
+
+   Three layers stack, all static, so this is paint-once per route rather than
+   per scroll frame:
+     1. the tile          — `.pw-pattern`, fixed, behind everything
+     2. a radial scrim   — thins the tile toward the fold so the grid wins
+     3. a quiet band     — `.pw-quiet`, masks the tile OUT of the filter row
+   ============================================================ */
+.pw-pattern {
+	position: fixed;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+}
+.pw-pattern > svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+/* Desktop is a 135px lattice. Below `sm` it becomes 96px — three columns on a
+   390 screen is too coarse next to a 5px progress bar. Tailwind's `sm` is
+   640px, so this is the `max-width: 639px` edge. */
+.pw-pattern > svg > rect {
+	fill: url(#pw-tile);
+}
+@media (max-width: 639px) {
+	.pw-pattern > svg > rect {
+		fill: url(#pw-tile-sm);
+	}
+}
+/* A ::after rather than a second element: the scrim then paints into the same
+   promoted layer instead of adding one. */
+.pw-pattern::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: radial-gradient(175% 120% at 50% -10%, transparent 0%, rgba(0, 0, 0, 0) 55%, var(--pw-bg) 100%);
+	opacity: 0.55;
+}
+@media print {
+	.pw-pattern {
+		display: none;
+	}
+}
+
+/*
+   `.pw-quiet` masks the pattern OUT of the control-dense rows. It is a flat
+   `--pw-bg` band painted by a ::before, NOT a background on the wrapper.
+
+   Do not "simplify" this to `z-index: -1` on `.pw-quiet` itself. That was the
+   first implementation and it rendered perfectly while making every control in
+   the row unclickable: a `z-index` other than `auto` makes the element a
+   stacking context, which drops its ENTIRE subtree — the toolbar, the segmented
+   buttons, the search input — below every other in-flow element of the page.
+   The page wrapper's own box then wins the hit test and swallows the clicks.
+
+   `pointer-events: none` on the ::before is not optional either: the band is
+   decorative, and a hit-testable overlay over the controls is the same bug by
+   another route. The mask lives here for the same reason — it must not be on the
+   element whose children need to be clickable.
+
+   The negative margins cancel the page's `px-4 / sm:px-6 / lg:px-8` so the
+   band's containing block reaches the viewport edge; the padding puts the
+   controls back on the original text edge.
+*/
+.pw-quiet {
+	position: relative;
+	margin-inline: -1rem;
+	padding-inline: 1rem;
+}
+.pw-quiet::before {
+	content: '';
+	position: absolute;
+	inset: -8px 0;
+	background: var(--pw-bg);
+	pointer-events: none;
+	z-index: -1;
+	-webkit-mask-image: linear-gradient(to bottom, transparent, #000 26%, #000 74%, transparent);
+	mask-image: linear-gradient(to bottom, transparent, #000 26%, #000 74%, transparent);
+}
+@media (min-width: 640px) {
+	.pw-quiet {
+		margin-inline: -1.5rem;
+		padding-inline: 1.5rem;
+	}
+}
+@media (min-width: 1024px) {
+	.pw-quiet {
+		margin-inline: -2rem;
+		padding-inline: 2rem;
+	}
 }
 
 /* ============================================================

@@ -287,63 +287,76 @@
 		finger. A control that exists from the first paint can only have its own
 		state change, so the first add costs a "0 → 1" count and nothing moves.
 	-->
-	<div class="mb-5 flex flex-wrap items-center gap-2 sm:gap-3">
-		<SegmentedControl
-			bind:value={scope}
-			label="Library scope"
-			options={[
-				{ value: 'mine', label: 'My Library', icon: Library, count: myGames.length },
-				{ value: 'all', label: 'All Games', icon: Globe, count: data.games.length }
-			]}
-		/>
-
-		<!-- Hidden below `sm`: the mobile bar owns search on a phone. One search box
-		     per breakpoint, never both on screen. Same rule as `game_filters.svelte`. -->
-		<div class="hidden min-w-[10rem] flex-1 sm:block">
-			<SearchField
-				bind:query={searchQuery}
-				placeholder="Search games…"
-				label="Search games"
-				oninput={updateSearchUrl}
-			/>
-		</div>
-
-		<!-- Sort is always visible, at every breakpoint, exactly like the game page's
-		     filters. It used to move into the mobile bar's panel, which made the
-		     control you use to reorder the list two taps away on a phone and one away
-		     on a laptop — the same task at two different costs. -->
-		<SegmentedControl
-			bind:value={sortBy}
-			label="Sort games"
-			size="sm"
-			options={[
-				{ value: 'name', label: 'A–Z' },
-				{ value: 'completion', label: 'Completion' },
-				{ value: 'recent', label: 'Recent' }
-			]}
-		/>
-
-		<div class="hidden sm:block">
-			<ActionButton label="Sync all" icon={RefreshCw} onclick={syncAllGames} loading={syncing} />
-		</div>
-	</div>
-
 	<!--
-		First-run hint, in a slot that is always exactly one line tall. It used to
-		live below the grid, where nobody scrolls to see it, and it still shifted
-		the page when it appeared or went away. Fixed height + placed where the
-		action is means it costs nothing to show and nothing to hide.
+		`pw-quiet` wraps the control-dense rows and nothing else. It is a flat
+				`--pw-bg` band painted by a `::before`, so the background pattern stops here
+				instead of speckling behind a row of segmented controls. It masks at both
+				ends, so there is no seam where it starts. See the BACKGROUND PATTERN block
+				in `app.css` — and note that putting `z-index: -1` on this wrapper instead
+				of its `::before` makes every control in it unclickable.
 
-		`aria-live` because this is the one place the page reports the selection
-		changing to a screen reader after a "+" tap.
+		Everything inside is unchanged: the same controls, the same order, the same
+		unconditional rendering. The band is a wrapper, not a change to the toolbar.
 	-->
-	<div class="-mt-2 mb-5 h-5" aria-live="polite">
-		{#if hydrated && data.games.length > 0 && myLibrary.length === 0}
-			<p class="text-xs leading-5 text-ink-faint">
-				Tap the <span class="font-semibold text-steam-accent">+</span> on any game to build
-				<span class="font-semibold text-ink-dim">My Library</span> — your totals follow it.
-			</p>
-		{/if}
+	<div class="pw-quiet">
+		<div class="mb-5 flex flex-wrap items-center gap-2 sm:gap-3">
+			<SegmentedControl
+				bind:value={scope}
+				label="Library scope"
+				options={[
+					{ value: 'mine', label: 'My Library', icon: Library, count: myGames.length },
+					{ value: 'all', label: 'All Games', icon: Globe, count: data.games.length }
+				]}
+			/>
+
+			<!-- Hidden below `sm`: the mobile bar owns search on a phone. One search box
+			     per breakpoint, never both on screen. Same rule as `game_filters.svelte`. -->
+			<div class="hidden min-w-[10rem] flex-1 sm:block">
+				<SearchField
+					bind:query={searchQuery}
+					placeholder="Search games…"
+					label="Search games"
+					oninput={updateSearchUrl}
+				/>
+			</div>
+
+			<!-- Sort is always visible, at every breakpoint, exactly like the game page's
+			     filters. It used to move into the mobile bar's panel, which made the
+			     control you use to reorder the list two taps away on a phone and one away
+			     on a laptop — the same task at two different costs. -->
+			<SegmentedControl
+				bind:value={sortBy}
+				label="Sort games"
+				size="sm"
+				options={[
+					{ value: 'name', label: 'A–Z' },
+					{ value: 'completion', label: 'Completion' },
+					{ value: 'recent', label: 'Recent' }
+				]}
+			/>
+
+			<div class="hidden sm:block">
+				<ActionButton label="Sync all" icon={RefreshCw} onclick={syncAllGames} loading={syncing} />
+			</div>
+		</div>
+
+		<!--
+			First-run hint, in a slot that is always exactly one line tall. It used to
+			live below the grid, where nobody scrolls to see it, and it still shifted
+			the page when it appeared or went away. Fixed height + placed where the
+			action is means it costs nothing to show and nothing to hide.
+
+			`aria-live` because this is the one place the page reports the selection
+			changing to a screen reader after a "+" tap.
+		-->
+		<div class="-mt-2 mb-5 h-5" aria-live="polite">
+			{#if hydrated && data.games.length > 0 && myLibrary.length === 0}
+				<p class="text-xs leading-5 text-ink-faint">
+					Tap the <span class="font-semibold text-steam-accent">+</span> on any game to build
+					<span class="font-semibold text-ink-dim">My Library</span> — your totals follow it.
+				</p>
+			{/if}
+		</div>
 	</div>
 
 	{#if syncStatus}

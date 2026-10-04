@@ -16,14 +16,21 @@ const THEME_KEY = 'platworks:theme';
  * Ordered as they appear in the picker. Keep in step with the `[data-theme]`
  * blocks in `app.css` and with the validator in `src/app.html` — that one is a
  * separate copy because it runs before this module is ever fetched.
- */
+  *
+  * `swatch`, `bg` and `success` must match the `[data-theme]` block exactly, or the
+  * tile lies about what it selects. They are literals rather than read from CSS
+  * because the picker has to show palettes that are *not* currently applied:
+  * `var(--pw-accent)` resolves against whichever palette is on screen, so all six
+  * previews would render identically. A palette edit in `app.css` must be copied
+  * into this array.
+  */
 export const THEMES = [
-	{ id: 'ember', label: 'Ember', swatch: '#4ade9b', bg: '#0a0b0d' },
-	{ id: 'amber', label: 'Amber', swatch: '#ff9e3d', bg: '#0b0c0e' },
-	{ id: 'cobalt', label: 'Cobalt', swatch: '#4cc2ff', bg: '#070a11' },
-	{ id: 'matrix', label: 'Matrix', swatch: '#00ff66', bg: '#030604' },
-	{ id: 'cyberpunk', label: 'Cyberpunk', swatch: '#00e5ff', bg: '#08060f' },
-	{ id: 'vapor', label: 'Vapor', swatch: '#a78bfa', bg: '#0b0811' }
+	{ id: 'ember', label: 'Ember', swatch: '#ff7a45', bg: '#0c0a09', success: '#4ade80', blurb: 'molten' },
+	{ id: 'amber', label: 'Amber', swatch: '#ffd27d', bg: '#120f09', success: '#6ee7a0', blurb: 'honey' },
+	{ id: 'cobalt', label: 'Cobalt', swatch: '#4c8dff', bg: '#060910', success: '#3ddc97', blurb: 'azure' },
+	{ id: 'matrix', label: 'Matrix', swatch: '#00ff66', bg: '#020604', success: '#00ff66', blurb: 'phosphor' },
+	{ id: 'cyberpunk', label: 'Cyberpunk', swatch: '#00e5ff', bg: '#07060e', success: '#ff2d95', blurb: 'neon' },
+	{ id: 'vapor', label: 'Vapor', swatch: '#c08bff', bg: '#0d0812', success: '#63e0a4', blurb: 'orchid' }
 ] as const;
 
 export type ThemeId = (typeof THEMES)[number]['id'];

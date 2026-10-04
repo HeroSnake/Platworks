@@ -1,31 +1,72 @@
 # PlatWorks
 
-A completionist companion for Steam gamers: every achievement unpacked into step-by-step guides, missable warnings, and progress tracking.
+**Every Steam achievement, unpacked into steps you can actually follow.**
 
-<img width="1523" height="932" alt="image" src="https://github.com/user-attachments/assets/075cad15-d102-4c35-81ee-6fcc98c07211" />
+PlatWorks turns a game's trophy list into a walkthrough. Instead of a wall of greyed-out names, you get
+step-by-step instructions for each trophy, a loud warning when it can be permanently missed, and a map
+link for the ones tied to a specific corner of the world.
 
-[![PlatWorks](https://img.shields.io/badge/GitHub-HeroSnack%2FPlatworks-66c0f4?style=flat-square&logo=github)](https://github.com/HeroSnake/Platworks)
+[![PlatWorks](https://img.shields.io/badge/Platworks-HeroSnack%2FPlatworks-66c0f4?style=flat-square&logo=github)](https://github.com/HeroSnake/Platworks)
 
-## What it does
+---
 
-PlatWorks turns a game's trophy list into something you can actually act on. Instead of a grid of greyed-out names, you get the official Steam artwork, the steps to unlock each trophy, a warning when it's missable, and a link to a full walkthrough.
+## Your library
 
-- **Guides for every trophy** — step-by-step instructions, video walkthroughs, community tips from Reddit, and clear warnings on missable or one-time-only achievements
-- **Real trophy artwork** — the official Steam icon for all 1647 achievements, not placeholders. The trophy *is* the checkbox: tap it to mark it done
-- **Artwork that never breaks** — every game's card and hero image is committed to the repo and served from here, so game art cannot disappear because a CDN moved a file or rate-limited a request
-- **Your library, your numbers** — pick the games you actually own and every total, percentage and sync is measured against that list, not the whole catalogue
-- **Progress that sticks** — check off trophies by hand, or connect a public Steam profile and sync them in bulk. Your completion percentage follows you from game to game
-- **Search and filter** — find games by name, trophies by name or description, then sort by completion, recently played, or difficulty and filter by locked state and trophy type
-- **Six colour themes** — Ember, Amber, Cobalt, Matrix, Cyberpunk and Vapor, all dark-first and all checked for WCAG AA contrast. Pick one from the account menu in the top-right; it sticks, and there is no flash on load
-- **Built to be readable** — difficulty is shown with pips rather than colour alone, every control has a 40px+ tap target, and the whole interface honours your reduced-motion setting
-- **Interactive maps** — open-world games link straight to a community map, both from the game header and from individual trophy locations
-- **No API key, no accounts** — PlatWorks reads Steam's public endpoints only. There is nothing to sign up for and no key to configure
+<img src="docs/screenshots/library.png" alt="PlatWorks library: your overall completion across every game you own, with a card per game showing its artwork and trophy progress." />
 
-<img width="864" height="369" alt="image" src="https://github.com/user-attachments/assets/a79284c2-5db6-4cde-a402-8f845d9c51a9" />
+Add the games you actually own and **every number on the page is measured against that list** — not the
+whole catalogue. So your percentage is your percentage, and syncing a game you don't play costs you
+nothing.
 
-## Games
+Tap the **+** on any card to add it. Your overall completion, the trophies left, and the "Sync all"
+button all follow your selection.
 
-29 games, 1647 achievements, all with official artwork:
+## A game's trophies
+
+<img src="docs/screenshots/game-page.png" alt="A game's trophy page: artwork, a progress ring showing 38 of 42 trophies, filters for completion and type, and a list of trophies you can tick off by tapping them." />
+
+Every trophy is a row you can **tap to tick off** — no checkboxes in a separate column, so the name of a
+long trophy like *"Rennala, Queen of the Full Moon"* still fits on one line on a phone.
+
+Some rows earn an extra badge:
+
+| Badge | What it means |
+|---|---|
+| **Missable** | You can lock this one out permanently. Read the warning before you start. |
+| **Secret** | Steam hides the description until you unlock it. |
+| **Cumulative** | An in-game counter. The number you need is in the steps. |
+| **Multiplayer** | Needs other players. |
+
+The difficulty pips on each row are a four-step scale, shown as pips rather than colour alone — so the
+rating survives being colour-blind, greyscale, or read on a bright screen outdoors.
+
+## Connecting your Steam account
+
+Optional, and read-only.
+
+PlatWorks can pull your real achievement list from a **public** Steam profile, so you don't tick 1647
+boxes by hand. Paste a Steam ID, a vanity URL, or a profile link into the account button in the top-right
+and it syncs.
+
+**There is no sign-up, no password, and no API key.** PlatWorks only reads Steam's public community
+endpoints. Your progress lives in your browser, and disconnecting clears it.
+
+## What else is in here
+
+- **Step-by-step guides** for every trophy, with video walkthroughs and community tips where they exist
+- **Missable warnings** on the trophies where a single wrong choice costs you the achievement forever
+- **Map links** for open-world games, from both the game header and individual trophies
+- **Search and filter** — find games by name, trophies by name or description, sort by completion, recency
+  or difficulty, and filter by locked state and trophy type
+- **Six colour themes** — Ember, Amber, Cobalt, Matrix, Cyberpunk and Vapor, each with its own palette and
+  accent colour. Pick one from the account menu; it sticks, and there is no flash on load
+- **Readable on a phone** — every control has a 40px+ tap target, and the whole app honours your
+  reduced-motion setting
+
+## The catalogue
+
+**29 games, 1647 achievements**, every one with its official trophy artwork committed to this repo — so
+the art can't disappear because a CDN moved a file or rate-limited a request.
 
 | Game | Achievements | Map |
 |------|-------------:|:---:|
@@ -56,45 +97,30 @@ PlatWorks turns a game's trophy list into something you can actually act on. Ins
 | The Witcher 3: Wild Hunt | 78 | ✓ |
 | Tom Clancy's Rainbow Six Siege | 48 | |
 | Tower Factory | 21 | |
-| Valheim | 53 | |
+| Valheim | 53 | ✓ |
 | WARDOGS | 10 | |
 
-Want a game that's missing? [Open an issue](https://github.com/HeroSnake/Platworks/issues) and say which one.
+Want a game that's missing? [Open an issue](https://github.com/HeroSnake/Platworks/issues) and name it.
 
-## Running it
+## Running it yourself
 
 ```bash
+git clone https://github.com/HeroSnake/Platworks.git
+cd Platworks
 npm install
 npm run dev
 ```
 
-Then open the printed URL. Connect your Steam account from the button in the top-right corner — it accepts an ID, a vanity name, or a profile URL.
+Open the URL it prints. No environment variables, no database, no Steam API key.
 
-To check your work before pushing:
+<details>
+<summary>Contributing</summary>
 
-```bash
-npm run check    # types and templates
-npm run build    # production build
-```
+Project rules live in [`.github/agents/`](.github/agents/) — the traps, the architecture, and why things
+are the way they are. Start with
+[`platworks-dev.agent.md`](.github/agents/platworks-dev.agent.md); it routes you to whichever domain file
+owns what you're changing.
 
-## Built with
+Built with SvelteKit 3, Svelte 5 runes, Tailwind CSS 4 and TypeScript. Deployed on Vercel.
 
-SvelteKit 3 and Svelte 5 runes, Tailwind CSS 4, TypeScript, Space Grotesk + Inter + JetBrains Mono, and Steam's public community endpoints. No backend of its own — game data lives in the repo, and Steam is queried from the server at request time.
-
-## Contributing
-
-Project rules, architecture, and the traps that have already been fixed live in [`.github/agents/`](.github/agents/). Start with [`platworks-dev.agent.md`](.github/agents/platworks-dev.agent.md) — it routes you to the file that owns whatever you're changing, whether that's UI, Steam integration, persisted state, or game data.
-
-Adding a colour theme? The palettes are `[data-theme]` blocks in `src/app.css`; see [platworks-state.agent.md](.github/agents/platworks-state.agent.md) §6, which lists the three places a new palette must be registered.
-
-Game data can also be generated for you:
-
-```
-/generate-game-data "Game Name"
-```
-
-Then mirror its artwork into the repo:
-
-```
-node scripts/fetch-game-images.mjs <appId>
-```
+</details>

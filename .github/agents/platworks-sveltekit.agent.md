@@ -13,15 +13,15 @@ tools: [read, edit, search, execute]
 
 ## 1. SvelteKit 3 gotchas & traps
 
-SvelteKit 3 is a large break from v2. These are the traps that have already bitten this project.
+SvelteKit 3's API differs from v2 in ways that are easy to get wrong. These are the traps:
 
 | Trap | Detail |
 |---|---|
 | **`svelte.config.js` must not exist** | Its presence is a hard `config_file_unsupported` error, not a warning. Config goes in `vite.config.ts` → `sveltekit({ adapter, compilerOptions })`. `adapter` is **top-level**, no `kit: {}` wrapper. Options SvelteKit doesn't claim are forwarded to `vite-plugin-svelte` (that is where `compilerOptions` lands) |
 | **`adapter-auto` is not used** | The target is **Vercel** and it is pinned as `@sveltejs/adapter-vercel` in `vite.config.ts`. Do not reintroduce `adapter-auto` "because it is the default": on Vercel it detects the platform from `process.env.VERCEL`, then runs `npm install` of the adapter **during the build**, which mutates `package.json` and needs a network round-trip. A pinned adapter is faster, deterministic, and configurable |
-| **`$lib` is removed** | Use `#lib`. It needs **both** the `imports` field in `package.json` *and* a mirrored `paths` entry in `tsconfig.json` — Vite resolves from the former, TypeScript from the latter. Missing the mirror yields ~29 phantom type errors while the app runs fine |
-| **`$app/environment` is removed** | Use `$app/env` (exports `browser`, `dev`, `building`, `version`) |
-| **`tsconfig.json` extends `$app/tsconfig`** | Not `./.svelte-kit/tsconfig.json`. The generated base now lives at `node_modules/$app/tsconfig.json` and ships `paths: {}` — SvelteKit no longer generates any lib path, so you must supply it |
+| **`$lib` does not exist** | Use `#lib`. It needs **both** the `imports` field in `package.json` *and* a mirrored `paths` entry in `tsconfig.json` — Vite resolves from the former, TypeScript from the latter. Missing the mirror produces a large number of phantom type errors while the app runs fine |
+| **`$app/environment` does not exist** | Use `$app/env` (exports `browser`, `dev`, `building`, `version`) |
+| **`tsconfig.json` extends `$app/tsconfig`** | Not `./.svelte-kit/tsconfig.json`. The base lives at `node_modules/$app/tsconfig.json` and ships `paths: {}` — SvelteKit generates no lib path, so you must supply it |
 | **`goto()` options were renamed** | `replaceState`→`replace`, `invalidateAll`→`refreshAll`; `noScroll`+`keepFocus` collapsed into a single `reset` flag |
 | **Shallow `goto` still fires `onNavigate`** | `goto(url, { shallow: true })` calls `_before_navigate()` internally, so `onNavigate` runs and the View Transition plays. For "update the URL only" use the **deprecated** `replaceState(url, state)` from `$app/navigation` — it is the one API that skips the navigation hooks. It logs a one-time dev warning; that is the accepted cost |
 | **Per-keystroke navigation** | Never call `goto()` from an `oninput` handler. Besides animating, it can re-run `+page.server.ts` (the library `load` fetches Steam details for every game) |
@@ -73,7 +73,9 @@ key. No environment variables are required on Vercel.
 | `/api/steam/profile` | `+server.ts` | name + avatar |
 | `/linktest` | `+page.svelte` + `+page.server.ts` | scratch page for inspecting link combinations in `achievement_row.svelte`. Temporary — **delete it (the directory, both files) once the inspection is done**; it is a real route and ships to production |
 
-Adding a route means adding a row here and a line to the README structure tree.
+Adding a route means adding a row here and a row in §4 of
+[platworks-dev.agent.md](./platworks-dev.agent.md). Nothing goes in the README — it carries no structure
+tree.
 
 ## 3. Hydration: the `hydrated` gate
 
@@ -88,7 +90,7 @@ $effect(() => { hydrated = true; });
 
 ```svelte
 {#if !hydrated}
-  <div class="h-16 animate-pulse rounded-lg bg-steam-blue"></div>
+  <div class="h-[90px] animate-pulse rounded-lg bg-steam-blue"></div>
 {:else}
   {#each items as item (item.id)} … {/each}
 {/if}
