@@ -120,6 +120,9 @@ are the way they are. Start with
 [`platworks-dev.agent.md`](.github/agents/platworks-dev.agent.md); it routes you to whichever domain file
 owns what you're changing.
 
+Reusable scripts for agent work — the UI audit, the mockup renderer, the Steam list parser — live in
+[`scripts/agent/`](scripts/agent/README.md), so nobody re-derives them on every task.
+
 Built with SvelteKit 3, Svelte 5 runes, Tailwind CSS 4 and TypeScript. Deployed on Vercel.
 
 </details>

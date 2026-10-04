@@ -117,4 +117,4 @@ let achievedMap = $derived.by(() => new Map(Object.entries(achieved)));
 
 ## 5. Verifying
 
-`npm run check` (`svelte-kit sync && svelte-check`) is the source of truth. Details, including the WSL `PATH` export and the stale-VS-CS-TS-server caveat, are in [platworks-dev.agent.md](./platworks-dev.agent.md) §7.
+`npm run check` (`svelte-kit sync && svelte-check`) is the source of truth. Details, including the WSL `PATH` export and the stale-VS-CS-TS-server caveat, are in [platworks-dev.agent.md](./platworks-dev.agent.md) §7.

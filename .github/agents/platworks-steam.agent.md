@@ -139,4 +139,4 @@ The resolved Steam64 ID is written back over the user's original input so later 
 
 Define an interface in `#lib/types/steam.ts` for every response shape (`SteamGameDetails`, `SteamAchievementStatus`, `SteamProfile`); do not inline response types in a route.
 
-Steam keys, if ever added, belong in `.env` and are read server-side only — never expose them to the client.
+Steam keys, if ever added, belong in `.env` and are read server-side only — never expose them to the client.

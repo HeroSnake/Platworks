@@ -103,18 +103,27 @@ Two traps behind it:
 ### Scratch workspace: `.tmp/game-data/{appId}/`
 
 The agent may create and delete anything under `.tmp/` (gitignored): the fetch
-`ledger.json`, a `findings.jsonl` of per-achievement results, and throwaway
-`.mjs` scrapers under `scripts/`. It is repo-local **on purpose** — this repo is
+`ledger.json`, a `findings.jsonl` of per-achievement results, and the parsed
+`achievements.json`. It is repo-local **on purpose** — this repo is
 edited from Windows and built from WSL, so a system temp dir is two different
 paths and the agent loses its own work mid-run. Scratch files never go in
-`src/`, the repo root, or `scripts/` (which ships durable tooling). The directory
-is deleted once `npm run check` passes; if a scraper proves worth keeping, promote
-it to `scripts/` deliberately with usage documented.
+`src/`, the repo root, or `scripts/`. The directory is deleted once `npm run check`
+passes.
+
+**A scraper that will be needed again belongs in `scripts/agent/`, not here.**
+The Steam achievement list fetch is exactly that case and is already written —
+`node scripts/agent/steam-achievements.mjs <appId>` does phase 2 in one command
+and refuses to write a partial list. The same applies to the ledger
+(`scripts/agent/ledger.mjs`) and to link verification (`scripts/agent/check-links.mjs`).
+Writing a fourth copy of the same parser into `.tmp/` is how a scraper silently
+starts disagreeing with the committed one.
 
 **Verified:** `tsconfig.json` has `include: ["src", "*"]`, but TypeScript skips
 dot-directories in wildcard patterns, so `.tmp/**` is never type-checked even with
 `allowJs`/`checkJs` on. A junk `.mjs` under `.tmp/` leaves `npm run check` at 0
-errors. Do not add a speculative `exclude` entry for it.
+errors. `scripts/**` is *also* outside the program — `.mjs` is not matched by the
+default extension list — so `scripts/agent/` is not type-checked either. Do not add
+a speculative `exclude` entry for either.
 
 ## 3. Interactive maps
 
@@ -124,6 +133,8 @@ Verification rule: **only save a `mapUrl` that returned HTTP 200.** `wiki.gg` an
 scripted requests (Cloudflare bot protection) even though they work in a browser; that is not the same as
 a dead link, but it is also not verified. Omit those rather than saving them unverified — do not add them
 without checking in a real browser first. Prefer MapGenie → official map → wiki map page.
+`node scripts/agent/check-links.mjs --game <appId>` checks every stored link and reports a Cloudflare 403
+as *unverifiable* rather than dead, so the distinction is never lost to a raw status code.
 
 Omit `mapUrl` entirely for linear or competitive games. That is a correct answer, not an omission.
 
@@ -152,11 +163,13 @@ The scraping target and all of its traps (one URL per trophy, 64×64 native, dis
    If the game is already in `src/lib/data/games/`, the prompt **asks** whether to
    replace, merge or keep it — answer that question before the run continues.
 2. Write `src/lib/data/games/{appId}.json` — verify `totalAchievements` matches the array length.
-3. `node scripts/fetch-achievement-icons.mjs {appId}`.
-4. `node scripts/verify-achievement-icons.mjs`.
-5. `npm run check` — the loader glob and the type mirror are validated by the build.
-6. Delete `.tmp/game-data/` once the run is verified.
-7. Add a row to the **README catalogue** table — the game name and achievement count. That is the only
+3. `node scripts/agent/steam-achievements.mjs {appId}` — the authoritative name / description / unlock-rate list.
+4. `node scripts/fetch-achievement-icons.mjs {appId}`.
+5. `node scripts/verify-achievement-icons.mjs`.
+6. `node scripts/agent/check-links.mjs --game {appId}` — every stored link still resolves.
+7. `npm run check` — the loader glob and the type mirror are validated by the build.
+8. Delete `.tmp/game-data/` once the run is verified.
+9. Add a row to the **README catalogue** table — the game name and achievement count. That is the only
    README edit a data file needs.
 
-Adding a *tag* value means updating `schema.json`, `game.ts` (`AchievementType`), and the badge/icon maps in `achievement_row.svelte` together. Adding a *difficulty* value means `schema.json`, `game.ts`, and the filter/sort UI in `game/[appId]/+page.svelte`.
+Adding a *tag* value means updating `schema.json`, `game.ts` (`AchievementType`), and the badge/icon maps in `achievement_row.svelte` together. Adding a *difficulty* value means `schema.json`, `game.ts`, and the filter/sort UI in `game/[appId]/+page.svelte`.

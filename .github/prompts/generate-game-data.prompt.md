@@ -123,8 +123,7 @@ All intermediate work goes under **`.tmp/game-data/{appId}/`** at the repo root.
 .tmp/game-data/{appId}/
 ├── achievements.json  # the Steam list, parsed once: id, name, description, hidden, unlock rate
 ├── ledger.json        # every URL fetched, what it answered, which achievements it covered
-├── findings.jsonl     # one line per achievement: triage score + what research found
-└── scripts/           # throwaway .mjs scrapers, deleted when the run finishes
+└── findings.jsonl     # one line per achievement: triage score + what research found
 ```
 
 **Repo-local, not `/tmp`.** A system temp dir would be a different path on the
@@ -135,11 +134,11 @@ to the same folder from both, and it is already in `.gitignore`.
 **You may create, modify and delete anything in `.tmp/`.** It is yours for the
 duration of the task. Two constraints only:
 
-- Never write scratch files anywhere else — not `src/`, not the repo root, and
-  not `scripts/`, which holds durable tooling that ships with the repo.
-- Never reference a `.tmp/` path from the game JSON or from any source file. If
-  a scraper turns out to be worth keeping, promote it to `scripts/` deliberately
-  with usage documented, the way `fetch-achievement-icons.mjs` is.
+- Never write scratch files anywhere else — not `src/`, not the repo root. `.tmp/` is for
+  *data*. If a task needs a **script** that will be written again next run, it belongs in
+  `scripts/agent/`, committed — which is where the Steam list parser and the ledger CLI
+  already live, so this run does not re-derive them.
+- Never reference a `.tmp/` path from the game JSON or from any source file.
 
 Delete `.tmp/game-data/{appId}/` at the end of phase 8, once that game's JSON is
 written and its icons fetched. Keep it while other games are still running — it
@@ -147,31 +146,29 @@ is what stops the next game from re-fetching the same pages.
 
 ### The fetch ledger
 
-`ledger.json` is the answer to "have I already opened this page?". One entry per
-URL, written **before** the request so a crashed run still has it:
+`ledger.json` is the answer to "have I already opened this page?". **It is a CLI, not
+a format you hand-maintain** — `node scripts/agent/ledger.mjs <appId> …`:
 
-```json
-{
-  "url": "https://game-wiki.example/Achievements",
-  "fetchedAt": "2026-01-14T10:22:00Z",
-  "status": 200,
-  "covers": ["CHOP_TREE", "KILL_BOSS_1", "FIND_3_SHARDS"],
-  "answered": "All 42 names + descriptions, missable table rows, shard locations",
-  "notes": "Table has a Location column — reuse it for per-trophy mapUrl"
-}
-```
+| Command | When |
+|---|---|
+| `check <url>` | **Before every request.** Exit 0 means already read — read what it answered instead of fetching again. |
+| `add <url>` | **Before the request.** Writes `status: "pending"` so a crashed run still shows the page was being opened. |
+| `resolve <url> --status N --covers a,b --answered "…"` | **After.** Closes the entry out with what it served. |
+| `list`, `stats`, `uncovered --all` | Reporting. `stats` names pending and blocked entries. |
 
-Check it before every request. Three rules make it work:
+One entry per URL, and the CLI enforces the three rules that make it work:
 
 1. **Log before fetching, fill `covers` after.** A URL already present is never
-   requested again — read what it answered instead.
+   requested again — `check` exits non-zero on anything it does not already hold, and
+   `add` refuses a duplicate outright, so the same wiki index cannot be opened four
+   times in one run. URLs are normalised first, so a trailing slash or a
+   `#fragment` does not create a second entry for a page you already read.
 2. **One page, many achievements.** Put every achievement the page served in
    `covers`, even ones you have not written yet. A collectible table that lists
    30 items settles 30 trophies in one entry.
-3. **A dead end is still an entry.** Log the failure with its status, then move
-   on — do not retry the same URL with a different spelling or trailing slash.
-   `wiki.gg` and `fandom` return 403 to scripted requests because of Cloudflare;
-   that is recorded once and the source is dropped, not re-attempted.
+3. **A dead end is still an entry.** `resolve --status 403`, then move on — do not
+   retry with a different spelling. `wiki.gg` and `fandom` return 403 to scripted
+   requests because of Cloudflare; that is recorded once and the source is dropped.
 
 `findings.jsonl` is one line per achievement, written during triage and extended
 as research lands — the text you would otherwise re-derive from a page you have
@@ -263,9 +260,19 @@ directory `.tmp/game-data/{appId}/` with `achievements.json`, `ledger.json`,
 Fetch `https://steamcommunity.com/stats/{appId}/achievements` **once** — the
 authoritative source for names and IDs. Parse it to
 `.tmp/game-data/{appId}/achievements.json` (id, name, description, hidden,
-unlock rate) with a throwaway script in `scripts/`, then work from that file for
-the rest of the run. The unlock rate is also how you spot the rare, grind-heavy
-trophies worth researching in phase 4.
+unlock rate), then work from that file for the rest of the run. The unlock rate is
+also how you spot the rare, grind-heavy trophies worth researching in phase 4.
+
+```bash
+node scripts/agent/steam-achievements.mjs 1245620 --name "ELDEN RING"
+```
+
+It fetches once, refuses to write a partial list when the page's own count
+disagrees with the rows parsed, and prints the five rarest trophies to triage
+against. It also prints the one thing it cannot do: **the public page carries no
+API name, so every `id` comes back `null`.** Take those from the Steamworks partner
+site or `GetSchemaForGame`. `name` is the join key for the icon scraper in phase 7,
+so it must stay exactly as Steam spells it.
 
 ### 3 · Triage achievements
 
@@ -300,6 +307,16 @@ Check the ledger first: a URL already in it is not fetched again.
 
 At most two candidate URLs, and only if one actually returns 200 (see above).
 Linear or competitive game: omit it — that is a correct answer, not a failure.
+
+Verify a candidate before saving it:
+
+```bash
+node scripts/agent/check-links.mjs --url https://mapgenie.io/elden-ring
+```
+
+A 403 from wiki.gg or fandom is **unverifiable, not dead** — Cloudflare blocks every
+scripted request while the page works fine in a browser. The script reports those
+separately for exactly that reason. Do not drop a link because a script could not open it.
 
 ### 6 · Write game JSON
 

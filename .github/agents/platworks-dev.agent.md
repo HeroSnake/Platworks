@@ -127,6 +127,7 @@ table, then open only the matching files.
 | Steam API | `#lib/server/steam/api.ts` | server-only: `getGameDetails()`, `resolveSteamId()`, `getPlayerProfile()`, `getPlayerAchievements()`, `normalizeName()` |
 | Game loader | `#lib/server/games.ts` | `getAllGames()`, `getGameByAppId()` via `import.meta.glob('#lib/data/games/[0-9]*.json')` |
 | Icon tooling | `scripts/` | `fetch-game-images.mjs` (mirrors header + hero into `static/images/games/{appId}/`), `fetch-achievement-icons.mjs` (writes remote `iconUrl`), `verify-achievement-icons.mjs` (audits icons). Run with `node`, not npm |
+| Agent toolkit | `scripts/agent/` | Reusable scripts for agent tasks, committed so they are never rewritten per run: `ui-audit.mjs` (the browser audit below), `shot.mjs` + `new-mockup.mjs` (mockups), `steam-achievements.mjs` + `ledger.mjs` + `check-links.mjs` (game data). See [scripts/agent/README.md](../../scripts/agent/README.md). **A scratch file that will be needed again belongs here, not in `.tmp/`** |
 | Game artwork | `static/images/games/{appId}/` | committed `header.jpg` + `hero.jpg`, served from `/images/games/...`. The app never requests Steam's CDN for these; achievement icons are the deliberate exception |
 | Client profile cache | `#lib/client/profile.ts` | `loadProfile()`, `saveProfile()`, `clearProfile()`, `refreshProfile()` |
 | Client user library | `#lib/client/library.ts` | `loadLibrary()`, `saveLibrary()`, `addToLibrary()`, `removeFromLibrary()`, `clearLibrary()` — appIds only, owns `platworks:library` |
@@ -135,8 +136,8 @@ table, then open only the matching files.
 | Components | `#lib/components/` | `achievement_row`, `game_card`, `game_filters`, `github_icon`, `mobile_bar`, `theme_picker`, plus the shared primitives `progress_bar` / `progress_ring` / `stat_tile` / `segmented_control` / `search_field` / `action_button` / `difficulty_pips` — **use these instead of hand-rolling a control** |
 | Pre-paint script | `src/app.html` | inline, synchronous: applies the stored palette and loads the webfonts before first paint. Moving either into Svelte causes a flash. The font list must cover every `--pw-font-display` in `app.css` — Orbitron (Cyberpunk) and JetBrains Mono (Matrix) |
 | Game data | `#lib/data/games/{appId}.json` | per-game achievement guides |
-| Game-data scratch | `.tmp/game-data/{appId}/` | gitignored; fetch `ledger.json` + `findings.jsonl` + throwaway scrapers for `/generate-game-data`. Repo-local on purpose — Windows + WSL must see the same path. Deleted when the run finishes; see [platworks-gamedata.agent.md](./platworks-gamedata.agent.md) §2b |
-| UI mockup scratch | `.tmp/ui/{slug}/` | gitignored; standalone HTML per proposition + `notes.md` + `shots/` + `shot.mjs` for `/ui-project`. Repo-local for the same Windows/WSL reason. **Never deleted without asking** — see [`ui-project.prompt.md`](../prompts/ui-project.prompt.md) |
+| Game-data scratch | `.tmp/game-data/{appId}/` | gitignored; fetch `ledger.json` + `findings.jsonl` + the parsed `achievements.json`. Repo-local on purpose — Windows + WSL must see the same path. Deleted when the run finishes; see [platworks-gamedata.agent.md](./platworks-gamedata.agent.md) §2b |
+| UI mockup scratch | `.tmp/ui/{slug}/` | gitignored; standalone HTML per proposition + `notes.md` + `shots/`. Repo-local for the same Windows/WSL reason. **Never deleted without asking** — see [`ui-project.prompt.md`](../prompts/ui-project.prompt.md) |
 | README screenshots | `docs/screenshots/` | committed PNGs referenced by `README.md` |
 | Layout | `src/routes/+layout.svelte` | navbar + account popover + the background pattern layer; owns `platworks:steamId` |
 | Routes | `src/routes/` | `/` library · `/game/[appId]` detail · `/api/steam/sync/[appId]` · `/api/steam/profile` · `/linktest` |
@@ -179,16 +180,22 @@ npm run dev
 - Smoke-test with `curl -s -o /dev/null -w '%{http_code}' http://localhost:5173/<route>`.
 - **Playwright + Chromium work here.** They need these system libs, installed once as root:
   `wsl -d Ubuntu -u root -- apt-get install -y libnspr4 libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libpango-1.0-0 libcairo2 libasound2t64`
-- `playwright` is **not** a project dependency, so `import { chromium } from "playwright"` fails. Import it
-  by absolute path from the npx cache:
-  `import { chromium } from "/home/florent/.npm/_npx/<hash>/node_modules/playwright/index.mjs"`
-  (find the hash with `ls -d ~/.npm/_npx/*/node_modules/playwright`).
-- **`curl` cannot see UI defects.** Load every route at 390/768/1440 and assert no horizontal overflow,
-  one visible instance of every control, no interactive element under 40px, and no console errors — then
-  **click the controls** and assert an observable state change. See
-  [platworks-ui.agent.md](./platworks-ui.agent.md) §6 for the full audit and why the click step is
-  mandatory. Write the script to `.tmp/` (gitignored) and delete it afterwards; inline `node -e` through
-  the PowerShell→WSL quoting chain is not worth attempting.
+- `playwright` is **not** a project dependency, so `import { chromium } from "playwright"` fails. Never
+  hardcode the npx-cache path to work around it — the `<hash>` changes whenever the cache is pruned, and
+  a script with a baked-in path breaks weeks later with a `Cannot find module`. Import
+  `scripts/agent/lib/playwright.mjs` instead: it resolves the newest install and, when there is none,
+  fails with the one command that fixes it
+  (`npx -y playwright@latest install --with-deps chromium`).
+- **`curl` cannot see UI defects.** `scripts/agent/ui-audit.mjs` does: it loads every route at
+  390/768/1440 and asserts no horizontal overflow, one copy of each control, no interactive element
+  under 40px and no console errors, then writes the screenshots you have to actually look at. Add
+  `--checks <file>` to assert the controls *respond* — a geometry audit cannot see a dead control. See
+  [platworks-ui.agent.md](./platworks-ui.agent.md) §6 and
+  [`scripts/agent/README.md`](../../scripts/agent/README.md).
+- **Do not write a throwaway audit script.** If a check this repo needs is missing, add it to
+  `scripts/agent/` and commit it — the whole point is that the next run does not re-derive it. `.tmp/`
+  is for *output* (mockups, ledgers, screenshots), never for a script that will be needed again.
+  Inline `node -e` through the PowerShell→WSL quoting chain is not worth attempting either way.
 - `@vercel/analytics` is **not installed and not used** — do not re-add it. Its latest stable declares a
   peer range of Kit 1 or 2 only, so it cannot be installed on Kit 3 without `--legacy-peer-deps`.
 - **Every file in this repo uses CRLF line endings and there is no `.gitattributes`.** `git status`

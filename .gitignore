@@ -1,7 +1,5 @@
 node_modules
 .vscode/
-
-# Scratch workspace for /generate-game-data (fetch ledgers, throwaway scrapers)
 .tmp/
 
 # Output

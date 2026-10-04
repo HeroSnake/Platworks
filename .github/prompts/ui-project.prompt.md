@@ -178,20 +178,32 @@ have to imagine.
 
 ### The layout
 
+```bash
+node scripts/agent/new-mockup.mjs library-heatmap
+```
+
+Scaffolds `.tmp/ui/{slug}/` with the **real** palette extracted from `src/app.css`,
+the **real** Google Fonts link from `src/app.html`, and **real** game data from
+`src/lib/data/games/` — the three things the rules below demand and the three that
+are tedious to get right by hand every run. It writes a blank frame, not a design:
+the proposition is the agent's judgement, not a template's.
+
 ```
 .tmp/ui/{slug}/
-├── a-{variant}.html        # one self-contained file per proposition
-├── b-{variant}.html
-├── notes.md                # what each variant costs, what it breaks
-├── research.md             # if phase 2 ran
-├── shot.mjs                # the screenshot script
+├── a-inline.html        # one self-contained file per proposition
+├── b-sheet.html
+├── notes.md             # what each variant costs, what it breaks
+├── research.md          # if phase 2 ran
 └── shots/
-    ├── a-{variant}-390.png
-    └── a-{variant}-1440.png
+    ├── a-inline-390.png
+    └── a-inline-1440.png
 ```
 
 `{slug}` is a short kebab-case name for the project — `library-heatmap`,
 `game-hero-rework`.
+
+Use `--game <appId>` and `--theme <id>` to pick the data and palette;
+`--list-games` shows what is available.
 
 ### What every mockup file must satisfy
 
@@ -223,35 +235,29 @@ downside listed has not been thought about.**
 The user should not have to open files to see the work. Render each at 390 and
 1440 and put the PNGs in the reply.
 
-Write `shot.mjs` into the scratch dir — never `node -e` through the
-PowerShell→WSL quoting chain:
-
-```js
-// .tmp/ui/{slug}/shot.mjs  — usage: node shot.mjs <html> <out.png> <width>
-import { chromium } from '/home/florent/.npm/_npx/e41f203b7505f1fb/node_modules/playwright/index.mjs';
-
-const [url, out, width = '390'] = process.argv.slice(2);
-const browser = await chromium.launch();
-const page = await browser.newPage({ viewport: { width: +width, height: 900 } });
-const errors = [];
-page.on('pageerror', (e) => errors.push(String(e)));
-await page.goto(url, { waitUntil: 'networkidle' });
-await page.screenshot({ path: out, fullPage: true });
-const overflow = await page.evaluate(
-	() => document.documentElement.scrollWidth !== document.documentElement.clientWidth
-);
-await browser.close();
-console.log(JSON.stringify({ out, overflow, errors }));
-```
-
-Find the Playwright path first — the hash is not stable:
-
 ```bash
-ls -d ~/.npm/_npx/*/node_modules/playwright
+node scripts/agent/shot.mjs .tmp/ui/library-heatmap
 ```
 
-`file://` URLs work and this is verified. `overflow: true` means a horizontal
-scrollbar exists: **fix it before showing the mockup.** Report any `errors`.
+That is the whole step. It renders every `.html` in the directory at both widths into
+`shots/`, **and** reports the two things a screenshot hides: a horizontal scrollbar
+(`overflow`) and any `pageerror` / console error. Fix the overflow before showing the
+mockup — a picture of a broken layout reads as a broken *idea*.
+
+It prints the markdown to paste into the reply at the end:
+
+```markdown
+![a-inline-390.png](.tmp/ui/library-heatmap/shots/a-inline-390.png)
+```
+
+`file://` URLs work and are verified. Useful flags: `--widths 390,1440`,
+`--theme matrix` (applies a palette as `[data-theme]`), `--viewport` instead of a
+full-page shot.
+
+**Never write a `shot.mjs` into the mockup directory.** The old instruction to do
+so is why the Playwright install path was hardcoded into a dozen scratch files, each
+of which broke the next time the npx cache was pruned. `shot.mjs` resolves Playwright
+through `scripts/agent/lib/playwright.mjs` and never hardcodes a path.
 
 ---
 
@@ -363,27 +369,40 @@ step finishes.
 **Both, every time.** Neither substitutes for the other.
 
 ```bash
-npm run check    # svelte-kit sync + svelte-check
+npm run check                                          # svelte-kit sync + svelte-check
+node scripts/agent/ui-audit.mjs --routes <touched>      # browser audit
 ```
 
-Then a **Playwright audit in a real browser** — `curl` cannot see horizontal
-overflow, duplicated controls, tap-target sizes or console errors. Load every
-affected route at **390 / 768 / 1440** and assert:
+`ui-audit.mjs` loads every affected route at **390 / 768 / 1440** and asserts:
 
 1. `documentElement.scrollWidth === clientWidth` — no horizontal overflow
-2. **Every control appears exactly once** — count visible `select`,
-   `input[type=text]` and `[role=radiogroup]`. This catches the duplicated-filter
-   class of bug completely; `svelte-check` and `curl` both miss it.
+2. **Every control appears exactly once** — the same *labelled* control must not be
+   rendered twice. This catches the duplicated-filter class of bug completely;
+   `svelte-check` and `curl` both miss it.
 3. **No interactive element under 40px tall.** `h-9` is 36px.
 4. No `pageerror`, no console errors.
 
-**Look at the screenshots.** Two of the worst bugs in this repo's history — a map
-link rendered twice at one breakpoint, a filter row whose search field sat
-off-screen — were obvious in a screenshot and invisible to every other check.
+Then add click checks, because geometry is not liveness — a control can be the
+right size, in the right place, and still do nothing:
+
+```bash
+node scripts/agent/ui-audit.mjs --routes / --checks .tmp/ui/library-heatmap/clicks.mjs
+```
+
+Start from [`scripts/agent/examples/clicks.mjs`](../../scripts/agent/examples/clicks.mjs).
+Each check names a control and the observable state it must change, and runs on a
+fresh page. For a change that adds an overlay, a mask or a `z-index`, pass a
+`probe.container` so the corners and edges are probed against the control too — see
+[platworks-ui.agent.md](../agents/platworks-ui.agent.md) §6.
+
+**Look at the screenshots.** The audit writes one PNG per route and width to
+`.tmp/audit-shots/`. Two of the worst bugs in this repo's history — a map link
+rendered twice at one breakpoint, a filter row whose search field sat off-screen —
+were obvious in a screenshot and invisible to every other check.
 
 Report the result honestly. "Verified at 390/768/1440: no overflow, one copy of
-each control, smallest target 40px, no console errors" is what the user needs to
-hear. If something failed, say which check and what it found.
+each control, smallest target 40px, no console errors, 7 click checks passing" is
+what the user needs to hear. If something failed, say which check and what it found.
 
 ---
 
@@ -421,10 +440,13 @@ same folder from both and is already in `.gitignore`.
 
 **You may create, modify and delete anything in `.tmp/`.** Two constraints:
 
-- Never write scratch files anywhere else — not `src/`, not the repo root, and
-  not `scripts/`, which holds durable tooling that ships with the repo.
-- Never reference a `.tmp/` path from a source file or from a component. If a
-  mockup turns out to be worth keeping, port it deliberately.
+- Never write scratch files anywhere else — not `src/`, not the repo root. `.tmp/` is for
+  *output* (mockups, screenshots, notes). If a task needs a **script** that will be
+  written again next time, it belongs in `scripts/agent/`, committed, not here — that is
+  where `shot.mjs`, `new-mockup.mjs` and `ui-audit.mjs` live precisely so this run does
+  not re-derive them.
+- Never reference a `.tmp/` path from a source file or from a component. If a mockup
+  turns out to be worth keeping, port it deliberately.
 
 ---
 
@@ -481,4 +503,4 @@ finished.
    port is a decision the user makes at phase 5.
 10. **Verify in a real browser.** `npm run check` does not see layout.
 11. **Say what is not done.** A skipped state, an unverified breakpoint, a
-    hand-wave in the mockup — report it rather than shipping past it.
+    hand-wave in the mockup — report it rather than shipping past it.

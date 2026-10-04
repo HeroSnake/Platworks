@@ -456,48 +456,105 @@ geometry) because three columns on a 390 screen is too coarse next to a 5px prog
 
 ## 6. Verifying a UI change
 
-**Use Playwright.** Setup and the absolute-path import for it are in
-[platworks-dev.agent.md](./platworks-dev.agent.md) §7.
+**Run `node scripts/agent/ui-audit.mjs`. Do not write the audit yourself** — the rules below are
+implemented in `scripts/agent/lib/ui-checks.mjs`, and that file is the executable copy of this section.
+Change a rule here and you must change it there, or the next audit enforces the old one.
 
-For any layout change, load every route at **390 / 768 / 1440** and assert:
+Setup and the Playwright install are in [platworks-dev.agent.md](./platworks-dev.agent.md) §7. The
+script finds a dev server on `:5173` or `:4173` itself; it never starts one.
+
+```bash
+node scripts/agent/ui-audit.mjs                                  # / + one game route, 390/768/1440
+node scripts/agent/ui-audit.mjs --routes /,/game/1245620
+node scripts/agent/ui-audit.mjs --checks .tmp/ui/clicks.mjs      # + click checks
+```
+
+For any layout change it loads every route at **390 / 768 / 1440** and asserts:
 
 1. `documentElement.scrollWidth === documentElement.clientWidth` (no horizontal overflow)
-2. **Every control appears exactly once** — count visible `[role=radiogroup]`, `select`, and
-   `input[type=text]`.
+2. **Every control appears exactly once**
 3. **No interactive element under 40px tall.**
 4. No `pageerror` and no console errors.
 
+### Two ways checks 2 and 3 get it wrong
+
+**Do not count elements — group them by identity.** The library legitimately renders three
+radiogroups (scope, sort, completion) and legitimately shows one search box per breakpoint. "Count the
+`select`s" is therefore not a rule; *"the same labelled control must not appear twice"* is, and that is
+what the script does. A raw count is how a duplicated filter row slips through a check that "passes".
+
+**Do not read `getBoundingClientRect()` for the tap-target floor — hit-test it.** The rect is not the
+hit area: `achievement_row.svelte` stretches its toggle with `after:inset-0` and bleeds its check rail
+with `before:-inset-y-*`, so the real target is far taller than the element. A rect-based check fails
+those deliberately-oversized controls. A pseudo-element hit-tests as its originating element, so the
+script walks outward with `elementFromPoint` and measures the truth. Only elements whose own box is
+already under 40px are measured, which is what keeps the audit fast on a page of trophy rows.
+
 ### And actually CLICK them — a geometry audit cannot see a dead control
 
-A toolbar once shipped with every control unclickable and passed all four checks above, because a stacking
-context had buried it below the page. Geometry checks answer *"is this element the right size and in the
-right place?"*; they cannot answer *"does clicking it do anything?"*. Any change that adds an overlay, a
-mask, a pseudo-element or a `z-index` needs this as well:
+A toolbar once shipped with every control unclickable and passed all four checks above, because a
+stacking context had buried it below the page. Geometry checks answer *"is this element the right size
+and in the right place?"*; they cannot answer *"does clicking it do anything?"*. Any change that adds
+an overlay, a mask, a pseudo-element or a `z-index` needs this as well.
+
+A click check is **declarative** — you name the control and what it must change, and the script
+supplies the fresh page, the scroll-into-view and the probing:
 
 ```js
-// one check per control, each on a FRESH page so no check poisons the next
-await page.click('[aria-label="Sort games"] [role=radio] >> nth=1');
-console.log(await page.evaluate(() => localStorage.getItem('platworks:sort'))); // must change
+// .tmp/ui/clicks.mjs — start from scripts/agent/examples/clicks.mjs
+export default [
+  {
+    name: 'Sort games — completion',
+    route: '/',
+    click: '[aria-label="Sort games"] [role=radio] >> nth=1',
+    expect: { storage: ['platworks:sort'] }   // the value must change
+  }
+];
 ```
 
-Assert on an **observable state change** — `localStorage`, the URL, `aria-checked`, `aria-pressed` — not
-on "the click did not throw". Give each check its own page: an earlier check that switches to an empty
-tab makes the next one fail for the wrong reason, and you will debug the wrong thing.
+`expect` takes `storage` keys, an `attr` of `selector` / `name` / `equals`, an `htmlAttr`, or a `url`
+substring. **A check with no `expect` fails on purpose** — asserting on "the click did not throw" is
+not a test. Assert on an **observable state change** — `localStorage`, the URL, `aria-checked`,
+`aria-pressed` — not on absence of an exception.
 
-If a click times out, do not start with the handler. `document.elementFromPoint(x, y)` at the control's
-centre names the element actually receiving the event.
+Give each check its own page: the script already does, because an earlier check that switches to an
+empty tab makes the next one fail for the wrong reason, and you will debug the wrong thing.
 
-Also screenshot each combo and actually look at it — a rendering bug and an overlap bug are both obvious
-in an image and invisible to every other check.
+When a probe fails the message names the element that actually received the click. Start there, not
+with the handler.
+
+### Two scoping traps, both of which fail silently
+
+- **`>> nth=` counts in document order across the whole page.** `button[aria-expanded] >> nth=0` is
+  the *navbar* account button, not a trophy's. Scope first:
+  `.achievement-item >> nth=0 >> button[aria-expanded]`.
+- **A trophy card has two hit zones by design** — the left rail toggles the check, the rest of the
+  header expands the guide. Probing the whole row for either one alone reports correct layout as a bug.
+  Pass both under `probe.controls`, or scope `probe.container` to the zone you mean.
 
 ### Probe the *edges* of a card, not just its centre
 
-A control that fills its container has no dead zone; a control **inside** padded chrome has dead zones on
-all four sides, and a centre-point check finds none of them. Every audit above clicks centres. For
-anything with padding — a card row, a panel, a tile — also probe `x + 5`, `width - 5`, `y + 5` and
-`height - 5` at each corner and edge, and assert the intended control received each one.
+A control that fills its container has no dead zone; a control **inside** padded chrome has dead zones
+on all four sides, and a centre-point check finds none of them. Every click check probes the centre
+first; for anything with padding — a card row, a panel, a tile — pass a `container` so the corners and
+edges are probed against the control as well:
+
+```js
+probe: { container: '.achievement-item', kinds: ['corners', 'edges'] }
+```
+
+Each point 5px inside a corner or edge must resolve to the control. A hit on an **ancestor** does not
+count — that is precisely the "padding that is not clickable" failure. The target is scrolled into view
+first, because a card below the fold reports a miss from `elementFromPoint` that is indistinguishable
+from a dead control.
 
 Two traps this catches that centre checks miss: **padding that is not clickable** (expand targets that
-stop at the content box) and **content that is not clickable** (an overlay eating the control it was meant
-to sit next to). Scroll the target into view first — a card below the fold reports a miss from
-`elementFromPoint` that is indistinguishable from a dead control.
+stop at the content box) and **content that is not clickable** (an overlay eating the control it was
+meant to sit next to). It finds a third too — a control whose own corner is covered by an invisible
+sibling. The navbar account button's bottom-right corner is swallowed by its `relative` wrapper at 390,
+which no centre-point check can see.
+
+### Look at the screenshots
+
+`ui-audit.mjs` writes one PNG per route and width to `.tmp/audit-shots/`. **Open them.** A rendering
+bug and an overlap bug are both obvious in an image and invisible to every other check.
