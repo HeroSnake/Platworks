@@ -13,6 +13,7 @@
 		Trophy
 	} from '@lucide/svelte';
 	import DifficultyPips from '#lib/components/difficulty_pips.svelte';
+	import { tick } from 'svelte';
 	import type { Achievement } from '#lib/types/game';
 
 	let { achievement, achieved, steamLocked, unlockTime, ontoggle } = $props<{
@@ -25,6 +26,29 @@
 
 	let expanded = $state(false);
 	let justToggled = $state(false);
+
+	/**
+	 * Tier 3 — which direction the row is animating in, if any.
+	 *
+	 * The class has to be cleared and re-set to replay on the same row, and Svelte
+	 * batches state within a tick, so setting it straight to the same value never
+	 * reaches the DOM and the second tap on one trophy silently does nothing.
+	 * `playMotion` clears, awaits a tick, then sets — which is the whole reason
+	 * `tick` is imported.
+	 *
+	 * The clear timers are 20ms longer than the CSS durations (900ms / 420ms) so the
+	 * class outlives the animation rather than being stripped from under it.
+	 */
+	let motion: 'celebrate' | 'relock' | null = $state(null);
+	let motionTimer: ReturnType<typeof setTimeout> | undefined;
+
+	async function playMotion(next: 'celebrate' | 'relock') {
+		motion = null;
+		await tick();
+		motion = next;
+		clearTimeout(motionTimer);
+		motionTimer = setTimeout(() => (motion = null), next === 'celebrate' ? 920 : 440);
+	}
 	// Guide markup is only built the first time a row is opened. A 100-achievement
 	// game otherwise creates every step/warning/note node up front, which is what
 	// made selection and interaction sluggish. Stays mounted after first open so
@@ -38,9 +62,19 @@
 
 	function handleToggle(e: MouseEvent) {
 		e.stopPropagation();
+		// A Steam-locked trophy is the player's own state, not something this app
+		// can change, so there is no transition to celebrate and nothing to write.
+		if (steamLocked) return;
+
+		// Read the direction BEFORE `ontoggle()` — the parent flips `achieved` as a
+		// consequence of it, so afterwards the original direction is gone.
+		const wasAchieved = achieved;
 		ontoggle();
+
 		justToggled = true;
 		setTimeout(() => justToggled = false, 200);
+
+		playMotion(wasAchieved ? 'relock' : 'celebrate');
 	}
 
 	const difficultyColors: Record<string, string> = {
@@ -77,7 +111,9 @@
 <div
 	class="achievement-item relative rounded-xl border bg-steam-blue {achieved
 		? 'border-steam-green/30'
-		: 'border-line'}"
+		: 'border-line'} {motion === 'celebrate' ? 'pw-celebrate' : ''} {motion === 'relock'
+		? 'pw-relock'
+		: ''}"
 >
 	{#if achieved}
 		<div class="pointer-events-none absolute inset-0 rounded-xl bg-steam-green/10"></div>
@@ -105,7 +141,7 @@
 		     the image rather than to the button, or it would drift to the card's
 		     bottom-right as the row grows. -->
 		<button
-			class="relative z-10 -ml-2 flex shrink-0 self-stretch items-center pl-2 before:absolute before:-inset-y-2 before:left-0 before:right-0 before:content-[''] sm:-ml-3 sm:pl-3 sm:before:-inset-y-3 {steamLocked
+			class="pw-press relative z-10 -ml-2 flex shrink-0 self-stretch items-center pl-2 before:absolute before:-inset-y-2 before:left-0 before:right-0 before:content-[''] sm:-ml-3 sm:pl-3 sm:before:-inset-y-3 {steamLocked
 				? 'cursor-default'
 				: 'cursor-pointer'}"
 			onclick={handleToggle}
@@ -162,7 +198,7 @@
 		     The toggle button carries `z-10` to win over this overlay in the left rail.
 		-->
 		<button
-			class="after:absolute after:inset-0 flex min-h-10 min-w-0 flex-1 items-center gap-2 text-left sm:gap-3"
+			class="pw-press after:absolute after:inset-0 flex min-h-10 min-w-0 flex-1 items-center gap-2 text-left sm:gap-3"
 			onclick={toggleExpand}
 			aria-expanded={expanded}
 		>

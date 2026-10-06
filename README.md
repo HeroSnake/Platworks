@@ -28,6 +28,11 @@ button all follow your selection.
 Every trophy is a row you can **tap to tick off** — no checkboxes in a separate column, so the name of a
 long trophy like *"Rennala, Queen of the Full Moon"* still fits on one line on a phone.
 
+Ticking one off celebrates it: the row springs, a ring fires out of the trophy, and an `UNLOCKED` banner
+wipes across. Tap it again and it plays in reverse — the ring pulls inward and the green drains out — so
+fixing a mistake feels deliberate rather than like the row silently un-doing itself. If your system asks
+for reduced motion, the celebration is skipped and the tick simply turns green.
+
 Some rows earn an extra badge:
 
 | Badge | What it means |

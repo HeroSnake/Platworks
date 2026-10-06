@@ -443,6 +443,72 @@ geometry) because three columns on a 390 screen is too coarse next to a 5px prog
   specificity.
 - Counts use `tabular-nums` (`.tabular`) so digits do not shuffle sideways while animating.
 
+### The trophy row is the app's only celebration — tiers 2 and 3
+
+`achievement_row.svelte` carries three motions, all defined in `app.css`. Nothing else in the
+app celebrates anything, and that is the point: unlocking a trophy is the emotional beat of a
+completionist app, so it is the one place motion is spent.
+
+| Tier | Class | What | Duration |
+|---|---|---|---|
+| press | `.pw-press` | squash to `0.955`, spring back past rest | `90ms` in, `420ms` out |
+| celebrate | `.pw-celebrate` | the row leaps; a ring expands out of the icon; an `UNLOCKED` ribbon wipes across | `900ms` |
+| relock | `.pw-relock` | the row contracts **inward** with a damped recoil; a ring **implodes**; the green drains out | `420ms` |
+
+Five rules, each of which exists because the obvious version was wrong:
+
+- **The reverse is not the celebration played backwards.** Unlocking grows outward and
+  overshoots; locking contracts inward and damps out. Same spring curve, opposite direction,
+  and deliberately **shorter** (`420ms` vs `900ms`) — a thing you are *undoing* should not
+  hold the screen as long as a thing you have just done.
+- **Everything is on `.achievement-item`'s two pseudo-elements.** `::before` is the ring on both
+  paths (expanding / imploding); `::after` is the ribbon on unlock and the draining green on
+  lock. **No runtime DOM is added**, so no effect can intercept a click, disturb the expand
+  button's `after:inset-0` target, or win the hit test against the toggle rail — the exact
+  failure modes in §1. Both are `pointer-events: none` regardless, because the *row's* `::after`
+  is not the same element as the expand button's own `after:inset-0`, and that distinction is
+  easy to lose.
+- **The ribbon needs `z-index: 20`, above the toggle rail's `z-10`.** Not decoration: the rail
+  wins the paint order by default, and the 64px trophy plus its check badge sit exactly where
+  the label is, so at `z-index: auto` the ribbon painted *underneath* them and `UNLOCKED` was
+  unreadable. The ring stays at `z-index: 1` on purpose — a ring growing from **behind** the
+  icon reads as emitting from it, while the ribbon has to be in front. Remember that
+  `.achievement-item` is its own stacking context (`content-visibility: auto` implies paint
+  containment), so these values are compared inside the card, not against the page.
+- **The ring is anchored to the icon, not the row.** The toggle's `-ml-*` cancels the row's
+  `p-*`, so the `h-16 w-16` trophy sits flush with the card's left border at every breakpoint:
+  `left: 0` on a `64px` box puts the box centre exactly on the icon's centre, and `scale()`
+  grows from there.
+- **A second tap on the same trophy needs `tick()`.** `motion` is cleared, `await tick()`, then
+  re-set — Svelte batches state within a tick, so assigning the same value twice never reaches
+  the DOM and the animation silently does not replay. The clear timers are `20ms` longer than
+  the CSS so the class outlives the animation. `handleToggle` reads `achieved` **before**
+  calling `ontoggle()`, or the original direction is already gone.
+
+`.pw-press` deliberately has **no `will-change`**: a 100-achievement page holds 100 of them,
+and web.dev is explicit that `will-change` is for a measured problem. A transform transition is
+promoted for its duration without it.
+
+Motion is CSS animations, **not** `element.animate()`. That is not a style preference: the
+`prefers-reduced-motion` block at the end of `app.css` works by collapsing `animation-duration`
+to `0.01ms`, and **it does not apply to WAAPI animations.** Reduced-motion users would get the
+full motion unless the media query were re-implemented in TypeScript, duplicating a rule that
+already exists. Under the CSS block every effect lands on its final frame — `opacity: 0` — so
+the effects vanish and the row still turns green, which is the correct degraded form rather than
+a missing feature.
+
+**Ink on the success fill** is `--pw-bg`. That is the one place in the app that uses a token for
+something it was not designed for: `--pw-success` is light in all six palettes (green five
+times, magenta in Cyberpunk) and `--pw-bg` is the darkest token in all six, so the pairing is
+guaranteed legible. The principled version is a real `--pw-success-ink` across every palette
+block — see §3 before changing either one, because adding a token has four registration points.
+
+Easing lives in three tokens on `:root` (`--pw-motion-spring`, `--pw-motion-in`,
+`--pw-motion-settle`) and durations live with the rules that use them. Only `--pw-motion-settle`
+is sourced — it is the family of Material's verified standard curve `cubic-bezier(.4, 0, .2, 1)`.
+The spring is the easings.net `easeOutBack` convention and is **chosen, not cited**; do not
+present it as a spec value.
+
 ## 5. Performance
 
 - Animate only `transform` and `opacity` — GPU-composited properties.
@@ -519,6 +585,22 @@ not a test. Assert on an **observable state change** — `localStorage`, the URL
 
 Give each check its own page: the script already does, because an earlier check that switches to an
 empty tab makes the next one fail for the wrong reason, and you will debug the wrong thing.
+
+**A fresh page can only ever start from the INITIAL state**, so a control's second direction is
+unreachable: the first click on a trophy always unlocks it, never locks it back. `seed` exists for
+exactly that — it writes `localStorage` before the app boots, so the check can begin from a state
+the page could not otherwise reach:
+
+```js
+{ name: 'Trophy row — un-locks', route: '/game/1245620',
+  seed: { 'platworks:checked:1245620': { ROUNDTABLE_HOLD: true } },
+  click: '.achievement-item >> nth=0 >> button[aria-pressed]',
+  expect: { attr: { selector: '…same…', name: 'aria-pressed', equals: 'false' } } }
+```
+
+Note the key: achievement ids are **slugs**, not indices (`ROUNDTABLE_HOLD`, not `1`). A seed that
+matches nothing is a silent no-op, and the check then fails as a confusing `aria-pressed` mismatch
+rather than saying the seed did not apply.
 
 When a probe fails the message names the element that actually received the click. Start there, not
 with the handler.

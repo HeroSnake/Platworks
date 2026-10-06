@@ -96,6 +96,18 @@ C — click check file. Default-exports an array; only \`name\` and \`click\` ar
       click: 'article:first-of-type button[aria-expanded]',
       probe: { container: 'article:first-of-type', kinds: ['corners', 'edges'] },
       expect: { attr: { selector: 'article:first-of-type button[aria-expanded]', name: 'aria-expanded', equals: 'true' } }
+    },
+    {
+      // \`seed\` starts the page from a state it could not otherwise reach, because
+      // every check gets a fresh page and a fresh page can only begin at the
+      // INITIAL state. Use it for a control's SECOND direction — un-locking a
+      // trophy, which always starts out unlocked. Values are JSON-encoded unless
+      // they are already strings.
+      name: 'Trophy row — un-locks',
+      route: '/game/1245620',
+      seed: { 'platworks:checked:1245620': { '1': true } },
+      click: '.achievement-item >> nth=0 >> button[aria-pressed]',
+      expect: { attr: { selector: '.achievement-item >> nth=0 >> button[aria-pressed]', name: 'aria-pressed', equals: 'false' } }
     }
   ];
 
@@ -270,6 +282,23 @@ async function runClickCheck(browser, base, check, widths, shotDir) {
 		const failures = [...errors];
 
 		try {
+			// `seed` writes localStorage before the app boots, on a page that is
+			// otherwise fresh. A fresh page can only ever start from the *initial*
+			// state, so a check for a REVERSIBLE control — un-lock a trophy that
+			// starts already unlocked-in — was unreachable: the first click always
+			// moved it the same way. Seeding gives the second direction its own check
+			// instead of leaving it unverified. It navigates to a lightweight route
+			// first, because the value must be in storage before the route reads it.
+			if (check.seed) {
+				await page.goto(`${base}/linktest`, { waitUntil: 'domcontentloaded', timeout: 30000 });
+				await page.evaluate((entries) => {
+					for (const [key, value] of Object.entries(entries)) {
+						localStorage.setItem(key, typeof value === 'string' ? value : JSON.stringify(value));
+					}
+				}, check.seed);
+				await page.goto(`${base}${route}`, { waitUntil: 'networkidle', timeout: 30000 });
+			}
+
 			// Resolve through Playwright's engine so `>> nth=1` works, then scroll
 			// the target into view: a control below the fold reports an
 			// elementFromPoint miss indistinguishable from a dead control.

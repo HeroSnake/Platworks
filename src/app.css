@@ -40,6 +40,26 @@
 	--font-display: var(--pw-font-display);
 	--font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 	--font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+	/*
+	   MOTION TOKENS. Palette-independent on purpose — timing and easing are not a
+	   brand decision, so adding a seventh palette must not mean re-picking them.
+
+	   spring — overshoots past the target and settles. UNVERIFIED as a spec value:
+	   the easings.net "easeOutBack" convention, tuned by eye. It is what gives the
+	   app its arcade feel, and it is why every press has weight.
+	   in — accelerate out of a press. Used for the ~90ms squash, where a spring
+	   would read as lag.
+	   settle — decelerate to rest, no overshoot. Same family as Material's verified
+	   standard curve cubic-bezier(.4, 0, .2, 1); that is the only motion token in
+	   this file that is sourced rather than chosen.
+
+	   Durations live with the rules that use them, not here, because a duration is
+	   meaningless without the effect it belongs to.
+	*/
+	--pw-motion-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+	--pw-motion-in: cubic-bezier(0.3, 0, 0.8, 0.15);
+	--pw-motion-settle: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*
@@ -254,6 +274,183 @@
 .check-pop {
 	animation: check-pop 200ms ease-out;
 }
+
+/* ============================================================================
+   Trophy row motion — the arcade tiers, on `.achievement-item`.
+
+   Two tiers live here:
+
+     T2  press     — a short squash in, a spring out.
+     T3  celebrate — unlocking. The row leaps, a ring expands out of the icon, and
+                     an UNLOCKED ribbon wipes across.
+     T3b relock    — un-checking. The row contracts INWARD with a damped recoil, a
+                     ring implodes, and the green drains out. This is deliberately
+                     not the celebration played backwards; it is the same spring
+                     read from the other direction, so it is recognisably the same
+                     system rather than a second design language.
+
+   Everything is on the row's two pseudo-elements. Nothing is added to the DOM at
+   runtime, which is the point: no effect here can intercept a click, disturb the
+   expand button's `after:inset-0` target, or win the hit test against the toggle
+   rail — the class of bug this component has history with. Every effect is
+   therefore `pointer-events: none` as well.
+
+   Both directions are interaction-triggered, which keeps them on WCAG 2.3.3
+   rather than the 2.2.2 case that a page-initiated animation would hit.
+
+   Under `prefers-reduced-motion` the block at the end of this file collapses every
+   duration to 0.01ms, so all six effects land on their final frame — opacity 0 —
+   and vanish. The row still turns green and the check still appears, which is the
+   correct degraded form: the unlock is still reported, it just stops moving.
+   ========================================================================== */
+
+/* --- T2: press --- */
+.pw-press {
+	transition: transform 420ms var(--pw-motion-spring);
+}
+/*
+   No `will-change` here, deliberately. A 100-achievement page holds 100 of these,
+   and `web.dev` is explicit that `will-change` should be used sparingly and only
+   once a performance problem exists. A transform transition is promoted for its
+   duration without it.
+*/
+.pw-press:active {
+	transform: scale(0.955);
+	transition-duration: 90ms;
+	transition-timing-function: var(--pw-motion-in);
+}
+
+/* --- T3: unlock --- */
+@keyframes pw-trophy-leap {
+	0%   { transform: scale(1); }
+	18%  { transform: scale(1.035); }
+	46%  { transform: scale(0.992); }
+	70%  { transform: scale(1.006); }
+	100% { transform: scale(1); }
+}
+@keyframes pw-trophy-shock {
+	0%   { opacity: 0.85; transform: scale(0.6); }
+	100% { opacity: 0;    transform: scale(3.4); }
+}
+@keyframes pw-trophy-wipe {
+	0%   { opacity: 0; transform: translate3d(-100%, 0, 0) skewX(-18deg); }
+	22%  { opacity: 1; }
+	72%  { opacity: 1; transform: translate3d(0, 0, 0) skewX(-18deg); }
+	100% { opacity: 0; transform: translate3d(100%, 0, 0) skewX(-18deg); }
+}
+
+/* --- T3b: lock again --- */
+@keyframes pw-trophy-recoil {
+	0%   { transform: translate3d(0, 0, 0) scale(1); }
+	14%  { transform: translate3d(0, 0, 0) scale(0.955); }
+	32%  { transform: translate3d(-5px, 0, 0) scale(1.008); }
+	52%  { transform: translate3d(4px, 0, 0) scale(0.997); }
+	72%  { transform: translate3d(-2px, 0, 0) scale(1.002); }
+	100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+@keyframes pw-trophy-implode {
+	0%   { opacity: 0;   transform: scale(2.4); }
+	35%  { opacity: 0.7; }
+	100% { opacity: 0;   transform: scale(0.5); }
+}
+@keyframes pw-trophy-drain {
+	0%   { opacity: 1; }
+	55%  { opacity: 0.35; }
+	100% { opacity: 0; }
+}
+
+.achievement-item.pw-celebrate {
+	animation: pw-trophy-leap 900ms var(--pw-motion-settle) both;
+}
+.achievement-item.pw-relock {
+	animation: pw-trophy-recoil 420ms var(--pw-motion-settle) both;
+}
+
+/*
+   `::before` is the ring on both paths — expanding out on unlock, imploding in on
+   lock. It is anchored to the trophy icon rather than the row centre: the icon is
+   `h-16 w-16` flush with the card's left border (the toggle's `-ml-*` cancels the
+   row's `p-*`), so `left: 0` with a 64px box puts the box centre exactly on the
+   icon's centre at any breakpoint, and `scale()` grows from there.
+*/
+.achievement-item.pw-celebrate::before,
+.achievement-item.pw-relock::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 64px;
+	height: 64px;
+	margin-top: -32px;
+	border-radius: 999px;
+	pointer-events: none;
+	z-index: 1;
+}
+.achievement-item.pw-celebrate::before {
+	border: 2px solid var(--pw-success);
+	animation: pw-trophy-shock 620ms var(--pw-motion-settle) both;
+}
+.achievement-item.pw-relock::before {
+	border: 1px solid var(--pw-dim);
+	animation: pw-trophy-implode 420ms var(--pw-motion-settle) both;
+}
+
+/* `::after` is the ribbon on unlock and the draining green on lock. */
+.achievement-item.pw-celebrate::after {
+	content: 'UNLOCKED';
+	position: absolute;
+	inset: 0 auto 0 0;
+	display: flex;
+	align-items: center;
+	padding-left: 0.875rem;
+	/*
+	   z-index 20, above the toggle rail's `z-10`, and this is load-bearing.
+
+	   The rail wins the paint order by default, so a ribbon at `z-index: auto` is
+	   painted UNDER the 64px trophy and its check badge — which sit exactly where
+	   the label is, so "UNLOCKED" was unreadable. The ring (`::before`) stays at
+	   `z-index: 1`: a ring that grows from BEHIND the icon reads as emitting from
+	   it, which is what we want. The ribbon reads as a wipe over the whole row, so
+	   it has to be in front.
+
+	   Safe because the element is `pointer-events: none` — raising it changes what
+	   is painted, never what is clickable, which is the invariant the hit-zone
+	   contract in `achievement_row.svelte` depends on.
+
+	   Note `.achievement-item` is a stacking context: `content-visibility: auto`
+	   implies paint containment. So this z-index is compared against the rail's
+	   `z-10` inside the card, not against anything on the page.
+	*/
+	z-index: 20;
+	background: var(--pw-success);
+	/*
+	   `--pw-bg` as the ink on a success fill. This is deliberate and it is the one
+	   place in the app that reaches for a token it was not designed for:
+	   `--pw-success` is light in all six palettes (green five times, magenta in
+	   Cyberpunk) and `--pw-bg` is the darkest token in all six, so the pairing is
+	   guaranteed legible without touching six palette blocks. The principled version
+	   is a real `--pw-success-ink` across every palette — see
+	   `platworks-ui.agent.md` §3 before changing either one.
+	*/
+	color: var(--pw-bg);
+	font-family: var(--pw-font-display);
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.16em;
+	pointer-events: none;
+	animation: pw-trophy-wipe 900ms var(--pw-motion-settle) both;
+}
+.achievement-item.pw-relock::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+	background: var(--pw-success);
+	opacity: 0;
+	pointer-events: none;
+	animation: pw-trophy-drain 380ms var(--pw-motion-settle) both;
+}
+
 
 /* View Transition: slide pages */
 @keyframes slide-in {
