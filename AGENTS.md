@@ -130,7 +130,7 @@ table, then open only the matching files.
 | Steam API | `#lib/server/steam/api.ts` | server-only: `getGameDetails()`, `resolveSteamId()`, `getPlayerProfile()`, `getPlayerAchievements()`, `normalizeName()` |
 | Game loader | `#lib/server/games.ts` | `getAllGames()`, `getGameByAppId()` via `import.meta.glob('#lib/data/games/[0-9]*.json')` |
 | Icon tooling | `scripts/` | `fetch-game-images.mjs` (mirrors header + hero into `static/images/games/{appId}/`), `fetch-achievement-icons.mjs` (writes remote `iconUrl`), `verify-achievement-icons.mjs` (audits icons). Run with `node`, not npm |
-| Agent toolkit | `scripts/agent/` | Reusable scripts for agent tasks, committed so they are never rewritten per run: `ui-audit.mjs` (the browser audit below), `shot.mjs` + `new-mockup.mjs` (mockups), `steam-achievements.mjs` + `ledger.mjs` + `check-links.mjs` (game data). See [scripts/agent/README.md](scripts/agent/README.md). **A scratch file that will be needed again belongs here, not in `.tmp/`** |
+| Agent toolkit | `scripts/agent/` | Reusable scripts for agent tasks, committed so they are never rewritten per run: `ui-audit.mjs` (the browser audit below), `shot.mjs` + `new-mockup.mjs` (mockups), `readme-shots.mjs` (regenerates `docs/screenshots/`), `steam-achievements.mjs` + `ledger.mjs` + `check-links.mjs` (game data). See [scripts/agent/README.md](scripts/agent/README.md). **A scratch file that will be needed again belongs here, not in `.tmp/`** |
 | Agent rules | `AGENTS.md` + `.agents/*.md` | the project's memory: cross-cutting rules, architecture map, and one file per domain. Adapters for each AI tool live in `.github/`, `.cursor/` and `.claude/` and must stay thin — see §9 |
 | Game artwork | `static/images/games/{appId}/` | committed `header.jpg` + `hero.jpg`, served from `/images/games/...`. The app never requests Steam's CDN for these; achievement icons are the deliberate exception |
 | Client profile cache | `#lib/client/profile.ts` | `loadProfile()`, `saveProfile()`, `clearProfile()`, `refreshProfile()` |
@@ -142,7 +142,7 @@ table, then open only the matching files.
 | Game data | `#lib/data/games/{appId}.json` | per-game achievement guides |
 | Game-data scratch | `.tmp/game-data/{appId}/` | gitignored; fetch `ledger.json` + `findings.jsonl` + the parsed `achievements.json`. Repo-local on purpose — Windows + WSL must see the same path. Deleted when the run finishes; see [`.agents/gamedata.md`](./.agents/gamedata.md) §2b |
 | UI mockup scratch | `.tmp/ui/{slug}/` | gitignored; standalone HTML per proposition + `notes.md` + `shots/`. Repo-local for the same Windows/WSL reason. **Never deleted without asking** — see [`.github/prompts/ui-project.prompt.md`](.github/prompts/ui-project.prompt.md) |
-| README screenshots | `docs/screenshots/` | committed PNGs referenced by `README.md` |
+| README screenshots | `docs/screenshots/` | committed PNGs referenced by `README.md`. **Regenerate with `node scripts/agent/readme-shots.mjs` before committing any visible change** — nothing in the build does it for you, and stale binaries are invisible in review. See [`.agents/ui.md`](./.agents/ui.md) §6 |
 | Layout | `src/routes/+layout.svelte` | navbar + account popover + the background pattern layer; owns `platworks:steamId` |
 | Routes | `src/routes/` | `/` library · `/game/[appId]` detail · `/api/steam/sync/[appId]` · `/api/steam/profile` · `/linktest` |
 

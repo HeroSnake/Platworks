@@ -23,7 +23,7 @@ button all follow your selection.
 
 ## A game's trophies
 
-<img src="docs/screenshots/game-page.png" alt="A game's trophy page: artwork, a progress ring showing 38 of 42 trophies, filters for completion and type, and a list of trophies you can tick off by tapping them." />
+<img src="docs/screenshots/game-page.png" alt="A game's trophy page: artwork, a progress ring showing 50 of 55 trophies, filters for completion and type, and a list of trophies you can tick off by tapping them." />
 
 Every trophy is a row you can **tap to tick off** — no checkboxes in a separate column, so the name of a
 long trophy like *"Rennala, Queen of the Full Moon"* still fits on one line on a phone.

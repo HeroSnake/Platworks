@@ -89,6 +89,9 @@ docs(agents): define Conventional Commits rules for future agents
 - [ ] Message is English and matches `<type>(scope): subject`
 - [ ] Staged set matches the message (no secrets: `.env`, credentials)
 - [ ] Domain agent file + README updated if behaviour/docs changed ([AGENTS.md §1](../AGENTS.md))
+- [ ] **If anything visible changed** (`src/routes/**`, `src/lib/components/**`, `src/app.css`):
+      `node scripts/agent/readme-shots.mjs` has been run and `docs/screenshots/*.png` are staged. See
+      [`.agents/ui.md`](./ui.md) §6 — they are committed binaries, so stale ones are invisible in review.
 - [ ] Prefer HEREDOC / here-string for the message body so formatting stays intact
 
 PowerShell example:

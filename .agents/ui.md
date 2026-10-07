@@ -771,6 +771,37 @@ which no centre-point check can see.
 `ui-audit.mjs` writes one PNG per route and width to `.tmp/audit-shots/`. **Open them.** A rendering
 bug and an overlap bug are both obvious in an image and invisible to every other check.
 
+### The README's two screenshots are committed — refresh them before you commit
+
+`docs/screenshots/library.png` and `docs/screenshots/game-page.png` are **committed binaries**, and
+`README.md` embeds them by path. Nothing in the build regenerates them, so a UI change leaves the
+README advertising a build that no longer exists — and the drift is invisible in review, because a
+PNG in a diff is just a PNG.
+
+**Any commit that changes something a user can see in `src/routes/**`, `src/lib/components/**` or
+`src/app.css` must refresh both files** unless that change provably cannot alter either view (a
+comment, a type, a script under `scripts/`). When in doubt, regenerate: it is one command and
+produces a no-op diff when nothing moved.
+
+```bash
+node scripts/agent/readme-shots.mjs                          # → docs/screenshots/
+node scripts/agent/readme-shots.mjs --out-dir .tmp/…        # look before you commit
+```
+
+It starts no dev server — find one on `:5173`/`:4173` or run `npm run dev` first. Three things
+about it that are not obvious:
+
+- **State is seeded from localStorage, never from a Steam account.** `platworks:library` and
+  `platworks:checked:{appId}` fully determine both views, so the output is deterministic without an
+  API key, and the achievement IDs are read from `src/lib/data/games/*.json` — adding an achievement
+  cannot desync it.
+- **The scale is fixed at 1280×800 @2x.** It matches the committed PNGs; changing it turns every
+  regeneration into a full-size diff in GitHub's media viewer.
+- **Sync the alt text to whatever the run printed.** It prints the trophy count it seeded
+  (`ok game-page (50/55 trophies)`). `README.md`'s `alt` names that count, so a catalogue that grows
+  under a stale `alt` describes a game page that no longer exists. If you prefer not to hardcode a
+  count, rewrite the `alt` to describe the *kind* of number instead — but pick one and keep it true.
+
 ### Never paste a screenshot into a reply — link the HTML
 
 Screenshots are **your** verification step, not the user's deliverable. `shot.mjs` and
