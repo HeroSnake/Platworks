@@ -7,7 +7,7 @@ tools: [read, edit, search, execute, web]
 
 **You own:** `#lib/server/steam/api.ts`, the `/api/steam/*` endpoints, `#lib/types/steam.ts`, icon scraping, and when Steam may be called at all.
 
-**Always paired with:** [platworks-dev.agent.md](./platworks-dev.agent.md). Pair with [platworks-state.agent.md](./platworks-state.agent.md) when the Steam ID or cached profile is involved — that is where they are written.
+**Always paired with:** [AGENTS.md](../AGENTS.md). Pair with [state.md](./state.md) when the Steam ID or cached profile is involved — that is where they are written.
 
 Steam serves two different XML shapes. **Getting a tag name wrong returns `null`, not an error.**
 
@@ -41,7 +41,7 @@ what is already there. Three traps:
 
 - **The obvious CDN path is a guess.** `shared.akamai.steamstatic.com/store_item_assets/steam/apps/{appId}/header.jpg` serves most games, but Steam hosts others from a **content-hashed** directory (`/apps/4126040/bf9b76d2…/header.jpg`). Aniimo (4126040) and WARDOGS (1867240) are in that group, so the guess 404s for them however often it is retried. The script therefore resolves URLs from `appdetails` rather than composing them.
 - **`appdetails` intermittently 403s from Node.** `getGameDetails` must still return a usable local path so the library keeps its images; name / short description / Metacritic simply stay empty in that mode and callers use `steam?.name || game.name`. Do not leave `steam: null`. A process-lifetime `detailsCache` still guards the *text* fields, so one 403 cannot blank every blurb.
-- **Never add a remote `onerror` retry** for a header or hero. Artwork is local, so a failure means the game has no art on Steam — not that the first host was wrong. The components reveal a placeholder instead; see [platworks-ui.agent.md](./platworks-ui.agent.md) §1.
+- **Never add a remote `onerror` retry** for a header or hero. Artwork is local, so a failure means the game has no art on Steam — not that the first host was wrong. The components reveal a placeholder instead; see [ui.md](./ui.md) §1.
 
 **Achievement icons are the deliberate exception** and still load from Steam: 1647 of them would add far too much to the repo. `scripts/fetch-achievement-icons.mjs` owns `iconUrl` and must keep writing remote URLs. Only `fetch-game-images.mjs` produces local paths.
 
@@ -101,7 +101,7 @@ Case-insensitive, and will **not** match a tag that carries attributes (`<avatar
 Traps:
 
 - **Only the unlocked (coloured) icon is published.** There is no second URL — the locked look is a CSS `grayscale` of the same file. Do not go looking for `icon_closed`; it does not appear in the HTML. One URL per achievement is correct and complete.
-- **The files are natively 64×64.** Confirmed by reading the JPEG SOF marker. There is no larger variant on this CDN, so 64px is the render ceiling — see [platworks-ui.agent.md](./platworks-ui.agent.md).
+- **The files are natively 64×64.** Confirmed by reading the JPEG SOF marker. There is no larger variant on this CDN, so 64px is the render ceiling — see [ui.md](./ui.md).
 - **No API-name field.** The page has only `<h3>` display names, so rows must be joined to `Achievement.name`. Steam uses curly apostrophes (`Dead Man's Chest`) while hand-written data usually has straight ones — the normaliser must strip the whole quote class, or the two forms hash differently.
 - **Reused art is real.** Several games publish one hash for multiple rows (Aniimo has 7, one shared by 4 achievements). A duplicated `iconUrl` is therefore not evidence of a matching bug — confirm against the raw page before "fixing" it.
 - **A silent no-op is the dangerous case.** If a display name drifts, an unmatched entry must surface in the script's report. Never let a fuzzy fallback quietly assign a neighbouring trophy's art.
@@ -116,7 +116,7 @@ repo. They are the one intentional external image dependency.
 
 `www.trueachievements.com` returns **403 to every request from Node**, including full browser header sets — it is bot protection, not a missing User-Agent. No script in this repo can scrape it; per-achievement guide links have to be read through an agent with web access instead.
 
-This is why `scripts/` has no guide-link fetcher: it cannot exist. The same block applies to `wiki.gg` and `fandom` (403), while Steam's own endpoints are fine. Treat "403 from a script" as *unverifiable*, not *dead* — see [platworks-gamedata.agent.md](./platworks-gamedata.agent.md) for the map-link rule.
+This is why `scripts/` has no guide-link fetcher: it cannot exist. The same block applies to `wiki.gg` and `fandom` (403), while Steam's own endpoints are fine. Treat "403 from a script" as *unverifiable*, not *dead* — see [gamedata.md](./gamedata.md) for the map-link rule.
 
 ## 5. Caching rule
 
@@ -128,7 +128,7 @@ This is why `scripts/` has no guide-link fetcher: it cannot exist. The same bloc
 
 `syncWithSteam` / `syncAllGames` call `refreshProfile(sid)` after a **successful** connection. Guard it with an `anyConnected` flag so a failed sync does not trigger a profile request, and so sync-all refreshes once rather than once per game.
 
-The resolved Steam64 ID is written back over the user's original input so later syncs skip vanity resolution — details in [platworks-state.agent.md](./platworks-state.agent.md).
+The resolved Steam64 ID is written back over the user's original input so later syncs skip vanity resolution — details in [state.md](./state.md).
 
 ## 6. Endpoints
 

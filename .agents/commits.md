@@ -7,7 +7,7 @@ tools: [read, edit, search, execute]
 
 **You own:** commit message format, type/scope vocabulary, and language rules for every commit in this repo.
 
-**Always paired with:** [platworks-dev.agent.md](./platworks-dev.agent.md). Do not invent a parallel style in README or chat — this file is the source of truth.
+**Always paired with:** [AGENTS.md](../AGENTS.md). Do not invent a parallel style in README or chat — this file is the source of truth.
 
 ---
 
@@ -56,7 +56,7 @@ Breaking changes: append `!` after type/scope (`feat(api)!: …`) and add a `BRE
 | `ui` | components, `app.css`, layout chrome |
 | `library` | home library grid / cards |
 | `state` | `platworks:*` localStorage, client profile/library/theme |
-| `agents` | `.github/agents/*` |
+| `agents` | `AGENTS.md`, `.agents/*`, `.github/`, `.cursor/`, `.claude/` |
 | `deps` | dependency bumps |
 
 Omit the scope when the change spans several areas and none dominates.
@@ -88,7 +88,7 @@ docs(agents): define Conventional Commits rules for future agents
 
 - [ ] Message is English and matches `<type>(scope): subject`
 - [ ] Staged set matches the message (no secrets: `.env`, credentials)
-- [ ] Domain agent file + README updated if behaviour/docs changed ([platworks-dev §1](./platworks-dev.agent.md))
+- [ ] Domain agent file + README updated if behaviour/docs changed ([AGENTS.md §1](../AGENTS.md))
 - [ ] Prefer HEREDOC / here-string for the message body so formatting stays intact
 
 PowerShell example:

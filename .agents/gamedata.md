@@ -9,7 +9,7 @@ tools: [read, edit, search, execute, web]
 
 **This file is the single source of truth for adding a game.** The README's contributing section points here.
 
-**Always paired with:** [platworks-dev.agent.md](./platworks-dev.agent.md). The `/generate-game-data` prompt in `.github/prompts/generate-game-data.prompt.md` is the AI path to this work and already carries the mandatory research rules.
+**Always paired with:** [AGENTS.md](../AGENTS.md). The `/generate-game-data` prompt in `.github/prompts/generate-game-data.prompt.md` is the AI path to this work and already carries the mandatory research rules.
 
 ---
 
@@ -66,7 +66,7 @@ The same rule drives three fields:
 description before it makes a single request, then works down: achievement text →
 one index page → per-achievement pages → one Reddit sweep per game. The scrape
 target, the traits table, and the per-game request budget all live in
-[`generate-game-data.prompt.md`](../prompts/generate-game-data.prompt.md).
+[`generate-game-data.prompt.md`](../.github/prompts/generate-game-data.prompt.md).
 
 ### The todo list is the progress bar
 
@@ -153,7 +153,7 @@ node scripts/fetch-achievement-icons.mjs 1245620      # just one
 node scripts/fetch-achievement-icons.mjs --force      # re-scrape everything
 ```
 
-The scraping target and all of its traps (one URL per trophy, 64×64 native, display-name-only join, reused art, silent no-op) are documented in [platworks-steam.agent.md](./platworks-steam.agent.md) §3. The short version: **a duplicated `iconUrl` is not a bug, and an unmatched name must be reported — never fuzzily assigned.**
+The scraping target and all of its traps (one URL per trophy, 64×64 native, display-name-only join, reused art, silent no-op) are documented in [steam.md](./steam.md) §3. The short version: **a duplicated `iconUrl` is not a bug, and an unmatched name must be reported — never fuzzily assigned.**
 
 `iconUrl` is optional in the schema, so a hand-added game still validates.
 

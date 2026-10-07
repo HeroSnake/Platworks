@@ -8,9 +8,9 @@ tools: [read, edit, search, execute]
 **You own:** `#lib/components/*.svelte`, `src/app.css`, all Tailwind markup, the shared layout, animations
 and performance budgets.
 
-**Always paired with:** [platworks-dev.agent.md](./platworks-dev.agent.md). Pair with
-[platworks-sveltekit.agent.md](./platworks-sveltekit.agent.md) when the change involves navigation or
-hydration, and with [platworks-state.agent.md](./platworks-state.agent.md) when a control reads or writes
+**Always paired with:** [AGENTS.md](../AGENTS.md). Pair with
+[sveltekit.md](./sveltekit.md) when the change involves navigation or
+hydration, and with [state.md](./state.md) when a control reads or writes
 persisted state.
 
 **New UI work starts at `/ui-project`**, which scopes the change and produces HTML mockups in
@@ -332,7 +332,7 @@ and Cyberpunk split them deliberately.
 - **Six palettes, one set of token names.** `app.css` declares `steam-dark/blue/light/accent/green` and
   `ink/ink-dim/ink-faint/line/accent-ink` as `@theme inline` `var(--pw-*)` references, and each palette is a
   `[data-theme]` block overriding those vars. Swapping palette is one attribute on `<html>` — do **not** rename a
-  token. Adding a palette has four registration points; see [platworks-state.agent.md](./platworks-state.agent.md) §6.
+  token. Adding a palette has four registration points; see [state.md](./state.md) §6.
 - Use the semantic tokens `--color-ink` / `ink-dim` / `ink-faint` / `line` for new markup rather than
   Tailwind's `gray-*` ramp, so text re-themes with the palette.
 - Dark-first. Group classes: layout → spacing → sizing → colors → typography → effects.
@@ -443,9 +443,9 @@ geometry) because three columns on a 390 screen is too coarse next to a 5px prog
   specificity.
 - Counts use `tabular-nums` (`.tabular`) so digits do not shuffle sideways while animating.
 
-### The trophy row is the app's only celebration — tiers 2 and 3
+### The trophy row is the app's only celebration — tiers 2, 3 and 4
 
-`achievement_row.svelte` carries three motions, all defined in `app.css`. Nothing else in the
+`achievement_row.svelte` carries four motions, all defined in `app.css`. Nothing else in the
 app celebrates anything, and that is the point: unlocking a trophy is the emotional beat of a
 completionist app, so it is the one place motion is spent.
 
@@ -454,8 +454,9 @@ completionist app, so it is the one place motion is spent.
 | press | `.pw-press` | squash to `0.955`, spring back past rest | `90ms` in, `420ms` out |
 | celebrate | `.pw-celebrate` | the row leaps; a ring expands out of the icon; an `UNLOCKED` ribbon wipes across | `900ms` |
 | relock | `.pw-relock` | the row contracts **inward** with a damped recoil; a ring **implodes**; the green drains out | `420ms` |
+| exit | `.pw-exit` | the row collapses to nothing and fades — the active filter just dropped it | `280ms` |
 
-Five rules, each of which exists because the obvious version was wrong:
+Six rules, each of which exists because the obvious version was wrong:
 
 - **The reverse is not the celebration played backwards.** Unlocking grows outward and
   overshoots; locking contracts inward and damps out. Same spring curve, opposite direction,
@@ -468,13 +469,21 @@ Five rules, each of which exists because the obvious version was wrong:
   failure modes in §1. Both are `pointer-events: none` regardless, because the *row's* `::after`
   is not the same element as the expand button's own `after:inset-0`, and that distinction is
   easy to lose.
-- **The ribbon needs `z-index: 20`, above the toggle rail's `z-10`.** Not decoration: the rail
-  wins the paint order by default, and the 64px trophy plus its check badge sit exactly where
-  the label is, so at `z-index: auto` the ribbon painted *underneath* them and `UNLOCKED` was
-  unreadable. The ring stays at `z-index: 1` on purpose — a ring growing from **behind** the
-  icon reads as emitting from it, while the ribbon has to be in front. Remember that
-  `.achievement-item` is its own stacking context (`content-visibility: auto` implies paint
-  containment), so these values are compared inside the card, not against the page.
+- **The ribbon is a shrink-wrapped pill, and its padding is the centring.** `inset: 0 auto 0 0`
+  makes the box exactly `padding + label`, so the padding is the only thing between the text
+  and the band's edge — `padding-left` alone (the bug) leaves `UNLOCKED` flush against the right
+  side. It must stay **symmetric**. Do not "fix" the narrow width into a full-bleed `inset: 0`
+  band without asking: the pill travelling across the card is the design, and widening it to the
+  row is a visible change, not a bug fix. The `text-indent` is half the `letter-spacing`, because
+  tracking adds a trailing space after the *last* glyph too and centring the advance box leaves
+  the ink half a step left of centre.
+  - **The ribbon needs `z-index: 20`, above the toggle rail's `z-10`.** Not decoration: the rail
+    wins the paint order by default, and the 64px trophy plus its check badge sit exactly where
+    the label is, so at `z-index: auto` the ribbon painted *underneath* them and `UNLOCKED` was
+    unreadable. The ring stays at `z-index: 1` on purpose — a ring growing from **behind** the
+    icon reads as emitting from it, while the ribbon has to be in front. Remember that
+    `.achievement-item` is its own stacking context (`content-visibility: auto` implies paint
+    containment), so these values are compared inside the card, not against the page.
 - **The ring is anchored to the icon, not the row.** The toggle's `-ml-*` cancels the row's
   `p-*`, so the `h-16 w-16` trophy sits flush with the card's left border at every breakpoint:
   `left: 0` on a `64px` box puts the box centre exactly on the icon's centre, and `scale()`
@@ -484,6 +493,70 @@ Five rules, each of which exists because the obvious version was wrong:
   the DOM and the animation silently does not replay. The clear timers are `20ms` longer than
   the CSS so the class outlives the animation. `handleToggle` reads `achieved` **before**
   calling `ontoggle()`, or the original direction is already gone.
+
+#### A row the filter drops must be HELD, or every tier above is invisible
+
+Under a completion filter, toggling a trophy makes it stop matching — so the keyed `{#each}`
+destroys the row **in the same flush that applies `pw-celebrate`**. The whole celebration was
+painted on a node that no longer existed, and the player saw a trophy blink out of existence.
+Nothing errors; every other check passes.
+
+The row is therefore kept in the list until it reports back:
+
+| Piece | Lives in | Job |
+|---|---|---|
+| `departing` | game page | `Set` of ids mid-exit. `toggleCheck` adds one when the row was listed before the flip and is not after |
+| `candidates` / `passesCompletion` | game page | the search + tag filter split away from the completion filter, so a dropped row can be put back where it was |
+| `visibleAchievements` | game page | `candidates` filtered by `passesCompletion(id) || held`, then sorted |
+| `exiting` / `onvanished` | row props | the row plays its tier, then `advance()` checks `exiting` and plays `.pw-exit`, then calls back |
+| `.pw-vanish-clip` | row markup | the single grid item the collapse closes, `overflow: hidden` + `min-height: 0` |
+
+Six traps, all of which fail silently:
+
+- **A toggle that CANCELS OUT must release the hold.** `toggleCheck` releases on the way back in,
+  not only on the way out. Without the release, a second tap inside the celebration window leaves
+  the id in `departing`, so `advance()` hands over to `.pw-exit` for a row that never left: the
+  card collapses and fades, then springs back. It is *still in the DOM at the same index the whole
+  time*, so `count` and `index` both pass — see the `visible` assertion in §6 for what catches it.
+- **Re-filter `candidates`; never append the held rows.** `[...filtered, ...held]` is the obvious
+  spelling and it is wrong: `sortList` is a **no-op under the default sort**, so the held row lands
+  **last** and the card the player just tapped teleports to the bottom of the list. It looks like a
+  rendering bug, not a data bug, and it is invisible in a screenshot of the top of the page.
+- **`untrack` the guard in the "filters changed, release everything" effect.** That effect must
+  depend on `filter` / `typeFilter` / `gameSort` / `trophyQuery` **only**. Reading `departing` in it
+  makes the effect re-run the instant `depart()` fires, clearing the id in the same tick it was
+  added — which restores the original bug exactly, and looks like the fix never landed.
+- **Reassign the `Set`; never mutate it.** `$state` is only reactive on reassignment, so an
+  in-place `.delete()` leaves the list rendering the old membership.
+- **`exiting` cannot be read at toggle time**, and **a row must cancel an exit it no longer owes.**
+  The page sets `exiting` as a *consequence* of `ontoggle()`, so it is read one animation later, in
+  `advance()`. The mirror of that is an `$effect` that clears a running `.pw-exit` the moment
+  `exiting` goes false — otherwise a row the page stops holding sits at zero height and zero
+  opacity, still listed, until the exit timer happens to fire.
+- **The collapse is `grid-template-rows`, and it must be in the keyframes.** Setting `0fr` as a
+  plain declaration on `.pw-exit` snaps the row shut and leaves only the fade, which is the
+  "it just disappeared" this tier exists to fix. `min-height: 0` on the clip is load-bearing: a
+  grid item's automatic minimum size is its content size, so without it `0fr` cannot close. Do
+  **not** reach for `max-height` — it is wrong at every breakpoint and for a row with its guide open.
+- **The exit also cancels the list's `gap`, via `margin-block: -0.5rem`.** The list is `gap-2`,
+  and gap is measured between margin boxes, so a card collapsed to zero height leaves **both** of
+  its gaps behind: the rows below stop 16px short and then jump the rest of the way when the node
+  is removed. One negative margin is not enough — it only cancels the gap below. This is **not**
+  the forbidden negative margin in §1: that rule is about a negative *vertical* margin inside the
+  row's horizontal `flex` line, where vertical is the **cross** axis and the margin shrinks the
+  line's cross size. The achievement list is `flex-col`, where vertical is the **main** axis, so
+  the margin only reduces this item's own outer size.
+
+**Past ~920ms there is deliberately nothing to re-tap.** The celebration ends and `.pw-exit` sets
+`pointer-events: none`, so a click landing on the collapsing card goes to the row underneath. That is
+the right trade: the card is already invisible, and re-toggling a row that is leaving would fight
+the exit it is in the middle of. Do not "fix" it by making the exit tappable.
+- **The fade finishes early (55%) while the collapse keeps going.** The card is already
+  invisible when the rows below start closing the gap, so nobody sees an empty box sliding shut.
+
+`--motion-in` (accelerating) is correct for this tier and `--motion-settle` is not: the row is
+*leaving*, and the acceleration is what makes it read as getting pulled away rather than
+released.
 
 `.pw-press` deliberately has **no `will-change`**: a 100-achievement page holds 100 of them,
 and web.dev is explicit that `will-change` is for a measured problem. A transform transition is
@@ -526,7 +599,7 @@ present it as a spec value.
 implemented in `scripts/agent/lib/ui-checks.mjs`, and that file is the executable copy of this section.
 Change a rule here and you must change it there, or the next audit enforces the old one.
 
-Setup and the Playwright install are in [platworks-dev.agent.md](./platworks-dev.agent.md) §7. The
+Setup and the Playwright install are in [AGENTS.md](../AGENTS.md) §7. The
 script finds a dev server on `:5173` or `:4173` itself; it never starts one.
 
 ```bash
@@ -586,6 +659,63 @@ not a test. Assert on an **observable state change** — `localStorage`, the URL
 Give each check its own page: the script already does, because an earlier check that switches to an
 empty tab makes the next one fail for the wrong reason, and you will debug the wrong thing.
 
+**A filter is a list, so `count` is how you assert one.** `storage` proves the filter was *written*
+and `attr` proves a control is *marked* — neither can say what the rendered rows actually did.
+`count` reports how many elements match a selector, and it is exempt from the "everything else must
+change" rule because its whole job is often to assert that something did **not** change:
+
+```js
+// The row must survive long enough to animate out of the filtered list.
+expect: {
+  count: { selector: '.achievement-item' },   // no `equals` == must be UNCHANGED
+  storage: ['platworks:checked:1903340']      // while this one does change
+}
+```
+
+**`count` is not enough on its own — an element can keep the count right and still move.** Appending
+a held row to the end of a list instead of filtering it back into place leaves `count` perfectly
+correct while moving the card the player just clicked to the bottom of the page. `index` is the
+assertion for *where*: it reports an element's position among its siblings' matches, and likewise
+defaults to "must be unchanged".
+
+```js
+expect: {
+  index: { selector: '.achievement-item >> nth=2', within: '.achievement-item' },
+  storage: ['platworks:checked:1903340']
+}
+// -> ".achievement-item >> nth=2 moved from position 2 to 54"
+```
+
+Give `count` an `equals` to assert a specific length, and `index` an `equals` for a specific
+position.
+
+**A before/after pair cannot see a TRANSIENT fault, and that is a whole class of bug.** A row that
+collapses to nothing and springs back inside the window ends exactly where it started and passes
+every `count`, `index`, `storage` and `attr` assertion on earth. `visible` is the only assertion
+that polls:
+
+```js
+expect: { visible: { selector: '.achievement-item >> nth=2', minHeight: 40 } }
+```
+
+It samples every 50ms for `settle`ms and fails if the element leaves the page or drops below
+`minHeight`. The window **is** the settle — the runner does not also wait `settle` before polling,
+because that would sample only after the fault had passed. Pair it with `repeat`/`interval` to
+express a fast re-tap:
+
+```js
+click: '.achievement-item >> nth=2 >> button[aria-pressed]',
+repeat: 2,        // click it again
+interval: 600,    // 600ms later — a fast double toggle
+settle: 1600      // and watch it for 1.6s
+```
+
+Repeats are dispatched with `force: true` on purpose: a fast re-tap lands on a **moving** target, and
+Playwright's stability wait would time out instead of clicking. All three assertions are **structural,
+not visual** — none can see an element that is covered, transparent or off-screen. The regression
+tests for the exit tier — held, in-place, reverse direction, and double-toggle — are in
+[scripts/agent/examples/clicks.mjs](../scripts/agent/examples/clicks.mjs).
+
 **A fresh page can only ever start from the INITIAL state**, so a control's second direction is
 unreachable: the first click on a trophy always unlocks it, never locks it back. `seed` exists for
 exactly that — it writes `localStorage` before the app boots, so the check can begin from a state
@@ -640,3 +770,24 @@ which no centre-point check can see.
 
 `ui-audit.mjs` writes one PNG per route and width to `.tmp/audit-shots/`. **Open them.** A rendering
 bug and an overlap bug are both obvious in an image and invisible to every other check.
+
+### Never paste a screenshot into a reply — link the HTML
+
+Screenshots are **your** verification step, not the user's deliverable. `shot.mjs` and
+`ui-audit.mjs` exist so you can see what you built; the user reviews the real thing.
+
+- In a `/ui-project` review reply, link the mockup's `.html` — workspace-relative, so it
+  opens in the integrated browser. Never embed `shots/*.png`.
+- In a verify reply, report the audit numbers in prose. Link a PNG only if asked.
+
+A PNG cannot be clicked, cannot be opened in the integrated browser, pins the design to the
+two widths that were rendered, and always shows the *default* state — so it hides exactly
+the hover and click behaviour a mockup was drawn to demonstrate.
+
+Two things follow that are easy to get wrong:
+
+- **Still render them and still open them.** Removing the screenshot step removes the only
+  check that sees a layout. The rule is about what you *send*, not what you *do*.
+- **`shot.mjs --out-dir` is ignored for URL targets.** It writes `shot-<width>.png` into
+  the current working directory, which is the repo root and is not gitignored. Pass an
+  explicit `--out .tmp/ui/...` path when screenshotting a live route.

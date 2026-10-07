@@ -1,0 +1,8 @@
+---
+description: "Use when creating git commits, writing commit messages, or choosing a Conventional Commits type/scope for PlatWorks. Always English."
+globs: .git/**, COMMIT_EDITMSG
+alwaysApply: false
+---
+
+Read [`.agents/commits.md`](../../.agents/commits.md) before editing anything matching this glob, and
+`AGENTS.md` for the rules that apply to every task. Both are required — do not answer from memory.

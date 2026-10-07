@@ -7,7 +7,7 @@ tools: [read, edit, search, execute]
 
 **You own:** `vite.config.ts`, `tsconfig.json`, `package.json` `imports`, routing and `+page.server.ts` / `+server.ts` files, navigation APIs, SSR-vs-client hydration, and Svelte reactivity patterns.
 
-**Always paired with:** [platworks-dev.agent.md](./platworks-dev.agent.md) (the rules that apply everywhere). Pair with [platworks-ui.agent.md](./platworks-ui.agent.md) when the change is visual, or [platworks-state.agent.md](./platworks-state.agent.md) when a `localStorage` value drives the order you are rendering.
+**Always paired with:** [AGENTS.md](../AGENTS.md) (the rules that apply everywhere). Pair with [ui.md](./ui.md) when the change is visual, or [state.md](./state.md) when a `localStorage` value drives the order you are rendering.
 
 ---
 
@@ -74,7 +74,7 @@ key. No environment variables are required on Vercel.
 | `/linktest` | `+page.svelte` + `+page.server.ts` | scratch page for inspecting link combinations in `achievement_row.svelte`. Temporary — **delete it (the directory, both files) once the inspection is done**; it is a real route and ships to production |
 
 Adding a route means adding a row here and a row in §4 of
-[platworks-dev.agent.md](./platworks-dev.agent.md). Nothing goes in the README — it carries no structure
+[AGENTS.md](../AGENTS.md). Nothing goes in the README — it carries no structure
 tree.
 
 ## 3. Hydration: the `hydrated` gate
@@ -113,8 +113,8 @@ let achievedMap = $derived.by(() => new Map(Object.entries(achieved)));
   Calling a function per row re-parses or re-allocates on every keystroke; the map is built once per change.
 
 - Props: `let { a, b } = $props()`; bindable: `let { value = $bindable('') } = $props()`.
-- Never initialise from `localStorage` at module scope — go through a `load*()` helper guarded by `if (!browser) return …`. The registry of those helpers lives in [platworks-state.agent.md](./platworks-state.agent.md).
+- Never initialise from `localStorage` at module scope — go through a `load*()` helper guarded by `if (!browser) return …`. The registry of those helpers lives in [state.md](./state.md).
 
 ## 5. Verifying
 
-`npm run check` (`svelte-kit sync && svelte-check`) is the source of truth. Details, including the WSL `PATH` export and the stale-VS-CS-TS-server caveat, are in [platworks-dev.agent.md](./platworks-dev.agent.md) §7.
+`npm run check` (`svelte-kit sync && svelte-check`) is the source of truth. Details, including the WSL `PATH` export and the stale-VS-CS-TS-server caveat, are in [AGENTS.md](../AGENTS.md) §7.

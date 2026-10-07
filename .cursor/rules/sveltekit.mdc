@@ -1,0 +1,8 @@
+---
+description: "Use when touching SvelteKit 3 or build config in PlatWorks: routing, +page.server.ts, +server.ts, #lib imports, tsconfig, $app/*, navigation, hydration, or svelte-check failures."
+globs: vite.config.ts, tsconfig.json, svelte.config.js, src/routes/**/+page.server.ts, src/routes/**/+server.ts, src/routes/**/+layout.svelte, package.json
+alwaysApply: false
+---
+
+Read [`.agents/sveltekit.md`](../../.agents/sveltekit.md) before editing anything matching this glob, and
+`AGENTS.md` for the rules that apply to every task. Both are required — do not answer from memory.

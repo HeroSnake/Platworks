@@ -9,10 +9,10 @@ tools: [read, edit, search, execute]
 `#lib/client/theme.ts`, the user library, sort/filter preferences, and the rule for hydrating any stored
 value into the first render.
 
-**Always paired with:** [platworks-dev.agent.md](./platworks-dev.agent.md). Pair with
-[platworks-sveltekit.agent.md](./platworks-sveltekit.agent.md) when a stored value changes **order or
+**Always paired with:** [AGENTS.md](../AGENTS.md). Pair with
+[sveltekit.md](./sveltekit.md) when a stored value changes **order or
 filtering** — that triggers the `hydrated` gate. Pair with
-[platworks-steam.agent.md](./platworks-steam.agent.md) when the Steam ID or the cached profile is
+[steam.md](./steam.md) when the Steam ID or the cached profile is
 involved.
 
 ---
@@ -61,7 +61,7 @@ export function loadProfile(): StoredProfile | null {
 A stored value that changes **order or filtering** makes the first client render differ from SSR. Svelte
 hydrates keyed `{#each}` blocks positionally and does not rewrite existing attributes, so without a gate
 the user sees stale content. Sort, filter and search state all fall under this; the gate implementation is
-in [platworks-sveltekit.agent.md](./platworks-sveltekit.agent.md) §3.
+in [sveltekit.md](./sveltekit.md) §3.
 
 ## 4. The profile cache
 
@@ -74,7 +74,7 @@ in [platworks-sveltekit.agent.md](./platworks-sveltekit.agent.md) §3.
 - `refreshProfile()` writes the resolved Steam64 ID back to `platworks:steamId`, so a vanity name is
   resolved once.
 - Steam's default avatar is an all-zero hash; the module returns `null` there so the UI falls back to an
-  icon rather than rendering the placeholder. See [platworks-steam.agent.md](./platworks-steam.agent.md) §2.
+  icon rather than rendering the placeholder. See [steam.md](./steam.md) §2.
 
 ## 5. The user library
 
@@ -90,7 +90,7 @@ Two rules this key exists to enforce:
 - **`scope` is authoritative and is never coerced.** `scopedGames` is a plain `$derived`:
   `scope === 'mine' ? myGames : data.games`. `'mine'` with an empty library is a real state with a real
   empty view, not something to silently redirect away from — see
-  [platworks-ui.agent.md](./platworks-ui.agent.md) §1.
+  [ui.md](./ui.md) §1.
 
 ## 6. The colour theme
 
@@ -110,7 +110,7 @@ from the code:
 - **There is a fourth registration point: `--pw-pattern-dash` and `--pw-pattern-trophy`.** The background
   pattern's tile reads them from the palette, so a palette without them does not error — it silently
   inherits the previous palette's pattern colours. This is the one addition to a palette that fails
-  invisibly. See [platworks-ui.agent.md](./platworks-ui.agent.md) §3.
+  invisibly. See [ui.md](./ui.md) §3.
 - **A fifth point is the picker's colour literals, and it is the one that will bite you.** Each `THEMES`
   entry carries `swatch`, `bg` and `success` copied from its `[data-theme]` block, because the picker has to
   show palettes that are *not* currently applied and a CSS variable cannot do that. Change `--pw-accent`

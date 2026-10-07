@@ -1,0 +1,8 @@
+---
+description: "Use when adding or editing a game's achievement data in PlatWorks: src/lib/data/games/*.json, schema.json, guides, warnings, mapUrl, difficulty/types tag fields, or the icon fetch/verify scripts."
+globs: src/lib/data/games/**, scripts/fetch-*.mjs, scripts/verify-*.mjs
+alwaysApply: false
+---
+
+Read [`.agents/gamedata.md`](../../.agents/gamedata.md) before editing anything matching this glob, and
+`AGENTS.md` for the rules that apply to every task. Both are required — do not answer from memory.

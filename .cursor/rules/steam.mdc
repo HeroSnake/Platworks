@@ -1,0 +1,8 @@
+---
+description: "Use when touching Steam integration in PlatWorks: the steam/api.ts module, XML parsing, /api/steam/* routes, achievement sync, avatars, icon scraping, or Steam caching."
+globs: src/lib/server/**, src/routes/api/**, src/lib/types/steam.ts
+alwaysApply: false
+---
+
+Read [`.agents/steam.md`](../../.agents/steam.md) before editing anything matching this glob, and
+`AGENTS.md` for the rules that apply to every task. Both are required — do not answer from memory.

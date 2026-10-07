@@ -85,7 +85,7 @@ phase 2 runs at all.
 | Class | Looks like | What it means for the rest of the run |
 |---|---|---|
 | **Additive** | A new element on a screen that already exists | The default. Matches the current aesthetic exactly. Research rarely needed. |
-| **Restyle** | "Make this look modern", "the cards feel flat", a palette or layout direction | Full §1 of `platworks-ui.agent.md` is in scope. Bigger, and it edits `app.css` for every palette. |
+| **Restyle** | "Make this look modern", "the cards feel flat", a palette or layout direction | Full §1 of `.agents/ui.md` is in scope. Bigger, and it edits `app.css` for every palette. |
 | **Structural** | Navigation, layout, the mobile bar, how pages are composed | Two or three screens affected at once. Mock each one. |
 | **Systemic** | A design token, a control, a motion rule — reused everywhere | Mock the pattern *and* its two worst-case instances. |
 | **Fix** | Something is visibly broken | Usually no mockup. Say so and offer the fix directly — do not run a design process on a bug. |
@@ -190,14 +190,17 @@ the proposition is the agent's judgement, not a template's.
 
 ```
 .tmp/ui/{slug}/
-├── a-inline.html        # one self-contained file per proposition
-├── b-sheet.html
+├── a-inline.html        # one self-contained file per proposition  ← THE DELIVERABLE
+├── b-sheet.html                                                     ← THE DELIVERABLE
 ├── notes.md             # what each variant costs, what it breaks
 ├── research.md          # if phase 2 ran
-└── shots/
+└── shots/              # agent-only verification renders, never linked in a reply
     ├── a-inline-390.png
     └── a-inline-1440.png
 ```
+
+**The `.html` files are the deliverable.** `shots/` is scratch for your own eyes — see
+[phase 3](#screenshot-every-variant). Only ever link the HTML.
 
 `{slug}` is a short kebab-case name for the project — `library-heatmap`,
 `game-hero-rework`.
@@ -214,9 +217,10 @@ Use `--game <appId>` and `--theme <id>` to pick the data and palette;
 | **Real fonts.** The same Google Fonts link as `src/app.html` — Space Grotesk, Inter, JetBrains Mono. | Type is most of what is being approved. |
 | **Real data.** Actual game names, actual achievement names, actual counts, from `src/lib/data/games/*.json`. | Lorem ipsum hides the exact problem. A 64-character trophy name is what breaks a row; a 12-character one proves nothing. |
 | **Both breakpoints, in one file.** A 390 / 1440 toggle or a two-up frame. | A design that only exists at desktop is half a design. The app is mostly used on a phone. |
+| **Every palette, in one file.** The scaffold ships a switcher over all six. | **Keep it.** A design approved in Ember has not been approved in Vapor — and on a surface-less layout the palette is the *only* thing separating a column from the background behind it, so it carries more weight than usual. Two of the six (`matrix`, `cyberpunk`) also change `--pw-font-display`, so switching them tests the type and not just the colour. If the proposition deliberately depends on one palette, say so in the caption. |
 | **The real states.** Empty, loading, error, locked, unlocked, expanded, long text, zero results. | Most UI bugs live in the state nobody drew. |
 | **Interactive where the interaction *is* the idea.** Real `<details>`, real checkboxes, a real tab switch. | A static picture of a dropdown is not a dropdown. |
-| **Tap targets ≥ 40px.** `h-10`, not `h-9`. | The floor the app already holds; see `platworks-ui.agent.md` §5. |
+| **Tap targets ≥ 40px.** `h-10`, not `h-9`. | The floor the app already holds; see `.agents/ui.md` §5. |
 | **Annotated.** A caption per variant: what it borrows, what it costs, what it breaks elsewhere. |
 
 ### Two to three propositions, genuinely different
@@ -232,27 +236,38 @@ downside listed has not been thought about.**
 
 ### Screenshot every variant
 
-The user should not have to open files to see the work. Render each at 390 and
-1440 and put the PNGs in the reply.
+**The PNGs are yours, not the user's.** They exist so *you* can see the layout you just
+drew, and so `shot.mjs` can report the two things a picture hides. The user reviews the
+**HTML**, in their browser, at whatever size they want — a PNG cannot be clicked, cannot
+be opened in the integrated browser, and freezes the design at the two widths you chose.
 
 ```bash
 node scripts/agent/shot.mjs .tmp/ui/library-heatmap
 ```
 
-That is the whole step. It renders every `.html` in the directory at both widths into
-`shots/`, **and** reports the two things a screenshot hides: a horizontal scrollbar
-(`overflow`) and any `pageerror` / console error. Fix the overflow before showing the
-mockup — a picture of a broken layout reads as a broken *idea*.
+It renders every `.html` in the directory at 390 and 1440 into `shots/`, **and** reports a
+horizontal scrollbar (`overflow`) plus any `pageerror` / console error. Fix the overflow
+before showing the mockup — a broken layout reads as a broken *idea*.
 
-It prints the markdown to paste into the reply at the end:
+Then **open the PNGs with the `view` tool and actually look at them.** The two bugs this
+repo has already shipped that survived `npm run check`, the geometry audit and the
+overflow check were both obvious in a picture and invisible to every check. A mockup you
+have not looked at is not verified.
 
-```markdown
-![a-inline-390.png](.tmp/ui/library-heatmap/shots/a-inline-390.png)
-```
+Do not paste the PNGs into the reply. Phase 4 links the HTML instead.
 
-`file://` URLs work and are verified. Useful flags: `--widths 390,1440`,
-`--theme matrix` (applies a palette as `[data-theme]`), `--viewport` instead of a
-full-page shot.
+Useful flags: `--widths 390,1440`, `--theme matrix` (applies a palette as `[data-theme]`),
+`--viewport` instead of a full-page shot, `--out <path>` / `--out-dir <d>` for a single file.
+
+> `--out-dir` is honoured for **directory** targets only. For a **URL** target `shot.mjs`
+> writes `shot-<width>.png` into the *current working directory* — which is the repo root,
+> and it is not gitignored. Always pass `--out` with an explicit `.tmp/ui/...` path when
+> screenshotting a live route, or clean the files up afterwards.
+
+**Never write a `shot.mjs` into the mockup directory.** The old instruction to do
+so is why the Playwright install path was hardcoded into a dozen scratch files, each
+of which broke the next time the npx cache was pruned. `shot.mjs` resolves Playwright
+through `scripts/agent/lib/playwright.mjs` and never hardcodes a path.
 
 **Never write a `shot.mjs` into the mockup directory.** The old instruction to do
 so is why the Playwright install path was hardcoded into a dozen scratch files, each
@@ -269,30 +284,55 @@ ask, and wait.
 
 ### What to show
 
-1. **The screenshots, inline.** Embed them so they render in the chat:
+1. **A clickable link to each mockup's HTML — never an embedded PNG.**
+
+   **Link text = the full repo-relative path. Link target = the absolute filesystem path
+   with `/` separators.** The text is what the user reads and clicks; the target is what
+   VS Code resolves, and the two have to be there because a bare filename is not clickable.
 
    ```markdown
-   ![Variant A — inline grid](.tmp/ui/library-heatmap/shots/a-inline-grid-390.png)
+   [`.tmp/ui/game-aside/a-dossier.html`](//wsl.localhost/Ubuntu/home/florent/projects/Platworks/.tmp/ui/game-aside/a-dossier.html)
    ```
 
-   Workspace-relative resolves in VS Code; use the absolute path for a plain
-   clickable link to the HTML.
+   Do **not** write `[a-dossier.html](…)` — the label has to carry the whole path, because
+   the user opens it from the reply and a filename on its own is not something to click.
+   Do **not** use Windows backslashes in the target; `\` escapes the next character in
+   markdown and the link silently breaks. Backslashes are fine in the link *text*.
+
+   One link per variant, and the link opens the mockup in the integrated browser — which is
+   where the user wants to review it: the mockup carries its own width toggle, so they can
+   see it at 390 and 1440 and at anything in between, and they can poke the interaction
+   instead of looking at a still of it.
+
+   Never embed `shots/*.png` in the reply. A screenshot is not clickable, cannot be opened
+   in the integrated browser, pins the design to the two widths you rendered, and shows the
+   *default* state of an interaction whose whole point may be what happens when you hover
+   or click it. The PNGs are still generated — see [phase 3](#screenshot-every-variant) —
+   and you still look at them, but they are a verification step, not a deliverable.
+
+   Put the PNG path in the reply **only** if the user asks to see a picture, and then say
+   which variant and which width it is.
 
 2. **A short paragraph per variant** — the idea in one line, what it costs, what
-   it changes about the current app. Not a spec. The screenshots carry the
-   design; the paragraph carries the trade-off.
+   it changes about the current app. Not a spec. The paragraph carries the trade-off;
+   the HTML carries the design.
 
 3. **The honest gaps.** Anything the mockup does not decide: real data loading,
    keyboard behaviour, what happens with 500 games, SSR. Say it here, not at
    build time when it becomes a surprise.
+
+4. **Any state you did not draw.** A mockup that shows only the happy path is hiding the
+   part most likely to be wrong. Name what is missing rather than implying it is fine.
 
 ### The question — two parts, both mandatory
 
 > **Variant A — inline grid.** … *(idea, cost, what it changes)*
 > **Variant B — sticky summary + sheet.** …
 >
-> Screenshots above · HTML at `.tmp/ui/library-heatmap/` · trade-offs in
-> `notes.md`.
+> Open these:
+> [`.tmp/ui/library-heatmap/a-inline-grid.html`](…/a-inline-grid.html) ·
+> [`.tmp/ui/library-heatmap/b-sheet.html`](…/b-sheet.html) ·
+> [`.tmp/ui/library-heatmap/notes.md`](…/notes.md)
 >
 > **1. Which one?**
 > **2. Is that one good enough to build, or does it need UI fixes?**
@@ -307,15 +347,18 @@ Both questions, every time.
 | They say | Do |
 |---|---|
 | "B, ship it" | Approved. Go to phase 5. |
-| "A but with X" | Variant A plus a revision. **Not** a new proposition. Edit `a-*.html`, re-screenshot, re-present — and ask both questions again. |
+| "A but with X" | Variant A plus a revision. **Not** a new proposition. Edit `a-*.html`, re-screenshot to check it yourself, re-link the same path — and ask both questions again. |
 | "None of these, try Y" | A rejected direction, not a failure. Revise and re-present. |
 | "I don't like the colours" | A restyle question in disguise. Go back to [the aesthetic gate](#the-aesthetic-gate) — the palette may be the thing that is wrong, not the layout. |
 | Silence, or a new unrelated request | Ask. Do not assume approval. |
 
-**Revision loop:** edit the mockup, re-screenshot, re-present, ask both
-questions. Repeat until the user says it is good enough. Every iteration is
-cheap here and expensive after phase 6 — which is the entire reason this phase
-exists.
+**Revision loop:** edit the mockup, re-screenshot and look at it, re-link the HTML, ask
+both questions again. Repeat until the user says it is good enough. Every iteration is
+cheap here and expensive after phase 6 — which is the entire reason this phase exists.
+
+**The link never changes.** A revision edits the file in place, so the URL the user
+already has open keeps working and they see the change on refresh. Do not write a
+`a-dossier-v2.html`; write `a-dossier.html` and let the reload do it.
 
 ---
 
@@ -355,8 +398,8 @@ approved design does not turn into bad code at phase 6:
 ## 6 · Build
 
 Only now does app code change. Read the domain files for the area you are in —
-[`platworks-dev.agent.md`](../agents/platworks-dev.agent.md) routes you, and
-[`platworks-ui.agent.md`](../agents/platworks-ui.agent.md) owns the rules the
+[`AGENTS.md`](../../AGENTS.md) routes you, and
+[`.agents/ui.md`](../../.agents/ui.md) owns the rules the
 mockup was drawn against. The rules in phase 5 are not optional.
 
 Track the todos honestly: `in_progress` before you start, `done` the moment each
@@ -393,12 +436,15 @@ Start from [`scripts/agent/examples/clicks.mjs`](../../scripts/agent/examples/cl
 Each check names a control and the observable state it must change, and runs on a
 fresh page. For a change that adds an overlay, a mask or a `z-index`, pass a
 `probe.container` so the corners and edges are probed against the control too — see
-[platworks-ui.agent.md](../agents/platworks-ui.agent.md) §6.
+[.agents/ui.md](../../.agents/ui.md) §6.
 
-**Look at the screenshots.** The audit writes one PNG per route and width to
-`.tmp/audit-shots/`. Two of the worst bugs in this repo's history — a map link
-rendered twice at one breakpoint, a filter row whose search field sat off-screen —
-were obvious in a screenshot and invisible to every other check.
+**Look at the screenshots — with the `view` tool, yourself.** The audit writes one PNG
+per route and width to `.tmp/audit-shots/`. Two of the worst bugs in this repo's history
+— a map link rendered twice at one breakpoint, a filter row whose search field sat
+off-screen — were obvious in a screenshot and invisible to every other check.
+
+These PNGs are not for the reply unless asked for; the app itself is what the user
+reviews at phase 4. The report below is what they need.
 
 Report the result honestly. "Verified at 390/768/1440: no overflow, one copy of
 each control, smallest target 40px, no console errors, 7 click checks passing" is
@@ -499,8 +545,10 @@ finished.
 7. **Match the existing component vocabulary.** Read `#lib/components/` before
    inventing a control. Extending an existing component beats forking it.
 8. **Real data in every mockup.** The app's actual games, trophies and counts.
-9. **Never implement inside `.tmp/`.** Mockups are HTML; the app is Svelte. The
+9. **Link the HTML, never embed a PNG.** The user reviews a mockup in their browser, at
+   their own size, with its own interaction. The screenshots are your verification step.
+10. **Never implement inside `.tmp/`.** Mockups are HTML; the app is Svelte. The
    port is a decision the user makes at phase 5.
-10. **Verify in a real browser.** `npm run check` does not see layout.
-11. **Say what is not done.** A skipped state, an unverified breakpoint, a
+11. **Verify in a real browser.** `npm run check` does not see layout.
+12. **Say what is not done.** A skipped state, an unverified breakpoint, a
     hand-wave in the mockup — report it rather than shipping past it.

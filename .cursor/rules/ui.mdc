@@ -1,0 +1,8 @@
+---
+description: "Use for any visual or component change in PlatWorks: Svelte components, Tailwind styling, layout, mobile bar, trophy card, progress bars, animations, performance, icons, and app.css."
+globs: src/lib/components/**, src/routes/**, src/app.css, src/app.html
+alwaysApply: false
+---
+
+Read [`.agents/ui.md`](../../.agents/ui.md) before editing anything matching this glob, and
+`AGENTS.md` for the rules that apply to every task. Both are required — do not answer from memory.

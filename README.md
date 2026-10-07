@@ -115,13 +115,15 @@ Open the URL it prints. No environment variables, no database, no Steam API key.
 <details>
 <summary>Contributing</summary>
 
-Project rules live in [`.github/agents/`](.github/agents/) — the traps, the architecture, and why things
-are the way they are. Start with
-[`platworks-dev.agent.md`](.github/agents/platworks-dev.agent.md); it routes you to whichever domain file
+Project rules live in [`AGENTS.md`](AGENTS.md) and [`.agents/`](.agents/) — the traps, the architecture, and why things
+are the way they are. Start with [`AGENTS.md`](AGENTS.md); it routes you to whichever domain file
 owns what you're changing.
 
 Reusable scripts for agent work — the UI audit, the mockup renderer, the Steam list parser — live in
 [`scripts/agent/`](scripts/agent/README.md), so nobody re-derives them on every task.
+
+The rules are written once and read by whichever AI tool you use — Copilot, Cursor, Claude Code or Codex —
+through each one's own native configuration (see [`AGENTS.md`](AGENTS.md) §9).
 
 Built with SvelteKit 3, Svelte 5 runes, Tailwind CSS 4 and TypeScript. Deployed on Vercel.
 

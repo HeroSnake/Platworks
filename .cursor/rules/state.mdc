@@ -1,0 +1,8 @@
+---
+description: "Use when touching persisted client state in PlatWorks: localStorage keys, the cached Steam profile, the user library, sort/filter preferences, colour themes, or hydrating a stored value into the first render."
+globs: src/lib/client/**
+alwaysApply: false
+---
+
+Read [`.agents/state.md`](../../.agents/state.md) before editing anything matching this glob, and
+`AGENTS.md` for the rules that apply to every task. Both are required — do not answer from memory.
