@@ -63,13 +63,23 @@ import { untrack } from 'svelte';
 		return map;
 	});
 
-	function toggleCheck(id: string) {
-		// Read membership BEFORE the flip. `localChecked` is what `achievedMap` and
-		// therefore `filteredAchievements` derive from, so the row can drop out of the
-		// filtered list on this very line — which is exactly what `depart` must catch.
-		const wasListed = visibleAchievements.some((a) => a.id === id);
-		localChecked[id] = !localChecked[id];
-		saveLocal();
+	/**
+		 * Flips one trophy and settles the row against the active filter.
+		 *
+		 * Shared by the tap and the Steam-sync path because the two differ only in
+		 * WHO decided: a finger and Steam's XML both write `localChecked`, and both
+		 * can push the row out of a Locked or tag filter. Sync used to assign the flag
+		 * directly, which left those rows to be destroyed by the keyed `{#each}` in
+		 * the same flush — the collapse that explains the disappearance was painted
+		 * on a node that no longer existed.
+		 *
+		 * Membership is read BEFORE the flip, because `localChecked` is what
+		 * `achievedMap`, `passesCompletion` and therefore `visibleAchievements` derive
+		 * from: the row can drop out of the list on this very line.
+		 */
+		function setChecked(id: string, next: boolean) {
+			const wasListed = visibleAchievements.some((a) => a.id === id);
+			localChecked[id] = next;
 			if (wasListed && !visibleAchievements.some((a) => a.id === id)) {
 				depart(id);
 				return;
@@ -81,36 +91,64 @@ import { untrack } from 'svelte';
 			release(id);
 		}
 
-	async function syncWithSteam() {
-		const sid = steamId;
-		if (!sid) {
-			syncError = 'Set your Steam ID in the account menu (top right)';
-			return;
+		function toggleCheck(id: string) {
+			setChecked(id, !localChecked[id]);
+			saveLocal();
 		}
-		syncing = true;
-		syncError = null;
-		syncSuccess = null;
-		try {
-			const url = `/api/steam/sync/${data.game.appId}?steamId=${encodeURIComponent(sid)}`;
-			const res = await fetch(url);
-			const json = await res.json();
-			if (!json.connected) {
-				syncError = json.error ?? 'Could not fetch achievements. Is the profile public?';
+
+		/**
+		 * Achievement id → an ever-increasing token, so each row can tell "celebrate
+		 * now" from "already celebrated" and the page can clear it afterwards. See
+		 * the `celebration` prop in `achievement_row.svelte`.
+		 */
+		let celebrations = $state<Record<string, number>>({});
+
+		/** `pw-celebrate` runs 900ms in app.css; the row's own timer outlives it by 20ms. */
+		const CELEBRATE_MS = 940;
+
+		function celebrate(ids: string[]) {
+			const next = { ...celebrations };
+			for (const id of ids) next[id] = (next[id] ?? 0) + 1;
+			celebrations = next;
+			setTimeout(() => {
+				celebrations = {};
+			}, CELEBRATE_MS);
+		}
+
+		async function syncWithSteam() {
+			const sid = steamId;
+			if (!sid) {
+				syncError = 'Set your Steam ID in the account menu (top right)';
 				return;
 			}
-			// Steam XML keys are lowercase achievement names — match against game data names
-			const steamMap = json.achievements as Record<string, { achieved: boolean; unlockTime: string | null }>;
-			let count = 0;
-			for (const a of data.game.achievements) {
-				const key = a.name.toLowerCase().replace(/["'\u2018\u2019\u201c\u201d\u00ab\u00bb`]/g, '').replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
-				const steamEntry = steamMap[key];
-				if (steamEntry?.achieved && !localChecked[a.id]) {
-					localChecked[a.id] = true;
-					count++;
+			syncing = true;
+			syncError = null;
+			syncSuccess = null;
+			try {
+				const url = `/api/steam/sync/${data.game.appId}?steamId=${encodeURIComponent(sid)}`;
+				const res = await fetch(url);
+				const json = await res.json();
+				if (!json.connected) {
+					syncError = json.error ?? 'Could not fetch achievements. Is the profile public?';
+					return;
 				}
-			}
-			saveLocal();
-			syncSuccess = count > 0 ? `Synced ${count} achievement${count > 1 ? 's' : ''}` : 'Already up to date';
+				// Steam XML keys are lowercase achievement names — match against game data names
+				const steamMap = json.achievements as Record<string, { achieved: boolean; unlockTime: string | null }>;
+				// Collected rather than celebrated inline: the page has to be told all at
+				// once, because each row's effect fires on its own token and a token set
+				// mid-loop would be cleared by the next iteration's reassignment.
+				const fresh: string[] = [];
+				for (const a of data.game.achievements) {
+					const key = a.name.toLowerCase().replace(/["'\u2018\u2019\u201c\u201d\u00ab\u00bb`]/g, '').replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
+					const steamEntry = steamMap[key];
+					if (steamEntry?.achieved && !localChecked[a.id]) {
+						setChecked(a.id, true);
+						fresh.push(a.id);
+					}
+				}
+				saveLocal();
+				if (fresh.length) celebrate(fresh);
+				syncSuccess = fresh.length > 0 ? `Synced ${fresh.length} achievement${fresh.length > 1 ? 's' : ''}` : 'Already up to date';
 			// Take the opportunity to refresh the cached profile card (avatar/name).
 			// The navbar reads it from localStorage, so this is the only time we
 			// re-parse Steam for profile data — page loads stay network-free.
@@ -404,8 +442,8 @@ import { untrack } from 'svelte';
 			sidebar is a fixed 288px and the list takes the rest, which keeps the guide
 			prose that expands inside each row comfortably inside a readable measure
 			while the progress summary stays on screen while you scroll 200 trophies.
-		-->
-		<div class="mx-auto max-w-[1400px] px-4 pb-24 pt-4 sm:px-6 sm:pt-6 lg:grid lg:grid-cols-[288px_minmax(0,1fr)] lg:gap-6 lg:px-8 lg:pb-16">
+					-->
+			<div class="mx-auto max-w-[1400px] px-4 pb-24 pt-4 sm:px-6 sm:pt-6 lg:grid lg:grid-cols-[288px_minmax(0,1fr)] lg:gap-6 lg:px-8 lg:pb-16">
 			<!--
 				Sticky on desktop only. Below `lg` it is the first block in the flow, so
 				`position: sticky` would pin a tall hero to the top of the scroll and
@@ -715,6 +753,7 @@ import { untrack } from 'svelte';
 							steamLocked={false}
 							unlockTime={null}
 												exiting={departing.has(achievement.id)}
+												celebration={celebrations[achievement.id] ?? 0}
 												ontoggle={() => toggleCheck(achievement.id)}
 												onvanished={() => release(achievement.id)}
 											/>

@@ -22,23 +22,35 @@
 		steamLocked,
 		unlockTime,
 		exiting,
-		ontoggle,
-		onvanished
-	} = $props<{
-		achievement: Achievement;
-		achieved: boolean;
-		steamLocked: boolean;
-		unlockTime: Date | null;
-		/**
-		 * The active filter no longer matches this row — a toggle just pushed it out.
-		 * The page keeps it in the list until `onvanished` fires so the animation can
-		 * play before the keyed `{#each}` destroys the node.
-		 */
-		exiting: boolean;
-		ontoggle: () => void;
-		/** The exit animation has finished; the page may drop the row for good. */
-		onvanished: () => void;
-	}>();
+			celebration = 0,
+			ontoggle,
+			onvanished
+		} = $props<{
+			achievement: Achievement;
+			achieved: boolean;
+			steamLocked: boolean;
+			unlockTime: Date | null;
+			/**
+			 * The active filter no longer matches this row — a toggle just pushed it out.
+			 * The page keeps it in the list until `onvanished` fires so the animation can
+			 * play before the keyed `{#each}` destroys the node.
+			 */
+			exiting: boolean;
+			/**
+			 * A per-unlock token, bumped by the page whenever Steam sync unlocks this
+			 * trophy. Steam's XML flips `achieved` with no finger on the screen, so
+			 * without this a synced trophy appeared silently while a tapped one leapt.
+			 *
+			 * A NUMBER rather than a boolean: the page clears the token once the
+			 * animation is over, so a row that remounts later (a filter or sort change)
+			 * reads 0 and stays quiet. A boolean would have to stay `true` for that to
+			 * work and would replay the celebration on every remount.
+			 */
+			celebration?: number;
+			ontoggle: () => void;
+			/** The exit animation has finished; the page may drop the row for good. */
+			onvanished: () => void;
+		}>();
 
 	let expanded = $state(false);
 	let justToggled = $state(false);
@@ -95,6 +107,26 @@
 			onvanished();
 		}, MOTION_MS.exit + 20);
 	}
+
+		/**
+		 * Celebrates an unlock the player did not tap.
+		 *
+		 * `advance()` is reused rather than re-implemented: a trophy Steam just unlocked
+		 * can land in exactly the same trap as a tapped one — under a Locked filter it
+		 * leaves the list, and only the handover keeps its collapse visible. The token
+		 * comparison is what makes this fire per unlock instead of on every re-render,
+		 * and what stops the page clearing it from replaying the animation.
+		 */
+		let celebratedToken = 0;
+		$effect(() => {
+			const token = celebration;
+			if (!token || token === celebratedToken) return;
+			celebratedToken = token;
+			// Steam-locked means the trophy is visible but not the player's to change,
+			// so it is never a candidate in the first place — same guard as a tap.
+			if (steamLocked) return;
+			playMotion('celebrate');
+		});
 
 		/**
 		 * Cancels an exit the page has given up on.
@@ -222,21 +254,21 @@
 				{#if achievement.iconUrl}
 				<!-- Steam publishes only the unlocked (coloured) icon; the locked look is a
 				     CSS grayscale of this same file, so there is no second URL to fetch.
-				     alt is empty on purpose — the name is rendered next to it. -->
-				<img
-					src={achievement.iconUrl}
-					alt=""
-					width="64"
-					height="64"
-					loading="lazy"
-					decoding="async"
-					class="h-16 w-16 rounded-lg object-cover transition-[filter,opacity] duration-200 {achieved
+				     				     alt is empty on purpose — the name is rendered next to it. -->
+				     				<img
+				     					src={achievement.iconUrl}
+				     					alt=""
+				     					width="64"
+				     					height="64"
+				     					loading="lazy"
+				     					decoding="async"
+				     					class="h-16 w-16 rounded-lg object-cover transition-[filter,opacity] duration-200 {achieved
 						? 'opacity-100 ring-2 ring-steam-green/50'
 						: 'opacity-55 grayscale ring-1 ring-white/10'}"
 				/>
 				{:else}
-				<span class="flex h-16 w-16 items-center justify-center rounded-lg bg-steam-light ring-1 ring-white/10">
-					<Trophy class="h-7 w-7 text-ink-faint" />
+									<span class="flex h-16 w-16 items-center justify-center rounded-lg bg-steam-light ring-1 ring-white/10">
+														<Trophy class="h-7 w-7 text-ink-faint" />
 				</span>
 				{/if}
 
@@ -276,7 +308,7 @@
 				>
 					<div class="min-w-0 flex-1">
 						<!-- ZONE 1 — the name, alone on its line. -->
-						<div class="text-sm font-semibold leading-tight {achieved ? 'text-steam-green' : 'text-ink'}">
+												<div class="text-sm font-semibold leading-tight {achieved ? 'text-steam-green' : 'text-ink'}">
 							{achievement.name}
 						</div>
 
