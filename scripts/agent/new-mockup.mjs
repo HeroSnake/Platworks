@@ -1,19 +1,24 @@
 /**
  * Scaffolds `.tmp/ui/{slug}/` for phase 3 of /ui-project.
  *
- * The mockup gate has three rules that are tedious to satisfy by hand every
+ * The mockup gate has four rules that are tedious to satisfy by hand every
  * single run and easy to get subtly wrong:
  *
- *   - real palette values, copied out of `src/app.css` (a mockup in invented
- *     colours reviews a design the app will not ship)
+ *   - real palette values, ALL SIX of them, read out of `src/app.css` (a mockup
+ *     in invented colours reviews a design the app will not ship, and a mockup
+ *     reviewed in one palette has not been reviewed in five)
  *   - real fonts, the same Google Fonts link as `src/app.html`
  *   - real data, actual game and achievement names from `src/lib/data/games/`
+ *   - a demo chrome with a width toggle AND a palette switcher, so one file
+ *     demonstrates both breakpoints and every theme when the user opens it
  *
- * This writes a starter that already has all three, plus the notes.md skeleton
- * the gate requires and a width toggle so one file demonstrates both
- * breakpoints when the user double-clicks it. What it does NOT do is design
- * anything: the layout is a blank frame, because the propositions are the
- * agent's judgement, not a template's.
+ * This writes a starter that already has all four, plus the notes.md skeleton
+ * the gate requires. What it does NOT do is design anything: the layout is a
+ * blank frame, because the propositions are the agent's judgement, not a
+ * template's.
+ *
+ * The palettes are parsed, never transcribed, so a seventh theme added to
+ * app.css appears in every future mockup's switcher with no change here.
  *
  * Usage:
  *   node scripts/agent/new-mockup.mjs library-heatmap
@@ -22,7 +27,7 @@
  *
  * Options:
  *   --game <appId>   Game to take real data from. Default: the largest in the dir.
- *   --theme <id>     Palette to seed. Default: ember. One of the six in app.css.
+ *   --theme <id>     Palette to seed, i.e. the one the file opens in. Default: ember.
  *   --variants <a,b> Variant stems to create. Default: a-inline
  */
 import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
@@ -111,10 +116,39 @@ async function listGames() {
 	return games.sort((a, b) => b.count - a.count);
 }
 
-function starterHtml({ variant, themeId, palette, fontHref, game }) {
+function starterHtml({ variant, themeId, palette, palettes, fontHref, game }) {
 	const tokens = Object.entries(palette)
 		.map(([k, v]) => `\t\t\t\t${k}: ${v};`)
 		.join('\n');
+
+	/*
+	 * Every other palette, as `[data-theme='…']` blocks containing only what DIFFERS
+	 * from the base ramp. Same specificity as `:root` (0,1,0) and later in the file,
+	 * so these win.
+	 *
+	 * Only the diff is emitted, so a palette that only overrides the display face
+	 * stays a one-line block — and a seventh palette added to app.css appears in
+	 * every mockup's switcher with no change here at all, because these are derived
+	 * from app.css rather than transcribed.
+	 */
+	const paletteBlocks = Object.entries(palettes)
+		.filter(([id]) => id !== 'default')
+		.map(([id, tokens]) => {
+			const diff = Object.entries(tokens).filter(([k, v]) => palette[k] !== v);
+			if (!diff.length) return '';
+			const decls = diff.map(([k, v]) => `${k}: ${v};`).join(' ');
+			return `\n\t\t\t[data-theme='${id}'] { ${decls} }`;
+		})
+		.join('');
+
+	/* The switcher, in the same order as `THEMES` in the picker. */
+	const themeButtons = Object.entries(palettes)
+		.filter(([id]) => id !== 'default')
+		.map(
+			([id, t]) =>
+				`<button type="button" data-theme="${id}" aria-pressed="${id === themeId}" title="${id}"><span class="dot" style="background:linear-gradient(135deg,${t['--pw-surface']} 50%,${t['--pw-accent']} 50%)"></span>${id}</button>`
+		)
+		.join('\n\t\t\t\t');
 
 	const sample = game.achievements.slice(0, 6).map((a) => ({
 		name: a.name,
@@ -158,24 +192,41 @@ ${tokens}
 			h1, h2, .display { font-family: var(--pw-font-display); }
 			button { font: inherit; }
 
-			/* Width toggle: proves both breakpoints live in this one file.
-						   Its buttons clear --tap too: shot.mjs runs the same 40px floor
-						   over a mockup as over the app, and demo chrome that fails the
-						   check teaches the wrong habit. */
-						.toggle {
-							position: fixed; top: 8px; right: 8px; z-index: 10;
-							display: flex; gap: 4px; padding: 4px;
-							background: var(--pw-surface-2); border: 1px solid var(--pw-border);
-							border-radius: 8px;
-						}
-						.toggle button {
-							min-height: var(--tap); padding: 0 14px;
-							background: transparent; color: var(--pw-dim);
-							border: 0; border-radius: 6px; cursor: pointer;
-						}
-			.toggle button[aria-pressed='true'] { background: var(--pw-accent); color: var(--pw-accent-ink); }
+			/* Demo chrome: a width toggle AND a palette switcher.
+			   Both are in every mockup, because a design approved in one palette has
+			   not been approved in the other five — and on a surface-less layout the
+			   palette is doing more work than usual, because it is the only thing
+			   separating a column from the background behind it.
 
-			.frame { margin: 0 auto; border-left: 1px solid var(--pw-border); border-right: 1px solid var(--pw-border); }
+			   Buttons clear --tap because shot.mjs runs the same 40px floor over a
+			   mockup as over the app, and chrome that fails the check teaches the
+			   wrong habit. .chrome wraps to as many rows as it needs and max-width
+			   stops it overflowing at 390 — the frame's top padding is
+			   sized for the CHROME's height, so the two stay in step. */
+			.chrome {
+				position: fixed; top: 8px; right: 8px; z-index: 10;
+				display: flex; flex-direction: column; align-items: flex-end; gap: 6px;
+				max-width: calc(100vw - 16px);
+			}
+			.toggle {
+				display: flex; flex-wrap: wrap; gap: 4px; padding: 4px;
+				background: var(--pw-surface-2); border: 1px solid var(--pw-border);
+				border-radius: 8px;
+			}
+			.toggle button {
+				display: inline-flex; align-items: center; gap: 5px;
+				min-height: var(--tap); padding: 0 10px;
+				background: transparent; color: var(--pw-dim);
+				border: 0; border-radius: 6px; cursor: pointer; font-size: 12px;
+			}
+			.toggle button[aria-pressed='true'] { background: var(--pw-accent); color: var(--pw-accent-ink); }
+			.dot { width: 12px; height: 12px; border-radius: 3px; border: 1px solid rgba(255,255,255,0.25); flex: none; }
+
+			/* The frame reserves room for the fixed chrome above it. Six labelled
+			   palette buttons cannot fit one 374px row at 390, so they wrap to two and
+			   the control is three rows tall — about 152px. The real app has a 64px
+			   navbar in that space, so a tall reservation is honest, not a fudge. */
+			.frame { margin: 0 auto; border-left: 1px solid var(--pw-border); border-right: 1px solid var(--pw-border); padding-top: 164px; }
 			body[data-frame='390'] .frame { max-width: 390px; }
 			body[data-frame='1440'] .frame { max-width: 1440px; }
 
@@ -188,9 +239,22 @@ ${tokens}
 		</style>
 	</head>
 	<body data-frame="390">
-		<div class="toggle" role="group" aria-label="Frame width">
-			<button type="button" data-frame="390" aria-pressed="true">390</button>
-			<button type="button" data-frame="1440" aria-pressed="false">1440</button>
+		<!--
+			Demo chrome: a width toggle AND a palette switcher, in one fixed stack.
+
+			The palette attribute goes on <html>, not <body>, because that is where the
+			app reads it — src/app.html applies it before first paint for exactly
+			this reason. Setting it anywhere else would look right in the mockup and
+			wrong in the port.
+		-->
+		<div class="chrome">
+			<div class="toggle" role="group" aria-label="Frame width">
+				<button type="button" data-frame="390" aria-pressed="true">390</button>
+				<button type="button" data-frame="1440" aria-pressed="false">1440</button>
+			</div>
+			<div class="toggle" role="group" aria-label="Palette">
+				${themeButtons}
+			</div>
 		</div>
 
 		<main class="frame">
@@ -233,10 +297,26 @@ ${sample
 			'\t'
 		)}</script>
 		<script>
-			for (const btn of document.querySelectorAll('.toggle button')) {
+			/*
+			 * Scoped to [data-frame] and [data-theme] SEPARATELY, never ".toggle button".
+			 * Two groups now live under .toggle, and the unscoped selector matched
+			 * both — so clicking a palette also ran the width handler with
+			 * btn.dataset.frame undefined, writing the string "undefined" onto
+			 * <body data-frame> and collapsing the frame to the 390 rule.
+			 */
+			for (const btn of document.querySelectorAll('.toggle [data-frame]')) {
 				btn.addEventListener('click', () => {
 					document.body.dataset.frame = btn.dataset.frame;
-					for (const b of document.querySelectorAll('.toggle button')) {
+					for (const b of document.querySelectorAll('.toggle [data-frame]')) {
+						b.setAttribute('aria-pressed', String(b === btn));
+					}
+				});
+			}
+
+			for (const btn of document.querySelectorAll('.toggle [data-theme]')) {
+				btn.addEventListener('click', () => {
+					document.documentElement.dataset.theme = btn.dataset.theme;
+					for (const b of document.querySelectorAll('.toggle [data-theme]')) {
 						b.setAttribute('aria-pressed', String(b === btn));
 					}
 				});
@@ -324,7 +404,7 @@ async function main() {
 	for (const variant of args.variants) {
 		await writeFile(
 			join(dir, `${variant}.html`),
-			starterHtml({ variant, themeId: args.theme, palette, fontHref, game }),
+			starterHtml({ variant, themeId: args.theme, palette, palettes, fontHref, game }),
 			'utf8'
 		);
 	}

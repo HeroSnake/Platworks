@@ -1,7 +1,7 @@
 /**
  * Resolves Playwright without a hardcoded npx-cache hash, then launches a browser.
  *
- * `playwright` is NOT a dependency of this project (see platworks-dev.agent.md §7),
+ * `playwright` is NOT a dependency of this project (see dev.md §7),
  * so `import { chromium } from 'playwright'` fails. It is installed in some npx
  * cache directory whose name is a content hash and changes whenever the npx cache
  * is pruned — which is why agent scripts must never hardcode a path like

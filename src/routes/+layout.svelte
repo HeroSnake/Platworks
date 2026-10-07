@@ -112,15 +112,34 @@
 	});
 
 	onNavigate((navigation) => {
-		showSteamId = false;
-		if (!document.startViewTransition) return;
-		return new Promise((resolve) => {
-			document.startViewTransition(async () => {
-				resolve();
-				await navigation.complete;
+			showSteamId = false;
+			if (!document.startViewTransition) return;
+			return new Promise((resolve) => {
+				// The shared element's SOURCE name has to be released once the swap lands.
+				// It is set on the library card that was activated, and it is not Svelte
+				// state there — it is a DOM write the page made on click — so nothing would
+				// ever clear it. Left in place, navigating a second time finds an element
+				// already carrying the name and the browser aborts the transition back to
+				// a plain cross-fade.
+				//
+				// Both callbacks release it, and the reject path matters most: `finished`
+				// REJECTS when a transition is skipped, which is exactly what a duplicate
+				// name does. Without this, one collision kills every navigation after it
+				// until a reload.
+				const releaseArtName = () => {
+					for (const el of document.querySelectorAll<HTMLElement>('[style*="pw-game-art"]')) {
+						el.style.removeProperty('view-transition-name');
+					}
+				};
+
+				document
+					.startViewTransition(async () => {
+						resolve();
+						await navigation.complete;
+					})
+					.finished.then(releaseArtName, releaseArtName);
 			});
 		});
-	});
 </script>
 
 <svelte:head>

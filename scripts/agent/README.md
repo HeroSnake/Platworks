@@ -18,8 +18,8 @@ It is the wrong place for a script that will be written again next week.
 
 | Script | Job |
 |---|---|
-| `ui-audit.mjs` | Browser audit of the running app: overflow, duplicated controls, the 40px tap-target floor, console errors, screenshots, and declarative click checks. Implements [platworks-ui.agent.md §6](../../.github/agents/platworks-ui.agent.md) and phase 7 of [/ui-project](../../.github/prompts/ui-project.prompt.md). |
-| `shot.mjs` | Renders a mockup (or any URL) at 390 and 1440, reports overflow, console errors and under-sized tap targets, and prints the markdown to embed in a reply. Phase 3 of `/ui-project`. |
+| `ui-audit.mjs` | Browser audit of the running app: overflow, duplicated controls, the 40px tap-target floor, console errors, screenshots, and declarative click checks. Implements [.agents/ui.md §6](../../.agents/ui.md) and phase 7 of [/ui-project](../../.github/prompts/ui-project.prompt.md). |
+| `shot.mjs` | Renders a mockup (or any URL) at 390 and 1440, reports overflow, console errors and under-sized tap targets, and prints the markdown to embed in a reply. Phase 3 of `/ui-project`. **The PNGs are for the agent to look at, not to paste into a reply** — the user reviews the mockup's `.html` in their browser. For a URL target, pass an explicit `--out .tmp/ui/...`: `--out-dir` is only honoured for directory targets and otherwise writes `shot-<width>.png` into the repo root. |
 | `new-mockup.mjs` | Scaffolds `.tmp/ui/{slug}/` with the real palette from `app.css`, the real fonts from `app.html`, real game data from `src/lib/data/games/`, and the `notes.md` skeleton. |
 | `steam-achievements.mjs` | Fetches the Steam global achievement list once and parses it to `.tmp/game-data/{appId}/achievements.json`. Phase 2 of [/generate-game-data](../../.github/prompts/generate-game-data.prompt.md). |
 | `ledger.mjs` | The fetch ledger as a CLI: `check` before every request, `add` before fetching, `resolve` after. Enforces the "log before fetch" rule that stops the same wiki index being opened four times. |
@@ -27,8 +27,8 @@ It is the wrong place for a script that will be written again next week.
 
 | Library | Job |
 |---|---|
-| `lib/playwright.mjs` | Resolves the Playwright install without a hardcoded npx-cache hash. `playwright` is **not** a dependency; see [platworks-dev.agent.md §7](../../.github/agents/platworks-dev.agent.md). |
-| `lib/ui-checks.mjs` | The audit rules as page-side functions. **This is the executable copy of the rules in platworks-ui.agent.md §6 — change both together.** |
+| `lib/playwright.mjs` | Resolves the Playwright install without a hardcoded npx-cache hash. `playwright` is **not** a dependency; see [AGENTS.md §7](../../AGENTS.md). |
+| `lib/ui-checks.mjs` | The audit rules as page-side functions. **This is the executable copy of the rules in [.agents/ui.md §6](../../.agents/ui.md) — change both together.** |
 | `lib/cli.mjs` | Turns a thrown error into a one-line failure instead of a stack trace. |
 | `examples/clicks.mjs` | A working click-check spec. Copy it, edit it, pass it to `--checks`. |
 
@@ -46,8 +46,25 @@ originating element, so walking outward with `elementFromPoint` measures the tru
 
 **Assert on an observable change, never on "the click did not throw".** Every
 click check takes an `expect` — a `localStorage` key, an `aria-*` attribute, the
-`<html>` `data-theme`, or the URL — and fails if the value did not change. A
-check with no `expect` fails by design.
+`<html>` `data-theme`, a live element count, or the URL — and fails if the value did
+not change. A check with no `expect` fails by design.
+
+**A filter is a list, so `count`, `index` and `visible` are the only ways to assert
+one.** `storage` proves the filter was *written* and `attr` proves a control is
+*marked*; neither says what the rendered rows did. `count: { selector }` with no
+`equals` asserts the count is **unchanged**, `index: { selector, within }` asserts
+an element has not **moved**, and `visible` is **polled** every 50ms for `settle`ms
+and fails if the element leaves or drops below `minHeight`. All three are exempt
+from the "everything must change" rule for that reason.
+
+The third exists because a before/after pair is blind to a *transient* fault: an
+element that collapses to nothing and springs back inside the window ends exactly
+where it started and passes every other assertion. That is precisely how a trophy
+that blinked out of a filtered list on a double toggle survived a full audit.
+`repeat` / `interval` express the fast re-tap that triggers it.
+
+None of the three is *visual*: they cannot see an element that is covered,
+transparent or off-screen, which is what `probe` is for.
 
 **Geometry is not liveness.** A toolbar once shipped with every control
 unclickable and passed every geometry check, because a stacking context had

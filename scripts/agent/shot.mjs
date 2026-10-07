@@ -31,6 +31,9 @@ import { launchBrowser } from './lib/playwright.mjs';
 import { auditPage, INTERACTIVE_SELECTOR, CONTROL_SELECTORS, attachErrorCollectors } from './lib/ui-checks.mjs';
 import { run } from './lib/cli.mjs';
 
+/** Repo root, so scratch output lands in the gitignored `.tmp/` and never in the root. */
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+
 const DEFAULT_WIDTHS = [390, 1440];
 const DEFAULT_HEIGHT = 900;
 
@@ -98,7 +101,24 @@ async function main() {
 	let outDir = args.outDir;
 
 	if (isUrl(target)) {
-		jobs = args.widths.map((width) => ({ url: target, width, out: args.out ?? `shot-${width}.png` }));
+		// A URL shot has no mockup directory to write into, so `outDir` was left
+		// null and the `mkdir(outDir)` below threw `Received null` — every URL
+		// invocation without an explicit `--out-dir` failed. Worse, the old default
+		// (`shot-${width}.png`, a bare relative path) put PNGs in the CURRENT
+		// WORKING DIRECTORY, which for an agent is the repo root, and the repo root
+		// is not gitignored. Default into `.tmp/shots/`, which is ignored.
+		outDir = args.outDir ?? join(ROOT, '.tmp', 'shots');
+		jobs = args.widths.map((width) => ({
+			url: target,
+			width,
+			// With several widths, an explicit `--out` would have every job write the
+			// same file and silently keep only the last one. Splice the width in.
+			out: args.out
+				? args.widths.length > 1
+					? args.out.replace(/(\.png)$/, `-${width}$1`)
+					: args.out
+				: join(outDir, `shot-${width}.png`)
+		}));
 	} else {
 		const abs = resolve(target);
 		const info = await stat(abs).catch(() => null);
@@ -143,13 +163,26 @@ async function main() {
 			const page = await context.newPage();
 			const errors = attachErrorCollectors(page);
 
+			await page.goto(job.url, { waitUntil: 'networkidle', timeout: 30000 });
+
+			// Apply the palette AFTER the document exists, not in `addInitScript`.
+			//
+			// `addInitScript` runs at document-start, before the parser has created
+			// `<html>`, so `document.documentElement` is null and
+			// `setAttribute` on it throws. That made `--theme` fail on every call
+			// since it was written — it surfaced only as a `pageerror` in the
+			// warnings, next to a perfectly good-looking screenshot, which is exactly
+			// the failure mode this script exists to catch in the pages it audits.
+			//
+			// The flash this would cause in a real app is irrelevant here: nothing is
+			// interactive, and the screenshot is taken after a settle below.
 			if (args.theme) {
-				await page.addInitScript((theme) => {
-					document.documentElement.setAttribute('data-theme', theme);
-				}, args.theme);
+				await page.evaluate(
+					(theme) => document.documentElement.setAttribute('data-theme', theme),
+					args.theme
+				);
 			}
 
-			await page.goto(job.url, { waitUntil: 'networkidle', timeout: 30000 });
 			await page.waitForTimeout(300);
 			await page.screenshot({ path: job.out, fullPage: args.full });
 			// The same geometry gate the mockup gate applies, so a mockup that

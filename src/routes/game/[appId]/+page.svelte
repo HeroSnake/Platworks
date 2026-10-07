@@ -12,11 +12,12 @@
 	import AchievementRow from '#lib/components/achievement_row.svelte';
 	import MobileBar from '#lib/components/mobile_bar.svelte';
 	import GameFilters from '#lib/components/game_filters.svelte';
-	import ProgressRing from '#lib/components/progress_ring.svelte';
 	import ProgressBar from '#lib/components/progress_bar.svelte';
 	import ActionButton from '#lib/components/action_button.svelte';
 	import { browser } from '$app/env';
+import { untrack } from 'svelte';
 	import { refreshProfile } from '#lib/client/profile';
+		import { countUp } from '#lib/client/countup';
 
 	let { data } = $props();
 
@@ -63,9 +64,22 @@
 	});
 
 	function toggleCheck(id: string) {
+		// Read membership BEFORE the flip. `localChecked` is what `achievedMap` and
+		// therefore `filteredAchievements` derive from, so the row can drop out of the
+		// filtered list on this very line — which is exactly what `depart` must catch.
+		const wasListed = visibleAchievements.some((a) => a.id === id);
 		localChecked[id] = !localChecked[id];
 		saveLocal();
-	}
+			if (wasListed && !visibleAchievements.some((a) => a.id === id)) {
+				depart(id);
+				return;
+			}
+			// Back inside the filter. This is the second tap of a double toggle: without
+			// this the row stays in `departing` even though it is legitimately listed, so
+			// `advance()` still hands over to `.pw-exit` and the card collapses and fades
+			// for a row that never left. `release` is a no-op when the id is not held.
+			release(id);
+		}
 
 	async function syncWithSteam() {
 		const sid = steamId;
@@ -173,6 +187,17 @@
 		Object.values(achievedMap).filter(Boolean).length
 	);
 
+		// Rolls the headline figure up from zero once the list exists. Re-runs when the
+		// player checks a trophy off mid-session, which is the intended behaviour: the
+		// number visibly acknowledges the change rather than silently swapping.
+		let progressNumberEl = $state<HTMLElement | null>(null);
+
+		$effect(() => {
+			const el = progressNumberEl;
+			if (!hydrated || !el) return;
+			countUp(el, completedCount);
+		});
+
 	let progressPercent = $derived(
 		Math.round((completedCount / data.game.totalAchievements) * 100)
 	);
@@ -184,17 +209,60 @@
 		data.game.achievements.filter((a) => (a.types as string[]).includes('missable')).length
 	);
 	let lockedCount = $derived(data.game.totalAchievements - completedCount);
-	let difficultyMix = $derived.by(() => {
-		const order = ['easy', 'medium', 'hard', 'very-hard'] as const;
-		const counts = order.map((lv) => data.game.achievements.filter((a) => a.difficulty === lv).length);
-		return counts.join(' / ');
-	});
+
+	/**
+	 * Difficulty counts, ascending, with empty levels dropped.
+	 *
+	 * This is what the aside's segmented bar is built from — each segment's width is
+	 * `total / totalAchievements`. It is deliberately NOT per-difficulty completion:
+	 * the bar is a property of the game's DATA and does not move as you check trophies
+	 * off, which is what separates it from the progress bar directly above it.
+	 *
+	 * Dropping empty levels matters: a game with no `very-hard` trophies must not
+	 * render an 8px-minimum segment for a group that does not exist.
+	 */
+	const DIFFICULTY_ORDER = ['easy', 'medium', 'hard', 'very-hard'] as const;
+
+	let difficultyCounts = $derived.by(() =>
+		DIFFICULTY_ORDER.map((level) => ({
+			level,
+			total: data.game.achievements.filter((a) => a.difficulty === level).length
+		})).filter((d) => d.total > 0)
+	);
+
+	let difficultyMix = $derived(difficultyCounts.map((d) => d.total).join(' / '));
+
+	/** One entry per difficulty, carrying the bar colour AND the pip colour. */
+	const DIFFICULTY_TONE: Record<string, string> = {
+		easy: 'var(--pw-difficulty-easy)',
+		medium: 'var(--pw-difficulty-medium)',
+		hard: 'var(--pw-difficulty-hard)',
+		'very-hard': 'var(--pw-difficulty-very-hard)'
+	};
 
 	const difficultyOrder: Record<string, number> = { easy: 0, medium: 1, hard: 2, 'very-hard': 3 };
 
-	let filteredAchievements = $derived.by(() => {
+	// Factored out because `visibleAchievements` re-sorts: a row held for its exit
+	// has to land back where the active sort would put it, not at the end.
+	function sortList(list: typeof data.game.achievements) {
+		if (gameSort === 'name') return [...list].sort((a, b) => a.name.localeCompare(b.name));
+		if (gameSort === 'difficulty')
+			return [...list].sort(
+				(a, b) => (difficultyOrder[a.difficulty] ?? 0) - (difficultyOrder[b.difficulty] ?? 0)
+			);
+		return list;
+	}
+
+	/**
+	 * Everything the search and the tag filter allow, BEFORE the completion filter.
+	 *
+	 * Split out because the completion filter is the only one a toggle can change, and a
+	 * row it drops has to stay in `candidates` for `visibleAchievements` to put it back
+	 * where it was.
+	 */
+	let candidates = $derived.by(() => {
 		const q = trophyQuery.trim().toLowerCase();
-		const list = data.game.achievements.filter((a) => {
+		return data.game.achievements.filter((a) => {
 			// Free-text search runs alongside the persisted filters, so "Leyndell" still
 			// narrows a Locked-only list. `description` is optional in practice — some
 			// generated data files omit it.
@@ -202,21 +270,83 @@
 				const haystack = `${a.name} ${a.description ?? ''}`.toLowerCase();
 				if (!haystack.includes(q)) return false;
 			}
-			const achieved = achievedMap[a.id];
-			if (filter === 'locked' && achieved) return false;
-			if (filter === 'unlocked' && !achieved) return false;
 			// A trophy matches a tag filter if it carries that tag; 'standard' is the
-						// inverse — it selects the untagged ones.
-						if (typeFilter === 'standard') {
-							if (a.types.length) return false;
-						} else if (typeFilter !== 'all' && !(a.types as string[]).includes(typeFilter)) {
-							return false;
-						}
-						return true;
+			// inverse — it selects the untagged ones.
+			if (typeFilter === 'standard') {
+				if (a.types.length) return false;
+			} else if (typeFilter !== 'all' && !(a.types as string[]).includes(typeFilter)) {
+				return false;
+			}
+			return true;
 		});
-		if (gameSort === 'name') return [...list].sort((a, b) => a.name.localeCompare(b.name));
-		if (gameSort === 'difficulty') return [...list].sort((a, b) => (difficultyOrder[a.difficulty] ?? 0) - (difficultyOrder[b.difficulty] ?? 0));
-		return list;
+	});
+
+	function passesCompletion(a: (typeof data.game.achievements)[number]): boolean {
+		const achieved = achievedMap[a.id];
+		if (filter === 'locked' && achieved) return false;
+		if (filter === 'unlocked' && !achieved) return false;
+		return true;
+	}
+
+	let filteredAchievements = $derived(sortList(candidates.filter(passesCompletion)));
+
+	/**
+	 * Rows a toggle has just pushed out of the active filter, held in the list until
+	 * their exit animation reports back.
+	 *
+	 * Without this the keyed `{#each}` destroys the row in the same flush that applies
+	 * `pw-celebrate`, so under a Locked or Done filter the trophy simply vanished:
+	 * the celebration, and the collapse that explains the disappearance, were both
+	 * painted on a node that no longer existed. A Set rather than a list because
+	 * membership is tested once per row on every render of a 100-trophy game.
+	 */
+	let departing = $state<ReadonlySet<string>>(new Set());
+
+	function depart(id: string) {
+		if (departing.has(id)) return;
+		departing = new Set(departing).add(id);
+	}
+
+	// Reassign rather than mutate: a `$state` Set is only reactive on reassignment,
+	// so an in-place `.delete()` would leave the list rendering the old membership.
+	function release(id: string) {
+		if (!departing.has(id)) return;
+		const next = new Set(departing);
+		next.delete(id);
+		departing = next;
+	}
+
+	/**
+	 * `filteredAchievements` plus anything still animating out.
+	 *
+	 * Built by re-filtering `candidates` with the held ids let through — NOT by
+	 * appending them. Appending is the trap: `sortList` is a no-op under the default
+	 * sort, so `[...filtered, ...held]` puts the departing row LAST and the card the
+	 * player just tapped teleports to the bottom of the list. Filtering `candidates`
+	 * instead keeps it at the index the active sort gives it, so it collapses from
+	 * where it was tapped. Same rule as the library page's scope switcher: nothing
+	 * the player just touched may move out from under their finger.
+	 */
+	let visibleAchievements = $derived.by(() => {
+		if (departing.size === 0) return filteredAchievements;
+		const held = new Set(departing);
+				return sortList(candidates.filter((a) => held.has(a.id) || passesCompletion(a)));
+	});
+
+	// A filter/sort/search change rebuilds the list wholesale, so a row mid-exit is
+	// no longer the one the user was looking at. Release them all rather than let a
+	// stale id pin a card that no longer belongs to this view.
+	//
+	// `untrack` on the guard is load-bearing, not defensive: this effect must depend on
+	// the four controls ONLY. Reading `departing` here makes the effect re-run the
+	// instant `depart()` fires, clearing the id in the same tick it was added — which
+	// silently restores the original bug.
+	$effect(() => {
+		void filter;
+		void typeFilter;
+		void gameSort;
+		void trophyQuery;
+		if (untrack(() => departing.size)) departing = new Set();
 	});
 
 	// Tags are non-exclusive, so a trophy can appear under several filters at once.
@@ -281,6 +411,25 @@
 				`position: sticky` would pin a tall hero to the top of the scroll and
 				leave almost no room for the list.
 			-->
+			<!--
+				THE RAIL.
+
+				Four `rounded-*` boxes stacked with equal gaps used to live here — hero,
+				badge row, a bordered progress panel, and three `border-t` stat rows
+				inside it. Nothing was wrong with any one of them; the STACK was the
+				problem, because a grid of rounded rectangles each with its own fill and
+				border is exactly what a tablet settings panel looks like.
+
+				So this column now has NO surface of its own. Nothing below carries a
+				background or a border except the artwork and the buttons, and the
+				structure is carried by type, two hairlines and the vertical rhythm
+				instead. The hierarchy is the gaps: `gap-2` inside the identity block
+				where things belong together, `gap-3`/`gap-4` between the sections.
+
+				Not a responsive restyle either — this is the same composition at 390,
+				where the column is simply the first block in the flow instead of a
+				sidebar.
+			-->
 			<aside class="flex flex-col gap-3 lg:sticky lg:top-[4.5rem] lg:self-start lg:gap-4">
 			<!-- Back link (desktop only — mobile uses navbar back arrow + bottom bar home) -->
 			<a
@@ -291,25 +440,41 @@
 				Games
 			</a>
 
-			<!-- Game hero. Short and wide below `lg` (21:9) so the checklist starts in
-			     the first screenful; full 16:9 once there is room beside it.
+			<!-- Game hero, as a MASTHEAD BAND rather than a tile.
 
-			     The artwork carries NO text. The name and description sit below it in
-			     normal flow instead of being overlaid, because an absolutely
-			     positioned block inside a fixed-ratio box is the one layout that
-			     cannot grow: a Steam blurb longer than the box escapes it, overlaps
-			     the artwork and spills out of the 288px sidebar. See §1 of
-			     platworks-ui.agent.md. -->
-			<div class="relative aspect-[21/9] overflow-hidden rounded-xl bg-steam-blue lg:aspect-video">
-				<!-- Same placeholder-behind-the-image contract as `game_card.svelte`:
-				     a game with no Steam banner must show something intentional, not an
-				     empty surface. See the note there for the two affected appIds. -->
-				<div
-					class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-steam-blue to-steam-light"
-					aria-hidden="true"
-				>
-					<Trophy class="h-10 w-10 text-ink-faint" />
-				</div>
+			     `aspect-[2/1]` below `lg` and `lg:aspect-[16/7]`: thin enough to read as
+			     a rule under the navbar rather than as a picture panel. Square corners at
+			     every breakpoint, so it is an image bleeding to the column edge and not a
+			     card sitting on the page.
+
+			     The artwork still carries NO overlay text, for the same reason as before:
+			     an absolutely positioned block inside a fixed-ratio box is the one layout
+			     that cannot grow, and a 300-character Steam blurb escapes it. See §1 of
+			     .agents/ui.md. -->
+			<div class="relative aspect-[2/1] overflow-hidden bg-steam-blue lg:aspect-[16/7]">
+							<!--
+								`pw-game-art` is the DESTINATION half of the library card's shared
+								element. The library sets the same name on the artwork of the card
+								being activated, so the browser morphs that rectangle into this one
+								instead of cross-fading the whole page.
+
+								Only one element may carry the name at a time or the transition is
+								aborted, and this page renders exactly one hero, so the destination is
+								safe. The library is the constrained side — see `game_card.svelte`.
+
+								`+layout.svelte` clears the source name after the swap, so coming
+								back to the library does not find two elements still named.
+							-->
+							<div class="absolute inset-0" style:view-transition-name="'pw-game-art'"></div>
+							<!-- Same placeholder-behind-the-image contract as `game_card.svelte`:
+							     a game with no Steam banner must show something intentional, not an
+							     empty surface. See the note there for the two affected appIds. -->
+							<div
+								class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-steam-blue to-steam-light"
+								aria-hidden="true"
+							>
+								<Trophy class="h-10 w-10 text-ink-faint" />
+							</div>
 				{#if heroImage}
 					<!-- Decorative: the game name is the h1 below it, so a non-empty alt would
 					     only make a screen reader announce the title twice. `high` because this
@@ -328,102 +493,166 @@
 						}}
 					/>
 				{/if}
+				<!-- A single bottom scrim. There is no overlay text left to protect, so
+				     this is purely the blend from the artwork into the page — one pass,
+				     not the two the hero used to need. -->
+				<div class="absolute inset-0 bg-gradient-to-t from-steam-dark/85 to-transparent" aria-hidden="true"></div>
 			</div>
 
-			<!-- Picture → name → description, as one block, in the flow. -->
-			<div>
-				<h1 class="font-display text-xl font-bold tracking-tight text-ink sm:text-2xl">
+			<!-- IDENTITY — one block, tight gaps. Title, facts, blurb belong together. -->
+			<div class="flex flex-col gap-2">
+				<h1 class="font-display text-[22px] font-bold leading-[1.1] tracking-[-0.03em] text-ink lg:text-[27px]">
 					{data.steam?.name || data.game.name}
 				</h1>
 
-				<!-- Clamped everywhere, not just on phones: the sidebar is 288px and
-				     Steam's longer blurbs run 300+ characters. Full text stays on the
-				     store page, linked from the map row. -->
+				<div class="flex flex-wrap items-center gap-x-2 gap-y-1.5 text-xs text-ink-dim">
+					{#if data.steam?.metacriticScore}
+						<span class="tabular inline-flex items-center gap-1 rounded-md bg-steam-light px-1.5 py-0.5 font-mono text-[11px] font-bold text-ink">
+							<Star class="h-3 w-3 fill-current text-yellow-400" />
+							{data.steam.metacriticScore}
+						</span>
+					{/if}
+					<span class="tabular">
+						{data.game.totalAchievements} trophies{#if missableCount}&middot; {missableCount} missable{/if}
+					</span>
+				</div>
+
+				<!-- Clamped to three lines at EVERY breakpoint: the column is 288px and
+				     Steam's longer blurbs run 300+ characters. The full text stays on
+				     the store page, linked from the map row below. -->
 				{#if data.steam?.shortDescription}
-					<p class="mt-1.5 line-clamp-3 text-[13px] leading-relaxed text-ink-dim">
+					<p class="line-clamp-3 text-[13px] leading-relaxed text-ink-dim">
 						{data.steam.shortDescription}
 					</p>
 				{/if}
 			</div>
 
-			<div class="flex flex-wrap items-center gap-2">
-				{#if data.steam?.metacriticScore}
-					<span class="tabular inline-flex min-h-8 items-center gap-1 rounded-md bg-steam-light px-2 py-1 font-mono text-xs font-bold text-ink">
-						<Star class="h-3.5 w-3.5 fill-current text-yellow-400" />
-						{data.steam.metacriticScore}
-					</span>
-				{/if}
-				{#if !steamId}
-					<span class="inline-flex min-h-8 items-center gap-1.5 rounded-md border border-yellow-500/25 bg-yellow-500/10 px-2 py-1 text-xs text-yellow-300">
-						<WifiOff class="h-3.5 w-3.5 shrink-0" />
-						<span class="hidden sm:inline">Set your Steam ID to sync</span>
-						<span class="sm:hidden">No Steam ID</span>
-					</span>
-				{/if}
-			</div>
+			<div class="h-px bg-line"></div>
 
 			<!--
-				Trophy information belongs in the LEFT column, under picture → name →
-				description. It was previously the first block of the right column, which
-				meant the two things you read first — which game this is, and how far
-				through it you are — were in opposite columns with a 200-trophy list
-				between nothing and them.
+				PROGRESS — the headline, then the two bars.
+
+				The percentage is now a 44px figure rather than an 11px label inside a
+				54px ring, because in a column with no surfaces the size of the type IS
+				the hierarchy. The ring is gone from THIS column — it survives at 38px in
+				`mobile_bar.svelte`, so nothing is orphaned and a phone sees no change
+				here at all, because the mobile bar's ring is what a phone actually shows.
+
+				The count beside it is the app's count-up, `bind:this` + `#lib/client/
+				countup.ts`, gated on `hydrated`: completion lives in localStorage, so
+				before the gate the server has no number and there is nothing to roll.
 			-->
-			<div class="rounded-xl border border-line bg-steam-blue p-3.5">
-				<div class="flex items-center gap-3.5">
-					<ProgressRing percent={progressPercent} size={54} fontSize={11.5} strokeWidth={4} />
-					<div class="min-w-0 flex-1">
-						<p class="tabular font-mono text-lg font-bold leading-none tracking-tight text-ink">
-							{completedCount} / {data.game.totalAchievements}
-						</p>
-						<p class="mt-1 text-xs text-ink-faint">trophies unlocked</p>
-						<div class="mt-2">
-							<ProgressBar percent={progressPercent} height={6} />
-						</div>
+			<div>
+				<div class="flex items-baseline gap-2.5">
+					<span class="font-display text-[38px] font-bold leading-[0.9] tracking-[-0.04em] text-steam-accent lg:text-[44px]">
+						{progressPercent}%
+					</span>
+					<span class="tabular font-mono text-[13px] text-ink-dim">
+						{#if hydrated}
+							<span bind:this={progressNumberEl}>{completedCount}</span>
+						{:else}
+							0
+						{/if}
+						of {data.game.totalAchievements} unlocked
+					</span>
+				</div>
+
+				<!-- BAR 1 of 2 · PROGRESS. Moves when you check a trophy off. -->
+				<div class="mt-3.5">
+					<div class="mb-1.5 flex items-baseline justify-between text-[9px] font-bold uppercase tracking-[0.11em] text-ink-faint">
+						<span>Progress</span>
+						<span class="font-mono text-[10px] normal-case tracking-normal">{completedCount} / {data.game.totalAchievements}</span>
+					</div>
+					<ProgressBar percent={progressPercent} height={6} />
+				</div>
+
+				<!-- BAR 2 of 2 · DIFFICULTY MIX. A composition of the whole game, so it
+				     deliberately does NOT move as you check trophies off. Each bar carries
+				     a visible NAME: two unlabelled 6px bars 16px apart would read as one
+				     fussy bar rather than as a chart. See the `.pw-diff-bar` block in
+				     `app.css` for why the separator is drawn outside each segment. -->
+				<div class="mt-4">
+					<div class="mb-1.5 flex items-baseline justify-between text-[9px] font-bold uppercase tracking-[0.11em] text-ink-faint">
+						<span>Difficulty mix</span>
+						<span class="font-mono text-[10px] normal-case tracking-normal">{difficultyMix}</span>
+					</div>
+					<div
+						class="pw-diff-bar"
+						role="img"
+						aria-label="Difficulty mix: {difficultyCounts.map((d) => `${d.total} ${d.level}`).join(', ')}"
+					>
+						{#each difficultyCounts as d (d.level)}
+							<i
+								style:--pw-w="{(d.total / data.game.totalAchievements) * 100}%"
+								style:background={DIFFICULTY_TONE[d.level]}
+							></i>
+						{/each}
+					</div>
+
+					<!-- Never colour alone: a named label and a number beside every swatch. -->
+					<div class="mt-2.5 grid grid-cols-2 gap-x-2.5 gap-y-1.5">
+						{#each difficultyCounts as d (d.level)}
+							<div class="flex items-center gap-1.5 text-[11px]">
+								<span class="h-2 w-2 shrink-0 rounded-[2px]" style:background={DIFFICULTY_TONE[d.level]} aria-hidden="true"></span>
+								<span class="capitalize text-ink-dim">{d.level.replace('-', ' ')}</span>
+								<span class="tabular font-mono font-bold">{d.total}</span>
+							</div>
+						{/each}
 					</div>
 				</div>
+			</div>
 
-				<div class="mt-3 flex items-center justify-between border-t border-line py-2 text-sm">
-					<span class="text-ink-dim">Remaining</span>
-					<span class="tabular font-mono font-bold text-ink">{data.game.totalAchievements - completedCount}</span>
-				</div>
-				<div class="flex items-center justify-between border-t border-line py-2 text-sm">
-					<span class="text-ink-dim">Missable</span>
-					<span class="tabular font-mono font-bold text-yellow-400">{missableCount}</span>
-				</div>
-				<div class="flex items-center justify-between border-t border-line py-2 text-sm">
-					<span class="text-ink-dim">Difficulty mix</span>
-					<span class="tabular font-mono font-bold text-ink">{difficultyMix}</span>
-				</div>
+			<div class="h-px bg-line"></div>
 
-				<!--
-					Sync is hidden below `sm` because the mobile bar already carries it —
-					two sync buttons would be the same duplication as the filters. The map
-					link stays at every width: nothing else offers it, so hiding it on a
-					phone would make it unreachable.
-				-->
-				<div class="mt-3 flex flex-col gap-2">
-					<div class="hidden sm:block">
-						<ActionButton label="Sync with Steam" icon={RefreshCw} onclick={syncWithSteam} loading={syncing} full />
-					</div>
-					{#if data.game.mapUrl}
-						<a
-							href={data.game.mapUrl}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="flex h-10 w-full items-center justify-center gap-2 rounded-lg border border-line bg-steam-blue text-sm font-medium text-ink hover:bg-steam-light"
-						>
-							<MapPinned class="h-4 w-4 shrink-0" />
-							Interactive map
-						</a>
-					{/if}
+			<!-- Two plain figures on one line. These were three 40px rows, each with its
+			     own `border-t`, inside a panel — 120px of column for three numbers. -->
+			<dl class="flex gap-5">
+				<div>
+					<dt class="text-[10px] font-bold uppercase tracking-[0.09em] text-ink-faint">Remaining</dt>
+					<dd class="tabular mt-0.5 font-mono text-[17px] font-bold text-ink">{lockedCount}</dd>
 				</div>
+				<div>
+					<dt class="text-[10px] font-bold uppercase tracking-[0.09em] text-ink-faint">Missable</dt>
+					<dd class="tabular mt-0.5 font-mono text-[17px] font-bold" style:color={DIFFICULTY_TONE['very-hard']}>{missableCount}</dd>
+				</div>
+			</dl>
 
+			<!--
+				Sync is hidden below `sm` because the mobile bar already carries it —
+				two sync buttons would be the same duplication as the filters. The map
+				link stays at every width: nothing else offers it, so hiding it on a
+				phone would make it unreachable.
+			-->
+			<div class="flex flex-col gap-2">
+				<div class="hidden sm:block">
+					<ActionButton label="Sync with Steam" icon={RefreshCw} onclick={syncWithSteam} loading={syncing} full />
+				</div>
+				{#if data.game.mapUrl}
+					<a
+						href={data.game.mapUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="flex h-10 w-full items-center justify-center gap-2 rounded-lg border border-line text-sm font-medium text-ink hover:bg-steam-blue"
+					>
+						<MapPinned class="h-4 w-4 shrink-0" />
+						Interactive map
+					</a>
+				{/if}
+
+				<!-- The "no Steam ID" state is a note ON the sync control rather than a
+				     chip of its own higher up the column: it is a state of that control,
+				     so it belongs beside it. -->
+				{#if !steamId}
+					<p class="flex items-center gap-1.5 text-[11px] text-yellow-300">
+						<WifiOff class="h-3.5 w-3.5 shrink-0" />
+						No Steam ID set — syncing is unavailable
+					</p>
+				{/if}
 				{#if syncError}
-					<p class="mt-2 text-xs text-red-400">{syncError}</p>
+					<p class="text-xs text-red-400">{syncError}</p>
 				{/if}
 				{#if syncSuccess}
-					<p class="mt-2 text-xs text-steam-green">{syncSuccess}</p>
+					<p class="text-xs text-steam-green">{syncSuccess}</p>
 				{/if}
 			</div>
 			</aside>
@@ -459,21 +688,45 @@
 			<!-- Achievement list -->
 			<div class="mt-3 flex flex-col gap-2">
 				{#if !hydrated}
-					{#each Array(Math.min(data.game.achievements.length, 12)) as _, i (i)}
-						<div class="h-[90px] animate-pulse rounded-xl bg-steam-blue"></div>
-					{/each}
+									<!--
+										SHAPED skeleton. The old rows were flat `h-[90px]` rectangles,
+										which happened to match the collapsed card's height but gave the
+										list no internal structure — so it read as "broken" rather than
+										"loading", and the eye had nothing to land on. This is the real
+										silhouette: a 64x64 trophy square, a title line, two description
+										lines and the meta rail. Same 90px collapsed height, so the
+										`contain-intrinsic-size` estimate in `app.css` still holds.
+									-->
+									{#each Array(Math.min(data.game.achievements.length, 12)) as _, i (i)}
+										<div class="pw-skeleton flex items-center gap-2 p-2 sm:gap-3 sm:p-3">
+											<div class="pw-skeleton-fill h-16 w-16 shrink-0"></div>
+											<div class="min-w-0 flex-1 space-y-2">
+												<div class="pw-skeleton-fill h-3.5 w-2/5"></div>
+												<div class="pw-skeleton-fill h-2.5 w-11/12"></div>
+												<div class="pw-skeleton-fill h-2.5 w-7/12"></div>
+											</div>
+										</div>
+									{/each}
 				{:else}
-					{#each filteredAchievements as achievement (achievement.id)}
+					{#each visibleAchievements as achievement (achievement.id)}
 						<AchievementRow
 							{achievement}
 							achieved={achievedMap[achievement.id]}
 							steamLocked={false}
 							unlockTime={null}
-							ontoggle={() => toggleCheck(achievement.id)}
-						/>
-					{/each}
+												exiting={departing.has(achievement.id)}
+												ontoggle={() => toggleCheck(achievement.id)}
+												onvanished={() => release(achievement.id)}
+											/>
+										{/each}
 
-					{#if filteredAchievements.length === 0}
+										<!--
+											Gated on `visibleAchievements`, not `filteredAchievements`: a row
+											held for its exit animation is still on screen, so the empty state
+											must wait for it rather than appearing underneath a card that is
+											still collapsing.
+										-->
+										{#if visibleAchievements.length === 0}
 						<div class="py-16 text-center">
 							<p class="text-ink-dim">No achievements match these filters.</p>
 							<div class="mt-3 flex justify-center">
@@ -515,4 +768,4 @@
 	searchPlaceholder="Search trophies…"
 	searchLabel="Search trophies"
 	bind:query={trophyQuery}
-/>
+/>

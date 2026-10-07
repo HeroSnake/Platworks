@@ -15,13 +15,30 @@
 		game,
 		completed,
 		onToggle,
-		toggleMode = 'add'
-	}: {
-		game: GameListItem;
-		completed: number;
-		onToggle?: (appId: number) => void;
-		toggleMode?: ToggleMode;
-	} = $props();
+		toggleMode = 'add',
+			transitionName = undefined,
+			onnavigate = undefined,
+			onhover = undefined
+		}: {
+			game: GameListItem;
+			completed: number;
+			onToggle?: (appId: number) => void;
+			toggleMode?: ToggleMode;
+			/**
+			 * A `view-transition-name` for this card's artwork.
+			 *
+			 * Supplied by the library page only for the card being activated, because the
+			 * name must be UNIQUE among rendered elements: two elements sharing one name
+			 * abort the whole transition and drop to the root cross-fade. The library page
+			 * sets it on hover and clears it on `mouseleave`; `onnavigate` covers the two
+			 * cases hover misses — a touch tap, and a keyboard user tabbing onto the card.
+			 */
+			transitionName?: string;
+			/** Called on the card link's click and focus, so the page can name the art. */
+			onnavigate?: (appId: number) => void;
+			/** Called on pointer enter/leave of the card link, so the page can name the art. */
+			onhover?: (appId: number, hovering: boolean) => void;
+		} = $props();
 
 	let percent = $derived(game.totalAchievements > 0 ? Math.round((completed / game.totalAchievements) * 100) : 0);
 
@@ -49,12 +66,32 @@
 	The <a> and the library <button> are siblings, not nested: a <button> inside
 	an <a> is invalid HTML and its clicks activate the link instead. The <a>'s
 	::after stretches over the card so the whole thing stays one big tap target.
+
+	THE MOTION LIVES ON `.pw-card-lift`, THE INNER WRAPPER, NOT ON THIS DIV.
+
+	The card has to stay `position: relative` (the add/remove button is absolutely
+	positioned into its top-right corner) and it has to stay un-transformed, because
+	a `transform` on this element would be live for the whole of `:hover` and would
+	also make it the containing block for every absolutely positioned descendant.
+	The lift wrapper carries the leap instead, and the card's own box — its geometry,
+	its border, its hit area — never moves.
 -->
 <div
-	class="group relative overflow-hidden rounded-xl border border-line bg-steam-blue transition-transform duration-150 will-change-transform active:scale-[0.98] sm:hover:-translate-y-0.5 sm:hover:border-steam-light"
+	class="pw-card group relative overflow-hidden rounded-xl border border-line bg-steam-blue"
 >
-	<a href="/game/{game.appId}" class="block after:absolute after:inset-0">
-		<div class="relative aspect-video bg-steam-light">
+	<a
+		href="/game/{game.appId}"
+		class="block after:absolute after:inset-0"
+		onclick={() => onnavigate?.(game.appId)}
+		onfocus={() => onnavigate?.(game.appId)}
+			onmouseenter={() => onhover?.(game.appId, true)}
+			onmouseleave={() => onhover?.(game.appId, false)}
+		>
+		<span class="pw-card-lift block">
+			<div
+				class="relative aspect-video bg-steam-light"
+				style:view-transition-name={transitionName ?? 'none'}
+			>
 			<!--
 				Placeholder painted UNDER the artwork, always present.
 
@@ -95,25 +132,34 @@
 			     hide the letterbox seam, and there is no longer a seam to hide. -->
 			<div class="absolute inset-0 bg-steam-dark/25" aria-hidden="true"></div>
 
+			<!--
+				The hover sheen. Transform-only and painted on the lift wrapper, so it is
+				NOT clipped by the artwork's `overflow: hidden` — it rides across the
+				top-left corner of the card. `pointer-events: none` so it cannot eat a
+				click on the link underneath it.
+			-->
+			<span class="pw-card-sheen" aria-hidden="true"></span>
+
 			{#if game.steam?.metacriticScore}
 				<span class="tabular absolute left-2 top-2 z-10 inline-flex min-h-6 items-center gap-1 rounded-md bg-steam-dark/70 px-1.5 py-0.5 font-mono text-[11px] font-bold text-ink backdrop-blur-sm">
 					<Star class="h-3 w-3 fill-current text-yellow-400" />
 					{game.steam.metacriticScore}
 				</span>
 			{/if}
-		</div>
-
-		<div class="px-3 py-2.5">
-			<h3 class="truncate font-display text-sm font-semibold leading-tight tracking-tight text-ink">
-				{game.name}
-			</h3>
-			<div class="mt-2">
-				<ProgressBar percent={percent} height={5} label={`${completed}/${game.totalAchievements}`} />
 			</div>
-			<p class="tabular mt-1.5 font-mono text-[11px] {percent === 100 ? 'text-steam-green' : 'text-ink-faint'}">
-				{percent === 100 ? 'Complete' : `${percent}% complete`}
-			</p>
-		</div>
+
+			<div class="px-3 py-2.5">
+				<h3 class="truncate font-display text-sm font-semibold leading-tight tracking-tight text-ink">
+					{game.name}
+				</h3>
+				<div class="mt-2">
+					<ProgressBar percent={percent} height={5} label={`${completed}/${game.totalAchievements}`} />
+				</div>
+				<p class="tabular mt-1.5 font-mono text-[11px] {percent === 100 ? 'text-steam-green' : 'text-ink-faint'}">
+					{percent === 100 ? 'Complete' : `${percent}% complete`}
+				</p>
+			</div>
+		</span>
 	</a>
 
 	<!--

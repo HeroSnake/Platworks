@@ -7,7 +7,7 @@
  * `auditPage` throws `ReferenceError: visible is not defined` at runtime, which is
  * why the helpers below are scoped inside it.
  *
- * The rules themselves live in platworks-ui.agent.md §6. This file is the
+ * The rules themselves live in .agents/ui.md §6. This file is the
  * executable copy: if a rule changes there, change it here too.
  */
 
@@ -269,9 +269,26 @@ export function readState(spec) {
 	if (spec.htmlAttr) {
 		state[`html@${spec.htmlAttr}`] = document.documentElement.getAttribute(spec.htmlAttr);
 	}
-	state.url = location.href;
-	return state;
-}
+	// Live match count for a selector. This is the only observable that can assert a
+	// LIST did or did not change length, which is what a filter is: `storage` proves
+	// the filter was written, `attr` proves a control is marked — neither can say the
+	// rendered rows actually went away, or stayed long enough to animate.
+	if (spec.count) {
+		state[`count:${spec.count.selector}`] = String(document.querySelectorAll(spec.count.selector).length);
+	}
+		// Position of an element among its siblings' matches. This is the assertion that a
+		// list kept a row WHERE it was: a held row that gets appended instead of filtered
+		// back into place still leaves the count correct, but moves to the end, which
+		// reads on screen as the card the player just tapped jumping to the bottom.
+		if (spec.index) {
+			const el = spec.index.el ?? document.querySelector(spec.index.selector);
+			const row = el?.closest?.(spec.index.within) ?? null;
+			const all = [...document.querySelectorAll(spec.index.within)];
+			state[`index:${spec.index.within}`] = row ? String(all.indexOf(row)) : 'gone';
+		}
+		state.url = location.href;
+		return state;
+	}
 
 /**
  * Collects console errors, uncaught exceptions and failed document requests.

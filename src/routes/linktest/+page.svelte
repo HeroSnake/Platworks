@@ -44,8 +44,10 @@
 			achieved={false}
 			steamLocked={false}
 			unlockTime={null}
-			ontoggle={() => {}}
-		/>
+						exiting={false}
+						ontoggle={() => {}}
+						onvanished={() => {}}
+					/>
 		<!-- Force the panel open: it is CSS-driven, so data-open is enough. -->
 		<div class="expand-panel" data-open="true">
 			<div>

@@ -1,7 +1,7 @@
 /**
  * Browser audit of the running app.
  *
- * This is the executable form of the checks in platworks-ui.agent.md §6 and of
+ * This is the executable form of the checks in .agents/ui.md §6 and of
  * phase 7 of /ui-project. It exists because `curl` cannot see horizontal
  * overflow, duplicated controls, tap-target sizes, console errors, or a control
  * that renders but does not respond to a click — every one of which has shipped.
@@ -83,10 +83,16 @@ C — click check file. Default-exports an array; only \`name\` and \`click\` ar
         storage: ['platworks:sort'],       // must change value
         attr: { selector: '[role=radio][aria-checked=true]', name: 'aria-checked' },
         htmlAttr: 'data-theme',            // <html> attribute must change
-        url: '/game/'                      // substring of location.href
-      },
-      probe: ['corners', 'edges']          // zones inside the control. Default.
-    },
+                count: { selector: '.achievement-item', equals: '54' },  // how many match
+                index: { selector: '.achievement-item', within: '.achievement-item' },  // and where it sits
+                visible: { selector: '.achievement-item', minHeight: 40 },  // POLLED, see below
+                url: '/game/'                      // substring of location.href
+              },
+              repeat: 2,                            // click the control this many times
+              interval: 600,                        // gap between repeats. Default 300.
+              settle: 1600,                         // watch this long after the last click. Default 300.
+              probe: ['corners', 'edges']          // zones inside the control. Default.
+            },
     {
       // A padded container: every point of the CARD must reach the control.
       // This is the case a centre-point click cannot see, and the reason
@@ -108,12 +114,35 @@ C — click check file. Default-exports an array; only \`name\` and \`click\` ar
       seed: { 'platworks:checked:1245620': { '1': true } },
       click: '.achievement-item >> nth=0 >> button[aria-pressed]',
       expect: { attr: { selector: '.achievement-item >> nth=0 >> button[aria-pressed]', name: 'aria-pressed', equals: 'false' } }
-    }
-  ];
+          },
+          {
+            // A FILTER is a list, and the only way to assert one is its length. Under a
+            // completion filter, toggling a trophy drops it from the list — but it must be
+            // HELD for its exit animation first, so 300ms after the click the row count is
+            // still unchanged and only then does it fall. Without this, a filter that
+            // destroyed the row immediately passes every other assertion while showing the
+            // player nothing at all.
+            name: 'Trophy row — held for its exit under a filter',
+            route: '/game/1903340',
+            seed: { 'platworks:filter:1903340': 'locked', 'platworks:checked:1903340': {} },
+            click: '.achievement-item >> nth=0 >> button[aria-pressed]',
+            expect: {
+              count: { selector: '.achievement-item', equals: null },
+              storage: ['platworks:checked:1903340']
+            }
+          }
+        ];
 
 Without \`expect\`, the check asserts the click changed nothing and fails — an
 unasserted click is not a test. \`accept\` takes selectors for hits that
 legitimately count, e.g. ['label'].
+
+\`count\` and \`index\` sample BEFORE and AFTER the click; with no \`equals\` they
+assert nothing changed. \`visible\` is different: it POLLS every 50ms for
+\`settle\`ms and fails if the element ever leaves the page or drops below
+\`minHeight\`. That is the only assertion that can catch a TRANSIENT fault — a row
+that collapses to nothing and comes back inside the window ends exactly where it
+started and passes every before/after assertion on earth.
 
 Exit code 1 if any check fails.
 `;
@@ -322,22 +351,79 @@ async function runClickCheck(browser, base, check, widths, shotDir) {
 				}
 			}
 
-			if (check.expect) {
-				// Resolve the assertion target through Playwright too: a spec that
-				// selects with `>> nth=0` must be able to assert on that same node.
-				const expect = { ...check.expect };
-				if (expect.attr?.selector) {
-					const el = await page.locator(expect.attr.selector).first().elementHandle();
-					expect.attr = { ...expect.attr, el };
-				}
+			// `repeat` clicks the same control again, for controls whose second direction
+						// matters — a trophy toggled twice must end where it started. `settle` is how
+						// long to watch afterwards; it doubles as the window a `visible` assertion is
+						// polled over. Default 300ms lands inside the trophy exit animation, where a
+						// row held for it is still on screen.
+						const settle = check.settle ?? 300;
+						const repeat = check.repeat ?? 1;
+						const interval = check.interval ?? 300;
+						// A repeat is a fast re-tap, and a fast re-tap lands on a MOVING target: the
+						// row is mid-animation and Playwright's stability wait would time out rather
+						// than click. `force` dispatches at the current box, which is what a human does.
+						const clickOpts = { timeout: 5000, force: repeat > 1 };
 
-				const before = await page.evaluate(readState, expect);
-				await page.click(control, { timeout: 5000 });
-				await page.waitForTimeout(300);
-				const after = await page.evaluate(readState, expect);
+						async function doClicks(afterWait) {
+								for (let i = 0; i < repeat; i++) {
+									if (i > 0) await page.waitForTimeout(interval);
+									await page.click(control, clickOpts);
+								}
+								if (afterWait > 0) await page.waitForTimeout(afterWait);
+						}
+
+						if (check.expect) {
+								// Resolve the assertion target through Playwright too: a spec that
+								// selects with `>> nth=0` must be able to assert on that same node.
+								const expect = { ...check.expect };
+								if (expect.attr?.selector) {
+									const el = await page.locator(expect.attr.selector).first().elementHandle();
+									expect.attr = { ...expect.attr, el };
+								}
+								if (expect.index?.selector) {
+									const el = await page.locator(expect.index.selector).first().elementHandle();
+									expect.index = { ...expect.index, el };
+								}
+
+								const before = await page.evaluate(readState, expect);
+								// A `visible` assertion IS the settle window: it polls across it, so
+								// waiting here first would sample only after the fault had passed. Every
+								// other assertion waits the full window and then samples once.
+								await doClicks(check.expect.visible ? 0 : settle);
+								const after = await page.evaluate(readState, expect);
+
+								// A before/after pair cannot see a TRANSIENT fault: a row that collapses
+								// to nothing and comes back inside the settle window ends exactly where it
+								// started, and passes every other assertion here. `visible` polls instead,
+								// and is the only assertion that can fail on what happened in between.
+								if (check.expect.visible) {
+									const { selector, minHeight = 40 } = check.expect.visible;
+									const target = page.locator(selector).first();
+									const until = Date.now() + settle;
+									while (Date.now() < until) {
+										const box = await target.boundingBox();
+										if (!box) {
+											failures.push(`${selector} left the page during the animation`);
+											break;
+										}
+										if (box.height < minHeight) {
+											failures.push(
+												`${selector} collapsed to ${Math.round(box.height)}px during the ` +
+													`animation, expected it to stay at ${minHeight}px or more`
+											);
+											break;
+										}
+										await page.waitForTimeout(50);
+									}
+								}
 
 				for (const [key, value] of Object.entries(after)) {
 					if (key === 'url') continue;
+					// `count` and `index` are explicit claims, not change-detectors: they are how a
+					// check asserts that something did NOT change (a row held for its exit,
+					// and still sitting where it was). They are verified below, and exempt
+					// from "everything else must move".
+					if (key.startsWith('count:') || key.startsWith('index:')) continue;
 					if (before[key] === value) {
 						failures.push(`no observable change: ${key} stayed ${JSON.stringify(value)}`);
 					}
@@ -345,7 +431,32 @@ async function runClickCheck(browser, base, check, widths, shotDir) {
 				if (check.expect.url && !after.url.includes(check.expect.url)) {
 					failures.push(`url did not reach ${JSON.stringify(check.expect.url)}: ${after.url}`);
 				}
-				// An explicit `equals` is a stronger claim than "it changed": it
+				if (check.expect.count) {
+					const name = `count:${check.expect.count.selector}`;
+					const got = after[name];
+					const want = check.expect.count.equals;
+					if (want === null || want === undefined) {
+						// No `equals` means "must be unchanged", which is the whole point for a
+						// list that is supposed to hold still while something animates out of it.
+						if (got !== before[name]) {
+							failures.push(`${check.expect.count.selector} went ${before[name]} to ${got}, expected it to be held`);
+						}
+					} else if (got !== String(want)) {
+						failures.push(`${check.expect.count.selector} matched ${got}, expected ${want}`);
+					}
+				}
+				if (check.expect.index) {
+				const name = `index:${check.expect.index.within}`;
+				const got = after[name];
+				const want = check.expect.index.equals ?? before[name];
+				if (got !== String(want)) {
+					failures.push(
+						`${check.expect.index.selector} moved from position ${want} to ${got} — ` +
+							`a row that is leaving must leave from where the player clicked it`
+					);
+				}
+			}
+			// An explicit `equals` is a stronger claim than "it changed": it
 				// catches a control that changes to the wrong value.
 				if (check.expect.attr?.equals !== undefined) {
 					const name = check.expect.attr.name ?? 'aria-checked';
@@ -355,10 +466,9 @@ async function runClickCheck(browser, base, check, widths, shotDir) {
 					}
 				}
 			} else {
-				await page.click(control, { timeout: 5000 });
-				await page.waitForTimeout(300);
-				failures.push('no `expect` given — the click was not asserted on anything');
-			}
+							await doClicks(settle);
+							failures.push('no `expect` given — the click was not asserted on anything');
+						}
 
 			let shot = null;
 			if (shotDir) {

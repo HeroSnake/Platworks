@@ -16,39 +16,99 @@
 	import { tick } from 'svelte';
 	import type { Achievement } from '#lib/types/game';
 
-	let { achievement, achieved, steamLocked, unlockTime, ontoggle } = $props<{
+	let {
+		achievement,
+		achieved,
+		steamLocked,
+		unlockTime,
+		exiting,
+		ontoggle,
+		onvanished
+	} = $props<{
 		achievement: Achievement;
 		achieved: boolean;
 		steamLocked: boolean;
 		unlockTime: Date | null;
+		/**
+		 * The active filter no longer matches this row — a toggle just pushed it out.
+		 * The page keeps it in the list until `onvanished` fires so the animation can
+		 * play before the keyed `{#each}` destroys the node.
+		 */
+		exiting: boolean;
 		ontoggle: () => void;
+		/** The exit animation has finished; the page may drop the row for good. */
+		onvanished: () => void;
 	}>();
 
 	let expanded = $state(false);
 	let justToggled = $state(false);
 
 	/**
-	 * Tier 3 — which direction the row is animating in, if any.
+	 * Tiers 3 and 4 — which motion the row is playing, if any.
 	 *
 	 * The class has to be cleared and re-set to replay on the same row, and Svelte
 	 * batches state within a tick, so setting it straight to the same value never
 	 * reaches the DOM and the second tap on one trophy silently does nothing.
 	 * `playMotion` clears, awaits a tick, then sets — which is the whole reason
 	 * `tick` is imported.
-	 *
-	 * The clear timers are 20ms longer than the CSS durations (900ms / 420ms) so the
-	 * class outlives the animation rather than being stripped from under it.
 	 */
-	let motion: 'celebrate' | 'relock' | null = $state(null);
+	let motion: 'celebrate' | 'relock' | 'exit' | null = $state(null);
+	let motionClass = $derived(
+		motion === 'celebrate'
+			? 'pw-celebrate'
+			: motion === 'relock'
+				? 'pw-relock'
+				: motion === 'exit'
+					? 'pw-exit'
+					: ''
+	);
 	let motionTimer: ReturnType<typeof setTimeout> | undefined;
+
+	// 20ms longer than each CSS duration in `app.css`, so the class outlives the
+	// animation rather than being stripped from under it.
+	const MOTION_MS = { celebrate: 900, relock: 420, exit: 280 };
 
 	async function playMotion(next: 'celebrate' | 'relock') {
 		motion = null;
 		await tick();
 		motion = next;
 		clearTimeout(motionTimer);
-		motionTimer = setTimeout(() => (motion = null), next === 'celebrate' ? 920 : 440);
+		motionTimer = setTimeout(advance, MOTION_MS[next] + 20);
 	}
+
+	/**
+	 * Hands over to the exit when this toggle pushed the row out of the filtered
+	 * list, and otherwise just ends.
+	 *
+	 * `exiting` cannot be read at toggle time: the page sets it as a consequence of
+	 * `ontoggle()`, in the same flush that starts this motion. Reading it here, one
+	 * animation later, is what keeps the two in step without a second flag.
+	 */
+	function advance() {
+		if (!exiting) {
+			motion = null;
+			return;
+		}
+		motion = 'exit';
+		motionTimer = setTimeout(() => {
+			motion = null;
+			onvanished();
+		}, MOTION_MS.exit + 20);
+	}
+
+		/**
+		 * Cancels an exit the page has given up on.
+		 *
+		 * `.pw-exit` sets `pointer-events: none`, so a click cannot normally land on a row
+		 * that is already collapsing — but the page can also stop holding the row from
+		 * under it (a filter or sort change). Without this the card would sit at zero
+		 * height and zero opacity, still listed, until the exit timer happened to fire.
+		 */
+		$effect(() => {
+			if (exiting || motion !== 'exit') return;
+			motion = null;
+			clearTimeout(motionTimer);
+		});
 	// Guide markup is only built the first time a row is opened. A 100-achievement
 	// game otherwise creates every step/warning/note node up front, which is what
 	// made selection and interaction sluggish. Stays mounted after first open so
@@ -107,17 +167,22 @@
 	straight on the row lets the page background pattern show straight through the
 	trophy, which is unreadable. Compositing the tint over an opaque base keeps the
 	tint and keeps the text legible.
--->
-<div
-	class="achievement-item relative rounded-xl border bg-steam-blue {achieved
-		? 'border-steam-green/30'
-		: 'border-line'} {motion === 'celebrate' ? 'pw-celebrate' : ''} {motion === 'relock'
-		? 'pw-relock'
-		: ''}"
->
-	{#if achieved}
-		<div class="pointer-events-none absolute inset-0 rounded-xl bg-steam-green/10"></div>
-	{/if}
+
+		The card is a one-row GRID whose only in-flow child is `.pw-vanish-clip`. That
+		is what lets `.pw-exit` close the row with the same `grid-template-rows: 1fr ->
+		0fr` trick `.expand-panel` uses, instead of guessing a `max-height` that would
+		be wrong at every breakpoint and for every expanded guide. The tint above is
+		`absolute`, so it is out of flow and never becomes a grid item.
+	-->
+	<div
+		class="achievement-item relative grid grid-rows-[1fr] rounded-xl border bg-steam-blue {achieved
+				? 'border-steam-green/30'
+				: 'border-line'} {motionClass}"
+	>
+		{#if achieved}
+			<div class="pointer-events-none absolute inset-0 rounded-xl bg-steam-green/10"></div>
+		{/if}
+		<div class="pw-vanish-clip">
 	<div class="relative flex w-full items-center gap-2 p-2 sm:gap-3 sm:p-3">
 		<!-- The trophy doubles as the check toggle. Steam's icons are natively 64x64,
 		     so this renders 1:1 with no upscaling, and folding the check onto the art
@@ -142,8 +207,8 @@
 		     bottom-right as the row grows. -->
 		<button
 			class="pw-press relative z-10 -ml-2 flex shrink-0 self-stretch items-center pl-2 before:absolute before:-inset-y-2 before:left-0 before:right-0 before:content-[''] sm:-ml-3 sm:pl-3 sm:before:-inset-y-3 {steamLocked
-				? 'cursor-default'
-				: 'cursor-pointer'}"
+		     				? 'is-locked'
+		     				: ''}"
 			onclick={handleToggle}
 			aria-label={steamLocked
 				? `${achievement.name} — unlocked on Steam`
@@ -196,36 +261,67 @@
 		     dead zone. It stops at the row, so the open guide keeps its own links.
 
 		     The toggle button carries `z-10` to win over this overlay in the left rail.
-		-->
-		<button
-			class="pw-press after:absolute after:inset-0 flex min-h-10 min-w-0 flex-1 items-center gap-2 text-left sm:gap-3"
-			onclick={toggleExpand}
-			aria-expanded={expanded}
-		>
-			<div class="min-w-0 flex-1">
-				<div class="flex flex-wrap items-center gap-x-1.5 gap-y-1 sm:gap-x-2">
-					<span class="text-sm font-semibold leading-tight {achieved ? 'text-steam-green' : 'text-ink'}">
-						{achievement.name}
-					</span>
 
-					{#each achievement.types as tag (tag)}
-						{@const Icon = typeIcons[tag]}
-						{#if Icon}
-							<span class="flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] leading-tight {typeStyles[tag] ?? 'bg-steam-light text-ink-dim'}">
-												<Icon class="h-3 w-3" />
-												{tag}
-							</span>
-						{/if}
-					{/each}
+				     FOUR ZONES, NOT ONE WRAPPED LINE. Name, description, difficulty and tags
+				     used to share a single flex-wrap row, so a long trophy name pushed the tags
+				     onto line two and the tags and the difficulty became rivals for the same
+				     wrap point — the reading order changed depending on the name's length.
+				     Each now owns its own block, and the difficulty/tags rail sits under a
+				     hairline so it cannot be mistaken for more description.
+				-->
+				<button
+					class="pw-press after:absolute after:inset-0 flex min-h-10 min-w-0 flex-1 items-center gap-2 text-left sm:gap-3"
+					onclick={toggleExpand}
+					aria-expanded={expanded}
+				>
+					<div class="min-w-0 flex-1">
+						<!-- ZONE 1 — the name, alone on its line. -->
+						<div class="text-sm font-semibold leading-tight {achieved ? 'text-steam-green' : 'text-ink'}">
+							{achievement.name}
+						</div>
 
-					<DifficultyPips difficulty={achievement.difficulty} />
-				</div>
+						<!--
+							ZONE 2 — the description.
 
-				<p class="mt-1 line-clamp-2 text-[13px] leading-snug text-ink-dim sm:line-clamp-none sm:text-sm">{achievement.description}</p>
-			</div>
+							Clamped to two lines at EVERY breakpoint. It used to be
+							`line-clamp-2 sm:line-clamp-none`, so a phone showed two lines and a
+							laptop showed all of them: the same trophy occupied a third of the
+							card height on one screen and a full screen on another, which is what
+							made a scrolled list feel like it was shuffling. Two lines everywhere
+							gives the list a repeating rhythm; the full text stays one tap away in
+							the expanded guide, which is where a 190-character blurb belongs.
+						-->
+						<p class="mt-1 line-clamp-2 text-[13px] leading-snug text-ink-dim">
+							{achievement.description}
+						</p>
 
-			<ChevronDown class="h-5 w-5 shrink-0 text-ink-faint transition-transform duration-200 {expanded ? 'rotate-180' : ''}" />
-		</button>
+						<!--
+							ZONE 3 + 4 — difficulty and tags, on one rail below a hairline.
+
+							`min-h-5` keeps the rail a fixed height whether or not a trophy
+							carries tags: an untagged trophy (`types: []`) renders no badges, and
+							without the reservation the rail would collapse and the card would
+							jump as the list scrolls past it.
+						-->
+						<div class="mt-1.5 flex min-h-5 items-center gap-2 border-t border-line pt-1.5">
+							<DifficultyPips difficulty={achievement.difficulty} />
+							{#if achievement.types.length}
+								<span class="h-3 w-px shrink-0 bg-line" aria-hidden="true"></span>
+								{#each achievement.types as tag (tag)}
+									{@const Icon = typeIcons[tag]}
+									{#if Icon}
+												<span class="flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] leading-tight {typeStyles[tag] ?? 'bg-steam-light text-ink-dim'}">
+													<Icon class="h-3 w-3" />
+													{tag}
+												</span>
+									{/if}
+								{/each}
+							{/if}
+						</div>
+					</div>
+
+					<ChevronDown class="h-5 w-5 shrink-0 text-ink-faint transition-transform duration-200 {expanded ? 'rotate-180' : ''}" />
+				</button>
 	</div>
 
 	<!-- CSS-animated expand/collapse — no DOM add/remove while animating -->
@@ -308,4 +404,5 @@
 			{/if}
 		</div>
 	</div>
-</div>
+					</div>
+				</div>

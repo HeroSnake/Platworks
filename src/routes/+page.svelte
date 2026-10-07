@@ -234,6 +234,36 @@
 			: errors > 0 ? `${errors} game${errors > 1 ? 's' : ''} failed to sync` : 'All games up to date';
 		setTimeout(() => syncStatus = null, 4000);
 	}
+
+			// ---------------------------------------------------------------------
+			// Shared-element navigation: the card you tapped becomes the game hero.
+			//
+			// `view-transition-name` must be UNIQUE across rendered elements. Two elements
+			// sharing one name abort the entire transition and fall back to the root
+			// cross-fade — so this is deliberately NOT driven by `:hover`. If it were, every
+			// card the pointer had ever crossed would keep its name and the second tap would
+			// produce nothing.
+			//
+			// A pointer leaves a trail and a finger does not, so the two inputs set and clear
+			// it differently:
+			//   - `onhover` on the card's <a> names it on `mouseenter` and clears on
+			//     `mouseleave` (also fires when the pointer leaves via a child)
+			//   - `onfocus` names it for keyboard users, because a focused card is the one
+			//     they are about to activate
+			//   - `onclick` names it unconditionally and never clears, which is what covers a
+			//     touch tap where there is no hover at all
+			//
+			// `+layout.svelte` releases the name after the swap lands.
+			// ---------------------------------------------------------------------
+			let navigatingAppId = $state<number | null>(null);
+
+			function nameTransition(appId: number, on: boolean) {
+				navigatingAppId = on ? appId : null;
+			}
+
+			function beginNavigation(appId: number) {
+				navigatingAppId = appId;
+			}
 </script>
 
 <div class="w-full px-4 pb-20 pt-6 sm:px-6 sm:pb-16 sm:pt-10 lg:px-8">
@@ -264,10 +294,10 @@
 			no tile can appear or vanish mid-gesture and shove the grid down.
 	-->
 	<div class="mb-5 grid grid-cols-2 gap-2.5 sm:mb-6 sm:grid-cols-4 sm:gap-3">
-			<StatTile label="Overall" value={totalPercent} suffix="%" accent />
-			<StatTile label="Unlocked" value={totalCompleted} suffix={` / ${totalAchievements}`} />
-			<StatTile label="Remaining" value={totalAchievements - totalCompleted} />
-			<StatTile label="Completed games" value={completedGames} suffix={` / ${totalGames}`} />
+			<StatTile label="Overall" value={totalPercent} suffix="%" accent roll={hydrated} />
+			<StatTile label="Unlocked" value={totalCompleted} suffix={` / ${totalAchievements}`} roll={hydrated} />
+			<StatTile label="Remaining" value={totalAchievements - totalCompleted} roll={hydrated} />
+			<StatTile label="Completed games" value={completedGames} suffix={` / ${totalGames}`} roll={hydrated} />
 	</div>
 
 	<!--
@@ -370,12 +400,27 @@
 			<p class="text-sm text-ink-faint">Use <code class="rounded bg-steam-blue px-2 py-0.5">/generate-game-data</code> to add a game.</p>
 		</div>
 	{:else if !hydrated}
-		<!-- Placeholder so the server markup and the first client render agree on layout. -->
-		<div class="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
-			{#each Array(Math.min(scopedGames.length, 10)) as _, i (i)}
-				<div class="aspect-[16/10] animate-pulse rounded-xl bg-steam-blue"></div>
-			{/each}
-		</div>
+			<!--
+				Placeholder so the server markup and the first client render agree on layout.
+
+				SHAPED, not a flat block. The old rows were `aspect-[16/10]` rectangles, which
+				is not the card's real 16:9 artwork plus a text foot — so the grid still
+				resized when the data landed. This reproduces the card's silhouette: 16:9
+				artwork, a title line, a 5px bar and a caption line. Same grid, same columns,
+				so nothing below the fold moves.
+			-->
+			<div class="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+				{#each Array(Math.min(scopedGames.length, 10)) as _, i (i)}
+					<div class="pw-skeleton p-0">
+						<div class="pw-skeleton-fill aspect-video w-full rounded-none" style="border-radius:0.75rem 0.75rem 0 0"></div>
+						<div class="space-y-2 px-3 py-2.5">
+							<div class="pw-skeleton-fill h-3.5 w-3/4"></div>
+							<div class="pw-skeleton-fill h-1 w-full rounded-full"></div>
+							<div class="pw-skeleton-fill h-2.5 w-1/3"></div>
+						</div>
+					</div>
+				{/each}
+			</div>
 	{:else if scope === 'mine' && myLibrary.length === 0}
 		<!--
 			The player opened My Library before adding anything. A real, explainable
@@ -420,19 +465,22 @@
 			fold instead of 6.
 		-->
 		<div class="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
-			{#each filteredAndSorted as game (game.appId)}
-				<GameCard
-					{game}
-					completed={completions[game.appId] ?? 0}
-					onToggle={toggleGame}
-					toggleMode={scope === 'mine'
-						? 'remove'
-						: myLibrarySet.has(game.appId)
-							? 'added'
-							: 'add'}
-				/>
-			{/each}
-		</div>
+					{#each filteredAndSorted as game (game.appId)}
+						<GameCard
+							{game}
+							completed={completions[game.appId] ?? 0}
+							onToggle={toggleGame}
+							transitionName={navigatingAppId === game.appId ? 'pw-game-art' : undefined}
+							onnavigate={beginNavigation}
+							onhover={nameTransition}
+							toggleMode={scope === 'mine'
+								? 'remove'
+								: myLibrarySet.has(game.appId)
+									? 'added'
+									: 'add'}
+						/>
+					{/each}
+				</div>
 	{/if}
 
 	{#if hydrated && myLibrary.length > 0 && scope === 'mine'}

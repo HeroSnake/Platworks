@@ -60,6 +60,27 @@
 	--pw-motion-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 	--pw-motion-in: cubic-bezier(0.3, 0, 0.8, 0.15);
 	--pw-motion-settle: cubic-bezier(0.4, 0, 0.2, 1);
+
+	/*
+	   DIFFICULTY COLOURS. Semantic, like the motion tokens, and for the same reason:
+	   "hard is orange" is not a brand decision, so adding a seventh palette must not
+	   mean re-picking these.
+
+	   `easy` is `var(--pw-success)` rather than a literal green, which is the whole
+	   point of referencing a token here: custom properties resolve at computed-value
+	   time, so this follows whichever palette is active — magenta in Cyberpunk, the
+	   same green as `--pw-success` everywhere else. That is already true of the pips
+	   in `difficulty_pips.svelte`, so the aside's segment bar and a trophy row's pips
+	   cannot disagree.
+
+	   The other three are literals because `difficulty_pips.svelte` has always hard-
+	   coded yellow/orange/red for them, and a segment bar that disagreed with the pips
+	   beside it would be worse than an undocumented literal.
+	*/
+	--pw-difficulty-easy: var(--pw-success);
+	--pw-difficulty-medium: #facc15;
+	--pw-difficulty-hard: #fb923c;
+	--pw-difficulty-very-hard: #f87171;
 }
 
 /*
@@ -288,6 +309,10 @@
                      not the celebration played backwards; it is the same spring
                      read from the other direction, so it is recognisably the same
                      system rather than a second design language.
+          T4  exit       — the active filter just dropped this row. The celebration
+                          finishes first, then the card collapses and fades, so a
+                          toggle under a Locked/Done filter reads as a consequence
+                          rather than a card blinking out of existence.
 
    Everything is on the row's two pseudo-elements. Nothing is added to the DOM at
    runtime, which is the point: no effect here can intercept a click, disturb the
@@ -399,10 +424,26 @@
 .achievement-item.pw-celebrate::after {
 	content: 'UNLOCKED';
 	position: absolute;
+	/*
+	   `inset: 0 auto 0 0` shrink-wraps the band to its own label: it is a pill that
+	   travels across the card, not a full-bleed band. That narrow width is the
+	   design — do not "fix" it into `inset: 0` without asking.
+
+	   What the shrink-wrap makes load-bearing is the PADDING. Because the box is
+	   exactly `padding + label`, the padding is the only thing standing between the
+	   label and the band's edge, so `padding-left` alone leaves the text flush
+	   against the right side — the off-centre bug. It has to stay symmetric.
+
+	   `text-indent` is half the `letter-spacing`: tracking adds a trailing space
+	   after the LAST glyph too, so the advance width is `ink + 0.16em` and centring
+	   the advance box leaves the ink half a step left of centre. The indent adds
+	   that half step back.
+	*/
 	inset: 0 auto 0 0;
 	display: flex;
 	align-items: center;
-	padding-left: 0.875rem;
+	padding: 0 0.875rem;
+	text-indent: 0.08em;
 	/*
 	   z-index 20, above the toggle rail's `z-10`, and this is load-bearing.
 
@@ -430,7 +471,7 @@
 	   Cyberpunk) and `--pw-bg` is the darkest token in all six, so the pairing is
 	   guaranteed legible without touching six palette blocks. The principled version
 	   is a real `--pw-success-ink` across every palette — see
-	   `platworks-ui.agent.md` §3 before changing either one.
+	   `.agents/ui.md` §3 before changing either one.
 	*/
 	color: var(--pw-bg);
 	font-family: var(--pw-font-display);
@@ -451,21 +492,192 @@
 	animation: pw-trophy-drain 380ms var(--pw-motion-settle) both;
 }
 
+/* --- T4: filtered out --- */
+/*
+   The fade finishes early (55%) while the collapse keeps going: the card is already
+   invisible when the rows below start closing the gap, so the user never sees an
+   empty box sliding shut.
 
-/* View Transition: slide pages */
+   `margin-block: -0.5rem` is what makes the close-up SEAMLESS, and it is easy to
+   mistake for the forbidden negative margin in .agents/ui.md 1. It is not.
+   That rule is about a negative vertical margin on an item of the row's horizontal
+   `flex` line, where vertical is the CROSS axis and the margin silently shrinks the
+   line's cross size. The achievement list is `flex-col`: vertical is the MAIN axis,
+   so the margin only reduces this item's own outer size, which is exactly the point.
+
+   The list is `gap-2`, and gap is measured between margin boxes. Collapsing the card
+   to zero height leaves BOTH of its gaps behind, so the rows below stop 16px short
+   and then jump the rest of the way when the node is finally removed. Pulling both
+   margins back by one gap makes the row occupy exactly nothing, and the removal
+   becomes invisible. One margin is not enough — it only cancels the gap below.
+*/
+@keyframes pw-trophy-vanish {
+	0%   { opacity: 1; grid-template-rows: 1fr; margin-block: 0; }
+	55%  { opacity: 0; }
+	100% { opacity: 0; grid-template-rows: 0fr; margin-block: -0.5rem; }
+}
+/*
+   The clip is the grid item `.achievement-item` collapses, so the height animation
+   is exact at every breakpoint and for a row with its guide open. `min-height: 0`
+   is load-bearing: a grid item's automatic minimum size is its content size, so
+   without it `0fr` cannot go below one line and the row never closes.
+*/
+.pw-vanish-clip {
+	overflow: hidden;
+	min-height: 0;
+}
+.achievement-item.pw-exit {
+	animation: pw-trophy-vanish 280ms var(--pw-motion-in) both;
+	/* Inert for the whole 280ms it is on screen: the row is going away, and a click
+	   landing on a collapsing card must not re-toggle it. */
+	pointer-events: none;
+}
+
+
+/* ============================================================================
+   DIFFICULTY SEGMENT BAR — a composition, not a progress bar.
+
+   The game page's aside carries TWO bars, and they are separate because they answer
+   different questions. An earlier drawing tried to put both answers in one 8px strip
+   — which trophies are done, AND what difficulty they were — and a segment there was
+   readable as neither.
+
+     progress    one fill, `completed / total`. Moves as you check trophies off.
+                 That is `progress_bar.svelte`, unchanged.
+     difficulty  four segments whose WIDTHS are each difficulty's share of the game,
+                 summing to 100%. A property of the DATA, so it does not move as you
+                 check trophies off — and that contrast is what makes the pair
+                 readable rather than fussy.
+
+   Do NOT merge these back into one bar.
+
+   Two rules make it correct rather than merely decorative:
+
+   - **The 1px separator is drawn OUTSIDE each segment** (`left: -1px`), never as a
+     flex `gap`. A gap consumes width the segments are also asking for, so the
+     proportions silently stop summing to 100% — the one thing a proportional bar must
+     never do, and invisible until somebody counts the numbers.
+   - **`min-width: 8px`.** A game with one trophy at a difficulty would otherwise
+     render a ~2px sliver. The floor distorts the proportion by at most 8px on a
+     260px track and only in that case; letting a segment vanish is worse, because the
+     bar would then lie about how much of the game that group is.
+   ========================================================================== */
+.pw-diff-bar {
+	display: flex;
+	height: 6px;
+	border-radius: 999px;
+	overflow: hidden;
+	background: var(--pw-surface-2);
+}
+.pw-diff-bar > i {
+	position: relative;
+	display: block;
+	height: 100%;
+	width: var(--pw-w);
+	min-width: 8px;
+}
+.pw-diff-bar > i + i::before {
+	content: '';
+	position: absolute;
+	left: -1px;
+	top: 0;
+	bottom: 0;
+	width: 2px;
+	background: var(--pw-bg);
+	z-index: 2;
+}
+
+/* ============================================================================
+   POINTER CURSOR — one base rule, not a per-component class.
+
+   `cursor: auto` resolves to the *default* arrow for every button and link in the
+   app, so nothing on screen says "this does something" until you press it. On a
+   mouse that is a small tax on every hover; on touch it does not exist at all,
+   which is why the mobile bar and the trophy rail had to carry their own cursor.
+
+   Declared here rather than per component so a new control cannot ship without it.
+   `achievement_row.svelte`'s per-instance `cursor-pointer` / `cursor-default` pair
+   is still correct and still needed: a Steam-locked trophy is a control that
+   genuinely does nothing, and that has to be said per instance.
+
+   Keep this list explicit. A blanket `* { cursor: pointer }` makes text look
+   selectable when it is not.
+   ========================================================================== */
+button,
+a,
+[role='button'],
+summary,
+label[for],
+select {
+	cursor: pointer;
+}
+/*
+   Anything genuinely inert keeps its own cursor and says so:
+     - `:disabled` is a real button in an un-actionable state
+     - `[aria-disabled]` is the Svelte 5 idiom for a button that looks live but
+       is not (`action_button.svelte` binds `inert` while `loading`)
+     - `.pw-press.is-locked` marks a control that is focusable and announced but
+       will not respond — a Steam-locked trophy
+*/
+button:disabled,
+a[aria-disabled='true'],
+[aria-disabled='true'],
+.pw-inert {
+	cursor: not-allowed;
+}
+.is-locked,
+.is-locked.pw-press {
+	cursor: default;
+}
+
+/* View Transition: slide pages
+
+   This is the FALLBACK. It only runs for the parts of the swap that are not the
+   shared element — when a game is reached from the mobile bar, from a search
+   result, from a bookmark or on a browser without `startViewTransition`, there is
+   no named card and the whole root cross-fades.
+
+   150ms over an 8px slide is too short to read as movement; it registers as a
+   flicker. 220ms over 12px is still well under the 300ms that starts to feel
+   like waiting, but is long enough to show which way the app moved. */
 @keyframes slide-in {
-	from { opacity: 0; transform: translateX(8px); }
+	from { opacity: 0; transform: translateX(12px); }
 	to { opacity: 1; transform: translateX(0); }
 }
 @keyframes slide-out {
 	from { opacity: 1; transform: translateX(0); }
-	to { opacity: 0; transform: translateX(-8px); }
+	to { opacity: 0; transform: translateX(-12px); }
 }
 ::view-transition-old(root) {
-	animation: slide-out 150ms ease-in;
+	animation: slide-out 220ms var(--pw-motion-in);
 }
 ::view-transition-new(root) {
-	animation: slide-in 150ms ease-out;
+	animation: slide-in 220ms var(--pw-motion-settle);
+}
+
+/*
+   The shared element crosses on its own schedule: it leaves late and arrives early,
+   so the artwork is already in place while the page content is still settling
+   behind it. A named element gets its own pseudo-elements, so this rule targets
+   them rather than `root` — and it must come AFTER the `root` rules above or
+   specificity decides the wrong pair.
+*/
+::view-transition-group(pw-game-art) {
+	animation-duration: 420ms;
+	animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+::view-transition-old(pw-game-art),
+::view-transition-new(pw-game-art) {
+	animation: none;
+	mix-blend-mode: normal;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+/* Nothing cross-fades across the morph — the old art is fully covered the instant
+   the new one lands, so fading it would flash the library behind the hero. */
+::view-transition-old(pw-game-art) {
+	opacity: 0;
 }
 
 /* Prevent 300ms tap delay & highlight */
@@ -473,17 +685,178 @@
 	-webkit-tap-highlight-color: transparent;
 }
 
+/* ============================================================================
+   LIBRARY CARD MOTION — the trophy row's celebrate tier, at card amplitude.
+
+   The user asked for "the same kind of animation the trophy card has", so this
+   reuses `pw-trophy-leap`'s SHAPE rather than inventing a curve. The amplitudes
+   are not copied, and the difference is the whole point:
+
+     trophy unlock   900ms   scale 1.035, translateY -7px   a deliberate, one-off act
+     card hover      560ms   scale 1.018, translateY -4px   a glance you may repeat 40x
+
+   Same curve, different budget. A trophy is a decision; a card hover is browsing.
+   Running the 900ms/-7px version on a grid means sweeping the pointer across six
+   columns starts six 900ms celebrations, which reads as a wave rather than as
+   feedback about one card.
+
+   THE CARD NEVER MOVES ITS BOX. `.pw-card` has `transition: transform`, so a
+   transform on the element would animate the card for the entire `hover`, and the
+   card must be able to be `position: relative` for the add/remove button to sit in
+   its corner. The leap therefore lives on a nested `.pw-card-lift` wrapper that
+   holds only the artwork — the thing that is allowed to move — and the box keeps
+   every geometry property the card already depends on.
+   ========================================================================== */
+.pw-card {
+	transition: border-color 160ms var(--pw-motion-settle);
+}
+.pw-card-lift {
+	display: block;
+	transition: transform 420ms var(--pw-motion-spring);
+}
+/*
+   `(hover: hover)` is not optional. A bare `:hover` rule is sticky on touch: it
+   fires on tap and the card stays lit until you tap somewhere else, so a phone
+   user ends up with one card stuck in its hover state. Pointer-only means the
+   effect is defined for the input it belongs to.
+*/
+@media (hover: hover) {
+	.pw-card:hover {
+		border-color: var(--pw-accent);
+	}
+	.pw-card:hover .pw-card-lift {
+		transform: translateY(-4px) scale(1.018);
+		transition-duration: 560ms;
+	}
+}
+.pw-card:active .pw-card-lift {
+	transform: scale(0.985);
+	transition-duration: 90ms;
+	transition-timing-function: var(--pw-motion-in);
+}
+@media (prefers-reduced-motion: no-preference) {
+	@media (hover: hover) {
+		/* Keyboard parity: a card reached with Tab must look the same as one
+		   reached with a pointer, or the hover feedback is unavailable to
+		   anyone not using a mouse. */
+		.pw-card:focus-visible {
+			border-color: var(--pw-accent);
+		}
+		.pw-card:focus-visible .pw-card-lift {
+			transform: translateY(-4px) scale(1.018);
+		}
+	}
+}
+
+/*
+   A sheen that rides across the artwork on hover — transform-only, so it stays on
+   the compositor and never triggers a layout or a paint of the image behind it.
+   Unlike the trophy's ring this one is NOT clipped away, because it is painted on
+   the lift wrapper rather than inside the artwork's `overflow: hidden` box.
+*/
+.pw-card-sheen {
+	position: absolute;
+	inset: -40% -10%;
+	z-index: 2;
+	pointer-events: none;
+	background: linear-gradient(
+		100deg,
+		transparent 42%,
+		color-mix(in srgb, var(--pw-accent) 22%, transparent) 50%,
+		transparent 58%
+	);
+	transform: translateX(-130%);
+}
+@media (hover: hover) {
+	.pw-card:hover .pw-card-sheen {
+		animation: pw-sheen 760ms var(--pw-motion-settle);
+	}
+}
+@keyframes pw-sheen {
+	to {
+		transform: translateX(130%);
+	}
+}
+
+/* ============================================================================
+   SKELETON — a shape, not a grey rectangle.
+
+   The app's placeholders were flat `animate-pulse` blocks. A block proves the page
+   is busy; it says nothing about whether the real content will fit, so the page
+   still reflows when the data lands. `.pw-skeleton` is the frame; the blocks
+   inside it are the caller's, so the silhouette can match the component it
+   replaces (a 64x64 trophy square, a 16:9 artwork, a 5px bar).
+
+   `.pw-skeleton-fill` draws a low-contrast shimmer. Deliberately NOT a diagonal
+   scan band: a 45-degree stripe reads as "the system is busy", while a soft
+   luminance sweep reads as "this content is arriving". Amplitude is 5% of
+   `--pw-text` — at 20% it outshouts the content it is standing in for.
+   ========================================================================== */
+.pw-skeleton {
+	position: relative;
+	overflow: hidden;
+	background: var(--pw-surface);
+	border: 1px solid var(--pw-border);
+	border-radius: 0.75rem;
+}
+.pw-skeleton-fill {
+	background: var(--pw-surface-2);
+	border-radius: 0.375rem;
+}
+.pw-skeleton::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	background: linear-gradient(
+		90deg,
+		transparent 35%,
+		color-mix(in srgb, var(--pw-text) 5%, transparent) 50%,
+		transparent 65%
+	);
+	transform: translateX(-100%);
+	animation: pw-shimmer 2s var(--pw-motion-settle) infinite;
+}
+@keyframes pw-shimmer {
+	to {
+		transform: translateX(100%);
+	}
+}
+
+/* ============================================================================
+   COUNT-UP — deliberately NOT implemented here.
+
+   The obvious CSS version animates a registered `@property` and renders it back
+   through `counter-reset` + `content: counter(...)`. That moves the number into a
+   pseudo-element, so it is absent from the accessibility tree, absent from
+   find-in-page, and absent from the SSR markup — a screen reader would announce
+   nothing while the figure is on screen.
+
+   Keeping the number as real text means the roll has to be a rAF loop in TS, which
+   means `prefers-reduced-motion` has to be re-implemented in TS — exactly the
+   duplication the reduced-motion block above exists to avoid. The trade is worth
+   it: an announced number beats a smooth one. `#lib/client/countup.ts` reads the
+   media query itself and writes the final value immediately when it is set.
+   ========================================================================== */
+
 /* Skip layout + paint for off-screen rows.
    `auto <size>` makes the browser remember each row's real height after the
    first time it is rendered, so the scrollbar does not jump while estimating.
-   90px = the 64px trophy plus 2x12px row padding (`sm:p-3`) plus the 1px borders.
-   A collapsed card is exactly this tall; the estimate is only ever wrong for an
-   expanded one, which the `auto` keyword then fixes. Keep this in step with the
-   `h-16` trophy and the row's padding in achievement_row.svelte — and never let a
+
+   A collapsed card is the name line + a two-line description + the difficulty/tag
+   rail, and it is now TALLER than it used to be — the rail under its hairline is
+   the price of separating the four zones:
+
+     109px at base  = 91px of content + 2x8px padding  + 1px borders
+     117px at `sm`  = 91px of content + 2x12px padding + 1px borders
+
+   The base figure is the estimate and `auto` fixes it to the real height after the
+   first render. Keep this in step with the `h-16` trophy, the row's padding, the
+   `line-clamp-2` and the `min-h-5` rail in achievement_row.svelte — and never let a
    negative vertical margin into that row, or the card collapses to ~67px. */
 .achievement-item {
 	content-visibility: auto;
-	contain-intrinsic-size: auto 90px;
+	contain-intrinsic-size: auto 109px;
 }
 
 /* Promote the sticky nav and mobile bar to their own layers so scrolling the
