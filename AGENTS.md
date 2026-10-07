@@ -191,7 +191,8 @@ npm run dev
   fails with the one command that fixes it
   (`npx -y playwright@latest install --with-deps chromium`).
   - **`curl` cannot see UI defects.** `scripts/agent/ui-audit.mjs` does: it loads every route at
-    390/768/1440 and asserts no horizontal overflow, one copy of each control, no interactive element
+    phone 390 / tablet 768 / desktop 1440 / ultrawide 2560 and asserts no horizontal overflow,
+    one copy of each control, no interactive element
     under 40px and no console errors, then writes the screenshots you have to actually look at. Add
     `--checks <file>` to assert the controls *respond* — a geometry audit cannot see a dead control. See
     [`.agents/ui.md`](./.agents/ui.md) §6 and [scripts/agent/README.md](scripts/agent/README.md).

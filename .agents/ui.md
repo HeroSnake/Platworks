@@ -503,6 +503,26 @@ Nothing errors; every other check passes.
 
 The row is therefore kept in the list until it reports back:
 
+#### A trophy can be unlocked two ways, and both must go through the same settle
+
+The hold above is only reached if the code path that flips `localChecked` also calls
+`depart` / `release`. There are now two such paths — a tap, and Steam sync — and they differ
+only in **who decided**, never in what has to happen afterwards. A finger and Steam's XML produce
+the identical state change, so they share one function, `setChecked(id, next)` on the game page,
+which does the flip *and* the depart/release settle.
+
+**Never write `localChecked[id] = true` directly, anywhere.** Sync did exactly that and it is not a
+cosmetic bug: under the Locked filter the row left the list with nothing holding it, so the keyed
+`{#each}` destroyed it before the celebration painted, and before the collapse that *explains* the
+disappearance. A trophy the player synced simply vanished.
+
+Celebration is the other half. `achievement_row.svelte` plays `pw-celebrate` from its own
+`handleToggle`, so a synced unlock has no way to reach it — the page passes a per-unlock
+`celebration` token instead. The token is a **number, not a boolean**: the page clears it once the
+animation is over, and a row that remounts later (a filter or sort change) reads `0` and stays
+quiet. A boolean has to stay `true` for that to work, and replays the celebration on every
+remount.
+
 | Piece | Lives in | Job |
 |---|---|---|
 | `departing` | game page | `Set` of ids mid-exit. `toggleCheck` adds one when the row was listed before the flip and is not after |
@@ -603,17 +623,35 @@ Setup and the Playwright install are in [AGENTS.md](../AGENTS.md) §7. The
 script finds a dev server on `:5173` or `:4173` itself; it never starts one.
 
 ```bash
-node scripts/agent/ui-audit.mjs                                  # / + one game route, 390/768/1440
+node scripts/agent/ui-audit.mjs                                  # / + one game route, all four viewports
 node scripts/agent/ui-audit.mjs --routes /,/game/1245620
 node scripts/agent/ui-audit.mjs --checks .tmp/ui/clicks.mjs      # + click checks
 ```
 
-For any layout change it loads every route at **390 / 768 / 1440** and asserts:
+For any layout change it loads every route at **all four viewports** and asserts:
 
 1. `documentElement.scrollWidth === documentElement.clientWidth` (no horizontal overflow)
 2. **Every control appears exactly once**
 3. **No interactive element under 40px tall.**
 4. No `pageerror` and no console errors.
+
+### The four viewports: phone, tablet, desktop, ultrawide
+
+| Label | Width | Why it is in the set |
+|---|---|---|
+| phone | 390 | Where the app is actually used. A design that only exists at desktop is half a design. |
+| tablet | 768 | Where a two-pane layout has to become one, and where a filter row first fits. |
+| desktop | 1440 | The reference layout every existing rule was written against. |
+| ultrawide | 2560 | Where a centred column stops filling the screen and the layout has to answer for the leftover space. |
+
+**2560 is not decoration.** Any container that is only ever `max-w-*` looks correct at 1440 and
+breaks at 2560, because the extra width goes *somewhere* — into line length, into a lone centred
+card in a sea of background, or into whitespace nothing owns. This is the width that catches it,
+and the one most easily skipped because nobody opens a 2560px window to look at a phone app.
+
+`WIDTHS` in `scripts/agent/lib/playwright.mjs` is the single source: `ui-audit.mjs` and
+`shot.mjs` both read it, and `new-mockup.mjs` has its own `FRAMES` list because a mockup needs
+the **label** next to the number. If you add a viewport, add it to both.
 
 ### Two ways checks 2 and 3 get it wrong
 
@@ -812,7 +850,7 @@ Screenshots are **your** verification step, not the user's deliverable. `shot.mj
 - In a verify reply, report the audit numbers in prose. Link a PNG only if asked.
 
 A PNG cannot be clicked, cannot be opened in the integrated browser, pins the design to the
-two widths that were rendered, and always shows the *default* state — so it hides exactly
+the widths that were rendered, and always shows the *default* state — so it hides exactly
 the hover and click behaviour a mockup was drawn to demonstrate.
 
 Two things follow that are easy to get wrong:

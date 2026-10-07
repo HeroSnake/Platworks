@@ -196,7 +196,9 @@ the proposition is the agent's judgement, not a template's.
 ├── research.md          # if phase 2 ran
 └── shots/              # agent-only verification renders, never linked in a reply
     ├── a-inline-390.png
-    └── a-inline-1440.png
+        ├── a-inline-768.png
+        ├── a-inline-1440.png
+        └── a-inline-2560.png
 ```
 
 **The `.html` files are the deliverable.** `shots/` is scratch for your own eyes — see
@@ -216,7 +218,7 @@ Use `--game <appId>` and `--theme <id>` to pick the data and palette;
 | **Real palette values.** Copy the actual `--pw-*` hex values out of `src/app.css` into a `:root` block. | A mockup in invented colours reviews a design the app will not ship. |
 | **Real fonts.** The same Google Fonts link as `src/app.html` — Space Grotesk, Inter, JetBrains Mono. | Type is most of what is being approved. |
 | **Real data.** Actual game names, actual achievement names, actual counts, from `src/lib/data/games/*.json`. | Lorem ipsum hides the exact problem. A 64-character trophy name is what breaks a row; a 12-character one proves nothing. |
-| **Both breakpoints, in one file.** A 390 / 1440 toggle or a two-up frame. | A design that only exists at desktop is half a design. The app is mostly used on a phone. |
+| **All four viewports, in one file.** The scaffold's top bar switches phone / tablet / desktop / ultrawide — 390, 768, 1440, 2560. | A design that only exists at desktop is half a design. The app is mostly used on a phone, and only 2560 exposes a layout that is merely centred where it should use the width. |
 | **Every palette, in one file.** The scaffold ships a switcher over all six. | **Keep it.** A design approved in Ember has not been approved in Vapor — and on a surface-less layout the palette is the *only* thing separating a column from the background behind it, so it carries more weight than usual. Two of the six (`matrix`, `cyberpunk`) also change `--pw-font-display`, so switching them tests the type and not just the colour. If the proposition deliberately depends on one palette, say so in the caption. |
 | **The real states.** Empty, loading, error, locked, unlocked, expanded, long text, zero results. | Most UI bugs live in the state nobody drew. |
 | **Interactive where the interaction *is* the idea.** Real `<details>`, real checkboxes, a real tab switch. | A static picture of a dropdown is not a dropdown. |
@@ -239,13 +241,13 @@ downside listed has not been thought about.**
 **The PNGs are yours, not the user's.** They exist so *you* can see the layout you just
 drew, and so `shot.mjs` can report the two things a picture hides. The user reviews the
 **HTML**, in their browser, at whatever size they want — a PNG cannot be clicked, cannot
-be opened in the integrated browser, and freezes the design at the two widths you chose.
+be opened in the integrated browser, and freezes the design at the widths you chose.
 
 ```bash
 node scripts/agent/shot.mjs .tmp/ui/library-heatmap
 ```
 
-It renders every `.html` in the directory at 390 and 1440 into `shots/`, **and** reports a
+It renders every `.html` in the directory at all four viewports into `shots/`, **and** reports a
 horizontal scrollbar (`overflow`) plus any `pageerror` / console error. Fix the overflow
 before showing the mockup — a broken layout reads as a broken *idea*.
 
@@ -256,7 +258,7 @@ have not looked at is not verified.
 
 Do not paste the PNGs into the reply. Phase 4 links the HTML instead.
 
-Useful flags: `--widths 390,1440`, `--theme matrix` (applies a palette as `[data-theme]`),
+Useful flags: `--widths 390,768,1440,2560` (the default), `--theme matrix` (applies a palette as `[data-theme]`),
 `--viewport` instead of a full-page shot, `--out <path>` / `--out-dir <d>` for a single file.
 
 > `--out-dir` is honoured for **directory** targets only. For a **URL** target `shot.mjs`
@@ -300,12 +302,12 @@ ask, and wait.
    markdown and the link silently breaks. Backslashes are fine in the link *text*.
 
    One link per variant, and the link opens the mockup in the integrated browser — which is
-   where the user wants to review it: the mockup carries its own width toggle, so they can
-   see it at 390 and 1440 and at anything in between, and they can poke the interaction
-   instead of looking at a still of it.
+   where the user wants to review it: the mockup carries its own top bar with the four viewport
+      buttons, so they can see it from phone to ultrawide and at anything in between, and they
+      can poke the interaction instead of looking at a still of it.
 
    Never embed `shots/*.png` in the reply. A screenshot is not clickable, cannot be opened
-   in the integrated browser, pins the design to the two widths you rendered, and shows the
+   in the integrated browser, pins the design to the rendered widths, and shows the
    *default* state of an interaction whose whole point may be what happens when you hover
    or click it. The PNGs are still generated — see [phase 3](#screenshot-every-variant) —
    and you still look at them, but they are a verification step, not a deliverable.
@@ -416,7 +418,7 @@ npm run check                                          # svelte-kit sync + svelt
 node scripts/agent/ui-audit.mjs --routes <touched>      # browser audit
 ```
 
-`ui-audit.mjs` loads every affected route at **390 / 768 / 1440** and asserts:
+`ui-audit.mjs` loads every affected route at all four viewports and asserts:
 
 1. `documentElement.scrollWidth === clientWidth` — no horizontal overflow
 2. **Every control appears exactly once** — the same *labelled* control must not be
@@ -446,7 +448,7 @@ off-screen — were obvious in a screenshot and invisible to every other check.
 These PNGs are not for the reply unless asked for; the app itself is what the user
 reviews at phase 4. The report below is what they need.
 
-Report the result honestly. "Verified at 390/768/1440: no overflow, one copy of
+Report the result honestly. "Verified at phone/tablet/desktop/ultrawide: no overflow, one copy of
 each control, smallest target 40px, no console errors, 7 click checks passing" is
 what the user needs to hear. If something failed, say which check and what it found.
 

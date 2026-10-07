@@ -99,7 +99,13 @@ export async function launchBrowser(options = {}) {
 }
 
 /** The viewport widths every UI check in this repo is required to cover. */
-export const WIDTHS = [390, 768, 1440];
+export const WIDTHS = [390, 768, 1440, 2560];
+
+/**
+ * The same four, named. Mockup chrome and audit reports use the labels; a report
+ * that says "2560" tells a reader nothing, one that says "ultrawide" does.
+ */
+export const FRAME_LABELS = { 390: 'phone', 768: 'tablet', 1440: 'desktop', 2560: 'ultrawide' };
 
 /** Page height per width. Tall enough that a filter row is never below the fold. */
 export const HEIGHT = 900;

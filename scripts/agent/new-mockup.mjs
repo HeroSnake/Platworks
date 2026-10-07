@@ -9,27 +9,28 @@
  *     reviewed in one palette has not been reviewed in five)
  *   - real fonts, the same Google Fonts link as `src/app.html`
  *   - real data, actual game and achievement names from `src/lib/data/games/`
- *   - a demo chrome with a width toggle AND a palette switcher, so one file
- *     demonstrates both breakpoints and every theme when the user opens it
- *
- * This writes a starter that already has all four, plus the notes.md skeleton
- * the gate requires. What it does NOT do is design anything: the layout is a
- * blank frame, because the propositions are the agent's judgement, not a
- * template's.
- *
- * The palettes are parsed, never transcribed, so a seventh theme added to
- * app.css appears in every future mockup's switcher with no change here.
- *
- * Usage:
- *   node scripts/agent/new-mockup.mjs library-heatmap
- *   node scripts/agent/new-mockup.mjs game-hero-rework --game 1245620 --theme matrix
- *   node scripts/agent/new-mockup.mjs library-heatmap --list-games
- *
- * Options:
- *   --game <appId>   Game to take real data from. Default: the largest in the dir.
- *   --theme <id>     Palette to seed, i.e. the one the file opens in. Default: ember.
- *   --variants <a,b> Variant stems to create. Default: a-inline
- */
+ *   - a demo chrome: a viewport selector AND a palette switcher, pinned to the
+  *     top of the window, so one file demonstrates all four viewports and every
+  *     theme when the user opens it
+  *
+  * This writes a starter that already has all four, plus the notes.md skeleton
+  * the gate requires. What it does NOT do is design anything: the layout is a
+  * blank frame, because the propositions are the agent's judgement, not a
+  * template's.
+  *
+  * The palettes are parsed, never transcribed, so a seventh theme added to
+  * app.css appears in every future mockup's switcher with no change here.
+  *
+  * Usage:
+  *   node scripts/agent/new-mockup.mjs library-heatmap
+  *   node scripts/agent/new-mockup.mjs game-hero-rework --game 1245620 --theme matrix
+  *   node scripts/agent/new-mockup.mjs library-heatmap --list-games
+  *
+  * Options:
+  *   --game <appId>   Game to take real data from. Default: the largest in the dir.
+  *   --theme <id>     Palette to seed, i.e. the one the file opens in. Default: ember.
+  *   --variants <a,b> Variant stems to create. Default: a-inline
+  */
 import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -39,6 +40,25 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const APP_CSS = join(ROOT, 'src/app.css');
 const APP_HTML = join(ROOT, 'src/app.html');
 const GAMES_DIR = join(ROOT, 'src/lib/data/games');
+
+/**
+ * The four viewports every mockup has to answer for, and the only widths
+ * `shot.mjs` and `ui-audit.mjs` render by default.
+ *
+ * The labels are the point, not the pixels: a reviewer asked to look at
+ * "ultrawide" does not compute that a design stops working somewhere past
+ * 1920, and a designer saying "phone" should not have to know it means 390.
+ *
+ * Order is mobile → ultrawide so `frame` reads as a progression.
+ */
+const FRAMES = [
+	{ id: 'phone', label: 'Phone', width: 390 },
+	{ id: 'tablet', label: 'Tablet', width: 768 },
+	{ id: 'desktop', label: 'Desktop', width: 1440 },
+	{ id: 'ultrawide', label: 'Ultrawide', width: 2560 }
+];
+
+const DEFAULT_FRAME = 'phone';
 
 function parseArgs(argv) {
 	const args = { theme: 'ember', game: null, variants: ['a-inline'] };
@@ -150,6 +170,16 @@ function starterHtml({ variant, themeId, palette, palettes, fontHref, game }) {
 		)
 		.join('\n\t\t\t\t');
 
+		/*
+		 * `data-width` rides on the button as well as `data-frame`: the button is what the
+		 * click handler reads to size the frame, so keeping the number next to the id means
+		 * the two can never disagree.
+		 */
+		const frameButtons = FRAMES.map(
+			(f) =>
+				`<button type="button" data-frame="${f.id}" data-width="${f.width}" aria-pressed="${f.id === DEFAULT_FRAME}" title="${f.label} ${f.width}px"><span>${f.label}</span><span class="px">${f.width}</span></button>`
+		).join('\n\t\t\t\t');
+
 	const sample = game.achievements.slice(0, 6).map((a) => ({
 		name: a.name,
 		description: a.description,
@@ -165,7 +195,7 @@ function starterHtml({ variant, themeId, palette, palettes, fontHref, game }) {
 	It has to survive being deleted and open by double-click with nothing running.
 
 	Replace the frame below with the proposition. Keep:
-	  - the toggle, so both breakpoints are in this one file
+		  - the chrome bar, so all four viewports and every palette are in this one file
 	  - --pw-* tokens, so the design is the app's
 	  - at least one real state (empty / loading / error / locked / unlocked)
 	  - a caption at the bottom: what it borrows, what it costs, what it breaks
@@ -192,43 +222,54 @@ ${tokens}
 			h1, h2, .display { font-family: var(--pw-font-display); }
 			button { font: inherit; }
 
-			/* Demo chrome: a width toggle AND a palette switcher.
-			   Both are in every mockup, because a design approved in one palette has
-			   not been approved in the other five — and on a surface-less layout the
-			   palette is doing more work than usual, because it is the only thing
-			   separating a column from the background behind it.
+			/* Demo chrome: a viewport selector AND a palette switcher, in one bar
+						   pinned to the top of the window.
 
-			   Buttons clear --tap because shot.mjs runs the same 40px floor over a
-			   mockup as over the app, and chrome that fails the check teaches the
-			   wrong habit. .chrome wraps to as many rows as it needs and max-width
-			   stops it overflowing at 390 — the frame's top padding is
-			   sized for the CHROME's height, so the two stay in step. */
-			.chrome {
-				position: fixed; top: 8px; right: 8px; z-index: 10;
-				display: flex; flex-direction: column; align-items: flex-end; gap: 6px;
-				max-width: calc(100vw - 16px);
-			}
-			.toggle {
-				display: flex; flex-wrap: wrap; gap: 4px; padding: 4px;
-				background: var(--pw-surface-2); border: 1px solid var(--pw-border);
-				border-radius: 8px;
-			}
-			.toggle button {
-				display: inline-flex; align-items: center; gap: 5px;
-				min-height: var(--tap); padding: 0 10px;
-				background: transparent; color: var(--pw-dim);
-				border: 0; border-radius: 6px; cursor: pointer; font-size: 12px;
-			}
-			.toggle button[aria-pressed='true'] { background: var(--pw-accent); color: var(--pw-accent-ink); }
-			.dot { width: 12px; height: 12px; border-radius: 3px; border: 1px solid rgba(255,255,255,0.25); flex: none; }
+						   FIXED, not absolute, and full-bleed rather than a floating stack in one
+						   corner. The bar is the only way to change what you are looking at, so it
+						   has to survive scrolling a long frame — and at four viewports plus six
+						   palettes a corner stack grows tall enough to cover the design it sits
+						   over. Spanning the top keeps it out of the way and always reachable.
 
-			/* The frame reserves room for the fixed chrome above it. Six labelled
-			   palette buttons cannot fit one 374px row at 390, so they wrap to two and
-			   the control is three rows tall — about 152px. The real app has a 64px
-			   navbar in that space, so a tall reservation is honest, not a fudge. */
-			.frame { margin: 0 auto; border-left: 1px solid var(--pw-border); border-right: 1px solid var(--pw-border); padding-top: 164px; }
-			body[data-frame='390'] .frame { max-width: 390px; }
-			body[data-frame='1440'] .frame { max-width: 1440px; }
+						   Buttons clear --tap because shot.mjs runs the same 40px floor over a
+						   mockup as over the app, and chrome that fails the check teaches the
+						   wrong habit. */
+						.chrome {
+							position: fixed; top: 0; left: 0; right: 0; z-index: 10;
+							display: flex; flex-wrap: wrap; align-items: center;
+							justify-content: space-between; gap: 8px;
+							padding: 8px 12px;
+							background: color-mix(in srgb, var(--pw-surface-2) 92%, transparent);
+							backdrop-filter: blur(10px);
+							border-bottom: 1px solid var(--pw-border);
+			}
+						.toggle {
+							display: flex; flex-wrap: wrap; gap: 4px; padding: 4px;
+							background: var(--pw-surface); border: 1px solid var(--pw-border);
+							border-radius: 8px;
+						}
+						.toggle button {
+							display: inline-flex; align-items: center; gap: 5px;
+							min-height: var(--tap); padding: 0 10px;
+							background: transparent; color: var(--pw-dim);
+							border: 0; border-radius: 6px; cursor: pointer; font-size: 12px;
+						}
+						.toggle button[aria-pressed='true'] { background: var(--pw-accent); color: var(--pw-accent-ink); }
+						/* The pixel count beside each label, not instead of it. */
+						.px { font-size: 10px; opacity: 0.65; font-variant-numeric: tabular-nums; }
+						.dot { width: 12px; height: 12px; border-radius: 3px; border: 1px solid rgba(255,255,255,0.25); flex: none; }
+
+						/* The stage reserves the chrome's MEASURED height (--chrome-h, set by the
+						   ResizeObserver below), because the bar wraps to two rows at narrow window
+						   widths and a hand-tuned padding-top goes stale the moment it does. */
+						.stage { padding-top: calc(var(--chrome-h, 60px) + 12px); }
+						.frame {
+							margin: 0 auto; box-sizing: border-box;
+							border-left: 1px solid var(--pw-border);
+							border-right: 1px solid var(--pw-border);
+							transform-origin: top center;
+						}
+			${FRAMES.map((f) => `\t\t\tbody[data-frame='${f.id}'] .frame { max-width: ${f.width}px; }`).join('\n')}
 
 			.caption {
 				max-width: 60ch; margin: 32px auto; padding: 16px 20px;
@@ -238,26 +279,29 @@ ${tokens}
 			.caption strong { color: var(--pw-text); }
 		</style>
 	</head>
-	<body data-frame="390">
+	<body data-frame="${DEFAULT_FRAME}">
 		<!--
-			Demo chrome: a width toggle AND a palette switcher, in one fixed stack.
+				Demo chrome: a viewport selector AND a palette switcher, in one fixed bar
+				across the top of the window. Always visible, so the design can be judged at
+				every viewport and in every palette from one file without scrolling back up.
 
-			The palette attribute goes on <html>, not <body>, because that is where the
-			app reads it — src/app.html applies it before first paint for exactly
-			this reason. Setting it anywhere else would look right in the mockup and
-			wrong in the port.
-		-->
-		<div class="chrome">
-			<div class="toggle" role="group" aria-label="Frame width">
-				<button type="button" data-frame="390" aria-pressed="true">390</button>
-				<button type="button" data-frame="1440" aria-pressed="false">1440</button>
+				The palette attribute goes on <html>, not <body>, because that is where the
+				app reads it — src/app.html applies it before first paint for exactly
+				this reason. Setting it anywhere else would look right in the mockup and
+				wrong in the port.
+			-->
+			<div class="chrome">
+				<div class="toggle" role="group" aria-label="Viewport">
+					${frameButtons}
+				</div>
+				<div class="toggle" role="group" aria-label="Palette">
+					${themeButtons}
+				</div>
 			</div>
-			<div class="toggle" role="group" aria-label="Palette">
-				${themeButtons}
-			</div>
-		</div>
 
-		<main class="frame">
+			<div class="stage">
+				<div class="stage-fit">
+			<main class="frame" data-width="${FRAMES[0].width}">
 			<!--
 				THE PROPOSITION GOES HERE.
 
@@ -285,6 +329,8 @@ ${sample
 				</ul>
 			</section>
 		</main>
+							</div>
+						</div>
 
 		<aside class="caption">
 			<strong>Variant ${variant}.</strong> What it borrows, what it costs, what it breaks elsewhere.
@@ -297,31 +343,66 @@ ${sample
 			'\t'
 		)}</script>
 		<script>
-			/*
-			 * Scoped to [data-frame] and [data-theme] SEPARATELY, never ".toggle button".
-			 * Two groups now live under .toggle, and the unscoped selector matched
-			 * both — so clicking a palette also ran the width handler with
-			 * btn.dataset.frame undefined, writing the string "undefined" onto
-			 * <body data-frame> and collapsing the frame to the 390 rule.
-			 */
-			for (const btn of document.querySelectorAll('.toggle [data-frame]')) {
-				btn.addEventListener('click', () => {
-					document.body.dataset.frame = btn.dataset.frame;
-					for (const b of document.querySelectorAll('.toggle [data-frame]')) {
-						b.setAttribute('aria-pressed', String(b === btn));
-					}
-				});
-			}
+					const frame = document.querySelector('.frame');
+					const stageFit = document.querySelector('.stage-fit');
 
-			for (const btn of document.querySelectorAll('.toggle [data-theme]')) {
-				btn.addEventListener('click', () => {
-					document.documentElement.dataset.theme = btn.dataset.theme;
-					for (const b of document.querySelectorAll('.toggle [data-theme]')) {
-						b.setAttribute('aria-pressed', String(b === btn));
+					/*
+					 * Ultrawide is 2560px of design and most reviewers open a mockup in a
+					 * laptop browser, so an unscaled 2560px frame is a horizontal scrollbar and
+					 * nothing else. Scaling to fit keeps it reviewable; NOT scaling would have
+					 * made the fourth viewport decorative.
+					 *
+					 * A transform does not change layout height, so .stage-fit is given the
+					 * SCALED height explicitly — otherwise the frame reserves its full 2560px
+					 * of blank space below the visible content.
+					 */
+					function fit() {
+						const width = Number(frame.dataset.width);
+						const available = document.documentElement.clientWidth;
+						const scale = Math.min(1, available / width);
+						// Concatenation, not a template literal: this whole block lives inside the
+						// scaffold's own template literal, so a nested backtick would close it.
+						frame.style.transform = scale < 1 ? 'scale(' + scale + ')' : 'none';
+						stageFit.style.height = scale < 1 ? frame.offsetHeight * scale + 'px' : '';
 					}
-				});
-			}
-		</script>
+
+					/*
+					 * Scoped to [data-frame] and [data-theme] SEPARATELY, never ".toggle button".
+					 * Two groups now live under .toggle, and the unscoped selector matched
+					 * both — so clicking a palette also ran the width handler with
+					 * btn.dataset.frame undefined, writing the string "undefined" onto
+					 * <body data-frame> and collapsing the frame to the phone rule.
+					 */
+					for (const btn of document.querySelectorAll('.toggle [data-frame]')) {
+						btn.addEventListener('click', () => {
+							document.body.dataset.frame = btn.dataset.frame;
+							for (const b of document.querySelectorAll('.toggle [data-frame]')) {
+								b.setAttribute('aria-pressed', String(b === btn));
+							}
+							frame.dataset.width = btn.dataset.width;
+							fit();
+						});
+					}
+
+					for (const btn of document.querySelectorAll('.toggle [data-theme]')) {
+						btn.addEventListener('click', () => {
+							document.documentElement.dataset.theme = btn.dataset.theme;
+							for (const b of document.querySelectorAll('.toggle [data-theme]')) {
+								b.setAttribute('aria-pressed', String(b === btn));
+							}
+						});
+					}
+
+					// The bar wraps to two rows in a narrow window, and its height is what
+										// .stage reserves, so the two are observed rather than hard-coded.
+					const chrome = document.querySelector('.chrome');
+					new ResizeObserver(() => {
+						document.body.style.setProperty('--chrome-h', chrome.offsetHeight + 'px');
+					}).observe(chrome);
+
+					window.addEventListener('resize', fit);
+					fit();
+				</script>
 	</body>
 </html>
 `;

@@ -1,7 +1,7 @@
 /**
  * Screenshots mockup HTML (or any URL) at every width a mockup must prove.
  *
- * Phase 3 of /ui-project requires every variant rendered at 390 and 1440 with the
+ * Phase 3 of /ui-project requires every variant rendered at all four viewports with the
  * PNGs in the reply. This does that in one command, and reports the two things
  * that are cheaper to fix before a human looks at the image than after:
  *
@@ -17,7 +17,7 @@
  *   node scripts/agent/shot.mjs .tmp/ui/library-heatmap --theme matrix
  *
  * Options:
- *   --widths <a,b>  Default 390,1440. The mockup gate covers exactly those two.
+ *   --widths <a,b>  Default: 390,768,1440,2560 — the four viewports.
  *   --out <path>    Single-file output. Ignored when screenshotting a directory.
  *   --out-dir <d>   Default: <mockup dir>/shots
  *   --theme <id>    A palette from src/app.css; sets [data-theme] on <html>.
@@ -34,7 +34,7 @@ import { run } from './lib/cli.mjs';
 /** Repo root, so scratch output lands in the gitignored `.tmp/` and never in the root. */
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 
-const DEFAULT_WIDTHS = [390, 1440];
+const DEFAULT_WIDTHS = [390, 768, 1440, 2560];
 const DEFAULT_HEIGHT = 900;
 
 /** The same floor the app holds; a mockup drawn below it is not the app's design. */
@@ -66,11 +66,11 @@ function parseArgs(argv) {
 	}
 
 const HELP = `
-shot.mjs — render a mockup (or any URL) at 390 and 1440 and check it
+shot.mjs — render a mockup (or any URL) at all four viewports and check it
 
   node scripts/agent/shot.mjs <html|dir|url> [options]
 
-  --widths <a,b>  Default 390,1440
+  --widths <a,b>  Default: 390,768,1440,2560
   --out <path>    Output PNG for a single file target
   --out-dir <d>   Default: <mockup dir>/shots
   --theme <id>    Palette from src/app.css, applied as [data-theme]
@@ -128,7 +128,7 @@ async function main() {
 			const files = await mockupFiles(abs);
 			if (!files.length) throw new Error(`No .html files in ${target}`);
 			outDir = args.outDir ?? join(abs, 'shots');
-			// The mockup gate is 390 + 1440. `a-`, `b-`, `c-` prefixes keep the
+			// All four viewports. The `a-`, `b-`, `c-` prefixes keep the
 			// variant order visible in the shots folder.
 			jobs = files.flatMap((file) =>
 				args.widths.map((width) => ({
