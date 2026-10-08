@@ -443,7 +443,7 @@ import { untrack } from 'svelte';
 			prose that expands inside each row comfortably inside a readable measure
 			while the progress summary stays on screen while you scroll 200 trophies.
 					-->
-			<div class="mx-auto max-w-[1400px] px-4 pb-24 pt-4 sm:px-6 sm:pt-6 lg:grid lg:grid-cols-[288px_minmax(0,1fr)] lg:gap-6 lg:px-8 lg:pb-16">
+			<div class="mx-auto max-w-[1400px] px-4 pb-[calc(6rem+env(safe-area-inset-bottom,0px))] pt-4 sm:px-6 sm:pt-6 lg:grid lg:grid-cols-[288px_minmax(0,1fr)] lg:gap-6 lg:px-8 lg:pb-16">
 			<!--
 				Sticky on desktop only. Below `lg` it is the first block in the flow, so
 				`position: sticky` would pin a tall hero to the top of the scroll and

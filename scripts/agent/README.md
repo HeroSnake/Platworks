@@ -25,6 +25,8 @@ It is the wrong place for a script that will be written again next week.
 | `steam-achievements.mjs` | Fetches the Steam global achievement list once and parses it to `.tmp/game-data/{appId}/achievements.json`. Phase 2 of [/generate-game-data](../../.github/prompts/generate-game-data.prompt.md). |
 | `ledger.mjs` | The fetch ledger as a CLI: `check` before every request, `add` before fetching, `resolve` after. Enforces the "log before fetch" rule that stops the same wiki index being opened four times. |
 | `check-links.mjs` | Verifies `mapUrl` and `guide.sourceUrl` return 200. Reports a Cloudflare 403 as *unverifiable*, never as dead. |
+| `make-icons.mjs` | Rasterises `static/icon.svg` and `static/icon-maskable.svg` into the PWA PNGs (192, 512, maskable 192/512, apple-touch 180). The icons are **generated files** — after editing either SVG, run this or commit a stale tile. `--check` fails instead of writing, for review and CI. Chromium is the rasteriser, so no system dependency. |
+| `pwa-check.mjs` | Proves the PWA works in a real browser: registration, precache contents, an offline launch, offline interactivity, that `/api/steam/*` is never cached, and the unvisited-route fallback. **Neither `npm run check` nor a build can see any of this** — a service worker only exists in a browser, and offline only exists once the network is taken away. Needs a build and a running server: `npm run build && npm run preview &` then `node scripts/agent/pwa-check.mjs`. |
 
 | Library | Job |
 |---|---|

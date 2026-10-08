@@ -342,6 +342,28 @@ and Cyberpunk split them deliberately.
   a palette, since `--pw-accent-ink` exists precisely so text on an accent button stays legible on the
   lighter palettes.
 
+### Safe-area insets: pad the bars, not the body
+
+The app is a PWA, so it runs in standalone mode under a notch and a home indicator. `app.css` pads
+`.sticky-nav` with `env(safe-area-inset-top)` and `.fixed-bottom-bar` with `env(safe-area-inset-bottom)`.
+
+Two things make this easy to get wrong:
+
+- **The viewport meta must carry `viewport-fit=cover`** (`src/app.html`). Without it the layout viewport stops
+  at the safe area, the insets resolve to `0`, and the padding silently does nothing — no error, no warning.
+- **Anything that clears the fixed bottom bar must add the inset too.** The bar *grows* by
+  `env(safe-area-inset-bottom)`, so the library (`pb-[calc(5rem+env(...))]`) and game page
+  (`pb-[calc(6rem+env(...))]`) use `calc()` rather than a fixed `pb-20`/`pb-24`. A fixed value hides the last
+  row of content behind the home indicator.
+
+Pad the **bars**, not the body: both bars are the surfaces that reach a screen edge, so extending their
+background under the notch while pushing their contents inward is what reads as native. Padding the body
+leaves a bare strip of body background beside them.
+
+In an ordinary browser tab every inset is `0`, so these rules are inert there and cannot affect the desktop
+UI — which also means the `ui-audit.mjs` run will never catch a regression. Verify the standalone case on a
+real device.
+
 ### Text on an accent fill is `text-accent-ink`, never `text-steam-dark`
 
 `--pw-accent-ink` is the only ink allowed on a `bg-steam-accent` surface. The obvious-looking alternative,

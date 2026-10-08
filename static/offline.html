@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<title>PlatWorks — Offline</title>
+		<meta name="theme-color" content="#0c0a09" />
+		<link rel="icon" href="/icon-192.png" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<!--
+			Served from `static/`, so it bypasses Tailwind and Svelte entirely: the
+			service worker has to be able to answer a navigation with this before any
+			JavaScript or stylesheet has been fetched. The colours are the Ember
+			palette's `--pw-bg` / `--pw-accent` / `--pw-dim` from `src/app.css`,
+			copied rather than imported because no build step runs on this file.
+			Keep the two in step.
+		-->
+		<style>
+			html {
+				/* `viewport-fit=cover` on the meta above is what makes these insets
+				     non-zero on a notched device in standalone mode. */
+				-webkit-text-size-adjust: 100%;
+			}
+			body {
+				margin: 0;
+				min-height: 100dvh;
+				display: grid;
+				place-items: center;
+				padding: 1.5rem;
+				padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
+				box-sizing: border-box;
+				background: #0c0a09;
+				color: #f1eae2;
+				font-family:
+					'Space Grotesk',
+					ui-sans-serif,
+					system-ui,
+					-apple-system,
+					'Segoe UI',
+					sans-serif;
+				-webkit-font-smoothing: antialiased;
+			}
+			main {
+				max-width: 26rem;
+				text-align: center;
+			}
+			svg {
+				width: 4.5rem;
+				height: 4.5rem;
+				color: #ff7a45;
+			}
+			h1 {
+				margin: 1.25rem 0 0;
+				font-size: 1.5rem;
+				font-weight: 700;
+				letter-spacing: -0.01em;
+			}
+			p {
+				margin: 0.625rem 0 0;
+				color: #a4988c;
+				font-size: 0.9375rem;
+				line-height: 1.6;
+			}
+			.retry {
+				display: inline-grid;
+				place-items: center;
+				margin-top: 1.75rem;
+				min-height: 44px;
+				padding: 0 1.25rem;
+				border-radius: 0.625rem;
+				background: #ff7a45;
+				color: #2b0e03;
+				font-weight: 600;
+				text-decoration: none;
+			}
+			.retry:active {
+				filter: brightness(0.92);
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="1.8"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				aria-hidden="true"
+			>
+				<path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+				<path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+				<path d="M4 22h16" />
+				<path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+				<path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+				<path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+			</svg>
+			<h1>You&rsquo;re offline</h1>
+			<p>
+				PlatWorks needs a connection the first time it loads a page, and to sync your Steam
+				achievements. Reconnect and it&rsquo;s back to normal &mdash; your progress is saved on
+				this device.
+			</p>
+			<!-- A plain link, not a button with `onclick="location.reload()"`: following it
+			     navigates to `/`, which re-enters the service worker's fetch handler and
+			     therefore re-checks the network. It also needs no inline script, so it
+			     keeps working under a strict Content-Security-Policy if one is ever set. -->
+			<a class="retry" href="/">Try again</a>
+		</main>
+	</body>
+</html>

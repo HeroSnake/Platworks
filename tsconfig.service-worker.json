@@ -1,0 +1,15 @@
+{
+	// The service worker is a separate compilation unit with a different global
+	// scope, so the app tsconfig excludes it. This one extends Kit's service-worker
+	// base (`WebWorker` lib, no DOM) and is wired into `npm run check` as
+	// `check:sw` — without it, `src/service-worker/` would be compiled but never
+	// type-checked, which is how a wrong `$app/manifest` import survives review.
+	"extends": "$app/tsconfig/service-worker",
+	"compilerOptions": {
+		// Kit's service-worker base ships without `strict`, so every parameter
+		// would otherwise be an implicit `any`. The app tsconfig has it on; this
+		// unit must be held to the same bar.
+		"strict": true
+	},
+	"include": ["src/service-worker/**/*.ts"]
+}

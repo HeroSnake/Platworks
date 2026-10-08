@@ -154,7 +154,17 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 	<meta name="apple-mobile-web-app-title" content="PlatWorks" />
-	<link rel="apple-touch-icon" href="/icon.svg" />
+	<!--
+		PNG, never SVG: iOS ignores an SVG `apple-touch-icon` and installs the app
+		with a blank tile. Generated from `icon.svg` by `scripts/agent/make-icons.mjs`
+		— re-run it if the icon changes.
+	-->
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<!--
+		Chrome's install prompt needs this to fire; `apple-mobile-web-app-capable`
+		above is the iOS equivalent and the two do not substitute for each other.
+	-->
+	<meta name="mobile-web-app-capable" content="yes" />
 </svelte:head>
 
 <!--

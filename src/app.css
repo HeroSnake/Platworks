@@ -868,6 +868,32 @@ a[aria-disabled='true'],
 }
 
 /* ============================================================
+   SAFE-AREA INSETS
+   ------------------------------------------------------------
+   Only non-zero once the app is installed and opened in standalone mode on a
+   device with a notch or a home indicator. In a browser tab every inset is 0,
+   so these rules are inert there and cannot affect the desktop UI.
+
+   They require `viewport-fit=cover` on the viewport meta in `src/app.html` —
+   without it the layout viewport stops at the safe area, the insets resolve to
+   0, and the padding silently does nothing.
+
+   Padding goes on the *bars*, not the page: both are the surfaces that reach a
+   screen edge, so extending their background under the notch / indicator while
+   pushing their contents inward is what makes an installed app read as native.
+   Padding the body instead would leave a bare strip of `body` background beside
+   them. The `env()` fallback keeps older engines that do not support the
+   function at 0 rather than dropping the whole declaration.
+*/
+.sticky-nav {
+	padding-top: env(safe-area-inset-top, 0px);
+}
+
+.fixed-bottom-bar {
+	padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* ============================================================
    BACKGROUND PATTERN
    ------------------------------------------------------------
    A tilted 135px tile behind the whole app: 45° dashes in the palette's

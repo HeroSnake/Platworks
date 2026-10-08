@@ -2,7 +2,16 @@
 <html lang="en" class="dark">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--
+			`viewport-fit=cover` extends the layout viewport under the notch and home
+			indicator so `env(safe-area-inset-*)` in `app.css` can pad the sticky nav
+			and the mobile bar. Without it the insets are all zero and, in standalone
+			mode on iOS, the nav renders underneath the status bar.
+		-->
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, viewport-fit=cover"
+		/>
 		<meta name="text-scale" content="scale" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

@@ -266,7 +266,13 @@
 			}
 </script>
 
-<div class="w-full px-4 pb-20 pt-6 sm:px-6 sm:pb-16 sm:pt-10 lg:px-8">
+<!--
+	The bottom padding clears the fixed mobile bar, and adds the safe-area inset
+	because that bar grows by it (see the SAFE-AREA INSETS block in `app.css`).
+	Without the `calc`, the last row of games sits under the home indicator on an
+	installed iPhone. Zero in a browser tab, so the desktop layout is untouched.
+-->
+<div class="w-full px-4 pb-[calc(5rem+env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pb-16 sm:pt-10 lg:px-8">
 	<!-- Hero -->
 	<section class="mb-6 sm:mb-8">
 		<!--

@@ -25,6 +25,10 @@ SvelteKit 3's API differs from v2 in ways that are easy to get wrong. These are 
 | **`goto()` options were renamed** | `replaceState`→`replace`, `invalidateAll`→`refreshAll`; `noScroll`+`keepFocus` collapsed into a single `reset` flag |
 | **Shallow `goto` still fires `onNavigate`** | `goto(url, { shallow: true })` calls `_before_navigate()` internally, so `onNavigate` runs and the View Transition plays. For "update the URL only" use the **deprecated** `replaceState(url, state)` from `$app/navigation` — it is the one API that skips the navigation hooks. It logs a one-time dev warning; that is the accepted cost |
 | **Per-keystroke navigation** | Never call `goto()` from an `oninput` handler. Besides animating, it can re-run `+page.server.ts` (the library `load` fetches Steam details for every game) |
+| **`$app/manifest` was renamed in Kit 3** | The published service-worker docs still show `build`, `files` and `version`. In Kit 3 the module exports **`immutable`** and **`assets`**, and `version` lives in **`$app/env`**. Both exports are arrays of `{ path }` **objects**, not strings — `map((e) => e.path)` before using them as URLs. Copying the documented snippet is a build error |
+| **The service worker is a separate TS unit** | `tsconfig.json` excludes `src/service-worker/`, so `svelte-check` never sees it. `tsconfig.service-worker.json` extends `$app/tsconfig/service-worker` and is run by `npm run check:sw` (chained from `npm run check`). Kit's base config ships **without `strict`**, so it re-enables it explicitly. Without this, the worker is compiled but never type-checked |
+| **SvelteKit's chunks load via dynamic `import()`** | There are no `<script src>` tags for the app entry — the inline bootstrap does `import('./_app/immutable/entry/start.*.js')`. So `document.querySelectorAll('script')` finds nothing, and a broken chunk graph leaves SSR'd markup painted but the app inert. Test interactivity by clicking, never by counting script tags |
+| **Kit's service worker must not import `$app/forms` / `$app/navigation` / `$app/state`** | A build-time guard rejects them. `$app/service-worker`, `$app/env`, `$app/manifest` and `$app/paths` are the supported set |
 | **`#lib/server/*` in a component fails the build** | A page that imports a server-only module fails with `SvelteKit error: server_only_import`. The SSR build succeeds first, so the log **looks** like a successful build until the client environment errors — always check the exit code, not the chunk listing. Move the lookup into `+page.server.ts` and take the data via `data` props. A scratch/debug page is still a route: it ships with the app |
 
 ## 1a. Reading a build log that "succeeded"
@@ -77,6 +81,29 @@ Adding a route means adding a row here and a row in §4 of
 [AGENTS.md](../AGENTS.md). Nothing goes in the README — it carries no structure
 tree.
 
+## 2b. Offline and the service worker
+
+The app is a PWA: `src/service-worker/index.ts` is bundled to `/service-worker.js`
+and registered automatically (`serviceWorker.register` defaults to true). Cache
+policy lives in that file's header comment — read it before changing anything
+about caching. The three rules that are easy to get wrong:
+
+| Rule | Why |
+|---|---|
+| **`cache.match` needs `ignoreVary: true`** | Vercel and `vite preview` answer with `Vary: Origin`. Precache entries are created in `install` with no `Origin` header, but SvelteKit loads its chunks via `import()` on a **cross-origin-mode** request that does send one — so every JS chunk silently misses the cache and falls through to the network. Offline, the SSR'd markup still paints (stylesheets have no `Origin` to disagree about) so it *looks* fine while the app is dead. `scripts/agent/pwa-check.mjs` asserts a card click still routes, which is the only honest test |
+| **`/` is precached, and not atomically** | A page loaded before its worker activates is never intercepted, so on a first visit `/` never reaches `networkFirst` and is never cached. Without it in the precache, every cold start offline lands on `offline.html`. It is cached with `cache.add(...).catch()` rather than inside `addAll`, because `/` is SSR and calls Steam — a Steam outage must not block activation |
+| **`/api/steam/*` is never cached** | It is achievement sync. A stale hit reports the wrong unlocked state as fact, which is worse than an error, and both call sites already degrade to an error message |
+
+The precache deliberately excludes `static/images/games/**` (~11MB). Precaching
+it would slow install enough that Chrome may never fire the install prompt, and
+burn the origin quota on images the user may never open; artwork is cached on
+demand instead.
+
+There is deliberately **no `skipWaiting()`**: with no update prompt, the next
+build's worker waits until every tab has closed, which is the only way to
+guarantee a session never has its chunks swapped underneath it mid-navigation.
+The cost is that a user who never closes their last tab stays on the old build.
+
 ## 3. Hydration: the `hydrated` gate
 
 Svelte hydrates keyed `{#each}` blocks **positionally** and does not rewrite existing attributes. Any order that differs between SSR and the first client render (e.g. a sort read from `localStorage`) leaves stale `src`/text — this is what made game images appear shuffled after a reload.
@@ -117,4 +144,15 @@ let achievedMap = $derived.by(() => new Map(Object.entries(achieved)));
 
 ## 5. Verifying
 
-`npm run check` (`svelte-kit sync && svelte-check`) is the source of truth. Details, including the WSL `PATH` export and the stale-VS-CS-TS-server caveat, are in [AGENTS.md](../AGENTS.md) §7.
+`npm run check` (`check:app` then `check:sw` — `svelte-check` for the app, `tsc`
+for the service worker) is the source of truth. Details, including the WSL
+`PATH` export and the stale-VS-CS-TS-server caveat, are in [AGENTS.md](../AGENTS.md) §7.
+
+Offline and installability are **not** covered by either: a service worker only
+exists in a browser, and offline only exists once the network is taken away. Build,
+serve, then run:
+
+```bash
+npm run build && npm run preview &
+node scripts/agent/pwa-check.mjs
+```

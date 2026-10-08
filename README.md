@@ -62,6 +62,15 @@ endpoints. Your progress lives in your browser, and disconnecting clears it.
   accent colour. Pick one from the account menu; it sticks, and there is no flash on load
 - **Readable on a phone** — every control has a 40px+ tap target, and the whole app honours your
   reduced-motion setting
+- **Installable** — add it to your home screen and it opens as its own app, with no browser bar. It works
+  offline too: your library and every guide you've opened stay readable without a connection, and only
+  Steam sync needs the network
+
+### Installing it
+
+On a phone, open the site and use your browser's **Add to Home Screen** / **Install app** option. On a
+desktop Chrome or Edge it's the install icon in the address bar. It is a normal web app underneath —
+nothing to sideload, and it updates on its own.
 
 ## The catalogue
 
