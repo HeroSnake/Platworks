@@ -127,6 +127,15 @@ Cost: a brief skeleton on first paint. Benefit: no mismatched hydration. Applied
 
 Related trap: `let x = $state(data.something)` only captures the **initial** value and triggers a `state_referenced_locally` warning. Use a sentinel (`$state(0)`) and fill it in from the effect instead.
 
+### Child effects flush before parent effects
+
+The gate above is also the mechanism the boot screen hangs off (`#lib/client/boot.ts`), and the ordering is load-bearing there: a route's `ready` milestone fires from its own `$effect`, and **Svelte runs child effects before parent effects**, so the route beats the layout. Measured, not assumed — on a cold load `ready` landed at 118ms and the layout's `mount` at 132ms, which would have retired the screen on its last phase and made the earlier one unreachable.
+
+Two consequences to keep:
+
+- **Never rely on a parent's effect running before a child's.** If a sequence has to be ordered, enforce it explicitly (the boot screen's inline script keeps a `reached` level and ignores regressions) rather than depending on flush order.
+- **Module scope runs before any effect.** An imported module's top-level code fires when the bundle starts executing, which is strictly earlier than any component effect — that is why `bootPhase('mount')` lives at the bottom of `boot.ts` and not in `+layout.svelte`.
+
 ## 4. Reactivity patterns
 
 - Runes only: `$state`, `$derived`, `$derived.by`, `$props`, `$effect`, `$bindable`. Never `$:`, `export let`, or `$store` auto-subscriptions.

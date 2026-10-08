@@ -17,6 +17,7 @@
 	import { browser } from '$app/env';
 import { untrack } from 'svelte';
 	import { refreshProfile } from '#lib/client/profile';
+	import { bootPhase, bootDone } from '#lib/client/boot';
 		import { countUp } from '#lib/client/countup';
 
 	let { data } = $props();
@@ -212,7 +213,12 @@ import { untrack } from 'svelte';
 		typeFilter = prefs.typeFilter;
 		gameSort = prefs.gameSort;
 		hydrated = true;
-	});
+			// The boot screen's `ready` milestone. A deep link is the case this matters
+			// most: the boot screen is global, and this route is as likely to be a cold
+			// entry point as the library is.
+			bootPhase('ready');
+			bootDone();
+		});
 
 	$effect(() => {
 		if (!browser || !hydrated) return;

@@ -47,9 +47,335 @@
 				/* private mode / storage disabled — keep the default */
 			}
 		</script>
+		<!--
+			BOOT SCREEN — inline, and it must stay inline.
+
+			`app.css` is a separate render-blocking stylesheet, so anything that
+			renders before that request lands paints UNSTYLED. The boot screen exists
+			to cover the window between "HTML parsed" and "Svelte mounted", which is
+			precisely a window where the stylesheet may not have arrived — so its
+			markup and its critical CSS live here, in the document, and the six
+			palettes are inlined below rather than inherited from app.css.
+
+			The palette blocks are a verbatim copy of the `[data-theme]` blocks in
+			app.css. A palette edit there MUST be repeated here or the boot screen
+			shows Ember while the app shows something else — and it only shows for
+			half a second, so the mismatch is easy to miss in review and impossible
+			to miss in use. Same rule as the font list above.
+
+			`pointer-events: none` throughout: the screen is decorative and must
+			never swallow a tap, including during the fade-out.
+
+			`aria-hidden` because it is a transient visual affordance. A live region
+			cycling three lines in half a second is noise for a screen reader, and
+			the real content follows immediately behind it.
+		-->
+		<style>
+			#pw-boot {
+				position: fixed;
+				inset: 0;
+				z-index: 2147483000;
+				display: grid;
+				place-items: center;
+				background: var(--pw-bg);
+				pointer-events: none;
+				font-family: Inter, system-ui, sans-serif;
+			}
+			#pw-boot,
+			#pw-boot * {
+				box-sizing: border-box;
+			}
+			:root {
+				--pw-boot-bg: #0c0a09;
+				--pw-boot-text: #f1eae2;
+				--pw-boot-dim: #a4988c;
+				--pw-boot-accent: #ff7a45;
+				--pw-boot-success: #4ade80;
+				--pw-boot-display: 'Space Grotesk', Inter, system-ui, sans-serif;
+			}
+			:root[data-theme='ember'] {
+				--pw-boot-bg: #0c0a09;
+				--pw-boot-text: #f1eae2;
+				--pw-boot-dim: #a4988c;
+				--pw-boot-accent: #ff7a45;
+				--pw-boot-success: #4ade80;
+			}
+			:root[data-theme='amber'] {
+				--pw-boot-bg: #120f09;
+				--pw-boot-text: #f6f0e3;
+				--pw-boot-dim: #b5a996;
+				--pw-boot-accent: #ffd27d;
+				--pw-boot-success: #6ee7a0;
+			}
+			:root[data-theme='cobalt'] {
+				--pw-boot-bg: #060910;
+				--pw-boot-text: #e8eefb;
+				--pw-boot-dim: #98a6c6;
+				--pw-boot-accent: #4c8dff;
+				--pw-boot-success: #3ddc97;
+			}
+			:root[data-theme='matrix'] {
+				--pw-boot-bg: #020604;
+				--pw-boot-text: #d4ffe2;
+				--pw-boot-dim: #7cc08e;
+				--pw-boot-accent: #00ff66;
+				--pw-boot-success: #00ff66;
+				--pw-boot-display: 'JetBrains Mono', ui-monospace, monospace;
+			}
+			:root[data-theme='cyberpunk'] {
+				--pw-boot-bg: #07060e;
+				--pw-boot-text: #f1eaff;
+				--pw-boot-dim: #ab9ecb;
+				--pw-boot-accent: #00e5ff;
+				--pw-boot-success: #ff2d95;
+				--pw-boot-display: 'Orbitron', 'Space Grotesk', system-ui, sans-serif;
+			}
+			:root[data-theme='vapor'] {
+				--pw-boot-bg: #0d0812;
+				--pw-boot-text: #f4ecfb;
+				--pw-boot-dim: #b2a2c9;
+				--pw-boot-accent: #c08bff;
+				--pw-boot-success: #63e0a4;
+			}
+
+			#pw-boot .pw-boot__stack {
+				display: grid;
+				justify-items: center;
+				text-align: center;
+			}
+			#pw-boot .pw-boot__dial {
+				position: relative;
+				width: 132px;
+				height: 132px;
+				margin-bottom: 26px;
+			}
+			#pw-boot .pw-boot__ring {
+				position: absolute;
+				inset: 0;
+				transform: rotate(-90deg);
+				transform-box: view-box;
+				transform-origin: 66px 66px;
+			}
+			#pw-boot .pw-boot__ring circle {
+				fill: none;
+				stroke-width: 3;
+				stroke-linecap: round;
+				/* An SVG element's default transform-origin is the viewBox origin,
+				   not its own centre — without this the arcs orbit the top-left
+				   corner instead of spinning on the spot. */
+				transform-box: fill-box;
+				transform-origin: center;
+			}
+			#pw-boot .pw-boot__track {
+				stroke: color-mix(in srgb, var(--pw-boot-accent) 14%, transparent);
+			}
+			#pw-boot .pw-boot__arc {
+				stroke: var(--pw-boot-accent);
+				stroke-dasharray: 88 340;
+				animation: pw-boot-dial 1.4s linear infinite;
+			}
+			#pw-boot .pw-boot__arc--b {
+				stroke: var(--pw-boot-success);
+				stroke-dasharray: 44 384;
+				animation: pw-boot-dial 1.9s linear infinite reverse;
+			}
+			@keyframes pw-boot-dial {
+				to {
+					transform: rotate(360deg);
+				}
+			}
+			#pw-boot .pw-boot__mark {
+				position: absolute;
+				inset: 26px;
+				color: var(--pw-boot-accent);
+				animation: pw-boot-breathe 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+			}
+			#pw-boot .pw-boot__mark svg {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+			@keyframes pw-boot-breathe {
+				0%,
+				100% {
+					transform: scale(1);
+				}
+				50% {
+					transform: scale(1.03);
+				}
+			}
+			#pw-boot .pw-boot__word {
+				font-family: var(--pw-boot-display);
+				font-size: 24px;
+				font-weight: 700;
+				margin: 0;
+				color: var(--pw-boot-text);
+			}
+			#pw-boot .pw-boot__status {
+				margin: 7px 0 0;
+				font-size: 13px;
+				color: var(--pw-boot-dim);
+				min-height: 20px;
+			}
+
+			/*
+			   Reduced motion stops everything. This is the first thing anyone
+			   sees, which makes it the worst possible place to introduce a
+			   vestibular trigger — and the app had no motion exemption at all
+			   before this.
+			*/
+			@media (prefers-reduced-motion: reduce) {
+				#pw-boot .pw-boot__arc,
+				#pw-boot .pw-boot__arc--b,
+				#pw-boot .pw-boot__mark {
+					animation: none;
+				}
+				#pw-boot {
+					transition: none;
+				}
+			}
+
+			/* The exit. Removed from the DOM afterwards by the script below. */
+			#pw-boot[data-pw-boot='done'] {
+				opacity: 0;
+				visibility: hidden;
+				transition:
+					opacity 220ms cubic-bezier(0.4, 0, 0.2, 1),
+					visibility 0s linear 220ms;
+			}
+		</style>
+		<!--
+			Bridge to `#lib/client/boot.ts`. Defined here because it has to exist
+			before any module runs, and it has to run before first paint to record
+			the start time the 500ms floor is measured from.
+		-->
+		<script>
+			(function () {
+				var MIN_DISPLAY_MS = 500;
+				var started = Date.now();
+				var finished = false;
+
+				/*
+				 * Milestones only ever move forward. Svelte 5 flushes child effects
+				 * before parent effects, so without this a route's `ready` can arrive
+				 * before a `mount` that logically precedes it — the status line would
+				 * jump to the last phase and the earlier one would never be shown.
+				 */
+				var ORDER = { mount: 1, ready: 2 };
+				var reached = 0;
+
+				/*
+				 * The elements are looked up on EVERY call, never captured at parse
+				 * time. This script runs in <head>, so at that moment the body has
+				 * not been parsed and `getElementById('pw-boot')` is null — caching
+				 * it here left the screen unable to update or retire, i.e. a
+				 * spinner that never goes away, and the safety net below was
+				 * defeated by the same null.
+				 */
+				function say(text) {
+					var s = document.getElementById('pw-boot-status');
+					if (s) s.textContent = text;
+				}
+
+				function retire() {
+					var screen = document.getElementById('pw-boot');
+					if (!screen || finished) return;
+					finished = true;
+					// Hold to MIN_DISPLAY_MS so the final phase is readable. A slow
+					// cold start has already passed it, so this never adds delay.
+					var wait = Math.max(0, MIN_DISPLAY_MS - (Date.now() - started));
+					setTimeout(function () {
+						var el = document.getElementById('pw-boot');
+						if (!el) return;
+						el.setAttribute('data-pw-boot', 'done');
+						// visibility:hidden already removes it from hit-testing and the
+						// a11y tree; the node itself goes once the fade is done so it
+						// cannot be found by a later query.
+						setTimeout(function () {
+							var dead = document.getElementById('pw-boot');
+							if (dead && dead.parentNode) dead.parentNode.removeChild(dead);
+						}, 260);
+					}, wait);
+				}
+
+				window.__pwBoot = {
+					phase: function (name) {
+						if (finished) return;
+						var next = ORDER[name];
+						if (!next || next <= reached) return;
+						reached = next;
+						if (name === 'mount') say('Starting up');
+						else if (name === 'ready') say('Almost there');
+					},
+					done: retire
+				};
+
+				/*
+				   Safety net. A route that forgets to call `bootDone()` would
+				   otherwise leave the user staring at a spinner that can never
+				   resolve — the one failure mode worse than having no boot screen
+				   at all. After 4s the app has either painted or never will, so
+				   the screen stops blocking the view either way.
+				*/
+				setTimeout(retire, 4000);
+			})();
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
+		<!--
+			The trophy paths are written around the local origin (x[-121,121],
+			y[-96,136]), so this viewBox is the ink's own centre rather than
+			"0 0 512 512". With a 0-based box the origin is the top-left corner
+			and the left handle is clipped away — the same trap as
+			`transform="translate(256,232)"` in static/icon.svg, which hides it
+			there by re-centring the group.
+		-->
+		<div id="pw-boot" aria-hidden="true">
+			<div class="pw-boot__stack">
+				<div class="pw-boot__dial">
+					<svg class="pw-boot__ring" viewBox="0 0 132 132" aria-hidden="true">
+						<circle class="pw-boot__track" cx="66" cy="66" r="62"></circle>
+						<circle class="pw-boot__arc" cx="66" cy="66" r="62"></circle>
+						<circle class="pw-boot__arc pw-boot__arc--b" cx="66" cy="66" r="54"></circle>
+					</svg>
+					<div class="pw-boot__mark">
+						<svg viewBox="-140 -120 280 280" aria-hidden="true">
+							<g
+								fill="none"
+								stroke="currentColor"
+								stroke-width="20"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<path
+									d="M-80,-96 L80,-96 L64,16 C56,64 -56,64 -64,16 Z"
+									fill="currentColor"
+									stroke="none"
+									opacity="0.9"
+								/>
+								<path d="M-80,-72 C-136,-72 -136,8 -72,16" />
+								<path d="M80,-72 C136,-72 136,8 72,16" />
+								<line x1="0" y1="64" x2="0" y2="112" />
+								<path
+									d="M-56,112 L56,112 L64,136 L-64,136 Z"
+									fill="currentColor"
+									stroke="none"
+									opacity="0.7"
+								/>
+								<polygon
+									points="0,-56 12,-24 44,-24 20,-4 28,28 0,12 -28,28 -20,-4 -44,-24 -12,-24"
+									fill="var(--pw-boot-bg)"
+									stroke="none"
+								/>
+							</g>
+						</svg>
+					</div>
+				</div>
+				<h1 class="pw-boot__word">PlatWorks</h1>
+				<p class="pw-boot__status" id="pw-boot-status">Loading PlatWorks</p>
+			</div>
+		</div>
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>

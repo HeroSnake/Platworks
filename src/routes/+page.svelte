@@ -12,6 +12,7 @@
 	import { page } from '$app/state';
 	import { replaceState } from '$app/navigation';
 	import { refreshProfile } from '#lib/client/profile';
+	import { bootPhase, bootDone } from '#lib/client/boot';
 	import { loadLibrary, addToLibrary, removeFromLibrary, clearLibrary } from '#lib/client/library';
 
 	let { data } = $props();
@@ -111,6 +112,10 @@
 		// one has nothing to show, so they get the public catalogue instead.
 		if (stored.length > 0) scope = 'mine';
 		hydrated = true;
+		// The boot screen's `ready` milestone: persisted state is in, so the grid
+		// this gate reveals can paint its real contents.
+		bootPhase('ready');
+		bootDone();
 	});
 
 	let myLibrarySet = $derived(new Set(myLibrary));

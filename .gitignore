@@ -1,6 +1,7 @@
 node_modules
 .vscode/
 .tmp/
+__pycache__/
 
 # Output
 .output

@@ -18,15 +18,23 @@
  *
  * `--check` is the form to use in review: it exits non-zero when a PNG is absent
  * or was generated from an older SVG, and never touches the working tree.
- */
-import { readFile, writeFile } from 'node:fs/promises';
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { launchBrowser } from './lib/playwright.mjs';
-import { run } from './lib/cli.mjs';
+  *
+  * A byte-comparison alone cannot see a *centring* bug: a tile can be perfectly
+  * current and still render the trophy 10% off in both axes, which is exactly
+  * what the maskable frame bug produced. `--check` therefore also measures the
+  * ink inside every PNG and asserts it is centred and inside the maskable safe
+  * zone — see `lib/png_instrument.py`, which runs standalone too.
+  */
+ import { readFile, writeFile } from 'node:fs/promises';
+ import { dirname, join } from 'node:path';
+ import { fileURLToPath } from 'node:url';
+ import { execFileSync } from 'node:child_process';
+ import { launchBrowser } from './lib/playwright.mjs';
+ import { run } from './lib/cli.mjs';
 
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
-const STATIC = join(ROOT, 'static');
+ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+ const STATIC = join(ROOT, 'static');
+ const INSTRUMENT = join(ROOT, 'scripts', 'agent', 'lib', 'png_instrument.py');
 
 /**
  * Every raster icon the app ships, and the SVG each is generated from.
@@ -58,15 +66,25 @@ const MASKABLE_SAFE_ZONE = 0.8;
  *
  * `margin: 0` is load-bearing: the default 8px body margin offsets every raster
  * by 8px and letterboxes it against the viewport edge.
- */
-function document(svgMarkup, size, maskable) {
-	const frame = maskable ? size * MASKABLE_SAFE_ZONE : size;
-	return `<!doctype html><html><head><meta charset="utf-8"><style>
-		html,body{margin:0;padding:0;width:${size}px;height:${size}px;overflow:hidden;background:#171a21}
-		.frame{width:${frame}px;height:${frame}px;display:grid;place-items:center}
-		.frame>svg{display:block;width:100%;height:100%}
-	</style></head><body><div class="frame">${svgMarkup}</div></body></html>`;
-}
+  *
+  * `place-items: center` on the BODY is load-bearing, and it is why the maskable
+  * icons used to render into the top-left corner. The maskable artwork is scaled
+  * into a `.frame` of `size * 0.8`, and `.frame` is a block box — so with no
+  * centring on the body it sat hard against the top-left, putting the whole icon
+  * 10% of the canvas off in both axes (measured at −51.5px on x and y in a 512
+  * tile). Auto margins would fix x alone and silently leave y broken, which is
+  * exactly what the first attempt did; the body has to centre on both axes.
+  */
+ function document(svgMarkup, size, maskable) {
+ 	const frame = maskable ? size * MASKABLE_SAFE_ZONE : size;
+ 	return `<!doctype html><html><head><meta charset="utf-8"><style>
+ 		html{margin:0;padding:0;background:#171a21}
+ 		body{margin:0;padding:0;width:${size}px;height:${size}px;overflow:hidden;
+ 			background:#171a21;display:grid;place-items:center}
+ 		.frame{width:${frame}px;height:${frame}px;display:grid;place-items:center}
+ 		.frame>svg{display:block;width:100%;height:100%}
+ 	</style></head><body><div class="frame">${svgMarkup}</div></body></html>`;
+ }
 
 async function main() {
 	const check = process.argv.includes('--check');
@@ -116,14 +134,23 @@ async function main() {
 	}
 
 	if (!check) {
-		console.log(`\n${TARGETS.length - stale.length}/${TARGETS.length} icons already current.`);
-		return;
+			console.log(`\n${TARGETS.length - stale.length}/${TARGETS.length} icons already current.`);
+		} else if (stale.length) {
+			console.error(`\nRun: node scripts/agent/make-icons.mjs`);
+			process.exit(1);
+		} else {
+			console.log(`\nAll ${TARGETS.length} icon PNGs are current.`);
+		}
+
+		// A current-but-off-centre tile passes the byte comparison above, so the
+		// geometry check runs for BOTH modes, not only `--check`.
+		try {
+			process.stdout.write(execFileSync('python3', [INSTRUMENT], { cwd: ROOT, encoding: 'utf8' }));
+		} catch (err) {
+			if (err.stdout) process.stdout.write(err.stdout);
+			if (err.stderr) process.stderr.write(err.stderr);
+			process.exit(err.status || 1);
+		}
 	}
-	if (stale.length) {
-		console.error(`\nRun: node scripts/agent/make-icons.mjs`);
-		process.exit(1);
-	}
-	console.log(`\nAll ${TARGETS.length} icon PNGs are current.`);
-}
 
 run(main);

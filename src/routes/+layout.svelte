@@ -5,6 +5,7 @@
 	import GithubIcon from '#lib/components/github_icon.svelte';
 	import ThemePicker from '#lib/components/theme_picker.svelte';
 	import { saveTheme, THEMES, type ThemeId } from '#lib/client/theme';
+	import { bootPhase, bootDone } from '#lib/client/boot';
 	import { page } from '$app/state';
 	import { onNavigate } from '$app/navigation';
 	import { browser } from '$app/env';
@@ -31,6 +32,26 @@
 	let theme = $state<ThemeId>(browser
 		? ((document.documentElement.getAttribute('data-theme') as ThemeId | null) ?? 'ember')
 		: 'ember');
+
+	/**
+	 * Owns the boot screen's release for routes that do not gate on hydration.
+	 *
+	 * A route WITH a hydration gate (`/`, `/game/[appId]`) holds the screen until
+	 * its persisted state is in, because retiring earlier would reveal the
+	 * skeleton-to-content swap this screen exists to cover. A route without one —
+	 * `linktest` — is already showing real server-rendered content by now, so
+	 * waiting for the 4s safety net would just be a stuck spinner nobody can
+	 * explain.
+	 *
+	 * The `setTimeout` is what makes both work without every route opting in:
+	 * Svelte flushes child effects before parent effects, so a gated route's own
+	 * `bootDone()` has already claimed the screen by the time this callback runs,
+	 * and `done()` is idempotent. Measured, not assumed — see `boot.ts`.
+	 */
+	$effect(() => {
+		bootPhase('mount');
+		setTimeout(bootDone, 0);
+	});
 
 	/**
 		 * Keeps the mobile browser chrome in step with the palette. The tag is a static
