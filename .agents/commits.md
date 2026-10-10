@@ -56,7 +56,7 @@ Breaking changes: append `!` after type/scope (`feat(api)!: …`) and add a `BRE
 | `ui` | components, `app.css`, layout chrome |
 | `library` | home library grid / cards |
 | `state` | `platworks:*` localStorage, client profile/library/theme |
-| `agents` | `AGENTS.md`, `.agents/*`, `.github/`, `.cursor/`, `.claude/` |
+| `agents` | `AGENTS.md`, `.agents/*`, `.github/`, `.cursor/`, `.claude/`, `.opencode/` |
 | `deps` | dependency bumps |
 
 Omit the scope when the change spans several areas and none dominates.

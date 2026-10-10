@@ -1,7 +1,7 @@
 # Workspace tool & execution rules
 
 - You have full permission to create, update, and overwrite files in `AGENTS.md`, `.agents/`,
-  `.github/`, `.cursor/` and `.claude/`.
+  `.github/`, `.cursor/`, `.claude/` and `.opencode/`.
 - When updating agent rules, prompt templates, or codebase architecture notes, apply the changes
   directly to disk without asking for permission or prompting for manual file creation steps.
 

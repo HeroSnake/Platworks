@@ -5,7 +5,7 @@ The rules for this project live in exactly two places:
 - [`AGENTS.md`](../AGENTS.md) — the entry point: cross-cutting rules, architecture map, routing table.
 - `.agents/*.md` — one file per domain.
 
-Everything in `.github/`, `.cursor/` and `.claude/` is an **adapter**. An adapter exists only because a
+Everything in `.github/`, `.cursor/`, `.claude/` and `.opencode/` is an **adapter**. An adapter exists only because a
 particular tool's loader insists on a file at a particular path with a particular frontmatter shape. It
 says *where the rules are*. It never restates them.
 
@@ -25,6 +25,7 @@ rule is in the wrong place. Move it to `AGENTS.md` or `.agents/`.
 | Copilot / VS Code | `AGENTS.md`, plus `.github/instructions/*.instructions.md` whose `applyTo` glob matches the file in context | `.github/` |
 | Cursor | `AGENTS.md`, plus `.cursor/rules/*.mdc` with a matching `globs` entry, or `alwaysApply: true` | `.cursor/` |
 | Claude Code | `AGENTS.md`, `CLAUDE.md`, plus `.claude/agents/*.md` when that subagent is invoked | `.claude/` |
+| OpenCode | `AGENTS.md` natively, plus `.opencode/commands/*.md` slash commands and `.opencode/agents/*.md` subagents | `.opencode/` |
 | Codex CLI, Aider, Cline, any `AGENTS.md` reader | `AGENTS.md` | *none needed* |
 
 If a tool reads `AGENTS.md` on its own, it needs no adapter at all. That is the point of choosing
@@ -81,8 +82,24 @@ You are the PlatWorks UI specialist.
 Then do the work. Do not answer from memory of the codebase: the domain file is the current truth.
 ```
 
-`.claude/commands/<name>.md` uses the same idea — a slash command whose body tells the agent which
-workflow prompt to follow. The workflow itself lives once, in `.github/prompts/`.
+`.claude/commands/<name>.md` and `.opencode/commands/<name>.md` use the same idea — a slash command
+whose body tells the agent which workflow prompt to follow. The workflow itself lives once, in
+`.github/prompts/`.
+
+### OpenCode — `.opencode/agents/<domain>.md` and `.opencode/commands/<name>.md`
+
+```markdown
+---
+description: "UI layer rules for PlatWorks"
+mode: subagent
+---
+
+You are the PlatWorks **ui** specialist. Read `AGENTS.md`, then `.agents/ui.md`, before your first edit.
+```
+
+OpenCode reads `AGENTS.md` natively, so an agent adapter carries only `description` and `mode: subagent`.
+A command uses the same `description` field and points at its workflow in `.github/prompts/`. Tool-specific
+config — the `.env` deny — is tool config, not a rule, so it lives in `.opencode/opencode.json`.
 
 ## Adding a domain
 

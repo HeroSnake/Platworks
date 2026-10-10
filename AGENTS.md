@@ -7,7 +7,7 @@ below. Domain knowledge lives in `.agents/` — read the ones your task actually
 
 > **This file is the single source of truth.** Every AI tool in this repo reads it via its own native
 > mechanism: `AGENTS.md` is picked up directly by Copilot, Cursor, Claude Code and Codex; the
-> `AGENTS.md` / `.github/instructions/` / `.cursor/rules/` / `.claude/agents/` files are thin adapters
+> `AGENTS.md` / `.github/instructions/` / `.cursor/rules/` / `.claude/agents/` / `.opencode/agents/` files are thin adapters
 > that point back here. **Never write a rule into an adapter** — write it here or in `.agents/`, and the
 > adapters stay in sync automatically.
 
@@ -131,13 +131,13 @@ table, then open only the matching files.
 | Game loader | `#lib/server/games.ts` | `getAllGames()`, `getGameByAppId()` via `import.meta.glob('#lib/data/games/[0-9]*.json')` |
 | Icon tooling | `scripts/` | `fetch-game-images.mjs` (mirrors header + hero into `static/images/games/{appId}/`), `fetch-achievement-icons.mjs` (writes remote `iconUrl`), `verify-achievement-icons.mjs` (audits icons). Run with `node`, not npm |
 | Agent toolkit | `scripts/agent/` | Reusable scripts for agent tasks, committed so they are never rewritten per run: `ui-audit.mjs` (the browser audit below), `shot.mjs` + `new-mockup.mjs` (mockups), `readme-shots.mjs` (regenerates `docs/screenshots/`), `steam-achievements.mjs` + `ledger.mjs` + `check-links.mjs` (game data), `make-icons.mjs` (regenerates the PWA PNGs), `pwa-check.mjs` (proves install + offline in a real browser). See [scripts/agent/README.md](scripts/agent/README.md). **A scratch file that will be needed again belongs here, not in `.tmp/`** |
-| Agent rules | `AGENTS.md` + `.agents/*.md` | the project's memory: cross-cutting rules, architecture map, and one file per domain. Adapters for each AI tool live in `.github/`, `.cursor/` and `.claude/` and must stay thin — see §9 |
+| Agent rules | `AGENTS.md` + `.agents/*.md` | the project's memory: cross-cutting rules, architecture map, and one file per domain. Adapters for each AI tool live in `.github/`, `.cursor/`, `.claude/` and `.opencode/` and must stay thin — see §9 |
 | Game artwork | `static/images/games/{appId}/` | committed `header.jpg` + `hero.jpg`, served from `/images/games/...`. The app never requests Steam's CDN for these; achievement icons are the deliberate exception |
 | Client profile cache | `#lib/client/profile.ts` | `loadProfile()`, `saveProfile()`, `clearProfile()`, `refreshProfile()` |
 | Client user library | `#lib/client/library.ts` | `loadLibrary()`, `saveLibrary()`, `addToLibrary()`, `removeFromLibrary()`, `clearLibrary()` — appIds only, owns `platworks:library` |
 | Colour theme | `#lib/client/theme.ts` + `#lib/components/theme_picker.svelte` | six palettes in `app.css` as `[data-theme]` blocks, each a hue-cast surface ramp + a distinct `--pw-accent` primary; applied pre-paint by an inline script in `src/app.html`, owns `platworks:theme`. `THEMES` **duplicates** each palette's colours for the picker preview — a palette edit must update both |
 | Background pattern | `src/app.css` + `src/routes/+layout.svelte` | the tilted 135px SVG `<pattern>` tile behind the app. Two inks per palette; `.pw-quiet` masks it out of the filter rows. Geometry and the traps that hide it live in [`.agents/ui.md`](./.agents/ui.md) §3 |
-| Components | `#lib/components/` | `achievement_row`, `game_card`, `game_filters`, `github_icon`, `mobile_bar`, `theme_picker`, plus the shared primitives `progress_bar` / `progress_ring` / `stat_tile` / `segmented_control` / `search_field` / `action_button` / `difficulty_pips` — **use these instead of hand-rolling a control** |
+| Components | `#lib/components/` | `achievement_row`, `game_card`, `game_filters`, `github_icon`, `mobile_bar`, `theme_picker`, plus the shared primitives `progress_bar` / `progress_ring` / `stat_tile` / `segmented_control` / `search_field` / `action_button` / `difficulty_pips` / `filter_toolbar` / `filter_group` — **use these instead of hand-rolling a control** |
 | Pre-paint script | `src/app.html` | inline, synchronous: applies the stored palette and loads the webfonts before first paint. Moving either into Svelte causes a flash. The font list must cover every `--pw-font-display` in `app.css` — Orbitron (Cyberpunk) and JetBrains Mono (Matrix) |
 | Boot screen | `src/app.html` (markup + inline `<style>`) and `#lib/client/boot.ts` (the driver) | covers the gap between "HTML parsed" and "Svelte mounted", which is the only blank frame in the app. Inline because app.css is a **render-blocking** `<link>` — a boot screen styled only by it would paint unstyled. Its six palettes are **copied** from app.css; edit both or the screen shows Ember while the app shows something else. Phases are real milestones only (`parse` → `mount` → `ready`), never invented copy. Both traps — the `<head>` element-lookup and the child-before-parent effect order — are documented at the call site |
 | Service worker | `src/service-worker/index.ts` | bundled to `/service-worker.js` and registered automatically. Owns the offline story — the per-request cache policies and the `ignoreVary` trap live in its header comment; read it before changing anything about caching. Type-checked separately by `tsconfig.service-worker.json`, since the app tsconfig excludes it |
@@ -238,11 +238,12 @@ two sources of truth, and the copy that nobody updates is the one the next agent
 | **Copilot / VS Code** | `AGENTS.md`, then `.github/instructions/*.instructions.md` matched by `applyTo` glob | `.github/` |
 | **Cursor** | `AGENTS.md`, then `.cursor/rules/*.mdc` matched by `globs` / `alwaysApply` | `.cursor/` |
 | **Claude Code** | `AGENTS.md`, `CLAUDE.md`, then `.claude/agents/*.md` subagents | `.claude/` |
+| **OpenCode** | `AGENTS.md` natively, then `.opencode/commands/*.md` slash commands and `.opencode/agents/*.md` subagents | `.opencode/` |
 | **Codex CLI / any AGENTS.md-aware tool** | `AGENTS.md` alone — no adapter needed | — |
 
 **When you learn a new rule:** write it in `AGENTS.md` or the matching `.agents/` file. Never in an
 adapter. If a tool genuinely needs a rule the others must not see (a sandbox permission, a tool-name
-list), it belongs in that tool's own config — `.claude/settings.json`, the `tools:` frontmatter of a
+list), it belongs in that tool's own config — `.claude/settings.json`, `.opencode/opencode.json`, the `tools:` frontmatter of a
 `.github/instructions/*.instructions.md` file — and nowhere else.
 
 **When you add a domain:** add `.agents/<domain>.md`, then add one adapter line per tool. If a tool
