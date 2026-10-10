@@ -201,37 +201,68 @@ export async function getPlayerProfile(steamId: string): Promise<SteamProfile | 
 	}
 }
 
+/**
+ * Steam's stats XML URL takes the game's **Steam Community stats name**, not its
+ * appId (Steamworks "Community Data": `/profiles/{id}/stats/{communityName}/?xml=1`).
+ * For most games the two happen to be identical, which is why the appId has always
+ * worked. Counter-Strike 2 is the exception: `/stats/730/?xml=1` answers **302** to
+ * `/stats/CSGO`, and following that redirect lands on the HTML stats page, so the
+ * parse finds no `<achievement>` blocks and the sync wrongly reports "no
+ * achievements". We detect the redirect and retry against the name it points at,
+ * which keeps any future game with a custom stats name working too.
+ */
+async function fetchPlayerStatsXml(appId: number, steamId: string): Promise<string | null> {
+	const statsUrl = (name: string | number) =>
+		`${COMMUNITY}/profiles/${steamId}/stats/${name}/?xml=1`;
+
+	const headers = {
+		'User-Agent':
+			'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+		'Accept': 'text/xml,application/xml,application/xhtml+xml,text/html;q=0.9',
+		'Accept-Language': 'en-US,en;q=0.9'
+	};
+
+	// `redirect: 'manual'` so the 302 is visible; the community name only appears in
+	// its `Location` header. Falls back to the numeric appId when there is no redirect.
+	let res = await fetch(statsUrl(appId), {
+		headers,
+		// Disable caching if running on Next.js / Vercel to ensure fresh data
+		cache: 'no-store',
+		redirect: 'manual'
+	});
+
+	if (res.status >= 300 && res.status < 400) {
+		const communityName = res.headers.get('location')?.match(/\/stats\/([^/?#]+)/)?.[1];
+		// Redirect without a stats segment (e.g. to the profile root) means the stats
+		// are not exposed — the caller treats null as "no achievements".
+		if (!communityName) return null;
+		res = await fetch(statsUrl(communityName), { headers, cache: 'no-store' });
+	}
+
+	if (!res.ok) return null;
+	return res.text();
+}
+
 /** Fetches achievements from the public Steam community XML. Profile must be public. */
 export async function getPlayerAchievements(
-    appId: number,
-    steamId: string
+	appId: number,
+	steamId: string
 ): Promise<Map<string, SteamAchievementStatus>> {
-    if (!steamId) return new Map();
+	if (!steamId) return new Map();
 
-    const url = `${COMMUNITY}/profiles/${steamId}/stats/${appId}/?xml=1`;
-    try {
-        const res = await fetch(url, {
-            headers: {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                'Accept': 'text/xml,application/xml,application/xhtml+xml,text/html;q=0.9',
-                'Accept-Language': 'en-US,en;q=0.9',
-            },
-            // Disable caching if running on Next.js / Vercel to ensure fresh data
-            cache: 'no-store',
-        });
+	try {
+		const xml = await fetchPlayerStatsXml(appId, steamId);
+		if (!xml) return new Map();
 
-        if (!res.ok) return new Map();
-        const xml = await res.text();
+		if (xml.includes('<error>') && !xml.includes('<achievements>')) {
+			return new Map();
+		}
 
-        if (xml.includes('<error>') && !xml.includes('<achievements>')) {
-            return new Map();
-        }
-
-        return parseAchievementXml(xml);
-    } catch (error) {
-        console.error('Failed to fetch Steam XML:', error);
-        return new Map();
-    }
+		return parseAchievementXml(xml);
+	} catch (error) {
+		console.error('Failed to fetch Steam XML:', error);
+		return new Map();
+	}
 }
 
 /** Strips quotes, punctuation, and collapses whitespace for fuzzy name matching. */

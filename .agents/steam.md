@@ -87,6 +87,20 @@ visibly soft.
 
 Case-insensitive, and will **not** match a tag that carries attributes (`<avatar position="0">`). If Steam adds attributes to a tag you need, extend the regex rather than working around it.
 
+### Player stats XML — the URL takes the community **name**, not the appId
+
+`https://steamcommunity.com/profiles/{steamId}/stats/{name}/?xml=1` is the only no-key source of
+per-achievement unlock state. Steamworks calls `{name}` the game's **Steam Community name**, and it is
+usually the appId — but not always. Counter-Strike 2 (`730`) answers **302** to `/stats/CSGO`;
+following that redirect lands on the HTML stats page, so the parse finds no `<achievement>` blocks and
+the sync wrongly reports "no achievements found".
+
+`getPlayerAchievements` fetches through `fetchPlayerStatsXml`, which uses `redirect: 'manual'` to see the
+302, reads the community name out of the `Location` header, and retries against it. A redirect with no
+`/stats/<name>` segment means the stats are not exposed — a legitimate empty result. **Do not simplify
+this back to a direct numeric URL, and do not replace it with a static `730 → CSGO` map:** the redirect
+is what makes the next game with a custom stats name work without a code change.
+
 ## 3. Achievement icons — the global stats page
 
 `https://steamcommunity.com/stats/{appId}/achievements` is the **only** no-API-key source for trophy artwork and is the same list the IDs and names came from. It is plain HTML, not XML:
