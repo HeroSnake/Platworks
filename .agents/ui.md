@@ -30,7 +30,9 @@ drawn against.
 | `search_field.svelte` | the app's only search input. Both pages and the mobile bar use it |
 | `action_button.svelte` | primary/secondary button with `loading`. Sync lives here |
 | `difficulty_pips.svelte` | 1–4 filled pips + label. Difficulty must never be hue-only |
-| `game_filters.svelte` | the game page's **entire** filter row, rendered once at every breakpoint |
+| `game_filters.svelte` | the game page's filter toolbar: completion · type chips · search · sort, rendered once at every breakpoint |
+| `filter_toolbar.svelte` | the wrap container shared by both toolbars; `name` picks the container the group captions are keyed to |
+| `filter_group.svelte` | one labelled group inside a toolbar (`Show` · `Type` · `Search` · `Order`); `grow` for the search group |
 | `theme_picker.svelte` | six-palette radiogroup: 3×2 grid of tiles, each a miniature of the palette. Inside the account popover |
 | `achievement_row.svelte` | expandable trophy row: trophy image + check indicator overlaid, badges, pips |
 | `game_card.svelte` | compact card: 16:9 artwork, title, linear bar, count. No ring |
@@ -38,24 +40,34 @@ drawn against.
 | `mobile_bar.svelte` | shared bottom bar for **both** pages |
 | `src/routes/+layout.svelte` | navbar, account popover, View Transitions, **the background pattern layer**; owns `REPO_URL` and `platworks:steamId` |
 
-### Render a filter ONCE, not once per breakpoint
+### One toolbar per page, wrapping only when it must
 
-`game_filters.svelte` holds the whole filter row and is rendered **once, unconditionally**, at every
-width. `overflow-x-auto` keeps it one row and makes the extras reachable by swiping. A wrapping filter
-row would push the list down by a row's height every time an option is added.
+Both pages render **one** filter toolbar, unconditionally, at every width, through
+`filter_toolbar.svelte` + `filter_group.svelte`. It is plain `flex-wrap`: the toolbar takes a single
+line whenever its groups fit and drops the groups to the next line when they do not. There is **no
+horizontal scroll and no breakpoint** — the wrap is content-driven.
+
+The group captions (`Show` · `Type` · `Search` · `Order`) exist to keep the controls legible once the
+toolbar has wrapped, so they are **hidden on the one-line toolbar**. That toggle is a **container
+query** in the `.pw-toolbar` block in `app.css`, keyed to the toolbar's own width — not a viewport
+media query, because the game toolbar lives in a `minmax(0,1fr)` column whose width is not the
+viewport. Each toolbar name (`lib`, `game`) has its own threshold: **~920px** for the library and
+**~1000px** for the game toolbar (completion + type chips + search + sort). A threshold is the width
+at which that toolbar becomes one line; change it when the controls it measures change, and re-check
+in the browser — the number is measured, not derived from the viewport.
 
 Four rules follow:
 
 - **Do not add a `panel` snippet to either page's `mobile_bar`.** Neither page passes one, so the bar
   carries progress, search and sync only and its filter button hides itself. Sort and the game filters
   both live in the page at every breakpoint — one control surface per page, not one per breakpoint.
-- **The library toolbar is ONE row: scope → search → sort → sync.** `segmented_control.svelte` carries
-  `w-fit shrink-0` so it shrink-wraps in a flex parent; `display: flex` in a block parent fills the width.
 - **Never hide a control at one breakpoint and re-render it at another.** If it must exist in two places,
   it is one component with a `hidden` class, or one component rendered once.
-- **Search is the one control allowed to differ per breakpoint** (`hidden sm:block` in both the library
-  toolbar and `game_filters.svelte`), because the mobile bar owns it on a phone. One search box per
-  breakpoint, never both.
+- **Search is the one control allowed to differ per breakpoint.** The mobile bar owns it on a phone, so
+  the in-page search group sits in `hidden sm:contents` — no layout box below `sm`, a direct toolbar item
+  at `sm` and up. One search box per breakpoint, never both.
+- **`segmented_control.svelte` carries `w-fit shrink-0`** so it shrink-wraps as a flex item rather than
+  filling the toolbar.
 
 ### Tap targets: `h-9` is 36px and always fails
 
@@ -157,11 +169,12 @@ toolbar out of alignment with the top of the sidebar.
   width; Steam's longer blurbs run 300+ characters.
 - **The hero is `aspect-[21/9]` below `lg`, `lg:aspect-video` above.** A `min-h-*` hero plus a full stats
   panel plus two stacked buttons pushes the first achievement ~900px down on a phone.
-- **Type and Sort must stay reachable on a phone.** The filter row scrolls horizontally
-  (`.scrollbar-none`) rather than wrapping, so it never pushes the list down.
-- **There is no `<select>` for the achievement type.** The chip row does that job beneath it, with counts
-  and a `missable` icon — the same filter one control apart, and always the better presentation. Sort is
-  the only `<select>`.
+- **Type and Sort must stay reachable on a phone.** The toolbar wraps rather than scrolling, so nothing
+  is ever off-screen; it costs an extra row of vertical space only on the games and widths where it
+  actually needs two or three lines.
+- **There is no `<select>` anywhere.** Sort is the same `segmented_control.svelte` the library uses, and
+  the achievement type is the chip group with counts and a `missable` icon — one control vocabulary
+  across both pages, not one per page.
 - **The chip row renders whenever `types.length > 0`, not `> 1`.** Gating it on "more than one" makes the
   toolbar gain or lose a row depending on the game.
 - **Keep the guide prose inside a readable measure.** The sidebar is a fixed 288px precisely so the list

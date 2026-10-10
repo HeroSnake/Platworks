@@ -1,3 +1,16 @@
+<script module lang="ts">
+	/**
+	 * The scope the player last chose, for this browser session only.
+	 *
+	 * Module scope on purpose: it survives a client-side round trip to a game page
+	 * and back, but a full reload starts fresh, so it is not persisted state and
+	 * belongs in no `platworks:*` key. Without it, returning to the library always
+	 * reset to My Library, because the hydration effect defaulted a non-empty
+	 * library to `'mine'` on every mount.
+	 */
+	let rememberedScope: 'mine' | 'all' | null = null;
+</script>
+
 <script lang="ts">
 	import {
 		Gamepad2, Library, Globe, RefreshCw, Plus
@@ -6,6 +19,8 @@
 	import MobileBar from '#lib/components/mobile_bar.svelte';
 	import SegmentedControl from '#lib/components/segmented_control.svelte';
 	import SearchField from '#lib/components/search_field.svelte';
+	import FilterToolbar from '#lib/components/filter_toolbar.svelte';
+	import FilterGroup from '#lib/components/filter_group.svelte';
 	import StatTile from '#lib/components/stat_tile.svelte';
 	import ActionButton from '#lib/components/action_button.svelte';
 	import { browser } from '$app/env';
@@ -108,14 +123,23 @@
 	$effect(() => {
 		const stored = loadLibrary();
 		myLibrary = stored;
-		// A returning player with a selection lands on their own library. An empty
-		// one has nothing to show, so they get the public catalogue instead.
-		if (stored.length > 0) scope = 'mine';
+		// Restore the scope the player left on, so "back to the library" returns to
+		// the library they were actually looking at. A first visit (nothing
+		// remembered) defaults a returning player to their own library; an empty one
+		// has nothing to show, so they get the catalogue. A chosen scope is never
+		// coerced.
+		scope = rememberedScope ?? (stored.length > 0 ? 'mine' : 'all');
 		hydrated = true;
 		// The boot screen's `ready` milestone: persisted state is in, so the grid
 		// this gate reveals can paint its real contents.
 		bootPhase('ready');
 		bootDone();
+	});
+
+	// Remember the scope across a client-side navigation away and back. Deliberately
+	// not a `platworks:*` key — see the module comment above.
+	$effect(() => {
+		rememberedScope = scope;
 	});
 
 	let myLibrarySet = $derived(new Set(myLibrary));
@@ -312,7 +336,8 @@
 	</div>
 
 	<!--
-		One toolbar, one row: scope → search → sort → sync.
+		One toolbar: scope → search → sort → sync, wrapped by `filter_toolbar.svelte`
+		so it is one line when the groups fit and wraps only when they do not.
 
 		Scope is the FIRST control in the row rather than a block of its own above
 		it. In a block container a `display:flex` element fills the width, so the
@@ -340,45 +365,53 @@
 		unconditional rendering. The band is a wrapper, not a change to the toolbar.
 	-->
 	<div class="pw-quiet">
-		<div class="mb-5 flex flex-wrap items-center gap-2 sm:gap-3">
-			<SegmentedControl
-				bind:value={scope}
-				label="Library scope"
-				options={[
-					{ value: 'mine', label: 'My Library', icon: Library, count: myGames.length },
-					{ value: 'all', label: 'All Games', icon: Globe, count: data.games.length }
-				]}
-			/>
+		<div class="mb-5">
+			<FilterToolbar name="lib">
+				<FilterGroup label="Show">
+					<SegmentedControl
+						bind:value={scope}
+						label="Library scope"
+						options={[
+							{ value: 'mine', label: 'My Library', icon: Library, count: myGames.length },
+							{ value: 'all', label: 'All Games', icon: Globe, count: data.games.length }
+						]}
+					/>
+				</FilterGroup>
 
-			<!-- Hidden below `sm`: the mobile bar owns search on a phone. One search box
-			     per breakpoint, never both on screen. Same rule as `game_filters.svelte`. -->
-			<div class="hidden min-w-[10rem] flex-1 sm:block">
-				<SearchField
-					bind:query={searchQuery}
-					placeholder="Search games…"
-					label="Search games"
-					oninput={updateSearchUrl}
-				/>
-			</div>
+				<!-- Hidden below `sm`: the mobile bar owns search on a phone. `contents`
+				     keeps this group a direct toolbar item at `sm` and up, and removes it
+				     (caption included) below. Same rule as `game_filters.svelte`. -->
+				<div class="hidden sm:contents">
+					<FilterGroup label="Search" grow>
+						<SearchField
+							bind:query={searchQuery}
+							placeholder="Search games…"
+							label="Search games"
+							oninput={updateSearchUrl}
+						/>
+					</FilterGroup>
+				</div>
 
-			<!-- Sort is always visible, at every breakpoint, exactly like the game page's
-			     filters. It used to move into the mobile bar's panel, which made the
-			     control you use to reorder the list two taps away on a phone and one away
-			     on a laptop — the same task at two different costs. -->
-			<SegmentedControl
-				bind:value={sortBy}
-				label="Sort games"
-				size="sm"
-				options={[
-					{ value: 'name', label: 'A–Z' },
-					{ value: 'completion', label: 'Completion' },
-					{ value: 'recent', label: 'Recent' }
-				]}
-			/>
-
-			<div class="hidden sm:block">
-				<ActionButton label="Sync all" icon={RefreshCw} onclick={syncAllGames} loading={syncing} />
-			</div>
+				<!-- Sort is always visible, at every breakpoint, exactly like the game page's
+				     filters. It used to move into the mobile bar's panel, which made the
+				     control you use to reorder the list two taps away on a phone and one away
+				     on a laptop — the same task at two different costs. -->
+				<FilterGroup label="Order">
+					<SegmentedControl
+						bind:value={sortBy}
+						label="Sort games"
+						size="sm"
+						options={[
+							{ value: 'name', label: 'A–Z' },
+							{ value: 'completion', label: 'Completion' },
+							{ value: 'recent', label: 'Recent' }
+						]}
+					/>
+					<div class="hidden sm:block">
+						<ActionButton label="Sync all" icon={RefreshCw} onclick={syncAllGames} loading={syncing} />
+					</div>
+				</FilterGroup>
+			</FilterToolbar>
 		</div>
 
 		<!--

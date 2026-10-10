@@ -82,7 +82,7 @@ in [sveltekit.md](./sveltekit.md) §3.
 and `clearLibrary()`. It stores **appIds**, not game objects — the catalogue already arrives from
 `+page.server.ts`, so storing a copy of it would go stale the moment a game is edited.
 
-Two rules this key exists to enforce:
+Three rules this key exists to enforce:
 
 - **Totals are measured against the player's subset, never the catalogue.** Every aggregate on the library
   page (game count, `completed/total`, percent, the mobile bar ring) derives from `scopedGames`, and so
@@ -91,6 +91,10 @@ Two rules this key exists to enforce:
   `scope === 'mine' ? myGames : data.games`. `'mine'` with an empty library is a real state with a real
   empty view, not something to silently redirect away from — see
   [ui.md](./ui.md) §1.
+- **`scope` is session-only, remembered in module memory.** It is not a `platworks:*` key: a module-level
+  `rememberedScope` in `+page.svelte` restores the scope the player chose across a client-side trip to a
+  game page and back, and a full reload starts from the default (`'mine'` when the library is non-empty).
+  Without it, returning from a game always landed on My Library.
 
 ## 6. The colour theme
 

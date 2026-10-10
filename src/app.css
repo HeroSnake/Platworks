@@ -275,6 +275,75 @@
 	transition: none;
 }
 
+/* ============================================================================
+   Filter toolbar — shared by the library and the game page.
+
+   Plain wrap: the toolbar is one line whenever its groups fit and drops the
+   groups to the next line only when they do not. The group captions
+   (Show · Type · Search · Order) are useful only while it is wrapping, so they
+   are hidden on the one-line toolbar.
+
+   Each toolbar names its OWN container, because the width at which it collapses
+   to a single line depends on its controls: the game toolbar carries the
+   achievement-type chips and needs far more room than the library's. A container
+   query reacts to the toolbar's real width in the page, not to the viewport, so
+   the label breakpoint is right inside a 288px-sidebar two-pane layout too.
+
+   `container-type: inline-size` is deliberately NOT a stacking context — unlike
+   the `z-index` trap on `.pw-quiet`, it cannot bury the controls from the hit
+   test.
+   ========================================================================= */
+.pw-toolbar {
+	container-type: inline-size;
+}
+.pw-toolbar[data-toolbar='lib'] {
+	container-name: pw-lib;
+}
+.pw-toolbar[data-toolbar='game'] {
+	container-name: pw-game;
+}
+.pw-toolbar-groups {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem 0.75rem;
+}
+.pw-toolbar-group {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+}
+/* The search group takes the leftover width once the toolbar is one line. */
+.pw-toolbar-group--grow {
+	flex: 1 1 9rem;
+	min-width: 9rem;
+}
+.pw-toolbar-label {
+	display: none;
+	flex: none;
+	width: 2.875rem;
+	font-size: 10px;
+	line-height: 1.6;
+	text-transform: uppercase;
+	letter-spacing: 0.09em;
+	color: var(--pw-faint);
+}
+/* The caption is shown until the toolbar is wide enough to be a single line. The
+   two numbers are the measured one-line widths: the library collapses at ~920px,
+   the game toolbar (completion + type chips + search + sort) at ~1000px. Change
+   either when the controls it measures change. */
+@container pw-lib (max-width: 920px) {
+	.pw-toolbar-label {
+		display: inline;
+	}
+}
+@container pw-game (max-width: 1000px) {
+	.pw-toolbar-label {
+		display: inline;
+	}
+}
+
 /* Floating account menu. Animates only transform/opacity so it stays on the
    compositor and never triggers layout while the achievement list scrolls. */
 @keyframes pop-in {

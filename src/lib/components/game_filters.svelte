@@ -2,20 +2,20 @@
 	import { Lock, Trophy } from '@lucide/svelte';
 	import SegmentedControl from '#lib/components/segmented_control.svelte';
 	import SearchField from '#lib/components/search_field.svelte';
+	import FilterToolbar from '#lib/components/filter_toolbar.svelte';
+	import FilterGroup from '#lib/components/filter_group.svelte';
 
 	/**
-	 * The game page's filter row — one component, rendered once.
+	 * The game page's filter toolbar — one toolbar, rendered once.
 	 *
-	 * This previously existed twice: once in the page body and again inside the
-	 * mobile bar's `panel` snippet, each hidden at the opposite breakpoint. That
-	 * is how "Filter by type" ended up rendered twice on a phone, and why the map
-	 * link appeared twice on a tablet. Two copies of a control drift — this one
-	 * had already drifted into different heights, different labels and a
-	 * different set of options.
+	 * It shares `filter_toolbar.svelte` with the library page, so both pages read as
+	 * one system: the same segmented control for sort (there is no `<select>`), the
+	 * same wrap-and-caption behaviour, the same 40px controls.
 	 *
-	 * The mobile bar is now a single row (search / filter / sync) and its filter
-	 * toggle scrolls this component into view, so exactly one filter UI is on
-	 * screen at any width.
+	 * This previously existed twice — once in the page body and again inside the
+	 * mobile bar's `panel` snippet — each hidden at the opposite breakpoint, which is
+	 * how "Filter by type" ended up rendered twice on a phone. The mobile bar now
+	 * carries search only and this component is the sole filter UI at every width.
 	 */
 	let {
 		filter = $bindable(),
@@ -39,59 +39,31 @@
 		types: string[];
 		typeCounts: Record<string, number>;
 	} = $props();
+
+	// Default / A–Z / Difficulty — the same segmented control the library uses for
+	// sort, so the two toolbars share one control vocabulary.
+	const sortOptions = [
+		{ value: 'default', label: 'Default' },
+		{ value: 'name', label: 'A–Z' },
+		{ value: 'difficulty', label: 'Difficulty' }
+	];
 </script>
 
-<div class="flex flex-col gap-2">
-	<!--
-		One scrollable row rather than a wrapping one. `flex-wrap` would let the
-		search field drop to its own line on a narrow phone and push the list down
-		by a row's height; `overflow-x-auto` keeps the toolbar a fixed height and
-		makes the extra options reachable by swiping.
-	-->
-	<div class="scrollbar-none -mx-1 flex items-center gap-2 overflow-x-auto px-1">
+<FilterToolbar name="game">
+	<FilterGroup label="Show">
 		<SegmentedControl bind:value={filter} label="Completion filter" size="sm" options={completionFilterOptions} />
-		<!--
-			Search is the one control hidden below `sm`. The mobile bar already
-			carries a search field in the thumb zone, and in a horizontally scrolling
-			row it would be pushed off-screen anyway. One search box per breakpoint.
-		-->
-		<div class="hidden min-w-[9rem] flex-1 sm:block">
-			<SearchField bind:query placeholder="Search trophies…" label="Search trophies" />
-		</div>
-		<!--
-			Sort is the only <select> left. There used to be a second one for the
-			achievement type, which duplicated the chip row directly beneath it: the
-			same filter, in the same toolbar, one control apart — and the chips carry
-			counts and a `missable` icon, so they were always the better one. "All
-			types" is now simply the state where no chip is pressed, and each chip
-			toggles itself off on a second tap.
-
-			Dropping it also buys the sort control room to stop being the thing pushed
-			off the right edge of a phone.
-		-->
-		<select
-			class="h-10 shrink-0 rounded-lg border border-line bg-steam-blue px-2.5 text-xs text-ink outline-none"
-			bind:value={gameSort}
-			aria-label="Sort trophies"
-		>
-			<option value="default">Default</option>
-			<option value="name">A–Z</option>
-			<option value="difficulty">Difficulty</option>
-		</select>
-	</div>
+	</FilterGroup>
 
 	<!--
-		Type chips, exposed rather than hidden in the <select>. Each carries its own
+		Type chips, exposed rather than hidden in a control. Each carries its own
 		count so a chip is never a dead tap. `standard` is the synthetic entry for
-		untagged trophies.
-
-		Rendered whenever the game has any tags at all - including a single one - so
-		the control set keeps the same shape for every game and the toolbar never
-		gains or loses a row. "All types" is the state where no chip is pressed, and
-		each chip toggles itself off on a second tap.
+		untagged trophies. Rendered whenever the game has any tags at all — including
+		a single one — so the control set keeps the same shape for every game. "All
+		types" is the state where no chip is pressed, and each chip toggles itself off
+		on a second tap.
 	-->
 	{#if types.length > 0}
-		<div class="scrollbar-none -mx-1 flex gap-2 overflow-x-auto px-1">
+		<FilterGroup label="Type">
 			{#each types as t (t)}
 				<button
 					type="button"
@@ -106,6 +78,22 @@
 					<span class="tabular font-mono text-[10px] opacity-70">{typeCounts[t] ?? 0}</span>
 				</button>
 			{/each}
-		</div>
+		</FilterGroup>
 	{/if}
-</div>
+
+	<!--
+		Search is the one control hidden below `sm`. The mobile bar already carries a
+		search field in the thumb zone; the `contents` display keeps this group a
+		direct flex item of the toolbar at `sm` and up, and removes it entirely below
+		so its caption does not show over nothing.
+	-->
+	<div class="hidden sm:contents">
+		<FilterGroup label="Search" grow>
+			<SearchField bind:query placeholder="Search trophies…" label="Search trophies" />
+		</FilterGroup>
+	</div>
+
+	<FilterGroup label="Order">
+		<SegmentedControl bind:value={gameSort} label="Sort trophies" size="sm" options={sortOptions} />
+	</FilterGroup>
+</FilterToolbar>
