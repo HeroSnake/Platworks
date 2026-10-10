@@ -27,7 +27,7 @@
 import { mkdir, readdir, stat } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { launchBrowser } from './lib/playwright.mjs';
+import { launchBrowser, FRAME_LABELS } from './lib/playwright.mjs';
 import { auditPage, INTERACTIVE_SELECTOR, CONTROL_SELECTORS, attachErrorCollectors } from './lib/ui-checks.mjs';
 import { run } from './lib/cli.mjs';
 
@@ -88,6 +88,38 @@ async function mockupFiles(dir) {
 }
 
 const isUrl = (t) => /^https?:\/\//.test(t);
+
+/**
+ * Drives a scaffolded mockup's OWN viewport selector to the width being shot.
+ *
+ * `new-mockup.mjs` gives every mockup a `body[data-frame]` selector plus a
+ * `.frame[data-width]` element, but this script only set the BROWSER viewport —
+ * so all four shots rendered whichever frame the file happened to open in, and
+ * the four PNGs were one layout at four scales. The mockup gate relies on the
+ * four being four different widths, so set the frame here. No-op on a page with
+ * no such selector (a live route, a plain HTML page).
+ */
+async function driveMockupFrame(page, width) {
+	const label = FRAME_LABELS[width];
+	if (!label) return;
+	await page.evaluate(
+		({ label, width }) => {
+			const frame = document.querySelector('.frame[data-width]');
+			const btn = document.querySelector(`.toggle [data-frame="${label}"]`);
+			if (!frame || !btn) return;
+			document.body.dataset.frame = label;
+			frame.dataset.width = String(width);
+			// Viewport === frame width for the standard set, so no scale is needed.
+			frame.style.transform = 'none';
+			const fit = document.querySelector('.stage-fit');
+			if (fit) fit.style.height = '';
+			for (const b of document.querySelectorAll('.toggle [data-frame]')) {
+				b.setAttribute('aria-pressed', String(b === btn));
+			}
+		},
+		{ label, width }
+	);
+}
 
 async function main() {
 	const args = parseArgs(process.argv.slice(2));
@@ -182,6 +214,9 @@ async function main() {
 					args.theme
 				);
 			}
+
+			// Drive the mockup's own viewport selector to this width (no-op off a mockup).
+			await driveMockupFrame(page, job.width);
 
 			await page.waitForTimeout(300);
 			await page.screenshot({ path: job.out, fullPage: args.full });

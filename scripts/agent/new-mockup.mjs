@@ -210,7 +210,7 @@ ${fontHref ? `\t\t<link href="${fontHref}" rel="stylesheet" />\n` : ''}		<style>
 			:root {
 ${tokens}
 				--tap: 40px; /* the app's floor; h-9 (36px) always fails */
-			}
+			}${paletteBlocks}
 			* { box-sizing: border-box; }
 			body {
 				margin: 0;
