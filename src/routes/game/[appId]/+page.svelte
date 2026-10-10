@@ -10,6 +10,7 @@
 		MapPinned
 	} from '@lucide/svelte';
 	import AchievementRow from '#lib/components/achievement_row.svelte';
+	import TrophyPanel from '#lib/components/trophy_panel.svelte';
 	import MobileBar from '#lib/components/mobile_bar.svelte';
 	import GameFilters from '#lib/components/game_filters.svelte';
 	import ProgressBar from '#lib/components/progress_bar.svelte';
@@ -174,6 +175,15 @@ import { untrack } from 'svelte';
 		let gameSort = $state<SortValue>('default');
 		// Session-only: a trophy search is transient, unlike the filters below.
 		let trophyQuery = $state('');
+
+		// Desktop master–detail. At `lg` and up the trophy list is a card grid and
+		// these drive its sticky detail panel; below `lg` the panel is hidden and the
+		// row expands its guide inline, so `selectedId` is simply inert there.
+		let selectedId = $state<string | null>(null);
+		let selectedAchievement = $derived(
+			data.game.achievements.find((a) => a.id === selectedId) ?? null
+		);
+		let selectedAchieved = $derived(selectedId ? (achievedMap[selectedId] ?? false) : false);
 
 		function loadPrefs(appId: number): { filter: FilterValue; typeFilter: string; gameSort: SortValue } {
 			const fallback = { filter: 'all' as FilterValue, typeFilter: 'all', gameSort: 'default' as SortValue };
@@ -443,13 +453,15 @@ import { untrack } from 'svelte';
 		<!--
 			Two-pane on desktop, one column below `lg`.
 
-			`max-w-4xl` used to cap the whole page, which is a narrow ribbon on a 1440px
-			display — the widest possible waste of a screen built for wide screens. The
-			sidebar is a fixed 288px and the list takes the rest, which keeps the guide
-			prose that expands inside each row comfortably inside a readable measure
-			while the progress summary stays on screen while you scroll 200 trophies.
-					-->
-			<div class="mx-auto max-w-[1400px] px-4 pb-[calc(6rem+env(safe-area-inset-bottom,0px))] pt-4 sm:px-6 sm:pt-6 lg:grid lg:grid-cols-[288px_minmax(0,1fr)] lg:gap-6 lg:px-8 lg:pb-16">
+			From `lg` up the outer gutter is a FIXED FRACTION of the width — `3.6vw`,
+			which is the 1440 desktop's own gutter (52px of 1440). It is enforced with a
+			`max-w` that subtracts the fraction and adds the horizontal padding back, so
+			the padding stays `lg:px-8` and `.pw-quiet`'s `-2rem` still reaches the edge.
+			A plain `max-w-*` cap instead grows its margin with the viewport and then
+			snaps at a breakpoint. The extra width goes to the content column: the trophy
+			card grid plus its detail panel.
+				-->
+			<div class="mx-auto px-4 pb-[calc(6rem+env(safe-area-inset-bottom,0px))] pt-4 sm:px-6 sm:pt-6 lg:grid lg:max-w-[calc(100%_-_7.2vw_+_64px)] lg:grid-cols-[288px_minmax(0,1fr)] lg:gap-6 lg:px-8 lg:pb-16">
 			<!--
 				Sticky on desktop only. Below `lg` it is the first block in the flow, so
 				`position: sticky` would pin a tall hero to the top of the scroll and
@@ -713,9 +725,9 @@ import { untrack } from 'svelte';
 				out of alignment with the top of the sidebar, so it goes to zero.
 
 							`pw-quiet` is the background pattern's quiet band: a flat `--pw-bg` layer
-							so the tile stops behind the control row. It bleeds to the 1400px
-							container edge, not the viewport, because the container is centred and
-							max-width'd here.
+							so the tile stops behind the control row. It bleeds to the
+							container's edge, not the viewport, because the container is centred
+							and max-width'd here.
 						-->
 						<div class="pw-quiet mt-4 lg:mt-0">
 							<GameFilters
@@ -729,8 +741,19 @@ import { untrack } from 'svelte';
 							/>
 						</div>
 
-			<!-- Achievement list -->
-			<div class="mt-3 flex flex-col gap-2">
+			<!-- Achievement list + desktop detail panel.
+			     At `lg` and up the list is a card grid beside a sticky detail panel;
+			     below `lg` the panel is hidden and this is the familiar row stack. The
+			     list is rendered ONCE — the row reflows into a card through `lg:` classes
+			     — so the exit/celebration state machine stays in one place and no control
+			     is ever rendered twice. The split is EQUAL — `lg:grid-cols-2` — because
+			     the guide is the point of the page and a narrow panel made it a sliver
+			     while the cards hogged the width. The selected card carries an accent
+			     ring (its `selected` prop) so the panel never describes a card the player
+			     cannot pick out. `pw-trophy-grid` in `app.css` caps the list's own column
+			     count so a card never vanishes into a 200px sliver. -->
+			<div class="mt-3 lg:grid lg:grid-cols-2 lg:items-start lg:gap-6">
+			<div class="pw-trophy-grid">
 				{#if !hydrated}
 									<!--
 										SHAPED skeleton. The old rows were flat `h-[90px]` rectangles,
@@ -758,11 +781,13 @@ import { untrack } from 'svelte';
 							achieved={achievedMap[achievement.id]}
 							steamLocked={false}
 							unlockTime={null}
-												exiting={departing.has(achievement.id)}
-												celebration={celebrations[achievement.id] ?? 0}
-												ontoggle={() => toggleCheck(achievement.id)}
-												onvanished={() => release(achievement.id)}
-											/>
+							exiting={departing.has(achievement.id)}
+							celebration={celebrations[achievement.id] ?? 0}
+							selected={selectedId === achievement.id}
+							ontoggle={() => toggleCheck(achievement.id)}
+							onactivate={() => (selectedId = achievement.id)}
+							onvanished={() => release(achievement.id)}
+						/>
 										{/each}
 
 										<!--
@@ -788,6 +813,17 @@ import { untrack } from 'svelte';
 						</div>
 					{/if}
 				{/if}
+			</div>
+
+			<div class="hidden lg:sticky lg:top-[4.5rem] lg:block">
+				<TrophyPanel
+					achievement={selectedAchievement}
+					achieved={selectedAchieved}
+					steamLocked={false}
+					unlockTime={null}
+					ontoggle={() => { if (selectedId) toggleCheck(selectedId); }}
+				/>
+			</div>
 			</div>
 			</section>
 		</div>

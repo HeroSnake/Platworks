@@ -34,7 +34,10 @@ drawn against.
 | `filter_toolbar.svelte` | the wrap container shared by both toolbars; `name` picks the container the group captions are keyed to |
 | `filter_group.svelte` | one labelled group inside a toolbar (`Show` · `Type` · `Search` · `Order`); `grow` for the search group |
 | `theme_picker.svelte` | six-palette radiogroup: 3×2 grid of tiles, each a miniature of the palette. Inside the account popover |
-| `achievement_row.svelte` | expandable trophy row: trophy image + check indicator overlaid, badges, pips |
+| `achievement_row.svelte` | the trophy, one horizontal shape (trophy icon left, name/description/meta right) in every container — a one-column stack below `lg`, a two-up grid at `xl`. Owns the check toggle, the celebrate/relock/exit motion and the inline expansion (hidden at `lg`, where the page's detail panel is the guide surface) |
+| `achievement_meta.svelte` | the difficulty-pips + type-badge rail, shared by the row and the panel so they cannot disagree about a trophy's tags |
+| `achievement_guide.svelte` | the guide body — steps, links, warnings, community notes, unlock date — shared by the row's inline expansion and the desktop panel |
+| `trophy_panel.svelte` | the game page's desktop master–detail panel: the selected trophy's icon, name, meta and guide. Rendered once, sticky, hidden below `lg` |
 | `game_card.svelte` | compact card: 16:9 artwork, title, linear bar, count. No ring |
 | `github_icon.svelte` | inline GitHub mark |
 | `mobile_bar.svelte` | shared bottom bar for **both** pages |
@@ -157,7 +160,12 @@ own margin. The filters wrapper is `mt-4 lg:mt-0`: the `mt-4` is the stacked-col
 the `lg:mt-0` zeroes it because at `lg` the columns sit side by side and a top margin would push the
 toolbar out of alignment with the top of the sidebar.
 
-`lg:grid-cols-[288px_minmax(0,1fr)]`.
+The container is **`lg:max-w-[calc(100%_-_7.2vw_+_64px)]`** with `lg:px-8`, so the outer gutter is
+**`3.6vw`** — the 1440 desktop's own gutter (52px of 1440). The `max-w` subtracts the fraction and adds
+the padding back, which keeps `lg:px-8` and therefore `.pw-quiet`'s `-2rem` (the band and the shell must
+agree on the padding). A plain `max-w-*` cap instead grows its margin with the viewport and snaps at a
+breakpoint; a fraction keeps the desktop proportion on an ultrawide and sends the extra width into the
+content column. The grid is **`lg:grid-cols-[288px_minmax(0,1fr)]`**.
 
 - **The sidebar is `lg:sticky lg:top-[4.5rem]` only.** Below `lg` it is the first block in flow; a sticky
   tall hero would pin to the top of the scroll and leave no room for the list.
@@ -167,7 +175,7 @@ toolbar out of alignment with the top of the sidebar.
   positioned block inside a fixed-ratio box cannot grow: a Steam blurb longer than the box escapes it,
   overlaps the artwork and spills out of the 288px sidebar. The description is `line-clamp-3` at every
   width; Steam's longer blurbs run 300+ characters.
-- **The hero is `aspect-[21/9]` below `lg`, `lg:aspect-video` above.** A `min-h-*` hero plus a full stats
+- **The hero is `aspect-[2/1]` below `lg`, `lg:aspect-[16/7]` above.** A `min-h-*` hero plus a full stats
   panel plus two stacked buttons pushes the first achievement ~900px down on a phone.
 - **Type and Sort must stay reachable on a phone.** The toolbar wraps rather than scrolling, so nothing
   is ever off-screen; it costs an extra row of vertical space only on the games and widths where it
@@ -177,8 +185,52 @@ toolbar out of alignment with the top of the sidebar.
   across both pages, not one per page.
 - **The chip row renders whenever `types.length > 0`, not `> 1`.** Gating it on "more than one" makes the
   toolbar gain or lose a row depending on the game.
-- **Keep the guide prose inside a readable measure.** The sidebar is a fixed 288px precisely so the list
-  column does not become a 1100px-wide line of text as a row grows.
+- **Keep the guide prose inside a readable measure.** At `lg` and up a guide is never in the list — it
+  lives in `trophy_panel.svelte`, which is the second of the two equal halves — so the prose measure is the
+  panel and the widened card column cannot turn a row into an 1100px line. Below `lg` the row expands
+  inline in the narrow single column. See the master–detail section for the split itself.
+
+### The desktop trophy grid is a master–detail split
+
+At `lg` and up the trophy list becomes a **two-up grid of wide horizontal cards** beside a sticky
+`trophy_panel.svelte`. Below `lg` the panel is `hidden` and the row expands its guide inline, exactly as
+before. The card is the SAME shape in both — trophy icon left, name/description/meta right; only the
+container changes, from a one-column stack to the grid. The grid is `.pw-trophy-grid` in `app.css`, not
+Tailwind utilities, for the reasons below. Rules that hold it together:
+
+- **The list is rendered ONCE.** The card is not a second component: a per-breakpoint pair would double
+  the keyed `{#each}`, the held-row exit and the celebrate/relock state, and the duplicate-control audit
+  would see two of every trophy.
+- **Exactly two columns from `2xl` (1536), and not a fluid count.** `grid-template-columns: repeat(2, minmax(0,1fr))`
+  from `1536px`. A fluid `auto-fill` floor is wrong here: the card is a WIDE rectangle and the whole point
+  is that its info half stays wide, but `minmax(206px,1fr)` just multiplies narrow cards on a widescreen
+  (it reached twelve at 3440). The threshold is `2xl`, not `xl`, because the list is only HALF the content
+  column once the detail panel is beside it (see the equal-split rule below): two cards at `xl` came out
+  ~207px and clipped their `secret` badge against the card edge. At 1536 the half holds two 266px cards,
+  and below it is a single column. `app.css`, not a Tailwind class, so it is one declared rule to tune.
+- **The list/detail split is EQUAL — `lg:grid-cols-2`, never a fixed or narrow panel.** The game page's
+  list/panel grid is `lg:grid lg:grid-cols-2 lg:gap-6`, so the guide owns half the content column and the
+  cards own the other half. A fixed 340px panel left the guide a sliver on an ultrawide while the two card
+  columns kept growing — all the extra width went to the cards. A `clamp` that only widened the panel
+  *above* the desktop reference was the same mistake, one breakpoint later: the ratio was still roughly a
+  third, not a half. If the guide needs more/less room, move BOTH tracks together (`grid-cols-[2fr_3fr]`
+  and the like), never the panel alone.
+- **The selected card carries the accent ring.** `achievement_row.svelte` takes `selected`, and the game
+  page passes `selected={selectedId === achievement.id}`. Without it the sticky panel describes a trophy
+  while the grid shows no sign of which one, so the player cannot tell where the guide came from. The ring
+  is `lg:`-only (`lg:border-steam-accent lg:ring-2 lg:ring-steam-accent`): below `lg` the panel is hidden and
+  the row expands inline, so a selected tint there would mark a card for no reason.
+- **The click that expands the row is the click that selects it** (`onactivate`), so the panel and the
+  row cannot drift. Below `lg`, `onactivate` sets state the hidden panel never shows.
+- **A card never grows.** The guide is in the panel; that is what keeps the grid's row rhythm.
+- **The row's own `.expand-panel` is hidden at `lg` — in `app.css`, never with a Tailwind class.**
+  `app.css` is **unlayered** and Tailwind's utilities are in a layer, so the unlayered
+  `.expand-panel { display: grid }` **beats** a layered `lg:hidden`. A `lg:hidden` on the element
+  therefore does nothing, the guide renders inside the card, and the card stretches its whole grid row
+  to fit it. The hide is a `.achievement-item .expand-panel { display: none }` rule in the media query.
+- **The chevron is `lg:hidden`.** At `lg` a card selects into the panel rather than expanding in place,
+  so a rotating chevron would promise the wrong interaction. The icon still toggles the check; the rest
+  of the card still selects.
 
 ### The theme picker: a grid of palette miniatures, not a row of swatches
 
@@ -260,15 +312,14 @@ tag that changes what the player should *do*. An untagged trophy (`types: []`) r
 empty array **is** the plain trophy, and a `standard` tag would permit contradictions like
 `["standard","secret"]`.
 
-### The game page hero: text overlaid on the banner
+### The game page hero: artwork only, no overlay text
 
-- **Two scrims, not one.** A flat `bg-steam-dark/45` plus a `bg-gradient-to-t` from `steam-dark`. Steam
-  banners range from near-black to almost white, so the flat pass stops a bright one washing out the
-  title and the gradient keeps the copy off the busiest band. Dropping either regresses some games.
-- **A fixed `aspect-*`, not `min-h`.**
-- **The image is decorative.** `alt=""` because the game name is the `h1` right there. It carries
-  `fetchpriority="high"` — it is the page's LCP.
-- **The blurb clamps to two lines below `lg`** and is unclamped above.
+- **The artwork carries no text.** The name is the `h1` below it; the fixed ratio and the reason are in
+  the two-pane rules above.
+- **One bottom scrim.** `bg-gradient-to-t from-steam-dark/85` blends the artwork into the page. There is
+  no overlay copy to protect, so it is a single pass, not the two the hero used to need.
+- **The image is decorative.** `alt=""` because the name is the `h1`, `fetchpriority="high"` because it is
+  the page's LCP. `onerror` hides the `img` and reveals the placeholder gradient + `Trophy` behind it.
 
 ### Library scope: nothing above the grid may appear or disappear
 
@@ -600,7 +651,10 @@ Six traps, all of which fail silently:
   the forbidden negative margin in §1: that rule is about a negative *vertical* margin inside the
   row's horizontal `flex` line, where vertical is the **cross** axis and the margin shrinks the
   line's cross size. The achievement list is `flex-col`, where vertical is the **main** axis, so
-  the margin only reduces this item's own outer size.
+  the margin only reduces this item's own outer size. **In the `lg` card grid the gap is two-axis**,
+  so `app.css` forces `margin-block: 0 !important` on `.pw-exit` in a `(min-width: 1024px)` block — a
+  negative block margin would drag the card into the row above. It has to be `!important` because
+  `margin-block` is animated by `pw-trophy-vanish`, and an animated property outranks a normal rule.
 
 **Past ~920ms there is deliberately nothing to re-tap.** The celebration ends and `.pw-exit` sets
 `pointer-events: none`, so a click landing on the collapsing card goes to the row underneath. That is

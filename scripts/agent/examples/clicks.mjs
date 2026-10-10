@@ -20,6 +20,19 @@
  */
 export default [
 	{
+		// The desktop master–detail split: at `lg` and up a card does not expand in
+		// place — its click SELECTS the trophy into the sticky panel. `count` is the
+		// observable: the panel renders one `ol li` per guide step and the empty state
+		// renders none, so Roundtable Hold's two steps prove the panel filled. There is
+		// no storage key for a session selection, so an attribute would be a test-only
+		// hook; the rendered length is the honest signal.
+		name: 'Desktop trophy cards — select fills the detail panel',
+		route: '/game/1245620',
+		width: 1440,
+		click: '.achievement-item >> nth=0 >> button[aria-expanded]',
+		expect: { count: { selector: 'aside[aria-label="Trophy details"] ol li', equals: '2' } }
+	},
+	{
 		name: 'Library sort — Completion',
 		route: '/',
 		click: '[aria-label="Sort games"] [role="radio"] >> nth=1',

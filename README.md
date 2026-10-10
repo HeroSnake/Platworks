@@ -23,10 +23,14 @@ button all follow your selection.
 
 ## A game's trophies
 
-<img src="docs/screenshots/game-page.png" alt="A game's trophy page: artwork, a progress ring showing 50 of 55 trophies, filters for completion and type, and a list of trophies you can tick off by tapping them." />
+<img src="docs/screenshots/game-page.png" alt="A game's trophy page on desktop: the game's artwork and progress on the left, a list of trophy cards in the middle, and a panel on the right for the selected trophy's guide." />
 
 Every trophy is a row you can **tap to tick off** — no checkboxes in a separate column, so the name of a
 long trophy like *"Rennala, Queen of the Full Moon"* still fits on one line on a phone.
+
+On a desktop screen the same trophies become **wide cards in a list** (two columns on a large monitor),
+and tapping one opens its guide in a panel beside the list — so the list keeps its even rhythm and the
+walkthrough gets a full column to read in. On a phone it stays the row list above.
 
 Some rows earn an extra badge:
 
@@ -60,6 +64,8 @@ endpoints. Your progress lives in your browser, and disconnecting clears it.
   or difficulty, and filter by locked state and trophy type
 - **Six colour themes** — Ember, Amber, Cobalt, Matrix, Cyberpunk and Vapor, each with its own palette and
   accent colour. Pick one from the account menu; it sticks, and there is no flash on load
+- **Cards on desktop** — from a laptop screen up, each trophy is a card in a grid with the guide in a
+  sticky panel beside it; on a phone it stays the tappable row list
 - **Readable on a phone** — every control has a 40px+ tap target, and the whole app honours your
   reduced-motion setting
 - **Installable** — add it to your home screen and it opens as its own app, with no browser bar. It works

@@ -602,6 +602,34 @@
 	pointer-events: none;
 }
 
+/*
+   The vanish keyframe ends on `margin-block: -0.5rem` to cancel the list's flex
+   column gap, so a row above the exiting one does not stop 8px short and then
+   jump. In the desktop card grid that margin is wrong: the grid gap is two-axis
+   and a negative block margin drags the card into the row above. `!important`
+   because `margin-block` is animated by `pw-trophy-vanish`, and an animated
+   property outranks a normal declaration.
+*/
+@media (min-width: 1024px) {
+	.achievement-item.pw-exit {
+		margin-block: 0 !important;
+	}
+}
+
+/*
+   The desktop card grid reads each guide in the page's sticky detail panel, so the
+   row's own inline panel must not render at `lg`. This lives here and NOT as a
+   Tailwind `lg:hidden` on the element: app.css is UNLAYERED and Tailwind's utilities
+   are in a layer, so the unlayered `.expand-panel { display: grid }` above wins over
+   a layered `lg:hidden` — the class silently does nothing and an expanded card
+   grows the whole grid row. Keep the hiding next to the rule it overrides.
+*/
+@media (min-width: 1024px) {
+	.achievement-item .expand-panel {
+		display: none;
+	}
+}
+
 
 /* ============================================================================
    DIFFICULTY SEGMENT BAR — a composition, not a progress bar.
@@ -926,6 +954,46 @@ a[aria-disabled='true'],
 .achievement-item {
 	content-visibility: auto;
 	contain-intrinsic-size: auto 109px;
+}
+@media (min-width: 1024px) {
+	.achievement-item {
+		/* Desktop cards are taller than the collapsed row (icon + name + two-line
+		   description + the meta rail); a closer estimate keeps the scroll height
+		   honest before `auto` remembers each card's real height. */
+		contain-intrinsic-size: auto 188px;
+	}
+}
+
+/*
+   The desktop trophy grid: one WIDE horizontal card per trophy — icon on the left,
+   name/description/difficulty/tags filling the space to its right — TWO per row.
+
+   Two columns from `2xl`, not a fluid `auto-fill`: the point is that the info half
+   of the card is wide and stays wide, and a fluid count would only multiply narrow
+   cards on a widescreen (it reached twelve at 3440). The switch is at 1536, not `xl`,
+   because the list is only HALF the content column once the detail panel is beside it
+   (the split is `lg:grid-cols-2`): at `xl` two cards came out ~207px and their
+   `secret` badge clipped against the card edge. At 1536 the half holds two 266px cards
+   — at least as wide as the two-up grid shipped before the split widened. Below 1536
+   it is a single column, and below `lg` the plain flex column the row lifecycle (the
+   exit gap cancellation) was written for.
+*/
+.pw-trophy-grid {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+@media (min-width: 1024px) {
+	.pw-trophy-grid {
+		display: grid;
+		gap: 0.75rem;
+		grid-template-columns: 1fr;
+	}
+}
+@media (min-width: 1536px) {
+	.pw-trophy-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
 }
 
 /* Promote the sticky nav and mobile bar to their own layers so scrolling the
