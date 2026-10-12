@@ -80,13 +80,14 @@ nothing to sideload, and it updates on its own.
 
 ## The catalogue
 
-**29 games, 1647 achievements** :
+**30 games, 1697 achievements** :
 
 | Game | Achievements | Map |
 |------|-------------:|:---:|
 | Active Matter | 38 | |
 | Aniimo | 64 | |
 | Apex Legends | 12 | |
+| ARC Raiders | 50 | ✓ |
 | Battlefield 6 | 53 | |
 | Clair Obscur: Expedition 33 | 55 | ✓ |
 | Counter-Strike 2 | 1 | |

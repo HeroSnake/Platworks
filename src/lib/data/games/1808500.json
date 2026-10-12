@@ -1,0 +1,860 @@
+{
+	"$schema": "./schema.json",
+	"appId": 1808500,
+	"name": "ARC Raiders",
+	"totalAchievements": 50,
+	"mapUrl": "https://mapgenie.io/arc-raiders",
+	"achievements": [
+		{
+			"id": "RITE_OF_PASSAGE",
+			"name": "Rite of Passage",
+			"description": "Safely return to Speranza for the first time.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/e30604fc940158d2502f216c0ac5487727b0b8ee.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Load into any map and complete a run.",
+					"Reach an extraction point and extract safely to return to Speranza."
+				]
+			}
+		},
+		{
+			"id": "SHOTS_FIRED",
+			"name": "Shots Fired",
+			"description": "Deal 1000 damage to ARC enemies.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/e81b1b3105235c95f422919cc51400cec62d9f48.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Shoot any ARC machines you encounter.",
+					"Damage is tracked across runs until you reach 1,000."
+				]
+			}
+		},
+		{
+			"id": "MECHANICAL_FAILURE",
+			"name": "Mechanical Failure",
+			"description": "Shoot a thruster off a Wasp.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/afd8ad62ce7601da4681cc04262016d8bb8d9810.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Target a Wasp — the small flying ARC drone.",
+					"Aim at one of its thrusters and shoot it off."
+				]
+			}
+		},
+		{
+			"id": "SELF_SUFFICIENT",
+			"name": "Self-Sufficient",
+			"description": "Install a station in your Workshop.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/38e5461e001d9cef970fe6312c6c2152fd8f12b1.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Open your Workshop in Speranza.",
+					"Install any crafting station you have a blueprint for."
+				]
+			}
+		},
+		{
+			"id": "THE_FRIENDS_WE_MADE_ALONG_THE_WAY",
+			"name": "The Friends We Made Along The Way",
+			"description": "Return to Speranza together with an encountered Raider.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/a931d910c8cd47600ab5f4349aefa580a3bcd2da.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find another player's Raider in a run — 'encountered' means someone outside your party, even in fill squad mode.",
+					"Extract together from the same extraction point so both of you return to Speranza."
+				]
+			}
+		},
+		{
+			"id": "SCAVENGER",
+			"name": "Scavenger",
+			"description": "Search 50 loot containers.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/34b6e5ff472ded407816555ce6ef6a3657fbf678.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Open loot containers and search them.",
+					"A container can only be searched once, so sweep buildings each run until you reach 50."
+				]
+			}
+		},
+		{
+			"id": "CROSSED_THE_THRESHOLD",
+			"name": "Crossed the Threshold",
+			"description": "Knock out a Raider.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/d8f9715a61f9c33d2b9926f6c1a8058319c18895.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Down another player's Raider in combat.",
+					"Finish them off — or force a surrender — so they are knocked out, not merely downed."
+				],
+				"warnings": [
+					"Downing a Raider is not enough. Once downed they must lose all their health or surrender for the knockout to count."
+				]
+			}
+		},
+		{
+			"id": "IN_YOUR_ELEMENT",
+			"name": "In Your Element",
+			"description": "Reach level 10.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/3a64d9ef4f9570c0745a1982820ff3f9e45e4f51.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Earn XP by looting, destroying ARC and completing quests.",
+					"Level up until you reach level 10."
+				]
+			}
+		},
+		{
+			"id": "NOT_OVER_TILL_ITS_OVER",
+			"name": "Not Over Till It's Over",
+			"description": "Safely return to Speranza while downed.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/f72db3a866adfa66deb693ff0aeb753cdb516ebb.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Get downed near an extraction point.",
+					"Call the extract while downed and crawl into the extract zone.",
+					"Return to Speranza while still downed — do not bleed out first."
+				]
+			}
+		},
+		{
+			"id": "BEHIND_CLOSED_DOORS",
+			"name": "Behind Closed Doors",
+			"description": "Visit a locked room on Dam Battlegrounds, Buried City or Spaceport.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/f5ed6b9bb65d5e871990f81c8ab1435b3fef104b.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find a locked room on Dam Battlegrounds, Buried City or Spaceport.",
+					"Open it with the matching key (e.g. a Controlled Access Zone Key) or wait for it to be unlocked.",
+					"Step inside the room."
+				]
+			}
+		},
+		{
+			"id": "INTO_THIN_AIR",
+			"name": "Into Thin Air",
+			"description": "Safely return to Speranza through a Raider Hatch.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/9baa83e58f0e0cda1437fe083b84dc5672dd5b73.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Bring a Raider Hatch Key (bought in Speranza or looted) into a run.",
+					"Find a Raider Hatch and extract through it to return to Speranza."
+				],
+				"warnings": [
+					"Raider Hatches are disabled during Night Raids."
+				]
+			}
+		},
+		{
+			"id": "WELL_TRAVELED",
+			"name": "Well-Traveled",
+			"description": "Safely return from Dam Battlegrounds, Buried City and Spaceport.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/3f530c30196249ca0330b991deef14889f6a643e.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Extract successfully from Dam Battlegrounds.",
+					"Extract successfully from Buried City.",
+					"Extract successfully from Spaceport."
+				]
+			}
+		},
+		{
+			"id": "RACKING_THEM_UP",
+			"name": "Racking Them Up",
+			"description": "Destroy 50 ARC enemies.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/11f15b3e48bb8c76112a15960a2dc15c0e5c25fb.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Destroy any ARC machines.",
+					"The count is lifetime, so keep destroying until you reach 50."
+				]
+			}
+		},
+		{
+			"id": "WELL_ARMED",
+			"name": "Well-Armed",
+			"description": "Have two weapons of Tier II or higher equipped in a round.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/1292fb7d06a78eaf579da7fcc13902dd1da739a6.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Upgrade or craft two weapons to Tier II or higher.",
+					"Equip both at the same time during a run."
+				]
+			}
+		},
+		{
+			"id": "SEE_YOU_NEVER",
+			"name": "See You Never",
+			"description": "Return safely to Speranza while leaving a squadmate behind.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/d101c2729fbfebcaef0eb6d64c7ee814e88064a4.jpg",
+			"types": [
+				"multiplayer",
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play with at least one squadmate.",
+					"Reach an extraction point and extract while your squadmate stays behind — a Raider Hatch makes this easy since you exit before them.",
+					"Return to Speranza on your own."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a601180/see-you-never-achievement",
+				"warnings": [
+					"The squadmate left behind must still be alive when you extract.",
+					"Reported as buggy for some players — it may take more than one attempt."
+				]
+			}
+		},
+		{
+			"id": "BELLS_AND_WHISTLES",
+			"name": "Bells and Whistles",
+			"description": "Have 4 weapon mods on a single weapon.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/63a975cf91e2f4693d66c890af8d077ffa7a9068.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Install four weapon mods on the same weapon.",
+					"It must be a single weapon, not four mods spread across your loadout."
+				]
+			}
+		},
+		{
+			"id": "GETTING_SERIOUS",
+			"name": "Getting Serious",
+			"description": "Upgrade a Workshop station to level 2.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/b6d39db71af6902d5a21995b60b8016bbf8b930f.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Open a Workshop station in Speranza.",
+					"Spend the materials to upgrade it to level 2."
+				]
+			}
+		},
+		{
+			"id": "TRAIL_OF_DESTRUCTION",
+			"name": "Trail of Destruction",
+			"description": "Destroy 100 ARC enemies.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/2c6ff31bf411d949984fe7eb606a92ce3968aeaa.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Destroy ARC machines across runs.",
+					"The count is lifetime, so keep going until you reach 100."
+				]
+			}
+		},
+		{
+			"id": "EXPERT_WEAPONSMITH",
+			"name": "Expert Weaponsmith",
+			"description": "Upgrade a weapon to Tier IV.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/4c8092ae726849e21b3081fea257e5aef7f821f7.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Upgrade a weapon repeatedly at the Gunsmith.",
+					"Reach Tier IV, the top upgrade tier."
+				]
+			}
+		},
+		{
+			"id": "THE_BIG_HAUL",
+			"name": "The Big Haul",
+			"description": "Return to Speranza with 50 000 worth of loot.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/df730ceeb5b128b6ee0ec4fecd46f0f2223ba420.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Fill your inventory with high-value loot — your total loot value is shown in the inventory screen.",
+					"Extract with at least 50,000 total value."
+				],
+				"warnings": [
+					"You lose everything outside your safe pockets if you are knocked out before extracting."
+				]
+			}
+		},
+		{
+			"id": "A_VENDETTA_IS_BORN",
+			"name": "A Vendetta Is Born",
+			"description": "Get downed and knocked out while inside a return point.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/ca17d9eb870a6f0a4dd67ccb1f6ee83c99be28ba.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Go to a standard extraction point — Raider Hatches do not work.",
+					"Let an ARC enemy down you right at the point (a solo method that avoids PvP).",
+					"While downed, press the button to call the extract and crawl around inside the zone.",
+					"Stay inside until you bleed out and are knocked out — that is what unlocks it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a601198/a-vendetta-is-born-achievement",
+				"warnings": [
+					"You must be knocked out (not extracted) while inside the return point.",
+					"Bring a free/low-cost loadout — being knocked out loses anything not in a safe pocket."
+				]
+			}
+		},
+		{
+			"id": "THE_LONG_HAUL",
+			"name": "The Long Haul",
+			"description": "Reach a total lifetime loot value of 1 000 000.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/98fefef3b5f5415cb91308c30d7f8c5bf005a8d6.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Extract loot repeatedly — the total is lifetime and accumulates across runs.",
+					"Keep farming high-value loot runs until you reach 1,000,000."
+				]
+			}
+		},
+		{
+			"id": "UNYIELDING",
+			"name": "Unyielding",
+			"description": "Knock out 10 Raiders.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/f5b090294a798f8f18170b0d1fc9fc659d1c8271.jpg",
+			"types": [
+				"multiplayer",
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Down other players' Raiders in combat.",
+					"Finish them so they are knocked out, not merely downed.",
+					"Repeat until you have knocked out 10."
+				],
+				"warnings": [
+					"Downing is not enough — a Raider must lose all health or surrender to count."
+				]
+			}
+		},
+		{
+			"id": "NO_GOING_BACK",
+			"name": "No Going Back",
+			"description": "Be topside when the safe window closes.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/98a0304ab9d30429fb359ce17e68d56a5f76769e.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Stay on the surface until the round timer is nearly out.",
+					"Call an elevator (or open a Raider Hatch) in the final seconds and extract as the safe window closes."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a601177/no-going-back-achievement",
+				"warnings": [
+					"Being caught in the open as the timer hits zero kills you — start the extract first.",
+					"Pairs naturally with In the Nick of Time.",
+					"Raider Hatches are disabled during Night Raids."
+				]
+			}
+		},
+		{
+			"id": "BRINGING_DOWN_THE_BIG_GUNS",
+			"name": "Bringing Down the Big Guns",
+			"description": "Destroy a Rocketeer.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/2e212dc57251004a3d5e7919e76a2c2615837fb8.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find a Rocketeer — the large flying ARC enemy.",
+					"Target its engines and other weak spots and destroy it."
+				]
+			}
+		},
+		{
+			"id": "TOP_OF_THE_WORLD",
+			"name": "Top of the World",
+			"description": "Reach the top of the Launch Towers in Spaceport.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/9a39bcf6635d222b13ff0a2f7964fa34de5d1a0f.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"On the Spaceport map, find the Launch Towers — the tallest buildings, marked on the map.",
+					"Take the zipline up to the control room just below the top.",
+					"Enter the room; the achievement pops there."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a601182/top-of-the-world-achievement",
+				"warnings": [
+					"The control room may need a key from a quest or loot, or may already be open.",
+					"Expect heavy ARC and camping Raiders — bring smoke and a squad."
+				]
+			}
+		},
+		{
+			"id": "BACK_FROM_THE_BRINK",
+			"name": "Back from the Brink",
+			"description": "Revive a squadmate ten times.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/8917058d5ecdaab92dfc7eb41dfc1199f1dac184.jpg",
+			"types": [
+				"multiplayer",
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play with a squad.",
+					"Revive downed squadmates whenever they fall.",
+					"Revives accumulate across runs until you reach ten."
+				]
+			}
+		},
+		{
+			"id": "LONG_SHOT",
+			"name": "Long Shot",
+			"description": "Hit a target over 250 meters away.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/ffc5a582f24c63a466b554b004fed156bf52626d.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Equip a long-range weapon with a scope.",
+					"Find a target over 250 metres away (a stationary ARC machine is easiest) and land a hit."
+				]
+			}
+		},
+		{
+			"id": "SAME_SONG_SAME_VERSE",
+			"name": "Same Song, Same Verse",
+			"description": "Set off two car alarms in a single round.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/216e03812a709db56f1392b5e2155558e23bca9a.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find car alarms on the map by searching vehicles.",
+					"Set off two of the same kind of alarm within a single run."
+				],
+				"warnings": [
+					"Both alarms must be the same kind of alarm."
+				]
+			}
+		},
+		{
+			"id": "INTO_THE_BREACH",
+			"name": "Into the Breach",
+			"description": "Destroy a Bastion.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/b4ca2e0225d4b158b51e2048b54c1386d85193d6.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find a Bastion — the large, heavily armoured ground ARC enemy.",
+					"Attack its weak spots and destroy it."
+				]
+			}
+		},
+		{
+			"id": "IN_THE_NICK_OF_TIME",
+			"name": "In the Nick of Time",
+			"description": "Safely return to Speranza with less than 5 seconds left in the round.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/8e5793563e07f8c9e1d79a3685e5d8b476864180.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Call an extraction point (or open a Raider Hatch) as the round timer runs down.",
+					"Enter the extraction zone with less than 5 seconds left and return to Speranza."
+				],
+				"warnings": [
+					"Call the extract before the timer hits zero — being caught in the open when it does kills you."
+				]
+			}
+		},
+		{
+			"id": "HORSESHOES_AND_HAND_GRENADES",
+			"name": "Horseshoes and Hand Grenades",
+			"description": "Down an encountered Raider with a grenade.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/095a9cfc5c6ae8653aeb595795cc5299774f6596.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Equip a grenade.",
+					"Down another player's Raider with the grenade."
+				]
+			}
+		},
+		{
+			"id": "SNITCHES_GET_STITCHES",
+			"name": "Snitches get Stitches",
+			"description": "Destroy a Snitch with a Stitcher.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/dd2eb1de91b6fd678e4b8add2f0684cf2cfd34e1.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Equip a Stitcher weapon.",
+					"Find a Snitch — the small scanning drone — and destroy it with the Stitcher."
+				]
+			}
+		},
+		{
+			"id": "ESCAPE_ARTIST",
+			"name": "Escape Artist",
+			"description": "Safely return to Speranza 100 times.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/cf4ea7e1f63109c3aef3e4b491ab2b96713146ac.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Extract successfully from any map.",
+					"The count is lifetime, so keep extracting until you reach 100."
+				]
+			}
+		},
+		{
+			"id": "HEART_OF_GOLD",
+			"name": "Heart of Gold",
+			"description": "Be thanked 10 times in direct response to something you did.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/8c1d2f8bc2782bd1ba5c410ff4e18c9e5cb8aca4.jpg",
+			"types": [
+				"multiplayer",
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Help other players — revive them, share loot, or assist in a fight.",
+					"When prompted, they press the thank key to thank you.",
+					"Thanks accumulate until you reach 10."
+				],
+				"warnings": [
+					"The 'Thanks' emote does not count — the other player must press the prompted thank key in response to something you did."
+				]
+			}
+		},
+		{
+			"id": "TODAY_YOU_TOMORROW_ME",
+			"name": "Today You, Tomorrow Me",
+			"description": "Revive an encountered Raider with a Defibrillator.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/ef2bf4fc11656a27cbf6c9cd797f6827d0f04f94.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Bring a Defibrillator into a run.",
+					"Find a downed player who is not your own squadmate and revive them with the Defibrillator."
+				]
+			}
+		},
+		{
+			"id": "PRACTICE_MAKES_PERFECT",
+			"name": "Practice Makes Perfect",
+			"description": "Visit the Practice Range.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/51a257b8f2937605bc5035c1156b7633c71e63a1.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"From Speranza, travel to the Practice Range.",
+					"Stepping inside unlocks it."
+				]
+			}
+		},
+		{
+			"id": "DEDICATED_TO_THE_CRAFT",
+			"name": "Dedicated to the Craft",
+			"description": "Have five stations upgraded to level 3 or higher.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/494e8c2e705c4cfcb62c6e4b4469261b87428e39.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Upgrade Workshop stations in Speranza.",
+					"Get five different stations to level 3 or higher."
+				]
+			}
+		},
+		{
+			"id": "THREE_BIRDS_ONE_STONE",
+			"name": "Three Birds, One Stone",
+			"description": "Destroy 3 ARC enemies with a single Wolfpack grenade.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/f0b6c0e90f28924b743de8a79205afd6070ebe5b.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Equip a Wolfpack grenade.",
+					"Wait for at least three small ARC enemies to cluster, then throw the grenade to destroy all three at once."
+				]
+			}
+		},
+		{
+			"id": "LEGEND_OF_SPERANZA",
+			"name": "Legend of Speranza",
+			"description": "Reach level 75.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/7e1b5146aee6a6570a8bd1ae178b1237da8355de.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Earn XP through quests, looting and combat.",
+					"Grind to the maximum level, 75."
+				]
+			}
+		},
+		{
+			"id": "UP_CLOSE_AND_PERSONAL",
+			"name": "Up Close and Personal",
+			"description": "Knock out a Raider with a Raider Tool.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/38a75c4eb325eaa63fc3e52785d956c5edf87ae5.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Down another player's Raider.",
+					"Finish them off with a melee hit from a Raider Tool, such as your hammer."
+				],
+				"warnings": [
+					"The Raider must be knocked out with the tool — downing alone does not count."
+				]
+			}
+		},
+		{
+			"id": "COMPARATIVE_STUDY",
+			"name": "Comparative Study",
+			"description": "Use 4 different weapons to deal damage in the Practice Range.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/5247a69dd6bf7082877ba4d145f9c237691c543a.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"At the Practice Range, pick up and fire four different weapons.",
+					"Deal damage with each one."
+				]
+			}
+		},
+		{
+			"id": "MOST_DURABLE_PANTS_IN_SPERANZA",
+			"name": "Most Durable Pants in Speranza",
+			"description": "Slide 80 meters without stopping.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/8db88b02b53ebf1ccc2cc37430aabfcee5f92e7f.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find a long downhill slope, for example on Dam Battlegrounds or Spaceport.",
+					"Start a slide and keep it going for 80 metres without stopping."
+				]
+			}
+		},
+		{
+			"id": "HOOK_LINE_AND_SINKER",
+			"name": "Hook, Line, and Sinker",
+			"description": "Use a Lure Grenade to make a drone attack another drone.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/678db125f16d57df981397913dc189d7c486a2a1.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Equip a Lure Grenade.",
+					"Throw it to lure one drone into attacking another drone."
+				],
+				"warnings": [
+					"Reported as buggy — it may need several attempts before it pops."
+				]
+			}
+		},
+		{
+			"id": "A_TALE_FOR_THE_AGES",
+			"name": "A Tale for the Ages",
+			"description": "Destroy the Queen.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/fce01eb34be42c91261f3b4c0b8a68458767b326.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Trigger the Harvester event and bring heavy weapons — a Hullcracker with plenty of ammo, plus blue-tier shields and healing.",
+					"Fight the Queen from cover, targeting her leg joints and the exposed weak spot on top when it opens.",
+					"Land the killing blow yourself — only the final hit counts."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a601191/a-tale-for-the-ages-achievement",
+				"warnings": [
+					"Only the player who lands the final blow gets the achievement.",
+					"Other Raiders usually rush the Queen — you may need to steal the last hit or fight alone.",
+					"The Queen hits extremely hard; her laser can one-shot medium shields, so bring a team."
+				]
+			}
+		},
+		{
+			"id": "BLINDSIDED",
+			"name": "Blindsided",
+			"description": "Destroy a Sentinel with a Raider Tool.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/1d6e5f382ec6ee7e8307d3f420ef745f9f28b3a1.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Find a large standing Sentinel turret — Dam Battlegrounds and Spaceport are reliable spots.",
+					"Weaken it with gunfire if needed, but land the killing hit with a Raider Tool (hammer).",
+					"Melee it until it is destroyed."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a601192/blindsided-achievement",
+				"warnings": [
+					"Reported as buggy — it may take several attempts before it pops.",
+					"Wall-mounted turrets do not count; use the large standing Sentinels.",
+					"The turret can knock you off the ledge as you swing."
+				]
+			}
+		},
+		{
+			"id": "DEATH_FROM_ABOVE",
+			"name": "Death From Above",
+			"description": "Deal 50 damage to any enemy while atop a Rocketeer.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/c3dceb2b6eeae3e03a8c34650ca1c7b1a9d4b329.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Stun a Rocketeer so it falls to the ground — a Hornet Driver, Jolt Mine or Showstopper grenade works.",
+					"Climb on top of it and shoot an enemy (or the Rocketeer itself) to deal 50 damage.",
+					"Jump periodically so it cannot flip you off."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a601187/death-from-above-achievement",
+				"warnings": [
+					"The older trick of standing on a destroyed Rocketeer husk was patched out — use a live one."
+				]
+			}
+		},
+		{
+			"id": "JUST_DROPPING_IN",
+			"name": "Just Dropping In",
+			"description": "Get hit by a Supply Drop.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/248445782c45ef4feb054773c2eeb31d196a2e54.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find a Supply Drop call station (a tall antenna with a light) and interact with it to fire a flare.",
+					"Stand directly under the drifting flare and hold position.",
+					"When the crate lands on you the achievement unlocks — it deals no damage."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a601178/just-dropping-in-achievement",
+				"warnings": [
+					"You must be directly under the flare; the crate does no damage but misses if you drift.",
+					"Stations often sit on rooftops — use ziplines to reposition in time."
+				]
+			}
+		},
+		{
+			"id": "FOR_SCIENCE",
+			"name": "For Science!",
+			"description": "Get gas, stun, and burn statuses at the same time.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/c092bc45dd66a5c63dcf75fee411ab4ee7ef582c.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Bring a stun source (Jolt Mine or Hornet Driver), a gas source (Gas Grenade or Gas Mine) and a burn source (Blaze Grenade or Fireball Burner).",
+					"On flat ground, place the Jolt Mine and throw the Gas Grenade at your feet.",
+					"Throw the Blaze Grenade or fire the Burner onto the same spot and stand in it so gas, stun and burn apply together."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a601183/for-science-achievement",
+				"communityNotes": [
+					"Reddit tip: the stun grenade tends to bounce — throw it straight down at your feet rather than at a target.",
+					"Reddit tip: gas is often called the weak link; stack the Jolt Mine, the gas source and the fire source on one flat spot and step into all three."
+				],
+				"warnings": [
+					"Flagged as buggy — it can fail to pop even when done correctly; retry, sometimes it pops only after you extract.",
+					"Gas Grenades and Jolt Mines can be bought from Apollo or crafted; bring a green shield so the burn does not kill you first."
+				]
+			}
+		},
+		{
+			"id": "ENEMY_OF_MY_ENEMY",
+			"name": "Enemy of My Enemy",
+			"description": "Get an encountered Raider downed by ARC enemies summoned with a Snitch Scanner.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1808500/82880029543552fb2af0e730805441bc4f6b07cf.jpg",
+			"types": [
+				"multiplayer",
+				"secret"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Kill Snitches (the scanning drones) and harvest their Snitch Scanners; stockpile a few.",
+					"Find an enemy Raider — ideally one already fighting ARC — and throw the Scanner(s) onto or near them.",
+					"Lure Grenades can help enrage the ARC; the Raider must be downed by the summoned ARC.",
+					"The achievement unlocks once the ARC downs the Raider."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a601203/enemy-of-my-enemy-achievement",
+				"warnings": [
+					"Formerly broken — it is patched and working now, but it is the rarest achievement in the game.",
+					"The Raider only needs to be downed, not killed."
+				]
+			}
+		}
+	]
+}
