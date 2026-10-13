@@ -3,7 +3,7 @@
  *
  * Layout, keyed by appId:
  *   static/images/games/{appId}/header.jpg   460x215  library card
- *   static/images/games/{appId}/hero.jpg    1920x620 game page hero (not every game has one)
+ *   static/images/games/{appId}/hero.jpg    1920x620 game page hero
  *
  * Steam's page background is deliberately NOT mirrored. It renders behind a 90%
  * `bg-steam-dark` scrim, so roughly a tenth of it is visible, and the real files
@@ -14,8 +14,9 @@
  * CDN guess the server used to fall back on is wrong for some apps (Steam serves
  * those from a content-hashed directory, e.g.
  * /apps/4126040/bf9b76d2.../header.jpg). The result was artwork that appeared and
- * disappeared between reloads. The only trustworthy URL is the one appdetails
- * returns, so it is resolved once here and committed with the game data.
+ * disappeared between reloads. The only trustworthy URL is the one an API returns,
+ * so it is resolved once here and committed with the game data: `appdetails` for the
+ * header, `IStoreBrowseService/GetItems` for the hero.
  *
  * Usage:  node scripts/fetch-game-images.mjs [appId ...]
  *         (no args = every game file in src/lib/data/games/)
@@ -36,6 +37,7 @@ const UA =
 	'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 
 const STORE_API = 'https://store.steampowered.com/api';
+const API = 'https://api.steampowered.com';
 const ASSETS = 'https://shared.akamai.steamstatic.com/store_item_assets';
 
 const args = process.argv.slice(2);
@@ -65,8 +67,39 @@ async function fetchDetails(appId) {
 }
 
 /**
- * Steam only publishes `library_hero.jpg` for some games — roughly one in a dozen
- * has none. Probed with a ranged GET so a large banner is not downloaded twice.
+ * The library hero's URL, resolved from the store-browse API — never composed.
+ *
+ * Steam serves content-hashed apps (WARDOGS, Aniimo) from a per-asset directory, and
+ * the hero's hash is **not** the header's: WARDOGS is `59d4daf7…/header.jpg` but
+ * `9e3d0dba…/library_hero.jpg`. Composing the un-hashed path therefore 404s for
+ * exactly the apps that need this most, and made them look like games with no hero.
+ * `asset_url_format` is the per-app prefix carrying a `${FILENAME}` placeholder;
+ * `library_hero` is the file to substitute into it.
+ */
+async function resolveHeroUrl(appId) {
+	const input = JSON.stringify({
+		ids: [{ appid: Number(appId) }],
+		context: { language: 'english', country_code: 'US' },
+		data_request: { include_assets: true }
+	});
+	try {
+		const res = await fetch(
+			`${API}/IStoreBrowseService/GetItems/v1/?input_json=${encodeURIComponent(input)}`,
+			{ headers: { 'User-Agent': UA, Accept: 'application/json' } }
+		);
+		if (!res.ok) return null;
+		const items = (await res.json())?.response?.store_items ?? [];
+		const assets = items.find((i) => Number(i.appid) === Number(appId))?.assets;
+		if (!assets?.asset_url_format || !assets.library_hero) return null;
+		return `${ASSETS}/${assets.asset_url_format.replace('${FILENAME}', assets.library_hero)}`;
+	} catch {
+		return null;
+	}
+}
+
+/**
+ * Last-resort un-hashed guess, used only when the store-browse API is unreachable.
+ * Probed with a ranged GET so a large banner is not downloaded twice.
  */
 async function probeHero(appId) {
 	const url = `${ASSETS}/steam/apps/${appId}/library_hero.jpg`;
@@ -129,7 +162,7 @@ for (const appId of appIds) {
 
 	const jobs = [[details.header_image, headerDest]];
 	if (!(await exists(heroDest)) || force) {
-		const hero = await probeHero(appId);
+		const hero = (await resolveHeroUrl(appId)) ?? (await probeHero(appId));
 		if (hero) jobs.push([hero, heroDest]);
 	}
 

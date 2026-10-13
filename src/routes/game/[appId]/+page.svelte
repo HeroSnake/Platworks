@@ -25,8 +25,11 @@ import { untrack } from 'svelte';
 
 	let storageKey = $derived(`platworks:checked:${data.game.appId}`);
 
-	// The wide library_hero banner when Steam has one, otherwise the 460x215 header.
-	// Both are decorative here — the h1 carries the name.
+	// The wide 1920x620 library hero. `heroImage` is always populated on this page
+	// (the server returns the local path whenever `hero: true`), so the header
+	// fallback is belt-and-braces; a missing hero.jpg instead falls through to the
+	// placeholder via the `onerror` below. Both images are decorative — the h1
+	// carries the name.
 	let heroImage = $derived(data.steam?.heroImage ?? data.steam?.headerImage ?? null);
 
 	let localChecked = $state<Record<string, boolean>>(loadLocal());

@@ -34,12 +34,12 @@ No API key is used or required; everything goes through public Steam community e
 | File | Size | Used by |
 |---|---|---|
 | `header.jpg` | 460×215 | library card |
-| `hero.jpg` | 1920×620 | game page hero — **absent for some games** |
+| `hero.jpg` | 1920×620 | game page hero |
 
 `scripts/fetch-game-images.mjs` owns those files. Run it after adding a game; it is idempotent and skips
 what is already there. Three traps:
 
-- **The obvious CDN path is a guess.** `shared.akamai.steamstatic.com/store_item_assets/steam/apps/{appId}/header.jpg` serves most games, but Steam hosts others from a **content-hashed** directory (`/apps/4126040/bf9b76d2…/header.jpg`). Aniimo (4126040) and WARDOGS (1867240) are in that group, so the guess 404s for them however often it is retried. The script therefore resolves URLs from `appdetails` rather than composing them.
+- **The obvious CDN path is a guess.** `shared.akamai.steamstatic.com/store_item_assets/steam/apps/{appId}/header.jpg` serves most games, but Steam hosts others from a **content-hashed** directory (`/apps/4126040/bf9b76d2…/header.jpg`). Aniimo (4126040) and WARDOGS (1867240) are in that group, so the guess 404s for them however often it is retried. The script therefore resolves every URL from an API rather than composing it: `appdetails` for the header, and **`IStoreBrowseService/GetItems`** for the hero — the hero's hash is a *different* one from the header's (WARDOGS: header `59d4daf7…`, hero `9e3d0dba…`), so a hero cannot be derived from the header even for a hashed app. Composing the un-hashed hero path is what silently left Aniimo and WARDOGS with no game-page picture while every other game had one.
 - **`appdetails` intermittently 403s from Node.** `getGameDetails` must still return a usable local path so the library keeps its images; name / short description / Metacritic simply stay empty in that mode and callers use `steam?.name || game.name`. Do not leave `steam: null`. A process-lifetime `detailsCache` still guards the *text* fields, so one 403 cannot blank every blurb.
 - **Never add a remote `onerror` retry** for a header or hero. Artwork is local, so a failure means the game has no art on Steam — not that the first host was wrong. The components reveal a placeholder instead; see [ui.md](./ui.md) §1.
 
@@ -62,10 +62,11 @@ Name / short description / Metacritic stay empty in that mode — callers use `s
 `header_image`'s **460x215**; that ratio matters, because 460x215 upscaled across a full-width banner is
 visibly soft.
 
-- **It is not guaranteed to exist.** Roughly one game in twelve has none on Steam, so the file is simply
-  absent and the component's `onerror` reveals the placeholder. There is **no probe** — the client
-  discovers a missing hero for free when the local file 404s, and a `HEAD` request would be an external
-  call on every game page load.
+- **A missing hero is discovered for free, never probed.** The file is simply absent and the component's
+  `onerror` reveals the placeholder. There is **no probe** — the client discovers a missing hero for free
+  when the local file 404s, and a `HEAD` request would be an external call on every game page load.
+  **Never conclude a game has no hero from a 404 on a composed path**: resolve it from the store-browse
+  API first, as the trap above describes. All 31 catalogue games have one.
 - **`hero` still defaults to `false`** because the library page calls `getGameDetails` for every game and
   never renders a hero.
 

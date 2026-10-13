@@ -15,13 +15,14 @@ export interface GetGameDetailsOptions {
  * Game artwork is committed to `static/images/games/{appId}/` and served from
  * there — the app must never request Steam's CDN for a header or hero.
  *
- * `scripts/fetch-game-images.mjs` owns those files. It resolves the URLs from
- * `appdetails`, because the obvious un-hashed CDN path is a guess that 404s for
- * some apps: Steam serves those from a content-hashed directory instead
- * (`/apps/4126040/bf9b76d2…/header.jpg`). Aniimo and WARDOGS are both in that
- * group. `appdetails` also 403s intermittently from Node, which is what made
- * artwork appear and vanish between reloads; since the files now live in the repo,
- * none of that can affect rendering.
+ * `scripts/fetch-game-images.mjs` owns those files. It resolves every URL from an
+ * API (`appdetails` for the header, `IStoreBrowseService/GetItems` for the hero),
+ * because the obvious un-hashed CDN path is a guess that 404s for some apps: Steam
+ * serves those from a content-hashed directory instead
+ * (`/apps/4126040/bf9b76d2…/header.jpg`), and the hero's hash is a different one
+ * again. Aniimo and WARDOGS are both in that group. `appdetails` also 403s
+ * intermittently from Node, which is what made artwork appear and vanish between
+ * reloads; since the files now live in the repo, none of that can affect rendering.
  *
  * The achievement icons are the deliberate exception and still load from Steam —
  * 1647 of them would add far too much to the repo. See
@@ -118,7 +119,7 @@ export async function getGameDetails(
  * Steam's store-page hero banner (1920x620), mirrored to
  * `static/images/games/{appId}/hero.jpg` by `scripts/fetch-game-images.mjs`.
  *
- * Roughly one game in a dozen has none on Steam. There is no probe for that: the
+ * A game can genuinely have none on Steam. There is no probe for that: the
  * probe used to be a HEAD request to the CDN, which was an external call on every
  * game page load for information the client can discover for free — a missing
  * file 404s and the component's `onerror` reveals the placeholder underneath.
