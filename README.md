@@ -80,7 +80,7 @@ nothing to sideload, and it updates on its own.
 
 ## The catalogue
 
-**30 games, 1697 achievements** :
+**31 games, 2008 achievements** :
 
 | Game | Achievements | Map |
 |------|-------------:|:---:|
@@ -93,6 +93,7 @@ nothing to sideload, and it updates on its own.
 | Counter-Strike 2 | 1 | |
 | Crimson Desert | 34 | ✓ |
 | Cyberpunk 2077 | 57 | ✓ |
+| Dead by Daylight | 311 | |
 | Deep Rock Galactic | 69 | |
 | Dyson Sphere Program | 128 | |
 | Elden Ring | 42 | ✓ |
