@@ -72,7 +72,7 @@ target, the traits table, and the per-game request budget all live in
 
 The run is split into **eight phases per game** (Locate · Fetch achievement list ·
 Triage achievements · Research complex achievements · Interactive map · Write game
-JSON · Fetch trophy icons · Delete scratch dir) plus **two run-level tasks**
+JSON · Fetch icons and game artwork · Delete scratch dir) plus **two run-level tasks**
 (`npm run check`, `Update README games table`). The prompt owns the exact phase
 names; the bar is the `todo` list, and one todo exists per phase per game from
 before the first fetch.
@@ -139,16 +139,28 @@ as *unverifiable* rather than dead, so the distinction is never lost to a raw st
 
 Omit `mapUrl` entirely for linear or competitive games. That is a correct answer, not an omission.
 
-## 4. Icon scripts
+## 4. Asset scripts
 
-| Script                                 | Job                                         |
-| -------------------------------------- | ------------------------------------------- |
-| `scripts/fetch-achievement-icons.mjs`  | scrape `iconUrl` into the game JSON         |
-| `scripts/verify-achievement-icons.mjs` | audit that every stored icon still resolves |
+| Script                                 | Job                                                         |
+| -------------------------------------- | ----------------------------------------------------------- |
+| `scripts/fetch-game-images.mjs`        | mirror `header.jpg` (460×215) + `hero.jpg` (1920×620) into `static/images/games/{appId}/` |
+| `scripts/fetch-achievement-icons.mjs`  | scrape `iconUrl` into the game JSON                         |
+| `scripts/verify-achievement-icons.mjs` | audit that every stored icon still resolves                |
+| `scripts/agent/check-game-assets.mjs`  | fail when a game is missing `header.jpg`/`hero.jpg`, or they are the wrong size |
+
+**Game artwork (header/hero) and trophy icons are one phase, not two.** Icons attach per
+achievement from Steam's CDN; the header/hero are copied locally because the app must never
+call Steam's CDN for them. Skipping the header/hero fetch leaves a game whose library card
+and hero are placeholders while every other check still passes — which is why `npm run check`
+now includes `check-game-assets.mjs`. The artwork traps (API-resolved, content-hashed URLs)
+live in [steam.md](./steam.md) §1.
 
 Run them with `node`, **not** an npm script:
 
 ```bash
+node scripts/fetch-game-images.mjs                    # every game missing artwork
+node scripts/fetch-game-images.mjs 1245620            # just one
+node scripts/agent/check-game-assets.mjs              # assert every game has artwork
 node scripts/fetch-achievement-icons.mjs              # every game missing an icon
 node scripts/fetch-achievement-icons.mjs 1245620      # just one
 node scripts/fetch-achievement-icons.mjs --force      # re-scrape everything
@@ -156,7 +168,8 @@ node scripts/fetch-achievement-icons.mjs --force      # re-scrape everything
 
 The scraping target and all of its traps (one URL per trophy, 64×64 native, display-name-only join, reused art, silent no-op) are documented in [steam.md](./steam.md) §3. The short version: **a duplicated `iconUrl` is not a bug, and an unmatched name must be reported — never fuzzily assigned.**
 
-`iconUrl` is optional in the schema, so a hand-added game still validates.
+`iconUrl` is optional in the schema, so a hand-added game still validates. Game artwork is
+**not** optional: `check-game-assets.mjs` fails the build without it.
 
 ## 5. Adding a game, end to end
 
@@ -164,14 +177,15 @@ The scraping target and all of its traps (one URL per trophy, 64×64 native, dis
    If the game is already in `src/lib/data/games/`, the prompt **asks** whether to
    replace, merge or keep it — answer that question before the run continues.
 2. Write `src/lib/data/games/{appId}.json` — verify `totalAchievements` matches the array length.
-3. `node scripts/agent/steam-achievements.mjs {appId}` — the authoritative name / description / unlock-rate list.
-4. `node scripts/agent/steam-schema.mjs {appId} --merge` — fills every `id`, which the public page leaves `null`.
-5. `node scripts/fetch-achievement-icons.mjs {appId}`.
-6. `node scripts/verify-achievement-icons.mjs`.
-7. `node scripts/agent/check-links.mjs --game {appId}` — every stored link still resolves.
-8. `npm run check` — the loader glob and the type mirror are validated by the build.
-9. Delete `.tmp/game-data/` once the run is verified.
-10. Add a row to the **README catalogue** table — the game name and achievement count. That is the only
+3. `node scripts/fetch-game-images.mjs {appId}` — mirrors `header.jpg` + `hero.jpg` into `static/images/games/{appId}/`. Skipping it means a placeholder library card and hero, with nothing else complaining.
+4. `node scripts/agent/steam-achievements.mjs {appId}` — the authoritative name / description / unlock-rate list.
+5. `node scripts/agent/steam-schema.mjs {appId} --merge` — fills every `id`, which the public page leaves `null`.
+6. `node scripts/fetch-achievement-icons.mjs {appId}`.
+7. `node scripts/verify-achievement-icons.mjs`.
+8. `node scripts/agent/check-links.mjs --game {appId}` — every stored link still resolves.
+9. `npm run check` — type-checks the app and service worker, then `check-game-assets.mjs` asserts the artwork exists at the right size.
+10. Delete `.tmp/game-data/` once the run is verified.
+11. Add a row to the **README catalogue** table — the game name and achievement count. That is the only
     README edit a data file needs.
 
 Adding a *tag* value means updating `schema.json`, `game.ts` (`AchievementType`), and the badge/icon maps in `achievement_row.svelte` together. Adding a *difficulty* value means `schema.json`, `game.ts`, and the filter/sort UI in `game/[appId]/+page.svelte`.

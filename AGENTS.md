@@ -130,7 +130,7 @@ table, then open only the matching files.
 | Steam API | `#lib/server/steam/api.ts` | server-only: `getGameDetails()`, `resolveSteamId()`, `getPlayerProfile()`, `getPlayerAchievements()`, `normalizeName()` |
 | Game loader | `#lib/server/games.ts` | `getAllGames()`, `getGameByAppId()` via `import.meta.glob('#lib/data/games/[0-9]*.json')` |
 | Icon tooling | `scripts/` | `fetch-game-images.mjs` (mirrors header + hero into `static/images/games/{appId}/`), `fetch-achievement-icons.mjs` (writes remote `iconUrl`), `verify-achievement-icons.mjs` (audits icons). Run with `node`, not npm |
-| Agent toolkit | `scripts/agent/` | Reusable scripts for agent tasks, committed so they are never rewritten per run: `ui-audit.mjs` (the browser audit below), `shot.mjs` + `new-mockup.mjs` (mockups), `readme-shots.mjs` (regenerates `docs/screenshots/`), `steam-achievements.mjs` + `steam-schema.mjs` + `ledger.mjs` + `check-links.mjs` (game data), `make-icons.mjs` (regenerates the PWA PNGs), `pwa-check.mjs` (proves install + offline in a real browser). See [scripts/agent/README.md](scripts/agent/README.md). **A scratch file that will be needed again belongs here, not in `.tmp/`** |
+| Agent toolkit | `scripts/agent/` | Reusable scripts for agent tasks, committed so they are never rewritten per run: `ui-audit.mjs` (the browser audit below), `shot.mjs` + `new-mockup.mjs` (mockups), `readme-shots.mjs` (regenerates `docs/screenshots/`), `steam-achievements.mjs` + `steam-schema.mjs` + `ledger.mjs` + `check-links.mjs` + `check-game-assets.mjs` (game data), `make-icons.mjs` (regenerates the PWA PNGs), `pwa-check.mjs` (proves install + offline in a real browser). See [scripts/agent/README.md](scripts/agent/README.md). **A scratch file that will be needed again belongs here, not in `.tmp/`** |
 | Agent rules | `AGENTS.md` + `.agents/*.md` | the project's memory: cross-cutting rules, architecture map, and one file per domain. Adapters for each AI tool live in `.github/`, `.cursor/`, `.claude/` and `.opencode/` and must stay thin — see §9 |
 | Game artwork | `static/images/games/{appId}/` | committed `header.jpg` + `hero.jpg`, served from `/images/games/...`. The app never requests Steam's CDN for these; achievement icons are the deliberate exception |
 | Client profile cache | `#lib/client/profile.ts` | `loadProfile()`, `saveProfile()`, `clearProfile()`, `refreshProfile()` |
@@ -174,7 +174,7 @@ table, then open only the matching files.
 ## 7. Verifying your work
 
 ```bash
-npm run check   # svelte-kit sync + svelte-check — the source of truth
+npm run check   # svelte-check + the SW tsc + check-game-assets.mjs — the source of truth
 npm run dev
 ```
 

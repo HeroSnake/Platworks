@@ -12,9 +12,10 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
-		"check": "npm run check:app && npm run check:sw",
+		"check": "npm run check:app && npm run check:sw && npm run check:assets",
 		"check:app": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:sw": "svelte-kit sync && tsc --project ./tsconfig.service-worker.json",
+		"check:assets": "node scripts/agent/check-game-assets.mjs",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {

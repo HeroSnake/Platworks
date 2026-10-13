@@ -208,7 +208,7 @@ granularity is the point.
 | 4 | Research complex achievements | `{Game} · Research complex achievements` |
 | 5 | Interactive map | `{Game} · Interactive map` |
 | 6 | Write game JSON | `{Game} · Write game JSON` |
-| 7 | Fetch trophy icons | `{Game} · Fetch trophy icons` |
+| 7 | Fetch icons and game artwork | `{Game} · Fetch icons and game artwork` |
 | 8 | Delete scratch dir | `{Game} · Delete scratch dir` |
 | R1 | — | `npm run check` |
 | R2 | — | `Update README games table` |
@@ -327,27 +327,37 @@ On a **replace**, the previous file has already been deleted in phase 1 — this
 writes a new one from nothing. On a **merge**, edit the existing file in place and
 change only what the user named.
 
-### 7 · Fetch trophy icons
+### 7 · Fetch icons and game artwork
+
+Two asset fetches, and **both are mandatory**. `fetch-game-images.mjs` mirrors the
+game's local `header.jpg` (460x215) and `hero.jpg` (1920x620) into
+`static/images/games/{appId}/` off the game JSON's name — skip it and the library card
+and the game-page hero render a placeholder while every other check still passes. It is
+idempotent, so running it when unsure costs nothing.
 
 ```bash
+node scripts/fetch-game-images.mjs {appId}
 node scripts/fetch-achievement-icons.mjs {appId}
 node scripts/verify-achievement-icons.mjs
 ```
 
-The scraper pulls the official artwork from the same global list and matches rows
-by display name. Do not hand-write `iconUrl` values. If it reports achievements it
+The icon scraper pulls the official trophy artwork from the same global list and matches
+rows by display name. Do not hand-write `iconUrl` values. If it reports achievements it
 could not match, fix the `name` to match Steam's `<h3>` exactly — do not paste a
 nearby row's URL.
 
 ### 8 · Delete scratch dir
 
-Remove `.tmp/game-data/{appId}/` now that the JSON is written and the icons are
-fetched. Keep it for the rest of the batch only if you still have games to do;
+Remove `.tmp/game-data/{appId}/` now that the JSON is written and the artwork and
+icons are fetched. Keep it for the rest of the batch only if you still have games to do;
 it is the reason the next game does not re-fetch the same pages.
 
 ### Then, once for the whole batch
 
-**R1 · `npm run check`** — verify no type errors.
+**R1 · `npm run check`** — type-checks the app and the service worker, then runs
+`check-game-assets.mjs`, which fails if any game is missing its `header.jpg` / `hero.jpg`
+(or they are the wrong size). A missing artwork fetch is therefore a red check, not a
+silent placeholder.
 **R2 · README games table** — one row per game added, with appId and achievement count.
 
 Then delete `.tmp/game-data/` if any of it remains, and summarize: per game, the

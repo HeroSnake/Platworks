@@ -43,7 +43,7 @@ what is already there. Three traps:
 - **`appdetails` intermittently 403s from Node.** `getGameDetails` must still return a usable local path so the library keeps its images; name / short description / Metacritic simply stay empty in that mode and callers use `steam?.name || game.name`. Do not leave `steam: null`. A process-lifetime `detailsCache` still guards the *text* fields, so one 403 cannot blank every blurb.
 - **Never add a remote `onerror` retry** for a header or hero. Artwork is local, so a failure means the game has no art on Steam — not that the first host was wrong. The components reveal a placeholder instead; see [ui.md](./ui.md) §1.
 
-**Achievement icons are the deliberate exception** and still load from Steam: 1647 of them would add far too much to the repo. `scripts/fetch-achievement-icons.mjs` owns `iconUrl` and must keep writing remote URLs. Only `fetch-game-images.mjs` produces local paths.
+**Achievement icons are the deliberate exception** and still load from Steam: 2301 of them (1958 distinct files) would add far too much to the repo. `scripts/fetch-achievement-icons.mjs` owns `iconUrl` and must keep writing remote URLs. Only `fetch-game-images.mjs` produces local paths.
 
 `SteamGameDetails.background` does not exist and must not be added — a full-viewport image behind the
 game page is invisible under the page's scrim and costs a request on every load.
@@ -66,7 +66,7 @@ visibly soft.
   `onerror` reveals the placeholder. There is **no probe** — the client discovers a missing hero for free
   when the local file 404s, and a `HEAD` request would be an external call on every game page load.
   **Never conclude a game has no hero from a 404 on a composed path**: resolve it from the store-browse
-  API first, as the trap above describes. All 31 catalogue games have one.
+  API first, as the trap above describes. All 32 catalogue games have one, and `scripts/agent/check-game-assets.mjs` (run by `npm run check`) fails if one is missing.
 - **`hero` still defaults to `false`** because the library page calls `getGameDetails` for every game and
   never renders a hero.
 
@@ -121,10 +121,16 @@ Traps:
 - **Reused art is real.** Several games publish one hash for multiple rows (Aniimo has 7, one shared by 4 achievements). A duplicated `iconUrl` is therefore not evidence of a matching bug — confirm against the raw page before "fixing" it.
 - **A silent no-op is the dangerous case.** If a display name drifts, an unmatched entry must surface in the script's report. Never let a fuzzy fallback quietly assign a neighbouring trophy's art.
 
+### The `id` gap — `GetSchemaForGame` now demands a key
+
+`scripts/agent/steam-schema.mjs` fills each `id` from `ISteamUserStats/GetSchemaForGame`, which used to answer keylessly. It now returns **400 `Required parameter 'key' is missing`** for a growing set of apps (Sea of Thieves `1172620`, Elden Ring `1245620`, Cyberpunk `1091500`), so it is no longer a reliable no-key id source.
+
+The keyless `ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2/?gameid={appId}` still returns the real apinames (numeric for some games — `1172620` uses `"34"`, `"12"`, …). Its list is in **the same order as the community achievements page** (percent descending), so the two zip positionally; verify the zip by comparing the percent at every index (the rarest row can differ by one rounding step across the two endpoints). Use it as the fallback when the schema call 400s — **never invent an `id` to paper over the gap.**
+
 `iconUrl` is **optional** in the schema so a hand-added game still validates; `achievement_row.svelte` simply omits the `<img>` when it is absent.
 
 **`iconUrl` stays a Steam CDN URL — do not localise these.** Game artwork (header, hero) is local in
-`static/images/games/` for correctness, but there are 1647 icons and they would add far too much to the
+`static/images/games/` for correctness, but there are 2301 icons and they would add far too much to the
 repo. They are the one intentional external image dependency.
 
 ## 4. Cloudflare-blocked hosts
@@ -132,6 +138,8 @@ repo. They are the one intentional external image dependency.
 `www.trueachievements.com` returns **403 to every request from Node**, including full browser header sets — it is bot protection, not a missing User-Agent. No script in this repo can scrape it; per-achievement guide links have to be read through an agent with web access instead.
 
 This is why `scripts/` has no guide-link fetcher: it cannot exist. The same block applies to `wiki.gg` and `fandom` (403), while Steam's own endpoints are fine. Treat "403 from a script" as *unverifiable*, not *dead* — see [gamedata.md](./gamedata.md) for the map-link rule.
+
+An agent running in this repo **does** have a real browser, and it is not blocked: load the page there and read the per-achievement links that way. When harvesting many of them (e.g. a TrueAchievements index for a 300-trophy game), have the page download the parsed map and copy that download into the scratch dir rather than transcribing it by hand — the links are valid data precisely because a page carrying them was actually opened.
 
 ## 5. Caching rule
 
