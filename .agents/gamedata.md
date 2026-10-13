@@ -114,7 +114,8 @@ passes.
 The Steam achievement list fetch is exactly that case and is already written —
 `node scripts/agent/steam-achievements.mjs <appId>` does phase 2 in one command
 and refuses to write a partial list. The same applies to the ledger
-(`scripts/agent/ledger.mjs`) and to link verification (`scripts/agent/check-links.mjs`).
+(`scripts/agent/ledger.mjs`), to the `id` gap the public page leaves
+(`scripts/agent/steam-schema.mjs`), and to link verification (`scripts/agent/check-links.mjs`).
 Writing a fourth copy of the same parser into `.tmp/` is how a scraper silently
 starts disagreeing with the committed one.
 
@@ -164,12 +165,13 @@ The scraping target and all of its traps (one URL per trophy, 64×64 native, dis
    replace, merge or keep it — answer that question before the run continues.
 2. Write `src/lib/data/games/{appId}.json` — verify `totalAchievements` matches the array length.
 3. `node scripts/agent/steam-achievements.mjs {appId}` — the authoritative name / description / unlock-rate list.
-4. `node scripts/fetch-achievement-icons.mjs {appId}`.
-5. `node scripts/verify-achievement-icons.mjs`.
-6. `node scripts/agent/check-links.mjs --game {appId}` — every stored link still resolves.
-7. `npm run check` — the loader glob and the type mirror are validated by the build.
-8. Delete `.tmp/game-data/` once the run is verified.
-9. Add a row to the **README catalogue** table — the game name and achievement count. That is the only
-   README edit a data file needs.
+4. `node scripts/agent/steam-schema.mjs {appId} --merge` — fills every `id`, which the public page leaves `null`.
+5. `node scripts/fetch-achievement-icons.mjs {appId}`.
+6. `node scripts/verify-achievement-icons.mjs`.
+7. `node scripts/agent/check-links.mjs --game {appId}` — every stored link still resolves.
+8. `npm run check` — the loader glob and the type mirror are validated by the build.
+9. Delete `.tmp/game-data/` once the run is verified.
+10. Add a row to the **README catalogue** table — the game name and achievement count. That is the only
+    README edit a data file needs.
 
 Adding a *tag* value means updating `schema.json`, `game.ts` (`AchievementType`), and the badge/icon maps in `achievement_row.svelte` together. Adding a *difficulty* value means `schema.json`, `game.ts`, and the filter/sort UI in `game/[appId]/+page.svelte`.
