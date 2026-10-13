@@ -1,0 +1,4923 @@
+{
+	"$schema": "./schema.json",
+	"appId": 1172620,
+	"name": "Sea of Thieves",
+	"totalAchievements": 293,
+	"mapUrl": "https://maps.seaofthieves.rarethief.com/",
+	"achievements": [
+		{
+			"id": "34",
+			"name": "Legends - \"Cronch\"",
+			"description": "Just like Griffin, your pirate kin, 'cronch' a banana and eat its skin!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Pick up a banana from a ship barrel or any island.",
+					"Equip it and press the eat button — your pirate crunches the whole thing, skin included."
+				]
+			}
+		},
+		{
+			"id": "12",
+			"name": "Now Bring Me That Horizon",
+			"description": "Each new pirate greets the world with anchor raised and sails unfurled!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Raise your ship's anchor from the capstan.",
+					"Drop and unfurl the sails to set sail for the first time."
+				]
+			}
+		},
+		{
+			"id": "15",
+			"name": "I Wanna Be A Pirate!",
+			"description": "A Company's pleased and you've reason to revel if your Reputation increased by one level!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Complete any Voyage for a Trading Company (Gold Hoarders, Order of Souls or Merchant Alliance).",
+					"Sell the loot so your Company reputation rises by one level."
+				]
+			}
+		},
+		{
+			"id": "14",
+			"name": "Handbrake Turn",
+			"description": "To swiftly avoid a great danger you're dreading, steer hard and drop anchor to alter your heading!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"While under sail, spin the wheel hard to one side.",
+					"Drop the anchor mid-turn so the ship swings around on the spot."
+				]
+			}
+		},
+		{
+			"id": "18",
+			"name": "What Shall We Do with a Drunken Sailor?",
+			"description": "Too many tankards of sweet, golden grog will first make you queasy, then sick as a dog…",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Grab grog from any Tavern barrel (or buy it from the tavern keeper).",
+					"Drink repeatedly until your pirate starts swaying and then throws up."
+				]
+			}
+		},
+		{
+			"id": "1",
+			"name": "Bone-Cronch",
+			"description": "A skeleton cronches through thick yellow peel. Attack it and kill it before it can heal!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Find a skeleton that is eating a banana to heal itself.",
+					"Kill it before it finishes — it only appears on skeleton waves and forts."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249727/bonecronch-achievement"
+			}
+		},
+		{
+			"id": "10",
+			"name": "When You're A Professional Pirate",
+			"description": "Commendations are given by Companies when you've reached certain targets. Try to earn ten!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open the Pirate Log and check your Commendations.",
+					"Earn any ten Commendations — they drop constantly from voyages, fishing, cooking and world events."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249735/when-youre-a-professional-pirate-achievement"
+			}
+		},
+		{
+			"id": "77",
+			"name": "Not So Well Done",
+			"description": "Well-cooked meals are never easy,  dine too soon and you'll get queasy!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Place meat or fish on a cooking pan over a fire.",
+					"Pick it up before the bar fills (while still pale) and eat the undercooked piece."
+				]
+			}
+		},
+		{
+			"id": "5",
+			"name": "I Don’t See Your Ship",
+			"description": "You fought a crew, stood strong and brave and sent their ship to a watery grave!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find another crew while sailing the High Seas.",
+					"Sink their ship — cannon it down or board and scuttle it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249731/i-dont-see-your-ship-achievement",
+				"warnings": [
+					"High Seas only — Safer Seas has no other players."
+				]
+			}
+		},
+		{
+			"id": "8",
+			"name": "I'm On A Whole New Adventure",
+			"description": "So many voyages, but which one to do? Stow yours and vote for one placed by your crew.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Place a Voyage on your ship's Voyage Table.",
+					"Vote to activate it (a solo crew counts)."
+				]
+			}
+		},
+		{
+			"id": "13",
+			"name": "Full Billow",
+			"description": "All sails with the wind, what time it saves when speeding across the ocean's waves!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Raise and unfurl all sails.",
+					"Turn the wheel so the sail indicator catches the wind at full strength."
+				]
+			}
+		},
+		{
+			"id": "38",
+			"name": "It's A Pirates Life For Me",
+			"description": "The Voyage is done; a chest of old now safe with those who hoard their gold!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Start a Gold Hoarders Voyage from the Voyage Table.",
+					"Dig up the chest and sell it to the Gold Hoarder at any Outpost."
+				]
+			}
+		},
+		{
+			"id": "16",
+			"name": "Shopping for a Promotion",
+			"description": "Your Voyages have earned you enough recognition so buy a Promotion and prove your position!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Raise any Trading Company to its first promotion level (level 5).",
+					"Buy the Promotion from that Company's representative."
+				]
+			}
+		},
+		{
+			"id": "124",
+			"name": "Unto the Horizon",
+			"description": "Complete the Maiden Voyage",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"From the main menu choose the Maiden Voyage tutorial.",
+					"Follow its objectives through to the end."
+				]
+			}
+		},
+		{
+			"id": "76",
+			"name": "Well Done!",
+			"description": "Your hearty meal's turned out wrong.  You left it on the stove too long!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Cook meat or fish on a pan over a fire.",
+					"Leave it until it blackens and burns, then eat it."
+				]
+			}
+		},
+		{
+			"id": "78",
+			"name": "Five a Day",
+			"description": "Sampling every type of fruit  will keep you fit to fight and loot!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Collect a banana, coconut, mango, pineapple and pomegranate (ship barrels, islands and barrels at sea).",
+					"Eat one of every type."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273731/five-a-day-achievement"
+			}
+		},
+		{
+			"id": "40",
+			"name": "Legends - \"This is Unacceptable!\"",
+			"description": "A chest of yours has gone astray and been cashed in as some thief's pay!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Sail the High Seas carrying treasure on your ship.",
+					"Let another crew steal your chest and sell it — the achievement fires when your loot is cashed in by someone else."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249761/legends--this-is-unacceptable-achievement",
+				"warnings": [
+					"High Seas only — this needs another crew."
+				]
+			}
+		},
+		{
+			"id": "36",
+			"name": "Taking Orders",
+			"description": "Your Voyage complete, a skull returned, praise from the Order thusly earned!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Start an Order of Souls Bounty Voyage.",
+					"Defeat the skeleton captain, take the skull and sell it to the Order of Souls."
+				]
+			}
+		},
+		{
+			"id": "140",
+			"name": "Golden Ticket",
+			"description": "Be part of a crew that votes to raise an Emissary Flag for the Gold Hoarders.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Reach the required Gold Hoarders reputation level and buy their Emissary Flag from the Company shop.",
+					"Place the flag on your ship's Emissary Table and vote to raise it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a298440/golden-ticket-achievement"
+			}
+		},
+		{
+			"id": "22",
+			"name": "Colourful Sails",
+			"description": "Make your first buy from the Shipwright, who deals in figureheads, cannons, new sails and wheels!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Talk to the Shipwright on the dock at any Outpost.",
+					"Purchase any ship cosmetic — sails, figurehead, cannons or wheel."
+				]
+			}
+		},
+		{
+			"id": "20",
+			"name": "Aye of Reach",
+			"description": "Visit the Weaponsmith, you'll find they teach the value of buying a new Eye of Reach!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Visit the Weaponsmith at any Outpost.",
+					"Purchase any Eye of Reach."
+				]
+			}
+		},
+		{
+			"id": "252",
+			"name": "The Wonder of Plunder",
+			"description": "Pay a visit to the towering Plunder Outpost.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Sail to Plunder Outpost.",
+					"Step onto the island."
+				]
+			}
+		},
+		{
+			"id": "251",
+			"name": "Be In-Spired",
+			"description": "Pay a visit to the unforgettable Ancient Spire Outpost.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Sail to Ancient Spire Outpost.",
+					"Step onto the island."
+				]
+			}
+		},
+		{
+			"id": "254",
+			"name": "A Wild Excursion",
+			"description": "Pay a visit to the imposing Dagger Tooth Outpost.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Sail to Dagger Tooth Outpost.",
+					"Step onto the island."
+				]
+			}
+		},
+		{
+			"id": "253",
+			"name": "Pay Your Respects",
+			"description": "Pay a visit to the mysterious Galleon’s Grave Outpost.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Sail to Galleon's Grave Outpost.",
+					"Step onto the island."
+				]
+			}
+		},
+		{
+			"id": "249",
+			"name": "Seeking Sanctuary",
+			"description": "Pay a visit to the beautiful Sanctuary Outpost.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Sail to Sanctuary Outpost.",
+					"Step onto the island."
+				]
+			}
+		},
+		{
+			"id": "250",
+			"name": "Port of Call",
+			"description": "Pay a visit to the sprawling Port Merrick.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Sail to Port Merrick.",
+					"Step onto the island."
+				]
+			}
+		},
+		{
+			"id": "205",
+			"name": "O Captain!",
+			"description": "Set sail on a Captained ship as one of the crew.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Join a crew on a Captained ship (or captain your own).",
+					"Raise the anchor and set sail as one of the crew."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a366441/o-captain-achievement",
+				"warnings": [
+					"Captaincy is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "199",
+			"name": "What's Yours Is Mine",
+			"description": "Open a Sea Fort Treasury",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete any Sea Fort and take the key dropped by the fort captain.",
+					"Open the Treasury vault with the key."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a355290/whats-yours-is-mine-achievement"
+			}
+		},
+		{
+			"id": "144",
+			"name": "The Reaping Begins",
+			"description": "Be part of a crew that votes to raise an Emissary Flag for the Reaper's Bones.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Buy the Reaper's Bones Emissary Flag at Reaper's Hideout.",
+					"Place it on your ship's Emissary Table and vote to raise it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a298444/the-reaping-begins-achievement",
+				"warnings": [
+					"High Seas only — Reaper's Bones is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "21",
+			"name": "Blundarrrrbuss",
+			"description": "The Weaponsmith's open, you'll see it's no fuss to purchase a glorious new blunderbuss!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Visit the Weaponsmith at any Outpost.",
+					"Purchase any Blunderbuss."
+				]
+			}
+		},
+		{
+			"id": "141",
+			"name": "Ship of Souls",
+			"description": "Be part of a crew that votes to raise an Emissary Flag for the Order of Souls.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Reach the required Order of Souls reputation level and buy their Emissary Flag.",
+					"Place it on your ship's Emissary Table and vote to raise it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a298441/ship-of-souls-achievement"
+			}
+		},
+		{
+			"id": "48",
+			"name": "Keeper of a Glittering Hoard",
+			"description": "Receive the Commendation for earning 150,000 gold from Gold Hoarder voyages.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete Gold Hoarders Voyages, digging up and selling chests.",
+					"Earn 150,000 gold from them to receive the Commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249773/keeper-of-a-glittering-hoard-achievement"
+			}
+		},
+		{
+			"id": "25",
+			"name": "But You Have Heard Of Me?",
+			"description": "Your reputation is starting to thrive. Grab your Promotion, you've reached twenty-five!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Raise any Trading Company to reputation level 25.",
+					"Purchase the level 25 Promotion from that Company."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249750/but-you-have-heard-of-me-achievement"
+			}
+		},
+		{
+			"id": "26",
+			"name": "Self Entitled",
+			"description": "Titles are gathered from deeds near and far. Earn ten to show what type of pirate you are!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Earn Titles from Commendations, Tall Tales and Company milestones.",
+					"Hold ten of them; titles are equipped from the Vanity Chest."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249751/self-entitled-achievement"
+			}
+		},
+		{
+			"id": "30",
+			"name": "Ignoring The Rules Of Engagement",
+			"description": "To strike from behind is a sneaky attack that leads to a blunderbuss shot in the back!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Get behind another pirate (or an enemy skeleton) with your blunderbuss.",
+					"Kill them with a shot to the back."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249755/ignoring-the-rules-of-engagement-achievement"
+			}
+		},
+		{
+			"id": "24",
+			"name": "How Appropriate! You Fight Like A Chicken",
+			"description": "Your trusty blade was just too slow. Now it's your turn to feel their blow!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Fight another pirate or skeleton with your cutlass.",
+					"Block too late so their blow lands on you."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249749/how-appropriate-you-fight-like-a-chicken-achievement"
+			}
+		},
+		{
+			"id": "7",
+			"name": "Laden With Treasure",
+			"description": "You've overcome a score of tests and now you're hoarding twenty chests!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Gather chests from a Gold Hoarders Vault Voyage or X Marks the Spot Voyages.",
+					"Keep 20 chests aboard your ship at the same time."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249732/laden-with-treasure-achievement"
+			}
+		},
+		{
+			"id": "31",
+			"name": "Kraken Good Job",
+			"description": "From under the waves a great creature arrived but you drove it away. Better still, you survived!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Sail the open sea with no world event active until the water turns black and a Kraken attacks.",
+					"Fight off its tentacles with cannons and guns until it retreats."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249756/kraken-good-job-achievement"
+			}
+		},
+		{
+			"id": "210",
+			"name": "Chasing the Horizon",
+			"description": "Spend 10 days at sea aboard a Captained ship, either as the Captain or one of the crew.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Sail aboard a Captained ship, as captain or crew.",
+					"Accumulate ten in-game days at sea."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a366446/chasing-the-horizon-achievement",
+				"warnings": [
+					"Captaincy is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "207",
+			"name": "A Crewed Wisdom",
+			"description": "Read another crew's Captain's Log.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Board another crew's Captained ship.",
+					"Pick up and read their Captain's Log."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a366443/a-crewed-wisdom-achievement"
+			}
+		},
+		{
+			"id": "60",
+			"name": "Mercenary of the Ancient Order",
+			"description": "Receive the Commendation for earning 150,000 gold from Order of Souls Voyages.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete Order of Souls Voyages and sell the skulls.",
+					"Earn 150,000 gold from them to receive the Commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249785/mercenary-of-the-ancient-order-achievement"
+			}
+		},
+		{
+			"id": "169",
+			"name": "A Pirate's Life",
+			"description": "Complete 'A Pirate's Life'.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start the 'A Pirate's Life' Tall Tale from the Castaway's shack at any Outpost.",
+					"Play the story through to the end — the achievement unlocks on completion."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a331193/a-pirates-life-achievement"
+			}
+		},
+		{
+			"id": "142",
+			"name": "Trade Ambassador",
+			"description": "Be part of a crew that votes to raise an Emissary Flag for the Merchant Alliance.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Reach the required Merchant Alliance reputation level and buy their Emissary Flag.",
+					"Place it on your ship's Emissary Table and vote to raise it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a298442/trade-ambassador-achievement"
+			}
+		},
+		{
+			"id": "42",
+			"name": "I Am Not Obsessed With Treasure",
+			"description": "A Voyage is over, back to land a merchant's cargo in your hand!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Start a Merchant Alliance Cargo Run Voyage.",
+					"Deliver the cargo to its destination."
+				]
+			}
+		},
+		{
+			"id": "9",
+			"name": "You Can Always Trust The Untrustworthy",
+			"description": "Plundered from an unwary crew, their Captain's Chest cashed in - by you!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Take a Captain's Chest from another crew (board them or sink them).",
+					"Sell it to any Outpost faction."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249734/you-can-always-trust-the-untrustworthy-achievement"
+			}
+		},
+		{
+			"id": "135",
+			"name": "Tome of Resurrection I",
+			"description": "Sell the Tome of Resurrection I.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys — the tome inside is random.",
+					"Sell the Tome of Resurrection I to Larinna outside a tavern or to the Reaper's Bones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a293735/tome-of-resurrection-i-achievement"
+			}
+		},
+		{
+			"id": "134",
+			"name": "Tome of Resurrection II",
+			"description": "Sell the Tome of Resurrection II.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys until the Tome of Resurrection II drops.",
+					"Sell it to Larinna outside a tavern or to the Reaper's Bones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a293736/tome-of-resurrection-ii-achievement"
+			}
+		},
+		{
+			"id": "133",
+			"name": "Tome of Resurrection III",
+			"description": "Sell the Tome of Resurrection III.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys until the Tome of Resurrection III drops.",
+					"Sell it to Larinna outside a tavern or to the Reaper's Bones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a293737/tome-of-resurrection-iii-achievement"
+			}
+		},
+		{
+			"id": "132",
+			"name": "Tome of Resurrection IV",
+			"description": "Sell the Tome of Resurrection IV",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys until the Tome of Resurrection IV drops.",
+					"Sell it to Larinna outside a tavern or to the Reaper's Bones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a293734/tome-of-resurrection-iv-achievement"
+			}
+		},
+		{
+			"id": "131",
+			"name": "Tome of Resurrection V",
+			"description": "Sell the Tome of Resurrection V.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys until the Tome of Resurrection V drops.",
+					"Sell it to Larinna outside a tavern or to the Reaper's Bones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a293738/tome-of-resurrection-v-achievement"
+			}
+		},
+		{
+			"id": "87",
+			"name": "The Shroudbreaker",
+			"description": "A sunken ship and ancient key will set you on a great journey!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start the 'The Shroudbreaker' Tall Tale from the Castaway's shack.",
+					"Complete the story to unlock it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273740/the-shroudbreaker-achievement"
+			}
+		},
+		{
+			"id": "23",
+			"name": "You Fight Like A Merchant",
+			"description": "Dexterous swordplay can keep you alive. Block an attack and then strike within five!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Block an incoming cutlass strike from another pirate or skeleton.",
+					"Land your own hit within five seconds of the block."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249748/you-fight-like-a-merchant-achievement"
+			}
+		},
+		{
+			"id": "19",
+			"name": "#BeMorePirate",
+			"description": "A peg-leg, an eyepatch, a hat and a hook, all purchased to pull off the true pirate look!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"At the Clothing Shop, buy a peg-leg, an eyepatch, a hat and a hook (any variety).",
+					"Equip all four from the clothing chest."
+				]
+			}
+		},
+		{
+			"id": "213",
+			"name": "That's 'Captain', Mate...",
+			"description": "Set sail as a Captain of Adventure for the first time.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Own a Captained ship and set it to sail as Captain of Adventure.",
+					"Take the helm and set off for the first time."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a366449/thats-captain-mate-achievement",
+				"warnings": [
+					"Captaincy is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "55",
+			"name": "Gilded Merchant",
+			"description": "Receive the Commendation for earning 150,000 gold from Merchant Alliance Voyages.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete Merchant Alliance Voyages and sell the cargo.",
+					"Earn 150,000 gold from them to receive the Commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249780/gilded-merchant-achievement"
+			}
+		},
+		{
+			"id": "114",
+			"name": "A Titanic Ensemble",
+			"description": "A pirate may choose to go down with their ship. A musical send-off concludes their sad trip!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Equip a musical instrument.",
+					"Play it while aboard a sinking ship — scuttle from the My Crew menu if needed."
+				]
+			}
+		},
+		{
+			"id": "2",
+			"name": "Tome of Curses III",
+			"description": "Sell the Tome of Curses III.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys until the Tome of Curses III drops.",
+					"Sell it to Larinna outside a tavern or to the Reaper's Bones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a288336/tome-of-curses-iii-achievement"
+			}
+		},
+		{
+			"id": "113",
+			"name": "Tome of Curses II",
+			"description": "Sell the Tome of Curses II.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys until the Tome of Curses II drops.",
+					"Sell it to Larinna outside a tavern or to the Reaper's Bones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a288335/tome-of-curses-ii-achievement"
+			}
+		},
+		{
+			"id": "116",
+			"name": "Tome of Curses I",
+			"description": "Sell the Tome of Curses I.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys until the Tome of Curses I drops.",
+					"Sell it to Larinna outside a tavern or to the Reaper's Bones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a288334/tome-of-curses-i-achievement"
+			}
+		},
+		{
+			"id": "115",
+			"name": "Tome of Curses IV",
+			"description": "Sell the Tome of Curses IV.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys until the Tome of Curses IV drops.",
+					"Sell it to Larinna outside a tavern or to the Reaper's Bones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a288337/tome-of-curses-iv-achievement"
+			}
+		},
+		{
+			"id": "112",
+			"name": "Tome of Curses V",
+			"description": "Sell the Tome of Curses V.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys until the Tome of Curses V drops.",
+					"Sell it to Larinna outside a tavern or to the Reaper's Bones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a288338/tome-of-curses-v-achievement"
+			}
+		},
+		{
+			"id": "191",
+			"name": "Night-Time Spectacular",
+			"description": "You set off a display of five or more fireworks at night.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Get at least five fireworks (barrels or the Merchant Alliance).",
+					"Set all five off during a single night cycle."
+				]
+			}
+		},
+		{
+			"id": "143",
+			"name": "For Athena",
+			"description": "Be part of a crew that votes to raise an Emissary Flag for Athena's Fortune.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Become a Pirate Legend.",
+					"Buy the Athena's Fortune Emissary Flag (20,000 gold) from the Pirate Lord in the Hideout.",
+					"Place it and vote to raise it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a298443/for-athena-achievement",
+				"warnings": [
+					"Athena's Fortune is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "108",
+			"name": "Defeating the Damned",
+			"description": "Clear the Fort of the Damned of all enemies.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Activate the Fort of the Damned and fight through its waves.",
+					"Clear every enemy in the fort."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a285964/defeating-the-damned-achievement",
+				"warnings": [
+					"The Fort of the Damned does not spawn in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "161",
+			"name": "Night Bite",
+			"description": "Little fishie, all aglow,  off to The Hunter's Call you go.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Fish from your ship or a dock after nightfall.",
+					"Reel in a catch during the night and sell it to The Hunter's Call."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273733/night-bite-achievement"
+			}
+		},
+		{
+			"id": "80",
+			"name": "We Don't Need Maps",
+			"description": "Find a Vault Key using only 1 piece of Torn Map Parchment.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start a Gold Hoarders Vault Voyage and take the Torn Map Parchments.",
+					"Use only one parchment to find and dig up the Vault Key."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a308875/we-dont-need-maps-achievement"
+			}
+		},
+		{
+			"id": "129",
+			"name": "Tome of Fire I",
+			"description": "Sell the Tome of Fire I.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys until the Tome of Fire I drops.",
+					"Sell it to Larinna outside a tavern or to the Reaper's Bones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a291380/tome-of-fire-i-achievement"
+			}
+		},
+		{
+			"id": "128",
+			"name": "Tome of Fire II",
+			"description": "Sell the Tome of Fire II.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys until the Tome of Fire II drops.",
+					"Sell it to Larinna outside a tavern or to the Reaper's Bones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a291381/tome-of-fire-ii-achievement"
+			}
+		},
+		{
+			"id": "126",
+			"name": "Tome of Fire IV",
+			"description": "Sell the Tome of Fire IV.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys until the Tome of Fire IV drops.",
+					"Sell it to Larinna outside a tavern or to the Reaper's Bones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a291383/tome-of-fire-iv-achievement"
+			}
+		},
+		{
+			"id": "125",
+			"name": "Tome of Fire V",
+			"description": "Sell the Tome of Fire V.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys until the Tome of Fire V drops.",
+					"Sell it to Larinna outside a tavern or to the Reaper's Bones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a291384/tome-of-fire-v-achievement"
+			}
+		},
+		{
+			"id": "127",
+			"name": "Tome of Fire III",
+			"description": "Sell the Tome of Fire III.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys until the Tome of Fire III drops.",
+					"Sell it to Larinna outside a tavern or to the Reaper's Bones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a291382/tome-of-fire-iii-achievement"
+			}
+		},
+		{
+			"id": "171",
+			"name": "The Sunken Pearl",
+			"description": "Complete 'The Sunken Pearl'.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start 'The Sunken Pearl' Tall Tale from the Castaway's shack.",
+					"Complete the story to unlock it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a331195/the-sunken-pearl-achievement"
+			}
+		},
+		{
+			"id": "122",
+			"name": "Tome of Power I",
+			"description": "Sell the Tome of Power I.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys until the Tome of Power I drops.",
+					"Sell it to Larinna outside a tavern or to the Reaper's Bones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a290154/tome-of-power-i-achievement"
+			}
+		},
+		{
+			"id": "121",
+			"name": "Tome of Power II",
+			"description": "Sell the Tome of Power II.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys until the Tome of Power II drops.",
+					"Sell it to Larinna outside a tavern or to the Reaper's Bones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a290155/tome-of-power-ii-achievement"
+			}
+		},
+		{
+			"id": "119",
+			"name": "Tome of Power IV",
+			"description": "Sell the Tome of Power IV",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys until the Tome of Power IV drops.",
+					"Sell it to Larinna outside a tavern or to the Reaper's Bones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a290157/tome-of-power-iv-achievement"
+			}
+		},
+		{
+			"id": "118",
+			"name": "Tome of Power V",
+			"description": "Sell the Tome of Power V.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys until the Tome of Power V drops.",
+					"Sell it to Larinna outside a tavern or to the Reaper's Bones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a290158/tome-of-power-v-achievement"
+			}
+		},
+		{
+			"id": "107",
+			"name": "Summoning the Damned",
+			"description": "Activate the Fort of the Damned by lighting all six Flames of Fate and sacrificing a Ritual Skull.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Collect all six Flames of Fate lantern colours from the Ferry of the Damned (blue, red, green, white, purple, pink — one per way of dying).",
+					"Obtain a Ritual Skull from an Ashen Chest or skeleton fleet.",
+					"At the Fort of the Damned, light the six lanterns in order and place the Ritual Skull on the altar."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a285963/summoning-the-damned-achievement",
+				"warnings": [
+					"The Fort of the Damned and Ritual Skulls do not spawn in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "120",
+			"name": "A Spectrum of Shadows",
+			"description": "Defeat each colour of Shadow of Fate.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Activate the Fort of the Damned (see Summoning the Damned).",
+					"During the boss fight, defeat a Shadow of Fate of every colour.",
+					"Repeat the fort until all colours have been killed once."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a285962/a-spectrum-of-shadows-achievement",
+				"warnings": [
+					"The Fort of the Damned does not spawn in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "106",
+			"name": "Tome of Power III",
+			"description": "Sell the Tome of Power III.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys until the Tome of Power III drops.",
+					"Sell it to Larinna outside a tavern or to the Reaper's Bones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a290156/tome-of-power-iii-achievement"
+			}
+		},
+		{
+			"id": "257",
+			"name": "Voyager of Gold",
+			"description": "Dive to, and complete, a Voyage for the Gold Hoarders.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"From the quest table, dive to a Gold Hoarders Voyage.",
+					"Complete it once."
+				]
+			}
+		},
+		{
+			"id": "235",
+			"name": "The Cursed Rogue",
+			"description": "A Cursed Rogue searching, never sleeping. What great secrets is she keeping?",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start 'The Cursed Rogue' Tall Tale from the Castaway's shack.",
+					"Complete the story to unlock it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273741/the-cursed-rogue-achievement"
+			}
+		},
+		{
+			"id": "88",
+			"name": "Guild Initiate",
+			"description": "Set sail on a ship enrolled in a Guild to which you belong.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Join a Guild (or found one) from the Guild menu.",
+					"Set sail on a ship enrolled in that Guild."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a409641/guild-initiate-achievement",
+				"warnings": [
+					"Guilds are disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "137",
+			"name": "Heart of Fire",
+			"description": "Complete Heart of Fire",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start the 'Heart of Fire' Tall Tale from the Castaway's shack.",
+					"Complete the story to unlock it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a295310/heart-of-fire-achievement"
+			}
+		},
+		{
+			"id": "215",
+			"name": "A Professional Pirate",
+			"description": "Unlock a Legendary Title by progressing your Pirate Milestones.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open your Pirate Log and pick a Pirate Milestone category (The Gold Seeker, The Voyager, The Hunter, The Feared, The Emissary, The Rogue or The Ill-Fated).",
+					"Reach level 50 in a single category through normal play.",
+					"Equip the Legendary Title it unlocks from the Vanity Chest."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a366451/a-professional-pirate-achievement"
+			}
+		},
+		{
+			"id": "3",
+			"name": "Dead Pirates DO Tell Tales",
+			"description": "All on the Ferry are sister and brother. Send forth a message to someone or other!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Die and arrive on the Ferry of the Damned.",
+					"Use the chat or the message option there to send a message."
+				]
+			}
+		},
+		{
+			"id": "39",
+			"name": "Master Gold Hoarder",
+			"description": "You've gathered gold from near and far. A Master Hoarder now, you are!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Reach Gold Hoarders reputation level 50.",
+					"Buy the level 50 Master Promotion from the Gold Hoarder."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249764/master-gold-hoarder-achievement"
+			}
+		},
+		{
+			"id": "247",
+			"name": "Novice of Siren Song",
+			"description": "Awarded the Commendation 'Savior of the Siren Song Grade 1'",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Opt into the Skull of Siren Song competitive voyage when its quest appears on your mast.",
+					"Hand your first Skull of Siren Song in to Captain Briggsy."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a413591/novice-of-siren-song-achievement"
+			}
+		},
+		{
+			"id": "4",
+			"name": "Hold My Grog!",
+			"description": "Launched from your vessel, this cannon-fired trip must see you land safe on the deck of a ship!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Load yourself into a cannon aimed at another ship.",
+					"Fire and land safely on the deck of that ship — a skeleton ship works too."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249730/hold-my-grog-achievement"
+			}
+		},
+		{
+			"id": "75",
+			"name": "Dining With the Stars",
+			"description": "A midnight snack, if you desire, cooked to perfection on a fire!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Start a fire on any island or ship and cook a piece of meat or fish.",
+					"Finish cooking it to perfection during the night."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273730/dining-with-the-stars-achievement"
+			}
+		},
+		{
+			"id": "218",
+			"name": "You Gotta Fight",
+			"description": "Win your first fight in the Battle for the Sea of Thieves.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Use the Hourglass of Fate on your Voyage Table to vote for a faction.",
+					"Win a fight — sink the ship you invade with the War Map, or the ship that invades you."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a377718/you-gotta-fight-achievement",
+				"warnings": [
+					"High Seas only — the Battle for the Sea of Thieves is PvP."
+				]
+			}
+		},
+		{
+			"id": "212",
+			"name": "A Touch of Class",
+			"description": "Hand in 200 treasure items to the Sovereigns.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Hand in loot to the Sovereigns at any Outpost.",
+					"Do this 200 times."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a366448/a-touch-of-class-achievement",
+				"warnings": [
+					"Captaincy (and the Sovereigns) is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "164",
+			"name": "The Seabound Soul",
+			"description": "Complete The Seabound Soul",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start 'The Seabound Soul' Tall Tale from the Castaway's shack.",
+					"Complete the story to unlock it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a288332/the-seabound-soul-achievement"
+			}
+		},
+		{
+			"id": "110",
+			"name": "Wreckless Pursuit",
+			"description": "Locate the missing ship on a Lost Shipment Voyage without finding all the clues.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start a Merchant Alliance Lost Shipment Voyage.",
+					"Locate the missing ship without reading all of the clues."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a320417/wreckless-pursuit-achievement"
+			}
+		},
+		{
+			"id": "173",
+			"name": "Legends - \"The Skullduggers\"",
+			"description": "Five legends from across the sea playing instruments in harmony!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open the Legends of the Sea Commendations in the Pirate Log to see the shanty and its location.",
+					"Gather a full crew of Pirate Legends and all play the correct instruments.",
+					"Play the shanty together at the marked spot."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249762/legends--the-skullduggers-achievement"
+			}
+		},
+		{
+			"id": "163",
+			"name": "No Mound Left Behind",
+			"description": "Pick up all the mounds of gold inside a Treasure Vault.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open a Treasure Vault with a Gold Hoarders Vault Key.",
+					"Pick up every mound of gold inside before leaving."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a308877/no-mound-left-behind-achievement"
+			}
+		},
+		{
+			"id": "37",
+			"name": "Captains of the Damned",
+			"description": "Complete 'Captains of the Damned'.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start 'Captains of the Damned' from the Castaway's shack.",
+					"Complete the story to unlock it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a331197/captains-of-the-damned-achievement"
+			}
+		},
+		{
+			"id": "189",
+			"name": "Stolen Secrets",
+			"description": "You stole a Map Bundle from another crew.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find a crew that has buried treasure and stolen their Map Bundle (a physical item on their Voyage Table).",
+					"Place the stolen bundle on your own Voyage Table."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a348435/stolen-secrets-achievement",
+				"warnings": [
+					"High Seas only — this needs another crew."
+				]
+			}
+		},
+		{
+			"id": "136",
+			"name": "Tome of Resurrection Collector",
+			"description": "Sell all 5 Tomes of Resurrection.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys to obtain Tomes of Resurrection — the drop is random.",
+					"Sell each of the five Tomes of Resurrection I-V to Larinna or the Reaper's Bones.",
+					"Selling all five unlocks the collector achievement plus each individual one."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a293739/tome-of-resurrection-collector-achievement"
+			}
+		},
+		{
+			"id": "208",
+			"name": "The Art Collector",
+			"description": "Place 15 trinkets aboard a Captained ship at once.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Buy trinkets from the Shipwright and place them aboard your Captained ship.",
+					"Have 15 trinkets placed at the same time."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a366444/the-art-collector-achievement",
+				"warnings": [
+					"Captaincy is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "41",
+			"name": "Friends Not Foe",
+			"description": "A greeting, when given with Pirate Salute, can make a new friend - or perhaps a recruit!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Unlock the Pirate Salute emote (Renown / Season rewards).",
+					"Use it towards another player to greet them."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249758/friends-not-foe-achievement"
+			}
+		},
+		{
+			"id": "33",
+			"name": "Master of the Order",
+			"description": "Sun-bleached skulls from across the ocean earn the Order's highest Promotion!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Reach Order of Souls reputation level 50.",
+					"Buy the level 50 Master Promotion from the Order of Souls."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249766/master-of-the-order-achievement"
+			}
+		},
+		{
+			"id": "162",
+			"name": "Golden Retriever",
+			"description": "Open three Treasure Vaults with gold vault keys.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete Gold Hoarders Vault Voyages to earn Vault Keys.",
+					"Open three Treasure Vaults with gold vault keys."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a308876/golden-retriever-achievement"
+			}
+		},
+		{
+			"id": "258",
+			"name": "Voyager of the Soul",
+			"description": "Dive to, and complete, a Voyage for the Order of Souls.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"From the quest table, dive to an Order of Souls Voyage.",
+					"Complete it once."
+				]
+			}
+		},
+		{
+			"id": "27",
+			"name": "I'll Drink To That",
+			"description": "Two different crews, their tankards held high, will meet at a tavern and drain them all dry!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Meet another crew at any Tavern.",
+					"Both crews drink all their tankards dry together."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249742/ill-drink-to-that-achievement",
+				"warnings": [
+					"High Seas only — this needs two crews."
+				]
+			}
+		},
+		{
+			"id": "17",
+			"name": "In Good Company",
+			"description": "A Company's items are sold to the loyal, five upgrades rewards you with their finest spoil!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Buy promotions from a Trading Company as you level up.",
+					"Keep buying that company's lowest-tier items until level 45, when the achievement unlocks."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249752/in-good-company-achievement"
+			}
+		},
+		{
+			"id": "81",
+			"name": "A Rare Delicacy",
+			"description": "If reeling a coloured fish in, take care,  The Hunter's Call claim they're incredibly rare!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Fish until you hook a rare/coloured fish variant.",
+					"Reel it in and sell it to The Hunter's Call."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273734/a-rare-delicacy-achievement"
+			}
+		},
+		{
+			"id": "269",
+			"name": "Become Pirate Legend",
+			"description": "A true Pirate Legend is one of the greats and for them, Athena's Fortune awaits…",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Reach reputation level 50 with at least three Trading Companies and buy each level 50 promotion.",
+					"Talk to the Mysterious Stranger in any Outpost tavern.",
+					"Accept the Pirate Legend title and items he offers."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249754/become-pirate-legend-achievement",
+				"warnings": [
+					"Athena's Fortune is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "29",
+			"name": "Burning Vengeance",
+			"description": "Defeat the Burning Blade.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find the Burning Blade skeleton ship world event (a small red tornado).",
+					"Sink the ship — you can still pledge afterwards for the other achievement."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a441188/burning-vengeance-achievement",
+				"warnings": [
+					"The Burning Blade does not spawn in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "201",
+			"name": "From Whence They Came",
+			"description": "Defeat 250 Sea Fort Phantoms",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Run Sea Forts repeatedly and clear the phantom waves.",
+					"Defeat 250 Sea Fort Phantoms in total — only fort phantoms count."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a355292/from-whence-they-came-achievement"
+			}
+		},
+		{
+			"id": "236",
+			"name": "Dark Brethren",
+			"description": "Complete 'Dark Brethren'.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start 'Dark Brethren' from the Castaway's shack (A Pirate's Life, chapter 4).",
+					"Complete the story to unlock it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a331199/dark-brethren-achievement"
+			}
+		},
+		{
+			"id": "223",
+			"name": "Getting A Head",
+			"description": "Uncover a Skull of Destiny.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Obtain a Skull of Destiny (Athena's Fortune Skull of Destiny voyage or world events).",
+					"Uncover it to unlock the achievement."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a386978/getting-a-head-achievement"
+			}
+		},
+		{
+			"id": "175",
+			"name": "Sworn Guild Captain",
+			"description": "Pledge a Captained Ship to a Guild.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Own a Captained ship and belong to a Guild.",
+					"Pledge the ship to your Guild from the ship menu."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a409642/sworn-guild-captain-achievement",
+				"warnings": [
+					"Guilds and Captaincy are disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "139",
+			"name": "Collector of Legendary Treasures",
+			"description": "Find and sell at least one of each Legendary Treasure.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Run Athena's Fortune Voyages for Legendary Treasure (Chest of Legends, Chalice, Gilded Relic, Skull of Ancient Fortune, Villainous Skull of Ancient Fortune, Gilded Chalice of Ancient Fortune).",
+					"Sell at least one of every type to the Mysterious Stranger in a tavern."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a295312/collector-of-legendary-treasures-achievement",
+				"warnings": [
+					"Athena's Fortune content is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "216",
+			"name": "Master Merchant",
+			"description": "The Merchant Alliance applauds your devotion bestowing upon you a Master Promotion!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Reach Merchant Alliance reputation level 50.",
+					"Buy the level 50 Master Promotion from the Merchant Alliance."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249768/master-merchant-achievement"
+			}
+		},
+		{
+			"id": "89",
+			"name": "The Legendary Storyteller",
+			"description": "Adventures told with a fearless grin. Perhaps some truths might lie within?",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start 'The Legendary Storyteller' Tall Tale from the Castaway's shack.",
+					"Complete the story to unlock it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273742/the-legendary-storyteller-achievement"
+			}
+		},
+		{
+			"id": "43",
+			"name": "A Seasoned Ship",
+			"description": "Unlock a Legendary Ship Title by progressing your Ship Milestones.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Sail a Captained ship and level up its Ship Milestones.",
+					"Reach a high level in a single Ship Milestone category to unlock a Legendary Ship Title.",
+					"Equip the title from the ship menu."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a366452/a-seasoned-ship-achievement",
+				"warnings": [
+					"Captaincy is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "177",
+			"name": "Lords of the Sea",
+			"description": "Complete 'Lords of the Sea'.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start 'Lords of the Sea' from the Castaway's shack (A Pirate's Life, chapter 5).",
+					"Complete the story to unlock it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a331201/lords-of-the-sea-achievement"
+			}
+		},
+		{
+			"id": "211",
+			"name": "A Veteran Voyager",
+			"description": "Complete 30 Voyages aboard a Captained Ship.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete Voyages while sailing on a Captained ship.",
+					"Finish 30 of them."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a366447/a-veteran-voyager-achievement",
+				"warnings": [
+					"Captaincy and Captain Voyages are disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "138",
+			"name": "The Blackwyche Reborn",
+			"description": "Complete all commendations for Heart of Fire",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete the 'Heart of Fire' Tall Tale three times.",
+					"Discover all of Stitcher Jim's Journals (Liar's Backbone and inside each path of the Flameheart lair).",
+					"Collect the remaining commendations shown on the Tall Tale page."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a295311/the-blackwyche-reborn-achievement"
+			}
+		},
+		{
+			"id": "117",
+			"name": "Tome of Curses Collector",
+			"description": "Sell all 5 Tomes of Curses.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys to obtain Tomes of Curses — the drop is random.",
+					"Sell each of the five Tomes of Curses I-V to Larinna or the Reaper's Bones.",
+					"Selling all five unlocks the collector achievement plus each individual one."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a288339/tome-of-curses-collector-achievement"
+			}
+		},
+		{
+			"id": "82",
+			"name": "Meat and Greet",
+			"description": "A feast of meats all roasted well, each kind to The Hunter's Call you'll sell.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Hunt and cook chicken, pig, snake, shark, Kraken and Megalodon meat.",
+					"Sell one cooked piece of each to The Hunter's Call."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273735/meat-and-greet-achievement"
+			}
+		},
+		{
+			"id": "90",
+			"name": "Stars of a Thief",
+			"description": "The heavens' secrets, now concealed through ancient fable are revealed!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start 'Stars of a Thief' Tall Tale from the Castaway's shack.",
+					"Complete the story to unlock it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273743/stars-of-a-thief-achievement"
+			}
+		},
+		{
+			"id": "91",
+			"name": "Wild Rose",
+			"description": "Jealous wrongs must be set right so two young lovers can unite!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start 'Wild Rose' Tall Tale from the Castaway's shack.",
+					"Complete the story to unlock it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273744/wild-rose-achievement"
+			}
+		},
+		{
+			"id": "266",
+			"name": "Walk the Line",
+			"description": "Travel 5 km walking along harpoon tightropes.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Harpoon a ship, mast or rock so the rope forms a tightrope.",
+					"Walk along the rope — repeat until you have travelled 5 km in total."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a432379/walk-the-line-achievement"
+			}
+		},
+		{
+			"id": "268",
+			"name": "The Journey to Mêlée Island",
+			"description": "Complete 'The Journey to Mêlée Island' Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start the Monkey Island Tall Tale \"The Journey to Mêlée Island\" from the Castaway's shack.",
+					"Complete the story to unlock it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398907/the-journey-to-melee-island-achievement"
+			}
+		},
+		{
+			"id": "228",
+			"name": "Crew of the Burning Blade",
+			"description": "Pledge your crew to the Burning Blade.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Defeat the Burning Blade skeleton ship world event.",
+					"Board it and vote at the table in the Captain's cabin to pledge your crew.",
+					"Your old ship scuttles and the Burning Blade becomes yours."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a441187/crew-of-the-burning-blade-achievement",
+				"warnings": [
+					"The Burning Blade does not spawn in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "299",
+			"name": "Legends - \"The Greatest Race of All Time!\"",
+			"description": "Side by side, two ships must race with weapons silenced for first place!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open the Legends of the Sea Commendations to see the race route.",
+					"With two ships side by side, both crews silence their weapons (no firing).",
+					"Complete the race with weapons silenced for first place."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249760/legends--the-greatest-race-of-all-time-achievement"
+			}
+		},
+		{
+			"id": "260",
+			"name": "Legendary Plunge",
+			"description": "Dive to, and complete, a Voyage for Athena's Fortune.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Reach Pirate Legend status.",
+					"From the quest table, dive to any non-Raid Athena's Fortune Voyage.",
+					"Complete it once — Skull of Destiny is the easiest."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a425590/legendary-plunge-achievement",
+				"warnings": [
+					"Athena's Fortune is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "35",
+			"name": "Smuggler at Sea",
+			"description": "Find a lost Smuggler Ship Chronicle.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find a Smuggler Ship Chronicle (random loot on beaches or in shipwrecks).",
+					"Pick it up and read it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a584513/smuggler-at-sea-achievement"
+			}
+		},
+		{
+			"id": "130",
+			"name": "Tome of Fire Collector",
+			"description": "Sell all 5 Tomes of Fire.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys to obtain Tomes of Fire — the drop is random.",
+					"Sell each of the five Tomes of Fire I-V to Larinna or the Reaper's Bones.",
+					"Selling all five unlocks the collector achievement plus each individual one."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a291385/tome-of-fire-collector-achievement"
+			}
+		},
+		{
+			"id": "170",
+			"name": "Mist and Memory",
+			"description": "Complete all Commendations for 'A Pirate's Life'.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete 'A Pirate's Life' and its side quests: dig up Dougie, return his treasure for the medallion, fetch the Special Recipe for the chess skeletons, assemble the Cursed Captain, and open the gold ship with the Ship's Key.",
+					"Collect all 10 Cursed Captain journals spread across the tale.",
+					"Do all of this before you summon the Ferry of the Damned with the lighthouse."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a331194/mist-and-memory-achievement",
+				"communityNotes": [
+					"Reddit tip: 'A Pirate's Life' has a whole side-quest chain (Raising the Dead, Treasure for the Dead, A Powerful Thirst, Ship of Thieves, Secret of the Grave) that must be completed before summoning the Ferry of the Damned; Rare Thief's guide lists every step."
+				],
+				"warnings": [
+					"The side-quest steps must be finished before you summon the Ferry of the Damned — do them first."
+				]
+			}
+		},
+		{
+			"id": "298",
+			"name": "The Art of the Trickster",
+			"description": "A shining treasure you must claim, the prize within a deadly game!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start 'The Art of the Trickster' Tall Tale from the Castaway's shack.",
+					"Complete the story to unlock it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273745/the-art-of-the-trickster-achievement"
+			}
+		},
+		{
+			"id": "183",
+			"name": "Mystery of the Coral Tomb",
+			"description": "Complete the Mystery of the Shrine of the Coral Tomb Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Enter the Shrine of the Coral Tomb (see the Rare Thief Sunken Kingdom map).",
+					"Find its five journals hidden inside the shrine.",
+					"Complete the Shrine of the Coral Tomb Commendation to earn the Mystery."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a340343/mystery-of-the-coral-tomb-achievement"
+			}
+		},
+		{
+			"id": "92",
+			"name": "Smugglers' Riches",
+			"description": "Earn 50,000 gold from The Smugglers' League.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete Smugglers' League Voyages and Route Runs.",
+					"Sell the smuggler loot and reach 50,000 gold earned from The Smugglers' League."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a584512/smugglers-riches-achievement"
+			}
+		},
+		{
+			"id": "300",
+			"name": "Tome of Power Collector",
+			"description": "Sell all 5 Tomes of Power.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open Ashen Chests with Ashen Keys to obtain Tomes of Power — the drop is random.",
+					"Sell each of the five Tomes of Power I-V to Larinna or the Reaper's Bones.",
+					"Selling all five unlocks the collector achievement plus each individual one."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a290159/tome-of-power-collector-achievement"
+			}
+		},
+		{
+			"id": "123",
+			"name": "Vanquisher of the Eternal",
+			"description": "Defeat an Eternal Guard.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e2769181a4e56ad5ee92bf74f42e9c4c4776feb9.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find an ancient sarcophagus on a Large Island in the Devil's Roar.",
+					"Light the candles on top to awaken an Eternal Guard.",
+					"Defeat the Eternal Guard."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a610218/vanquisher-of-the-eternal-achievement"
+			}
+		},
+		{
+			"id": "95",
+			"name": "The Shores of Gold",
+			"description": "Forbidden secrets must be told. What lies beneath the Shores of Gold?",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete all eight preceding Shores of Gold Tall Tales to unlock it.",
+					"Start 'The Shores of Gold' from the Castaway's shack.",
+					"Complete the story to unlock it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273748/the-shores-of-gold-achievement"
+			}
+		},
+		{
+			"id": "105",
+			"name": "Smile, you son of a…",
+			"description": "That shark bit off more than it could chew, when it chose to mess with you.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Let a shark bite you while swimming (you can also kill it first).",
+					"Kill the shark that bit you."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a285961/smile-you-son-of-a-achievement"
+			}
+		},
+		{
+			"id": "259",
+			"name": "The Fate of the Morningstar",
+			"description": "Guide three wayward souls to rest, the next step on your golden quest!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start 'The Fate of the Morningstar' Tall Tale from the Castaway's shack.",
+					"Complete the story to unlock it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273746/the-fate-of-the-morningstar-achievement"
+			}
+		},
+		{
+			"id": "246",
+			"name": "Fortune-ate Outcome",
+			"description": "Conquer 3 Forts of Fortune.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Watch for a skull with red cracked eyes floating above a Skull Fort (a global sound plays).",
+					"Clear all skeleton waves and the Ashen Lord, then place the key in the vault door.",
+					"Repeat three times."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a386980/fortuneate-outcome-achievement",
+				"warnings": [
+					"The Fort of Fortune does not spawn in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "225",
+			"name": "Sacrifice of Siren Song",
+			"description": "Sink a ship carrying a Siren Song Treasure",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Enter the Skull of Siren Song voyage and let another crew pick up the Skull, Chest or Key.",
+					"Sink their ship while they carry one of those quest items."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a413590/sacrifice-of-siren-song-achievement",
+				"warnings": [
+					"High Seas only — this needs another crew."
+				]
+			}
+		},
+		{
+			"id": "93",
+			"name": "Voyager for the Alliance",
+			"description": "Dive to, and complete, a Voyage for the Merchant Alliance.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"From the quest table, dive to a Merchant Alliance Voyage.",
+					"Complete it once."
+				]
+			}
+		},
+		{
+			"id": "79",
+			"name": "Another Pirate's Treasure",
+			"description": "Ill-gotten gains - yet, after all,  they still sold to the Hunter's Call.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Steal loot from another crew (or find loot that clearly belonged to someone).",
+					"Sell it to The Hunter's Call."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273732/another-pirates-treasure-achievement"
+			}
+		},
+		{
+			"id": "145",
+			"name": "Revenge of the Morningstar",
+			"description": "Great evil sleeps below the sands, revenge at last within your hands!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start 'Revenge of the Morningstar' Tall Tale from the Castaway's shack.",
+					"Complete the story to unlock it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273747/revenge-of-the-morningstar-achievement"
+			}
+		},
+		{
+			"id": "94",
+			"name": "So… Many… Chests!",
+			"description": "Be promoted to level 75 with the Gold Hoarders.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Reach Gold Hoarders reputation level 75.",
+					"Buy the level 75 promotion from the Gold Hoarder."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a298445/so-many-chests-achievement"
+			}
+		},
+		{
+			"id": "267",
+			"name": "Perfect Dark",
+			"description": "Through stormy seas in silent flight, no lanterns lit to pierce the night.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Extinguish every lantern on your ship at night.",
+					"Sail into a storm and keep the ship dark until the achievement fires."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249757/perfect-dark-achievement"
+			}
+		},
+		{
+			"id": "195",
+			"name": "Hunter of Trophy Fish",
+			"description": "Receive the Commendation for delivering 25 Trophy Fish to The Hunter's Call.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Fish for trophy (large) variants of any fish species.",
+					"Sell 25 Trophy Fish to The Hunter's Call."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273736/hunter-of-trophy-fish-achievement"
+			}
+		},
+		{
+			"id": "83",
+			"name": "Hider of Secret Treasures",
+			"description": "You buried treasures for safekeeping.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Pick up any treasure and bury it with the shovel.",
+					"Repeat until you have buried 25 treasures."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a348441/hider-of-secret-treasures-achievement"
+			}
+		},
+		{
+			"id": "32",
+			"name": "This One's To Go",
+			"description": "Use a zipline while carrying a treasure chest on your back.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Carry a treasure chest onto a zipline.",
+					"Ride the zipline to the other end while holding it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a432380/this-ones-to-go-achievement"
+			}
+		},
+		{
+			"id": "193",
+			"name": "Hunter of Captain Grimm",
+			"description": "Defeat Captain Grimm 5 times",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Take part in Ashen Winds world events (a red tornado over an island) or dive to an Ashen Winds raid.",
+					"Defeat Captain Grimm five times total — the boss is random, so repeat until he appears."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a304292/hunter-of-captain-grimm-achievement"
+			}
+		},
+		{
+			"id": "157",
+			"name": "Sleepover",
+			"description": "Sleep in a bed aboard another crew's ship.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Board another crew's ship.",
+					"Lie in their bed to sleep."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a348439/sleepover-achievement",
+				"warnings": [
+					"High Seas only — this needs another crew."
+				]
+			}
+		},
+		{
+			"id": "262",
+			"name": "Banishing the Damned",
+			"description": "Clear the Fort of the Damned of all enemies, 10 times.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Activate the Fort of the Damned and clear every enemy.",
+					"Repeat the full fort ten times."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a285965/banishing-the-damned-achievement",
+				"warnings": [
+					"The Fort of the Damned does not spawn in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "109",
+			"name": "Title Fight",
+			"description": "Defeat a Skeleton Lord with a ranged throwing knife attack.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Equip throwing knives from an armoury box.",
+					"Find a Skeleton Lord (Skeleton Fort, Order of Souls bounty or Fort of the Damned) and land the killing blow with a thrown knife."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a432375/title-fight-achievement"
+			}
+		},
+		{
+			"id": "160",
+			"name": "Hunter of Red Ruth",
+			"description": "Defeat Red Ruth 5 times",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Take part in Ashen Winds events (or the Ashen Lord at a Fort of Fortune).",
+					"Defeat Red Ruth five times total to progress the commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a304293/hunter-of-red-ruth-achievement"
+			}
+		},
+		{
+			"id": "159",
+			"name": "Hunter of Old Horatio",
+			"description": "Defeat Old Horatio 5 times",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Take part in Ashen Winds events (or the Ashen Lord at a Fort of Fortune).",
+					"Defeat Old Horatio five times total to progress the commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a304294/hunter-of-old-horatio-achievement"
+			}
+		},
+		{
+			"id": "158",
+			"name": "Hunter of Warden Chi",
+			"description": "Defeat Warden Chi 5 times",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Take part in Ashen Winds events (or the Ashen Lord at a Fort of Fortune).",
+					"Defeat Warden Chi five times total to progress the commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a304295/hunter-of-warden-chi-achievement"
+			}
+		},
+		{
+			"id": "302",
+			"name": "Mystery of Ancient Tears",
+			"description": "Complete the Mystery of the Shrine of Ancient Tears Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Enter the Shrine of Ancient Tears.",
+					"Find its five journals inside the shrine.",
+					"Complete the Shrine of Ancient Tears Commendation to earn the Mystery."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a340344/mystery-of-ancient-tears-achievement"
+			}
+		},
+		{
+			"id": "270",
+			"name": "Sweltering Sword",
+			"description": "Sell a Blade of Souls.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Defeat and sink the Burning Blade skeleton ship world event.",
+					"Take the Blade of Souls it drops to any Outpost and sell it (any faction, including Athena's Fortune)."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a441189/sweltering-sword-achievement",
+				"warnings": [
+					"The Burning Blade does not spawn in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "184",
+			"name": "Broker of Banishment",
+			"description": "Sell a Banished Ancient Treasure.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e2769181a4e56ad5ee92bf74f42e9c4c4776feb9.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Unlock and enter a Sanctuary of the Banished (Flame's End, Cinder Islet or Brimstone Rock).",
+					"Pick up a piece of Ancient Treasure inside and sell it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a610220/broker-of-banishment-achievement"
+			}
+		},
+		{
+			"id": "185",
+			"name": "Many, Many Manifests",
+			"description": "Recover 5 Revered Manifests while on Lost Shipment Voyages.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Run Merchant Alliance Lost Shipment Voyages.",
+					"Recover five Revered Manifests from the sunken ships."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a320419/many-many-manifests-achievement"
+			}
+		},
+		{
+			"id": "174",
+			"name": "Pearl in the Dark",
+			"description": "Complete all Commendations for 'The Sunken Pearl'.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete 'The Sunken Pearl' Tall Tale.",
+					"Collect every commendation on the Tall Tale page — journals, side tasks and repeat completions."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a331196/pearl-in-the-dark-achievement"
+			}
+		},
+		{
+			"id": "172",
+			"name": "Captain of Haunted Waters",
+			"description": "Complete all Commendations for 'Captains of the Damned'.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete 'Captains of the Damned' Tall Tale.",
+					"Collect every commendation shown on the Tall Tale page — journals and side tasks."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a331198/captain-of-haunted-waters-achievement",
+				"communityNotes": [
+					"Reddit tip: after Jack Sparrow leaves the throne in Captains of the Damned, sit on it yourself for an unlisted commendation."
+				]
+			}
+		},
+		{
+			"id": "166",
+			"name": "Mystery of Tribute",
+			"description": "Complete the Mystery of the Shrine of Tribute Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Enter the Shrine of Tribute.",
+					"Find its five journals inside the shrine.",
+					"Complete the Shrine of Tribute Commendation to earn the Mystery."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a340345/mystery-of-tribute-achievement"
+			}
+		},
+		{
+			"id": "285",
+			"name": "Did Everyone See That?",
+			"description": "A heavy attack while you've boarded their ship may send your foe over the side for a dip!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Board an enemy ship and find a pirate near the rail.",
+					"Land a charged heavy cutlass attack to launch them over the side into the water."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249753/did-everyone-see-that-achievement",
+				"warnings": [
+					"High Seas only — this needs an enemy crew."
+				]
+			}
+		},
+		{
+			"id": "180",
+			"name": "Mystery of Hungering",
+			"description": "Complete the Mystery of the Shrine of Hungering Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Enter the Shrine of Hungering.",
+					"Find its five journals inside the shrine.",
+					"Complete the Shrine of Hungering Commendation to earn the Mystery."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a340340/mystery-of-hungering-achievement"
+			}
+		},
+		{
+			"id": "28",
+			"name": "Hunter of the Noble Voyage",
+			"description": "Dive to and complete a Hunter's Call Voyage.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"From the quest table, dive to a Hunter's Call Voyage.",
+					"Complete it once."
+				]
+			}
+		},
+		{
+			"id": "206",
+			"name": "Banisher of the Spectral Flame",
+			"description": "Defeat the ghost of the Burning Blade 10 times!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Defeat the Burning Blade world event, including its ghost form.",
+					"Repeat until the ghost has been defeated ten times."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a301537/banisher-of-the-spectral-flame-achievement",
+				"warnings": [
+					"The Burning Blade does not spawn in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "155",
+			"name": "The Quartermaster",
+			"description": "Stock your ship with each type of supply using the Ship's Manifest.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open the Ship's Manifest aboard your Captained ship.",
+					"Stock every type of supply listed there."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a366442/the-quartermaster-achievement",
+				"warnings": [
+					"Captaincy (and the Ship's Manifest) is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "181",
+			"name": "Mystery of Flooded Embrace",
+			"description": "Complete the Mystery of the Shrine of Flooded Embrace Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Enter the Shrine of Flooded Embrace.",
+					"Find its five journals inside the shrine.",
+					"Complete the Shrine of Flooded Embrace Commendation to earn the Mystery."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a340341/mystery-of-flooded-embrace-achievement"
+			}
+		},
+		{
+			"id": "197",
+			"name": "Taking Heads",
+			"description": "Be promoted to level 75 with the Order of Souls.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Reach Order of Souls reputation level 75.",
+					"Buy the level 75 promotion from the Order of Souls."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a298446/taking-heads-achievement"
+			}
+		},
+		{
+			"id": "194",
+			"name": "Critical Roll",
+			"description": "You rolled a natural 20 using the Roll a D20 Emote.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Reach Season 5 (or buy the dice emote from Larinna for doubloons).",
+					"Equip the Roll a D20 emote from the Vanity Chest and keep using it until you roll a natural 20 (about a 5% chance)."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a348440/critical-roll-achievement"
+			}
+		},
+		{
+			"id": "146",
+			"name": "Seeker of Pirate Plunder",
+			"description": "You uncovered valuable treasures buried by other pirate crews.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Take a Treasure Stash map from an Outpost Quest Board.",
+					"Dig up the buried treasure it points to, then repeat until you have uncovered 25."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a348443/seeker-of-pirate-plunder-achievement"
+			}
+		},
+		{
+			"id": "224",
+			"name": "Mystery of Ocean's Fortune",
+			"description": "Complete the Mystery of the Shrine of Ocean's Fortune Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Enter the Shrine of Ocean's Fortune.",
+					"Find its five journals inside the shrine.",
+					"Complete the Shrine of Ocean's Fortune Commendation to earn the Mystery."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a340342/mystery-of-oceans-fortune-achievement"
+			}
+		},
+		{
+			"id": "182",
+			"name": "Hot-Headed",
+			"description": "Use a Skull of Destiny to begin 3 Fort of the Damned events.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Obtain a Skull of Destiny to activate the Fort of the Damned without the lantern ritual.",
+					"Use it to begin the fort event three times."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a386979/hotheaded-achievement",
+				"warnings": [
+					"The Fort of the Damned does not spawn in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "230",
+			"name": "Legen… Wait for it… Dary!",
+			"description": "Be promoted to level 20 with Athena's Fortune.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Become a Pirate Legend.",
+					"Earn Athena's Fortune reputation by selling Legendary loot and completing Athena's Voyages.",
+					"Reach Athena's Fortune level 20."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a298448/legen-wait-for-it-dary-achievement",
+				"warnings": [
+					"Athena's Fortune is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "148",
+			"name": "The Quest for Guybrush",
+			"description": "Complete 'The Quest for Guybrush' Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start the Monkey Island Tall Tale \"The Quest for Guybrush\" from the Castaway's shack.",
+					"Complete the story to unlock it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a403629/the-quest-for-guybrush-achievement"
+			}
+		},
+		{
+			"id": "220",
+			"name": "You Reap What You See",
+			"description": "Be promoted to level 75 with the Reaper's Bones.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Reach Reaper's Bones reputation level 75.",
+					"Buy the level 75 promotion from the Reaper's Bones."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a298449/you-reap-what-you-see-achievement",
+				"warnings": [
+					"Reaper's Bones is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "192",
+			"name": "Fortress of Sorrow",
+			"description": "Complete all Commendations for 'Dark Brethren'.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete 'Dark Brethren' Tall Tale.",
+					"Collect every commendation on the Tall Tale page."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a331200/fortress-of-sorrow-achievement"
+			}
+		},
+		{
+			"id": "176",
+			"name": "Tribute Seat",
+			"description": "You took a seat upon the throne during the 'Shores of Gold' Tall Tale.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play the 'Shores of Gold' Tall Tale to the Gold Hoarder boss fight.",
+					"Defeat the Gold Hoarder, then sit on the golden throne in the arena."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a348438/tribute-seat-achievement"
+			}
+		},
+		{
+			"id": "149",
+			"name": "Nigh Unsinkable!",
+			"description": "Earn an Allegiance Streak of 4 for either Faction.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"multiplayer",
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Vote for a faction with the Hourglass of Fate.",
+					"Sink four player ships back to back without losing your streak.",
+					"Do not sink or cash in your Sands of Fate, which resets the streak."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a377720/nigh-unsinkable-achievement",
+				"warnings": [
+					"High Seas only — this is PvP."
+				]
+			}
+		},
+		{
+			"id": "147",
+			"name": "A Sunken Legacy",
+			"description": "Receive all Commendations for 'The Shroudbreaker' Tall Tale.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete 'The Shroudbreaker' Tall Tale five times.",
+					"Discover all of Mercia's Journals (Uncharted Island N-13, Ancient Spire cave, Devil's Ridge camp, Thieves' Haven shack, Plunder Outpost campfire).",
+					"Collect the remaining commendations."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273749/a-sunken-legacy-achievement"
+			}
+		},
+		{
+			"id": "96",
+			"name": "Deliverance",
+			"description": "Be promoted to level 75 with the Merchant Alliance.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Reach Merchant Alliance reputation level 75.",
+					"Buy the level 75 promotion from the Merchant Alliance."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a298447/deliverance-achievement"
+			}
+		},
+		{
+			"id": "274",
+			"name": "Seeker of Lost Souls",
+			"description": "Defeat 500 skeletons on an Order of Souls Bounty Voyage.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Take Order of Souls Bounty Voyages.",
+					"Defeat 500 skeletons while on those voyages."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249781/seeker-of-lost-souls-achievement"
+			}
+		},
+		{
+			"id": "178",
+			"name": "Convenient Stores",
+			"description": "Supplies from the Merchants will save you a wait. Buy every Resource and Commodity Crate!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Visit the Merchant Alliance at an Outpost.",
+					"Buy every Resource Crate and Commodity Crate they sell."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a325986/convenient-stores-achievement"
+			}
+		},
+		{
+			"id": "168",
+			"name": "An Eternal Pirate Life",
+			"description": "Complete all Commendations for 'Lords of the Sea'.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete 'Lords of the Sea' Tall Tale.",
+					"Collect every commendation on the Tall Tale page."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a331202/an-eternal-pirate-life-achievement"
+			}
+		},
+		{
+			"id": "56",
+			"name": "Astral Protection",
+			"description": "Complete the 'Astral Protection' Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open the Bilge Rats Commendations to find 'Astral Protection'.",
+					"Complete the tasks it lists (see the achievement page for the exact steps)."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a441193/astral-protection-achievement"
+			}
+		},
+		{
+			"id": "291",
+			"name": "Fateful Memories",
+			"description": "Receive all Commendations for 'The Cursed Rogue' Tall Tale.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete 'The Cursed Rogue' Tall Tale five times.",
+					"Discover all of the Bounty Hunter's Journals (Shark Bait Cove, Discovery Ridge, Kraken's Fall, Wanderer's Refuge, Crook's Hollow).",
+					"Collect the remaining commendations."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273750/fateful-memories-achievement"
+			}
+		},
+		{
+			"id": "232",
+			"name": "The Lair of LeChuck",
+			"description": "You completed The Lair of LeChuck.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start the Monkey Island Tall Tale \"The Lair of LeChuck\" from the Castaway's shack.",
+					"Complete the story to unlock it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a407015/the-lair-of-lechuck-achievement"
+			}
+		},
+		{
+			"id": "97",
+			"name": "Voyager of Bones",
+			"description": "Dive to, and complete, a Voyage for The Reaper's Bones.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/8c192e61cf7a56780dfd0cba5f3c56841ac897a7.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"From the quest table, dive to a Reaper's Bones Voyage.",
+					"Complete it once — High Seas only."
+				]
+			}
+		},
+		{
+			"id": "237",
+			"name": "Fire and Ash",
+			"description": "Complete all commendations for The Seabound Soul",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete 'The Seabound Soul' Tall Tale three times.",
+					"Collect all Ashen Artefacts (buried on Tri-Rock Isle, Cursewater Shores and Cinder Islet — use a lantern).",
+					"Discover the Ashen Dragon Journals at Shipwreck Bay, Shiver Retreat, Liar's Backbone, Scorched Pass and Flintlock Peninsula."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a288333/fire-and-ash-achievement"
+			}
+		},
+		{
+			"id": "111",
+			"name": "Emissary of Guilds",
+			"description": "Become a Guild Emissary for the first time for a Guild to which you belong.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Join a Guild and sail on one of its enrolled ships.",
+					"Use the Emissary Table to raise a Guild Emissary Flag for the first time."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a409643/emissary-of-guilds-achievement",
+				"warnings": [
+					"Guilds are disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "179",
+			"name": "A Pirate's Life for Me",
+			"description": "Complete all Commendations for the 'Sea of Thieves: A Pirate's Life' Tall Tales.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete all five 'A Pirate's Life' Tall Tales (A Pirate's Life, The Sunken Pearl, Captains of the Damned, Dark Brethren, Lords of the Sea).",
+					"Collect every commendation across all five, including all journals and side quests."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a331203/a-pirates-life-for-me-achievement",
+				"communityNotes": [
+					"Reddit tip: every A Pirate's Life chapter has side-quest commendations besides the journals — chapter 1 is the most extensive, and most require a specific route or action before the finale."
+				]
+			}
+		},
+		{
+			"id": "271",
+			"name": "Smooth Landing",
+			"description": "Use the Horn of Fair Winds to avoid fall damage from a great height.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Get the Horn of Fair Winds.",
+					"Blow it just before you land from a great height to break your fall."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a432378/smooth-landing-achievement"
+			}
+		},
+		{
+			"id": "265",
+			"name": "Hot Shot",
+			"description": "Complete the 'Hot Shot' Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open the Bilge Rats Commendations to find 'Hot Shot'.",
+					"Complete the task it lists to earn the commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a441190/hot-shot-achievement"
+			}
+		},
+		{
+			"id": "295",
+			"name": "Devious Dinghy",
+			"description": "Earn the Commendation 'Devious Dinghy'.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/8c192e61cf7a56780dfd0cba5f3c56841ac897a7.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open the Bilge Rats Commendations to find 'Devious Dinghy'.",
+					"Complete the task it lists to earn the commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a493363/devious-dinghy-achievement"
+			}
+		},
+		{
+			"id": "255",
+			"name": "Always Yours",
+			"description": "Receive all Commendations for the 'Wild Rose' Tall Tale.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete 'Wild Rose' Tall Tale five times.",
+					"Discover all of the Lovers' Notes (Rapier Cay, Cannon Cove, Lone Cove, Lagoon of Whispers, Sailor's Bounty).",
+					"Collect the remaining commendations."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273753/always-yours-achievement"
+			}
+		},
+		{
+			"id": "167",
+			"name": "The Legend of Glitterbeard",
+			"description": "",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Gather eight players and head to Plunder Valley; find the tree covered in bottles on the north-west side.",
+					"Stand one player on each of the eight marked spots: Banjo (west & east), Hurdy Gurdy (north & south), Concertina (south-east & north-west), Drum (north-east & south-west).",
+					"After sunset, all eight play \"Becalmed\" and keep playing until the bottles glow, then enter the hideout that opens to find the final journal."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a323722/the-legend-of-glitterbeard-achievement",
+				"communityNotes": [
+					"Reddit tip: the eight players must hold specific instruments and everyone must play the shanty \"Becalmed\" without moving or stopping until the bottles glow."
+				],
+				"warnings": [
+					"Needs eight players on one server, so form an alliance before starting.",
+					"Time-gated: the ritual only works just after sunset (roughly 10-11pm in-game)."
+				]
+			}
+		},
+		{
+			"id": "100",
+			"name": "Pirate of Distinction",
+			"description": "Earn a Distinction for any Trading Company.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Reach reputation level 100 with any Trading Company (except Hunter's Call).",
+					"Level up once more to earn a Distinction and reset that Company to level 1."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a425585/pirate-of-distinction-achievement"
+			}
+		},
+		{
+			"id": "209",
+			"name": "Feeding the Flame",
+			"description": "Represent the Reaper's Bones in the Master Tier at the closure of an Emissary Ledger, 5 times.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"multiplayer",
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Purchase the Reaper's Bones Emissary Flag and run Reaper's Voyages, selling loot with the flag raised.",
+					"Finish a monthly Emissary Ledger in the Master tier (top 25% of players for the faction).",
+					"Repeat for five months."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a300339/feeding-the-flame-achievement",
+				"warnings": [
+					"Reaper's Bones is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "156",
+			"name": "Scourge of the Damned",
+			"description": "Defeat 500 ghost ships!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Fight ghost ships in skeleton fleets and the Barnacled Dread.",
+					"Sink 500 ghost ships in total."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a301538/scourge-of-the-damned-achievement"
+			}
+		},
+		{
+			"id": "154",
+			"name": "Ready for Next Time",
+			"description": "Save a fully-decorated, Captained ship in the Ship Decoration Chest.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Equip a full set of ship cosmetics (default Sailor items work), including a flag.",
+					"Save the loadout in the Ship Decoration Chest."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a366445/ready-for-next-time-achievement",
+				"warnings": [
+					"Captaincy is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "297",
+			"name": "Master Hunter Of Villainous Skulls",
+			"description": "Receive the Commendation for selling 360 Villainous Skulls.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete Order of Souls Voyages and forts for Villainous Skulls.",
+					"Sell 360 Villainous Skulls to receive the Commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249786/master-hunter-of-villainous-skulls-achievement"
+			}
+		},
+		{
+			"id": "229",
+			"name": "Sea of Dreams",
+			"description": "Receive all Commendations for 'The Legendary Storyteller' Tall Tale.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete 'The Legendary Storyteller' Tall Tale five times.",
+					"Discover all of Briggsy's Journals (Lone Cove, Mermaid's Hideaway, Old Salts Atoll, Dagger Tooth Outpost, Galleon's Grave Outpost).",
+					"Collect the remaining commendations."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273751/sea-of-dreams-achievement"
+			}
+		},
+		{
+			"id": "150",
+			"name": "The Stolen Sky",
+			"description": "Receive all Commendations for the 'Stars of a Thief' Tall Tale.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete 'Stars of a Thief' Tall Tale five times.",
+					"Discover all of Sudds' Notes (Rum Runner Isle, Plunder Valley, Snake Island, Devil's Ridge, Crescent Isle).",
+					"Collect the remaining commendations."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273752/the-stolen-sky-achievement"
+			}
+		},
+		{
+			"id": "99",
+			"name": "Gold Hoarder Incarnate",
+			"description": "Represent the Gold Hoarders in the Captain Tier at the closure of an Emissary Ledger, 5 times.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"multiplayer",
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Buy the Gold Hoarders Emissary Flag and run Gold Hoarder Voyages with it raised.",
+					"Finish a monthly Emissary Ledger in the Captain tier (top 25% for the faction).",
+					"Repeat for five months."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a300335/gold-hoarder-incarnate-achievement"
+			}
+		},
+		{
+			"id": "98",
+			"name": "Mêlée Island Investigator",
+			"description": "Complete all Commendations for 'The Journey to Mêlée Island'.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete the \"Journey to Mêlée Island\" Tall Tale.",
+					"Collect every commendation on the Tall Tale page, including side tasks and journals."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a398908/melee-island-investigator-achievement"
+			}
+		},
+		{
+			"id": "61",
+			"name": "Marked Smuggler",
+			"description": "Complete a Smugglers' Route Run Voyage.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start a Smugglers' Route Run Voyage from your ship's Captain's Table.",
+					"Transport the explosive barrels from the island to the smuggler hideout and complete the run."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a584511/marked-smuggler-achievement",
+				"warnings": [
+					"Smugglers' Route Run cannot be played in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "104",
+			"name": "Master of the Hunters",
+			"description": "Purchase the Master Hunter Promotion from The Hunter's Call Trading Company.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Reach Hunter's Call reputation level 50 (sell fish, meat and Mermaid Gems; Larinna sells a level each month).",
+					"Buy the Master Hunter Promotion from The Hunter's Call."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273739/master-of-the-hunters-achievement"
+			}
+		},
+		{
+			"id": "86",
+			"name": "Seeker of Grand Adventure",
+			"description": "Receive all Commendations for all the Shores of Gold Tall Tales.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete every Shores of Gold Tall Tale (The Shroudbreaker, The Cursed Rogue, The Legendary Storyteller, Stars of a Thief, Wild Rose, The Art of the Trickster, The Fate of the Morningstar, Revenge of the Morningstar, The Shores of Gold).",
+					"Earn every commendation for each of them, including all journal sets and repeat completions."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273757/seeker-of-grand-adventure-achievement"
+			}
+		},
+		{
+			"id": "261",
+			"name": "Tactical Chunder",
+			"description": "When threatened at sword point, remember this trick: blind your poor foe with a bucket of sick!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Make your pirate sick (eat bait such as worms, leeches or grubs) while holding a bucket to collect the vomit.",
+					"Throw the bucket of vomit over an enemy player who is holding a sword."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249736/tactical-chunder-achievement",
+				"warnings": [
+					"High Seas only — the target must be another player, not your own crew."
+				]
+			}
+		},
+		{
+			"id": "226",
+			"name": "Hoarder of the Captain’s Gold",
+			"description": "Receive the Commendation for selling 360 Captain’s Chests.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Find Captain's Chests in the world and from skeleton ships and forts.",
+					"Sell 360 Captain's Chests to receive the Commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249774/hoarder-of-the-captains-gold-achievement"
+			}
+		},
+		{
+			"id": "103",
+			"name": "The Trickster's Folly",
+			"description": "Receive all Commendations for 'The Art of the Trickster' Tall Tale.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete 'The Art of the Trickster' Tall Tale five times.",
+					"Discover all of Salty's journals scattered around the tall tale's locations.",
+					"Collect the remaining commendations."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273754/the-tricksters-folly-achievement"
+			}
+		},
+		{
+			"id": "102",
+			"name": "The Unbroken Bond",
+			"description": "Receive all Commendations for 'The Fate of the Morningstar' Tall Tale.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete 'The Fate of the Morningstar' Tall Tale five times.",
+					"Discover all of the journals for that tale.",
+					"Collect the remaining commendations."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273755/the-unbroken-bond-achievement"
+			}
+		},
+		{
+			"id": "101",
+			"name": "The Morningstar Rises",
+			"description": "Receive all Commendations for 'The Revenge of the Morningstar' Tall Tale.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete 'Revenge of the Morningstar' Tall Tale five times.",
+					"Discover all of the journals for that tale.",
+					"Collect the remaining commendations."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273756/the-morningstar-rises-achievement"
+			}
+		},
+		{
+			"id": "49",
+			"name": "A Favour for the Flame",
+			"description": "Hand in 30 Reaper's Chests or Reaper's Bounties.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Collect Reaper's Chests and Reaper's Bounties (they glow red on the seas).",
+					"Hand 30 of them in to the Reaper's Bones at Reaper's Hideout."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a386981/a-favour-for-the-flame-achievement",
+				"warnings": [
+					"Reaper's Bones is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "11",
+			"name": "Rib Roast",
+			"description": "Defeat an Ashen Lord with the Double Barrel Pistol.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Equip the Double Barrel Pistol from an armoury box.",
+					"Find an Ashen Lord (Ashen Winds event or Fort of Fortune) and land the killing blow with it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a432374/rib-roast-achievement"
+			}
+		},
+		{
+			"id": "288",
+			"name": "Sea Beast Spear Hunter",
+			"description": "Hit Krakens, Megalodons or Ancient Megalodons using hunting spears.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Get hunting spears and engage a Kraken, Megalodon or Ancient Megalodon.",
+					"Hit the beast with the spears repeatedly until the commendation completes."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a473034/sea-beast-spear-hunter-achievement"
+			}
+		},
+		{
+			"id": "286",
+			"name": "The Order's Finest",
+			"description": "Represent the Order of Souls in the Grandee Tier at the closure of an Emissary Ledger, 5 times.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"multiplayer",
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Buy the Order of Souls Emissary Flag and run their Voyages with it raised.",
+					"Finish a monthly Emissary Ledger in the Grandee tier (top 25% for the faction).",
+					"Repeat for five months."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a300336/the-orders-finest-achievement"
+			}
+		},
+		{
+			"id": "231",
+			"name": "Athena's Greatest",
+			"description": "Represent Athena's Fortune in the Legend Tier at the closure of an Emissary Ledger, 5 times.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"multiplayer",
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Become a Pirate Legend and raise the Athena's Fortune Emissary Flag.",
+					"Finish a monthly Emissary Ledger in the Legend tier (top 25% for Athena's Fortune).",
+					"Repeat for five months."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a300338/athenas-greatest-achievement",
+				"warnings": [
+					"Athena's Fortune is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "200",
+			"name": "Master Burglar",
+			"description": "Discover 100 secret stashed treasures on a Sea Fort",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Search boxes, cupboards and chests inside Sea Forts for hidden loot.",
+					"Find 100 hidden treasures in total — gold pouches and the main vault cupboards do not count."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a355291/master-burglar-achievement"
+			}
+		},
+		{
+			"id": "153",
+			"name": "Legendary Trial Master",
+			"description": "Complete all Commendations for 'The Quest for Guybrush'.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete \"The Quest for Guybrush\" Tall Tale.",
+					"Collect every commendation on the Tall Tale page."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a403630/legendary-trial-master-achievement"
+			}
+		},
+		{
+			"id": "151",
+			"name": "You're Going to Need a Bigger Bucket!",
+			"description": "Attempt to extinguish the Ancient Feared Redmaw with a water bucket.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Sail to the Ancient Feared Redmaw world event.",
+					"Throw a bucket of water over the megalodon when it surfaces near your ship — you do not need to kill it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a467940/youre-going-to-need-a-bigger-bucket-achievement"
+			}
+		},
+		{
+			"id": "296",
+			"name": "A Sunken Century",
+			"description": "Sink 100 Faction ships in the Battle for the Sea of Thieves.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"multiplayer",
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Vote for a faction with the Hourglass of Fate and fight in the Battle for the Sea of Thieves.",
+					"Sink 100 faction ships in total."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a377719/a-sunken-century-achievement",
+				"warnings": [
+					"High Seas only — this is PvP."
+				]
+			}
+		},
+		{
+			"id": "238",
+			"name": "Do the Monkey!",
+			"description": "You completed all Commendations for 'The Lair of LeChuck'.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Complete \"The Lair of LeChuck\" Tall Tale.",
+					"Collect every commendation on the Tall Tale page."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a407016/do-the-monkey-achievement"
+			}
+		},
+		{
+			"id": "233",
+			"name": "Distinguished Guild Member",
+			"description": "Set sail representing a Guild you are a member of with Distinction 1 or higher.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Be in a Guild that reaches reputation level 100.",
+					"Earn the first Distinction by levelling past 100 (which resets the Guild to level 1).",
+					"Set sail on a ship representing that Guild at Distinction 1 or higher."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a409644/distinguished-guild-member-achievement",
+				"warnings": [
+					"Guilds are disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "219",
+			"name": "Shady Smuggler",
+			"description": "Dive to and complete a Smugglers' League Voyage.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"From the quest table, dive to a Smugglers' League Voyage.",
+					"Complete it once — High Seas only."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a584510/shady-smuggler-achievement"
+			}
+		},
+		{
+			"id": "263",
+			"name": "Employee of the Month",
+			"description": "Represent the Merchant Alliance in the Admiral Tier at the closure of an Emissary Ledger, 5 times.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"multiplayer",
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Buy the Merchant Alliance Emissary Flag and run their Voyages with it raised.",
+					"Finish a monthly Emissary Ledger in the Admiral tier (top 25% for the faction).",
+					"Repeat for five months."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a300337/employee-of-the-month-achievement"
+			}
+		},
+		{
+			"id": "256",
+			"name": "Legendary Loot Seller",
+			"description": "Sell 500 Legendary Treasures",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Run Athena's Fortune Voyages for Legendary Treasures.",
+					"Sell 500 Legendary Treasures in total."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a358157/legendary-loot-seller-achievement",
+				"warnings": [
+					"Athena's Fortune content is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "203",
+			"name": "Just Getting Started",
+			"description": "Complete the Tutorial Voyage for the Gold Hoarders, Merchant Alliance and Order of Souls.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"On the Voyage Table, open each base Company's voyage list.",
+					"Complete the Tutorial Voyage at the bottom of the list for the Gold Hoarders, Merchant Alliance and Order of Souls."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a425586/just-getting-started-achievement"
+			}
+		},
+		{
+			"id": "152",
+			"name": "Krack Shot",
+			"description": "Hit a Kraken tentacle with scattershot.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Sail open water with no world event active until a Kraken attacks.",
+					"Load scattershot into a cannon and hit one of its tentacles."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a432376/krack-shot-achievement"
+			}
+		},
+		{
+			"id": "277",
+			"name": "Master Cartographer",
+			"description": "You donated Treasure Stash maps to a Quest Board.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Bury a treasure and take the Treasure Stash map it creates.",
+					"Donate 25 Treasure Stash maps to the Quest Board at any Outpost."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a348442/master-cartographer-achievement"
+			}
+		},
+		{
+			"id": "234",
+			"name": "Spared No Expense",
+			"description": "Purchase a cherished trinket.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Save up gold and buy a trinket (a cherished decorative item).",
+					"Buy your first trinket from the Shipwright or an Outpost shop."
+				]
+			}
+		},
+		{
+			"id": "214",
+			"name": "Legend of Monkey Island",
+			"description": "You completed all Commendations for 'The Legend of Monkey Island' Tall Tales",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete all three Monkey Island Tall Tales (The Journey to Mêlée Island, The Quest for Guybrush, The Lair of LeChuck).",
+					"Earn every commendation across all three, including journals and side tasks."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a407017/legend-of-monkey-island-achievement"
+			}
+		},
+		{
+			"id": "196",
+			"name": "Pressgang Grappler",
+			"description": "Complete the 'Pressgang Grappler' Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Equip the Grapple Gun from an armoury box.",
+					"Pull another crew's player from their ship onto yours with the grapple."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a452731/pressgang-grappler-achievement",
+				"warnings": [
+					"High Seas only — this needs an enemy player."
+				]
+			}
+		},
+		{
+			"id": "307",
+			"name": "Hoarder of Barnacled Gold",
+			"description": "Receive the Commendation for selling 300 Shipwrecked Chests.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Salvage Shipwrecked Chests from sunken ships (look for shipwrecks).",
+					"Sell 300 Shipwrecked Chests to receive the Commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249772/hoarder-of-barnacled-gold-achievement"
+			}
+		},
+		{
+			"id": "222",
+			"name": "Hook, Line and Sinker",
+			"description": "A platter of each kind of fish will serve the Hunters quite a dish!",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Fish every species of fish and cook the ones you can.",
+					"Sell one of every kind of fish to The Hunter's Call."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273737/hook-line-and-sinker-achievement"
+			}
+		},
+		{
+			"id": "84",
+			"name": "Ritual of the Flame",
+			"description": "Undergo the Ritual of the Flame.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start the \"Ritual of the Flame\" Ritual Voyage for the Reaper's Bones.",
+					"Complete the ritual to undergo the Ritual of the Flame."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a377722/ritual-of-the-flame-achievement"
+			}
+		},
+		{
+			"id": "47",
+			"name": "Welcome to Custom Seas!",
+			"description": "Create your first Custom Seas Lobby in Custom Seas.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e2769181a4e56ad5ee92bf74f42e9c4c4776feb9.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"From the main menu, open Custom Seas.",
+					"Create your first Custom Seas lobby."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a644043/welcome-to-custom-seas-achievement"
+			}
+		},
+		{
+			"id": "292",
+			"name": "Blessing of Athena's Fortune",
+			"description": "Receive the Blessing of Athena's Fortune.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Become a Pirate Legend.",
+					"Complete Athena's Fortune Voyages to earn the Blessing of Athena's Fortune.",
+					"Receive the Blessing from the Pirate Lord's Hideout."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a377721/blessing-of-athenas-fortune-achievement",
+				"warnings": [
+					"Athena's Fortune is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "264",
+			"name": "Favour the Bold",
+			"description": "Hand in 30 Chests of Fortune.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete Fort of Fortune (and the current world event that drops Chests of Fortune) and take the chest.",
+					"Sell 30 Chests of Fortune to the Gold Hoarders, Reaper's Bones or the Sovereigns."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a386982/favour-the-bold-achievement",
+				"warnings": [
+					"The Fort of Fortune does not spawn in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "227",
+			"name": "A Clash of Bones",
+			"description": "Defeat an enemy Bone Caller Skeleton with your own Bone Caller Skeleton.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Get Bone Caller throwables from skeleton forts.",
+					"Summon your own Bone Caller skeleton and have it kill an enemy crew's Bone Caller skeleton."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a432377/a-clash-of-bones-achievement",
+				"warnings": [
+					"High Seas only — the opposing Bone Caller must belong to another crew."
+				]
+			}
+		},
+		{
+			"id": "221",
+			"name": "Bony Bodyguard",
+			"description": "Earn the Commendation 'Bony Bodyguard'.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/8c192e61cf7a56780dfd0cba5f3c56841ac897a7.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open the Bilge Rats Commendations to find 'Bony Bodyguard'.",
+					"Complete the task it lists to earn the commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a493360/bony-bodyguard-achievement"
+			}
+		},
+		{
+			"id": "301",
+			"name": "Seeker of Lost Maps",
+			"description": "Dig Up 250 chests whilst on Gold Hoarder X Marks the Spot Voyages.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Run Gold Hoarders X Marks the Spot Voyages.",
+					"Dig up 250 chests while on those voyages."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249769/seeker-of-lost-maps-achievement"
+			}
+		},
+		{
+			"id": "204",
+			"name": "Golden Voyager",
+			"description": "Receive the Commendation for completing 250 Gold Hoarder Voyages.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete Gold Hoarders Voyages.",
+					"Finish 250 of them to receive the Commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249770/golden-voyager-achievement"
+			}
+		},
+		{
+			"id": "190",
+			"name": "Merchant Adventurer",
+			"description": "Correctly fill 250 animal crates whilst on Merchant Alliance Contract Voyages.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Accept Merchant Alliance Contract Voyages that ask for animals.",
+					"Correctly fill 250 animal crates while on those voyages."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249775/merchant-adventurer-achievement"
+			}
+		},
+		{
+			"id": "187",
+			"name": "Seeker of the Sea",
+			"description": "Complete the Seeker of the Sea Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Collect Breath of the Sea from coral bottle quests (glowing blue on beaches, sea and shipwrecks).",
+					"Sell 30 Breath of the Sea to receive the Commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a340347/seeker-of-the-sea-achievement"
+			}
+		},
+		{
+			"id": "50",
+			"name": "Who Needs A Bigger Boat?",
+			"description": "You attacked a Megalodon or Kraken using a Cannon Rowboat.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find a Cannon Rowboat (random on islands and at sea) and dock it to your ship.",
+					"Attack a Megalodon or Kraken with the rowboat's cannon 25 times."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a348436/who-needs-a-bigger-boat-achievement"
+			}
+		},
+		{
+			"id": "45",
+			"name": "True Legend",
+			"description": "Complete 25 Legend of the Veil Voyages as a Grade 5 Athena Emissary",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Become a Pirate Legend and raise an Athena's Fortune Emissary Flag.",
+					"Run \"Legend of the Veil\" Voyages at Emissary Grade 5.",
+					"Complete 25 of them."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a358158/true-legend-achievement",
+				"warnings": [
+					"Athena's Fortune is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "44",
+			"name": "Explorer of Sacred Places",
+			"description": "Unlock all three Sanctuaries of the Banished.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e2769181a4e56ad5ee92bf74f42e9c4c4776feb9.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Defeat Eternal Guards to earn Sanctuary of the Banished Keys.",
+					"Unlock and clear all three Sanctuaries: Flame's End, Cinder Islet and Brimstone Rock."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a610219/explorer-of-sacred-places-achievement"
+			}
+		},
+		{
+			"id": "198",
+			"name": "Sailor of the Gold Horizon",
+			"description": "Sail 1,000 nautical miles on Gold Hoarders Voyages, or with their Emissary Flag raised.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Sail on Gold Hoarders Voyages, or with the Gold Hoarders Emissary Flag raised.",
+					"Accumulate 1,000 nautical miles on those voyages."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249771/sailor-of-the-gold-horizon-achievement"
+			}
+		},
+		{
+			"id": "188",
+			"name": "Merchant Voyager",
+			"description": "Receive the Commendation for completing 250 Merchant Alliance Voyages.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete Merchant Alliance Voyages.",
+					"Finish 250 of them to receive the Commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249776/merchant-voyager-achievement"
+			}
+		},
+		{
+			"id": "186",
+			"name": "Sailor of the Merchant Alliance",
+			"description": "Sail 1,000 nautical miles on Merchant Alliance Voyages, or with their Emissary Flag raised.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Sail on Merchant Alliance Voyages, or with their Emissary Flag raised.",
+					"Accumulate 1,000 nautical miles on those voyages."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249777/sailor-of-the-merchant-alliance-achievement"
+			}
+		},
+		{
+			"id": "165",
+			"name": "Black Powder Merchant",
+			"description": "Deliver 100 Gunpowder Barrels or Crates of Unprocessed Gunpowder.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Accept Merchant Alliance Contract Voyages until one asks for Gunpowder Barrels or Crates of Unprocessed Gunpowder.",
+					"Deliver 100 of them."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249778/black-powder-merchant-achievement",
+				"communityNotes": [
+					"Reddit tip: Gunpowder Barrel deliveries only appear on random Merchant Alliance voyages, so this is a slow RNG grind rather than a fixed contract."
+				]
+			}
+		},
+		{
+			"id": "85",
+			"name": "Merchant Forager",
+			"description": "Deliver 50 Fruit Crates or Crates of Unprepared Ingredients.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Accept Merchant Alliance Contract Voyages until one asks for Fruit Crates or Crates of Unprepared Ingredients.",
+					"Deliver 50 of them."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249779/merchant-forager-achievement",
+				"communityNotes": [
+					"Reddit tip: Fruit Crate deliveries are the rarest Merchant contract, so keep rerolling voyages to find them."
+				]
+			}
+		},
+		{
+			"id": "59",
+			"name": "Voyager of Lost Souls",
+			"description": "Receive the Commendation for completing 250 Order of Souls Voyages.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete Order of Souls Voyages.",
+					"Finish 250 of them to receive the Commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249782/voyager-of-lost-souls-achievement"
+			}
+		},
+		{
+			"id": "58",
+			"name": "Sailor of the Whispering Bones",
+			"description": "Sail 1,000 nautical miles on Order of Souls Voyages, or with their Emissary Flag raised.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Sail on Order of Souls Voyages, or with their Emissary Flag raised.",
+					"Accumulate 1,000 nautical miles on those voyages."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249783/sailor-of-the-whispering-bones-achievement"
+			}
+		},
+		{
+			"id": "57",
+			"name": "Hunter of Cursed Captains",
+			"description": "Receive the Commendation for defeating 1,000 Skeleton Captains.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Defeat Skeleton Captains from Order of Souls voyages, skeleton forts and the open world.",
+					"Defeat 1,000 of them to receive the Commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a249784/hunter-of-cursed-captains-achievement"
+			}
+		},
+		{
+			"id": "54",
+			"name": "Legendary Hunter of the Sea of Thieves",
+			"description": "Receive the Commendation for completing 57 Grade 5 Hunter's Call Commendations.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Reach Grade 5 on all 57 Hunter's Call Commendations.",
+					"This needs 50 of each non-rare fish variant, 10 of each rare variant, 50 perfectly cooked pieces of each meat, and 50 of each Treacherous Loot item."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a273738/legendary-hunter-of-the-sea-of-thieves-achievement",
+				"communityNotes": [
+					"Reddit tip: Treacherous Plunder (Old Skull, Old Boots, Fish Bones, Old Hats) is best farmed by fishing in the pond on the Shores of Gold."
+				]
+			}
+		},
+		{
+			"id": "53",
+			"name": "Get Wrecked",
+			"description": "On Lost Shipment Voyages, locate a missing ship along each of the Merchants' trade routes.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Run Merchant Alliance Lost Shipment Voyages repeatedly.",
+					"Locate a missing ship along each of the Merchants' different trade routes."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a320418/get-wrecked-achievement"
+			}
+		},
+		{
+			"id": "52",
+			"name": "Sunken Kingdom Marauder",
+			"description": "Complete the Marauder of the Sunken Kingdom Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Collect coral loot: Breath of the Sea, coral skulls, chests, relics and coffers from Siren Shrines and Treasuries.",
+					"Sell 30 Breath of the Sea, 50 coral skulls, 25 coral chests, 25 coral relics and 50 coral coffers to any faction."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a340346/sunken-kingdom-marauder-achievement"
+			}
+		},
+		{
+			"id": "51",
+			"name": "Legend of the Sunken Kingdom",
+			"description": "Complete all Sunken Kingdom Commendations.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete all 31 Sunken Kingdom Bilge Rat Commendations.",
+					"Set foot in all six Siren Shrines, clear each Treasury once, sell the coral loot quotas, kill 250 Sirens and 250 Ocean Crawlers, and find all 30 journals (five per shrine).",
+					"Finish the voyage from the quest table once every journal is collected."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a340348/legend-of-the-sunken-kingdom-achievement"
+			}
+		},
+		{
+			"id": "46",
+			"name": "Beholder of Buried Treasures",
+			"description": "You completed all Buried Treasures Commendations.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open the Buried Treasures Bilge Rat Commendations.",
+					"Complete every one — burying, donating, digging up and stealing treasure across multiple sessions."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a348444/beholder-of-buried-treasures-achievement"
+			}
+		},
+		{
+			"id": "303",
+			"name": "A Fleeting Fancy",
+			"description": "Own 15 ships.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/550b907337c5d748129f116fa82c27239fbdd126.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Save up gold for extra Captained ships (sloops cost 250,000 gold each).",
+					"Own 15 ships at the same time."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a366453/a-fleeting-fancy-achievement",
+				"warnings": [
+					"Captaincy is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "287",
+			"name": "The Power of Three",
+			"description": "Complete the 'The Power of Three' Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Get the Black Powder and Lure Darts for the blowpipe weapon from an armoury box.",
+					"Use a Lure Dart to pull three or more phantoms together (Sea Forts work well).",
+					"Ignite them all with a single Black Powder Dart."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a452735/the-power-of-three-achievement"
+			}
+		},
+		{
+			"id": "284",
+			"name": "Red Alert Raider",
+			"description": "Complete the 'Red Alert Raider' Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Place a trap on your ship and load it with a red flare.",
+					"Have another pirate set the trap off to complete the commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a452739/red-alert-raider-achievement",
+				"warnings": [
+					"High Seas only — the trap must be triggered by another pirate."
+				]
+			}
+		},
+		{
+			"id": "280",
+			"name": "Eel-ectric Tide",
+			"description": "Kill an Eel-ectric Ocean Crawler with a Trident of Dark Tides during a Barnacled Dread attack.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Sail to the Barnacled Dread megalodon world event with a Trident of Dark Tides aboard.",
+					"Kill one of the Eel-ectric Ocean Crawlers that board your ship with the trident."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a467941/eelectric-tide-achievement"
+			}
+		},
+		{
+			"id": "217",
+			"name": "Violet Violence",
+			"description": "Use a Black Powder Barrel on an Eternal Guard.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e2769181a4e56ad5ee92bf74f42e9c4c4776feb9.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Get a Black Powder Barrel from smuggler content such as a Smugglers' Route Run.",
+					"Transport it to a Large Island in the Devil's Roar with an Eternal Guard and detonate it against the guard."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a610221/violet-violence-achievement"
+			}
+		},
+		{
+			"id": "282",
+			"name": "Veil Seeker",
+			"description": "Complete 100 Legend of the Veil Quests",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/aa32a42699ad8ee3e006acaeb647320762481f89.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Become a Pirate Legend and run \"Legend of the Veil\" Voyages.",
+					"Complete 100 of them."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a358156/veil-seeker-achievement",
+				"warnings": [
+					"Athena's Fortune is disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "281",
+			"name": "Master of Siren Song",
+			"description": "Awarded the Commendation 'Seeker of The Siren Song Grade 5'",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"On the Skull of Siren Song voyage, dig up Siren Song chests and keys from the two maps Captain Briggsy gives you.",
+					"Dig up 50 of them to reach Grade 5 of the Seeker of the Siren Song Commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a413588/master-of-siren-song-achievement"
+			}
+		},
+		{
+			"id": "279",
+			"name": "Guardian of Siren Song",
+			"description": "Awarded the Commendation 'Savior of the Siren Song Grade 5'",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"On the Skull of Siren Song voyage, hand Skulls of Siren Song in to Captain Briggsy.",
+					"Hand in 30 of them to reach Grade 5 of the Savior of the Siren Song Commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a413592/guardian-of-siren-song-achievement"
+			}
+		},
+		{
+			"id": "248",
+			"name": "Revenge at Last",
+			"description": "Complete the 'Revenge at Last' Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Equip the blowpipe from an armoury box and select Poison Darts.",
+					"Kill 25 snakes with poison darts (snakes are found on many islands)."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a452733/revenge-at-last-achievement"
+			}
+		},
+		{
+			"id": "244",
+			"name": "Comfortable Sneaker",
+			"description": "Complete the 'Comfortable Sneaker' Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Board a skeleton or enemy ship and crouch to sneak around undetected.",
+					"Travel 1,500 metres while crouched — the rear balcony of a galleon is a safe spot."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a452736/comfortable-sneaker-achievement",
+				"warnings": [
+					"High Seas only — this must be done on an enemy or skeleton ship."
+				]
+			}
+		},
+		{
+			"id": "202",
+			"name": "Hidden in Plain Sight",
+			"description": "Complete the 'Hidden in Plain Sight' Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Equip a wearable disguise (barrel or Sailor's Chest) from the Vanity Chest.",
+					"Board an enemy ship and sneak around in the disguise for 450 metres."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a452737/hidden-in-plain-sight-achievement",
+				"warnings": [
+					"High Seas only — this must be done on an enemy ship."
+				]
+			}
+		},
+		{
+			"id": "304",
+			"name": "Legendary Guild Chef",
+			"description": "Complete all 'Chef' Guild Commendations.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Join a Guild and run Guild Voyages while representing it as the Chef.",
+					"Complete every Chef Guild Commendation listed in the Pirate Log."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a409645/legendary-guild-chef-achievement",
+				"warnings": [
+					"Guilds are disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "283",
+			"name": "Legendary Guild Cannoneer",
+			"description": "Complete all 'Cannoneer' Guild Commendations.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Join a Guild and run Guild Voyages as the Cannoneer.",
+					"Complete every Cannoneer Guild Commendation listed in the Pirate Log."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a409646/legendary-guild-cannoneer-achievement",
+				"warnings": [
+					"Guilds are disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "278",
+			"name": "Legendary Guild Navigator",
+			"description": "Complete all 'Navigator' Guild Commendations.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Join a Guild and run Guild Voyages as the Navigator.",
+					"Complete every Navigator Guild Commendation listed in the Pirate Log."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a409647/legendary-guild-navigator-achievement",
+				"warnings": [
+					"Guilds are disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "245",
+			"name": "Legendary Guild Helm",
+			"description": "Complete all 'Helm' Guild Commendations.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Join a Guild and run Guild Voyages as the Helm.",
+					"Complete every Helm Guild Commendation listed in the Pirate Log."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a409648/legendary-guild-helm-achievement",
+				"warnings": [
+					"Guilds are disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "243",
+			"name": "Distinguished Guild Legend",
+			"description": "Complete 'Distinguished' Guild Commendations.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Reach Distinction on a Guild (level 100, then level up again).",
+					"Complete every \"Distinguished\" Guild Commendation listed in the Pirate Log."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a409649/distinguished-guild-legend-achievement",
+				"warnings": [
+					"Guilds are disabled in Safer Seas."
+				]
+			}
+		},
+		{
+			"id": "242",
+			"name": "Liberator of Siren Song",
+			"description": "Awarded the Commendation 'Sentry of the Siren Song Grade 5'",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"On the Skull of Siren Song voyage, combine Chests of Siren Song with Siren Song Keys.",
+					"Do this 40 times to reach Grade 5 of the Sentry of the Siren Song Commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a413589/liberator-of-siren-song-achievement"
+			}
+		},
+		{
+			"id": "241",
+			"name": "Enticing Explosion",
+			"description": "Complete the 'Enticing Explosion' Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Equip the blowpipe and select Lure Darts from an armoury box.",
+					"Hit a skeleton that is carrying a Gunpowder Barrel with a Lure Dart 25 times — the same skeleton can count repeatedly."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a452732/enticing-explosion-achievement"
+			}
+		},
+		{
+			"id": "240",
+			"name": "Hung Out to Dry",
+			"description": "Complete the 'Hung Out to Dry' Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Find the shipwrecks at Galleon's Grave, Shipwreck Bay, Morrow's Peak Outpost, Discovery Ridge and Thieves' Haven.",
+					"Crouch and hang off each of the five wrecks to gain progress."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a452738/hung-out-to-dry-achievement"
+			}
+		},
+		{
+			"id": "239",
+			"name": "Are You Even Trying?!",
+			"description": "During a Faction battle, indulge in too many tankards of grog.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e2769181a4e56ad5ee92bf74f42e9c4c4776feb9.jpg",
+			"types": [
+				"multiplayer"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Vote for a faction with the Hourglass of Fate to enter a Battle for the Sea of Thieves.",
+					"Drink grog in excess mid-battle until your pirate passes out."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a627821/are-you-even-trying-achievement",
+				"warnings": [
+					"High Seas only — this must be done during a faction battle."
+				]
+			}
+		},
+		{
+			"id": "308",
+			"name": "Sizzling Sinker",
+			"description": "Complete the 'Sizzling Sinker' Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open the Bilge Rats Commendations to find 'Sizzling Sinker'.",
+					"Complete the task it lists to earn the commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a441191/sizzling-sinker-achievement"
+			}
+		},
+		{
+			"id": "294",
+			"name": "Playing the Part",
+			"description": "Complete the 'Playing the Part' Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open the Bilge Rats Commendations to find 'Playing the Part'.",
+					"Complete the task it lists to earn the commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a441192/playing-the-part-achievement"
+			}
+		},
+		{
+			"id": "293",
+			"name": "Defender of the Pirate's Life",
+			"description": "Complete the 'Defender of the Pirate's Life' Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open the Bilge Rats Commendations to find 'Defender of the Pirate's Life'.",
+					"Complete the task it lists to earn the commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a441194/defender-of-the-pirates-life-achievement"
+			}
+		},
+		{
+			"id": "276",
+			"name": "Loyalist of the Flame",
+			"description": "Complete the 'Loyalist of the Flame' Commendation.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e9f4077f9ec39c816a99e3c4a3919e5366e86da0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open the Bilge Rats Commendations to find 'Loyalist of the Flame'.",
+					"Complete the task it lists to earn the commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a441195/loyalist-of-the-flame-achievement"
+			}
+		},
+		{
+			"id": "275",
+			"name": "Mobile Cannoneer",
+			"description": "Earn the Commendation 'Mobile Cannoneer'.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/8c192e61cf7a56780dfd0cba5f3c56841ac897a7.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Collect Cannons of Rage from Skeleton Fort, Fort of Fortune and Fort of the Damned vaults.",
+					"Use them to defeat 150 enemies (Rageful Cannoneer).",
+					"Land five hits on an enemy ship with them (Twice Cursed Cannoneer) to finish the commendation."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a493361/mobile-cannoneer-achievement"
+			}
+		},
+		{
+			"id": "273",
+			"name": "Crew of Bone and Blade",
+			"description": "Earn the Commendation 'Crew of Bone and Blade'.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/8c192e61cf7a56780dfd0cba5f3c56841ac897a7.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open the Bilge Rats Commendations to find 'Crew of Bone and Blade'.",
+					"Complete the task it lists (it relates to the Burning Blade skeleton ship event)."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a493362/crew-of-bone-and-blade-achievement"
+			}
+		},
+		{
+			"id": "272",
+			"name": "So. Much. Silver!",
+			"description": "Earn 50,000 silver by any means during a Custom Seas session.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e2769181a4e56ad5ee92bf74f42e9c4c4776feb9.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play a Custom Seas session and earn silver from fishing, cooking and selling.",
+					"Earn 50,000 silver in total during Custom Seas sessions."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a644044/so-much-silver-achievement"
+			}
+		},
+		{
+			"id": "309",
+			"name": "Don't Make Me Turn This Ship Around!",
+			"description": "Sail 100 nautical miles with a Chest of Sorrow aboard your ship.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e2769181a4e56ad5ee92bf74f42e9c4c4776feb9.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Find a Chest of Sorrow (X Marks the Spot Voyages and other loot sources).",
+					"Keep it aboard your ship and sail 100 nautical miles in total with it."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a627822/dont-make-me-turn-this-ship-around-achievement"
+			}
+		},
+		{
+			"id": "306",
+			"name": "Oh Wow, Kegs...",
+			"description": "Detonate a Gunpowder Barrel, Stronghold Gunpowder Barrel and Black Powder Barrel at the same time.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e2769181a4e56ad5ee92bf74f42e9c4c4776feb9.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Collect all three keg types: a Gunpowder Barrel (red), a Stronghold Gunpowder Barrel (from natural Skeleton Forts, Forts of Fortune or Fort of the Damned) and a Black Powder Barrel (from Smugglers' content).",
+					"Pile the three together on your ship or ashore.",
+					"Detonate them all with a single fire or blunderbomb so they explode at once."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a627823/oh-wow-kegs-achievement"
+			}
+		},
+		{
+			"id": "305",
+			"name": "Tentacled Tribute",
+			"description": "Slay the Kraken while at Tribute Peak during a Custom Seas session.",
+			"iconUrl": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1172620/e2769181a4e56ad5ee92bf74f42e9c4c4776feb9.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Start a Custom Seas session and set one of the islands to Tribute Peak.",
+					"Sail to Tribute Peak and provoke a Kraken until it attacks.",
+					"Kill the Kraken while at Tribute Peak."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a644045/tentacled-tribute-achievement",
+				"warnings": [
+					"Only possible in a Custom Seas session."
+				]
+			}
+		}
+	]
+}

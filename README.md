@@ -80,7 +80,7 @@ nothing to sideload, and it updates on its own.
 
 ## The catalogue
 
-**31 games, 2008 achievements** :
+**32 games, 2301 achievements** :
 
 | Game | Achievements | Map |
 |------|-------------:|:---:|
@@ -107,6 +107,7 @@ nothing to sideload, and it updates on its own.
 | Red Dead Redemption 2 | 51 | ✓ |
 | Remnant II | 65 | |
 | Rust | 116 | |
+| Sea of Thieves | 293 | ✓ |
 | Starfield | 82 | ✓ |
 | Steep | 41 | |
 | Terraria | 137 | ✓ |
