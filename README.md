@@ -104,6 +104,7 @@ nothing to sideload, and it updates on its own.
 | Monster Hunter: World | 100 | |
 | No Man's Sky | 27 | |
 | Palworld | 75 | ✓ |
+| Planet Zoo 2 | 39 | |
 | Red Dead Redemption 2 | 51 | ✓ |
 | Remnant II | 65 | |
 | Rust | 116 | |

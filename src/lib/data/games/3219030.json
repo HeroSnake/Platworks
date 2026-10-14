@@ -1,0 +1,616 @@
+{
+	"$schema": "./schema.json",
+	"appId": 3219030,
+	"name": "Planet Zoo 2",
+	"totalAchievements": 39,
+	"achievements": [
+		{
+			"id": "Game_LetsGetStarted",
+			"name": "Let's Get Started",
+			"description": "Adopt your first animal",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/4f2cb9cf430764136b3c6d031f77f9c128b0ede0.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Open the Animal Trading menu and buy any animal.",
+					"Place it into a completed habitat to adopt it."
+				]
+			}
+		},
+		{
+			"id": "Zoo_TheFutureIsBright",
+			"name": "The Future is Bright",
+			"description": "Have your first baby animal born in your zoo",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/e8020118673ec1b80429fb70412048e6f03141ec.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"House at least two compatible adult animals of the same species in a habitat with good welfare.",
+					"Wait for them to breed — the first live birth unlocks the trophy."
+				]
+			}
+		},
+		{
+			"id": "Game_EarthWindWater",
+			"name": "Earth, Wind and Water",
+			"description": "Adopt an Aquatic, Avian and Terrestrial animal",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/e536325d893d35e338802b5c7a11d934d39afe85.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Adopt any Terrestrial species into a normal habitat.",
+					"Adopt any Aquatic species into an Aquarium habitat.",
+					"Adopt any Avian species into an Aviary habitat."
+				]
+			}
+		},
+		{
+			"id": "Game_Student",
+			"name": "Student",
+			"description": "Fully research a species",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/657e026d00e10f105cf735c3d0cc9f3175121f16.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Assign a Research Centre and vet/keeper to a species you keep.",
+					"Let research progress until the species reaches 100% on all research levels."
+				]
+			}
+		},
+		{
+			"id": "Game_WorthItsWeightInGold",
+			"name": "Worth Its Weight in Gold",
+			"description": "Release an animal with Gold Genetics",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/6d5bcc9fa76312ed4705a07de810a865d7c2904e.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Breed or buy an animal whose genetics are rated Gold.",
+					"Select it and use the Release to Wild option from its info panel."
+				]
+			}
+		},
+		{
+			"id": "Game_AFewMoreHoses",
+			"name": "A Few More Hoses",
+			"description": "Build an Aquarium habitat with a volume of 25 million litres",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/8044146412feafb07f7764e8b43adbf5d072c3fd.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Build an Aquarium habitat and keep enlarging it.",
+					"Watch the habitat's displayed water volume until it reads at least 25,000,000 litres."
+				]
+			}
+		},
+		{
+			"id": "WildArea_GreenThumb",
+			"name": "Green Thumb",
+			"description": "Plant 1000 trees in Wildlife Reserves",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/6411517ca14fa56eb248c6f3ca1cbbdbc741fead.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Open a Wildlife Reserve and use the foliage/terrain tools.",
+					"Plant trees repeatedly across the reserve until the running total passes 1,000."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/green-thumb"
+			}
+		},
+		{
+			"id": "Game_FullTank",
+			"name": "Full Tank",
+			"description": "Have 5 different species in a single Aquarium",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/1d1f5658f998f89426ca3ec1f1b2a441e7040d42.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Build one large Aquarium habitat.",
+					"Adopt five different aquatic species and place them all in that same aquarium.",
+					"Check the Zupedia Cohabitation Options so the species tolerate sharing the tank."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/full-tank"
+			}
+		},
+		{
+			"id": "Game_BuddingConservationist",
+			"name": "Budding Conservationist",
+			"description": "Complete a Conservation Project",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/d85a4cd8b11fc3582263ba7ce13ff10dc13415b7.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Open the Conservation menu and start any Conservation Project.",
+					"Meet its requirements — usually releasing or breeding a set number of a species — until it completes."
+				]
+			}
+		},
+		{
+			"id": "Zoo_UnbotheredFocusedThriving",
+			"name": "Unbothered. Focused. Thriving.",
+			"description": "Have 3 animal species Thriving at the same time in a zoo",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/be4990a25c0a1793aceda921827882015a454ea8.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Fully research a species to reveal its Thriving requirements — they are hidden until research is complete.",
+					"Meet every requirement (terrain, plants, enrichment, food quality) until that species shows the Thriving status.",
+					"Repeat for two more species in the same zoo so all three are Thriving simultaneously."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/unbothered-focused-thriving"
+			}
+		},
+		{
+			"id": "Habitat_SharedAccommodation",
+			"name": "Shared Accommodation",
+			"description": "Place 5 different species in a single Terrestrial Habitat that all share a Thriving relationship",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/e1dc60a8a75a08113b40b14162cdd034bbff08ed.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Build one large Terrestrial Habitat (it must not be an Aquarium).",
+					"Fully research the candidate species so their Interspecies Enrichment is visible in the Zupedia.",
+					"Pick five species whose Cohabitation Options list each other with a Thriving relationship.",
+					"Adopt and place all five into that single habitat; all five must be Thriving at once."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/shared-accommodation",
+				"warnings": [
+					"Only a habitat that is not an aquarium counts, and all five species must cohabit — a Natural relationship is not enough, it has to be Thriving."
+				]
+			}
+		},
+		{
+			"id": "Game_FollowMe",
+			"name": "Follow Me!",
+			"description": "Set up an Educational Tour",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/a9f7e8b53ff87117f3b0daa101f1a5c9210ae677.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Place an Education Tour point/stand near a habitat.",
+					"Assign a staff member to run the tour and start it."
+				]
+			}
+		},
+		{
+			"id": "Habitat_JustInCase",
+			"name": "Just In Case",
+			"description": "Build an Aviary roof on a Habitat with a Penguin (Spheniscidae) or Pig (Suidae)",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/cb4bd2a0dacac730e56d2266bf292a3354abbf0f.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Build a Terrestrial Habitat and place a Penguin or Pig species inside it.",
+					"Add an Aviary roof over that habitat using the roof tools."
+				]
+			}
+		},
+		{
+			"id": "WildArea_TheyDoMoveInHerds",
+			"name": "They Do Move In Herds",
+			"description": "Release a Release Group with more than 10 animals",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/55e9c8983f5fd3c48d61e87d5aaf2b0693bc9055.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Gather more than 10 animals of a releasable species in your zoo.",
+					"Select them as a Release Group and release the whole group at once."
+				]
+			}
+		},
+		{
+			"id": "Game_JobWellDone",
+			"name": "Job Well Done",
+			"description": "Release 20 Release Groups",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/0958601c8f9d573ab5ee4ca36cab3ba55a81a75d.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Breed or buy animals in bulk across a long-running zoo.",
+					"Release them as groups rather than one at a time, and repeat until 20 groups have been released."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/job-well-done"
+			}
+		},
+		{
+			"id": "Habitat_Metamorphise",
+			"name": "Metamorphose",
+			"description": "Have a Walkthrough Exhibit with at least 3 different Butterfly (Lepidoptera) species",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/2554fa735ccd0bca9964f9e72518c18499c90396.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Build a Walkthrough Exhibit.",
+					"Adopt three different butterfly species.",
+					"Place all three inside the same walkthrough exhibit."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/metamorphose"
+			}
+		},
+		{
+			"id": "Zoo_TakeToTheSkies",
+			"name": "Birds of a Feather",
+			"description": "Have 5 different Avian species in a zoo",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/5f0f4ae12bd9873237d6d7aaa1428b573a721b22.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Build one or more Aviary habitats.",
+					"Adopt five different avian species and house them all in the same zoo."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/birds-of-a-feather"
+			}
+		},
+		{
+			"id": "Game_PremiumWaterExperience",
+			"name": "Sieve The Day",
+			"description": "Reach a Filtration Rate of at least 5,000 in one filtration network",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/fc11101f4e4cd3da98a559bd28f9ab1c721b56a3.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Build an Aquarium habitat and connect water filtration equipment to it.",
+					"Add more filtration units to the same network until its combined Filtration Rate reaches 5,000 or more."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/sieve-the-day"
+			}
+		},
+		{
+			"id": "Game_MolaMolaLikesYou",
+			"name": "Mola Mola Likes You",
+			"description": "Achieve 100% welfare with an Ocean Sunfish",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/f114b86a8bffda3891cbdf0dbdbfd2bb83022c13.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Adopt an Ocean Sunfish into a large Aquarium habitat.",
+					"Fully research the species to reveal all of its welfare requirements.",
+					"Meet every need — water volume, temperature, salinity, filtration and enrichment — until its welfare reads 100%."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/mola-mola-likes-you"
+			}
+		},
+		{
+			"id": "WildArea_Snap",
+			"name": "Snap!",
+			"description": "Take a Photo with a score of 10,000 in any Wildlife Reserve",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/68ff643cdd5ab7b0c220fb0e3a56cdf0b46dd4d1.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Enter any Wildlife Reserve and open the Photo mode.",
+					"Frame a subject well — close proximity, a clear view and good lighting raise the score.",
+					"Keep taking photos until one scores 10,000 or higher."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/snap"
+			}
+		},
+		{
+			"id": "Game_Naturalist",
+			"name": "Naturalist",
+			"description": "Establish 10 Ecosystems",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/d4e2c2d3c5477d17f3d4383d5cd13bd7a2c2243a.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open a Wildlife Reserve and work through its ecosystem objectives.",
+					"Establish each ecosystem (meeting its species and terrain requirements) until ten have been completed."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/naturalist"
+			}
+		},
+		{
+			"id": "WildArea_Paradise",
+			"name": "Paradise",
+			"description": "Gain a 5-Star rating in a Wildlife Reserve",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/15843b3b4809daa12aef2fafcccdd9497ef310da.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open a Wildlife Reserve and build up its animal welfare, ecosystem health and visitor experience.",
+					"Keep all ratings in the green and let the reserve run until the overall rating reaches 5 stars."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/paradise"
+			}
+		},
+		{
+			"id": "Zoo_LessonsLearned",
+			"name": "Lessons Learned",
+			"description": "Achieve an Education Rating of 5 Stars on a non-Sandbox zoo",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/60491150f880c1bc8aada09a2562f82e4711e4cc.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Build a zoo in Career or Franchise mode (not Sandbox).",
+					"Place education boards, speakers and tours, and fully research species to unlock more education content.",
+					"Keep adding education coverage until the zoo's Education Rating reaches 5 stars."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/lessons-learned"
+			}
+		},
+		{
+			"id": "Zoo_JungleBeat",
+			"name": "Jungle Beat",
+			"description": "Have 3 different Primate species in a zoo",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/beeafc527d89b524e38dbd10f371b4d12452725e.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Adopt three different primate species.",
+					"House all three in the same zoo (they may share a habitat if compatible)."
+				]
+			}
+		},
+		{
+			"id": "Game_LongDistanceBuilder",
+			"name": "Long Distance Builder",
+			"description": "Build 25km of barrier",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/38909cacfe727e1a3c3b0e86741aba707b97894e.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Build habitat barriers in any zoo.",
+					"Keep adding barrier fencing until the cumulative length built reaches 25 km."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/long-distance-builder"
+			}
+		},
+		{
+			"id": "Game_Professor",
+			"name": "Professor",
+			"description": "Fully research 80 different species",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/52d6a47c225d2c3c5da1fbde083dfff9f646c763.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Set up Research Centres and keepers/vets researching your species.",
+					"Fully research one species at a time, rotating through as many distinct species as your zoos can hold.",
+					"Research levels carry across zoos in Career and Franchise, so spread the work — reach 80 fully researched species."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/professor"
+			}
+		},
+		{
+			"id": "Zoo_Bearable",
+			"name": "Bear-Able",
+			"description": "Have 3 different Bear (Ursidae) species in the same zoo",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/58a3c139dc93012d092a868a76c4879b74f4ca2d.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Adopt three different bear species.",
+					"House all three in the same zoo, each with a suitable habitat."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/bear-able"
+			}
+		},
+		{
+			"id": "Game_CreditWhereItsDue",
+			"name": "Credit Where It's Due",
+			"description": "Receive the highest level Accreditation in any non-Sandbox hub",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/c530adb073c3bae4d79bff797d5a6cdb7c4086e7.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Play in Career or Franchise mode (not Sandbox).",
+					"Improve your zoo's overall performance — animal welfare, conservation and guest satisfaction — to meet the accreditation requirements.",
+					"Apply for accreditation and reach the highest available level."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/credit-where-its-due"
+			}
+		},
+		{
+			"id": "Game_UltimateConservationist",
+			"name": "Ultimate Conservationist",
+			"description": "Complete one Conservation Project of every type",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/9bb9204973224debca9a6cce88a58b56d34176b9.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Open the Conservation menu and note each distinct project type available.",
+					"Complete a project of each type, one at a time — every completed project records its type."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/ultimate-conservationist"
+			}
+		},
+		{
+			"id": "Game_WhereAmI",
+			"name": "Where Am I?",
+			"description": "Drive 10km in the Research Vehicle",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/a458276f986d9847c25975fbecebc01b4ed5855c.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Open a Wildlife Reserve and take control of the Research Vehicle.",
+					"Drive around while carrying out your normal reserve work until the odometer passes 10 km."
+				]
+			}
+		},
+		{
+			"id": "Game_Conservationaire",
+			"name": "Conservation-aire",
+			"description": "Earn 10,000 CC",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/cd6b6c9ba7fabfae0843fef28992e76ad6433117.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Earn Conservation Credits (CC) through breeding, releasing animals and completing conservation work.",
+					"Build your balance up to 10,000 CC."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/conservation-aire"
+			}
+		},
+		{
+			"id": "Game_TheyGrowUpSoFast",
+			"name": "They Grow Up So Fast",
+			"description": "Have an animal born in your zoo reach 15 years of age",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/e8020118673ec1b80429fb70412048e6f03141ec.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Breed an animal in your zoo and keep it (do not sell or release it).",
+					"Maintain good welfare and let in-game time pass until that animal reaches 15 years old."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/they-grow-up-so-fast",
+				"warnings": [
+					"The animal must be born in your zoo and survive to 15 — selling, releasing or losing it resets the progress, and a long-lived species makes this much faster."
+				]
+			}
+		},
+		{
+			"id": "Zoo_DidYouKnow",
+			"name": "Did You Know?",
+			"description": "Make every Education Topic for a species available in a zoo",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/389783125bdbf7f177440a450f37fb391b1febab.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Fully research a species to unlock all of its education topics.",
+					"Place the education boards/speakers for that species so every one of its topics is available to guests."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/did-you-know"
+			}
+		},
+		{
+			"id": "Game_ShowPony",
+			"name": "Show-Pony",
+			"description": "Start a Gold Tier (Level 3) Marketing for an animal",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/c030a8274ba8f10ed81afbe443d22e5b90afdd76.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Select an animal and open its Marketing panel.",
+					"Run marketing campaigns for it, upgrading through the tiers until you start a Gold Tier (Level 3) campaign."
+				]
+			}
+		},
+		{
+			"id": "Zoo_CatsAndDogs",
+			"name": "Cats and Dogs",
+			"description": "Have 2 different Canine (Canidae) and 2 different Feline (Felidae) species in a zoo",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/9d93a6af8c42d59cb9d5646d819612bc7938133e.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Adopt two different canine species and two different feline species.",
+					"House all four in the same zoo, each with a suitable habitat."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/cats-and-dogs"
+			}
+		},
+		{
+			"id": "Zoo_FirstSteps",
+			"name": "First Steps",
+			"description": "Have 10 critically endangered Terrestrial or Aquatic animals born in a single zoo",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/70f5af5a88ecca44ec2030900734a53c2bbf33b9.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Pick critically endangered Terrestrial or Aquatic species — avian species do not count.",
+					"House breeding pairs with excellent welfare and genetics to encourage births.",
+					"Keep breeding until 10 critically endangered animals have been born in that single zoo."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/first-steps",
+				"warnings": [
+					"Avian species do not count, and all ten births must happen in the same zoo."
+				]
+			}
+		},
+		{
+			"id": "Game_GoodStart",
+			"name": "Good Start…",
+			"description": "Achieve Bronze in all Career Scenarios",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/c5d64a44cf2590a62c705a6070482c55fc35b63d.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Play through every Career scenario.",
+					"Meet each scenario's objectives well enough to earn at least a Bronze medal, then move on to the next."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/good-start"
+			}
+		},
+		{
+			"id": "Game_ExcellentFinish",
+			"name": "Excellent Finish",
+			"description": "Achieve Gold in all Career Scenarios",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/e33144b567551f17a5c0b84a8c7b31c8e7d7f823.jpg",
+			"types": [],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Complete every Career scenario at Gold standard.",
+					"Pause at the start of each scenario to build efficient staff paths and facilities before funds drain.",
+					"Prioritise animal welfare and guest satisfaction so the scenario hits its Gold objectives before the timer expires."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/excellent-finish"
+			}
+		},
+		{
+			"id": "Zoo_GoodwinPark",
+			"name": "Goodwin Park",
+			"description": "Gain a 5-Star reputation in a zoo",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3219030/e48fb1a6be0c419fcc40db1b6318a0c8262a1d21.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Build up a zoo in Career or Franchise mode.",
+					"Balance animal welfare, conservation and guest satisfaction, and keep all ratings in the green until the zoo's overall reputation reaches 5 stars."
+				],
+				"sourceUrl": "https://wikily.gg/planet-zoo-2/achievements/goodwin-park"
+			}
+		}
+	]
+}
