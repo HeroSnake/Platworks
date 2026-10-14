@@ -123,9 +123,13 @@ Traps:
 
 ### The `id` gap — `GetSchemaForGame` now demands a key
 
-`scripts/agent/steam-schema.mjs` fills each `id` from `ISteamUserStats/GetSchemaForGame`, which used to answer keylessly. It now returns **400 `Required parameter 'key' is missing`** for a growing set of apps (Sea of Thieves `1172620`, Elden Ring `1245620`, Cyberpunk `1091500`), so it is no longer a reliable no-key id source.
+`scripts/agent/steam-schema.mjs` fills each `id` from `ISteamUserStats/GetSchemaForGame`, which used to answer keylessly. It now returns **400 `Required parameter 'key' is missing`** for **every** app — not a growing subset — so it is no longer a no-key id source at all.
 
-The keyless `ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2/?gameid={appId}` still returns the real apinames (numeric for some games — `1172620` uses `"34"`, `"12"`, …). Its list is in **the same order as the community achievements page** (percent descending), so the two zip positionally; verify the zip by comparing the percent at every index (the rarest row can differ by one rounding step across the two endpoints). Use it as the fallback when the schema call 400s — **never invent an `id` to paper over the gap.**
+The keyless `ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2/?gameid={appId}` still returns the real apinames (numeric for some games — `1172620` uses `"34"`, `"12"`, …). `scripts/agent/steam-ids.mjs` is the fallback: it fetches that list and joins it to `.tmp/game-data/{appId}/achievements.json`.
+
+- **Join on a normalised suffix, never on index.** The two lists share no field — the percentages endpoint carries the API name (`Game_LetsGetStarted`), the community list the display name (`Let's Get Started`). Strip every non-alphanumeric and require the display name to be a suffix of the API name.
+- **A positional zip is unsafe even though both lists are percent-descending.** The community page floors every rate at `0.1%` while the API reports `0.0%`, so a game with a long tail of ultra-rare trophies can have fifteen rows tied at `0.1` whose order differs between the two endpoints. Zip-by-index silently mislabels exactly those rows.
+- **Report the rows the suffix join cannot resolve, never guess them.** A codename (`Zoo_TakeToTheSkies` for "Birds of a Feather"), a spelling drift (`Habitat_Metamorphise` for "Metamorphose") or a dropped word (`Game_EarthWindWater` for "Earth, Wind and Water") all fail the join; resolve each with a repeatable `--assign "<api>=<display name>"` and confirm the pairing is the only consistent one. **Never invent an `id` to paper over the gap.**
 
 `iconUrl` is **optional** in the schema so a hand-added game still validates; `achievement_row.svelte` simply omits the `<img>` when it is absent.
 
