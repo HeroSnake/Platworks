@@ -112,12 +112,16 @@ passes.
 
 **A scraper that will be needed again belongs in `scripts/agent/`, not here.**
 The Steam achievement list fetch is exactly that case and is already written —
-`node scripts/agent/steam-achievements.mjs <appId>` does phase 2 in one command
-and refuses to write a partial list. The same applies to the ledger
-(`scripts/agent/ledger.mjs`), to the `id` gap the public page leaves
-(`scripts/agent/steam-schema.mjs`), and to link verification (`scripts/agent/check-links.mjs`).
-Writing a fourth copy of the same parser into `.tmp/` is how a scraper silently
-starts disagreeing with the committed one.
+`node scripts/agent/steam-achievements.mjs <appId>` does phase 2 in one command,
+refuses to write a partial list, and fills every `id` too. The same applies to the
+ledger (`scripts/agent/ledger.mjs`) and to link verification (`scripts/agent/check-links.mjs`).
+
+The parse itself lives in `scripts/agent/lib/steam-achievements-page.mjs`, which both
+`steam-achievements.mjs` and `scripts/fetch-achievement-icons.mjs` import — Steam replaced
+the old `achieveRow` markup with an SSR payload, and [steam.md](./steam.md) §3 documents
+it. A second copy of that parser in `.tmp/` is how a scraper silently starts disagreeing
+with the committed one. `scripts/agent/steam-schema.mjs` is **legacy**: `GetSchemaForGame`
+now demands an API key for every app, and the page carries each `api_name` directly.
 
 **Verified:** `tsconfig.json` has `include: ["src", "*"]`, but TypeScript skips
 dot-directories in wildcard patterns, so `.tmp/**` is never type-checked even with
@@ -130,12 +134,14 @@ a speculative `exclude` entry for either.
 
 `GameData.mapUrl` is the game's map (shown in the header and as the fallback "Game Map" link in every trophy). `guide.mapUrl` is a per-trophy deep link; only set it when the trophy is tied to a specific spot worth jumping straight to.
 
-Verification rule: **only save a `mapUrl` that returned HTTP 200.** `wiki.gg` and `fandom` return 403 to
+Verification rule: **only save a `mapUrl` that returned HTTP 200.** `wiki.gg`, `fandom` and `gaming.tools` return 403 to
 scripted requests (Cloudflare bot protection) even though they work in a browser; that is not the same as
 a dead link, but it is also not verified. Omit those rather than saving them unverified — do not add them
 without checking in a real browser first. Prefer MapGenie → official map → wiki map page.
 `node scripts/agent/check-links.mjs --game <appId>` checks every stored link and reports a Cloudflare 403
-as *unverifiable* rather than dead, so the distinction is never lost to a raw status code.
+as *unverifiable* rather than dead, so the distinction is never lost to a raw status code. **Its
+`CLOUDFLARE_HOSTS` list is what makes that distinction** — a blocked host it does not know about is
+reported as *forbidden*, so add the host when you meet a new one.
 
 Omit `mapUrl` entirely for linear or competitive games. That is a correct answer, not an omission.
 
@@ -179,7 +185,7 @@ The scraping target and all of its traps (one URL per trophy, 64×64 native, dis
 2. Write `src/lib/data/games/{appId}.json` — verify `totalAchievements` matches the array length.
 3. `node scripts/fetch-game-images.mjs {appId}` — mirrors `header.jpg` + `hero.jpg` into `static/images/games/{appId}/`. Skipping it means a placeholder library card and hero, with nothing else complaining.
 4. `node scripts/agent/steam-achievements.mjs {appId}` — the authoritative name / description / unlock-rate list.
-5. `node scripts/agent/steam-schema.mjs {appId} --merge` — fills every `id`, which the public page leaves `null`.
+5. The `id` comes from the same list — `steam-achievements.mjs` fills it from the page's `api_name`. Do **not** run `steam-schema.mjs`: its endpoint now requires an API key.
 6. `node scripts/fetch-achievement-icons.mjs {appId}`.
 7. `node scripts/verify-achievement-icons.mjs`.
 8. `node scripts/agent/check-links.mjs --game {appId}` — every stored link still resolves.

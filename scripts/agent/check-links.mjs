@@ -35,8 +35,15 @@ const GAMES_DIR = join(ROOT, 'src/lib/data/games');
 
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 
-/** Cloudflare-protected hosts: 403 from a script says nothing about the browser. */
-const CLOUDFLARE_HOSTS = /(trueachievements\.com|wiki\.gg|fandom\.com)/i;
+/**
+ * Hosts that answer **403 to every scripted request** while working fine in a
+ * browser. `trueachievements.com`, `wiki.gg` and `fandom.com` are the long-standing
+ * members; `gaming.tools` (enshrouded.gaming.tools and its siblings) behaves the
+ * same way and is the source several game files' `sourceUrl`s point at, so leaving
+ * it out reported those links as *forbidden* — which reads like a defect when it is
+ * only Cloudflare bot management.
+ */
+const CLOUDFLARE_HOSTS = /(trueachievements\.com|wiki\.gg|fandom\.com|gaming\.tools)/i;
 
 const HELP = `
 check-links.mjs — verify mapUrl and guide.sourceUrl reach a real page
@@ -178,7 +185,7 @@ async function main() {
 	console.log(`\nchecked ${targets.length} links — ${tally.ok} ok, ${tally.blocked} cloudflare-blocked, ${tally.forbidden} forbidden, ${tally.other} other, ${failures.length} dead`);
 	if (tally.blocked) {
 		console.log(
-			'Blocked hosts (trueachievements / wiki.gg / fandom) refuse every scripted request.\n' +
+			'Blocked hosts (trueachievements / wiki.gg / fandom / gaming.tools) refuse every scripted request.\n' +
 				'That is unverifiable, NOT dead — open them in a browser before changing anything.'
 		);
 	}

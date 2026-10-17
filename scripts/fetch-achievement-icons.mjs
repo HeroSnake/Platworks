@@ -1,14 +1,18 @@
 /**
  * Scrapes official Steam achievement icons into src/lib/data/games/*.json.
  *
- * Source of truth: the public global achievement list at
- *   https://steamcommunity.com/stats/{appId}/achievements
- * which is the same page the trophy IDs and names came from. Each row carries a
- * 64x64 <img> plus the display name in <h3>, so rows are matched to our data by
- * display name (the Steam page has no API-name field).
+ * Source of truth: the game's community achievements page,
+ *   https://steamcommunity.com/achievements/{appId}
+ * which is the same page the trophy IDs and names came from. The icon comes from
+ * the SSR payload's schema query, and rows are matched to our data by display
+ * name.
  *
- * Only the *unlocked* (coloured) icon is published, so that is what we store;
- * the locked look is a CSS grayscale of the same file.
+ * That page is now the React SSR app documented in
+ * `agent/lib/steam-achievements-page.mjs` — the old `achieveImgHolder` markup is
+ * gone, so this script parses the shared payload instead of regexing the HTML.
+ *
+ * The payload publishes both icons; we store the *achieved* (coloured) one,
+ * because the app grayscales `iconUrl` itself for the locked look.
  *
  * Usage:  node scripts/fetch-achievement-icons.mjs [appId ...]
  *         (no args = every game file in src/lib/data/games/)
@@ -17,12 +21,10 @@
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { fetchAchievementPage } from './agent/lib/steam-achievements-page.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const GAMES_DIR = join(ROOT, 'src/lib/data/games');
-
-const UA =
-	'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 
 const args = process.argv.slice(2);
 const force = args.includes('--force');
@@ -43,30 +45,6 @@ const normalize = (s) =>
 		.replace(/\s+/g, ' ')
 		.trim();
 
-const decodeEntities = (s) =>
-	s
-		.replace(/&amp;/g, '&')
-		.replace(/&lt;/g, '<')
-		.replace(/&gt;/g, '>')
-		.replace(/&quot;/g, '"')
-		.replace(/&#0?39;|&apos;/g, "'");
-
-/** Splits the page into one record per achievement row: { name, iconUrl }. */
-function parseAchievementRows(html) {
-	const rows = [];
-	// Each row is an achieveImgHolder <img> ... followed by an <h3> name. Anchor on
-	// the image so a stray <h3> elsewhere on the page cannot produce a row.
-	const blockRe =
-		/<div class="achieveImgHolder">\s*<img src="([^"]+)"[\s\S]*?<div class="achieveTxt">\s*<h3>([\s\S]*?)<\/h3>/g;
-
-	for (const m of html.matchAll(blockRe)) {
-		const iconUrl = decodeEntities(m[1]);
-		const name = decodeEntities(m[2].replace(/<[^>]+>/g, '')).trim();
-		if (name && iconUrl) rows.push({ name, iconUrl });
-	}
-	return rows;
-}
-
 /** Token-overlap score, used only as a last resort when names do not line up. */
 function similarity(a, b) {
 	if (a === b) return 1;
@@ -78,14 +56,13 @@ function similarity(a, b) {
 	return shared / Math.max(ta.size, tb.size);
 }
 
+/** One record per achievement: { name, iconUrl }. */
 async function fetchRows(appId) {
-	const url = `https://steamcommunity.com/stats/${appId}/achievements`;
-	const res = await fetch(url, { headers: { 'User-Agent': UA, 'Accept-Language': 'en-US,en;q=0.9' } });
-	if (!res.ok) throw new Error(`HTTP ${res.status}`);
-	const rows = parseAchievementRows(await res.text());
-	// A game with no achievements page returns a soft-404 shell with no rows.
-	if (!rows.length) throw new Error('no achievement rows found (page may not exist)');
-	return rows;
+	const { rows } = await fetchAchievementPage(appId);
+	const mapped = rows.filter((r) => r.name && r.iconUrl).map((r) => ({ name: r.name, iconUrl: r.iconUrl }));
+	// A game with no achievements page returns no rows.
+	if (!mapped.length) throw new Error('no achievement rows found (page may not exist)');
+	return mapped;
 }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

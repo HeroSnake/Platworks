@@ -43,7 +43,7 @@ what is already there. Three traps:
 - **`appdetails` intermittently 403s from Node.** `getGameDetails` must still return a usable local path so the library keeps its images; name / short description / Metacritic simply stay empty in that mode and callers use `steam?.name || game.name`. Do not leave `steam: null`. A process-lifetime `detailsCache` still guards the *text* fields, so one 403 cannot blank every blurb.
 - **Never add a remote `onerror` retry** for a header or hero. Artwork is local, so a failure means the game has no art on Steam — not that the first host was wrong. The components reveal a placeholder instead; see [ui.md](./ui.md) §1.
 
-**Achievement icons are the deliberate exception** and still load from Steam: 2301 of them (1958 distinct files) would add far too much to the repo. `scripts/fetch-achievement-icons.mjs` owns `iconUrl` and must keep writing remote URLs. Only `fetch-game-images.mjs` produces local paths.
+**Achievement icons are the deliberate exception** and still load from Steam: 2359 of them (2016 distinct files) would add far too much to the repo. `scripts/fetch-achievement-icons.mjs` owns `iconUrl` and must keep writing remote URLs. Only `fetch-game-images.mjs` produces local paths.
 
 `SteamGameDetails.background` does not exist and must not be added — a full-viewport image behind the
 game page is invisible under the page's scrim and costs a request on every load.
@@ -66,7 +66,7 @@ visibly soft.
   `onerror` reveals the placeholder. There is **no probe** — the client discovers a missing hero for free
   when the local file 404s, and a `HEAD` request would be an external call on every game page load.
   **Never conclude a game has no hero from a 404 on a composed path**: resolve it from the store-browse
-  API first, as the trap above describes. All 32 catalogue games have one, and `scripts/agent/check-game-assets.mjs` (run by `npm run check`) fails if one is missing.
+  API first, as the trap above describes. All 33 catalogue games have one, and `scripts/agent/check-game-assets.mjs` (run by `npm run check`) fails if one is missing.
 - **`hero` still defaults to `false`** because the library page calls `getGameDetails` for every game and
   never renders a hero.
 
@@ -102,46 +102,54 @@ the sync wrongly reports "no achievements found".
 this back to a direct numeric URL, and do not replace it with a static `730 → CSGO` map:** the redirect
 is what makes the next game with a custom stats name work without a code change.
 
-## 3. Achievement icons — the global stats page
+## 3. The achievement list and icons — one SSR page
 
-`https://steamcommunity.com/stats/{appId}/achievements` is the **only** no-API-key source for trophy artwork and is the same list the IDs and names came from. It is plain HTML, not XML:
+`https://steamcommunity.com/achievements/{appId}` is the **only** no-key source for names, ids and trophy artwork, and it needs **no sign-in and no cookie**. The old `/stats/{appId}/achievements` URL now only 302s here.
 
-```html
-<div class="achieveRow ">
-  <div class="achieveImgHolder"><img src="https://shared.akamai.steamstatic.com/community_assets/images/apps/{appId}/{40-hex}.jpg" width="64" height="64" /></div>
-  <div class="achieveTxtHolder">…
-      <div class="achieveTxt"><h3>Display Name</h3><h5>Description</h5></div>
-```
+Steam rebuilt that page as a React SSR app and **retired the old markup** — there is no `achieveRow`, no `achieveImgHolder` and no `<h3>` title any more, which is why a regex written against the old HTML matches nothing and reports "no achievement rows" for *every* game. The list is still in the response, one level deeper: a `<script type="application/json" id="valve-ssr-data">` blob whose `renderContext.queryData` is **itself a JSON string** holding a dehydrated react-query state.
+
+| `queryKey` | Holds |
+|---|---|
+| `["achievements", {appId}, "schema"]` | `state.data.groups[].achievements[]` — `api_name`, `name`, `description`, `hidden`, `icon_achieved`, `icon_unachieved`, `internal_key` |
+| `["achievements", {appId}, "globalpercentages"]` | `state.data.percentages` — `{ internal_key: percent }` |
+
+`scripts/agent/lib/steam-achievements-page.mjs` owns this parse. **Both `agent/steam-achievements.mjs` and `scripts/fetch-achievement-icons.mjs` import it** — do not write a second copy, which is how two scrapers start disagreeing.
 
 Traps:
 
-- **Only the unlocked (coloured) icon is published.** There is no second URL — the locked look is a CSS `grayscale` of the same file. Do not go looking for `icon_closed`; it does not appear in the HTML. One URL per achievement is correct and complete.
-- **The files are natively 64×64.** Confirmed by reading the JPEG SOF marker. There is no larger variant on this CDN, so 64px is the render ceiling — see [ui.md](./ui.md).
-- **No API-name field.** The page has only `<h3>` display names, so rows must be joined to `Achievement.name`. Steam uses curly apostrophes (`Dead Man's Chest`) while hand-written data usually has straight ones — the normaliser must strip the whole quote class, or the two forms hash differently.
+- **`loaderData` is not the list.** It carries only `{appid, appName}`. Reaching for it (or for the top-level object) finds nothing and looks like an empty game.
+- **`queryData` is a string, not an object.** It needs a second `JSON.parse`. Parsing the outer blob only gets you a string that `find()` will never match inside.
+- **Percentages are keyed by `internal_key`, not `api_name`.** The two queries must be joined on that number; there is no shared name field. A named `globalpercentages` entry and a schema entry are otherwise unrelated rows.
+- **`hidden` is a real boolean here — use it.** The old page blanked a secret trophy's `<h5>` and the flag had to be *inferred* from an empty description. The SSR payload states it, so never re-derive it from a blank description.
+- **Two icons are now published.** Store `icon_achieved` (the coloured one): `achievement_row.svelte` grayscales the single `iconUrl` for the locked look, so the un-achieved variant is unused and storing it would silently double the asset count for no gain.
+- **The files are natively 64×64** (confirmed by reading the JPEG SOF marker). There is no larger variant, so 64px is the render ceiling — see [ui.md](./ui.md).
 - **Reused art is real.** Several games publish one hash for multiple rows (Aniimo has 7, one shared by 4 achievements). A duplicated `iconUrl` is therefore not evidence of a matching bug — confirm against the raw page before "fixing" it.
 - **A silent no-op is the dangerous case.** If a display name drifts, an unmatched entry must surface in the script's report. Never let a fuzzy fallback quietly assign a neighbouring trophy's art.
 
-### The `id` gap — `GetSchemaForGame` now demands a key
+### The `id` gap is closed — do not reach for the schema endpoint
 
-`scripts/agent/steam-schema.mjs` fills each `id` from `ISteamUserStats/GetSchemaForGame`, which used to answer keylessly. It now returns **400 `Required parameter 'key' is missing`** for **every** app — not a growing subset — so it is no longer a no-key id source at all.
+The page wants nothing more, and `id` no longer has to be scraped from anywhere else: each schema row carries **`api_name`**, the Steamworks apiname (`ACH_SACRIFICE_4_SURVIVORS_IAM`, `ACH00`, or a GUID-style `ACHI_…`). `steam-achievements.mjs` writes it directly.
 
-The keyless `ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2/?gameid={appId}` still returns the real apinames (numeric for some games — `1172620` uses `"34"`, `"12"`, …). `scripts/agent/steam-ids.mjs` is the fallback: it fetches that list and joins it to `.tmp/game-data/{appId}/achievements.json`.
+`scripts/agent/steam-schema.mjs` is **legacy**. It fills ids from `ISteamUserStats/GetSchemaForGame`, which is no longer keyless at all: it returns **400 `Required parameter 'key' is missing`** for every app tested (`1245620`, `105600`, `381210`, `1203620`). Use the SSR `api_name` instead, and **never invent an `id` to paper over a gap.**
+
+#### `steam-ids.mjs` — the superseded keyless fallback
+
+`scripts/agent/steam-ids.mjs` fills ids from the keyless `ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2/?gameid={appId}`, joining its API names to `.tmp/game-data/{appId}/achievements.json`. **It is not the id source any more** — the SSR `api_name` above is, and `steam-ids.mjs` assumes `steam-achievements.mjs` still writes `"id": null`, so it finds nothing left to fill. Keep it as a cross-check, and reuse its two rules whenever a join to a source that has API names but not display names is unavoidable:
 
 - **Join on a normalised suffix, never on index.** The two lists share no field — the percentages endpoint carries the API name (`Game_LetsGetStarted`), the community list the display name (`Let's Get Started`). Strip every non-alphanumeric and require the display name to be a suffix of the API name.
 - **A positional zip is unsafe even though both lists are percent-descending.** The community page floors every rate at `0.1%` while the API reports `0.0%`, so a game with a long tail of ultra-rare trophies can have fifteen rows tied at `0.1` whose order differs between the two endpoints. Zip-by-index silently mislabels exactly those rows.
-- **Report the rows the suffix join cannot resolve, never guess them.** A codename (`Zoo_TakeToTheSkies` for "Birds of a Feather"), a spelling drift (`Habitat_Metamorphise` for "Metamorphose") or a dropped word (`Game_EarthWindWater` for "Earth, Wind and Water") all fail the join; resolve each with a repeatable `--assign "<api>=<display name>"` and confirm the pairing is the only consistent one. **Never invent an `id` to paper over the gap.**
+- **Unresolvable rows are reported, never guessed.** A codename (`Zoo_TakeToTheSkies` for "Birds of a Feather"), a spelling drift (`Habitat_Metamorphise` for "Metamorphose") or a dropped word (`Game_EarthWindWater` for "Earth, Wind and Water") all fail the join; each is resolved with a repeatable `--assign "<api>=<display name>"`.
+
 
 `iconUrl` is **optional** in the schema so a hand-added game still validates; `achievement_row.svelte` simply omits the `<img>` when it is absent.
 
-**`iconUrl` stays a Steam CDN URL — do not localise these.** Game artwork (header, hero) is local in
-`static/images/games/` for correctness, but there are 2301 icons and they would add far too much to the
-repo. They are the one intentional external image dependency.
+**`iconUrl` stays a Steam CDN URL — do not localise these.** Game artwork (header, hero) is local in `static/images/games/` for correctness, but there are 2359 icons (2016 distinct files) and they would add far too much to the repo. They are the one intentional external image dependency.
 
 ## 4. Cloudflare-blocked hosts
 
 `www.trueachievements.com` returns **403 to every request from Node**, including full browser header sets — it is bot protection, not a missing User-Agent. No script in this repo can scrape it; per-achievement guide links have to be read through an agent with web access instead.
 
-This is why `scripts/` has no guide-link fetcher: it cannot exist. The same block applies to `wiki.gg` and `fandom` (403), while Steam's own endpoints are fine. Treat "403 from a script" as *unverifiable*, not *dead* — see [gamedata.md](./gamedata.md) for the map-link rule.
+This is why `scripts/` has no guide-link fetcher: it cannot exist. The same block applies to `wiki.gg`, `fandom` and `gaming.tools` (all 403), while Steam's own endpoints are fine. Treat "403 from a script" as *unverifiable*, not *dead* — see [gamedata.md](./gamedata.md) for the map-link rule. `scripts/agent/check-links.mjs` keeps the list of these hosts in `CLOUDFLARE_HOSTS`, so a new one must be added there or its links get reported as plain *forbidden*, which reads like a defect rather than a block.
 
 An agent running in this repo **does** have a real browser, and it is not blocked: load the page there and read the per-achievement links that way. When harvesting many of them (e.g. a TrueAchievements index for a 300-trophy game), have the page download the parsed map and copy that download into the scratch dir rather than transcribing it by hand — the links are valid data precisely because a page carrying them was actually opened.
 

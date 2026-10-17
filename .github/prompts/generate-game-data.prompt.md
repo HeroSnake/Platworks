@@ -257,7 +257,7 @@ directory `.tmp/game-data/{appId}/` with `achievements.json`, `ledger.json`,
 
 ### 2 · Fetch achievement list
 
-Fetch `https://steamcommunity.com/stats/{appId}/achievements` **once** — the
+Fetch `https://steamcommunity.com/achievements/{appId}` **once** — the
 authoritative source for names and IDs. Parse it to
 `.tmp/game-data/{appId}/achievements.json` (id, name, description, hidden,
 unlock rate), then work from that file for the rest of the run. The unlock rate is
@@ -267,12 +267,16 @@ also how you spot the rare, grind-heavy trophies worth researching in phase 4.
 node scripts/agent/steam-achievements.mjs 1245620 --name "ELDEN RING"
 ```
 
-It fetches once, refuses to write a partial list when the page's own count
-disagrees with the rows parsed, and prints the five rarest trophies to triage
-against. It also prints the one thing it cannot do: **the public page carries no
-API name, so every `id` comes back `null`.** Take those from the Steamworks partner
-site or `GetSchemaForGame`. `name` is the join key for the icon scraper in phase 7,
-so it must stay exactly as Steam spells it.
+It fetches once, needs no sign-in and no key, and prints the five rarest trophies
+to triage against. `id` is no longer a gap: the page's SSR payload carries each
+Steamworks `api_name` (`ACH_SACRIFICE_4_SURVIVORS_IAM`, `ACH00`, `ACHI_…`), so the
+script writes it directly — do **not** reach for `GetSchemaForGame`, which now
+demands an API key for every app. `name` is the join key for the icon scraper in
+phase 7, so it must stay exactly as Steam spells it.
+
+The old `/stats/{appId}/achievements` URL now only redirects here, and the
+`achieveRow` markup it used to serve is gone; [steam.md](../../.agents/steam.md) §3
+documents the payload that replaced it and the traps in reading it.
 
 ### 3 · Triage achievements
 
