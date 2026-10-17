@@ -80,7 +80,7 @@ nothing to sideload, and it updates on its own.
 
 ## The catalogue
 
-**32 games, 2301 achievements** :
+**34 games, 2398 achievements** :
 
 | Game | Achievements | Map |
 |------|-------------:|:---:|
@@ -97,6 +97,7 @@ nothing to sideload, and it updates on its own.
 | Deep Rock Galactic | 69 | |
 | Dyson Sphere Program | 128 | |
 | Elden Ring | 42 | ✓ |
+| Enshrouded | 58 | ✓ |
 | Grand Theft Auto V Enhanced | 77 | ✓ |
 | Hades | 49 | |
 | Marathon | 14 | |

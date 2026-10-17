@@ -43,7 +43,7 @@ what is already there. Three traps:
 - **`appdetails` intermittently 403s from Node.** `getGameDetails` must still return a usable local path so the library keeps its images; name / short description / Metacritic simply stay empty in that mode and callers use `steam?.name || game.name`. Do not leave `steam: null`. A process-lifetime `detailsCache` still guards the *text* fields, so one 403 cannot blank every blurb.
 - **Never add a remote `onerror` retry** for a header or hero. Artwork is local, so a failure means the game has no art on Steam — not that the first host was wrong. The components reveal a placeholder instead; see [ui.md](./ui.md) §1.
 
-**Achievement icons are the deliberate exception** and still load from Steam: 2359 of them (2016 distinct files) would add far too much to the repo. `scripts/fetch-achievement-icons.mjs` owns `iconUrl` and must keep writing remote URLs. Only `fetch-game-images.mjs` produces local paths.
+**Achievement icons are the deliberate exception** and still load from Steam: 2398 of them (2054 distinct files) would add far too much to the repo. `scripts/fetch-achievement-icons.mjs` owns `iconUrl` and must keep writing remote URLs. Only `fetch-game-images.mjs` produces local paths.
 
 `SteamGameDetails.background` does not exist and must not be added — a full-viewport image behind the
 game page is invisible under the page's scrim and costs a request on every load.
@@ -66,7 +66,7 @@ visibly soft.
   `onerror` reveals the placeholder. There is **no probe** — the client discovers a missing hero for free
   when the local file 404s, and a `HEAD` request would be an external call on every game page load.
   **Never conclude a game has no hero from a 404 on a composed path**: resolve it from the store-browse
-  API first, as the trap above describes. All 33 catalogue games have one, and `scripts/agent/check-game-assets.mjs` (run by `npm run check`) fails if one is missing.
+  API first, as the trap above describes. All 34 catalogue games have one, and `scripts/agent/check-game-assets.mjs` (run by `npm run check`) fails if one is missing.
 - **`hero` still defaults to `false`** because the library page calls `getGameDetails` for every game and
   never renders a hero.
 
@@ -140,10 +140,9 @@ The page wants nothing more, and `id` no longer has to be scraped from anywhere 
 - **A positional zip is unsafe even though both lists are percent-descending.** The community page floors every rate at `0.1%` while the API reports `0.0%`, so a game with a long tail of ultra-rare trophies can have fifteen rows tied at `0.1` whose order differs between the two endpoints. Zip-by-index silently mislabels exactly those rows.
 - **Unresolvable rows are reported, never guessed.** A codename (`Zoo_TakeToTheSkies` for "Birds of a Feather"), a spelling drift (`Habitat_Metamorphise` for "Metamorphose") or a dropped word (`Game_EarthWindWater` for "Earth, Wind and Water") all fail the join; each is resolved with a repeatable `--assign "<api>=<display name>"`.
 
-
 `iconUrl` is **optional** in the schema so a hand-added game still validates; `achievement_row.svelte` simply omits the `<img>` when it is absent.
 
-**`iconUrl` stays a Steam CDN URL — do not localise these.** Game artwork (header, hero) is local in `static/images/games/` for correctness, but there are 2359 icons (2016 distinct files) and they would add far too much to the repo. They are the one intentional external image dependency.
+**`iconUrl` stays a Steam CDN URL — do not localise these.** Game artwork (header, hero) is local in `static/images/games/` for correctness, but there are 2398 icons (2054 distinct files) and they would add far too much to the repo. They are the one intentional external image dependency.
 
 ## 4. Cloudflare-blocked hosts
 
