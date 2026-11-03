@@ -56,10 +56,24 @@ function similarity(a, b) {
 	return shared / Math.max(ta.size, tb.size);
 }
 
-/** One record per achievement: { name, iconUrl }. */
+const ICON_CDN = 'https://shared.akamai.steamstatic.com/community_assets/images/apps';
+
+/**
+ * One record per achievement: { name, iconUrl }.
+ *
+ * Steam used to serve an absolute icon URL here; it now returns just the
+ * content-hashed filename (`<sha1>.jpg`). Prefixing the community-assets CDN is
+ * what the rest of the app expects — a bare filename is not a URL, so it 404s as
+ * a relative request and the schema's `format: uri` is silently violated.
+ */
 async function fetchRows(appId) {
 	const { rows } = await fetchAchievementPage(appId);
-	const mapped = rows.filter((r) => r.name && r.iconUrl).map((r) => ({ name: r.name, iconUrl: r.iconUrl }));
+	const mapped = rows
+		.filter((r) => r.name && r.iconUrl)
+		.map((r) => ({
+			name: r.name,
+			iconUrl: /^https?:\/\//.test(r.iconUrl) ? r.iconUrl : `${ICON_CDN}/${appId}/${r.iconUrl}`
+		}));
 	// A game with no achievements page returns no rows.
 	if (!mapped.length) throw new Error('no achievement rows found (page may not exist)');
 	return mapped;

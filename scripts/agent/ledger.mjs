@@ -47,6 +47,7 @@ ledger.mjs — the fetch ledger for /generate-game-data
   resolve <url>          close the entry out after the request.
     --status <n|blocked>   HTTP status, or "blocked" for a known-403 host
     --covers <a,b,c>       every achievement the page served
+    --covers-all           every achievement in achievements.json (an index page)
     --answered <text>      what it actually answered
     --notes <text>         anything worth remembering (a Location column, …)
   list [--pending]       show every entry
@@ -155,7 +156,15 @@ async function main() {
 		const entry = entries.find((e) => normalise(e.url) === normalise(url));
 		if (!entry) throw new Error(`${url} is not in the ledger. Run \`add\` before fetching it.`);
 		entry.status = args.flags.status ?? entry.status;
-		entry.covers = args.flags.covers ? String(args.flags.covers).split(',').map((s) => s.trim()).filter(Boolean) : entry.covers;
+		if (args.flags['covers-all']) {
+			// "One page, many achievements" is the common case — a whole wiki list or
+			// the Steam page itself. Spelling out 60 names by hand is how a run skips
+			// half of them.
+			const list = JSON.parse(await readFile(join(dir, 'achievements.json'), 'utf8')).achievements;
+			entry.covers = list.map((a) => a.name);
+		} else if (args.flags.covers) {
+			entry.covers = String(args.flags.covers).split(',').map((s) => s.trim()).filter(Boolean);
+		}
 		entry.answered = args.flags.answered ?? entry.answered;
 		entry.notes = args.flags.notes ?? entry.notes;
 		entry.resolvedAt = new Date().toISOString();

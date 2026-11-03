@@ -110,8 +110,10 @@ Steam rebuilt that page as a React SSR app and **retired the old markup** — th
 
 | `queryKey` | Holds |
 |---|---|
-| `["achievements", {appId}, "schema"]` | `state.data.groups[].achievements[]` — `api_name`, `name`, `description`, `hidden`, `icon_achieved`, `icon_unachieved`, `internal_key` |
+| `["achievements", {appId}, "schema_v2"]` | `state.data.groups[].achievements[]` — `api_name`, `name`, `description`, `hidden`, `icon_achieved`, `icon_unachieved`, `internal_key` |
 | `["achievements", {appId}, "globalpercentages"]` | `state.data.percentages` — `{ internal_key: percent }` |
+
+**The schema dataset name is versioned and it moves.** It was `"schema"`, then `"schema_v2"` alongside a `schema_version` bump; a parser that matches one literal name reports "no achievement rows" for *every* game. `steam-achievements-page.mjs` therefore accepts a list of names (`SCHEMA_DATASETS`) — add the next spelling there instead of replacing the old one.
 
 `scripts/agent/lib/steam-achievements-page.mjs` owns this parse. **Both `agent/steam-achievements.mjs` and `scripts/fetch-achievement-icons.mjs` import it** — do not write a second copy, which is how two scrapers start disagreeing.
 
@@ -122,6 +124,7 @@ Traps:
 - **Percentages are keyed by `internal_key`, not `api_name`.** The two queries must be joined on that number; there is no shared name field. A named `globalpercentages` entry and a schema entry are otherwise unrelated rows.
 - **`hidden` is a real boolean here — use it.** The old page blanked a secret trophy's `<h5>` and the flag had to be *inferred* from an empty description. The SSR payload states it, so never re-derive it from a blank description.
 - **Two icons are now published.** Store `icon_achieved` (the coloured one): `achievement_row.svelte` grayscales the single `iconUrl` for the locked look, so the un-achieved variant is unused and storing it would silently double the asset count for no gain.
+- **`icon_achieved` is a bare filename, not a URL** (`4787d301…e5f06.jpg`). The value has to be joined to `https://shared.akamai.steamstatic.com/community_assets/images/apps/{appId}/` — writing it straight through produces a relative `iconUrl` that 404s in the UI while every check still passes. `fetch-achievement-icons.mjs` does that join; it is the only place allowed to write `iconUrl`.
 - **The files are natively 64×64** (confirmed by reading the JPEG SOF marker). There is no larger variant, so 64px is the render ceiling — see [ui.md](./ui.md).
 - **Reused art is real.** Several games publish one hash for multiple rows (Aniimo has 7, one shared by 4 achievements). A duplicated `iconUrl` is therefore not evidence of a matching bug — confirm against the raw page before "fixing" it.
 - **A silent no-op is the dangerous case.** If a display name drifts, an unmatched entry must surface in the script's report. Never let a fuzzy fallback quietly assign a neighbouring trophy's art.

@@ -11,7 +11,7 @@
  * a dehydrated react-query state inside `<script id="valve-ssr-data">`, and
  * `renderContext.queryData` holds two queries we want:
  *
- *   ["achievements", <appId>, "schema"]             → groups[].achievements[]
+ *   ["achievements", <appId>, "schema_v2"]         → groups[].achievements[]
  *   ["achievements", <appId>, "globalpercentages"]  → percentages {internal_key: % }
  *
  * Each schema row carries `api_name` (the Steamworks apiname our `id` needs),
@@ -45,11 +45,20 @@ export const achievementsUrl = (appId) => `https://steamcommunity.com/achievemen
 
 const SSR_RE = /<script type="application\/json" id="valve-ssr-data"[^>]*>([\s\S]*?)<\/script>/;
 
+/**
+ * The schema dataset was renamed `schema` → `schema_v2` (the community page
+ * bumped `schema_version`). Both spellings return the same `groups[]`, so accept
+ * either: matching one literal name makes the scraper report "no achievement
+ * rows" for every game the moment Steam ships the next bump.
+ */
+const SCHEMA_DATASETS = ['schema_v2', 'schema'];
+
 /** Pulls one named dataset out of the dehydrated react-query state. */
 function findQuery(queryData, dataset) {
 	const queries = Array.isArray(queryData?.queries) ? queryData.queries : [];
+	const names = Array.isArray(dataset) ? dataset : [dataset];
 	return queries.find(
-		(q) => Array.isArray(q.queryKey) && q.queryKey[0] === 'achievements' && q.queryKey[2] === dataset
+		(q) => Array.isArray(q.queryKey) && q.queryKey[0] === 'achievements' && names.includes(q.queryKey[2])
 	);
 }
 
@@ -86,11 +95,11 @@ export function parseAchievementPage(html) {
 		throw new Error(`renderContext.queryData is not valid JSON (${e.message}).`);
 	}
 
-	const schemaData = findQuery(queryData, 'schema')?.state?.data;
+	const schemaData = findQuery(queryData, SCHEMA_DATASETS)?.state?.data;
 	const groups = schemaData?.groups;
 	if (!Array.isArray(groups)) {
 		throw new Error(
-			'No ["achievements", <appId>, "schema"] query with groups[] in the SSR payload. ' +
+			'No ["achievements", <appId>, "schema[_v2]"] query with groups[] in the SSR payload. ' +
 				'The game may have no achievements, or the app id may be wrong.'
 		);
 	}
