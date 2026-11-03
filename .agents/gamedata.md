@@ -44,6 +44,25 @@ and it is a selection, not a tag — it matches `types.length === 0`.
 Tag order in the JSON is canonical (`missable, multiplayer, cumulative, secret`) so a
 hand-edited file and a generated one sort identically; the validator enforces it.
 
+### `checklist` is optional, and its step ids are persisted
+
+`GameData.checklist` is an array of groups (`id`, `label`, `title`, `steps[]`). It exists for games
+whose run is **order-sensitive** — a survival/story game where leaving an act destroys quests — and it is
+what puts the **Checklist** tab on the page. Omit it for everything else: no field, no tab, no empty
+state to design around. Only The Alters has one today.
+
+- **`step.id` is a storage key** (`platworks:checklist:{appId}`). Renaming one silently unticks it for
+  every player, so treat ids as append-only.
+- **`deadline` is authored only when the step genuinely expires.** Its presence renders the accent
+  "Why now" block; its absence renders the muted "no deadline" line. Filling it with a restatement is
+  worse than leaving it out — the tab would then claim a deadline the game does not have.
+- **`trophies` must be an exact `Achievement.name`**, trailing spaces and curly apostrophes included.
+  Nothing validates the join at build time; a near-miss just means the chip never shows as unlocked.
+  The authoring script for this game asserts every name against the list before writing.
+- **Group order is play order** (Act 1 → Finale → DLC). The focus card walks that order, so a misplaced
+  group sends the player to the wrong end of the run.
+- Adding the field means `schema.json` **and** `#lib/types/game.ts` change together, as with any field.
+
 ## 2. Guide depth is a quality bar, not a suggestion
 
 **Never invent a URL.** Only write one that was actually opened. A plausible-but-

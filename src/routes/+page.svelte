@@ -23,6 +23,7 @@
 	import FilterGroup from '#lib/components/filter_group.svelte';
 	import StatTile from '#lib/components/stat_tile.svelte';
 	import ActionButton from '#lib/components/action_button.svelte';
+	import { fly, fade } from 'svelte/transition';
 	import { browser } from '$app/env';
 	import { page } from '$app/state';
 	import { replaceState } from '$app/navigation';
@@ -31,6 +32,21 @@
 	import { loadLibrary, addToLibrary, removeFromLibrary, clearLibrary } from '#lib/client/library';
 
 	let { data } = $props();
+
+	/**
+	 * Svelte's transitions are JS-driven, so the `prefers-reduced-motion` block at
+	 * the end of `app.css` cannot shorten them the way it shortens CSS animations.
+	 * Gate the duration here, or a reduced-motion user gets the full motion.
+	 */
+	let reducedMotion = $state(false);
+	$effect(() => {
+		if (!browser) return;
+		const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+		reducedMotion = mq.matches;
+		const onChange = () => (reducedMotion = mq.matches);
+		mq.addEventListener('change', onChange);
+		return () => mq.removeEventListener('change', onChange);
+	});
 
 	function getCheckedCount(appId: number, ids: string[]): number {
 		if (!browser) return 0;
@@ -510,19 +526,30 @@
 		-->
 		<div class="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
 					{#each filteredAndSorted as game (game.appId)}
-						<GameCard
-							{game}
-							completed={completions[game.appId] ?? 0}
-							onToggle={toggleGame}
-							transitionName={navigatingAppId === game.appId ? 'pw-game-art' : undefined}
-							onnavigate={beginNavigation}
-							onhover={nameTransition}
-							toggleMode={scope === 'mine'
-								? 'remove'
-								: myLibrarySet.has(game.appId)
-									? 'added'
-									: 'add'}
-						/>
+						<!--
+							A game entering or leaving the grid because of a filter, sort or
+							scope change used to pop in and out. `fly` in / `fade` out is the
+							cheapest honest answer: the exit node keeps its grid cell for
+							120ms, so nothing jumps twice.
+						-->
+						<div
+							in:fly={{ y: 8, duration: reducedMotion ? 0 : 180 }}
+							out:fade={{ duration: reducedMotion ? 0 : 120 }}
+						>
+							<GameCard
+								{game}
+								completed={completions[game.appId] ?? 0}
+								onToggle={toggleGame}
+								transitionName={navigatingAppId === game.appId ? 'pw-game-art' : undefined}
+								onnavigate={beginNavigation}
+								onhover={nameTransition}
+								toggleMode={scope === 'mine'
+									? 'remove'
+									: myLibrarySet.has(game.appId)
+										? 'added'
+										: 'add'}
+							/>
+						</div>
 					{/each}
 				</div>
 	{/if}

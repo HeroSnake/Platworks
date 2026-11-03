@@ -8,7 +8,41 @@ export interface GameData {
 	 * or multiplayer games where a map would not help.
 	 */
 	mapUrl?: string;
+	/**
+	 * Optional per-game completion checklist, rendered as a second tab on the game
+	 * page. Omitted for games with no authored checklist — the tab simply does not
+	 * appear, so every existing game stays valid.
+	 *
+	 * Groups are ordered as the player meets them (Act 1 → DLC). A step's `id` is
+	 * the persistence key, so renaming one resets that tick for everyone.
+	 */
+	checklist?: ChecklistGroup[];
 	achievements: Achievement[];
+}
+
+export interface ChecklistGroup {
+	id: string;
+	/** Short label, e.g. "Act 1" */
+	label: string;
+	/** What the group covers, e.g. "Base and the first two Arks" */
+	title: string;
+	steps: ChecklistStep[];
+}
+
+export interface ChecklistStep {
+	/** Stable slug, unique within the game. Persisted — do not rename casually. */
+	id: string;
+	text: string;
+	/** Exact achievement names this step feeds. Matches `Achievement.name`. */
+	trophies?: string[];
+	/** Can be lost by leaving the act or by a one-shot choice. */
+	missable?: boolean;
+	/**
+	 * One line explaining the deadline. Present only when the step genuinely
+	 * expires; its absence is what renders the "no deadline" state, so do not
+	 * write filler here.
+	 */
+	deadline?: string;
 }
 
 /**

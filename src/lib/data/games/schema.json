@@ -7,6 +7,34 @@
 		"name": { "type": "string" },
 		"totalAchievements": { "type": "integer" },
 		"mapUrl": { "type": "string", "format": "uri" },
+		"checklist": {
+			"description": "Optional completion checklist, rendered as a second tab on the game page. Omit it for games with no authored checklist.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"required": ["id", "label", "title", "steps"],
+				"properties": {
+					"id": { "type": "string" },
+					"label": { "type": "string" },
+					"title": { "type": "string" },
+					"steps": {
+						"type": "array",
+						"minItems": 1,
+						"items": {
+							"type": "object",
+							"required": ["id", "text"],
+							"properties": {
+								"id": { "type": "string" },
+								"text": { "type": "string" },
+								"trophies": { "type": "array", "items": { "type": "string" } },
+								"missable": { "type": "boolean" },
+								"deadline": { "type": "string" }
+							}
+						}
+					}
+				}
+			}
+		},
 		"achievements": {
 			"type": "array",
 			"items": {

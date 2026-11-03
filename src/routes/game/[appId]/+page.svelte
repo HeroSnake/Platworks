@@ -7,7 +7,8 @@
 		Lock,
 		Unlock,
 		RefreshCw,
-		MapPinned
+		MapPinned,
+		ListChecks
 	} from '@lucide/svelte';
 	import AchievementRow from '#lib/components/achievement_row.svelte';
 	import TrophyPanel from '#lib/components/trophy_panel.svelte';
@@ -15,7 +16,11 @@
 	import GameFilters from '#lib/components/game_filters.svelte';
 	import ProgressBar from '#lib/components/progress_bar.svelte';
 	import ActionButton from '#lib/components/action_button.svelte';
+	import SegmentedControl from '#lib/components/segmented_control.svelte';
+	import ChecklistPanel from '#lib/components/checklist_panel.svelte';
+	import { loadChecklist, saveChecklist } from '#lib/client/checklist';
 	import { browser } from '$app/env';
+	import { page } from '$app/state';
 import { untrack } from 'svelte';
 	import { refreshProfile } from '#lib/client/profile';
 	import { bootPhase, bootDone } from '#lib/client/boot';
@@ -36,6 +41,37 @@ import { untrack } from 'svelte';
 	let syncing = $state(false);
 	let syncError = $state<string | null>(null);
 	let syncSuccess = $state<string | null>(null);
+
+	/**
+	 * The game page has two views. Achievements is the default and the only one
+	 * every game has; Checklist only exists when the game's JSON carries the
+	 * optional `checklist` field, so the switcher is not rendered at all otherwise.
+	 * `?view=checklist` deep-links straight to it, which also makes the tab a real
+	 * destination rather than a control with no address.
+	 */
+	let view = $state(page.url.searchParams.get('view') === 'checklist' ? 'checklist' : 'achievements');
+	let hasChecklist = $derived((data.game.checklist?.length ?? 0) > 0);
+
+	let checklistDone = $state<Record<string, boolean>>(
+		untrack(() => loadChecklist(data.game.appId))
+	);
+
+	const checklistSteps = $derived((data.game.checklist ?? []).flatMap((g) => g.steps));
+	const checklistDoneCount = $derived(checklistSteps.filter((s) => checklistDone[s.id]).length);
+	const checklistRemaining = $derived(checklistSteps.length - checklistDoneCount);
+
+	/** Exact trophy names already unlocked, so the checklist chips can show it. */
+	const unlockedNames = $derived(
+		new Set(data.game.achievements.filter((a) => achievedMap[a.id]).map((a) => a.name))
+	);
+
+	function toggleChecklistStep(id: string, next: boolean) {
+		const state = { ...checklistDone };
+		if (next) state[id] = true;
+		else delete state[id];
+		checklistDone = state;
+		saveChecklist(data.game.appId, state);
+	}
 
 	function loadLocal(): Record<string, boolean> {
 		if (!browser) return {};
@@ -717,6 +753,38 @@ import { untrack } from 'svelte';
 			</aside>
 
 			<section class="min-w-0">
+			<!-- View switcher. Only rendered when the game actually has a checklist;
+			     every other game keeps the page it had. -->
+			{#if hasChecklist}
+				<div class="pw-quiet mt-4 lg:mt-0">
+					<SegmentedControl
+						bind:value={view}
+						label="Game view"
+						options={[
+							{ value: 'achievements', label: 'Achievements', icon: Trophy, count: data.game.totalAchievements },
+							{
+								value: 'checklist',
+								label: 'Checklist',
+								icon: ListChecks,
+								count: hydrated ? checklistRemaining : undefined
+							}
+						]}
+					/>
+				</div>
+			{/if}
+
+			{#if view === 'checklist' && data.game.checklist}
+				<!-- `pw-step-swap` gives the tab the same 200ms rise the focus card uses,
+				     so switching views is one motion rather than a hard cut. -->
+				<div class="pw-step-swap mt-3">
+					<ChecklistPanel
+						groups={data.game.checklist}
+						done={checklistDone}
+						unlocked={unlockedNames}
+						ontoggle={toggleChecklistStep}
+					/>
+				</div>
+			{:else}
 			<!--
 				Filters, rendered ONCE for every breakpoint — see `game_filters.svelte`.
 
@@ -828,6 +896,7 @@ import { untrack } from 'svelte';
 				/>
 			</div>
 			</div>
+			{/if}
 			</section>
 		</div>
 	</div>
@@ -844,7 +913,6 @@ import { untrack } from 'svelte';
 <MobileBar
 	percent={progressPercent}
 	primary="{completedCount}/{data.game.totalAchievements}"
-	secondary="{filteredAchievements.length} shown"
 	status={syncError ?? syncSuccess}
 	statusTone={syncError ? 'error' : 'ok'}
 	syncing={syncing}
@@ -852,4 +920,6 @@ import { untrack } from 'svelte';
 	searchPlaceholder="Search trophies…"
 	searchLabel="Search trophies"
 	bind:query={trophyQuery}
+	onsearch={() => (view = 'achievements')}
+	secondary={view === 'checklist' ? `${checklistRemaining} steps left` : `${filteredAchievements.length} shown`}
 />

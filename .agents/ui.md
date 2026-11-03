@@ -35,6 +35,7 @@ drawn against.
 | `filter_group.svelte` | one labelled group inside a toolbar (`Show` · `Type` · `Search` · `Order`); `grow` for the search group |
 | `theme_picker.svelte` | six-palette radiogroup: 3×2 grid of tiles, each a miniature of the palette. Inside the account popover |
 | `achievement_row.svelte` | the trophy, one horizontal shape (trophy icon left, name/description/meta right) in every container — a one-column stack below `lg`, a two-up grid at `xl`. Owns the check toggle, the celebrate/relock/exit motion and the inline expansion (hidden at `lg`, where the page's detail panel is the guide surface) |
+| `checklist_panel.svelte` | the game page's **Checklist** tab: one focus card for the next open step, a "then" queue beside it, and the full list collapsed per act. Reads `GameData.checklist`; owns no storage — the page persists through `#lib/client/checklist.ts` |
 | `achievement_meta.svelte` | the difficulty-pips + type-badge rail, shared by the row and the panel so they cannot disagree about a trophy's tags |
 | `achievement_guide.svelte` | the guide body — steps, links, warnings, community notes, unlock date — shared by the row's inline expansion and the desktop panel |
 | `trophy_panel.svelte` | the game page's desktop master–detail panel: the selected trophy's icon, name, meta and guide. Rendered once, sticky, hidden below `lg` |
@@ -312,8 +313,30 @@ tag that changes what the player should *do*. An untagged trophy (`types: []`) r
 empty array **is** the plain trophy, and a `standard` tag would permit contradictions like
 `["standard","secret"]`.
 
-### The game page hero: artwork only, no overlay text
+### The checklist tab: a focus card, and one disclosure pattern
 
+`checklist_panel.svelte` renders `GameData.checklist` behind a **second view** on the game page. Rules
+that are easy to undo:
+
+- **The switcher is `segmented_control`, and it only exists when the game has a checklist.** No
+  checklist data means no control — never an empty tab. `?view=checklist` is the deep link, which is also
+  what the click audit uses: the view is session state, so it cannot be seeded from storage.
+- **The focus card is the first *undone* step, and the queue is a real jump-to.** A step that was just
+  ticked must not stay on screen as if it were pending.
+- **Never give a surface an alpha fill.** `bg-steam-blue/40` reads as a card over an empty area and
+  reveals the background pattern through every block in the real app — the tile is a fixed layer
+  *behind* the content, so it shows through any translucent background. Trophy cards are opaque
+  `bg-steam-blue` with the "achieved" tint on an inner `bg-steam-green/10` layer; the checklist does
+  the same. Badges (`bg-red-500/15`) are the intended exception — they are small marks, not surfaces.
+- **Deadline copy is authored, never inferred.** `step.deadline` renders the accent "Why now" block; its
+  absence renders the muted clock line. An empty bordered block is the failure state this exists to
+  prevent — do not "helpfully" fill it.
+- **Act disclosures use `.expand-panel` + `aria-expanded`, not `<details>`.** `<details>` cannot animate
+  its height, and the app already has exactly one disclosure technique.
+- Motion: a new focus step plays `.pw-step-swap`, a tick plays `.check-pop`. Both are CSS, so the
+  reduced-motion block reaches them.
+
+### The game page hero: artwork only, no overlay text
 - **The artwork carries no text.** The name is the `h1` below it; the fixed ratio and the reason are in
   the two-pane rules above.
 - **One bottom scrim.** `bg-gradient-to-t from-steam-dark/85` blends the artwork into the page. There is
@@ -519,7 +542,14 @@ geometry) because three columns on a 390 screen is too coarse next to a 5px prog
 
 ## 4. Animation
 
-- View Transitions for page navigation **only** — never for in-page state.
+- **View Transitions for page navigation only — never for in-page state.**
+- **A disclosure is `.expand-panel`.** `<details>` cannot animate; every collapsible row in the app
+  (trophy guide, checklist act) goes through the same `grid-template-rows` rule.
+- **Svelte transitions are the one exception to "CSS only", and they need a manual gate.** The library's
+  game cards use `in:fly` / `out:fade` so a filter change slides cards in and fades them out instead of
+  popping. `prefers-reduced-motion` in `app.css` cannot reach a JS-driven transition, so `+page.svelte`
+  reads `matchMedia('(prefers-reduced-motion: reduce)')` and passes `duration: 0`. Any new Svelte
+  transition must do the same.
 - Expand/collapse via CSS `grid-template-rows` (`.expand-panel`); never DOM add/remove.
 - **Never put `stroke` in an SVG's transition list.**
 - **`prefers-reduced-motion` is honoured** by one `!important` block at the end of `app.css`. It drops

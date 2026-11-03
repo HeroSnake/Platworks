@@ -71,6 +71,22 @@ const LIBRARY = [
  */
 const GAME_PAGE = { appId: 1903340, done: 0.9 };
 
+/**
+ * The checklist tab. The Alters is the only game with an authored checklist today,
+ * and the seed stops just before the Act 2 park step on purpose: that is the step
+ * with a deadline, which is the part of the tab worth showing. The README's alt
+ * text describes this card, so changing the seed means changing the text.
+ */
+const CHECKLIST_PAGE = {
+	appId: 1601570,
+	done: 0.12,
+	steps: [
+		'a1-base', 'a1-outpost', 'a1-sheep', 'a1-order', 'a1-refinery', 'a1-qc',
+		'a1-expand', 'a1-filters', 'a1-botanist', 'a1-refiner', 'a1-scientist',
+		'a1-worker', 'a1-miner', 'a1-guard', 'a1-bridge', 'a1-arks'
+	]
+};
+
 function parseArgs(argv) {
 	const args = { base: null, outDir: join(ROOT, 'docs', 'screenshots'), theme: DEFAULT_THEME, only: null };
 	for (let i = 0; i < argv.length; i++) {
@@ -83,8 +99,8 @@ function parseArgs(argv) {
 		else if (arg === '--help' || arg === '-h') args.help = true;
 		else throw new Error(`Unknown argument: ${arg}`);
 	}
-	if (args.only && !['library', 'game-page'].includes(args.only)) {
-		throw new Error(`--only takes "library" or "game-page", not "${args.only}"`);
+	if (args.only && !['library', 'game-page', 'game-checklist'].includes(args.only)) {
+		throw new Error(`--only takes "library", "game-page" or "game-checklist", not "${args.only}"`);
 	}
 	return args;
 }
@@ -94,7 +110,7 @@ readme-shots.mjs — regenerate the screenshots README.md embeds
 
   --out-dir <d>   Default: docs/screenshots
   --theme <id>    Palette from src/app.css. Default: ${DEFAULT_THEME}
-  --only <name>   One of: library, game-page
+  --only <name>   One of: library, game-page, game-checklist
   --base <url>    Default: first of :5173, :4173 that answers
 `;
 
@@ -229,6 +245,22 @@ async function main() {
 			},
 			out: join(args.outDir, 'game-page.png'),
 			note: `${count}/${total} trophies`
+		});
+	}
+
+	if (!args.only || args.only === 'game-checklist') {
+		const { map } = await checkedMap(CHECKLIST_PAGE.appId, CHECKLIST_PAGE.done);
+		const done = Object.fromEntries(CHECKLIST_PAGE.steps.map((id) => [id, true]));
+		jobs.push({
+			name: 'game-checklist',
+			url: `${base}/game/${CHECKLIST_PAGE.appId}?view=checklist`,
+			seed: {
+				'platworks:theme': args.theme,
+				[`platworks:checked:${CHECKLIST_PAGE.appId}`]: map,
+				[`platworks:checklist:${CHECKLIST_PAGE.appId}`]: done
+			},
+			out: join(args.outDir, 'game-checklist.png'),
+			note: `${CHECKLIST_PAGE.steps.length} steps done`
 		});
 	}
 

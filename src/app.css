@@ -365,6 +365,19 @@
 	animation: check-pop 200ms ease-out;
 }
 
+/*
+   Checklist focus card: a new step slides up rather than swapping its text under
+   the eye. Opacity + transform only, and it is skipped entirely under
+   `prefers-reduced-motion` by the block at the end of this file.
+*/
+@keyframes pw-step-swap {
+	from { opacity: 0; transform: translateY(6px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+.pw-step-swap {
+	animation: pw-step-swap 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 /* ============================================================================
    Trophy row motion — the arcade tiers, on `.achievement-item`.
 

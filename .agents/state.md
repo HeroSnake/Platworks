@@ -25,6 +25,7 @@ All keys are namespaced `platworks:*`. Read them through a `load*()` helper, nev
 |---|---|---|
 | `platworks:steamId` | `+layout.svelte` | user input: ID, vanity name or profile URL. Overwritten with the **resolved** Steam64 ID by `refreshProfile()` so later syncs skip vanity resolution |
 | `platworks:checked:{appId}` | both pages | `Record<achievementId, boolean>` |
+| `platworks:checklist:{appId}` | game page | `Record<stepId, true>` for the Checklist tab. Owned by `#lib/client/checklist.ts`; step ids come from the game JSON, so a renamed step silently comes back unticked |
 | `platworks:lastChecked:{appId}` | both pages | epoch ms, drives "Recent" sort |
 | `platworks:sort` | library page | `name \| completion \| recent` (global) |
 | `platworks:filter:{appId}` | game page | `all \| locked \| unlocked` (per game) |

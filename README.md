@@ -44,6 +44,18 @@ Some rows earn an extra badge:
 The difficulty pips on each row are a four-step scale, shown as pips rather than colour alone — so the
 rating survives being colour-blind, greyscale, or read on a bright screen outdoors.
 
+## The checklist
+
+Games with a long, order-sensitive run get a second tab beside the trophies: a **checklist** that says
+what to do, and — more usefully — **when it stops being possible**.
+
+<img src="docs/screenshots/game-checklist.png" alt="The checklist tab on a game page: the next step in a focus card with its deadline, a short queue of the steps after it, and the full checklist grouped by act below." />
+
+Each step is grouped by the act it belongs to and links the trophies it feeds. The step that expires
+when you leave an act is marked **Missable** and carries the reason it cannot wait; the ones that do not
+expire say so instead, so an empty warning never looks like a missing one. Ticking a step is stored in
+your browser, like trophy progress, and the card always shows the next step that is still open.
+
 ## Connecting your Steam account
 
 Optional, and read-only.
