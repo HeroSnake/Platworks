@@ -1,0 +1,1578 @@
+{
+	"$schema": "./schema.json",
+	"appId": 1601570,
+	"name": "The Alters",
+	"totalAchievements": 63,
+	"checklist": [
+		{
+			"id": "act1",
+			"label": "Act 1",
+			"title": "Base and the first two Arks",
+			"steps": [
+				{
+					"id": "a1-base",
+					"text": "Reach the base, answer the communicator, create the first Alter",
+					"trophies": [
+						"The survivor ",
+						"Two of us"
+					]
+				},
+				{
+					"id": "a1-outpost",
+					"text": "Place the first outpost on any deposit",
+					"trophies": [
+						"Dig Deeper"
+					]
+				},
+				{
+					"id": "a1-sheep",
+					"text": "Pet the sheep near the base with E",
+					"trophies": [
+						"Baaa!"
+					]
+				},
+				{
+					"id": "a1-order",
+					"text": "Craft an item, hover it, middle-click to set a production order",
+					"trophies": [
+						"Smart Management"
+					]
+				},
+				{
+					"id": "a1-refinery",
+					"text": "Build the Refinery and run one job",
+					"trophies": [
+						"Advanced industry"
+					]
+				},
+				{
+					"id": "a1-qc",
+					"text": "Research and build the quantum computer upgrade",
+					"trophies": [
+						"Who else is there?"
+					]
+				},
+				{
+					"id": "a1-expand",
+					"text": "Expand the base once",
+					"trophies": [
+						"Look at all this new space!"
+					]
+				},
+				{
+					"id": "a1-filters",
+					"text": "Stock radiation filters before the magnetic storm",
+					"trophies": [
+						"We Made It Together"
+					]
+				},
+				{
+					"id": "a1-botanist",
+					"text": "Botanist: let him take the Lena conversation",
+					"trophies": [
+						"Reliance"
+					],
+					"missable": true,
+					"deadline": "His lesson needs the Lena hand-off that only happens in Act 1."
+				},
+				{
+					"id": "a1-refiner",
+					"text": "Refiner: craft dumbbells, research the gym, install them",
+					"trophies": [
+						"Optimism"
+					]
+				},
+				{
+					"id": "a1-scientist",
+					"text": "Scientist: accept rush work and keep it running 2+ days",
+					"trophies": [
+						"Pragmatism "
+					]
+				},
+				{
+					"id": "a1-worker",
+					"text": "Worker: accept five days without crunch",
+					"trophies": [
+						"Charisma"
+					]
+				},
+				{
+					"id": "a1-miner",
+					"text": "Miner: refuse the drugs, choose the Technician’s serum",
+					"trophies": [
+						"Vulnerability"
+					],
+					"missable": true,
+					"deadline": "The refusal and the serum choice are one-time events right after he is created."
+				},
+				{
+					"id": "a1-guard",
+					"text": "Guard: hand over personal items to lift his mood",
+					"trophies": [
+						"Shrewdness"
+					]
+				},
+				{
+					"id": "a1-bridge",
+					"text": "Install the four bridge piers, then hold E to travel out",
+					"trophies": [
+						"The Bridge",
+						"Nothing's gonna stop us"
+					]
+				},
+				{
+					"id": "a1-arks",
+					"text": "Build two Rapidium Arks at base stage 2",
+					"trophies": [
+						"Provide more"
+					]
+				}
+			]
+		},
+		{
+			"id": "act2",
+			"label": "Act 2",
+			"title": "Lessons, storylines, the choice",
+			"steps": [
+				{
+					"id": "a2-park",
+					"text": "Technician: find the park chip and build the park",
+					"trophies": [
+						"Her last wish"
+					],
+					"missable": true,
+					"deadline": "The park must be built in Act 2 — skipping it blocks the storyline for the whole run."
+				},
+				{
+					"id": "a2-research",
+					"text": "Scientist: finish his private research before you travel out",
+					"trophies": [
+						"Hidden truth"
+					],
+					"missable": true,
+					"deadline": "The Act 3 polymer delivery depends on this research being completed here."
+				},
+				{
+					"id": "a2-axe",
+					"text": "Botanist: ask, call Lena, craft the axe, deliver it",
+					"trophies": [
+						"The Other Man"
+					],
+					"missable": true,
+					"deadline": "The axe task only exists in Act 2."
+				},
+				{
+					"id": "a2-feast",
+					"text": "Doctor: cook the feast and reflect with him after",
+					"trophies": [
+						"Happy Sisyphus"
+					],
+					"missable": true,
+					"deadline": "The feast only exists in Act 2; the tattoo chain depends on it."
+				},
+				{
+					"id": "a2-tea",
+					"text": "Psychologist: brew the tea and drink it with him",
+					"trophies": [
+						"Chill"
+					]
+				},
+				{
+					"id": "a2-guard",
+					"text": "Guard: keep 4–6 mush, accept surveillance, question every suspect",
+					"trophies": [
+						"Shrewdness",
+						"You gotta be smart"
+					],
+					"missable": true,
+					"deadline": "The theft event needs two or three days with at least 3 mush left each day."
+				},
+				{
+					"id": "a2-miner",
+					"text": "Miner: two counselling rounds in the meditation room",
+					"trophies": [
+						"Vulnerability"
+					],
+					"missable": true,
+					"deadline": "The late-return events and both counselling rounds must land before the act ends."
+				},
+				{
+					"id": "a2-worker",
+					"text": "Worker: five no-crunch days",
+					"trophies": [
+						"Charisma"
+					]
+				},
+				{
+					"id": "a2-anomalies",
+					"text": "Walk into 20 anomalies while exploring",
+					"trophies": [
+						"In shield I trust"
+					]
+				},
+				{
+					"id": "a2-choice",
+					"text": "Save, then choose the treatment at the kitchen meeting",
+					"trophies": [
+						"Corporate Plug",
+						"Bold Science"
+					],
+					"missable": true,
+					"deadline": "Irreversible: the choice decides the ending route and which Alters stay."
+				},
+				{
+					"id": "a2-tabula",
+					"text": "Keep Tabula Rasa alive if you want Awareness",
+					"trophies": [
+						"Awareness"
+					],
+					"missable": true,
+					"deadline": "Sacrificing him at the kitchen meeting makes Awareness impossible in that run."
+				},
+				{
+					"id": "a2-arks",
+					"text": "Build the third and fourth Rapidium Arks",
+					"trophies": [
+						"We needed that",
+						"The mission comes first"
+					]
+				}
+			]
+		},
+		{
+			"id": "act3",
+			"label": "Act 3",
+			"title": "Order matters",
+			"steps": [
+				{
+					"id": "a3-rebels-find",
+					"text": "Find the rebel base through the fog",
+					"trophies": [
+						"I Found You"
+					]
+				},
+				{
+					"id": "a3-rebels-back",
+					"text": "Bring the rebels back, using Pragmatism to persuade",
+					"trophies": [
+						"Reunited "
+					],
+					"missable": true,
+					"deadline": "Everything below that needs the Psychologist waits on this."
+				},
+				{
+					"id": "a3-tattoo",
+					"text": "Only now: the Doctor’s tattoo via the Psychologist’s design",
+					"trophies": [
+						"Integrity",
+						"New perspective",
+						"Happy Sisyphus"
+					],
+					"missable": true,
+					"deadline": "Tattooing him before the rebels return costs three trophies at once."
+				},
+				{
+					"id": "a3-ben",
+					"text": "Refiner: promise help, call Lena, use Reliance or Pragmatism",
+					"trophies": [
+						"Keeping him safe"
+					],
+					"missable": true,
+					"deadline": "The call has to happen before the rescue preparation ends."
+				},
+				{
+					"id": "a3-badge",
+					"text": "Worker: give him the badge found behind the base",
+					"trophies": [
+						"A place in people's hearts"
+					],
+					"missable": true,
+					"deadline": "He only accepts the badge after the rebels are back."
+				},
+				{
+					"id": "a3-scientist",
+					"text": "Scientist: deliver 10 polymer, let him leave, say goodbye",
+					"trophies": [
+						"Hidden truth"
+					],
+					"missable": true,
+					"deadline": "The goodbye must happen before the final meeting with the rescue team."
+				},
+				{
+					"id": "a3-guard",
+					"text": "Guard: handle the quantum computer fight with Charisma",
+					"trophies": [
+						"You gotta be smart"
+					],
+					"missable": true,
+					"deadline": "The fight fires a few days after the rescue plan is prepared."
+				},
+				{
+					"id": "a3-shrink",
+					"text": "Psychologist: accept the night counselling",
+					"trophies": [
+						"Take it easy, Dude"
+					],
+					"missable": true,
+					"deadline": "Stay in the captain’s room at night — do not sleep the day away."
+				},
+				{
+					"id": "a3-base",
+					"text": "Base to level 4 and install every module",
+					"trophies": [
+						"The Ultimate Builder",
+						"Jan's Moving Village"
+					]
+				},
+				{
+					"id": "a3-ark5",
+					"text": "Build the fifth Rapidium Ark",
+					"trophies": [
+						"Exceed all expectations"
+					]
+				},
+				{
+					"id": "a3-end",
+					"text": "Finish Act 3 and reach the rescue preparation",
+					"trophies": [
+						"Time to go home"
+					]
+				}
+			]
+		},
+		{
+			"id": "finale",
+			"label": "Finale",
+			"title": "Six trophies from one save",
+			"steps": [
+				{
+					"id": "fin-save",
+					"text": "Save before saying goodbye to the Alters",
+					"deadline": "Every ending below is reloaded from this one save."
+				},
+				{
+					"id": "fin-corp",
+					"text": "Finish on the implant route",
+					"trophies": [
+						"The Corporate Way"
+					]
+				},
+				{
+					"id": "fin-maxwell",
+					"text": "Finish on the sacrifice route",
+					"trophies": [
+						"Maxwell's Path"
+					]
+				},
+				{
+					"id": "fin-nothing",
+					"text": "At the rescue team: do nothing",
+					"trophies": [
+						"All By Myself"
+					]
+				},
+				{
+					"id": "fin-bomb",
+					"text": "Craft the bomb, install it, then detonate",
+					"trophies": [
+						"It ends in flames"
+					]
+				},
+				{
+					"id": "fin-swap-nothing",
+					"text": "Accept the Botanist’s swap, then do nothing",
+					"trophies": [
+						"The things we do for love"
+					]
+				},
+				{
+					"id": "fin-swap-bomb",
+					"text": "Accept the swap, then detonate",
+					"trophies": [
+						"I deserved this more"
+					]
+				}
+			]
+		},
+		{
+			"id": "dlc",
+			"label": "DLC",
+			"title": "Last Variable and cleanup",
+			"steps": [
+				{
+					"id": "dlc-terraformer",
+					"text": "Place the first Terraformer",
+					"trophies": [
+						"Space Gardener"
+					]
+				},
+				{
+					"id": "dlc-produce",
+					"text": "Start Phased Rapidium, Proxylium and Megafluid production",
+					"trophies": [
+						"Mastering Rapidium",
+						"Mix and match",
+						"Substance Genius"
+					]
+				},
+				{
+					"id": "dlc-duplicate",
+					"text": "Create the same Alter a second time",
+					"trophies": [
+						"Wait, you can do that?"
+					],
+					"missable": true,
+					"deadline": "No guide documents the trigger — keep a manual save before experimenting."
+				},
+				{
+					"id": "dlc-scientist",
+					"text": "Complete every Scientist Alter storyline in the DLC",
+					"trophies": [
+						"Caring after all"
+					]
+				},
+				{
+					"id": "dlc-finish",
+					"text": "Finish the Last Variable campaign",
+					"trophies": [
+						"The reason I stayed"
+					]
+				}
+			]
+		}
+	],
+	"achievements": [
+		{
+			"id": "1",
+			"name": "The survivor ",
+			"description": "Reach the base",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/4787d3016e59fd8c271ce93565336e2cebff5f06.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Play through the opening and walk to the base at the end of the first area."
+				]
+			}
+		},
+		{
+			"id": "2",
+			"name": "Two of us",
+			"description": "Create the first Alter",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/b3bf28989195bed03e2a5fa7571a8d07b51d17d3.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"After reaching the base, answer the communicator.",
+					"Walk into the quantum computer room and create your first Alter."
+				]
+			}
+		},
+		{
+			"id": "3",
+			"name": "Dig Deeper",
+			"description": "Set up the first outpost",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/c320a7178a2e183619f6f05f54027ad61e91e828.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Unlock the outpost in the base technology page.",
+					"Place your first outpost on any resource deposit on the map."
+				]
+			}
+		},
+		{
+			"id": "4",
+			"name": "Let's roll",
+			"description": "Finish the Prologue",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/77597fc30db07cc05a25c06cf21b76db5ccbdb4f.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Activate the base to leave the prologue area."
+				]
+			}
+		},
+		{
+			"id": "5",
+			"name": "The Bridge",
+			"description": "Build a bridge over the lava river",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/05ba20c43acd3c3df857ba01c55ee9ed62ca92ae.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Run the Refinery to produce polymers.",
+					"Build the bridge piers in the workshop and install all four of them around the lava river."
+				]
+			}
+		},
+		{
+			"id": "6",
+			"name": "Nothing's gonna stop us",
+			"description": "Finish Act 1",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/de67f870b1b9c663805c6a5e9dde820d7ee9bc71.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Install the fourth bridge pier to complete the bridge over the lava river.",
+					"Collect enough organics, return to the command room, open the journey page and hold E to move the base out of the Act 1 map."
+				]
+			}
+		},
+		{
+			"id": "7",
+			"name": "Into the storm",
+			"description": "Finish Act 2",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/3081ec748e3ff9506d571cabd2f4b784b7860810.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Finish the Act 2 objectives, then travel out from the command room journey page."
+				]
+			}
+		},
+		{
+			"id": "8",
+			"name": "Time to go home",
+			"description": "Finish Act 3",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/3c314e25b9fd2a093f4e788551afa8e66536a7ad.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Complete the rescue-preparation objectives at the end of Act 3 and continue to the finale."
+				]
+			}
+		},
+		{
+			"id": "9",
+			"name": "I Found You",
+			"description": "Find the rebel base",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/df405883e3605fe992c443313cdfc945eee4b5ce.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"In Act 3, follow the wheel tracks out of the starting area.",
+					"Pass through the foggy stretch and turn right into the cave where light shines through the rocks at the far end."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059"
+			}
+		},
+		{
+			"id": "10",
+			"name": "Corporate Plug",
+			"description": "Start treating the brain mutation using implants",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/045d6543d86a951abab1cf6b38343abc36df56a9.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"After the MRI results, talk to Scientist Jan, then call Lena and wait for her implant proposal.",
+					"Manufacture the requested number of implants in the workshop.",
+					"At the kitchen meeting, pick the corporation implant plan."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"Act 2 branch choice: this is mutually exclusive with Bold Science for that playthrough.",
+					"It locks in the corporation ending — keep a manual save before the kitchen meeting if you want the Maxwell route too."
+				]
+			}
+		},
+		{
+			"id": "11",
+			"name": "Bold Science",
+			"description": "Start treating the brain mutation using experimental therapy",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/0baca6258fb06d6704ed46001a4837b166725772.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"After the MRI results, talk to Scientist Jan, then to Lucas and wait for Maxwell to call.",
+					"Follow Maxwell on the call, then research the quantum computer hack and upgrade the computer to create Tabula Rasa.",
+					"At the kitchen meeting three days later, choose to sacrifice Tabula Rasa."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"Act 2 branch choice: mutually exclusive with Corporate Plug and with the Tabula Rasa party member (Awareness).",
+					"Sacrificing Tabula Rasa means the rebels cannot be persuaded back in Act 3."
+				]
+			}
+		},
+		{
+			"id": "12",
+			"name": "Her last wish",
+			"description": "Complete the Technician’s storyline",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/6a34ecfe1fb4348e0aeb056447ac39b9ff654929.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Act 2: after the MRI results, Technician Jan asks you to build a park — find the holographic park chip while exploring (through a cave with trees and running water, past the treeline).",
+					"Unlock and build the park, then talk to him while he is using it.",
+					"Act 3: get the rebels back and finish the supply-pack task; refuse the \"last words\" he offers in the second conversation."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"The park must be built in Act 2; skipping it blocks the storyline.",
+					"On the Tabula Rasa route he cannot be persuaded back — the storyline then resolves after you finish his resource task."
+				]
+			}
+		},
+		{
+			"id": "13",
+			"name": "Hidden truth",
+			"description": "Complete the Scientist’s storyline",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/ab2ca40549bb47ae9cc3c63511ea7457698cac18.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Act 2: agree with his research plans and complete his private research in the technology page before leaving the act.",
+					"Act 3: keep choosing the friendly options, then give him 10 polymer so he can go exploring.",
+					"After he returns, visit the location he mentions, then let him leave once the rescue research is done and say goodbye."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"The storyline spans Act 2 and Act 3 and is easy to run out of time on — do not let Act 3 tick down before the polymer delivery.",
+					"Reports differ on the Act 2 requirement: one full guide says the treatment route does not matter, another says it only triggered on the Maxwell/Tabula Rasa route. Keep a save before the kitchen meeting."
+				]
+			}
+		},
+		{
+			"id": "14",
+			"name": "Keeping him safe",
+			"description": "Complete the Refiner’s storyline",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/6afe2fd6ebd94c56c44a3d6edade275e5d0ad7e4.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Act 2: admit the existence of the Alters to Lena and take the implant treatment.",
+					"After his Optimism lesson, promise to help with Ben and ask Lucas about him.",
+					"Act 3: follow Lena's route to bring the rebels back, then use Reliance or Pragmatism when you call Lena about Ben."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"Requires the implant route and the rebels brought back — both are Act 2/Act 3 decisions you cannot undo without a reload."
+				]
+			}
+		},
+		{
+			"id": "15",
+			"name": "Remaking Himself",
+			"description": "Complete the Miner’s storyline",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/b2c628e32905a02b9875418328d7c08b4f13033f.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Act 3: after the rescue light fails, he asks for a carving stone and a tool — craft the tool in the workshop.",
+					"Pick up the dark reddish stone at the top of the large tree to the right of the ocean, on the way to the scientist scan sites.",
+					"Hand both over and stay empathetic throughout the conversation."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"The stone is on a required route but is easy to walk past — grab it during the scan quest."
+				]
+			}
+		},
+		{
+			"id": "16",
+			"name": "The Other Man",
+			"description": "Complete the Botanist’s storyline",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/95781bc895dec05b61c5916a5af374494e0648a0.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Act 1: let Botanist Jan speak to Lena in your place, then follow his preferences (own your mistakes, praise Lena).",
+					"Act 2: admit the Alters to Lena, then take his axe task — ask Scientist Jan about it, call Lena, and craft the axe.",
+					"Deliver the axe, choose \"There is only one axe\", and agree with his advice."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"Missing the Act 1 conversation with Lena blocks the axe task that unlocks this storyline."
+				]
+			}
+		},
+		{
+			"id": "17",
+			"name": "You gotta be smart",
+			"description": "Complete the Guard’s storyline",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/d033f6ab08b930207b76dcca28364c416e4c1b07.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Act 2: keep at least 4 (ideally 6) portions of mush so the kitchen theft event can run.",
+					"Agree to his surveillance plan, build and install the equipment in the command room, and let him investigate.",
+					"Act 3: during the fight at the quantum computer, use the Worker's Charisma lesson to make him reflect, or agree with his plan and later tell him the data is useless."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"Refusing the surveillance plan interrupts both his lesson and his storyline.",
+					"His storyline triggers at the very end of Act 3, so do not let the act expire first."
+				]
+			}
+		},
+		{
+			"id": "18",
+			"name": "Happy Sisyphus",
+			"description": "Complete the Doctor’s storyline",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/41b4984aa35fbb4b8283185b8027ed9287df4e04.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Act 2: cook the feast in the kitchen, join the evening gathering and reflect on it with him — the doctor must stay, so take the implant route.",
+					"Act 3: build the tattoo machine, bring the rebels (and the Psychologist) back, and ask the Psychologist for the Naranath Bhranthan design.",
+					"Suggest that design to the doctor and finish the following conversation."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"The implant route in Act 2 is mandatory — the Psychologist must be persuaded back in Act 3 to hand over the design."
+				]
+			}
+		},
+		{
+			"id": "19",
+			"name": "Take it easy, Dude",
+			"description": "Complete the Shrink’s storyline",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/ac2f3c66ea279fa5953a4786059e9c2bb9b77ffd.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Act 2: help him prepare his special tea (materials in the workshop, processed in the kitchen) and drink it with him.",
+					"Act 3: bring the rebels back so he returns, then accept his counselling in your quarters at night."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"Do not choose to sleep through the night at the end of Act 3 — the event only fires if you are in the captain's room."
+				]
+			}
+		},
+		{
+			"id": "20",
+			"name": "A place in people's hearts",
+			"description": "Complete the Worker’s storyline",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/21efd55375d485c533f1477b71a6769bd01c1627.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Act 2: on the implant route, tell Scientist Jan to chip the Worker while he sleeps if he refuses the implant, then pacify him with the Refiner's factory soup.",
+					"Act 3: bring the rebels back as early as possible, then find his personal item (a scout/Ocelot badge) near the Interal, behind the base past the irradiated area, and give it to him."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"The badge only resolves the storyline after the rebels are back — leave it too late in Act 3 and the achievement is gone."
+				]
+			}
+		},
+		{
+			"id": "21",
+			"name": "Assertiveness",
+			"description": "Learn the Technician’s lesson - Assertiveness",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/4e5346f72e69c0d891945d1e3426813ce8106ed8.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Talk to Technician Jan in Act 1 until he asks for something for the crew (a recreation room — several players receive the request after the first Rapidium Ark).",
+					"Fulfil it, then agree with his point when he confronts you about following orders."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059"
+			}
+		},
+		{
+			"id": "22",
+			"name": "Reliance",
+			"description": "Learn the Botanist’s lesson - Reliance",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/005ae04cfd5f6eb92d8040b536c272817fecb06a.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Act 1: let Botanist Jan take the conversation with Lena in your place.",
+					"Follow his preferences in the follow-up talk — own your mistakes, praise Lena.",
+					"A few days later take his second conversation to the end and the lesson lands."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"Create him in Act 1 so the Lena conversation can hand off to him."
+				]
+			}
+		},
+		{
+			"id": "23",
+			"name": "Vulnerability",
+			"description": "Learn the Miner’s lesson - Vulnerability",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/8a2642c7ef9d23d93243f70e40e815c89cebfeb5.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Refuse to give Miner Jan drugs when the complaint event fires; help him take the arm off.",
+					"Choose Technician Jan's serum over the prosthetic, research it, brew it in the kitchen and deliver it.",
+					"Let him overwork on the mining machine until the late-return event fires twice, then put him in the meditation room for the Psychologist's two counselling rounds."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"The serum choice (not the prosthetic) is what unlocks the later counselling chain."
+				]
+			}
+		},
+		{
+			"id": "24",
+			"name": "Charisma",
+			"description": "Learn the Worker's lesson - Charisma",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/f2cc542765b4a1abe37c9e263e545eca713fd136.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Act 2: accept Worker Jan's request to go five days without crunch and keep the radiation filters stocked.",
+					"Talk to him at the end of the five days and keep acknowledging workers' rights."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059"
+			}
+		},
+		{
+			"id": "25",
+			"name": "Optimism",
+			"description": "Learn the Refiner’s lesson - Optimism",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/faa2093c3ab857c5ff4cd8c2b48cb9a58ce69402.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Craft the dumbbells in the workshop and give them to Refiner Jan.",
+					"Research and build the gym module, install the dumbbells in it, then take his follow-up conversation."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059"
+			}
+		},
+		{
+			"id": "26",
+			"name": "Integrity",
+			"description": "Learn the Doctor’s lesson - Integrity",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/133e5103287d19b0a957dbb123df64a8f0b97ff0.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Take the implant route in Act 2 so Doctor Jan stays.",
+					"Act 3: bring the rebels back (the Psychologist included) before touching the tattoo quest.",
+					"Get the Naranath Bhranthan design from the Psychologist and suggest it to the doctor."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"Finishing the tattoo quest before the rebels return permanently costs both this lesson and New perspective."
+				]
+			}
+		},
+		{
+			"id": "27",
+			"name": "Chill",
+			"description": "Learn the Shrink’s lesson - Chill",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/4ea62505cae100c01c5c43025435b60b8956f1c9.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Act 2: help the Psychologist make his special tea — prepare the materials in the workshop, process them in the kitchen.",
+					"Drink it with him, share feelings, and finish the conversation."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059"
+			}
+		},
+		{
+			"id": "28",
+			"name": "Shrewdness",
+			"description": "Learn the Guard’s lesson - Shrewdness",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/75308bd2fe55b87d0e25d801b265d523102eacb4.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Act 2: give Guard Jan personal items first so his mood is high, then let the mush theft event run for two or three days with at least 3 portions left each day.",
+					"Agree to his surveillance plan, build the equipment, install it in the command room and let him work.",
+					"Question every suspect he names, then confront him after speaking to Scientist Jan."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"Letting the mush count drop below 3 ends the theft event and with it the lesson."
+				]
+			}
+		},
+		{
+			"id": "29",
+			"name": "Joy of life",
+			"description": "Learn the Tabula Rasa’s lesson - Joy of Life",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/3688c567c72ab7ff4f715491e783d269f3f219c6.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Act 2: research the quantum computer hack, create Tabula Rasa, but then take the implant plan at the kitchen meeting so he joins the crew in Act 3.",
+					"Teach him his name when he wakes up in Act 3.",
+					"When he stands at the airlock looking outside, agree that the sky is worth appreciating."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"Sacrificing Tabula Rasa in Act 2 removes both this lesson and Awareness."
+				]
+			}
+		},
+		{
+			"id": "30",
+			"name": "Pragmatism ",
+			"description": "Learn the Scientist’s lesson - Pragmatism ",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/930726838b623c51fdddf9a8ffcb3f7c9dbf1e7a.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Create Scientist Jan and take his first chats about his feelings.",
+					"Accept his rush-work request and keep \"Enable Rush\" running for more than two days.",
+					"Pick the \"I learned something\" option in the conversation that follows."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"Crunch tanks the crew's mood — schedule movie nights and games while it runs, and turn rush off once the lesson lands."
+				]
+			}
+		},
+		{
+			"id": "31",
+			"name": "Awareness",
+			"description": "Unexpected member stays with the crew",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/5560f66c8fddcad237d2647d3a8e94ff29e2906e.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Act 2: talk to both Maxwell and Lena about treatment, then research Maxwell's quantum computer hack.",
+					"Create Tabula Rasa with the quantum computer and manufacture the company implants.",
+					"Take the implant plan at the kitchen meeting — Tabula Rasa then survives into Act 3 as a crew member.",
+					"Teach him the name \"Jan\" in the first conversation after you wake up."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"Both treatment branches have to be pushed to their prerequisites before the kitchen meeting.",
+					"Choosing to sacrifice Tabula Rasa (Bold Science) makes this achievement impossible in that run."
+				]
+			}
+		},
+		{
+			"id": "32",
+			"name": "Who else is there?",
+			"description": "Upgrade the Quantum Computer",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/cffbb73a967a7ccf5488200a850da0fefba139cc.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Research the quantum computer upgrade on the technology page and build it."
+				]
+			}
+		},
+		{
+			"id": "33",
+			"name": "The Ultimate Builder",
+			"description": "Build all possible modules",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/47988734fbdc8cd0fd37e3a6c53bec5a36ce192e.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Finish every module research on the base technology page, including the radiation suppressor.",
+					"Build and install each module on the base.",
+					"At the end of Act 3, install the materialization and transport modules to finish the set."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059"
+			}
+		},
+		{
+			"id": "34",
+			"name": "Reunited ",
+			"description": "Convince the rebels to come back",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/8ffac9fac084b0acfb5a5d21485f38743dd29f37.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Act 2: take the implant route and confess the Alters to Lena.",
+					"Act 3: work with Lena on a plan for the Alters, then take the supply-pack task from Technician Jan.",
+					"When he asks whether there is a way out of the corporation's plan, offer Lena's freedom route and use the Scientist's Pragmatism option to persuade him."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"On the Tabula Rasa / Maxwell route the rebels cannot be persuaded back at all — this achievement requires the implant route."
+				]
+			}
+		},
+		{
+			"id": "35",
+			"name": "Not Just An Object ",
+			"description": "Give every Alter at least one personal item",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/60ab5979813542ae386652c43cce26be254b9da9.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Find the personal item boxes while exploring each act — every small landing pod with a balloon marks one.",
+					"Hand each box to its owner and create the Alters you skipped in the previous run so all of them can receive one."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"communityNotes": [
+					"Reddit tip: you cannot have every possible Alter in one playthrough — each has its own trophies attached, so plan the missing ones for a second run."
+				],
+				"warnings": [
+					"Needs at least two playthroughs, because Act 2 sends some Alters away for good."
+				]
+			}
+		},
+		{
+			"id": "36",
+			"name": "All by myselves ",
+			"description": "Create all possible Alters",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/c0513db201a4828b5b640174a8feaccfa630dfbc.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Create the alters that branch away from your Act 2 treatment choice in a first run.",
+					"In a second run, create the ones you skipped — Technician, Scientist, Miner, Refiner, Worker and Guard on the Maxwell route covers the rest."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3505216413",
+				"communityNotes": [
+					"Reddit tip: many trophies are mutually exclusive between the two treatment paths, so a second run is the intended route to 100%."
+				],
+				"warnings": [
+					"At least two playthroughs are required — the Act 2 treatment choice decides which Alters stay."
+				]
+			}
+		},
+		{
+			"id": "37",
+			"name": "Provide more",
+			"description": "Build the second Rapidium Ark",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/16ea6fc67c2835f2e8c6b2219faa3296bb490dd4.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Upgrade the base to the stage that unlocks the second Ark, then build it in the command room."
+				]
+			}
+		},
+		{
+			"id": "38",
+			"name": "We needed that",
+			"description": "Build the third Rapidium Ark",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/f093076e20d60a2329361750282c39e7f00fb2f4.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Upgrade the base further and build the third Rapidium Ark in the command room."
+				]
+			}
+		},
+		{
+			"id": "39",
+			"name": "The mission comes first",
+			"description": "Build the fourth Rapidium Ark",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/6317f3f3d25d52e7eb1be4bc0f0ce3fb03e103cb.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Expand the base again and build the fourth Rapidium Ark."
+				]
+			}
+		},
+		{
+			"id": "40",
+			"name": "Exceed all expectations",
+			"description": "Build the fifth Rapidium Ark",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/2706c16a2239ad2a5116e25247083e7e7c12dfbd.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Slow down each act — reaching the end-of-act stage early costs you the special Interal veins.",
+					"Two Arks in Act 1, two more in Act 2 once the base is fully expanded, and the fifth in Act 3."
+				],
+				"warnings": [
+					"Ark slots are gated by base stage, not by resources — rush the base upgrades, not the act timer."
+				]
+			}
+		},
+		{
+			"id": "41",
+			"name": "Jan Complete",
+			"description": "Learn all the lessons from your Alters",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/dfccc6b748a84dbf2ff12d1351c488e049c2de2e.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Collect every Alter lesson: Assertiveness, Pragmatism, Reliance, Vulnerability, Optimism, Charisma, Joy of Life, Integrity, Chill and Shrewdness.",
+					"The last one usually lands after the rebellion quest and the Act 3 self-experiment."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"communityNotes": [
+					"Reddit tip: some side quests carry over between acts and some fail if you do not finish them in the same act — the game warns you when you try to travel onward."
+				],
+				"warnings": [
+					"If the achievement does not pop with the final lesson, open the lessons page and wait a few seconds — it fires from there.",
+					"Dropping a lesson early in an act can block its storyline too, and side quests do not always carry across acts."
+				]
+			}
+		},
+		{
+			"id": "42",
+			"name": "Smart Management",
+			"description": "Start a production uphold",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/cd67dff2e06f35e369b8c102e453ae761c115c41.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Craft an item in the workshop, hover it, then press the middle mouse button to add a production order."
+				]
+			}
+		},
+		{
+			"id": "43",
+			"name": "Look at all this new space!",
+			"description": "Expand the base for the first time",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/e9556c4027232edef5a6cee69715176814ef9db6.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Research the base upgrade on the technology page, gather the metal and minerals, then upgrade the base from the command room."
+				]
+			}
+		},
+		{
+			"id": "44",
+			"name": "Jan's Moving Village",
+			"description": "Expand the base to maximum capacity",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/a1234e4e27f623187a26d7450f00ec036e50ccdc.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Finish the base upgrade research on the technology page.",
+					"Stockpile the metal and minerals each level asks for and upgrade the base in the command room all the way to level 4."
+				]
+			}
+		},
+		{
+			"id": "45",
+			"name": "Baaa!",
+			"description": "Pet the sheep",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/3212599f5589debd79d342768debae765ae1c060.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Walk up to the sheep near the base and press E to pet it."
+				]
+			}
+		},
+		{
+			"id": "46",
+			"name": "The Corporate Way",
+			"description": "Finish the game with the help of the corporation",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/fbe92bfe9dc89fc353babf133492ff4026bc0ff4.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Take the corporation implant treatment in Act 2.",
+					"Act 3: talk to company executive Agatha and follow her task through to the ending."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"Cooperating with Lena over the Alters does not block this — only the Act 2 treatment choice decides the ending route."
+				]
+			}
+		},
+		{
+			"id": "47",
+			"name": "Maxwell's Path",
+			"description": "Finish the game with Maxwell's help",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/eddaa4650c6be285e1e6460f69b20b18f91c5f5e.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Act 2: sacrifice Tabula Rasa to treat the mutation.",
+					"Act 3: take Maxwell's call and see his task through to the ending."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"Keep Lena in the dark about the Alters and do not follow the Botanist's advice in Act 2 if you want this route.",
+					"The ending must also be reached on the Maxwell route — the final choice after the goodbyes does not matter."
+				]
+			}
+		},
+		{
+			"id": "48",
+			"name": "Advanced industry",
+			"description": "Create the first portion of resources using the Refinery",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/af78e0de9869d9a14d29b77a116f40a5e5fb4efc.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Build the Refinery in the command room and run any conversion or refinement job once."
+				]
+			}
+		},
+		{
+			"id": "49",
+			"name": "In shield I trust",
+			"description": "Walk into an anomaly 20 times",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/31b496e49e4d38115725f29fa90e2279e44afa3e.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In Act 2, walk into time-slowing anomalies and the spherical anomalies while exploring — both count.",
+					"To clear a time-slowing anomaly, aim at the small blue-rimmed black sphere inside it and shoot."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"The counter runs for the whole campaign, so clear anomalies as you explore instead of farming them late."
+				]
+			}
+		},
+		{
+			"id": "50",
+			"name": "The things we do for love",
+			"description": "Betray everybody as the Botanist",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/12c4298fa408750c0cd1bd0e35b2ebcf1cc3e1fc.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Reach the final meeting with the rescue team after saying goodbye to the Alters.",
+					"When the Botanist proposes swapping identities, agree to it.",
+					"At the rescue team, choose to do nothing."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"Ending branch: normalise saves are the only way back, so save before the last day.",
+					"Some players report unlocking this together with I deserved this more from the same save."
+				]
+			}
+		},
+		{
+			"id": "51",
+			"name": "It ends in flames",
+			"description": "Blow up the base",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/ffeed117aeebe194ac44acc3ff78ee0633085481.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"In the final mission, craft and install the bomb.",
+					"After saying goodbye to the Alters, choose the detonation option at the rescue team meeting."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"Ending branch — reload the last day to pick a different farewell option."
+				]
+			}
+		},
+		{
+			"id": "52",
+			"name": "We Made It Together",
+			"description": "Survive the magnetic storm",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/a316c180dddfa5bd8c958eafdf23de0598ce113c.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"In Act 1, stock enough radiation filters before the magnetic storm hits and wait it out."
+				]
+			}
+		},
+		{
+			"id": "53",
+			"name": "New perspective",
+			"description": "Get an alternative tattoo with Naranath Bhranthan",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/ecb51716d2a934a902077d3d6a9d7c9616eb0d18.jpg",
+			"types": [
+				"missable"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Take the implant route in Act 2 and get the Doctor and the Psychologist through to Act 3.",
+					"Bring the rebels back so the Psychologist returns, then ask him for the tattoo design.",
+					"Build the tattoo machine, suggest the Naranath Bhranthan design to the Doctor and tattoo him."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"The design only exists after the rebels are back — tattooing the Doctor earlier locks this out."
+				]
+			}
+		},
+		{
+			"id": "54",
+			"name": "I deserved this more",
+			"description": "Come back to Earth as the Botanist",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/9b3d2c37fcf1ba5c1da239a316e84eeb5a3a7a5f.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Reach the final goodbyes with the Botanist present.",
+					"Agree to let him take Jan's place.",
+					"At the meeting with the rescue team, pick the detonate/gas option."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"Ending branch — save before the last day, and note that the Botanist must have swapped with you first."
+				]
+			}
+		},
+		{
+			"id": "55",
+			"name": "All By Myself",
+			"description": "Leave your Alters to the mercy of others",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/d244846555c3a38c0f75bc58bc1c503b1a8f2c8b.jpg",
+			"types": [
+				"missable",
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play through to the goodbye scene with the rescue team.",
+					"At the meeting choose to do nothing and leave your Alters behind."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"warnings": [
+					"Ending branch — only available from the last day, so keep a save there."
+				]
+			}
+		},
+		{
+			"id": "56",
+			"name": "A Quantum Singularity",
+			"description": "Earn all trophies in the Alters",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/acd18924caccd3d0478da4145da9abdafa1b028a.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Earn the other 55 base-game achievements — the completion trophy fires on the last one.",
+					"Plan for two runs: one implant route and one Maxwell route, plus a normalised save at the finale for the four ending branches."
+				],
+				"sourceUrl": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509980059",
+				"communityNotes": [
+					"Reddit tip: players report 2–4 playthroughs for 100%, or two if you save-scum the finale."
+				],
+				"warnings": [
+					"The seven Last Variable DLC achievements are counted separately from this one."
+				]
+			}
+		},
+		{
+			"id": "101",
+			"name": "Space Gardener",
+			"description": "Place the first Terraformer",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/d8bdcca28bf4bcc2a8a9b19c02a861d5d850c47d.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"In the Last Variable campaign, unlock the Terraformer and place your first one on the map."
+				],
+				"warnings": [
+					"Last Variable DLC achievement — it does not appear in the base-game list."
+				]
+			}
+		},
+		{
+			"id": "102",
+			"name": "Mastering Rapidium",
+			"description": "Start production of Phased Rapidium",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/50224281dfdf4149137d80b1150269615535f9fc.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Unlock the Phased Rapidium recipe in the Last Variable campaign and run a production order for it."
+				],
+				"warnings": [
+					"Last Variable DLC achievement — it does not appear in the base-game list."
+				]
+			}
+		},
+		{
+			"id": "103",
+			"name": "Mix and match",
+			"description": "Start production of Proxylium",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/4092c6e1a7addfc7a80499da73b2881b5e2d4f98.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Unlock the Proxylium recipe in the Last Variable campaign and start its production."
+				],
+				"warnings": [
+					"Last Variable DLC achievement — it does not appear in the base-game list."
+				]
+			}
+		},
+		{
+			"id": "104",
+			"name": "Substance Genius",
+			"description": "Start production of Megafluid",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/093fd04c18324565812e26b02f6d13fa700dc90f.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Unlock the Megafluid recipe in the Last Variable campaign and start its production."
+				],
+				"warnings": [
+					"Last Variable DLC achievement — it does not appear in the base-game list."
+				]
+			}
+		},
+		{
+			"id": "105",
+			"name": "Wait, you can do that?",
+			"description": "Create the same Alter for a second time",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/2fae01e9efc8b24270d4178bbc5bf2e07a1d7824.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Create an Alter you have already created once before, so the quantum computer produces the same Alter a second time."
+				],
+				"warnings": [
+					"Last Variable DLC achievement, and around a 3% unlock rate.",
+					"Neither of the two full achievement guides read for this file documents the trigger, so keep a manual save before experimenting."
+				]
+			}
+		},
+		{
+			"id": "106",
+			"name": "Caring after all",
+			"description": "Complete all Scientist's Alters' storylines",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/ac104ef1d3ce79c93f9311bead67d09e977e20a1.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Play The Alters: Last Variable DLC — this achievement is not part of the base-game list.",
+					"Finish every storyline attached to the Scientist's Alters during that campaign, not just one of them."
+				],
+				"warnings": [
+					"Last Variable DLC achievement — it cannot be earned in the base campaign."
+				]
+			}
+		},
+		{
+			"id": "107",
+			"name": "The reason I stayed",
+			"description": "Finish the Last Variable DLC",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/1601570/5534b506cb35a81d76909ebaf5c8293c02af3171.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete the Last Variable DLC campaign to its ending."
+				],
+				"warnings": [
+					"Last Variable DLC achievement."
+				]
+			}
+		}
+	]
+}

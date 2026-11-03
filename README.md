@@ -113,6 +113,7 @@ nothing to sideload, and it updates on its own.
 | Starfield | 82 | ✓ |
 | Steep | 41 | |
 | Terraria | 137 | ✓ |
+| The Alters | 63 | |
 | The Witcher 3: Wild Hunt | 78 | ✓ |
 | Tom Clancy's Rainbow Six Siege | 48 | |
 | Tower Factory | 21 | |
