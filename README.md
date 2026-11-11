@@ -92,7 +92,7 @@ nothing to sideload, and it updates on its own.
 
 ## The catalogue
 
-**34 games, 2398 achievements** :
+**36 games, 2516 achievements** :
 
 | Game | Achievements | Map |
 |------|-------------:|:---:|
@@ -103,13 +103,14 @@ nothing to sideload, and it updates on its own.
 | Battlefield 6 | 53 | |
 | Clair Obscur: Expedition 33 | 55 | ✓ |
 | Counter-Strike 2 | 1 | |
-| Crimson Desert | 34 | ✓ |
+| Crimson Desert | 41 | ✓ |
 | Cyberpunk 2077 | 57 | ✓ |
 | Dead by Daylight | 311 | |
 | Deep Rock Galactic | 69 | |
 | Dyson Sphere Program | 128 | |
 | Elden Ring | 42 | ✓ |
 | Enshrouded | 58 | ✓ |
+| God of War Ragnarök | 48 | ✓ |
 | Grand Theft Auto V Enhanced | 77 | ✓ |
 | Hades | 49 | |
 | Marathon | 14 | |

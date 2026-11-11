@@ -2,7 +2,7 @@
 	"$schema": "./schema.json",
 	"appId": 3321460,
 	"name": "Crimson Desert",
-	"totalAchievements": 34,
+	"totalAchievements": 41,
 	"mapUrl": "https://mapgenie.io/crimson-desert",
 	"achievements": [
 		{
@@ -626,6 +626,119 @@
 					"Complete every life challenge, which involve gathering and observing natural features around the map."
 				],
 				"sourceUrl": "https://www.trueachievements.com/a628277/natural-collector-achievement"
+			}
+		},
+		{
+			"id": "35",
+			"name": "Dawn Politician",
+			"description": "Complete the “From the Ashes\" quest.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3321460/438eb62a1e3d50927128a39f3cd52586d2d517bb.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete the “From the Ashes” quest.",
+					"This quest is part of the Charting the Unknown add-on, so the content has to be installed before it can be started."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a674819/dawn-politician-achievement"
+			}
+		},
+		{
+			"id": "36",
+			"name": "Charter",
+			"description": "Complete the \"Beyond the Margins\" quest.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3321460/cf856470d8db9599808cdd2d868b92ee828558c0.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete the “Beyond the Margins” quest.",
+					"This quest is part of the Charting the Unknown add-on, so the content has to be installed before it can be started."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a674820/charter-achievement"
+			}
+		},
+		{
+			"id": "37",
+			"name": "Forger of Tomorrow",
+			"description": "Complete the “Forged Resolve\" quest.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3321460/0045b0ccc9a9662d39e453c52a826e7343ca6c9a.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete the “Forged Resolve” quest.",
+					"This quest is part of the Charting the Unknown add-on, so the content has to be installed before it can be started."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a674821/forger-of-tomorrow-achievement"
+			}
+		},
+		{
+			"id": "38",
+			"name": "Over the Horizon",
+			"description": "Complete all voyage challenges.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3321460/b0d6d06caf7d14cf8e2aede29cfbc050c7fba961.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Open the voyage challenge category in the Codex.",
+					"Complete every voyage challenge entry — this is the sailing challenge set added with the Charting the Unknown add-on."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a674822/over-the-horizon-achievement"
+			}
+		},
+		{
+			"id": "39",
+			"name": "Deep-sea Wanderer",
+			"description": "Complete all swimming challenges.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3321460/e9a0a05a0e61f02a30a43ada504ee7b12c4b66ec.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Open the swimming challenge category in the Codex.",
+					"Complete every swimming challenge entry. This set is part of the Charting the Unknown add-on."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a674823/deepsea-wanderer-achievement"
+			}
+		},
+		{
+			"id": "40",
+			"name": "Management Tycoon",
+			"description": "Complete all management challenges.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3321460/c1e8f4babbdef950cd3924bfe44201959e59034e.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Open the management challenge category in the Codex.",
+					"Complete every management challenge entry. This set is part of the Charting the Unknown add-on."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a674824/management-tycoon-achievement"
+			}
+		},
+		{
+			"id": "41",
+			"name": "Trial by Flower",
+			"description": "Complete all garden of trials challenges.",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/3321460/17ae88e0e0a2d393b2a4b389ebb51466673dc046.jpg",
+			"types": [
+				"cumulative"
+			],
+			"difficulty": "very-hard",
+			"guide": {
+				"steps": [
+					"Open the garden of trials challenge category in the Codex.",
+					"Complete every garden of trials challenge entry. This set is part of the Charting the Unknown add-on."
+				],
+				"sourceUrl": "https://www.trueachievements.com/a674825/trial-by-flower-achievement"
 			}
 		}
 	]

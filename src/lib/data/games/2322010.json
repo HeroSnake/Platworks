@@ -1,0 +1,809 @@
+{
+	"$schema": "./schema.json",
+	"appId": 2322010,
+	"name": "God of War Ragnarök",
+	"totalAchievements": 48,
+	"mapUrl": "https://mapgenie.io/god-of-war-ragnarok",
+	"achievements": [
+		{
+			"id": "NEW_ACHIEVEMENT_1_0",
+			"name": "The Bear and the Wolf",
+			"description": "Collect all Trophies",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/762be536be3f6258d91d4ed86c7de175e21ffe87.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Earn every other trophy in the base game. The 12 Valhalla DLC trophies are not required.",
+					"Play the story first, then clear every realm to 100% and beat the optional bosses King Hrólf and Gná."
+				],
+				"communityNotes": [
+					"Reddit tip: clear one realm at a time using the map legend and finish every favor in it — that sweeps up almost every non-story trophy."
+				]
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_1",
+			"name": "The Florist",
+			"description": "Collect one flower from each of the nine realms",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/4fff7ffcd142753ae11037e43ad1c2d6204b6ea0.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Pick up any flower to start Favor: Nine Realms in Bloom.",
+					"Collect one flower in each of the nine realms — nine in total. The in-game map tracks them per region.",
+					"Complete the favor once the ninth flower is collected."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/the-florist"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_2",
+			"name": "The Librarian",
+			"description": "Collect all of the Books",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/5325fffe5af2a3875422dc55d90a81c302063081.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Collect all 14 Kvasir's Poems — they are Artifact pickups scattered across the realms.",
+					"You will finish this automatically while going for The Curator; the map tracks Artifacts per region."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/the-librarian"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_3",
+			"name": "The Curator",
+			"description": "Collect all of the Artifacts",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/5249ab1e181410ba60f930591c2cac09e0f11703.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Collect all 38 Artifacts across Svartalfheim, Alfheim, Vanaheim, Midgard, Helheim and Muspelheim.",
+					"Complete the Casualties of War favors in The Crater of Vanaheim — those pickups count as Artifacts too.",
+					"Use the per-region Artifact counter on the map to find whatever is left."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/the-curator"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_4",
+			"name": "How it Started",
+			"description": "Equip an Enchantment",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/d2bb163ea5ff0db47da5ebc8f43176c4b24d502f.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"This is automatic during Main Quest 06: The Reckoning, right after the Níðhögg fight, when the Amulet of Yggdrasil is handed to you.",
+					"Craft the first Amulet enchantment when the tutorial prompt appears and equip it."
+				]
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_5",
+			"name": "Spit Shine",
+			"description": "Upgrade one piece of armor",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/dff9f0238f37a57f15f4421e639ca9acf90757eb.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Visit any blacksmith — Sindri's House is the earliest.",
+					"Upgrade any single armor piece (chest, wrist or waist) by one level."
+				]
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_6",
+			"name": "Spartan Ways",
+			"description": "Remember the Spartan teachings",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/282ccbc209250ac7d4b5281bc586bb1624d4ad75.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Unlocks automatically at the start of Main Quest 12: Reunion.",
+					"It fires once Kratos has all three Spartan Rage types — Valour, Wrath and Fury — which are all story unlocks, so there is nothing extra to do."
+				]
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_7",
+			"name": "Full Belly",
+			"description": "Obtain all of the Apples of Iðunn and Horns of Blood Mead",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/7618c288972f37b826f123ac35494c460c64f7b6.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open all 35 Nornir Chests across the nine realms — each awards either an Apple of Iðunn (health) or a Horn of Blood Mead (Spartan Rage).",
+					"Which of the two you get depends on how many you have already opened, so just keep opening Nornir Chests until both pools are full.",
+					"The map tracks Nornir Chests per region, so use it to hunt down the last few."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/full-belly"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_8",
+			"name": "Knock off the Rust",
+			"description": "Purchase a Skill",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/c0cceaae3322824a28968d00adc913815a55994b.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Open the Skills menu.",
+					"Buy any skill with XP — you earn XP from the main story and from favors."
+				]
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_9",
+			"name": "A Grizzly Encounter",
+			"description": "Battle the Bear",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/b774621d4b562f5f2f808e73682080f7c8f905db.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Story trophy: unlocks during Main Quest 01: Surviving Fimbulwinter, after the fight against the bear."
+				]
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_10",
+			"name": "Blood Debt",
+			"description": "Battle the God of Thunder",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/460fecc92590775db4e2cf2c8f4055559d90fa59.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Story trophy: unlocks during Main Quest 01: Surviving Fimbulwinter, after the fight against Thor."
+				]
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_11",
+			"name": "Backyard Brawl",
+			"description": "Battle the Mysterious Valkyrie",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/0affab1ff995f3c320585bd30877379f4098ed7a.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"The Mysterious Valkyrie is Freya — the fight happens at the very start of Main Quest 06: The Reckoning, in the Lower Wildwoods of Midgard.",
+					"Beat her to unlock the trophy; it cannot be missed."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/backyard-brawl"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_12",
+			"name": "Root of the Problem",
+			"description": "Battle Níðhögg",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/d7ea3ba4988f3beeffa6eea3e3c6d31c9ed15f67.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Story trophy: unlocks during Main Quest 06: The Reckoning, after the Níðhögg boss fight."
+				]
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_13",
+			"name": "The Cauldron",
+			"description": "Destroy Grýla's cauldron",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/421cda7a6d79a5c89d077103eb9fdd357c7c79ca.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Story trophy: unlocks during Main Quest 05: The Lost Sanctuary in Jotunheim.",
+					"Destroy Grýla's cauldron during, and at the end of, the boss fight."
+				]
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_14",
+			"name": "Off the Leash",
+			"description": "Battle Garm",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/c61bed76aad23f8cc40ff81c97be57a9f2a614e1.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Story trophy: unlocks after the Garm boss fight in Helheim."
+				]
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_15",
+			"name": "Comeuppance",
+			"description": "Battle Heimdall",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/78ef1d9b71435a66f2f057c6901563687ebe06de.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Story trophy: unlocks during Main Quest 13: Creatures of Prophecy, after the Heimdall fight."
+				]
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_16",
+			"name": "Better Together",
+			"description": "Battle Hrist and Mist",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/88d2ce7597f8c4caf28d46edbe3a1051851de9bd.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Story trophy: unlocks during Main Quest 16: The Summoning, after the Hrist and Mist fight."
+				]
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_17",
+			"name": "Phalanx",
+			"description": "Obtain all Shields",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/e448fd28e7626c3d091f95928ea5c73f6917cc57.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Collect all five shields: three are crafted at a blacksmith, one is a story unlock and one comes from a Legendary Chest.",
+					"Craft the three blacksmith shields — owning the materials alone is not enough."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/phalanx"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_18",
+			"name": "Collector",
+			"description": "Obtain all Relics and Sword Hilts",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/a8579b645e94cc84baceea1c6b7dd48f9525f36b.jpg",
+			"types": [],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Collect all 14 Relics (Sword Hilts): some come from bosses, some from Legendary Chests, and four must be crafted at a blacksmith after finding the 4 Lost Pages.",
+					"Craft every craftable Relic — a Relic only counts once it has been crafted.",
+					"One Relic is the reward for killing all 48 of Odin's Ravens and beating the Raven Keeper; check The Eyes of Odin progress if that is the one you are missing."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/collector",
+				"communityNotes": [
+					"Reddit tip: the raven relic is why all 48 Odin's Ravens are mandatory even though no trophy names them."
+				],
+				"warnings": [
+					"Several players report some Relics failing to appear as craftable even with every Lost Page and material — check the blue chest beside the blacksmith for loot you missed."
+				]
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_19",
+			"name": "Dragon Slayer",
+			"description": "Craft the Dragon Scaled Armor Set",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/1b6ff5b2e0ed56d6a8a06e82d20634026a1740ab.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete Main Quest 13: Creatures of Prophecy and Favor: Scent of Survival to unlock The Crater in Vanaheim.",
+					"Finish your first Dragon Hunt in The Crater to make the Dragon Scaled set available at the blacksmith.",
+					"Craft all three pieces: Breastplate (1 Dragon Claw, 2 Dragon Teeth), Bracers (10 Dragon Teeth) and Girdle (10 Dragon Teeth)."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/dragon-slayer"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_20",
+			"name": "How it's Going",
+			"description": "Fully repair the Amulet of Yggdrasil",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/f885d589f5a03ccfe03f8f80371bed7481d9f7d2.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Get the Amulet of Yggdrasil during Main Quest 06: The Reckoning, after the Níðhögg fight.",
+					"Find the seven missing Jewels of Yggdrasil — they come from Legendary Chests across the realms.",
+					"Repair all nine slots at a blacksmith; two start unlocked, so seven jewels finish it."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/how-its-going"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_21",
+			"name": "Funeral for a Friend",
+			"description": "Attend the funeral",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/7ae1a7e3ea07c2a88ccc1c6a5996b0af30864725.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Finish the main story — Favor: A Viking Funeral does not exist before that.",
+					"Start the favor in Svartalfheim and attend Brok's funeral."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/funeral-for-a-friend",
+				"warnings": [
+					"Not missable, but the favor is unavailable until the campaign is complete."
+				]
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_22",
+			"name": "Rebel Leader",
+			"description": "Return the Hammer of the Rebellion",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/6f1e71e216ac4e790cf8d3a40d1946074c01c3a6.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete Favor: Spirit of Rebellion in Svartalfheim.",
+					"Return the Hammer of the Rebellion to Durlin in the Nidavellir tavern."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/rebel-leader"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_23",
+			"name": "New Friends",
+			"description": "Fetch Lúnda's orb",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/aacb3441a6af8a5836145ea39a6b081a0935ce28.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete Favor: The Mysterious Orb for Lúnda — she offers it at Freyr's Camp in Vanaheim.",
+					"Recover her orb and bring it back to her."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/new-friends"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_24",
+			"name": "Full Gufa",
+			"description": "Free the Hafgufas",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/840183706cc70cac323f41e7715c9327c4ebe293.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete Favor: Secret of the Sands and Favor: Song of the Sands in Alfheim — both only appear after the story.",
+					"Free one Hafgufa in The Barrens and the other in The Forbidden Sands."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/full-gufa"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_25",
+			"name": "Making Amends",
+			"description": "Free the Lyngbakr",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/44ccd275c87ba90d37e458d03aea5225a458d8f9.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete Favor: The Weight of Chains in Svartalfheim.",
+					"Free the Lyngbakr chained in the Bay of Bounty, off Lyngbakr Island."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/making-amends"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_26",
+			"name": "It Was a Good Day",
+			"description": "Retrieve Mardöll",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/68f1958a965b22d50e90f5b34e19c271a606460a.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete Favor: Freya's Missing Peace in Vanaheim.",
+					"Recover the Mardöll sword from the Vanir Shrine and give it to Freya."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/it-was-a-good-day"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_27",
+			"name": "Invasive Species ",
+			"description": "Complete all of the Crater Hunts",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/3b34161ddfc1f1c475f6df26cb128b5f5969bad0.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Unlock The Crater in Vanaheim through Favor: Scent of Survival.",
+					"Complete all nine hunts there — seven Dragon Hunts and two Epic Hunts, spread across The Jungle, The Sinkholes and The Plains."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/invasive-species"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_28",
+			"name": "Besties",
+			"description": "Pet Speki and Svanna",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/207818e8f012d0b54910e8e48145d7fa4545c282.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Complete Favor: Animal Instincts at the Lake of Nine in Midgard.",
+					"Defeat the raiders who imprisoned the wolves Speki and Svanna, then pet both wolves."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/besties"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_29",
+			"name": "Rightful Place",
+			"description": "Return all the Lindwyrms to Ratatoskr",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/56850ea84057a676ea14ea32663cebf4e88c14f6.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start Favor: The Lost Lindwyrms at Sindri's House.",
+					"Capture all six Lindwyrms across the realms and hand each one back to Ratatoskr."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/rightful-place"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_30",
+			"name": "Pure of Hart",
+			"description": "Return the Stags of the Four Seasons",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/3cb2339edaaaee97c1a1d5ea00cd8aadbbc69d8c.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Start Favor: A Stag for All Seasons at Sindri's House.",
+					"Find all four lost stags — one per season — in The Crater region of Vanaheim."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/pure-of-hart"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_1_31",
+			"name": "Trials by Fire",
+			"description": "Complete the Trials of Muspelheim",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/299b3c2ab3dbe8b9f02d262d3fb54551c16167bf.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Reach the Crucible in Muspelheim and work through the trials — 15 in total, made up of 9 Trials and 6 Challenges.",
+					"Clear every one of them to finish Favor: The Final Challenges."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/trials-by-fire"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_2_0",
+			"name": "Ready for Commitment",
+			"description": "Fully upgrade one armor set",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/85af0ce5355bf6a4641f8657addb37464baf16ca.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Upgrade all three pieces of one matching armor set — chest, wrist and waist — to Level 9.",
+					"The pieces must share the same set name; mixing pieces from different sets does not count.",
+					"Upgrade at any blacksmith. You will have enough materials from normal story and exploration progress."
+				]
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_2_1",
+			"name": "Ragnarök",
+			"description": "Battle the All-Father",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/500b82631e8f9efcfe0fda022d94fcf1eff6497a.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Story trophy: unlocks during Main Quest 17: The Realms at War, after the Odin boss fight."
+				]
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_2_2",
+			"name": "Grave Mistake",
+			"description": "Battle King Hrólf",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/5ba906481dc8052e1105baddc82fb8e6786cd430.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Collect all 10 Berserker Gravestones and defeat the 13 Berserkers inside them.",
+					"King Hrólf then appears at King's Grave in Midgard for Favor: Fit for a King.",
+					"Fight him at Gear Level 9 with a Resurrection Stone, and turn on Settings > Accessibility > Combat > Miniboss Checkpoints to save halfway through."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/grave-mistake",
+				"warnings": [
+					"Hrólf is a Level 9 boss and the hardest Berserker — do not attempt him under-levelled.",
+					"Difficulty does not affect trophies: switching Challenge Level to Give Me Story is a legitimate shortcut."
+				]
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_2_3",
+			"name": "The True Queen",
+			"description": "Battle Gná",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/4dfdb9c0b96dbf11ae60f641691ed20775bf627c.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"Finish the main story — Gná only spawns afterwards, in the Crucible in Muspelheim.",
+					"Complete Favor: Defend Your Valor.",
+					"Beat her at Gear Level 9 with a Resurrection Stone; she is one of the two hardest fights in the game."
+				],
+				"sourceUrl": "https://www.gamerguides.com/god-of-war-ragnarok/guide/trophy-guide/trophies-and-roadmap/the-true-queen",
+				"warnings": [
+					"Gná does not appear at all until the campaign is complete."
+				]
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_2_4",
+			"name": "God of Hope",
+			"description": "Master Valhalla and master thyself",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/ab4bcd6e2a7fa5bafe207cd469c2e30e2bf5019d.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "hard",
+			"guide": {
+				"steps": [
+					"On your first Valhalla attempt, let Kratos die — the story only advances through death and return.",
+					"After that, clear attempts without dying to move through the six story chapters. Touchpad > Goals > Valhalla tracks them.",
+					"The trophy unlocks after beating Týr for the fourth time, at the end of Chapter 6: The Work, Part 3: Benevolence."
+				],
+				"sourceUrl": "https://www.powerpyx.com/god-of-war-ragnarok-valhalla-dlc-trophy-guide-roadmap/"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_2_5",
+			"name": "Invitation Accepted",
+			"description": "Discover the secret of Valhalla",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/a16f4e1d167fff5bf7fb60a9c24b39e179cf1560.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Start the Valhalla DLC and play until Kratos dies.",
+					"The trophy unlocks after the first death cutscene, which opens Chapter 1: The Invitation."
+				],
+				"sourceUrl": "https://www.powerpyx.com/god-of-war-ragnarok-valhalla-dlc-trophy-guide-roadmap/"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_2_6",
+			"name": "Dark Odyssey",
+			"description": "Participate in the sacrifice",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/3a9556c7b688abea71722ae6a1c499d9d124e6a0.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Reach Chapter 2: Homecoming and play far enough into an attempt to meet Helios.",
+					"Perform the sacrifice when the Helios section forces it — it ends the run and returns you to The Shore."
+				],
+				"sourceUrl": "https://www.powerpyx.com/god-of-war-ragnarok-valhalla-dlc-trophy-guide-roadmap/"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_2_7",
+			"name": "Blood, Sweat, and Týr",
+			"description": "Battle Týr",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/f168c00052a7491474fe4509eb99d702bc822b50.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Play through an attempt until you reach the boss at the end — the fourth run at the earliest.",
+					"Defeat Týr and leave through the gate to end the run; this opens Chapter 3: The Host."
+				],
+				"sourceUrl": "https://www.powerpyx.com/god-of-war-ragnarok-valhalla-dlc-trophy-guide-roadmap/"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_2_8",
+			"name": "Scry Me a River",
+			"description": "Reclaim Kratos' Oath Stone",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/45ebc2d1fc020271456504bfaa7caf9bcc0440cf.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Start a run after beating Týr once — your fifth run at the earliest.",
+					"Pick up the glowing Oath Stone when it appears on the way to Týr; this starts Chapter 4: The Work, Part I: Acceptance."
+				],
+				"sourceUrl": "https://www.powerpyx.com/god-of-war-ragnarok-valhalla-dlc-trophy-guide-roadmap/"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_2_9",
+			"name": "Wayfarer",
+			"description": "Visit all 9 Realms in Valhalla",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/8c54884da8902093f3db13f41e2c83c12ff64c95.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Visit all nine realms inside Valhalla.",
+					"Six realms show up randomly, but three are tied to the weapon bonus you take from the first chest — finish one run with the Axe, one with the Blades and one with the Spear to see all three."
+				],
+				"sourceUrl": "https://www.powerpyx.com/god-of-war-ragnarok-valhalla-dlc-trophy-guide-roadmap/",
+				"warnings": [
+					"Taking the same starting weapon every run permanently hides the other two weapon-specific realms."
+				]
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_2_10",
+			"name": "No Kratos, No Scry",
+			"description": "Reclaim Pandora's Statue",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/986a1d05038798dd2549319c9415b5c1e955fef4.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Start a run after beating Týr three times — your seventh run at the earliest.",
+					"Pick up Pandora's Statue when the story forces it, on the way to the fourth Týr fight."
+				],
+				"sourceUrl": "https://www.powerpyx.com/god-of-war-ragnarok-valhalla-dlc-trophy-guide-roadmap/"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_2_11",
+			"name": "Fight at the Forum",
+			"description": "Participate in a fight at The Forum arena",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/410939f632abc8bb5b8f550532f5ec2184132368.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Finish the six-chapter Valhalla story, then start another run.",
+					"In the foggy maze before Týr, defeat the Chosen and head upstairs to reach The Forum — the third arena, which opens after you beat Týr a fourth time.",
+					"Play one match in The Forum."
+				],
+				"sourceUrl": "https://www.powerpyx.com/god-of-war-ragnarok-valhalla-dlc-trophy-guide-roadmap/"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_2_12",
+			"name": "Easy Come, Easy Go",
+			"description": "Acquire more than 15,000 Fleeting Echoes on a single attempt",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/a0b3936c936515eb49b46bc7e8f8d5b65cff8082.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Bank more than 15,000 Fleeting Echoes in one attempt — the counter resets every run, so this cannot be ground out across sessions.",
+					"Defeat the Chosen in the foggy maze for score multipliers, then play the arenas.",
+					"Clearing all three arenas in a single run comfortably passes 30,000, and the Forum run for Fight at the Forum gets you there automatically."
+				],
+				"sourceUrl": "https://www.powerpyx.com/god-of-war-ragnarok-valhalla-dlc-trophy-guide-roadmap/"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_2_13",
+			"name": "Understood the Assignment",
+			"description": "Complete 9 Mastery Quests",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/589aaa85b86385c8055eb2b49fa5caff470d6bf9.jpg",
+			"types": [],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Open Touchpad > Goals > Mastery and complete any nine Mastery Quests.",
+					"The easiest nine are the three Rage and three Shield masteries (swap your Rage or Shield before each attempt), Travel Mastery, Greek Labyrinth Mastery and Permanent Upgrade Mastery.",
+					"Talk to the Valkyries at The Shore after each one — a mastery only counts once it has been turned in."
+				],
+				"sourceUrl": "https://www.powerpyx.com/god-of-war-ragnarok-valhalla-dlc-trophy-guide-roadmap/",
+				"warnings": [
+					"Completing a mastery without turning it in at The Shore does not count towards the nine."
+				]
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_2_14",
+			"name": "Style Points",
+			"description": "Equip a Cosmetic Armor",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/dce9d96ff218f81ccf60d323f645256a7bcfd3d9.jpg",
+			"types": [],
+			"difficulty": "easy",
+			"guide": {
+				"steps": [
+					"Die once, then finish a run so you are returned to The Shore.",
+					"Interact with the glowing pillar in the hub to change Kratos' cosmetic appearance."
+				],
+				"sourceUrl": "https://www.powerpyx.com/god-of-war-ragnarok-valhalla-dlc-trophy-guide-roadmap/"
+			}
+		},
+		{
+			"id": "NEW_ACHIEVEMENT_2_15",
+			"name": "You Again?",
+			"description": "Find all 3 Boat Captain Keys",
+			"iconUrl": "https://shared.akamai.steamstatic.com/community_assets/images/apps/2322010/fb80e092dd1fd18d6c372ac5bb20f063badcc34f.jpg",
+			"types": [
+				"secret"
+			],
+			"difficulty": "medium",
+			"guide": {
+				"steps": [
+					"Unlock Pandora's Statue first — Boat Captain Keys do not spawn before that.",
+					"On every attempt after that, collect the purple key in the first chamber, in front of the wooden painting next to the first chest.",
+					"Finish the attempt so the next key spawns, then repeat until you have all three."
+				],
+				"sourceUrl": "https://www.powerpyx.com/god-of-war-ragnarok-valhalla-dlc-trophy-guide-roadmap/",
+				"warnings": [
+					"A run you die in does not spawn the next key.",
+					"Some players see keys earlier than the guide states, once the Oath Stone is collected — check the first chamber every run regardless."
+				]
+			}
+		}
+	]
+}
